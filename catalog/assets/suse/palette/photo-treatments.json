@@ -1,0 +1,12 @@
+{
+  "name": "Photo Colour Treatments",
+  "description": "Quick colour treatments for photo assets: greyscale plus soft two-colour duotone washes (shadow maps to shadows, highlight to highlights) and optional three-stop tritones (shadow → mid → highlight). Chosen at pick time and baked into a self-contained SVG at resolve. 'None' is the plain photo (no id suffix).",
+  "treatments": [
+    { "id": "greyscale", "label": "Greyscale", "kind": "greyscale", "previewBg": "#efefef" },
+    { "id": "pine",      "label": "Pine",      "kind": "duotone", "shadow": "#0c322c", "highlight": "#bff1ea" },
+    { "id": "midnight",  "label": "Midnight",  "kind": "duotone", "shadow": "#0a112b", "highlight": "#c8dafc" },
+    { "id": "persimmon", "label": "Persimmon", "kind": "duotone", "shadow": "#47190d", "highlight": "#ffd3bd" },
+    { "id": "mint-wash", "label": "Mint Wash", "kind": "duotone", "shadow": "#01564a", "highlight": "#eafaf4" },
+    { "id": "jungle",    "label": "Jungle",    "kind": "duotone", "shadow": "#000000", "mid": "#0c322c", "highlight": "#2e9a52", "previewBg": "#0c322c" }
+  ]
+}

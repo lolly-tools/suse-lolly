@@ -1,0 +1,4817 @@
+{
+  "version": "1",
+  "generatedAt": "2026-07-08T00:11:24.997Z",
+  "tools": [
+    {
+      "id": "color-block",
+      "name": "Color Block",
+      "description": "Colour blocks — text, image, logo — auto-arranged into a grid.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "svg",
+        "pptx",
+        "html"
+      ],
+      "width": 1350,
+      "height": 1350,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2\" /><rect x=\"14\" y=\"2\" width=\"8\" height=\"8\" rx=\"1\" /></svg>",
+      "preview": "/catalog/previews/color-block.svg",
+      "featured": {
+        "order": 4,
+        "blurb": "Colour blocks — text, image, logo in a grid"
+      },
+      "examples": [
+        {
+          "label": "Campaign hero · square · 6 blocks",
+          "values": {
+            "width": 1350,
+            "height": 1350,
+            "blocks": [
+              {
+                "kind": "logo",
+                "logoOrient": "horizontal",
+                "logoColor": "green",
+                "bgColor": "#efefef",
+                "logoSize": 0.8
+              },
+              {
+                "kind": "heading",
+                "text": "Choice happens.",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "scale": 1.2,
+                "weight": 900
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#0c322c",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/photos/susecon26-keynote-tues-53"
+                }
+              },
+              {
+                "kind": "body",
+                "text": "From edge to core, one open platform.",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "scale": 0.95,
+                "weight": 400
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#192072",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/photos/kubecon-na-2025-booth"
+                }
+              },
+              {
+                "kind": "cta",
+                "text": "Explore",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "ctaStyle": "pill",
+                "scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "label": "AI platform grid · wide · 6 blocks",
+          "values": {
+            "width": 1920,
+            "height": 1080,
+            "blocks": [
+              {
+                "kind": "heading",
+                "text": "AI, unlocked",
+                "bgColor": "#0c322c",
+                "fgColor": "#30ba78",
+                "scale": 1.3,
+                "weight": 900
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#0c322c",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/campaign/optimize-1"
+                }
+              },
+              {
+                "kind": "subheading",
+                "text": "Run models anywhere",
+                "bgColor": "#192072",
+                "fgColor": "#ffffff",
+                "scale": 1,
+                "weight": 600
+              },
+              {
+                "kind": "logo",
+                "logoOrient": "stacked",
+                "logoColor": "mono",
+                "bgColor": "#2453ff",
+                "logoSize": 0.7
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#0c322c",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/campaign/manage-secure-3"
+                }
+              },
+              {
+                "kind": "cta",
+                "text": "SUSE AI",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "ctaStyle": "arrow",
+                "scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "label": "Secure edge · tall · 5 blocks",
+          "values": {
+            "width": 1080,
+            "height": 1920,
+            "blocks": [
+              {
+                "kind": "logo",
+                "logoOrient": "horizontal",
+                "logoColor": "green",
+                "bgColor": "#ffffff",
+                "logoSize": 0.8
+              },
+              {
+                "kind": "heading",
+                "text": "Secure by default",
+                "bgColor": "#bff1ea",
+                "fgColor": "#0c322c",
+                "scale": 1.1,
+                "weight": 800
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#0c322c",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/campaign/manage-secure-1"
+                }
+              },
+              {
+                "kind": "body",
+                "text": "Confidential computing from edge to cloud.",
+                "bgColor": "#192072",
+                "fgColor": "#ffffff",
+                "scale": 0.9,
+                "weight": 400
+              },
+              {
+                "kind": "cta",
+                "text": "Read more",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "ctaStyle": "pill",
+                "scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "label": "Event announce · flat banner · 4 blocks",
+          "values": {
+            "width": 1920,
+            "height": 760,
+            "blocks": [
+              {
+                "kind": "heading",
+                "text": "SUSECON 2026",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "scale": 1.4,
+                "weight": 900
+              },
+              {
+                "kind": "body",
+                "text": "Three days of open source, cloud native and AI.",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "scale": 1,
+                "weight": 400
+              },
+              {
+                "kind": "blank",
+                "bgColor": "#192072",
+                "bgImage": {
+                  "source": "library",
+                  "id": "suse/photos/susecon26-keynote-tues-95"
+                }
+              },
+              {
+                "kind": "logo",
+                "logoOrient": "stacked",
+                "logoColor": "green",
+                "bgColor": "#bff1ea",
+                "logoSize": 0.7
+              }
+            ]
+          }
+        },
+        {
+          "label": "Product launch · portrait · 4 blocks",
+          "values": {
+            "width": 1080,
+            "height": 1350,
+            "blocks": [
+              {
+                "kind": "logo",
+                "logoOrient": "horizontal",
+                "logoColor": "mono",
+                "bgColor": "#0c322c",
+                "logoSize": 0.8
+              },
+              {
+                "kind": "heading",
+                "text": "Choice.",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "scale": 1.2,
+                "weight": 900
+              },
+              {
+                "kind": "subheading",
+                "text": "Open source, your way",
+                "bgColor": "#bff1ea",
+                "fgColor": "#0c322c",
+                "scale": 1,
+                "weight": 500
+              },
+              {
+                "kind": "cta",
+                "text": "Learn more",
+                "bgColor": "#2453ff",
+                "fgColor": "#ffffff",
+                "ctaStyle": "pill",
+                "scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "label": "Ship faster · skinny · 3 blocks",
+          "values": {
+            "width": 820,
+            "height": 1440,
+            "blocks": [
+              {
+                "kind": "heading",
+                "text": "Ship faster.",
+                "bgColor": "#0c322c",
+                "fgColor": "#30ba78",
+                "scale": 1.4,
+                "weight": 900
+              },
+              {
+                "kind": "subheading",
+                "text": "Enterprise Linux, delivered",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "scale": 1,
+                "weight": 600
+              },
+              {
+                "kind": "logo",
+                "logoOrient": "horizontal",
+                "logoColor": "mono",
+                "bgColor": "#192072",
+                "logoSize": 0.75
+              }
+            ]
+          }
+        },
+        {
+          "label": "Zero trust · wide · 3 blocks",
+          "values": {
+            "width": 1600,
+            "height": 900,
+            "blocks": [
+              {
+                "kind": "logo",
+                "logoOrient": "stacked",
+                "logoColor": "green",
+                "bgColor": "#ffffff",
+                "logoSize": 0.8
+              },
+              {
+                "kind": "heading",
+                "text": "Zero trust",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "scale": 1.1,
+                "weight": 800
+              },
+              {
+                "kind": "body",
+                "text": "Full-lifecycle protection for cloud native workloads.",
+                "bgColor": "#192072",
+                "fgColor": "#ffffff",
+                "scale": 0.9,
+                "weight": 400
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "dynamic-layout",
+      "name": "Dynamic Layout",
+      "description": "A do-anything layout that recomposes around whatever you add, at any size.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "svg",
+        "pptx",
+        "html"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M3 9h18\" /><path d=\"M9 21V9\" /></svg>",
+      "preview": "/catalog/previews/dynamic-layout.svg",
+      "examples": [
+        {
+          "label": "White · brand · get started",
+          "values": {
+            "theme": "white",
+            "logo": "top-right",
+            "logoStyle": "brand",
+            "heading": "Build on your terms",
+            "subheading": "The open source platform for the enterprise",
+            "body": "From cloud to edge — one platform.\n\n> Kubernetes at any scale\n> Linux you can trust",
+            "cta": "Get started",
+            "ctaTypography": "sans"
+          }
+        },
+        {
+          "label": "Pine · SUSECON · Deutsch",
+          "values": {
+            "theme": "pine",
+            "logo": "top-left",
+            "logoStyle": "mono",
+            "heading": "SUSECON 2026",
+            "headingFontSize": 1.4,
+            "headingFontWeight": 300,
+            "subheading": "**Nürnberg** · 12.–14. Mai",
+            "body": "Drei Tage Keynotes, praktische Workshops und Open-Source-Community.",
+            "cta": "Anmelden",
+            "ctaTypography": "mono"
+          }
+        },
+        {
+          "label": "Persimmon · apricot · Tiếng Việt",
+          "values": {
+            "theme": "persimmon",
+            "logo": "bottom-right",
+            "logoStyle": "brand",
+            "fgColor": "#FC9869",
+            "heading": "Từ biên đến lõi",
+            "subheading": "Chạy ở mọi nơi, quản lý mọi chốn",
+            "body": "> Rancher Prime\n> SUSE Edge\n> NeuVector",
+            "cta": "Tìm hiểu thêm",
+            "ctaTypography": "mono"
+          }
+        },
+        {
+          "label": "White · bold · Español",
+          "values": {
+            "theme": "white",
+            "logo": "top-right",
+            "logoStyle": "brand",
+            "heading": "Confianza cero, cero dramas",
+            "headingFontSize": 1.6,
+            "headingFontWeight": 700,
+            "subheading": "Seguridad de contenedores que no se queda atrás",
+            "subheadingFontWeight": 600,
+            "body": "Protección de ciclo completo para cargas cloud native.",
+            "cta": "Ver la demo"
+          }
+        },
+        {
+          "label": "Pine · mint · Français",
+          "values": {
+            "theme": "pine",
+            "logo": "bottom-left",
+            "logoStyle": "mono",
+            "fgColor": "#BFF1EA",
+            "heading": "Ouvert. Adaptable. À vous.",
+            "headingFontWeight": 200,
+            "subheading": "Un logiciel indépendant pour un monde dépendant",
+            "body": "Le choix, sans verrouillage.",
+            "cta": "Lire l'histoire",
+            "ctaTypography": "sans"
+          }
+        },
+        {
+          "label": "Midnight · mint · AI",
+          "values": {
+            "theme": "midnight",
+            "logo": "top-right",
+            "logoStyle": "brand",
+            "fgColor": "#BFF1EA",
+            "heading": "AI-ready infrastructure",
+            "subheading": "Private, governed, production-grade",
+            "body": "Ship models with confidence.",
+            "cta": "Explore SUSE AI",
+            "ctaTypography": "mono",
+            "ctaFontWeight": 500
+          }
+        }
+      ]
+    },
+    {
+      "id": "quotes",
+      "name": "Quote Card",
+      "description": "On-brand quote cards for social posts and slides.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "svg",
+        "html",
+        "md",
+        "txt",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "pptx",
+        "webp",
+        "avif",
+        "jpeg"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" /><path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" /></svg>",
+      "preview": "/catalog/previews/quotes.svg",
+      "examples": [
+        {
+          "label": "Engineer · light · speaker top",
+          "values": {
+            "theme": "light",
+            "quoteStyle": "wrapping",
+            "layout": "speaker-top",
+            "quote": "The best infrastructure is the kind you never have to think about.",
+            "name": "Amina Okafor",
+            "company": "Principal Engineer, SUSE",
+            "separator": true,
+            "frameInset": 80
+          }
+        },
+        {
+          "label": "Rancher · main · side by side",
+          "values": {
+            "theme": "main",
+            "quoteStyle": "big",
+            "layout": "side-by-side",
+            "quote": "Kubernetes gave us a common language. **Rancher** made it speak at scale.",
+            "name": "Diego Fernández",
+            "company": "Platform Lead",
+            "separator": true,
+            "frameInset": 64
+          }
+        },
+        {
+          "label": "Bold statement · dark · no quotes",
+          "values": {
+            "theme": "dark",
+            "quoteStyle": "none",
+            "layout": "minimal",
+            "quote": "Choice matters.",
+            "name": "",
+            "company": "",
+            "separator": false,
+            "frameInset": 160
+          }
+        },
+        {
+          "label": "Community · light · minimal",
+          "values": {
+            "theme": "light",
+            "quoteStyle": "wrapping",
+            "layout": "minimal",
+            "quote": "We build in the open because the best ideas come from everywhere.",
+            "name": "Mei Chen",
+            "company": "Community Director",
+            "separator": true,
+            "frameInset": 80
+          }
+        },
+        {
+          "label": "Edge AI · main · speaker top",
+          "values": {
+            "theme": "main",
+            "quoteStyle": "big",
+            "layout": "speaker-top",
+            "quote": "AI at the edge isn't a feature. It's where the real world meets compute.",
+            "name": "Ravi Patel",
+            "company": "Developer Advocate",
+            "separator": true,
+            "frameInset": 88
+          }
+        }
+      ]
+    },
+    {
+      "id": "meeting-planner",
+      "name": "Meeting Planner",
+      "description": "Plan a global meeting and see the time for every teammate's timezone.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "event",
+      "formats": [
+        "png",
+        "jpeg",
+        "svg",
+        "ics",
+        "json"
+      ],
+      "width": 800,
+      "height": 600,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\" /><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\" /><path d=\"M2 12h20\" /></svg>",
+      "preview": "/catalog/previews/meeting-planner.svg",
+      "examples": [
+        {
+          "label": "SUSECON · green · orthographic",
+          "values": {
+            "eventName": "SUSECON 2026",
+            "city": "Orlando",
+            "theme": "green",
+            "layout": "landscape",
+            "projection": "geoOrthographic",
+            "showNight": true,
+            "people": [
+              {
+                "name": "Amina",
+                "city": "Nuremberg"
+              },
+              {
+                "name": "Diego",
+                "city": "São Paulo"
+              },
+              {
+                "name": "Mei",
+                "city": "Singapore"
+              },
+              {
+                "name": "Sam",
+                "city": "San Francisco"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Global standup · dark · natural earth",
+          "values": {
+            "eventName": "Global Engineering Standup",
+            "city": "Nuremberg",
+            "theme": "dark",
+            "layout": "landscape",
+            "projection": "geoNaturalEarth1",
+            "showBorders": true,
+            "showGraticule": true,
+            "people": [
+              {
+                "name": "Lena",
+                "city": "Berlin"
+              },
+              {
+                "name": "Ravi",
+                "city": "Bengaluru"
+              },
+              {
+                "name": "Kenji",
+                "city": "Tokyo"
+              },
+              {
+                "name": "Ana",
+                "city": "Madrid"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Release sync · light · equal earth",
+          "values": {
+            "eventName": "SLES 16 Release Sync",
+            "city": "Prague",
+            "theme": "light",
+            "layout": "square",
+            "projection": "geoEqualEarth",
+            "landColor": "#eafaf1",
+            "pinColor": "#30ba78",
+            "people": [
+              {
+                "name": "Tomáš",
+                "city": "Prague"
+              },
+              {
+                "name": "Grace",
+                "city": "London"
+              },
+              {
+                "name": "Omar",
+                "city": "Dubai"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Live world clock · green · mercator",
+          "values": {
+            "eventName": "Team World Clock",
+            "city": "Nuremberg",
+            "liveClock": true,
+            "theme": "green",
+            "layout": "portrait",
+            "projection": "geoMercator",
+            "people": [
+              {
+                "name": "Sofia",
+                "city": "Buenos Aires"
+              },
+              {
+                "name": "Yuki",
+                "city": "Tokyo"
+              },
+              {
+                "name": "Ivan",
+                "city": "Moscow"
+              },
+              {
+                "name": "Mary",
+                "city": "New York"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Community call · dark · azimuthal",
+          "values": {
+            "eventName": "Cloud Native Community Call",
+            "city": "Amsterdam",
+            "theme": "dark",
+            "layout": "landscape",
+            "projection": "geoAzimuthalEqualArea",
+            "pinShape": "diamond",
+            "pinColor": "#0a9bd6",
+            "people": [
+              {
+                "name": "Noah",
+                "city": "Amsterdam"
+              },
+              {
+                "name": "Priya",
+                "city": "Mumbai"
+              },
+              {
+                "name": "Chen",
+                "city": "Shanghai"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Edge summit · light · equirectangular",
+          "values": {
+            "eventName": "Edge Summit Planning",
+            "city": "Munich",
+            "theme": "light",
+            "layout": "landscape",
+            "projection": "geoEquirectangular",
+            "pinColor": "#fe7c3f",
+            "pinShape": "square",
+            "people": [
+              {
+                "name": "Elena",
+                "city": "Munich"
+              },
+              {
+                "name": "Carlos",
+                "city": "Mexico City"
+              },
+              {
+                "name": "Aisha",
+                "city": "Nairobi"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "code-canvas",
+      "name": "Code Canvas",
+      "description": "Turn code snippets into clean, syntax-highlighted, shareable images.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "svg"
+      ],
+      "width": 1200,
+      "height": 800,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m7 11 2-2-2-2\" /><path d=\"M11 13h4\" /><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" /></svg>",
+      "preview": "/tools/code-canvas/card.svg",
+      "examples": [
+        {
+          "label": "JavaScript · SUSE Dark",
+          "values": {
+            "code": "const greet = (name) => {\n  console.log(`Hello, ${name}!`);\n  return name;\n};\n\ngreet('SUSE');",
+            "filename": "app.js",
+            "language": "javascript",
+            "theme": "suse-dark",
+            "windowStyle": "nuremberg",
+            "lineNumbers": true
+          }
+        },
+        {
+          "label": "Python · GitHub Dark",
+          "values": {
+            "code": "def fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nprint(fib(12))",
+            "filename": "fib.py",
+            "language": "python",
+            "theme": "github-dark",
+            "windowStyle": "cupertino",
+            "lineNumbers": true
+          }
+        },
+        {
+          "label": "Bash · Nord",
+          "values": {
+            "code": "#!/usr/bin/env bash\nset -euo pipefail\n\nfor host in web db cache; do\n  echo \"Deploying to $host…\"\n  ssh \"$host\" 'systemctl restart lolly'\ndone",
+            "filename": "deploy.sh",
+            "language": "bash",
+            "theme": "nord",
+            "windowStyle": "redmond",
+            "lineNumbers": false
+          }
+        },
+        {
+          "label": "Go · GitHub Dark",
+          "values": {
+            "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfor i := 0; i < 3; i++ {\n\t\tfmt.Println(\"Hello, SUSE!\")\n\t}\n}",
+            "filename": "main.go",
+            "language": "go",
+            "theme": "github-dark",
+            "windowStyle": "nuremberg",
+            "lineNumbers": true
+          }
+        },
+        {
+          "label": "Rust · Nord",
+          "values": {
+            "code": "fn main() {\n    let name = \"SUSE\";\n    for _ in 0..3 {\n        println!(\"Hello, {name}!\");\n    }\n}",
+            "filename": "lib.rs",
+            "language": "rust",
+            "theme": "nord",
+            "windowStyle": "cupertino",
+            "lineNumbers": true
+          }
+        },
+        {
+          "label": "TypeScript · SUSE Light",
+          "values": {
+            "code": "type User = { id: number; name: string };\n\nconst getUser = async (id: number): Promise<User> => {\n  const res = await fetch(`/api/users/${id}`);\n  return res.json();\n};",
+            "filename": "api.ts",
+            "language": "typescript",
+            "theme": "suse-light",
+            "windowStyle": "redmond",
+            "lineNumbers": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "qr-code",
+      "name": "QR Code Generator",
+      "description": "QR codes for any URL, with full color and style control.",
+      "version": "2.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "svg",
+        "emf",
+        "eps",
+        "eps-cmyk",
+        "dxf",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "tiff",
+        "png",
+        "jpeg",
+        "webp",
+        "avif"
+      ],
+      "width": 600,
+      "height": 600,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"5\" height=\"5\" x=\"3\" y=\"3\" rx=\"1\" /><rect width=\"5\" height=\"5\" x=\"16\" y=\"3\" rx=\"1\" /><rect width=\"5\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\" /><path d=\"M21 16h-3a2 2 0 0 0-2 2v3\" /><path d=\"M21 21v.01\" /><path d=\"M12 7v3a2 2 0 0 1-2 2H7\" /><path d=\"M3 12h.01\" /><path d=\"M12 3h.01\" /><path d=\"M12 16v.01\" /><path d=\"M16 12h1\" /><path d=\"M21 12v.01\" /><path d=\"M12 21v-1\" /></svg>",
+      "preview": "/catalog/previews/qr-code.svg",
+      "featured": {
+        "order": 10,
+        "blurb": "QR codes in any brand colour"
+      },
+      "examples": [
+        {
+          "label": "Inverted pine",
+          "values": {
+            "url": "https://www.suse.com/products",
+            "color": "#ffffff",
+            "background": "#0c322c",
+            "join": true
+          }
+        },
+        {
+          "label": "SUSE green",
+          "values": {
+            "url": "https://documentation.suse.com",
+            "color": "#30ba78",
+            "background": "#ffffff",
+            "join": true
+          }
+        },
+        {
+          "label": "Mint field",
+          "values": {
+            "url": "https://www.rancher.com",
+            "color": "#0c322c",
+            "background": "#90ebcd",
+            "padding": 6
+          }
+        },
+        {
+          "label": "Persimmon on pine",
+          "values": {
+            "url": "https://events.suse.com",
+            "color": "#fe7c3f",
+            "background": "#0c322c",
+            "ecl": "H"
+          }
+        },
+        {
+          "label": "Ocean blue",
+          "values": {
+            "url": "https://www.suse.com/solutions/ai",
+            "color": "#0a9bd6",
+            "background": "#ffffff",
+            "ecl": "Q",
+            "join": true
+          }
+        },
+        {
+          "label": "Amber edge",
+          "values": {
+            "url": "https://www.suse.com/products/edge",
+            "color": "#fcb244",
+            "background": "#0c322c",
+            "padding": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-card",
+      "name": "Day Brief",
+      "description": "Quote of the day with live weather, time and a map for any city.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "jpeg",
+        "svg",
+        "pdf",
+        "pptx"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v2\" /><path d=\"m4.93 4.93 1.41 1.41\" /><path d=\"M20 12h2\" /><path d=\"m19.07 4.93-1.41 1.41\" /><path d=\"M15.947 12.65a4 4 0 0 0-5.925-4.128\" /><path d=\"M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z\" /></svg>",
+      "preview": "/catalog/previews/daily-card.svg",
+      "examples": [
+        {
+          "label": "Nuremberg · green",
+          "values": {
+            "city": "Nuremberg",
+            "theme": "green"
+          }
+        },
+        {
+          "label": "Tokyo · dark",
+          "values": {
+            "city": "Tokyo",
+            "theme": "dark"
+          }
+        },
+        {
+          "label": "San Francisco · light",
+          "values": {
+            "city": "San Francisco",
+            "theme": "light"
+          }
+        },
+        {
+          "label": "London · dark",
+          "values": {
+            "city": "London",
+            "theme": "dark"
+          }
+        },
+        {
+          "label": "Provo · green",
+          "values": {
+            "city": "Provo",
+            "theme": "green"
+          }
+        },
+        {
+          "label": "Barcelona · light",
+          "values": {
+            "city": "Barcelona",
+            "theme": "light"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tool-logo",
+      "name": "Logo",
+      "description": "Place the SUSE logo — it auto-picks the right variant and exports vector.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "svg",
+        "png",
+        "jpg",
+        "webp",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "ico",
+        "zip"
+      ],
+      "width": 1200,
+      "height": 1200,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14.622 17.897-10.68-2.913\" /><path d=\"M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z\" /><path d=\"M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15\" /></svg>",
+      "preview": "/catalog/previews/tool-logo.svg",
+      "examples": [
+        {
+          "label": "Dark · stacked mono",
+          "values": {
+            "background": "#0c322c",
+            "orientation": "vertical",
+            "ink": "mono"
+          }
+        },
+        {
+          "label": "White · horizontal brand",
+          "values": {
+            "background": "#ffffff",
+            "orientation": "horizontal",
+            "ink": "brand"
+          }
+        },
+        {
+          "label": "Green · stacked mono",
+          "values": {
+            "background": "#30ba78",
+            "orientation": "vertical",
+            "ink": "mono"
+          }
+        },
+        {
+          "label": "Blue · horizontal mono",
+          "values": {
+            "background": "#0a9bd6",
+            "orientation": "horizontal",
+            "ink": "mono"
+          }
+        },
+        {
+          "label": "Mint · stacked brand",
+          "values": {
+            "background": "#eafaf1",
+            "orientation": "vertical",
+            "ink": "brand"
+          }
+        },
+        {
+          "label": "Amber · horizontal mono",
+          "values": {
+            "background": "#fcb244",
+            "orientation": "horizontal",
+            "ink": "mono"
+          }
+        }
+      ]
+    },
+    {
+      "id": "email-signature",
+      "name": "Email Signature",
+      "description": "An on-brand SUSE email signature, ready to paste into any client.",
+      "version": "1.3.0",
+      "status": "official",
+      "category": "everyone",
+      "formats": [
+        "html",
+        "txt",
+        "png",
+        "svg",
+        "vcf",
+        "json"
+      ],
+      "width": 600,
+      "height": 300,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\" /><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\" /></svg>",
+      "preview": "/catalog/previews/email-signature.svg",
+      "personalized": true,
+      "examples": [
+        {
+          "label": "Engineer · Germany append",
+          "values": {
+            "logo": "standard",
+            "firstname": "Amina",
+            "lastname": "Okafor",
+            "jobTitle": "Principal Engineer, Rancher",
+            "email": "amina.okafor@suse.com",
+            "phone": "+49 911 740530",
+            "mobile": "+49 170 1234567",
+            "im": "@amina on Slack",
+            "append": "germany"
+          }
+        },
+        {
+          "label": "Sales · grey logo · business",
+          "values": {
+            "logo": "grey",
+            "firstname": "Diego",
+            "lastname": "Fernández",
+            "jobTitle": "Account Executive, EMEA",
+            "email": "diego.fernandez@suse.com",
+            "phone": "+34 91 123 4567",
+            "mobile": "+34 600 123 456",
+            "address": "Calle de Alcalá 42",
+            "address2": "28014 Madrid, Spain",
+            "append": "business"
+          }
+        },
+        {
+          "label": "Support · certifications",
+          "values": {
+            "logo": "standard",
+            "firstname": "Mei",
+            "lastname": "Chen",
+            "jobTitle": "Technical Support Engineer",
+            "certs": "SCA, RHCE, CKA",
+            "email": "mei.chen@suse.com",
+            "phone": "+65 6800 1234",
+            "im": "@mei",
+            "append": "none"
+          }
+        },
+        {
+          "label": "Marketing · wellbeing",
+          "values": {
+            "logo": "standard",
+            "firstname": "Sofia",
+            "lastname": "Rossi",
+            "jobTitle": "Marketing Manager, Cloud Native",
+            "email": "sofia.rossi@suse.com",
+            "mobile": "+39 340 123 4567",
+            "append": "wellbeing"
+          }
+        },
+        {
+          "label": "Executive · grey logo",
+          "values": {
+            "logo": "grey",
+            "firstname": "Sam",
+            "lastname": "Whitfield",
+            "jobTitle": "VP of Engineering",
+            "email": "sam.whitfield@suse.com",
+            "phone": "+1 415 555 0142",
+            "mobile": "+1 415 555 0199",
+            "address": "1 Innovation Way",
+            "address2": "Provo, UT 84604",
+            "append": "business"
+          }
+        },
+        {
+          "label": "Developer advocate",
+          "values": {
+            "logo": "standard",
+            "firstname": "Ravi",
+            "lastname": "Patel",
+            "jobTitle": "Developer Advocate, Kubernetes",
+            "email": "ravi.patel@suse.com",
+            "mobile": "+91 98765 43210",
+            "im": "@ravi on Slack",
+            "append": "none"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chart-creator",
+      "name": "Chart Creator",
+      "description": "On-brand charts from your data — bar, donut, pie or stacked.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "png",
+        "svg",
+        "emf",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "tiff",
+        "pptx",
+        "webp",
+        "csv",
+        "md"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 21v-6\" /><path d=\"M12 21V9\" /><path d=\"M19 21V3\" /></svg>",
+      "preview": "/catalog/previews/chart-creator.svg",
+      "featured": {
+        "order": 5,
+        "blurb": "On-brand charts from your data, any shape"
+      },
+      "examples": [
+        {
+          "label": "Dark vertical bars",
+          "values": {
+            "chartType": "vertical-bar",
+            "heading": "Clusters by distribution",
+            "subheading": "RKE2, K3s and Harvester — illustrative sample data",
+            "transparentBg": false,
+            "background": "#0c322c",
+            "color": "#ffffff",
+            "data": [
+              {
+                "label": "RKE2",
+                "value": "64",
+                "color": "#3c8eef"
+              },
+              {
+                "label": "K3s",
+                "value": "48",
+                "color": "#fe7c3f"
+              },
+              {
+                "label": "Harvester",
+                "value": "30",
+                "color": "#42d29f"
+              },
+              {
+                "label": "Hosted",
+                "value": "22",
+                "color": "#fcb244"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Horizontal bars",
+          "values": {
+            "chartType": "horizontal-bar",
+            "heading": "Adoption across the SUSE stack",
+            "subheading": "Deployments by product — illustrative sample data",
+            "transparentBg": false,
+            "background": "#ffffff",
+            "color": "#0c322c",
+            "labelSize": 34,
+            "labelPosition": "inside",
+            "labelAlign": "center",
+            "valueSize": 34,
+            "valuePosition": "outside",
+            "valueAlign": "center",
+            "data": [
+              {
+                "label": "SLES 16",
+                "value": "92",
+                "color": "#0c322c"
+              },
+              {
+                "label": "Rancher Prime",
+                "value": "76",
+                "color": "#17513f"
+              },
+              {
+                "label": "SUSE Edge",
+                "value": "54",
+                "color": "#008657"
+              },
+              {
+                "label": "Harvester HCI",
+                "value": "41",
+                "color": "#30ba78"
+              },
+              {
+                "label": "SUSE Security",
+                "value": "33",
+                "color": "#4fc48f"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Pie with legend",
+          "values": {
+            "chartType": "pie",
+            "heading": "Edge fleet by site type",
+            "subheading": "Share of SUSE Edge nodes — illustrative sample data",
+            "transparentBg": false,
+            "background": "#0c322c",
+            "color": "#ffffff",
+            "showLegend": true,
+            "legendPosition": "right",
+            "legendDotShape": "circle",
+            "data": [
+              {
+                "label": "Retail",
+                "value": "34",
+                "color": "#3c8eef"
+              },
+              {
+                "label": "Manufacturing",
+                "value": "27",
+                "color": "#fe7c3f"
+              },
+              {
+                "label": "Telco / RAN",
+                "value": "21",
+                "color": "#42d29f"
+              },
+              {
+                "label": "Branch",
+                "value": "11",
+                "color": "#fcb244"
+              },
+              {
+                "label": "Logistics",
+                "value": "7",
+                "color": "#90ebcd"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Stacked composite",
+          "values": {
+            "chartType": "stacked",
+            "heading": "GPU hours across the AI pipeline",
+            "subheading": "One AI Factory cluster, per month — illustrative sample data",
+            "transparentBg": false,
+            "background": "#ffffff",
+            "color": "#0c322c",
+            "showLegend": true,
+            "data": [
+              {
+                "label": "Inference",
+                "value": "4600",
+                "color": "#0c322c"
+              },
+              {
+                "label": "Training",
+                "value": "2800",
+                "color": "#17513f"
+              },
+              {
+                "label": "Fine-tuning",
+                "value": "1600",
+                "color": "#008657"
+              },
+              {
+                "label": "Retrieval",
+                "value": "900",
+                "color": "#30ba78"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Donut with legend",
+          "values": {
+            "chartType": "donut",
+            "heading": "Open source contributions",
+            "subheading": "By SUSE project — illustrative sample data",
+            "transparentBg": false,
+            "background": "#ffffff",
+            "color": "#0c322c",
+            "donutRadius": 0.5,
+            "showLegend": true,
+            "legendPosition": "right",
+            "legendDotShape": "circle",
+            "data": [
+              {
+                "label": "Rancher",
+                "value": "42",
+                "color": "#30ba78"
+              },
+              {
+                "label": "K3s",
+                "value": "26",
+                "color": "#0a9bd6"
+              },
+              {
+                "label": "Longhorn",
+                "value": "18",
+                "color": "#fcb244"
+              },
+              {
+                "label": "NeuVector",
+                "value": "14",
+                "color": "#fe7c3f"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Bright verticals",
+          "values": {
+            "chartType": "vertical-bar",
+            "heading": "Community growth by region",
+            "subheading": "New contributors this year — illustrative sample data",
+            "transparentBg": false,
+            "background": "#ffffff",
+            "color": "#0c322c",
+            "data": [
+              {
+                "label": "EMEA",
+                "value": "58",
+                "color": "#30ba78"
+              },
+              {
+                "label": "Americas",
+                "value": "46",
+                "color": "#0a9bd6"
+              },
+              {
+                "label": "APAC",
+                "value": "39",
+                "color": "#fcb244"
+              },
+              {
+                "label": "Global",
+                "value": "24",
+                "color": "#fe7c3f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-video",
+      "name": "Bag Video",
+      "description": "An animated, on-brand video for bag visuals.",
+      "version": "0.5.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "webm",
+        "mp4",
+        "gif",
+        "apng",
+        "png",
+        "svg",
+        "svg-anim",
+        "html",
+        "pdf"
+      ],
+      "width": 800,
+      "height": 800,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M7 3v18\" /><path d=\"M3 7.5h4\" /><path d=\"M3 12h18\" /><path d=\"M3 16.5h4\" /><path d=\"M17 3v18\" /><path d=\"M17 7.5h4\" /><path d=\"M17 16.5h4\" /></svg>",
+      "preview": "/tools/bag-video/card.svg",
+      "examples": [
+        {
+          "label": "Sitting · Transparent",
+          "values": {
+            "pose": "sitting",
+            "theme": "transparent"
+          }
+        },
+        {
+          "label": "Laying · Transparent",
+          "values": {
+            "pose": "laying",
+            "theme": "transparent"
+          }
+        },
+        {
+          "label": "Dangling · Transparent",
+          "values": {
+            "pose": "dangling",
+            "theme": "transparent"
+          }
+        },
+        {
+          "label": "Curious · Transparent",
+          "values": {
+            "pose": "curious",
+            "theme": "transparent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "color-palette",
+      "name": "Color Palette",
+      "description": "Browse SUSE brand colors — click a swatch to copy it.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "utility",
+      "formats": [
+        "html"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": false,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" /></svg>",
+      "preview": "/tools/color-palette/card.svg"
+    },
+    {
+      "id": "countdown-timer",
+      "name": "Countdown Timer",
+      "description": "A focused countdown with a live progress ring. Click to pause.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "utility",
+      "formats": [
+        "html"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": false,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\" /><line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\" /><circle cx=\"12\" cy=\"14\" r=\"8\" /></svg>",
+      "preview": "/tools/countdown-timer/card.svg"
+    },
+    {
+      "id": "url-shot",
+      "name": "URL Screenshot",
+      "description": "Any web page, at any scroll-depth, with custom CSS",
+      "version": "0.1.0",
+      "status": "experimental",
+      "category": "utility",
+      "capabilities": [
+        "capture"
+      ],
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "pdf",
+        "svg"
+      ],
+      "width": 1280,
+      "height": 720,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z\" /><circle cx=\"12\" cy=\"13\" r=\"3\" /></svg>",
+      "preview": "/tools/url-shot/card.svg"
+    },
+    {
+      "id": "street-map",
+      "name": "Street Map",
+      "description": "Clean vector street-block maps of any city. Works offline.",
+      "version": "0.4.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "svg",
+        "emf",
+        "dxf",
+        "pdf",
+        "pdf-cmyk",
+        "png"
+      ],
+      "width": 900,
+      "height": 900,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /><path d=\"M15 5.764v15\" /><path d=\"M9 3.236v15\" /></svg>",
+      "preview": "/tools/street-map/card.svg",
+      "examples": [
+        {
+          "label": "Nuremberg · light · pine",
+          "values": {
+            "city": "nuremberg",
+            "theme": "light",
+            "roadColor": "#30ba78",
+            "waterColor": "#0a9bd6",
+            "background": "#ffffff"
+          }
+        },
+        {
+          "label": "Paris · dark · teal",
+          "values": {
+            "city": "paris",
+            "theme": "dark",
+            "roadColor": "#2fb9a0",
+            "waterColor": "#0a9bd6",
+            "background": "#0c322c"
+          }
+        },
+        {
+          "label": "Amsterdam · light · canals",
+          "values": {
+            "city": "amsterdam",
+            "theme": "light",
+            "roadColor": "#0c322c",
+            "waterColor": "#0a9bd6",
+            "waterWeight": 12,
+            "showWater": true,
+            "background": "#eafaf1"
+          }
+        },
+        {
+          "label": "New York · dark · amber grid",
+          "values": {
+            "city": "newyork",
+            "theme": "dark",
+            "roadColor": "#fcb244",
+            "waterColor": "#2fb9a0",
+            "background": "#0c322c"
+          }
+        },
+        {
+          "label": "Tokyo · light · cobalt",
+          "values": {
+            "city": "tokyo",
+            "theme": "light",
+            "roadColor": "#2453ff",
+            "showWater": false,
+            "background": "#ffffff"
+          }
+        },
+        {
+          "label": "San Francisco · dark · teal",
+          "values": {
+            "city": "sanfrancisco",
+            "theme": "dark",
+            "roadColor": "#2fb9a0",
+            "waterColor": "#0a9bd6",
+            "majorRoadWeight": 8,
+            "minorRoadWeight": 4,
+            "background": "#0c322c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "strip-data",
+      "name": "Strip Hidden Data",
+      "description": "Reveal and remove hidden metadata from images and PDFs — on your device.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "utility",
+      "privacy": "on-device",
+      "formats": [
+        "jpg",
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width": 760,
+      "height": 620,
+      "exportable": false,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21\" /><path d=\"m5.082 11.09 8.828 8.828\" /></svg>",
+      "preview": "/tools/strip-data/card.svg"
+    },
+    {
+      "id": "text-helper",
+      "name": "Text Helper",
+      "description": "Format, decode, hash and de-identify text — JSON, JWT and more.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "utility",
+      "privacy": "on-device",
+      "formats": [
+        "html"
+      ],
+      "width": 1100,
+      "height": 820,
+      "exportable": false,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1\" /><path d=\"M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1\" /></svg>",
+      "preview": "/tools/text-helper/card.svg"
+    },
+    {
+      "id": "event-name-badge",
+      "name": "Event Name Badge",
+      "description": "Conference name badges with a colour-coded role and optional QR.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "event",
+      "capabilities": [
+        "compose"
+      ],
+      "formats": [
+        "pdf",
+        "pdf-cmyk",
+        "svg",
+        "png",
+        "jpg",
+        "webp"
+      ],
+      "width": 1200,
+      "height": 1800,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13.5 8h-3\" /><path d=\"m15 2-1 2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3\" /><path d=\"M16.899 22A5 5 0 0 0 7.1 22\" /><path d=\"m9 2 3 6\" /><circle cx=\"12\" cy=\"15\" r=\"3\" /></svg>",
+      "preview": "/catalog/previews/event-name-badge.svg",
+      "personalized": true,
+      "featured": {
+        "order": 8,
+        "blurb": "Conference name badges, colour-coded by role"
+      },
+      "examples": [
+        {
+          "label": "Speaker · dark · tracks + QR",
+          "values": {
+            "status": "speaker",
+            "eventName": "SUSECON 2026",
+            "firstname": "Amina",
+            "lastname": "Okafor",
+            "pronouns": "she/her",
+            "jobTitle": "Principal Engineer",
+            "company": "SUSE",
+            "tracks": [
+              {
+                "label": "Platform Engineering",
+                "color": ""
+              },
+              {
+                "label": "Keynote",
+                "color": "#fcb244"
+              }
+            ],
+            "url": "https://susecon.com/s/amina"
+          }
+        },
+        {
+          "label": "Attendee · light · tracks + QR",
+          "values": {
+            "status": "attendee",
+            "background": "#ffffff",
+            "eventName": "Cloud Native Summit",
+            "firstname": "Marco",
+            "lastname": "Reyes",
+            "company": "Rancher Labs",
+            "tracks": [
+              {
+                "label": "Kubernetes",
+                "color": "#3c8eef"
+              },
+              {
+                "label": "Edge",
+                "color": "#42d29f"
+              }
+            ],
+            "url": "https://cnsummit.dev/a/marco"
+          }
+        },
+        {
+          "label": "Sponsor · landscape · QR",
+          "values": {
+            "size": "6x4in",
+            "status": "sponsor",
+            "roleColor": "#0a9bd6",
+            "background": "#0c322c",
+            "eventName": "KubeCon EU",
+            "firstname": "David",
+            "lastname": "Kim",
+            "jobTitle": "Developer Advocate",
+            "company": "SUSE",
+            "tracks": [
+              {
+                "label": "Booth B12",
+                "color": ""
+              }
+            ],
+            "url": "https://suse.com/kubecon"
+          }
+        },
+        {
+          "label": "VIP · mint · QR",
+          "values": {
+            "status": "vip",
+            "background": "#eafaf1",
+            "eventName": "Partner Executive Forum",
+            "firstname": "Lena",
+            "lastname": "Vogt",
+            "pronouns": "she/her",
+            "jobTitle": "Chief Technology Officer",
+            "company": "NorthWind",
+            "url": "https://suse.com/vip/lena"
+          }
+        },
+        {
+          "label": "Staff · dark · tracks",
+          "values": {
+            "status": "staff",
+            "eventName": "SUSECON 2026",
+            "firstname": "Tomás",
+            "lastname": "Silva",
+            "jobTitle": "Event Crew",
+            "tracks": [
+              {
+                "label": "Registration",
+                "color": "#fe7c3f"
+              },
+              {
+                "label": "Help Desk",
+                "color": "#30ba78"
+              }
+            ],
+            "url": "https://susecon.com/help"
+          }
+        },
+        {
+          "label": "Press · light landscape · QR",
+          "values": {
+            "size": "a6land",
+            "status": "press",
+            "background": "#ffffff",
+            "eventName": "Open Source Summit",
+            "firstname": "Yuki",
+            "lastname": "Tanaka",
+            "jobTitle": "Correspondent",
+            "company": "TechDaily",
+            "url": "https://ossummit.org/press/yuki"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wayfinding-signage",
+      "name": "Wayfinding Signage",
+      "description": "Directional event signs — destinations, each with an arrow. Print-ready.",
+      "version": "1.2.0",
+      "status": "official",
+      "category": "event",
+      "formats": [
+        "pdf",
+        "pdf-cmyk",
+        "svg",
+        "dxf",
+        "png",
+        "jpg",
+        "webp"
+      ],
+      "width": 1240,
+      "height": 1754,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 13v8\" /><path d=\"M12 3v3\" /><path d=\"M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z\" /></svg>",
+      "preview": "/catalog/previews/wayfinding-signage.svg",
+      "featured": {
+        "order": 9,
+        "blurb": "Directional event signs, print-ready"
+      },
+      "examples": [
+        {
+          "label": "Dark hall",
+          "values": {
+            "background": "#0c322c",
+            "accent": "#30ba78",
+            "eventName": "SUSECON 2026",
+            "heading": "Level 2"
+          }
+        },
+        {
+          "label": "Green poster",
+          "values": {
+            "size": "24x36in",
+            "background": "#30ba78",
+            "accent": "#0c322c",
+            "heading": "Registration",
+            "textWeight": 900
+          }
+        },
+        {
+          "label": "Landscape directory",
+          "values": {
+            "size": "a2land",
+            "background": "#ffffff",
+            "accent": "#0c322c",
+            "heading": "Welcome",
+            "eventName": "Cloud Summit"
+          }
+        },
+        {
+          "label": "Thin A1",
+          "values": {
+            "size": "a1",
+            "heading": "Exhibition",
+            "accent": "#30ba78",
+            "textWeight": 300
+          }
+        },
+        {
+          "label": "Amber expo",
+          "values": {
+            "size": "a2",
+            "background": "#0c322c",
+            "accent": "#fcb244",
+            "eventName": "SUSECON 2026",
+            "heading": "Sponsor Expo",
+            "textWeight": 700
+          }
+        },
+        {
+          "label": "Blue tracks",
+          "values": {
+            "size": "a3land",
+            "background": "#ffffff",
+            "accent": "#0a9bd6",
+            "eventName": "Cloud Native Day",
+            "heading": "Sessions",
+            "directions": [
+              {
+                "label": "Kubernetes Track",
+                "arrow": "up-right",
+                "side": "left",
+                "color": ""
+              },
+              {
+                "label": "Edge & AI Track",
+                "arrow": "right",
+                "side": "right",
+                "color": ""
+              },
+              {
+                "label": "Hands-on Labs",
+                "arrow": "down-right",
+                "side": "left",
+                "color": ""
+              },
+              {
+                "label": "Certification Lounge",
+                "arrow": "down",
+                "side": "right",
+                "color": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "brand-lockup",
+      "name": "Brand Lockup",
+      "description": "Official SUSE logo lockups — chameleon, wordmark and a name.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "designer",
+      "capabilities": [
+        "wasm"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "emf",
+        "eps",
+        "eps-cmyk",
+        "dxf"
+      ],
+      "width": 1200,
+      "height": 1200,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13\" /><path d=\"M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z\" /><path d=\"M5 22h14\" /></svg>",
+      "preview": "/catalog/previews/brand-lockup.svg",
+      "featured": {
+        "order": 7,
+        "blurb": "Official SUSE logo lockups, many looks",
+        "variants": [
+          {
+            "label": "Horizontal green",
+            "theme": "light",
+            "values": {
+              "name": "Storage",
+              "category": "product",
+              "orientation": "horizontal",
+              "polarity": "positive",
+              "treatment": "colour"
+            }
+          },
+          {
+            "label": "Monochrome black",
+            "theme": "light",
+            "values": {
+              "name": "Rancher Prime",
+              "category": "product",
+              "orientation": "stacked",
+              "polarity": "positive",
+              "treatment": "mono"
+            }
+          },
+          {
+            "label": "Reverse colour",
+            "theme": "dark",
+            "values": {
+              "name": "Storage",
+              "category": "product",
+              "orientation": "horizontal",
+              "polarity": "negative",
+              "treatment": "colour"
+            }
+          },
+          {
+            "label": "Reverse white",
+            "theme": "dark",
+            "values": {
+              "name": "AI Factory",
+              "category": "product",
+              "orientation": "stacked",
+              "polarity": "negative",
+              "treatment": "mono"
+            }
+          },
+          {
+            "label": "Event panel · Madrid",
+            "values": {
+              "name": "Developer Summit",
+              "category": "event",
+              "location": "Madrid",
+              "orientation": "stacked",
+              "polarity": "negative",
+              "background": "#0c322c"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "digi-ad",
+      "name": "Animated Ad",
+      "description": "Build animated ads from layered scenes for any standard size.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "mp4",
+        "gif",
+        "apng",
+        "webp-anim",
+        "webm",
+        "png",
+        "svg",
+        "svg-anim",
+        "html"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12.296 3.464 3.02 3.956\" /><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\" /><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" /><path d=\"m6.18 5.276 3.1 3.899\" /></svg>",
+      "preview": "/tools/digi-ad/card.html",
+      "examples": [
+        {
+          "label": "Pine keynote · square",
+          "values": {
+            "size": "sq",
+            "motion": "fade",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "headline": "Build once.",
+                "subheadline": "Run anywhere."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "body": "One platform for every cloud, edge and datacenter."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "headline": "Get started",
+                "cta": "suse.com",
+                "ctaStyle": "pill",
+                "logo": "horizontal",
+                "logoColor": "green"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Cloud native · portrait",
+          "values": {
+            "size": "portrait",
+            "motion": "rise",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "headline": "Cloud native,",
+                "subheadline": "simplified."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#ffffff",
+                "fgColor": "#0c322c",
+                "body": "Deploy Kubernetes anywhere with SUSE Rancher."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#30ba78",
+                "fgColor": "#ffffff",
+                "headline": "Start free",
+                "cta": "rancher.com",
+                "ctaStyle": "arrow",
+                "logo": "horizontal",
+                "logoColor": "mono"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Edge blue · landscape",
+          "values": {
+            "size": "landscape",
+            "motion": "slide-left",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#0a9bd6",
+                "fgColor": "#ffffff",
+                "headline": "Edge to core.",
+                "subheadline": "One Linux."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "body": "SUSE Linux Enterprise runs everywhere your business does."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#0a9bd6",
+                "fgColor": "#ffffff",
+                "headline": "Learn more",
+                "cta": "suse.com/edge",
+                "ctaStyle": "pill",
+                "logo": "horizontal",
+                "logoColor": "mono"
+              }
+            ]
+          }
+        },
+        {
+          "label": "AI amber · story",
+          "values": {
+            "size": "story",
+            "motion": "zoom-in",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#fcb244",
+                "fgColor": "#0c322c",
+                "headline": "AI, secured.",
+                "subheadline": "Open by design."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "body": "Run trusted AI workloads on an open source foundation."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#fcb244",
+                "fgColor": "#0c322c",
+                "headline": "Explore AI",
+                "cta": "suse.com/ai",
+                "ctaStyle": "arrow",
+                "logo": "horizontal",
+                "logoColor": "mono"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Secure persimmon · square",
+          "values": {
+            "size": "sq",
+            "motion": "pop",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "headline": "Ship faster.",
+                "subheadline": "Stay secure."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#ffffff",
+                "fgColor": "#fe7c3f",
+                "body": "Container security from build to runtime."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "headline": "Get started",
+                "cta": "suse.com",
+                "ctaStyle": "pill",
+                "logo": "horizontal",
+                "logoColor": "mono"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Kubernetes teal · billboard",
+          "values": {
+            "size": "billboard",
+            "motion": "slide-up",
+            "scenes": [
+              {
+                "kind": "title",
+                "bgColor": "#2fb9a0",
+                "fgColor": "#0c322c",
+                "headline": "Kubernetes,",
+                "subheadline": "managed."
+              },
+              {
+                "kind": "text",
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "body": "Multi-cluster management at any scale."
+              },
+              {
+                "kind": "end",
+                "bgColor": "#2fb9a0",
+                "fgColor": "#0c322c",
+                "headline": "Try Rancher",
+                "cta": "rancher.com",
+                "ctaStyle": "arrow",
+                "logo": "horizontal",
+                "logoColor": "mono"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "calendar-ics",
+      "name": "Calendar ICS",
+      "description": "Turn event details into a calendar (.ics) file for any calendar app.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "event",
+      "formats": [
+        "ics",
+        "png",
+        "svg"
+      ],
+      "width": 760,
+      "height": 460,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 2v4\" /><path d=\"M16 2v4\" /><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\" /><path d=\"M3 10h18\" /></svg>",
+      "preview": "/tools/calendar-ics/card.svg",
+      "examples": [
+        {
+          "label": "SUSECON keynote",
+          "values": {
+            "eventName": "SUSECON 2026 Keynote",
+            "meetingTime": "2026-04-14T09:00",
+            "meetingEndTime": "2026-04-14T10:30",
+            "city": "Orlando, FL",
+            "description": "Opening keynote: the open source enterprise.",
+            "url": "https://susecon.com",
+            "reminder": "30"
+          }
+        },
+        {
+          "label": "Kubernetes workshop",
+          "values": {
+            "eventName": "Rancher & Kubernetes Workshop",
+            "meetingTime": "2026-05-06T13:00",
+            "meetingEndTime": "2026-05-06T16:00",
+            "city": "https://meet.suse.com/rancher",
+            "description": "Hands-on lab: deploy and manage clusters with Rancher Prime.",
+            "reminder": "15"
+          }
+        },
+        {
+          "label": "All-day hack day",
+          "values": {
+            "eventName": "Open Source Hack Day",
+            "meetingTime": "2026-06-12T00:00",
+            "allDay": true,
+            "city": "Nuremberg HQ",
+            "description": "Ship something you love. Prizes at 5pm."
+          }
+        },
+        {
+          "label": "Edge AI webinar",
+          "values": {
+            "eventName": "Edge AI Webinar",
+            "meetingTime": "2026-03-18T17:00",
+            "meetingEndTime": "2026-03-18T18:00",
+            "city": "https://webinar.suse.com/edge-ai",
+            "url": "https://webinar.suse.com/edge-ai",
+            "reminder": "60"
+          }
+        },
+        {
+          "label": "Release standup",
+          "values": {
+            "eventName": "SLES 16 Release Standup",
+            "meetingTime": "2026-02-09T10:00",
+            "meetingEndTime": "2026-02-09T10:15",
+            "city": "Zoom",
+            "description": "Daily sync until GA.",
+            "reminder": "5"
+          }
+        },
+        {
+          "label": "Community meetup",
+          "values": {
+            "eventName": "Cloud Native Community Meetup",
+            "meetingTime": "2026-07-23T18:30",
+            "meetingEndTime": "2026-07-23T21:00",
+            "city": "Berlin",
+            "description": "Talks, pizza, and open source.",
+            "reminder": "1440"
+          }
+        }
+      ]
+    },
+    {
+      "id": "compress-pdf",
+      "name": "Compress PDF",
+      "description": "Shrink a PDF by recompressing its images — on your device.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "utility",
+      "privacy": "on-device",
+      "formats": [
+        "pdf"
+      ],
+      "width": 760,
+      "height": 620,
+      "exportable": false,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 15 6 6m-6-6v4.8m0-4.8h4.8\" /><path d=\"M9 19.8V15m0 0H4.2M9 15l-6 6\" /><path d=\"M15 4.2V9m0 0h4.8M15 9l6-6\" /><path d=\"M9 4.2V9m0 0H4.2M9 9 3 3\" /></svg>",
+      "preview": "/tools/compress-pdf/card.svg"
+    },
+    {
+      "id": "multi-page-pdf",
+      "name": "Multi-Page PDF",
+      "description": "Build a multi-page PDF — a cover, flowing content blocks, and a back page.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "pdf",
+        "pptx",
+        "svg",
+        "md"
+      ],
+      "width": 794,
+      "height": 1123,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 2H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6z\" /><path d=\"M15 2v4h4\" /><path d=\"M11 10.5h4\" /><path d=\"M11 13.5h4\" /><path d=\"M7 6a2 2 0 0 0-3 1.7V20a2 2 0 0 0 2 2h9a2 2 0 0 0 1.7-1\" /></svg>",
+      "preview": "/tools/multi-page-pdf/card.svg",
+      "personalized": true,
+      "featured": {
+        "order": 3,
+        "blurb": "Multi-page PDFs — cover, content, back"
+      },
+      "examples": [
+        {
+          "label": "Pine · green report",
+          "values": {
+            "theme": "light",
+            "accent": "#30ba78",
+            "coverTitle": "Content Automation Report 2026",
+            "coverSubtitle": "A summer of building in the open",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/photos/susecon26-keynote-tues-19"
+            },
+            "backImage": {
+              "source": "library",
+              "id": "suse/photos/susecon26-demopalooza-mon-4"
+            }
+          }
+        },
+        {
+          "label": "Waterhole · Handbuch · Deutsch",
+          "values": {
+            "theme": "dark",
+            "accent": "#2453ff",
+            "coverTitle": "Plattform-Engineering-Handbuch",
+            "coverSubtitle": "Standards, Muster und goldene Pfade",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/campaign/optimize-1"
+            }
+          }
+        },
+        {
+          "label": "Midnight · QBR · headshot",
+          "values": {
+            "theme": "light",
+            "accent": "#192072",
+            "pageSize": "letter",
+            "coverTitle": "Quarterly Business Review",
+            "coverSubtitle": "Q2 FY26 — results and outlook",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/headshots/frank-feldmann"
+            }
+          }
+        },
+        {
+          "label": "Persimmon · Edge & AI field guide",
+          "values": {
+            "theme": "dark",
+            "accent": "#fe7c3f",
+            "coverBg": "#192072",
+            "coverTitle": "Edge & AI Field Guide",
+            "coverSubtitle": "From the datacenter to the far edge",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/campaign/manage-secure-1"
+            }
+          }
+        },
+        {
+          "label": "Jungle · Charte · Français",
+          "values": {
+            "theme": "light",
+            "accent": "#0c322c",
+            "pageSize": "a5",
+            "coverTitle": "Charte de marque",
+            "coverSubtitle": "Voix, logo, couleur et typographie",
+            "coverLogoSize": "large",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/photos/susecon26-branding-mon-18"
+            }
+          }
+        },
+        {
+          "label": "Mint · impact report · headshot",
+          "values": {
+            "theme": "dark",
+            "accent": "#90ebcd",
+            "coverBg": "#192072",
+            "coverTitle": "Annual Impact Report",
+            "coverSubtitle": "Community, sustainability, open source",
+            "coverImage": {
+              "source": "library",
+              "id": "suse/headshots/dirk-peter-van-leeuwen"
+            },
+            "backImage": {
+              "source": "library",
+              "id": "suse/photos/susecon26-keynote-wed-11"
+            }
+          }
+        }
+      ],
+      "paged": true
+    },
+    {
+      "id": "filter-duotone",
+      "name": "Filter: Duotone",
+      "description": "A two-color duotone for any photo — shadows one color, highlights another.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "svg",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\" /><path d=\"M12 18a6 6 0 0 0 0-12v12z\" /></svg>",
+      "preview": "/catalog/previews/filter-duotone.svg",
+      "examples": [
+        {
+          "label": "Pine & peach",
+          "values": {
+            "colorFg": "#0c322c",
+            "colorBg": "#fcb244"
+          }
+        },
+        {
+          "label": "Jade duotone",
+          "values": {
+            "colorFg": "#0c322c",
+            "colorBg": "#30ba78"
+          }
+        },
+        {
+          "label": "Ocean duotone",
+          "values": {
+            "colorFg": "#000000",
+            "colorBg": "#0a9bd6"
+          }
+        },
+        {
+          "label": "Teal & mint",
+          "values": {
+            "colorFg": "#0c322c",
+            "colorBg": "#2fb9a0"
+          }
+        },
+        {
+          "label": "Electric duotone",
+          "values": {
+            "colorFg": "#000000",
+            "colorBg": "#2453ff"
+          }
+        },
+        {
+          "label": "Sunset duotone",
+          "values": {
+            "colorFg": "#0c322c",
+            "colorBg": "#fe7c3f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "filter-halftone",
+      "name": "Filter: Halftone",
+      "description": "Vector halftone from any photo — dots sized by brightness.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "svg",
+        "pdf",
+        "pdf-cmyk",
+        "emf",
+        "png",
+        "webp",
+        "avif",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1000,
+      "height": 1000,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"1\" /><circle cx=\"19\" cy=\"5\" r=\"1\" /><circle cx=\"5\" cy=\"5\" r=\"1\" /><circle cx=\"12\" cy=\"12\" r=\"1\" /><circle cx=\"19\" cy=\"12\" r=\"1\" /><circle cx=\"5\" cy=\"12\" r=\"1\" /><circle cx=\"12\" cy=\"19\" r=\"1\" /><circle cx=\"19\" cy=\"19\" r=\"1\" /><circle cx=\"5\" cy=\"19\" r=\"1\" /></svg>",
+      "preview": "/tools/filter-halftone/card.svg",
+      "examples": [
+        {
+          "label": "Fine green dots",
+          "values": {
+            "colorSource": "solid",
+            "fgColor": "#30ba78",
+            "bgColor": "#ffffff",
+            "gridSize": 18,
+            "shape": "circle"
+          }
+        },
+        {
+          "label": "Bold ink squares",
+          "values": {
+            "colorSource": "solid",
+            "fgColor": "#0c322c",
+            "bgColor": "#ffffff",
+            "gridSize": 28,
+            "dotScale": 1.4,
+            "shape": "square"
+          }
+        },
+        {
+          "label": "Comic diamonds",
+          "values": {
+            "colorSource": "solid",
+            "fgColor": "#0a9bd6",
+            "bgColor": "#ffffff",
+            "gridSize": 22,
+            "shape": "diamond"
+          }
+        },
+        {
+          "label": "Full-colour screen",
+          "values": {
+            "colorSource": "image",
+            "colorLevels": "0",
+            "gridSize": 20,
+            "shape": "circle"
+          }
+        },
+        {
+          "label": "Inverted mint on ink",
+          "values": {
+            "colorSource": "solid",
+            "fgColor": "#2fb9a0",
+            "bgColor": "#0c322c",
+            "gridSize": 22,
+            "invert": true
+          }
+        },
+        {
+          "label": "Coarse amber",
+          "values": {
+            "colorSource": "solid",
+            "fgColor": "#fcb244",
+            "bgColor": "#0c322c",
+            "gridSize": 34,
+            "dotScale": 1.6,
+            "shape": "circle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "filter-scanline",
+      "name": "Filter: Scanline",
+      "description": "Horizontal 'infinity lines' scanline vector effect from any photo",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "svg",
+        "png",
+        "webp",
+        "avif",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1000,
+      "height": 1000,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /><path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /><path d=\"M7 12h10\" /></svg>",
+      "preview": "/catalog/previews/filter-scanline.svg",
+      "examples": [
+        {
+          "label": "Green CRT",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#bff1ea",
+            "mid": "#30ba78",
+            "shade": "#0c322c",
+            "shadow": "#000000",
+            "lineSize": 32,
+            "gapSize": 18
+          }
+        },
+        {
+          "label": "Pixel matrix",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#bff1ea",
+            "mid": "#30ba78",
+            "shade": "#0c322c",
+            "shadow": "#000000",
+            "separatePixels": true,
+            "lineSize": 28,
+            "gapSize": 14
+          }
+        },
+        {
+          "label": "Ocean bars",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#bff1ea",
+            "mid": "#2453ff",
+            "shade": "#192072",
+            "shadow": "#000000",
+            "lineSize": 36,
+            "gapSize": 20
+          }
+        },
+        {
+          "label": "Amber terminal",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#fab088",
+            "mid": "#fe7c3f",
+            "shade": "#0c322c",
+            "shadow": "#000000",
+            "lineSize": 32,
+            "gapSize": 18
+          }
+        },
+        {
+          "label": "Solid posterise",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#bff1ea",
+            "mid": "#30ba78",
+            "shade": "#0c322c",
+            "shadow": "#000000",
+            "everyLine": true,
+            "lineSize": 24,
+            "gapSize": 0
+          }
+        },
+        {
+          "label": "Persimmon on ink",
+          "values": {
+            "highlight": "#ffffff",
+            "light": "#fe7c3f",
+            "mid": "#2453ff",
+            "shade": "#192072",
+            "shadow": "#000000",
+            "background": "#0c322c",
+            "separatePixels": true,
+            "lineSize": 30,
+            "gapSize": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "logo-wall",
+      "name": "Logo Lockup: Grid (NASCAR)",
+      "description": "Arrange a pile of logos into a clean, even sponsor grid — the “NASCAR” wall.",
+      "version": "1.1.0",
+      "status": "experimental",
+      "category": "designer",
+      "formats": [
+        "png",
+        "svg",
+        "pdf",
+        "dxf",
+        "jpg",
+        "webp"
+      ],
+      "width": 1280,
+      "height": 720,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"9.5\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"9.5\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/></svg>",
+      "preview": "/catalog/previews/logo-wall.svg",
+      "examples": [
+        {
+          "label": "White · 4-up icons",
+          "values": {
+            "columns": 4,
+            "gap": 36,
+            "padding": 56,
+            "background": "#ffffff",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/certificate"
+              },
+              {
+                "logo": "suse/icons/book"
+              },
+              {
+                "logo": "suse/icons/calendar"
+              },
+              {
+                "logo": "suse/icons/bug"
+              },
+              {
+                "logo": "suse/icons/box"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Mint · 3-up airy",
+          "values": {
+            "columns": 3,
+            "gap": 56,
+            "padding": 80,
+            "background": "#eafaf1",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/certificate"
+              },
+              {
+                "logo": "suse/icons/book"
+              },
+              {
+                "logo": "suse/icons/calendar"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Pine · white ink",
+          "values": {
+            "columns": 4,
+            "gap": 32,
+            "padding": 48,
+            "background": "#0c322c",
+            "inkColor": "#ffffff",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/certificate"
+              },
+              {
+                "logo": "suse/icons/book"
+              },
+              {
+                "logo": "suse/icons/calendar"
+              },
+              {
+                "logo": "suse/icons/bug"
+              },
+              {
+                "logo": "suse/icons/box"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Blue · white ink",
+          "values": {
+            "columns": 4,
+            "gap": 40,
+            "padding": 56,
+            "background": "#0a9bd6",
+            "inkColor": "#ffffff",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/certificate"
+              },
+              {
+                "logo": "suse/icons/book"
+              },
+              {
+                "logo": "suse/icons/calendar"
+              },
+              {
+                "logo": "suse/icons/bug"
+              },
+              {
+                "logo": "suse/icons/box"
+              }
+            ]
+          }
+        },
+        {
+          "label": "White · 6-up dense",
+          "values": {
+            "columns": 6,
+            "gap": 20,
+            "padding": 40,
+            "background": "#ffffff",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/certificate"
+              },
+              {
+                "logo": "suse/icons/book"
+              },
+              {
+                "logo": "suse/icons/calendar"
+              },
+              {
+                "logo": "suse/icons/bug"
+              },
+              {
+                "logo": "suse/icons/box"
+              },
+              {
+                "logo": "suse/icons/boat"
+              },
+              {
+                "logo": "suse/icons/bike"
+              },
+              {
+                "logo": "suse/icons/canyon"
+              },
+              {
+                "logo": "suse/icons/automotive"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Sky · 5-up cool",
+          "values": {
+            "columns": 5,
+            "gap": 40,
+            "padding": 56,
+            "background": "#eef3ff",
+            "inkColor": "#192072",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/cloud-computing"
+              },
+              {
+                "logo": "suse/icons/containers"
+              },
+              {
+                "logo": "suse/icons/database"
+              },
+              {
+                "logo": "suse/icons/edge"
+              },
+              {
+                "logo": "suse/icons/globe"
+              },
+              {
+                "logo": "suse/icons/growth"
+              },
+              {
+                "logo": "suse/icons/community"
+              },
+              {
+                "logo": "suse/icons/chart"
+              },
+              {
+                "logo": "suse/icons/energy"
+              },
+              {
+                "logo": "suse/icons/healthcare"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Ember · 6-up on pine",
+          "values": {
+            "columns": 6,
+            "gap": 24,
+            "padding": 44,
+            "background": "#0c322c",
+            "inkColor": "#fe7c3f",
+            "balance": true,
+            "logos": [
+              {
+                "logo": "suse/icons/ai"
+              },
+              {
+                "logo": "suse/icons/boxes"
+              },
+              {
+                "logo": "suse/icons/brain"
+              },
+              {
+                "logo": "suse/icons/cloud-computing"
+              },
+              {
+                "logo": "suse/icons/containers"
+              },
+              {
+                "logo": "suse/icons/database"
+              },
+              {
+                "logo": "suse/icons/edge"
+              },
+              {
+                "logo": "suse/icons/globe"
+              },
+              {
+                "logo": "suse/icons/growth"
+              },
+              {
+                "logo": "suse/icons/community"
+              },
+              {
+                "logo": "suse/icons/chart"
+              },
+              {
+                "logo": "suse/icons/energy"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "filter-posterize",
+      "name": "Filter: Posterize Bitmap",
+      "description": "Trace any photo into flat, screenprint-style vector colour separations.",
+      "version": "1.1.0",
+      "status": "experimental",
+      "category": "designer",
+      "formats": [
+        "png",
+        "svg",
+        "pdf",
+        "jpg",
+        "webp",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65\"/><path d=\"m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65\"/></svg>",
+      "preview": "/tools/filter-posterize/card.svg"
+    },
+    {
+      "id": "diagram-builder",
+      "name": "Diagram Builder",
+      "description": "Org charts, flowcharts, timelines and more — from cards, text, Mermaid or CSV.",
+      "version": "1.4.0",
+      "status": "experimental",
+      "category": "everyone",
+      "formats": [
+        "svg",
+        "pdf",
+        "dxf",
+        "png"
+      ],
+      "width": 1600,
+      "height": 1000,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"5\" rx=\"1\" /><rect x=\"2\" y=\"17\" width=\"6\" height=\"5\" rx=\"1\" /><rect x=\"16\" y=\"17\" width=\"6\" height=\"5\" rx=\"1\" /><path d=\"M12 7v3\" /><path d=\"M5 17v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2\" /></svg>",
+      "preview": "/tools/diagram-builder/card.svg",
+      "featured": {
+        "order": 6,
+        "blurb": "Turn cards or text into on-brand diagrams"
+      },
+      "examples": [
+        {
+          "label": "Org · SUSE dark",
+          "values": {
+            "diagramType": "org",
+            "theme": "suse-dark",
+            "orgDir": "down",
+            "title": "Leadership Team",
+            "cardLayout": "row",
+            "background": "#0c322c",
+            "nodeFill": "#0c322c",
+            "nodeStroke": "#90ebcd",
+            "nodeText": "#ffffff",
+            "edgeColor": "#90ebcd"
+          }
+        },
+        {
+          "label": "Mind map · dark",
+          "values": {
+            "diagramType": "mindmap",
+            "theme": "suse-dark",
+            "branchColors": true,
+            "title": "Product Roadmap",
+            "cardLayout": "stacked",
+            "background": "#0c322c",
+            "nodeText": "#ffffff",
+            "edgeColor": "#90ebcd"
+          }
+        },
+        {
+          "label": "Cycle · blueprint",
+          "values": {
+            "diagramType": "cycle",
+            "theme": "blueprint",
+            "cycleCurved": true,
+            "gridBg": "grid",
+            "title": "Delivery Lifecycle",
+            "cardLayout": "stacked",
+            "background": "#0a2540",
+            "nodeFill": "#0a2540",
+            "nodeStroke": "#7fd4ff",
+            "nodeText": "#eaf6ff",
+            "edgeColor": "#7fd4ff"
+          }
+        },
+        {
+          "label": "Process · SUSE dark",
+          "values": {
+            "diagramType": "process",
+            "theme": "suse-dark",
+            "flowDir": "right",
+            "title": "CI/CD Pipeline",
+            "cardLayout": "stacked",
+            "background": "#0c322c",
+            "nodeFill": "#0c322c",
+            "nodeStroke": "#90ebcd",
+            "nodeText": "#ffffff",
+            "edgeColor": "#90ebcd"
+          }
+        },
+        {
+          "label": "Layercake · mint",
+          "values": {
+            "diagramType": "layercake",
+            "theme": "mint",
+            "title": "Platform Architecture",
+            "cardLayout": "stacked",
+            "background": "#eafaf4",
+            "nodeFill": "#ffffff",
+            "nodeStroke": "#0c322c",
+            "nodeText": "#0c322c",
+            "edgeColor": "#0c322c"
+          }
+        },
+        {
+          "label": "Pyramid · mint",
+          "values": {
+            "diagramType": "pyramid",
+            "pyramidStyle": "pyramid",
+            "theme": "mint",
+            "title": "Adoption Model",
+            "cardLayout": "stacked",
+            "background": "#eafaf4",
+            "nodeFill": "#ffffff",
+            "nodeStroke": "#0c322c",
+            "nodeText": "#0c322c",
+            "edgeColor": "#0c322c"
+          }
+        },
+        {
+          "label": "Timeline · blueprint",
+          "values": {
+            "diagramType": "timeline",
+            "timelineDir": "right",
+            "theme": "blueprint",
+            "gridBg": "grid",
+            "title": "Release Timeline",
+            "cardLayout": "stacked",
+            "background": "#0a2540",
+            "nodeFill": "#0a2540",
+            "nodeStroke": "#7fd4ff",
+            "nodeText": "#eaf6ff",
+            "edgeColor": "#7fd4ff"
+          }
+        },
+        {
+          "label": "Org · fog light",
+          "values": {
+            "diagramType": "org",
+            "theme": "suse-light",
+            "orgDir": "down",
+            "title": "Company Structure",
+            "cardLayout": "row",
+            "background": "#ffffff",
+            "nodeFill": "#ffffff",
+            "nodeStroke": "#0c322c",
+            "nodeText": "#0c322c",
+            "edgeColor": "#30ba78"
+          }
+        }
+      ]
+    },
+    {
+      "id": "filter-pixel-stretch",
+      "name": "Filter: Pixel Stretch",
+      "description": "Smear a column of pixels across a photo from a threshold line. Works live.",
+      "version": "1.3.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "svg",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><line x1=\"9\" y1=\"4\" x2=\"9\" y2=\"20\"/><line x1=\"9\" y1=\"8.5\" x2=\"18.5\" y2=\"8.5\"/><line x1=\"9\" y1=\"12\" x2=\"15.5\" y2=\"12\"/><line x1=\"9\" y1=\"15.5\" x2=\"19\" y2=\"15.5\"/></svg>",
+      "preview": "/catalog/previews/filter-pixel-stretch.svg",
+      "examples": [
+        {
+          "label": "Smear right",
+          "values": {
+            "direction": "right",
+            "threshold": 42,
+            "spread": 100
+          }
+        },
+        {
+          "label": "Smear left",
+          "values": {
+            "direction": "left",
+            "threshold": 55,
+            "spread": 100
+          }
+        },
+        {
+          "label": "Pull down",
+          "values": {
+            "direction": "down",
+            "threshold": 40,
+            "spread": 100
+          }
+        },
+        {
+          "label": "Jade-graded stretch",
+          "values": {
+            "direction": "down",
+            "threshold": 50,
+            "spread": 100,
+            "saturation": 140,
+            "treatmentColor": "#30ba78",
+            "blendMode": "overlay",
+            "treatmentIntensity": 30
+          }
+        },
+        {
+          "label": "Ember pull-up",
+          "values": {
+            "direction": "up",
+            "threshold": 46,
+            "spread": 100,
+            "saturation": 120,
+            "treatmentColor": "#fe7c3f",
+            "blendMode": "overlay",
+            "treatmentIntensity": 28
+          }
+        },
+        {
+          "label": "Cobalt screen smear",
+          "values": {
+            "direction": "right",
+            "threshold": 60,
+            "spread": 85,
+            "treatmentColor": "#192072",
+            "blendMode": "screen",
+            "treatmentIntensity": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "logo-lockup-partner",
+      "name": "Logo Lockup: Partner",
+      "description": "The SUSE logo beside a partner's, with a divider between — light or dark.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "svg",
+        "png",
+        "pdf",
+        "dxf",
+        "jpg",
+        "webp"
+      ],
+      "width": 1200,
+      "height": 360,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"7\" width=\"7.5\" height=\"10\" rx=\"1.4\"/><line x1=\"12\" y1=\"4.5\" x2=\"12\" y2=\"19.5\"/><rect x=\"14\" y=\"7\" width=\"7.5\" height=\"10\" rx=\"1.4\"/></svg>",
+      "preview": "/catalog/previews/logo-lockup-partner.svg",
+      "examples": [
+        {
+          "label": "Light · full colour · bar",
+          "values": {
+            "theme": "light",
+            "leadTreatment": "colour",
+            "layout": "row",
+            "connector": "bar",
+            "size": 130,
+            "gap": 56,
+            "balance": true
+          }
+        },
+        {
+          "label": "Dark · mono · × symbol",
+          "values": {
+            "theme": "dark",
+            "leadTreatment": "mono",
+            "layout": "row",
+            "connector": "symbol",
+            "symbol": "times",
+            "size": 120,
+            "gap": 64
+          }
+        },
+        {
+          "label": "Light · powered by · large lead",
+          "values": {
+            "theme": "light",
+            "leadTreatment": "colour",
+            "layout": "lead",
+            "connector": "text",
+            "connectorText": "powered by",
+            "leadPresence": "large",
+            "size": 140,
+            "gap": 72
+          }
+        },
+        {
+          "label": "Dark · in partnership with",
+          "values": {
+            "theme": "dark",
+            "leadTreatment": "colour",
+            "layout": "row",
+            "connector": "text",
+            "connectorText": "in partnership with",
+            "size": 110,
+            "gap": 60
+          }
+        },
+        {
+          "label": "Light · plus · hero lead",
+          "values": {
+            "theme": "light",
+            "leadTreatment": "colour",
+            "layout": "lead",
+            "connector": "symbol",
+            "symbol": "plus",
+            "leadPresence": "hero",
+            "partnerDivider": "bar",
+            "size": 150,
+            "gap": 80
+          }
+        },
+        {
+          "label": "Dark · mono · spacing only",
+          "values": {
+            "theme": "dark",
+            "leadTreatment": "mono",
+            "layout": "row",
+            "connector": "none",
+            "size": 120,
+            "gap": 96,
+            "balance": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "web-icon",
+      "name": "Web Icon Maker",
+      "description": "Favicon and app-icon maker — a multi-size .ico, plus PNG and SVG.",
+      "version": "1.0.0",
+      "status": "community",
+      "category": "everyone",
+      "formats": [
+        "ico",
+        "png",
+        "svg"
+      ],
+      "width": 512,
+      "height": 512,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"4\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.4\"/><path d=\"M7.5 16h9\"/></svg>",
+      "preview": "/tools/web-icon/card.svg",
+      "examples": [
+        {
+          "label": "SUSE · dark rounded",
+          "values": {
+            "text": "SUSE",
+            "background": "#0c322c",
+            "color": "#ffffff",
+            "shape": "rounded",
+            "weight": "800",
+            "showGrid": false
+          }
+        },
+        {
+          "label": "GK · green circle",
+          "values": {
+            "text": "GK",
+            "background": "#30ba78",
+            "color": "#0c322c",
+            "shape": "circle",
+            "weight": "800",
+            "showGrid": false
+          }
+        },
+        {
+          "label": "K8s · blue square",
+          "values": {
+            "text": "K8s",
+            "background": "#0a9bd6",
+            "color": "#ffffff",
+            "shape": "square",
+            "weight": "700",
+            "tracking": -8,
+            "showGrid": false
+          }
+        },
+        {
+          "label": "AI · amber circle",
+          "values": {
+            "text": "AI",
+            "background": "#fcb244",
+            "color": "#0c322c",
+            "shape": "circle",
+            "weight": "800",
+            "showGrid": false
+          }
+        },
+        {
+          "label": "DEV · cobalt rounded",
+          "values": {
+            "text": "DEV",
+            "background": "#2453ff",
+            "color": "#ffffff",
+            "shape": "rounded",
+            "weight": "700",
+            "tracking": -10,
+            "showGrid": false
+          }
+        },
+        {
+          "label": "OS · orange square",
+          "values": {
+            "text": "OS",
+            "background": "#fe7c3f",
+            "color": "#ffffff",
+            "shape": "square",
+            "weight": "800",
+            "showGrid": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "layout-studio",
+      "name": "Layout Studio",
+      "version": "1.4.0",
+      "status": "community",
+      "category": "designer",
+      "formats": [
+        "png",
+        "svg",
+        "pdf",
+        "jpg",
+        "webp"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /><rect x=\"6\" y=\"6\" width=\"6\" height=\"5\" rx=\"1\" /><circle cx=\"16\" cy=\"9\" r=\"2.5\" /><rect x=\"6\" y=\"14\" width=\"12\" height=\"3\" rx=\"1\" /></svg>",
+      "preview": "/catalog/previews/layout-studio.svg",
+      "featured": {
+        "order": 1,
+        "blurb": "Free-form layouts on an open canvas"
+      },
+      "examples": [
+        {
+          "label": "Event promo · pine",
+          "values": {
+            "background": "#0c322c",
+            "boxes": [
+              {
+                "id": "bg",
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rounded",
+                "bg": "#0c322c"
+              },
+              {
+                "id": "accent",
+                "kind": "box",
+                "x": 620,
+                "y": -300,
+                "w": 760,
+                "h": 760,
+                "rot": 0,
+                "shape": "ellipse",
+                "bg": "#30ba78"
+              },
+              {
+                "id": "illo",
+                "kind": "image",
+                "x": 560,
+                "y": 120,
+                "w": 480,
+                "h": 480,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 0,
+                "bg": "transparent",
+                "opacity": 100,
+                "fit": "contain",
+                "image": {
+                  "source": "library",
+                  "id": "suse/illustrations/cloud-native"
+                }
+              },
+              {
+                "id": "logo",
+                "kind": "image",
+                "x": 89,
+                "y": 90,
+                "w": 300,
+                "h": 110,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 0,
+                "bg": "transparent",
+                "opacity": 100,
+                "fit": "contain",
+                "image": {
+                  "source": "library",
+                  "id": "suse/logo/hor-neg-white"
+                }
+              },
+              {
+                "id": "head",
+                "kind": "text",
+                "x": 89,
+                "y": 640,
+                "w": 900,
+                "h": 200,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Cloud Native Summit {#30ba78|2026}",
+                "fg": "#ffffff",
+                "fontSize": 76,
+                "align": "left",
+                "valign": "top",
+                "weight": "600",
+                "font": "SUSE",
+                "lineHeight": 1.1
+              },
+              {
+                "id": "date",
+                "kind": "text",
+                "x": 89,
+                "y": 880,
+                "w": 900,
+                "h": 70,
+                "rot": 0,
+                "shape": "rect",
+                "text": "12 November 2026   ·   Berlin",
+                "fg": "#c0efde",
+                "fontSize": 34,
+                "align": "left",
+                "valign": "top",
+                "weight": "300",
+                "font": "SUSE",
+                "lineHeight": 1.12
+              }
+            ]
+          }
+        },
+        {
+          "label": "Quote card · mint",
+          "values": {
+            "background": "#eafaf4",
+            "boxes": [
+              {
+                "id": "card",
+                "kind": "box",
+                "x": 80,
+                "y": 80,
+                "w": 920,
+                "h": 920,
+                "rot": 0,
+                "shape": "rounded",
+                "bg": "#ffffff",
+                "radius": 32
+              },
+              {
+                "id": "quote",
+                "kind": "text",
+                "x": 150,
+                "y": 250,
+                "w": 780,
+                "h": 380,
+                "rot": 0,
+                "shape": "rect",
+                "text": "“Open source is how the world builds what comes next.”",
+                "fg": "#0c322c",
+                "fontSize": 58,
+                "align": "left",
+                "valign": "top",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.15
+              },
+              {
+                "id": "attr",
+                "kind": "text",
+                "x": 150,
+                "y": 690,
+                "w": 780,
+                "h": 60,
+                "rot": 0,
+                "shape": "rect",
+                "text": "SUSE — Open by design",
+                "fg": "#30ba78",
+                "fontSize": 28,
+                "align": "left",
+                "valign": "top",
+                "weight": "600",
+                "font": "SUSE",
+                "lineHeight": 1.12
+              },
+              {
+                "id": "logo",
+                "kind": "image",
+                "x": 150,
+                "y": 850,
+                "w": 240,
+                "h": 84,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 0,
+                "bg": "transparent",
+                "opacity": 100,
+                "fit": "contain",
+                "image": {
+                  "source": "library",
+                  "id": "suse/logo/hor-pos-green"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "label": "Product hero · split",
+          "values": {
+            "background": "#ffffff",
+            "boxes": [
+              {
+                "id": "left",
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 540,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#192072"
+              },
+              {
+                "id": "right",
+                "kind": "box",
+                "x": 540,
+                "y": 0,
+                "w": 540,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#eafaf4"
+              },
+              {
+                "id": "head",
+                "kind": "text",
+                "x": 72,
+                "y": 170,
+                "w": 410,
+                "h": 300,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Enterprise Linux, {#30ba78|reimagined}",
+                "fg": "#ffffff",
+                "fontSize": 60,
+                "align": "left",
+                "valign": "top",
+                "weight": "600",
+                "font": "SUSE",
+                "lineHeight": 1.12
+              },
+              {
+                "id": "body",
+                "kind": "text",
+                "x": 72,
+                "y": 520,
+                "w": 410,
+                "h": 180,
+                "rot": 0,
+                "shape": "rect",
+                "text": "One secure platform from edge to core.",
+                "fg": "#c0efde",
+                "fontSize": 28,
+                "align": "left",
+                "valign": "top",
+                "weight": "300",
+                "font": "SUSE",
+                "lineHeight": 1.3
+              },
+              {
+                "id": "cta",
+                "kind": "box",
+                "x": 72,
+                "y": 770,
+                "w": 270,
+                "h": 84,
+                "rot": 0,
+                "shape": "rounded",
+                "bg": "#fe7c3f",
+                "radius": 42
+              },
+              {
+                "id": "ctatext",
+                "kind": "text",
+                "x": 72,
+                "y": 792,
+                "w": 270,
+                "h": 44,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Learn more →",
+                "fg": "#ffffff",
+                "fontSize": 26,
+                "align": "center",
+                "valign": "top",
+                "weight": "600",
+                "font": "SUSE",
+                "lineHeight": 1.12
+              },
+              {
+                "id": "illo",
+                "kind": "image",
+                "x": 610,
+                "y": 320,
+                "w": 400,
+                "h": 400,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 0,
+                "bg": "transparent",
+                "opacity": 100,
+                "fit": "contain",
+                "image": {
+                  "source": "library",
+                  "id": "suse/illustrations/ai-enterprise"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "label": "Announcement · jade band",
+          "values": {
+            "background": "#ffffff",
+            "boxes": [
+              {
+                "id": "band",
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 360,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#30ba78"
+              },
+              {
+                "id": "logo",
+                "kind": "image",
+                "x": 89,
+                "y": 120,
+                "w": 300,
+                "h": 110,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 0,
+                "bg": "transparent",
+                "opacity": 100,
+                "fit": "contain",
+                "image": {
+                  "source": "library",
+                  "id": "suse/logo/hor-neg-white"
+                }
+              },
+              {
+                "id": "head",
+                "kind": "text",
+                "x": 89,
+                "y": 460,
+                "w": 920,
+                "h": 280,
+                "rot": 0,
+                "shape": "rect",
+                "text": "SUSE Linux Enterprise 16 {#30ba78|is here}",
+                "fg": "#0c322c",
+                "fontSize": 68,
+                "align": "left",
+                "valign": "top",
+                "weight": "600",
+                "font": "SUSE",
+                "lineHeight": 1.12
+              },
+              {
+                "id": "body",
+                "kind": "text",
+                "x": 89,
+                "y": 770,
+                "w": 900,
+                "h": 120,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Generally available today across every major cloud.",
+                "fg": "#0c322c",
+                "fontSize": 30,
+                "align": "left",
+                "valign": "top",
+                "weight": "300",
+                "font": "SUSE",
+                "lineHeight": 1.3
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "lottie-digi-ad",
+      "name": "Lottie Ad",
+      "description": "Build animated ads from layered scenes, each carrying a Lottie motion asset, for any standard size.",
+      "version": "1.0.0",
+      "status": "community",
+      "category": "designer",
+      "formats": [
+        "mp4",
+        "gif",
+        "webm",
+        "apng",
+        "png",
+        "svg",
+        "svg-anim"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12.296 3.464 3.02 3.956\" /><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\" /><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" /><path d=\"m6.18 5.276 3.1 3.899\" /></svg>",
+      "preview": "/catalog/previews/lottie-digi-ad.svg",
+      "examples": [
+        {
+          "label": "Pine pulse · square",
+          "values": {
+            "size": "sq",
+            "motion": "fade",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "headline": "Build once.",
+                "caption": "Run anywhere.",
+                "animSize": "large"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#ffffff",
+                "fgColor": "#0c322c",
+                "caption": "One platform for every cloud, edge and datacenter.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "headline": "Get started",
+                "caption": "suse.com",
+                "animSize": "large"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Green cloud · portrait",
+          "values": {
+            "size": "portrait",
+            "motion": "rise",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "headline": "Cloud native,",
+                "caption": "simplified.",
+                "animSize": "large"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "caption": "Deploy Kubernetes anywhere with SUSE Rancher.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#30ba78",
+                "fgColor": "#0c322c",
+                "headline": "Start free",
+                "caption": "rancher.com",
+                "animSize": "large"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Edge blue · landscape",
+          "values": {
+            "size": "landscape",
+            "motion": "slide-left",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#0a9bd6",
+                "fgColor": "#ffffff",
+                "headline": "Edge to core.",
+                "caption": "One Linux.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "caption": "SUSE Linux Enterprise runs everywhere.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#0a9bd6",
+                "fgColor": "#ffffff",
+                "headline": "Learn more",
+                "caption": "suse.com/edge",
+                "animSize": "large"
+              }
+            ]
+          }
+        },
+        {
+          "label": "AI amber · story",
+          "values": {
+            "size": "story",
+            "motion": "zoom-in",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#fcb244",
+                "fgColor": "#0c322c",
+                "headline": "AI, secured.",
+                "caption": "Open by design.",
+                "animSize": "large"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "caption": "Trusted AI on an open source foundation.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#fcb244",
+                "fgColor": "#0c322c",
+                "headline": "Explore AI",
+                "caption": "suse.com/ai",
+                "animSize": "large"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Secure persimmon · square",
+          "values": {
+            "size": "sq",
+            "motion": "pop",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "headline": "Ship faster.",
+                "caption": "Stay secure.",
+                "animSize": "large"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#ffffff",
+                "fgColor": "#fe7c3f",
+                "caption": "Container security from build to runtime.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#fe7c3f",
+                "fgColor": "#ffffff",
+                "headline": "Get started",
+                "caption": "suse.com",
+                "animSize": "large"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Kubernetes teal · rectangle",
+          "values": {
+            "size": "mrec",
+            "motion": "slide-up",
+            "scenes": [
+              {
+                "anim": {
+                  "id": "suse/lottie/bar-sweep"
+                },
+                "bgColor": "#2fb9a0",
+                "fgColor": "#0c322c",
+                "headline": "Kubernetes,",
+                "caption": "managed.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/loader-dots"
+                },
+                "bgColor": "#0c322c",
+                "fgColor": "#ffffff",
+                "caption": "Multi-cluster management at any scale.",
+                "animSize": "medium"
+              },
+              {
+                "anim": {
+                  "id": "suse/lottie/pulse-rings"
+                },
+                "bgColor": "#2fb9a0",
+                "fgColor": "#0c322c",
+                "headline": "Try Rancher",
+                "caption": "rancher.com",
+                "animSize": "large"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pose-geeko",
+      "name": "Pose Geeko",
+      "description": "Pose the SUSE Geeko with sliders — eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
+      "version": "0.1.0",
+      "status": "official",
+      "category": "designer",
+      "new": true,
+      "formats": [
+        "svg",
+        "pdf",
+        "dxf",
+        "cmyk-tiff",
+        "jpg"
+      ],
+      "width": 800,
+      "height": 800,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h10\"/><path d=\"M18 6h2\"/><circle cx=\"16\" cy=\"6\" r=\"2\"/><path d=\"M4 12h2\"/><path d=\"M10 12h10\"/><circle cx=\"8\" cy=\"12\" r=\"2\"/><path d=\"M4 18h7\"/><path d=\"M15 18h5\"/><circle cx=\"13\" cy=\"18\" r=\"2\"/></svg>",
+      "preview": "/tools/pose-geeko/card.svg",
+      "featured": {
+        "order": 2,
+        "blurb": "Pose the SUSE Geeko — print-ready stills",
+        "variants": [
+          {
+            "label": "Curious climb · transparent",
+            "values": {
+              "pose": "curious",
+              "foliage": 26,
+              "eyeX": -34,
+              "eyeY": -18,
+              "headTilt": 7,
+              "blink": 0,
+              "bg": "transparent",
+              "geeko": {
+                "scale": 1.06,
+                "x": -5,
+                "y": 3
+              }
+            }
+          },
+          {
+            "label": "Sitting · on dark",
+            "values": {
+              "pose": "sitting",
+              "tail": -18,
+              "blink": 8,
+              "eyeX": 46,
+              "eyeY": 8,
+              "headTilt": -5,
+              "bg": "dark",
+              "geeko": {
+                "scale": 0.9,
+                "x": 2,
+                "y": 10
+              }
+            }
+          },
+          {
+            "label": "Dangling · flipped",
+            "values": {
+              "pose": "dangling",
+              "legFront": 58,
+              "legBack": -28,
+              "headTilt": -9,
+              "flip": true,
+              "eyeX": 70,
+              "eyeY": -12,
+              "bg": "light",
+              "geeko": {
+                "scale": 1.28,
+                "x": 9,
+                "y": -7
+              }
+            }
+          },
+          {
+            "label": "Laying · light",
+            "values": {
+              "pose": "laying",
+              "blink": 66,
+              "headTilt": 12,
+              "eyeY": 40,
+              "bg": "light",
+              "geeko": {
+                "scale": 0.82,
+                "x": 0,
+                "y": 17
+              }
+            }
+          },
+          {
+            "label": "Sitting · transparent",
+            "values": {
+              "pose": "sitting",
+              "tail": 3,
+              "eyeX": 92,
+              "eyeY": -12,
+              "blink": 0,
+              "bg": "transparent",
+              "geeko": {
+                "scale": 1,
+                "x": 0,
+                "y": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "voice-recorder",
+      "name": "Voice Recorder",
+      "description": "Record a voice note with a live level meter and gentle coaching, then save it as MP3.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "everyone",
+      "capabilities": [
+        "microphone"
+      ],
+      "formats": [
+        "png",
+        "svg"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 10a7 7 0 0 0 14 0\"/><line x1=\"12\" y1=\"19\" x2=\"12\" y2=\"22\"/><line x1=\"8\" y1=\"22\" x2=\"16\" y2=\"22\"/></svg>",
+      "preview": "/catalog/previews/voice-recorder.svg"
+    },
+    {
+      "id": "top-tail-recorder",
+      "name": "Top & Tail Video",
+      "description": "Record a clip in any orientation, then auto-wrap it with branded intro and outro bookends, a lower-third, and a music bed.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "everyone",
+      "capabilities": [
+        "camera",
+        "microphone"
+      ],
+      "formats": [
+        "mp4",
+        "webm",
+        "gif",
+        "apng",
+        "png"
+      ],
+      "width": 1080,
+      "height": 1920,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M3 15h18\"/><path d=\"m10 11 4 2.5-4 2.5z\" fill=\"currentColor\" stroke=\"none\"/></svg>",
+      "preview": "/catalog/previews/top-tail-recorder.svg",
+      "personalized": true
+    },
+    {
+      "id": "filter-voronoi",
+      "name": "Filter: Voronoi Cells",
+      "description": "Shatter any photo into a Voronoi cell mosaic — each cell filled with the nearest colour, as flat vector.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "designer",
+      "formats": [
+        "png",
+        "svg",
+        "pdf",
+        "jpg",
+        "webp",
+        "gif",
+        "apng",
+        "webm",
+        "mp4"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /><path d=\"M10 3 L9 10 L3 9\" /><path d=\"M9 10 L15 14\" /><path d=\"M21 13 L15 14 L14 21\" /></svg>",
+      "preview": "/catalog/previews/filter-voronoi.svg",
+      "examples": [
+        {
+          "label": "Fine mosaic",
+          "values": {
+            "cells": 1400
+          }
+        },
+        {
+          "label": "Chunky cells",
+          "values": {
+            "cells": 220
+          }
+        },
+        {
+          "label": "Stained glass",
+          "values": {
+            "cells": 600,
+            "edgeWidth": 3,
+            "edgeColor": "#0c322c"
+          }
+        },
+        {
+          "label": "Relaxed & even",
+          "values": {
+            "cells": 900,
+            "relax": 3,
+            "jitter": 40
+          }
+        },
+        {
+          "label": "Crystalline",
+          "values": {
+            "cells": 500,
+            "jitter": 100
+          }
+        },
+        {
+          "label": "Jade-tinted",
+          "values": {
+            "cells": 800,
+            "saturation": 130,
+            "treatmentColor": "#30ba78",
+            "blendMode": "overlay",
+            "treatmentIntensity": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "asset-export",
+      "name": "Asset Export",
+      "description": "Render any catalog asset — or a Lolly tool link — out to any format and size.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "listed": false,
+      "formats": [
+        "svg",
+        "png",
+        "jpg",
+        "webp",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "ico",
+        "zip"
+      ],
+      "width": 1000,
+      "height": 1000,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"14\" rx=\"2\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.5\"/><path d=\"m21 15-5-5L5 21\"/><path d=\"M12 21v-6\"/><path d=\"m9 18 3 3 3-3\"/></svg>",
+      "preview": "/catalog/previews/asset-export.svg"
+    },
+    {
+      "id": "doc-studio",
+      "name": "Doc Studio",
+      "description": "Write a multi-page document on the canvas — rich text, headings, tables and inserted Lolly renders that flow onto pages and export as a PDF.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "pdf",
+        "pptx",
+        "svg",
+        "md"
+      ],
+      "width": 794,
+      "height": 1123,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z\"/><path d=\"M14 2v5h5\"/><line x1=\"8\" y1=\"12\" x2=\"16\" y2=\"12\"/><line x1=\"8\" y1=\"16\" x2=\"14\" y2=\"16\"/></svg>",
+      "preview": "/tools/doc-studio/card.svg",
+      "examples": [
+        {
+          "label": "Pine · project brief",
+          "values": {
+            "theme": "light",
+            "accent": "#30ba78",
+            "font": "SUSE",
+            "docTitle": "Project Brief"
+          }
+        },
+        {
+          "label": "Midnight · one-pager",
+          "values": {
+            "theme": "light",
+            "accent": "#192072",
+            "font": "SUSE",
+            "pageSize": "letter",
+            "docTitle": "Product One-Pager"
+          }
+        },
+        {
+          "label": "Mono · technical note",
+          "values": {
+            "theme": "light",
+            "accent": "#0c322c",
+            "font": "SUSE Mono",
+            "docTitle": "Technical Note"
+          }
+        }
+      ],
+      "paged": true
+    },
+    {
+      "id": "carousel-maker",
+      "name": "Carousel Maker",
+      "description": "Design a multi-page carousel on one canvas — set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
+      "version": "1.0.0",
+      "status": "community",
+      "category": "designer",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "svg",
+        "pdf",
+        "pptx"
+      ],
+      "width": 1080,
+      "height": 1350,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"8\" y=\"4\" width=\"8\" height=\"16\" rx=\"2\" /><path d=\"M4.5 7v10\" /><path d=\"M19.5 7v10\" /></svg>",
+      "preview": "/tools/carousel-maker/card.svg",
+      "featured": {
+        "order": 2,
+        "blurb": "Swipeable carousels & multi-page layouts"
+      },
+      "paged": true
+    },
+    {
+      "id": "org-chart",
+      "name": "Flow Chart",
+      "description": "Build flow charts on an open canvas — drag cards, connect them, and the lines route and stick to the boxes.",
+      "version": "1.0.0",
+      "status": "community",
+      "category": "everyone",
+      "formats": [
+        "png",
+        "svg",
+        "pdf",
+        "jpg",
+        "webp"
+      ],
+      "width": 1600,
+      "height": 1000,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"2\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 8v4\"/><path d=\"M5 16v-2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2\"/></svg>",
+      "preview": "/catalog/previews/org-chart.svg",
+      "featured": {
+        "order": 5,
+        "blurb": "Cards + connectors that stick to the boxes"
+      },
+      "examples": [
+        {
+          "label": "Leadership · light",
+          "values": {
+            "background": "#f4f7f6",
+            "boxes": [
+              {
+                "id": "ceo",
+                "kind": "card",
+                "layout": "row",
+                "x": 650,
+                "y": 90,
+                "w": 300,
+                "h": 116,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 18,
+                "bg": "#0c322c",
+                "accent": "#30ba78",
+                "fit": "cover",
+                "text": "Alex Rivera\n{w200|Chief Executive}",
+                "fg": "#ffffff",
+                "fontSize": 30,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.15,
+                "pad": 16
+              },
+              {
+                "id": "cto",
+                "kind": "card",
+                "layout": "row",
+                "x": 360,
+                "y": 430,
+                "w": 300,
+                "h": 116,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 18,
+                "bg": "#ffffff",
+                "accent": "#30ba78",
+                "fit": "cover",
+                "text": "Priya Nair\n{w200|CTO}",
+                "fg": "#0c322c",
+                "fontSize": 30,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.15,
+                "pad": 16
+              },
+              {
+                "id": "coo",
+                "kind": "card",
+                "layout": "row",
+                "x": 650,
+                "y": 430,
+                "w": 300,
+                "h": 116,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 18,
+                "bg": "#ffffff",
+                "accent": "#30ba78",
+                "fit": "cover",
+                "text": "Sam Osei\n{w200|COO}",
+                "fg": "#0c322c",
+                "fontSize": 30,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.15,
+                "pad": 16
+              },
+              {
+                "id": "cfo",
+                "kind": "card",
+                "layout": "row",
+                "x": 940,
+                "y": 430,
+                "w": 300,
+                "h": 116,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 18,
+                "bg": "#ffffff",
+                "accent": "#30ba78",
+                "fit": "cover",
+                "text": "Mia Chen\n{w200|CFO}",
+                "fg": "#0c322c",
+                "fontSize": 30,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.15,
+                "pad": 16
+              },
+              {
+                "id": "eng1",
+                "kind": "card",
+                "layout": "icon",
+                "x": 210,
+                "y": 740,
+                "w": 280,
+                "h": 92,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 14,
+                "bg": "#ffffff",
+                "accent": "#30ba78",
+                "text": "Platform\n{w200|Infrastructure team}",
+                "fg": "#0c322c",
+                "fontSize": 24,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.14,
+                "pad": 14
+              },
+              {
+                "id": "eng2",
+                "kind": "card",
+                "layout": "icon",
+                "x": 520,
+                "y": 740,
+                "w": 280,
+                "h": 92,
+                "rot": 0,
+                "shape": "rounded",
+                "radius": 14,
+                "bg": "#ffffff",
+                "accent": "#fe7c3f",
+                "text": "Product\n{w200|Application team}",
+                "fg": "#0c322c",
+                "fontSize": 24,
+                "align": "left",
+                "valign": "middle",
+                "weight": "500",
+                "font": "SUSE",
+                "lineHeight": 1.14,
+                "pad": 14
+              }
+            ],
+            "connectors": [
+              {
+                "id": "c1",
+                "from": "ceo",
+                "to": "cto",
+                "style": "elbow",
+                "arrow": "end",
+                "head": "open",
+                "dash": "solid",
+                "color": "#30ba78",
+                "width": 3.5
+              },
+              {
+                "id": "c2",
+                "from": "ceo",
+                "to": "coo",
+                "style": "elbow",
+                "arrow": "end",
+                "head": "open",
+                "dash": "solid",
+                "color": "#30ba78",
+                "width": 3.5
+              },
+              {
+                "id": "c3",
+                "from": "ceo",
+                "to": "cfo",
+                "style": "elbow",
+                "arrow": "end",
+                "head": "open",
+                "dash": "solid",
+                "color": "#30ba78",
+                "width": 3.5
+              },
+              {
+                "id": "c4",
+                "from": "cto",
+                "to": "eng1",
+                "style": "elbow",
+                "arrow": "end",
+                "head": "open",
+                "dash": "solid",
+                "color": "#30ba78",
+                "width": 3.5
+              },
+              {
+                "id": "c5",
+                "from": "cto",
+                "to": "eng2",
+                "style": "elbow",
+                "arrow": "end",
+                "head": "open",
+                "dash": "solid",
+                "color": "#30ba78",
+                "width": 3.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "D3 Chart Studio",
+      "description": "Powerful data-driven charts with D3 — paste a table and it charts itself. Bars, lines, areas, scatter, pie, radar, treemap, heatmap and more, on-brand and vector-clean.",
+      "version": "1.1.0",
+      "status": "official",
+      "category": "designer",
+      "formats": [
+        "md",
+        "png",
+        "svg",
+        "emf",
+        "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
+        "tiff",
+        "pptx",
+        "webp",
+        "jpg"
+      ],
+      "width": 1280,
+      "height": 800,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\" /><path d=\"M7 15c2.5 0 3-6 5-6s2.5 4 4.5 4 2.5-5 4.5-5\" /><circle cx=\"7\" cy=\"15\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\" /><circle cx=\"12\" cy=\"9\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\" /><circle cx=\"16.5\" cy=\"13\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\" /></svg>",
+      "preview": "/catalog/previews/d3.svg",
+      "featured": {
+        "order": 4,
+        "blurb": "Paste a table — D3 charts it, on-brand and vector-clean"
+      },
+      "examples": [
+        {
+          "label": "Grouped bars",
+          "values": {
+            "chartType": "bar",
+            "stackMode": "grouped",
+            "heading": "Revenue by product line",
+            "subheading": "€M per quarter — illustrative sample data",
+            "palette": "suse",
+            "background": "#ffffff",
+            "showLegend": true,
+            "data": "Quarter,SLES,Rancher,Edge\nQ1,42,28,12\nQ2,49,35,18\nQ3,55,41,24\nQ4,63,52,33"
+          }
+        },
+        {
+          "label": "Stacked area",
+          "values": {
+            "chartType": "area",
+            "stackMode": "stacked",
+            "curve": "monotone",
+            "heading": "GPU hours across the AI pipeline",
+            "subheading": "Thousands of hours — illustrative sample data",
+            "palette": "cool",
+            "background": "#0c322c",
+            "textColor": "#ffffff",
+            "showLegend": true,
+            "data": "Month,Inference,Training,Retrieval\nJan,4.6,2.8,0.9\nFeb,5.1,3.0,1.1\nMar,6.0,3.4,1.4\nApr,7.2,3.1,1.8\nMay,8.4,4.0,2.2"
+          }
+        },
+        {
+          "label": "Donut",
+          "values": {
+            "chartType": "donut",
+            "donutRadius": 0.58,
+            "heading": "Edge fleet by site type",
+            "subheading": "Share of nodes — illustrative sample data",
+            "palette": "suse",
+            "background": "#ffffff",
+            "showLegend": true,
+            "legendPosition": "right",
+            "showValues": true,
+            "data": "Site,Nodes\nRetail,340\nManufacturing,270\nTelco,210\nBranch,110\nLogistics,70"
+          }
+        },
+        {
+          "label": "Multi-line",
+          "values": {
+            "chartType": "line",
+            "curve": "monotone",
+            "showPoints": true,
+            "heading": "Community growth by region",
+            "subheading": "New contributors — illustrative sample data",
+            "palette": "suse",
+            "background": "#ffffff",
+            "showLegend": true,
+            "data": "Year,EMEA,Americas,APAC\n2021,120,96,64\n2022,180,140,110\n2023,260,205,170\n2024,340,270,250"
+          }
+        },
+        {
+          "label": "Treemap",
+          "values": {
+            "chartType": "treemap",
+            "heading": "Open-source contributions",
+            "subheading": "By project — illustrative sample data",
+            "palette": "pine",
+            "background": "#ffffff",
+            "showValues": true,
+            "data": "Project,Commits\nRancher,4200\nK3s,2600\nLonghorn,1800\nNeuVector,1400\nHarvester,1100\nElemental,600"
+          }
+        },
+        {
+          "label": "Scatter",
+          "values": {
+            "chartType": "scatter",
+            "pointSize": 14,
+            "fillOpacity": 70,
+            "heading": "Cluster size vs. cost",
+            "subheading": "One dot per cluster — illustrative sample data",
+            "palette": "waterhole",
+            "background": "#ffffff",
+            "xTitle": "Nodes",
+            "yTitle": "Monthly cost (€K)",
+            "data": "Cluster,Nodes,Cost,Users\nA,12,4.2,120\nB,28,9.1,260\nC,54,16.5,540\nD,41,12.0,410\nE,7,2.1,70\nF,63,22.4,600"
+          }
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "name": "Record",
+      "description": "Design your own top and tail cards, then record a clip and Lolly wraps them around it automatically.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "everyone",
+      "capabilities": [
+        "camera",
+        "microphone"
+      ],
+      "formats": [
+        "mp4",
+        "webm"
+      ],
+      "width": 1080,
+      "height": 1920,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"2\"/><path d=\"M8 6v12\"/><path d=\"M16 6v12\"/><circle cx=\"12\" cy=\"12\" r=\"2.4\" fill=\"currentColor\" stroke=\"none\"/></svg>",
+      "preview": "/tools/record/card.svg",
+      "paged": true
+    },
+    {
+      "id": "3d",
+      "name": "3D",
+      "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
+      "version": "1.0.0",
+      "status": "experimental",
+      "category": "designer",
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "webm",
+        "mp4",
+        "gif"
+      ],
+      "width": 1280,
+      "height": 1280,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"/><path d=\"m3.3 7 8.7 5 8.7-5\"/><path d=\"M12 22V12\"/></svg>",
+      "preview": "/tools/3d/card.svg",
+      "examples": [
+        {
+          "label": "Animated",
+          "theme": "dark",
+          "values": {
+            "model": "sample-1",
+            "scene": "natural",
+            "cameraMove": "orbit"
+          }
+        },
+        {
+          "label": "Studio",
+          "theme": "light",
+          "values": {
+            "model": "sample-2",
+            "scene": "bright-studio",
+            "cameraMove": "static",
+            "camera": {
+              "fov": 40,
+              "rotation": 25,
+              "tilt": 10,
+              "zoom": 1,
+              "pan": 0
+            }
+          }
+        },
+        {
+          "label": "SUSE green",
+          "theme": "dark",
+          "values": {
+            "model": "sample-3",
+            "scene": "suse-green",
+            "cameraMove": "arc"
+          }
+        }
+      ]
+    }
+  ]
+}
