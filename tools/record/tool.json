@@ -36,8 +36,8 @@
     { "id": "frames", "type": "number", "label": "Frames", "default": 3, "min": 3, "max": 3, "group": "size", "help": "Fixed at three: an intro card, your camera, and an outro card." },
     { "id": "pageW", "type": "number", "label": "Frame width", "default": 1080, "min": 100, "max": 8000, "group": "size" },
     { "id": "pageH", "type": "number", "label": "Frame height", "default": 1920, "min": 100, "max": 8000, "group": "size" },
-    { "id": "brandColor", "label": "Bookend colour", "type": "color", "default": "#0c322c", "help": "Fills the intro and outro cards and tints the fade at the very ends of the clip." },
-    { "id": "accent", "label": "Accent", "type": "color", "default": "#30ba78" },
+    { "id": "brandColor", "label": "Bookend colour", "type": "color", "default": "{color.semantic.primary}", "help": "Fills the intro and outro cards and tints the fade at the very ends of the clip." },
+    { "id": "accent", "label": "Accent", "type": "color", "default": "{color.semantic.secondary}" },
     { "id": "clip", "type": "asset", "label": "Camera clip", "assetType": "video", "allowUpload": true, "help": "Your recorded take — tap ● on the middle frame to film it, or drop in a video. The intro and outro wrap around it on export." },
     {
       "id": "clipFit", "type": "select", "label": "Video fit", "default": "cover",
@@ -167,7 +167,7 @@
           ]
         },
         { "id": "radius", "type": "number", "label": "Corner radius", "default": 16, "min": 0, "showIf": { "shape": "rounded" } },
-        { "id": "bg", "type": "color", "label": "Fill", "default": "#30BA78" },
+        { "id": "bg", "type": "color", "label": "Fill", "default": "{color.semantic.secondary}" },
         { "id": "opacity", "type": "number", "label": "Opacity", "default": 100, "min": 0, "max": 100, "display": "slider" },
         { "id": "image", "type": "asset", "label": "Image, animation or video", "assetType": "any", "allowUpload": true, "help": "A photo, logo, SVG, GIF, Lottie animation, or a short video. Animations and video play live on the canvas; the camera clip in the middle frame is your recording." },
         {
@@ -206,7 +206,7 @@
           ]
         },
         { "id": "text", "type": "text", "label": "Text", "default": "", "multilineFor": ["box", "text", "image"], "rows": 3, "help": "Rich text: **bold**, *italic* / _italic_, and lines starting with - or • become bullets." },
-        { "id": "fg", "type": "color", "label": "Text colour", "default": "#ffffff" },
+        { "id": "fg", "type": "color", "label": "Text colour", "default": "{color.semantic.on-primary}" },
         { "id": "fontSize", "type": "number", "label": "Text size", "default": 64, "min": 4 },
         {
           "id": "align",

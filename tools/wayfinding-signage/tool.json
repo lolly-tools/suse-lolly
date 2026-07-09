@@ -129,13 +129,13 @@
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "#ffffff"
+      "default": "{color.semantic.surface}"
     },
     {
       "id": "accent",
       "label": "Arrow colour",
       "type": "color",
-      "default": "#30ba78",
+      "default": "{color.semantic.secondary}",
       "help": "Default colour for arrows and rules. A row with its own colour overrides it."
     }
   ]

@@ -94,7 +94,7 @@
       "id": "background",
       "label": "Card background",
       "type": "color",
-      "default": "#0c322c"
+      "default": "{color.semantic.primary}"
     },
     {
       "id": "eventLogo",

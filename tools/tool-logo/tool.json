@@ -73,7 +73,7 @@
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "#0c322c",
+      "default": "{color.semantic.primary}",
       "help": "The colour the logo sits on. The matching logo (reversed for dark, normal for light) is chosen for you. Turn on \"No BG\" in export to drop it."
     },
     {

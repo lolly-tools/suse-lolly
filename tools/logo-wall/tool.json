@@ -69,7 +69,7 @@
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "#ffffff"
+      "default": "{color.semantic.surface}"
     },
     {
       "id": "balance",
@@ -82,7 +82,7 @@
       "id": "inkColor",
       "label": "Ink colour",
       "type": "color",
-      "default": "#0c322c",
+      "default": "{color.semantic.primary}",
       "help": "The single ink for any logo set to “Render as vector” (per logo, below)."
     },
     {

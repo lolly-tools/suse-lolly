@@ -140,13 +140,13 @@
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "#0c322c"
+      "default": "{color.semantic.primary}"
     },
     {
       "id": "color",
       "label": "Label color",
       "type": "color",
-      "default": "#ffffff"
+      "default": "{color.semantic.on-primary}"
     },
     {
       "id": "shape",

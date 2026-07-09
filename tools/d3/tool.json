@@ -1009,7 +1009,7 @@
       "label": "Background",
       "section": "Colour & style",
       "type": "color",
-      "default": "#ffffff"
+      "default": "{color.semantic.surface}"
     },
     {
       "id": "textColor",
@@ -1017,7 +1017,7 @@
       "label": "Text & axis colour",
       "section": "Colour & style",
       "type": "color",
-      "default": "#0c322c"
+      "default": "{color.semantic.text}"
     },
     {
       "id": "strokeWidth",
@@ -1051,7 +1051,7 @@
       "label": "Mark outline colour",
       "section": "Colour & style",
       "type": "color",
-      "default": "#ffffff",
+      "default": "{color.semantic.surface}",
       "showIf": {
         "chartType": [
           "bar",

@@ -67,7 +67,7 @@
       "id": "accent",
       "label": "Accent colour",
       "type": "color",
-      "default": "#30ba78",
+      "default": "{color.semantic.secondary}",
       "help": "Used for headings, rules and table headers."
     },
     {

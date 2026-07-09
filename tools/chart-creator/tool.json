@@ -221,7 +221,7 @@
       "label": "Outline color",
       "section": "Slices",
       "type": "color",
-      "default": "#ffffff",
+      "default": "{color.semantic.surface}",
       "showIf": { "chartType": ["pie", "donut"] }
     },
     {
@@ -242,13 +242,13 @@
       "id": "color", "urlKey": "tc",
       "label": "Text color",
       "type": "color",
-      "default": "#0c322c"
+      "default": "{color.semantic.text}"
     },
     {
       "id": "background", "urlKey": "bg",
       "label": "Background",
       "type": "color",
-      "default": "#ffffff"
+      "default": "{color.semantic.surface}"
     },
     {
       "id": "showLegend", "urlKey": "lg",

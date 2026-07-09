@@ -38,7 +38,7 @@
         { "value": "green", "label": "SUSE green" }
       ]
     },
-    { "id": "accent", "label": "Accent", "type": "color", "default": "#30ba78" }
+    { "id": "accent", "label": "Accent", "type": "color", "default": "{color.semantic.secondary}" }
   ],
   "hooks": { "onInit": true, "onLevel": true }
 }
