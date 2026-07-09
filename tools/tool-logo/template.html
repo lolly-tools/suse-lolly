@@ -3,5 +3,5 @@
         "meet" the 1200 viewBox is letterboxed, but this rect extends past the
         centred square into the margins (the outer SVG clips at the viewport). --}}
   {{#unless transparentBg}}<rect x="-12000" y="-12000" width="25200" height="25200" fill="{{background}}"/>{{/unless}}
-  {{#if logo}}<image href="{{asset logo}}" x="{{logoX}}" y="{{logoY}}" width="{{logoSize}}" height="{{logoSize}}" preserveAspectRatio="xMidYMid meet"/>{{/if}}
+  {{#if logo}}<image href="{{asset logo}}" x="{{logoX}}" y="{{logoY}}" width="{{logoSize}}" height="{{logoSize}}" preserveAspectRatio="xMidYMid meet" data-lolly-anno="{{orientation}} {{ink}}"/>{{/if}}
 </svg>

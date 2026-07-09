@@ -1,6 +1,6 @@
 <div class="cm-strip" style="{{{stripStyle}}}">
   {{#each frames}}
-  <div class="cm-page" data-pdf-page data-frame-index="{{@index}}" style="background:{{bg}}">
+  <div class="cm-page" data-pdf-page data-frame-index="{{@index}}" style="background:{{bg}}" data-lolly-anno="{{background}}">
     {{#each boxes}}
     <div class="lolly-box" data-canvas-input="boxes:{{flatIndex}}" data-box-id="{{default id flatIndex}}" style="{{{boxStyle}}}">
       {{{mediaHtml}}}

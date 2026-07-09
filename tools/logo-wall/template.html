@@ -1,5 +1,5 @@
 {{#if wallItems}}
-<div class="lw-wall" style="--lw-cols:{{default columns 4}}; --lw-gap:{{default gap 32}}px; --lw-pad:{{default padding 48}}px; --lw-bg:{{#if transparentBg}}transparent{{else}}{{default background '#ffffff'}}{{/if}};">
+<div class="lw-wall" style="--lw-cols:{{default columns 4}}; --lw-gap:{{default gap 32}}px; --lw-pad:{{default padding 48}}px; --lw-bg:{{#if transparentBg}}transparent{{else}}{{default background '#ffffff'}}{{/if}};" data-lolly-anno="{{inkColor}}">
   {{#each wallItems}}
   <div class="lw-cell" data-canvas-input="logos:{{index}}">
     {{#if cellSvg}}{{{cellSvg}}}{{else}}<img class="lw-img{{#unless (eq filter 'none')}} lw-f-{{filter}}{{/unless}}" src="{{default displayUrl url}}" alt="{{name}}" style="width:{{size}}%; height:{{size}}%; opacity:{{opacity}};">{{/if}}

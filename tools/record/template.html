@@ -3,7 +3,7 @@
      data-clip-fit="{{default clipFit "cover"}}"
      style="{{{stripStyle}}}">
   {{#each framesOut}}
-  <div class="rec-frame" data-record-frame="{{role}}" data-frame-index="{{@index}}" data-pdf-page style="background:{{bg}}">
+  <div class="rec-frame" data-record-frame="{{role}}" data-frame-index="{{@index}}" data-pdf-page data-lolly-anno="{{brandColor}} {{accent}}" style="background:{{bg}}">
     {{#if isCamera}}
     <div class="rec-camera" data-record-camera>
       {{#if @root.clip}}

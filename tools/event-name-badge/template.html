@@ -115,7 +115,7 @@
 .ebadge-landscape .ebadge-qr { width: 26cqmin; height: 26cqmin; }
 </style>
 
-<div class="ebadge-stage">
+<div class="ebadge-stage" data-lolly-anno="{{size}}">
   <div class="ebadge ebadge-{{orient}}"
        style="aspect-ratio: {{aspW}} / {{aspH}};
               --accent: {{statusColor}}; --accent-ink: {{statusInk}};
@@ -146,8 +146,8 @@
       {{/if}}
     </main>
 
-    <footer class="ebadge-foot">
-      <div class="ebadge-role">{{statusLabel}}</div>
+    <footer class="ebadge-foot" data-lolly-anno="{{roleColor}}">
+      <div class="ebadge-role" data-lolly-anno="{{status}}">{{statusLabel}}</div>
       {{#if showQr}}{{#if url}}{{#if badgeQr}}<div class="ebadge-qr"><img src="{{asset badgeQr}}" alt=""></div>{{/if}}{{/if}}{{/if}}
     </footer>
   </div>

@@ -222,16 +222,16 @@
   }
 </style>
 
-<div class="mpdf-doc" style="{{{docStyle}}};--body-weight:{{default bodyWeight 400}};--heading-weight:{{default headingWeight 700}}">
+<div class="mpdf-doc" data-lolly-anno="{{theme}}" style="{{{docStyle}}};--body-weight:{{default bodyWeight 400}};--heading-weight:{{default headingWeight 700}}">
   {{#each pages}}
-  <div class="mpdf-page mpdf-page--{{type}}" data-pdf-page>
+  <div class="mpdf-page mpdf-page--{{type}}" data-pdf-page data-lolly-anno="{{pageSize}}">
 
     {{#if isCover}}
       {{#if coverImageUrl}}<div class="mpdf-cover-hero" data-canvas-input="coverImage"><img src="{{coverImageUrl}}" alt=""></div>{{/if}}
-      <div class="mpdf-cover-body">
+      <div class="mpdf-cover-body" data-lolly-anno="{{coverLogoSize}}">
         {{#if coverLogoUrl}}<img class="mpdf-cover-logo" data-canvas-input="coverLogo" src="{{coverLogoUrl}}" alt="">{{/if}}
-        <div class="mpdf-cover-fill"></div>
-        <div class="mpdf-cover-band"></div>
+        <div class="mpdf-cover-fill" data-lolly-anno="{{coverBg}}"></div>
+        <div class="mpdf-cover-band" data-lolly-anno="{{accent}}"></div>
         <h1 class="mpdf-cover-title">{{coverTitle}}</h1>
         {{#if coverSubtitle}}<div class="mpdf-cover-subtitle">{{coverSubtitle}}</div>{{/if}}
         {{#if coverText}}<div class="mpdf-cover-text">{{{markdown coverText}}}</div>{{/if}}
@@ -262,7 +262,7 @@
       {{#if backImageUrl}}<div class="mpdf-back-hero" data-canvas-input="backImage"><img src="{{backImageUrl}}" alt=""></div>{{/if}}
       {{#if backHeading}}<h2 class="mpdf-back-heading">{{backHeading}}</h2>{{/if}}
       {{#if backText}}<div class="mpdf-back-text">{{{markdown backText}}}</div>{{/if}}
-      <div class="mpdf-back-fill"></div>
+      <div class="mpdf-back-fill" data-lolly-anno="{{backBg}}"></div>
       <dl class="mpdf-back-details">
         {{#if backCompany}}<div><dt>Company</dt><dd>{{backCompany}}</dd></div>{{/if}}
         {{#if backEmail}}<div><dt>Email</dt><dd>{{backEmail}}</dd></div>{{/if}}
@@ -275,7 +275,7 @@
         <div class="mpdf-back-about-text">{{{markdown aboutText}}}</div>
       </div>
       {{/if}}
-      {{#if backLogoUrl}}<img class="mpdf-back-logo" src="{{backLogoUrl}}" alt="">{{/if}}
+      {{#if backLogoUrl}}<img class="mpdf-back-logo" src="{{backLogoUrl}}" alt="" data-lolly-anno="{{backLogoSize}}">{{/if}}
       <div class="mpdf-back-rule"></div>
       <div class="mpdf-footer">
         <span class="mpdf-footer-title">{{docTitle}}</span>

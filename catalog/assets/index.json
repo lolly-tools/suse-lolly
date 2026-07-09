@@ -33,7 +33,8 @@
           "size": 7771
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "brandLock": true
     },
     {
       "id": "suse/palette/brand-core",

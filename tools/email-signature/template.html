@@ -37,7 +37,7 @@
       <td style="vertical-align:top; padding-right:18px;">
         <img src="{{photoSrc}}" width="72" height="72"
              style="display:block; width:72px; height:72px; border-radius:50%; object-fit:cover; border:0;"
-             alt="">
+             alt="" data-lolly-anno="{{asset headshot}}">
       </td>
       {{/if}}
 
@@ -74,7 +74,7 @@
     <tr>
       <td style="padding-top:11px; border-top:1px solid {{cBorder}};">
         <a style="color:currentColor; text-decoration:none" href="https://www.suse.com/"><span class="es-brand-name" style="font-size:15px; font-weight:800; color:{{cAccent}}; letter-spacing:0.04em; font-family:'SUSE',Arial,Helvetica,sans-serif;">
-          <img width="100" style="width:100px;max-width:110px;display:inline-block;vertical-align:middle;" src="{{logoSrc}}" alt="SUSE" />
+          <img width="100" style="width:100px;max-width:110px;display:inline-block;vertical-align:middle;" src="{{logoSrc}}" alt="SUSE" data-lolly-anno="{{logo}}" />
 </span><span style="color:{{cSep}}; margin:0 7px;">|</span><span class="es-brand-url" style="font-size:11px; color:{{cMuted}}; font-family:'SUSE',Arial,Helvetica,sans-serif;">suse.com</span>
       </a></td>
     </tr>
@@ -85,7 +85,7 @@
   <table cellpadding="0" cellspacing="0" border="0" style="margin-top:14px; border-collapse:collapse;">
     <tr>
       <td style="padding:0;">
-        <img src="{{promoSrc}}" style="display:block; max-width:400px; height:auto; border:0;" alt="">
+        <img src="{{promoSrc}}" style="display:block; max-width:400px; height:auto; border:0;" alt="" data-lolly-anno="{{asset emailPromo}}">
       </td>
     </tr>
   </table>
@@ -93,7 +93,7 @@
 
   <!-- Append block -->
   {{#if appendHtml}}
-  <div class="es-append" style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(12,50,44,0.08); font-size:10px; color:#999; line-height:1.55; font-family:'SUSE',Arial,Helvetica,sans-serif;">
+  <div class="es-append" style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(12,50,44,0.08); font-size:10px; color:#999; line-height:1.55; font-family:'SUSE',Arial,Helvetica,sans-serif;" data-lolly-anno="{{append}}">
     {{{appendHtml}}}
   </div>
   {{/if}}
