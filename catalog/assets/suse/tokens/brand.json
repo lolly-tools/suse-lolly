@@ -340,5 +340,16 @@
         "$description": "Rust"
       }
     }
+  },
+  "font": {
+    "$type": "fontFamily",
+    "brand": {
+      "$value": "SUSE",
+      "$description": "UI & body — the SUSE brand face (catalog-served variable font). The shell reads this as font.brand and applies it to the app chrome."
+    },
+    "mono": {
+      "$value": "SUSE Mono",
+      "$description": "Code, readouts & data — SUSE Mono (also the platform default mono)."
+    }
   }
 }
