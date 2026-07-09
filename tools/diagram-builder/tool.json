@@ -13,14 +13,14 @@
     "blurb": "Turn cards or text into on-brand diagrams"
   },
   "examples": [
-    { "label": "Org · SUSE dark", "values": { "diagramType": "org", "theme": "suse-dark", "orgDir": "down", "title": "Leadership Team", "cardLayout": "row", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
-    { "label": "Mind map · dark", "values": { "diagramType": "mindmap", "theme": "suse-dark", "branchColors": true, "title": "Product Roadmap", "cardLayout": "stacked", "background": "#0c322c", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
+    { "label": "Org · SUSE dark", "values": { "diagramType": "org", "theme": "brand-dark", "orgDir": "down", "title": "Leadership Team", "cardLayout": "row", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
+    { "label": "Mind map · dark", "values": { "diagramType": "mindmap", "theme": "brand-dark", "branchColors": true, "title": "Product Roadmap", "cardLayout": "stacked", "background": "#0c322c", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
     { "label": "Cycle · blueprint", "values": { "diagramType": "cycle", "theme": "blueprint", "cycleCurved": true, "gridBg": "grid", "title": "Delivery Lifecycle", "cardLayout": "stacked", "background": "#0a2540", "nodeFill": "#0a2540", "nodeStroke": "#7fd4ff", "nodeText": "#eaf6ff", "edgeColor": "#7fd4ff" } },
-    { "label": "Process · SUSE dark", "values": { "diagramType": "process", "theme": "suse-dark", "flowDir": "right", "title": "CI/CD Pipeline", "cardLayout": "stacked", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
+    { "label": "Process · SUSE dark", "values": { "diagramType": "process", "theme": "brand-dark", "flowDir": "right", "title": "CI/CD Pipeline", "cardLayout": "stacked", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
     { "label": "Layercake · mint", "values": { "diagramType": "layercake", "theme": "mint", "title": "Platform Architecture", "cardLayout": "stacked", "background": "#eafaf4", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#0c322c" } },
     { "label": "Pyramid · mint", "values": { "diagramType": "pyramid", "pyramidStyle": "pyramid", "theme": "mint", "title": "Adoption Model", "cardLayout": "stacked", "background": "#eafaf4", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#0c322c" } },
     { "label": "Timeline · blueprint", "values": { "diagramType": "timeline", "timelineDir": "right", "theme": "blueprint", "gridBg": "grid", "title": "Release Timeline", "cardLayout": "stacked", "background": "#0a2540", "nodeFill": "#0a2540", "nodeStroke": "#7fd4ff", "nodeText": "#eaf6ff", "edgeColor": "#7fd4ff" } },
-    { "label": "Org · fog light", "values": { "diagramType": "org", "theme": "suse-light", "orgDir": "down", "title": "Company Structure", "cardLayout": "row", "background": "#ffffff", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#30ba78" } }
+    { "label": "Org · fog light", "values": { "diagramType": "org", "theme": "brand-light", "orgDir": "down", "title": "Company Structure", "cardLayout": "row", "background": "#ffffff", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#30ba78" } }
   ],
   "render": {
     "width": 1600,
@@ -83,7 +83,7 @@
       ]
     },
 
-    { "id": "theme", "label": "Theme", "type": "select", "default": "custom", "section": "Style", "help": "Seeds the colours below. Pick one, then override any individual colour.", "options": [ { "value": "custom", "label": "Custom" }, { "value": "suse-light", "label": "SUSE light" }, { "value": "suse-dark", "label": "SUSE dark" }, { "value": "blueprint", "label": "Blueprint" }, { "value": "mono", "label": "Mono" }, { "value": "mint", "label": "Mint" } ] },
+    { "id": "theme", "label": "Theme", "type": "select", "default": "custom", "section": "Style", "help": "Seeds the colours below. Pick one, then override any individual colour.", "options": [ { "value": "custom", "label": "Custom" }, { "value": "brand-light", "label": "Brand (light)" }, { "value": "brand-dark", "label": "Brand (dark)" }, { "value": "blueprint", "label": "Blueprint" }, { "value": "mono", "label": "Mono" }, { "value": "mint", "label": "Mint" } ] },
     { "id": "cardLayout", "label": "Card layout", "type": "select", "default": "row", "section": "Style", "help": "How each card arranges its image and text. Side by side puts the image on the left with left-aligned text — a card with no image uses the full width. Image on top stacks a centred image above centred text.", "options": [ { "value": "row", "label": "Side by side (image left)" }, { "value": "stacked", "label": "Image on top" } ] },
     { "id": "nodeFill", "label": "Card fill", "type": "color", "default": "#ffffff", "section": "Style" },
     { "id": "nodeStroke", "label": "Card border", "type": "color", "default": "#0c322c", "section": "Style" },

@@ -39,7 +39,7 @@
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "#ffffff",
+      "default": "{color.semantic.surface}",
       "help": "The colour behind the asset. Turn on \"No BG\" in export to drop it (transparent)."
     },
     {

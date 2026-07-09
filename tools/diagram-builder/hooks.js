@@ -36,9 +36,14 @@ var PINE = '#0c322c', FOG = '#efefef', WHITE = '#ffffff', DETAIL = '#6f6f6f';
 var BAND_PALETTE = ['#90ebcd', '#bff1ea', '#d8f3ec', '#efefef'];
 
 // Theme / density / preset tables (seed inputs via the hook-patch mechanism).
+// 'brand-light'/'brand-dark' start out as SUSE's own colours (today's exact
+// look) and are overwritten in place by ensureBrandThemes() below with the
+// active brand's own color.semantic.* tokens — so under SUSE nothing changes
+// (the tokens resolve to these same hexes), and under any other installed
+// brand the preset follows it instead of staying SUSE-green forever.
 var THEMES = {
-  'suse-light': { nodeFill: '#ffffff', nodeStroke: '#0c322c', nodeText: '#0c322c', edgeColor: '#0c322c', background: '#ffffff', detail: '#6f6f6f', bandPalette: ['#90ebcd', '#bff1ea', '#d8f3ec', '#efefef'] },
-  'suse-dark':  { nodeFill: '#0c322c', nodeStroke: '#90ebcd', nodeText: '#ffffff', edgeColor: '#90ebcd', background: '#0c322c', detail: '#9fc7bb', bandPalette: ['#14463d', '#1c5a4e', '#247060', '#2e8573'] },
+  'brand-light': { nodeFill: '#ffffff', nodeStroke: '#0c322c', nodeText: '#0c322c', edgeColor: '#0c322c', background: '#ffffff', detail: '#6f6f6f', bandPalette: ['#90ebcd', '#bff1ea', '#d8f3ec', '#efefef'] },
+  'brand-dark':  { nodeFill: '#0c322c', nodeStroke: '#90ebcd', nodeText: '#ffffff', edgeColor: '#90ebcd', background: '#0c322c', detail: '#9fc7bb', bandPalette: ['#14463d', '#1c5a4e', '#247060', '#2e8573'] },
   'blueprint':  { nodeFill: '#0a2540', nodeStroke: '#7fd4ff', nodeText: '#eaf6ff', edgeColor: '#7fd4ff', background: '#0a2540', detail: '#9fc2dd', bandPalette: ['#10314f', '#163c5e', '#1c476d', '#22527c'] },
   'mono':       { nodeFill: '#ffffff', nodeStroke: '#111111', nodeText: '#111111', edgeColor: '#111111', background: '#ffffff', detail: '#666666', bandPalette: ['#eeeeee', '#e2e2e2', '#d6d6d6', '#cacaca'] },
   'mint':       { nodeFill: '#ffffff', nodeStroke: '#0c322c', nodeText: '#0c322c', edgeColor: '#0c322c', background: '#eafaf4', detail: '#6f6f6f', bandPalette: ['#90ebcd', '#bff1ea', '#d8f3ec', '#effbf7'] }
@@ -50,12 +55,71 @@ var DENSITY = {
   spacious:    { rowGap: 120, siblingGap: 64, cardScale: 1.25 }
 };
 var PRESETS = {
-  'org-classic':    { diagramType: 'org', orgDir: 'down', theme: 'suse-light', density: 'cozy' },
+  'org-classic':    { diagramType: 'org', orgDir: 'down', theme: 'brand-light', density: 'cozy' },
   'layercake-mint': { diagramType: 'layercake', theme: 'mint', density: 'cozy' },
-  'process-lr':     { diagramType: 'process', flowDir: 'right', theme: 'suse-light', arrowHead: 'triangle', density: 'cozy' },
+  'process-lr':     { diagramType: 'process', flowDir: 'right', theme: 'brand-light', arrowHead: 'triangle', density: 'cozy' },
   'blueprint':      { diagramType: 'process', theme: 'blueprint', gridBg: 'grid', density: 'comfortable' },
   'mono':           { theme: 'mono', density: 'cozy' }
 };
+
+// ── dynamic brand theme (color.semantic.* → THEMES['brand-light'/'brand-dark']) ──
+// host.tokens.colors() (unlike host.tokens.resolve()) always comes back hex-
+// normalised regardless of the brand doc's native colour format (hex, oklch,
+// rgb, …) — see engine/src/tokens.ts toSwatch() — so this needs no colour-math
+// of its own; tools never import the engine. Runs once per mount; a brand with
+// no resolvable semantic slots (or a shell with no tokens support) leaves the
+// SUSE defaults above untouched.
+var _brandThemesReady = null;
+function mixHex(a, b, t) {
+  var ar = parseInt(a.slice(1), 16), br = parseInt(b.slice(1), 16);
+  var ch = function (shift) {
+    var av = (ar >> shift) & 255, bv = (br >> shift) & 255;
+    return clamp(Math.round(lerp(av, bv, t)), 0, 255);
+  };
+  var r = ch(16), g = ch(8), bl = ch(0);
+  return '#' + [r, g, bl].map(function (v) { return v.toString(16).padStart(2, '0'); }).join('');
+}
+async function ensureBrandThemes() {
+  if (_brandThemesReady) return _brandThemesReady;
+  _brandThemesReady = (async function () {
+    try {
+      if (!host || !host.tokens || !host.tokens.colors) return;
+      var swatches = await host.tokens.colors({ theme: 'light' });
+      var byPath = {};
+      swatches.forEach(function (s) { if (s && s.path) byPath[s.path] = s.value; });
+      var slot = function (name) {
+        var hex = byPath['color.semantic.' + name];
+        return typeof hex === 'string' && /^#[0-9a-f]{6}$/i.test(hex) ? hex : null;
+      };
+      var light = { primary: slot('primary'), onPrimary: slot('on-primary'), secondary: slot('secondary'), surface: slot('surface'), text: slot('text'), muted: slot('muted') };
+      if (light.primary && light.onPrimary && light.secondary && light.surface && light.text) {
+        THEMES['brand-light'] = {
+          nodeFill: light.surface, nodeStroke: light.primary, nodeText: light.text, edgeColor: light.primary,
+          background: light.surface, detail: light.muted || THEMES['brand-light'].detail,
+          bandPalette: [mixHex(light.secondary, light.surface, 0.15), mixHex(light.secondary, light.surface, 0.45), mixHex(light.secondary, light.surface, 0.7), mixHex(light.secondary, light.surface, 0.9)]
+        };
+      }
+      var darkSet = await host.tokens.colors({ theme: 'dark' });
+      var byPathDark = {};
+      darkSet.forEach(function (s) { if (s && s.path) byPathDark[s.path] = s.value; });
+      var dslot = function (name) {
+        var hex = byPathDark['color.semantic.' + name];
+        return typeof hex === 'string' && /^#[0-9a-f]{6}$/i.test(hex) ? hex : null;
+      };
+      var dark = { primary: dslot('primary'), onPrimary: dslot('on-primary'), secondary: dslot('secondary'), surface: dslot('surface'), text: dslot('text'), muted: dslot('muted') };
+      if (dark.primary && dark.onPrimary && dark.secondary && dark.surface && dark.text) {
+        THEMES['brand-dark'] = {
+          nodeFill: dark.surface, nodeStroke: dark.primary, nodeText: dark.text, edgeColor: dark.primary,
+          background: dark.surface, detail: dark.muted || THEMES['brand-dark'].detail,
+          bandPalette: [mixHex(dark.surface, dark.secondary, 0.25), mixHex(dark.surface, dark.secondary, 0.5), mixHex(dark.surface, dark.secondary, 0.75), mixHex(dark.surface, dark.secondary, 0.95)]
+        };
+      }
+    } catch (e) {
+      if (host && host.log) host.log('warn', 'diagram-builder: brand theme resolution failed', { error: String(e) });
+    }
+  })();
+  return _brandThemesReady;
+}
 var VALID_TYPES = { org: 1, layercake: 1, process: 1, timeline: 1, cycle: 1, pyramid: 1, kanban: 1, matrix: 1, mindmap: 1, gantt: 1 };
 
 // ── small helpers ─────────────────────────────────────────────────────────────
@@ -1529,6 +1593,7 @@ function resolvePatches(inp, changedId) {
 
 // ── lifecycle ────────────────────────────────────────────────────────────────────
 async function compute(model, changedId) {
+  await ensureBrandThemes();
   var inp = inputsFrom(model);
   var patch = (changedId === 'preset' || changedId === 'theme' || changedId === 'density') ? resolvePatches(inp, changedId) : {};
   Object.keys(patch).forEach(function (k) { inp[k] = patch[k]; });

@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-09T12:45:38.486Z",
+  "generatedAt": "2026-07-09T21:01:38.314Z",
   "tools": [
     {
       "id": "color-block",
@@ -3031,7 +3031,7 @@
           "label": "Org · SUSE dark",
           "values": {
             "diagramType": "org",
-            "theme": "suse-dark",
+            "theme": "brand-dark",
             "orgDir": "down",
             "title": "Leadership Team",
             "cardLayout": "row",
@@ -3046,7 +3046,7 @@
           "label": "Mind map · dark",
           "values": {
             "diagramType": "mindmap",
-            "theme": "suse-dark",
+            "theme": "brand-dark",
             "branchColors": true,
             "title": "Product Roadmap",
             "cardLayout": "stacked",
@@ -3075,7 +3075,7 @@
           "label": "Process · SUSE dark",
           "values": {
             "diagramType": "process",
-            "theme": "suse-dark",
+            "theme": "brand-dark",
             "flowDir": "right",
             "title": "CI/CD Pipeline",
             "cardLayout": "stacked",
@@ -3135,7 +3135,7 @@
           "label": "Org · fog light",
           "values": {
             "diagramType": "org",
-            "theme": "suse-light",
+            "theme": "brand-light",
             "orgDir": "down",
             "title": "Company Structure",
             "cardLayout": "row",
