@@ -12,14 +12,6 @@
     "order": 8,
     "blurb": "Conference name badges, colour-coded by role"
   },
-  "examples": [
-    { "label": "Speaker · dark · tracks + QR", "values": { "status": "speaker", "eventName": "SUSECON 2026", "firstname": "Amina", "lastname": "Okafor", "pronouns": "she/her", "jobTitle": "Principal Engineer", "company": "SUSE", "tracks": [ { "label": "Platform Engineering", "color": "" }, { "label": "Keynote", "color": "#fcb244" } ], "url": "https://susecon.com/s/amina" } },
-    { "label": "Attendee · light · tracks + QR", "values": { "status": "attendee", "background": "#ffffff", "eventName": "Cloud Native Summit", "firstname": "Marco", "lastname": "Reyes", "company": "Rancher Labs", "tracks": [ { "label": "Kubernetes", "color": "#3c8eef" }, { "label": "Edge", "color": "#42d29f" } ], "url": "https://cnsummit.dev/a/marco" } },
-    { "label": "Sponsor · landscape · QR", "values": { "size": "6x4in", "status": "sponsor", "roleColor": "#0a9bd6", "background": "#0c322c", "eventName": "KubeCon EU", "firstname": "David", "lastname": "Kim", "jobTitle": "Developer Advocate", "company": "SUSE", "tracks": [ { "label": "Booth B12", "color": "" } ], "url": "https://suse.com/kubecon" } },
-    { "label": "VIP · mint · QR", "values": { "status": "vip", "background": "#eafaf1", "eventName": "Partner Executive Forum", "firstname": "Lena", "lastname": "Vogt", "pronouns": "she/her", "jobTitle": "Chief Technology Officer", "company": "NorthWind", "url": "https://suse.com/vip/lena" } },
-    { "label": "Staff · dark · tracks", "values": { "status": "staff", "eventName": "SUSECON 2026", "firstname": "Tomás", "lastname": "Silva", "jobTitle": "Event Crew", "tracks": [ { "label": "Registration", "color": "#fe7c3f" }, { "label": "Help Desk", "color": "#30ba78" } ], "url": "https://susecon.com/help" } },
-    { "label": "Press · light landscape · QR", "values": { "size": "a6land", "status": "press", "background": "#ffffff", "eventName": "Open Source Summit", "firstname": "Yuki", "lastname": "Tanaka", "jobTitle": "Correspondent", "company": "TechDaily", "url": "https://ossummit.org/press/yuki" } }
-  ],
   "render": {
     "width": 1200,
     "height": 1800,

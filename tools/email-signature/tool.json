@@ -7,14 +7,6 @@
   "status": "official",
   "category": "everyone",
   "tags": ["email", "signature", "contact", "branding"],
-  "examples": [
-    { "label": "Engineer · Germany append", "values": { "logo": "standard", "firstname": "Amina", "lastname": "Okafor", "jobTitle": "Principal Engineer, Rancher", "email": "amina.okafor@suse.com", "phone": "+49 911 740530", "mobile": "+49 170 1234567", "im": "@amina on Slack", "append": "germany" } },
-    { "label": "Sales · grey logo · business", "values": { "logo": "grey", "firstname": "Diego", "lastname": "Fernández", "jobTitle": "Account Executive, EMEA", "email": "diego.fernandez@suse.com", "phone": "+34 91 123 4567", "mobile": "+34 600 123 456", "address": "Calle de Alcalá 42", "address2": "28014 Madrid, Spain", "append": "business" } },
-    { "label": "Support · certifications", "values": { "logo": "standard", "firstname": "Mei", "lastname": "Chen", "jobTitle": "Technical Support Engineer", "certs": "SCA, RHCE, CKA", "email": "mei.chen@suse.com", "phone": "+65 6800 1234", "im": "@mei", "append": "none" } },
-    { "label": "Marketing · wellbeing", "values": { "logo": "standard", "firstname": "Sofia", "lastname": "Rossi", "jobTitle": "Marketing Manager, Cloud Native", "email": "sofia.rossi@suse.com", "mobile": "+39 340 123 4567", "append": "wellbeing" } },
-    { "label": "Executive · grey logo", "values": { "logo": "grey", "firstname": "Sam", "lastname": "Whitfield", "jobTitle": "VP of Engineering", "email": "sam.whitfield@suse.com", "phone": "+1 415 555 0142", "mobile": "+1 415 555 0199", "address": "1 Innovation Way", "address2": "Provo, UT 84604", "append": "business" } },
-    { "label": "Developer advocate", "values": { "logo": "standard", "firstname": "Ravi", "lastname": "Patel", "jobTitle": "Developer Advocate, Kubernetes", "email": "ravi.patel@suse.com", "mobile": "+91 98765 43210", "im": "@ravi on Slack", "append": "none" } }
-  ],
   "render": {
     "width": 600,
     "height": 300,

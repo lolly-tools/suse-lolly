@@ -12,14 +12,6 @@
     "order": 3,
     "blurb": "Multi-page PDFs — cover, content, back"
   },
-  "examples": [
-    { "label": "Pine · green report", "values": { "theme": "light", "accent": "#30ba78", "coverTitle": "Content Automation Report 2026", "coverSubtitle": "A summer of building in the open", "coverImage": { "source": "library", "id": "suse/photos/susecon26-keynote-tues-19" }, "backImage": { "source": "library", "id": "suse/photos/susecon26-demopalooza-mon-4" } } },
-    { "label": "Waterhole · Handbuch · Deutsch", "values": { "theme": "dark", "accent": "#2453ff", "coverTitle": "Plattform-Engineering-Handbuch", "coverSubtitle": "Standards, Muster und goldene Pfade", "coverImage": { "source": "library", "id": "suse/campaign/optimize-1" } } },
-    { "label": "Midnight · QBR · headshot", "values": { "theme": "light", "accent": "#192072", "pageSize": "letter", "coverTitle": "Quarterly Business Review", "coverSubtitle": "Q2 FY26 — results and outlook", "coverImage": { "source": "library", "id": "suse/headshots/frank-feldmann" } } },
-    { "label": "Persimmon · Edge & AI field guide", "values": { "theme": "dark", "accent": "#fe7c3f", "coverBg": "#192072", "coverTitle": "Edge & AI Field Guide", "coverSubtitle": "From the datacenter to the far edge", "coverImage": { "source": "library", "id": "suse/campaign/manage-secure-1" } } },
-    { "label": "Jungle · Charte · Français", "values": { "theme": "light", "accent": "#0c322c", "pageSize": "a5", "coverTitle": "Charte de marque", "coverSubtitle": "Voix, logo, couleur et typographie", "coverLogoSize": "large", "coverImage": { "source": "library", "id": "suse/photos/susecon26-branding-mon-18" } } },
-    { "label": "Mint · impact report · headshot", "values": { "theme": "dark", "accent": "#90ebcd", "coverBg": "#192072", "coverTitle": "Annual Impact Report", "coverSubtitle": "Community, sustainability, open source", "coverImage": { "source": "library", "id": "suse/headshots/dirk-peter-van-leeuwen" }, "backImage": { "source": "library", "id": "suse/photos/susecon26-keynote-wed-11" } } }
-  ],
   "render": {
     "width": 794,
     "height": 1123,

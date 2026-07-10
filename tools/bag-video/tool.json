@@ -7,24 +7,6 @@
   "status": "official",
   "category": "designer",
   "tags": ["video", "bag", "animation"],
-  "examples": [
-    {
-      "label": "Sitting · Transparent",
-      "values": { "pose": "sitting", "theme": "transparent" }
-    },
-    {
-      "label": "Laying · Transparent",
-      "values": { "pose": "laying", "theme": "transparent" }
-    },
-    {
-      "label": "Dangling · Transparent",
-      "values": { "pose": "dangling", "theme": "transparent" }
-    },
-    {
-      "label": "Curious · Transparent",
-      "values": { "pose": "curious", "theme": "transparent" }
-    }
-  ],
   "render": {
     "width": 800,
     "height": 800,

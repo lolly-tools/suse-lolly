@@ -12,14 +12,6 @@
     "order": 9,
     "blurb": "Directional event signs, print-ready"
   },
-  "examples": [
-    { "label": "Dark hall", "values": { "background": "#0c322c", "accent": "#30ba78", "eventName": "SUSECON 2026", "heading": "Level 2" } },
-    { "label": "Green poster", "values": { "size": "24x36in", "background": "#30ba78", "accent": "#0c322c", "heading": "Registration", "textWeight": 900 } },
-    { "label": "Landscape directory", "values": { "size": "a2land", "background": "#ffffff", "accent": "#0c322c", "heading": "Welcome", "eventName": "Cloud Summit" } },
-    { "label": "Thin A1", "values": { "size": "a1", "heading": "Exhibition", "accent": "#30ba78", "textWeight": 300 } },
-    { "label": "Amber expo", "values": { "size": "a2", "background": "#0c322c", "accent": "#fcb244", "eventName": "SUSECON 2026", "heading": "Sponsor Expo", "textWeight": 700 } },
-    { "label": "Blue tracks", "values": { "size": "a3land", "background": "#ffffff", "accent": "#0a9bd6", "eventName": "Cloud Native Day", "heading": "Sessions", "directions": [ { "label": "Kubernetes Track", "arrow": "up-right", "side": "left", "color": "" }, { "label": "Edge & AI Track", "arrow": "right", "side": "right", "color": "" }, { "label": "Hands-on Labs", "arrow": "down-right", "side": "left", "color": "" }, { "label": "Certification Lounge", "arrow": "down", "side": "right", "color": "" } ] } }
-  ],
   "render": {
     "width": 1240,
     "height": 1754,

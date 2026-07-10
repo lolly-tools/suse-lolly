@@ -11,29 +11,6 @@
     "order": 5,
     "blurb": "Cards + connectors that stick to the boxes"
   },
-  "examples": [
-    {
-      "label": "Leadership · light",
-      "values": {
-        "background": "#f4f7f6",
-        "boxes": [
-          { "id": "ceo", "kind": "card", "layout": "row", "x": 650, "y": 90, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#0c322c", "accent": "#30ba78", "fit": "cover", "text": "Alex Rivera\n{w200|Chief Executive}", "fg": "#ffffff", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
-          { "id": "cto", "kind": "card", "layout": "row", "x": 360, "y": 430, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "Priya Nair\n{w200|CTO}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
-          { "id": "coo", "kind": "card", "layout": "row", "x": 650, "y": 430, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "Sam Osei\n{w200|COO}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
-          { "id": "cfo", "kind": "card", "layout": "row", "x": 940, "y": 430, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "Mia Chen\n{w200|CFO}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
-          { "id": "eng1", "kind": "card", "layout": "icon", "x": 210, "y": 740, "w": 280, "h": 92, "rot": 0, "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#30ba78", "text": "Platform\n{w200|Infrastructure team}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 },
-          { "id": "eng2", "kind": "card", "layout": "icon", "x": 520, "y": 740, "w": 280, "h": 92, "rot": 0, "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#fe7c3f", "text": "Product\n{w200|Application team}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 }
-        ],
-        "connectors": [
-          { "id": "c1", "from": "ceo", "to": "cto", "style": "elbow", "arrow": "end", "head": "open", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-          { "id": "c2", "from": "ceo", "to": "coo", "style": "elbow", "arrow": "end", "head": "open", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-          { "id": "c3", "from": "ceo", "to": "cfo", "style": "elbow", "arrow": "end", "head": "open", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-          { "id": "c4", "from": "cto", "to": "eng1", "style": "elbow", "arrow": "end", "head": "open", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-          { "id": "c5", "from": "cto", "to": "eng2", "style": "elbow", "arrow": "end", "head": "open", "dash": "solid", "color": "#30ba78", "width": 3.5 }
-        ]
-      }
-    }
-  ],
   "render": {
     "width": 1600,
     "height": 1000,

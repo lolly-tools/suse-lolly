@@ -8,14 +8,6 @@
   "category": "designer",
   "tags": ["logo", "lockup", "partner", "co-brand", "brand", "suse", "partnership", "sponsor", "powered-by", "on-device"],
   "a11yLabel": "SUSE partner lockup with {{partners.length}} partner logos",
-  "examples": [
-    { "label": "Light · full colour · bar", "values": { "theme": "light", "leadTreatment": "colour", "layout": "row", "connector": "bar", "size": 130, "gap": 56, "balance": true } },
-    { "label": "Dark · mono · × symbol", "values": { "theme": "dark", "leadTreatment": "mono", "layout": "row", "connector": "symbol", "symbol": "times", "size": 120, "gap": 64 } },
-    { "label": "Light · powered by · large lead", "values": { "theme": "light", "leadTreatment": "colour", "layout": "lead", "connector": "text", "connectorText": "powered by", "leadPresence": "large", "size": 140, "gap": 72 } },
-    { "label": "Dark · in partnership with", "values": { "theme": "dark", "leadTreatment": "colour", "layout": "row", "connector": "text", "connectorText": "in partnership with", "size": 110, "gap": 60 } },
-    { "label": "Light · plus · hero lead", "values": { "theme": "light", "leadTreatment": "colour", "layout": "lead", "connector": "symbol", "symbol": "plus", "leadPresence": "hero", "partnerDivider": "bar", "size": 150, "gap": 80 } },
-    { "label": "Dark · mono · spacing only", "values": { "theme": "dark", "leadTreatment": "mono", "layout": "row", "connector": "none", "size": 120, "gap": 96, "balance": false } }
-  ],
   "render": {
     "width": 1200,
     "height": 360,

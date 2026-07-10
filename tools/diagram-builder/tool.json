@@ -12,16 +12,6 @@
     "order": 6,
     "blurb": "Turn cards or text into on-brand diagrams"
   },
-  "examples": [
-    { "label": "Org · SUSE dark", "values": { "diagramType": "org", "theme": "brand-dark", "orgDir": "down", "title": "Leadership Team", "cardLayout": "row", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
-    { "label": "Mind map · dark", "values": { "diagramType": "mindmap", "theme": "brand-dark", "branchColors": true, "title": "Product Roadmap", "cardLayout": "stacked", "background": "#0c322c", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
-    { "label": "Cycle · blueprint", "values": { "diagramType": "cycle", "theme": "blueprint", "cycleCurved": true, "gridBg": "grid", "title": "Delivery Lifecycle", "cardLayout": "stacked", "background": "#0a2540", "nodeFill": "#0a2540", "nodeStroke": "#7fd4ff", "nodeText": "#eaf6ff", "edgeColor": "#7fd4ff" } },
-    { "label": "Process · SUSE dark", "values": { "diagramType": "process", "theme": "brand-dark", "flowDir": "right", "title": "CI/CD Pipeline", "cardLayout": "stacked", "background": "#0c322c", "nodeFill": "#0c322c", "nodeStroke": "#90ebcd", "nodeText": "#ffffff", "edgeColor": "#90ebcd" } },
-    { "label": "Layercake · mint", "values": { "diagramType": "layercake", "theme": "mint", "title": "Platform Architecture", "cardLayout": "stacked", "background": "#eafaf4", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#0c322c" } },
-    { "label": "Pyramid · mint", "values": { "diagramType": "pyramid", "pyramidStyle": "pyramid", "theme": "mint", "title": "Adoption Model", "cardLayout": "stacked", "background": "#eafaf4", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#0c322c" } },
-    { "label": "Timeline · blueprint", "values": { "diagramType": "timeline", "timelineDir": "right", "theme": "blueprint", "gridBg": "grid", "title": "Release Timeline", "cardLayout": "stacked", "background": "#0a2540", "nodeFill": "#0a2540", "nodeStroke": "#7fd4ff", "nodeText": "#eaf6ff", "edgeColor": "#7fd4ff" } },
-    { "label": "Org · fog light", "values": { "diagramType": "org", "theme": "brand-light", "orgDir": "down", "title": "Company Structure", "cardLayout": "row", "background": "#ffffff", "nodeFill": "#ffffff", "nodeStroke": "#0c322c", "nodeText": "#0c322c", "edgeColor": "#30ba78" } }
-  ],
   "render": {
     "width": 1600,
     "height": 1000,

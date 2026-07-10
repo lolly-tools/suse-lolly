@@ -7,14 +7,6 @@
   "status": "official",
   "category": "event",
   "tags": ["map", "team", "timezone", "world", "time", "meeting", "schedule", "planner", "clock", "widget", "d3"],
-  "examples": [
-    { "label": "SUSECON · green · orthographic", "values": { "eventName": "SUSECON 2026", "city": "Orlando", "theme": "green", "layout": "landscape", "projection": "geoOrthographic", "showNight": true, "people": [ { "name": "Amina", "city": "Nuremberg" }, { "name": "Diego", "city": "São Paulo" }, { "name": "Mei", "city": "Singapore" }, { "name": "Sam", "city": "San Francisco" } ] } },
-    { "label": "Global standup · dark · natural earth", "values": { "eventName": "Global Engineering Standup", "city": "Nuremberg", "theme": "dark", "layout": "landscape", "projection": "geoNaturalEarth1", "showBorders": true, "showGraticule": true, "people": [ { "name": "Lena", "city": "Berlin" }, { "name": "Ravi", "city": "Bengaluru" }, { "name": "Kenji", "city": "Tokyo" }, { "name": "Ana", "city": "Madrid" } ] } },
-    { "label": "Release sync · light · equal earth", "values": { "eventName": "SLES 16 Release Sync", "city": "Prague", "theme": "light", "layout": "square", "projection": "geoEqualEarth", "landColor": "#eafaf1", "pinColor": "#30ba78", "people": [ { "name": "Tomáš", "city": "Prague" }, { "name": "Grace", "city": "London" }, { "name": "Omar", "city": "Dubai" } ] } },
-    { "label": "Live world clock · green · mercator", "values": { "eventName": "Team World Clock", "city": "Nuremberg", "liveClock": true, "theme": "green", "layout": "portrait", "projection": "geoMercator", "people": [ { "name": "Sofia", "city": "Buenos Aires" }, { "name": "Yuki", "city": "Tokyo" }, { "name": "Ivan", "city": "Moscow" }, { "name": "Mary", "city": "New York" } ] } },
-    { "label": "Community call · dark · azimuthal", "values": { "eventName": "Cloud Native Community Call", "city": "Amsterdam", "theme": "dark", "layout": "landscape", "projection": "geoAzimuthalEqualArea", "pinShape": "diamond", "pinColor": "#0a9bd6", "people": [ { "name": "Noah", "city": "Amsterdam" }, { "name": "Priya", "city": "Mumbai" }, { "name": "Chen", "city": "Shanghai" } ] } },
-    { "label": "Edge summit · light · equirectangular", "values": { "eventName": "Edge Summit Planning", "city": "Munich", "theme": "light", "layout": "landscape", "projection": "geoEquirectangular", "pinColor": "#fe7c3f", "pinShape": "square", "people": [ { "name": "Elena", "city": "Munich" }, { "name": "Carlos", "city": "Mexico City" }, { "name": "Aisha", "city": "Nairobi" } ] } }
-  ],
   "render": {
     "width": 800,
     "height": 600,

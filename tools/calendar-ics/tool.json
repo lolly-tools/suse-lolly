@@ -7,14 +7,6 @@
   "status": "official",
   "category": "event",
   "tags": ["calendar", "ics", "event", "ical", "invite", "meeting", "schedule"],
-  "examples": [
-    { "label": "SUSECON keynote", "values": { "eventName": "SUSECON 2026 Keynote", "meetingTime": "2026-04-14T09:00", "meetingEndTime": "2026-04-14T10:30", "city": "Orlando, FL", "description": "Opening keynote: the open source enterprise.", "url": "https://susecon.com", "reminder": "30" } },
-    { "label": "Kubernetes workshop", "values": { "eventName": "Rancher & Kubernetes Workshop", "meetingTime": "2026-05-06T13:00", "meetingEndTime": "2026-05-06T16:00", "city": "https://meet.suse.com/rancher", "description": "Hands-on lab: deploy and manage clusters with Rancher Prime.", "reminder": "15" } },
-    { "label": "All-day hack day", "values": { "eventName": "Open Source Hack Day", "meetingTime": "2026-06-12T00:00", "allDay": true, "city": "Nuremberg HQ", "description": "Ship something you love. Prizes at 5pm." } },
-    { "label": "Edge AI webinar", "values": { "eventName": "Edge AI Webinar", "meetingTime": "2026-03-18T17:00", "meetingEndTime": "2026-03-18T18:00", "city": "https://webinar.suse.com/edge-ai", "url": "https://webinar.suse.com/edge-ai", "reminder": "60" } },
-    { "label": "Release standup", "values": { "eventName": "SLES 16 Release Standup", "meetingTime": "2026-02-09T10:00", "meetingEndTime": "2026-02-09T10:15", "city": "Zoom", "description": "Daily sync until GA.", "reminder": "5" } },
-    { "label": "Community meetup", "values": { "eventName": "Cloud Native Community Meetup", "meetingTime": "2026-07-23T18:30", "meetingEndTime": "2026-07-23T21:00", "city": "Berlin", "description": "Talks, pizza, and open source.", "reminder": "1440" } }
-  ],
   "render": {
     "width": 760,
     "height": 460,

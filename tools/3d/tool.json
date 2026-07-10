@@ -131,10 +131,5 @@
 
     { "id": "applyTint", "label": "Recolor", "section": "Material", "type": "boolean", "default": false },
     { "id": "tint", "label": "Tint", "section": "Material", "type": "color", "default": "{color.semantic.secondary}", "showIf": { "applyTint": true } }
-  ],
-  "examples": [
-    { "label": "Animated", "theme": "dark", "values": { "model": "sample-1", "scene": "natural", "cameraMove": "orbit" } },
-    { "label": "Studio", "theme": "light", "values": { "model": "sample-2", "scene": "bright-studio", "cameraMove": "static", "camera": { "fov": 40, "rotation": 25, "tilt": 10, "zoom": 1, "pan": 0 } } },
-    { "label": "SUSE green", "theme": "dark", "values": { "model": "sample-3", "scene": "suse-green", "cameraMove": "arc" } }
   ]
 }

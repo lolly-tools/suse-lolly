@@ -145,12 +145,19 @@ function weightOf(b) {
   return String(w);
 }
 // Text block font family. Single-quoted so it survives inside a style="" attribute
-// without HTML-escaping. Unknown values fall back to SUSE (no CSS injection).
+// without HTML-escaping. 'SUSE'/'SUSE Mono' are the built-ins; any other value is
+// a brand font the user added (the font select's brandFonts list), sanitised to
+// safe chars before it reaches style="" (no CSS injection). Unknown/empty → SUSE.
 var FONTS = {
   'SUSE Mono': "'SUSE Mono', ui-monospace, SFMono-Regular, monospace",
   'SUSE': "'SUSE', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
 };
-function fontFamily(v) { return FONTS[String(v)] || FONTS.SUSE; }
+function fontFamily(v) {
+  var key = String(v);
+  if (FONTS[key]) return FONTS[key];
+  var safe = key.replace(/[^\w \-]/g, '').trim(); // letters/digits/space/hyphen only
+  return safe ? ("'" + safe + "', " + FONTS.SUSE) : FONTS.SUSE;
+}
 var FITS = { cover: 1, contain: 1, fill: 1, none: 1, 'scale-down': 1 };
 // Whitelisted CSS object-position anchors — the free-canvas 3×3 picker writes one of
 // these. The value lands in a style="" attr, so (like safeColor) only known keywords

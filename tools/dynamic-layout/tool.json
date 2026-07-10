@@ -8,14 +8,6 @@
   "status": "experimental",
   "category": "everyone",
   "tags": ["layout", "responsive", "hero", "social", "poster", "cta", "headshot", "text"],
-  "examples": [
-    { "label": "White · brand · get started", "values": { "theme": "white", "logo": "top-right", "logoStyle": "brand", "heading": "Build on your terms", "subheading": "The open source platform for the enterprise", "body": "From cloud to edge — one platform.\n\n> Kubernetes at any scale\n> Linux you can trust", "cta": "Get started", "ctaTypography": "sans" } },
-    { "label": "Pine · SUSECON · Deutsch", "values": { "theme": "pine", "logo": "top-left", "logoStyle": "mono", "heading": "SUSECON 2026", "headingFontSize": 1.4, "headingFontWeight": 300, "subheading": "**Nürnberg** · 12.–14. Mai", "body": "Drei Tage Keynotes, praktische Workshops und Open-Source-Community.", "cta": "Anmelden", "ctaTypography": "mono" } },
-    { "label": "Persimmon · apricot · Tiếng Việt", "values": { "theme": "persimmon", "logo": "bottom-right", "logoStyle": "brand", "fgColor": "#FC9869", "heading": "Từ biên đến lõi", "subheading": "Chạy ở mọi nơi, quản lý mọi chốn", "body": "> Rancher Prime\n> SUSE Edge\n> NeuVector", "cta": "Tìm hiểu thêm", "ctaTypography": "mono" } },
-    { "label": "White · bold · Español", "values": { "theme": "white", "logo": "top-right", "logoStyle": "brand", "heading": "Confianza cero, cero dramas", "headingFontSize": 1.6, "headingFontWeight": 700, "subheading": "Seguridad de contenedores que no se queda atrás", "subheadingFontWeight": 600, "body": "Protección de ciclo completo para cargas cloud native.", "cta": "Ver la demo" } },
-    { "label": "Pine · mint · Français", "values": { "theme": "pine", "logo": "bottom-left", "logoStyle": "mono", "fgColor": "#BFF1EA", "heading": "Ouvert. Adaptable. À vous.", "headingFontWeight": 200, "subheading": "Un logiciel indépendant pour un monde dépendant", "body": "Le choix, sans verrouillage.", "cta": "Lire l'histoire", "ctaTypography": "sans" } },
-    { "label": "Midnight · mint · AI", "values": { "theme": "midnight", "logo": "top-right", "logoStyle": "brand", "fgColor": "#BFF1EA", "heading": "AI-ready infrastructure", "subheading": "Private, governed, production-grade", "body": "Ship models with confidence.", "cta": "Explore SUSE AI", "ctaTypography": "mono", "ctaFontWeight": 500 } }
-  ],
   "render": {
     "width": 1920,
     "height": 1080,

@@ -7,13 +7,6 @@
   "status": "official",
   "category": "everyone",
   "tags": ["quote", "social", "marketing", "card"],
-  "examples": [
-    { "label": "Engineer · light · speaker top", "values": { "theme": "light", "quoteStyle": "wrapping", "layout": "speaker-top", "quote": "The best infrastructure is the kind you never have to think about.", "name": "Amina Okafor", "company": "Principal Engineer, SUSE", "separator": true, "frameInset": 80 } },
-    { "label": "Rancher · main · side by side", "values": { "theme": "main", "quoteStyle": "big", "layout": "side-by-side", "quote": "Kubernetes gave us a common language. **Rancher** made it speak at scale.", "name": "Diego Fernández", "company": "Platform Lead", "separator": true, "frameInset": 64 } },
-    { "label": "Bold statement · dark · no quotes", "values": { "theme": "dark", "quoteStyle": "none", "layout": "minimal", "quote": "Choice matters.", "name": "", "company": "", "separator": false, "frameInset": 160 } },
-    { "label": "Community · light · minimal", "values": { "theme": "light", "quoteStyle": "wrapping", "layout": "minimal", "quote": "We build in the open because the best ideas come from everywhere.", "name": "Mei Chen", "company": "Community Director", "separator": true, "frameInset": 80 } },
-    { "label": "Edge AI · main · speaker top", "values": { "theme": "main", "quoteStyle": "big", "layout": "speaker-top", "quote": "AI at the edge isn't a feature. It's where the real world meets compute.", "name": "Ravi Patel", "company": "Developer Advocate", "separator": true, "frameInset": 88 } }
-  ],
   "render": {
     "width": 1080,
     "height": 1080,

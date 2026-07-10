@@ -8,11 +8,6 @@
   "status": "official",
   "category": "designer",
   "tags": ["document", "doc", "word", "rich text", "editor", "pages", "pdf", "report", "letter", "writing", "wysiwyg", "tables", "compose"],
-  "examples": [
-    { "label": "Pine · project brief", "values": { "theme": "light", "accent": "#30ba78", "font": "SUSE", "docTitle": "Project Brief" } },
-    { "label": "Midnight · one-pager", "values": { "theme": "light", "accent": "#192072", "font": "SUSE", "pageSize": "letter", "docTitle": "Product One-Pager" } },
-    { "label": "Mono · technical note", "values": { "theme": "light", "accent": "#0c322c", "font": "SUSE Mono", "docTitle": "Technical Note" } }
-  ],
   "render": {
     "width": 794,
     "height": 1123,
