@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-11T07:29:17.891Z",
+  "generatedAt": "2026-07-11T09:14:28.160Z",
   "tools": [
     {
       "id": "color-block",
@@ -28,6 +28,73 @@
       "featured": {
         "order": 4,
         "blurb": "Colour blocks — text, image, logo in a grid"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Barevný blok",
+          "description": "Barevné bloky — text, obrázek, logo — automaticky uspořádané do mřížky.",
+          "blurb": "Barevné bloky — text, obrázek, logo v mřížce"
+        },
+        "de": {
+          "name": "Farbblock",
+          "description": "Farbblöcke — Text, Bild, Logo — automatisch zu einem Raster angeordnet.",
+          "blurb": "Farbblöcke — Text, Bild, Logo in einem Raster"
+        },
+        "es": {
+          "name": "Bloque de color",
+          "description": "Bloques de color — texto, imagen, logo — organizados automáticamente en una cuadrícula.",
+          "blurb": "Bloques de color — texto, imagen, logo en una cuadrícula"
+        },
+        "fr": {
+          "name": "Bloc de couleur",
+          "description": "Blocs de couleur — texte, image, logo — organisés automatiquement en grille.",
+          "blurb": "Blocs de couleur — texte, image, logo en grille"
+        },
+        "ja": {
+          "name": "カラーブロック",
+          "description": "カラーブロック——テキスト、画像、ロゴ——自動的にグリッドに配置されます。",
+          "blurb": "カラーブロック——テキスト、画像、ロゴをグリッドに配置"
+        },
+        "ms": {
+          "name": "Blok Warna",
+          "description": "Blok warna — teks, imej, logo — disusun secara automatik dalam grid.",
+          "blurb": "Blok warna — teks, imej, logo dalam grid"
+        },
+        "nl": {
+          "name": "Kleurblok",
+          "description": "Kleurblokken — tekst, afbeelding, logo — automatisch gerangschikt in een raster.",
+          "blurb": "Kleurblokken — tekst, afbeelding, logo in een raster"
+        },
+        "pt": {
+          "name": "Bloco de cor",
+          "description": "Blocos de cor — texto, imagem, logo — organizados automaticamente em grade.",
+          "blurb": "Blocos de cor — texto, imagem, logo em grade"
+        },
+        "sv": {
+          "name": "Färgblock",
+          "description": "Färgblock — text, bild, logotyp — arrangeras automatiskt i ett rutnät.",
+          "blurb": "Färgblock — text, bild, logotyp i ett rutnät"
+        },
+        "tl": {
+          "name": "Color Block",
+          "description": "Mga color block — text, larawan, logo — awtomatikong inaayos sa grid.",
+          "blurb": "Mga color block — text, larawan, logo sa grid"
+        },
+        "vi": {
+          "name": "Khối màu",
+          "description": "Khối màu — văn bản, hình ảnh, logo — tự động sắp xếp thành lưới.",
+          "blurb": "Khối màu — văn bản, hình ảnh, logo trong lưới"
+        },
+        "zh-hant": {
+          "name": "色塊",
+          "description": "色塊——文字、圖片、標誌——自動排列成網格。",
+          "blurb": "色塊——文字、圖片、標誌排列成網格"
+        },
+        "zh": {
+          "name": "色块",
+          "description": "色块——文字、图片、标志——自动排列成网格。",
+          "blurb": "色块——文字、图片、标志排列成网格"
+        }
       }
     },
     {
@@ -52,7 +119,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M3 9h18\" /><path d=\"M9 21V9\" /></svg>",
-      "preview": "/catalog/previews/dynamic-layout.svg"
+      "preview": "/catalog/previews/dynamic-layout.svg",
+      "i18n": {
+        "cs": {
+          "name": "Dynamické rozvržení",
+          "description": "Univerzální rozvržení, které se přizpůsobí všemu, co přidáš, v jakékoli velikosti."
+        },
+        "de": {
+          "name": "Dynamisches Layout",
+          "description": "Ein Alleskönner-Layout, das sich an alles anpasst, was Sie hinzufügen – in jeder Größe."
+        },
+        "es": {
+          "name": "Diseño dinámico",
+          "description": "Un diseño todoterreno que se recompone según lo que añadas, a cualquier tamaño."
+        },
+        "fr": {
+          "name": "Mise en page dynamique",
+          "description": "Une mise en page polyvalente qui se recompose autour de ce que tu ajoutes, à toute taille."
+        },
+        "ja": {
+          "name": "ダイナミックレイアウト",
+          "description": "何を追加しても自動で再構成される、あらゆるサイズに対応する万能レイアウトです。"
+        },
+        "ms": {
+          "name": "Reka letak dinamik",
+          "description": "Reka letak serba boleh yang menyusun semula mengikut apa sahaja yang anda tambah, pada sebarang saiz."
+        },
+        "nl": {
+          "name": "Dynamische lay-out",
+          "description": "Een alleskunner-lay-out die zich herschikt rond alles wat je toevoegt, op elk formaat."
+        },
+        "pt": {
+          "name": "Layout dinâmico",
+          "description": "Um layout multiuso que se reorganiza em torno do que você adicionar, em qualquer tamanho."
+        },
+        "sv": {
+          "name": "Dynamisk layout",
+          "description": "En layout för allt som omstrukturerar sig kring det du lägger till, i vilken storlek som helst."
+        },
+        "tl": {
+          "name": "Dynamic Layout",
+          "description": "Isang all-purpose na layout na awtomatikong nag-aayos base sa idinagdag mo, sa kahit anong size."
+        },
+        "vi": {
+          "name": "Bố cục động",
+          "description": "Bố cục vạn năng, tự sắp xếp lại theo bất kỳ nội dung nào bạn thêm vào, ở mọi kích thước."
+        },
+        "zh-hant": {
+          "name": "動態版面",
+          "description": "萬能版面，隨你新增的內容自動重新編排，適用任何尺寸。"
+        },
+        "zh": {
+          "name": "动态布局",
+          "description": "万能布局，随你添加的内容自动重组，适配任意尺寸。"
+        }
+      }
     },
     {
       "id": "quotes",
@@ -79,7 +200,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" /><path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" /></svg>",
-      "preview": "/catalog/previews/quotes.svg"
+      "preview": "/catalog/previews/quotes.svg",
+      "i18n": {
+        "cs": {
+          "name": "Citátová karta",
+          "description": "Citátové karty v souladu se značkou pro příspěvky na sociálních sítích a prezentace."
+        },
+        "de": {
+          "name": "Zitatkarte",
+          "description": "Markenkonforme Zitatkarten für Social-Media-Beiträge und Folien."
+        },
+        "es": {
+          "name": "Tarjeta de cita",
+          "description": "Tarjetas de cita con tu marca para publicaciones y diapositivas."
+        },
+        "fr": {
+          "name": "Carte de citation",
+          "description": "Cartes de citation à ta marque pour les réseaux sociaux et les diapositives."
+        },
+        "ja": {
+          "name": "名言カード",
+          "description": "SNS投稿やスライド用の、ブランドに合わせた名言カードです。"
+        },
+        "ms": {
+          "name": "Kad Petikan",
+          "description": "Kad petikan mengikut jenama anda untuk hantaran media sosial dan slaid."
+        },
+        "nl": {
+          "name": "Citaatkaart",
+          "description": "Merkgetrouwe citaatkaarten voor sociale posts en presentaties."
+        },
+        "pt": {
+          "name": "Cartão de citação",
+          "description": "Cartões de citação com a sua marca para posts e slides."
+        },
+        "sv": {
+          "name": "Citatkort",
+          "description": "Varumärkesanpassade citatkort för sociala inlägg och presentationer."
+        },
+        "tl": {
+          "name": "Quote Card",
+          "description": "Naka-brand na quote cards para sa social media posts at slides."
+        },
+        "vi": {
+          "name": "Thẻ trích dẫn",
+          "description": "Thẻ trích dẫn đúng thương hiệu cho bài đăng mạng xã hội và slide."
+        },
+        "zh-hant": {
+          "name": "語錄卡",
+          "description": "適用於社群貼文和投影片的品牌語錄卡。"
+        },
+        "zh": {
+          "name": "语录卡",
+          "description": "用于社交媒体和幻灯片的品牌语录卡。"
+        }
+      }
     },
     {
       "id": "meeting-planner",
@@ -99,7 +274,61 @@
       "height": 600,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\" /><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\" /><path d=\"M2 12h20\" /></svg>",
-      "preview": "/catalog/previews/meeting-planner.svg"
+      "preview": "/catalog/previews/meeting-planner.svg",
+      "i18n": {
+        "cs": {
+          "name": "Plánovač schůzek",
+          "description": "Naplánuj globální schůzku a podívej se na čas v časovém pásmu každého člena týmu."
+        },
+        "de": {
+          "name": "Besprechungsplaner",
+          "description": "Planen Sie eine globale Besprechung und sehen Sie die Uhrzeit in der Zeitzone jedes Teammitglieds."
+        },
+        "es": {
+          "name": "Planificador de reuniones",
+          "description": "Planifica una reunión global y mira la hora de cada miembro del equipo en su zona horaria."
+        },
+        "fr": {
+          "name": "Planificateur de réunions",
+          "description": "Planifie une réunion mondiale et vois l'heure de chaque coéquipier dans son fuseau horaire."
+        },
+        "ja": {
+          "name": "ミーティングプランナー",
+          "description": "グローバルミーティングを計画し、各チームメンバーのタイムゾーンの時刻を確認できます。"
+        },
+        "ms": {
+          "name": "Perancang Mesyuarat",
+          "description": "Rancang mesyuarat global dan lihat waktu di setiap zon waktu ahli pasukan."
+        },
+        "nl": {
+          "name": "Vergaderplanner",
+          "description": "Plan een wereldwijde vergadering en bekijk de tijd in de tijdzone van elk teamlid."
+        },
+        "pt": {
+          "name": "Planejador de Reuniões",
+          "description": "Planeje uma reunião global e veja o horário no fuso horário de cada membro da equipe."
+        },
+        "sv": {
+          "name": "Mötesplanerare",
+          "description": "Planera ett globalt möte och se tiden i varje teammedlems tidszon."
+        },
+        "tl": {
+          "name": "Planner ng Meeting",
+          "description": "Mag-plano ng global na meeting at tingnan ang oras sa time zone ng bawat miyembro ng team."
+        },
+        "vi": {
+          "name": "Lập lịch họp",
+          "description": "Lên kế hoạch cho một cuộc họp toàn cầu và xem giờ theo múi giờ của từng thành viên trong nhóm."
+        },
+        "zh-hant": {
+          "name": "會議規劃工具",
+          "description": "規劃全球會議，查看每位團隊成員所在時區的時間。"
+        },
+        "zh": {
+          "name": "会议规划器",
+          "description": "规划全球会议，查看每位团队成员所在时区的时间。"
+        }
+      }
     },
     {
       "id": "code-canvas",
@@ -116,7 +345,61 @@
       "height": 800,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m7 11 2-2-2-2\" /><path d=\"M11 13h4\" /><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" /></svg>",
-      "preview": "/tools/code-canvas/card.svg"
+      "preview": "/tools/code-canvas/card.svg",
+      "i18n": {
+        "cs": {
+          "name": "Plátno Kódu",
+          "description": "Proměň úryvky kódu v čisté obrázky se zvýrazněnou syntaxí, připravené ke sdílení."
+        },
+        "de": {
+          "name": "Code-Leinwand",
+          "description": "Verwandeln Sie Codeschnipsel in klare, syntaxhervorgehobene, teilbare Bilder."
+        },
+        "es": {
+          "name": "Lienzo de Código",
+          "description": "Convierte fragmentos de código en imágenes limpias, con resaltado de sintaxis y listas para compartir."
+        },
+        "fr": {
+          "name": "Canevas de Code",
+          "description": "Transforme tes extraits de code en images nettes, avec coloration syntaxique, prêtes à partager."
+        },
+        "ja": {
+          "name": "コードキャンバス",
+          "description": "コードスニペットをシンプルでシンタックスハイライト付きの共有可能な画像に変換します。"
+        },
+        "ms": {
+          "name": "Kanvas Kod",
+          "description": "Tukar coretan kod kepada imej kemas yang diserlahkan sintaksnya dan sedia dikongsi."
+        },
+        "nl": {
+          "name": "Codecanvas",
+          "description": "Verander codefragmenten in nette afbeeldingen met syntaxiskleuring, klaar om te delen."
+        },
+        "pt": {
+          "name": "Tela de Código",
+          "description": "Transforme trechos de código em imagens limpas, com destaque de sintaxe, prontas para compartilhar."
+        },
+        "sv": {
+          "name": "Kodkanvas",
+          "description": "Gör kodsnuttar till rena, syntaxmarkerade bilder som är enkla att dela."
+        },
+        "tl": {
+          "name": "Canvas ng Code",
+          "description": "I-convert ang mga code snippet sa malinis, may syntax highlighting, at shareable na mga larawan."
+        },
+        "vi": {
+          "name": "Khung Vẽ Mã",
+          "description": "Biến đoạn mã thành hình ảnh gọn gàng, có tô sáng cú pháp và dễ chia sẻ."
+        },
+        "zh-hant": {
+          "name": "程式碼畫布",
+          "description": "將程式碼片段轉換成簡潔、具語法高亮、可分享的圖片。"
+        },
+        "zh": {
+          "name": "代码画布",
+          "description": "将代码片段转换为简洁、带语法高亮、可分享的图片。"
+        }
+      }
     },
     {
       "id": "qr-code",
@@ -235,7 +518,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v2\" /><path d=\"m4.93 4.93 1.41 1.41\" /><path d=\"M20 12h2\" /><path d=\"m19.07 4.93-1.41 1.41\" /><path d=\"M15.947 12.65a4 4 0 0 0-5.925-4.128\" /><path d=\"M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z\" /></svg>",
-      "preview": "/catalog/previews/daily-card.svg"
+      "preview": "/catalog/previews/daily-card.svg",
+      "i18n": {
+        "cs": {
+          "name": "Denní přehled",
+          "description": "Citát dne s aktuálním počasím, časem a mapou libovolného města."
+        },
+        "de": {
+          "name": "Tagesüberblick",
+          "description": "Tageszitat mit aktuellem Wetter, Uhrzeit und einer Karte für jede Stadt."
+        },
+        "es": {
+          "name": "Resumen del día",
+          "description": "Cita del día con clima, hora y mapa en vivo de cualquier ciudad."
+        },
+        "fr": {
+          "name": "Résumé du jour",
+          "description": "Citation du jour avec météo, heure et carte en direct pour n'importe quelle ville."
+        },
+        "ja": {
+          "name": "デイリーブリーフ",
+          "description": "今日の名言と、任意の都市のリアルタイムの天気・時刻・地図です。"
+        },
+        "ms": {
+          "name": "Ringkasan Harian",
+          "description": "Petikan harian dengan cuaca, masa dan peta langsung bagi mana-mana bandar."
+        },
+        "nl": {
+          "name": "Dagoverzicht",
+          "description": "Citaat van de dag met actueel weer, tijd en een kaart van elke stad."
+        },
+        "pt": {
+          "name": "Resumo do Dia",
+          "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade."
+        },
+        "sv": {
+          "name": "Dagsöversikt",
+          "description": "Dagens citat med aktuellt väder, tid och en karta för valfri stad."
+        },
+        "tl": {
+          "name": "Daily Brief",
+          "description": "Quote ng araw kasama ang live na weather, oras, at mapa ng kahit anong city."
+        },
+        "vi": {
+          "name": "Bản tin trong ngày",
+          "description": "Câu trích dẫn trong ngày cùng thời tiết, giờ và bản đồ trực tiếp cho bất kỳ thành phố nào."
+        },
+        "zh-hant": {
+          "name": "每日簡報",
+          "description": "每日金句,附任何城市的即時天氣、時間與地圖。"
+        },
+        "zh": {
+          "name": "每日简报",
+          "description": "每日金句,附任意城市的实时天气、时间和地图。"
+        }
+      }
     },
     {
       "id": "tool-logo",
@@ -259,7 +596,61 @@
       "height": 1200,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14.622 17.897-10.68-2.913\" /><path d=\"M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z\" /><path d=\"M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15\" /></svg>",
-      "preview": "/catalog/previews/tool-logo.svg"
+      "preview": "/catalog/previews/tool-logo.svg",
+      "i18n": {
+        "cs": {
+          "name": "Logo",
+          "description": "Umísti logo SUSE — automaticky vybere správnou variantu a exportuje ji jako vektor."
+        },
+        "de": {
+          "name": "Logo",
+          "description": "Platzieren Sie das SUSE-Logo – die passende Variante wird automatisch ausgewählt und als Vektor exportiert."
+        },
+        "es": {
+          "name": "Logo",
+          "description": "Coloca el logo de SUSE: elige automáticamente la variante correcta y lo exporta en vectorial."
+        },
+        "fr": {
+          "name": "Logo",
+          "description": "Place le logo SUSE — il choisit automatiquement la bonne variante et l'exporte en vectoriel."
+        },
+        "ja": {
+          "name": "ロゴ",
+          "description": "SUSE のロゴを配置します。最適なバリエーションを自動選択し、ベクター形式で書き出します。"
+        },
+        "ms": {
+          "name": "Logo",
+          "description": "Letakkan logo SUSE — varian yang betul dipilih secara automatik dan dieksport sebagai vektor."
+        },
+        "nl": {
+          "name": "Logo",
+          "description": "Plaats het SUSE-logo — de juiste variant wordt automatisch gekozen en als vector geëxporteerd."
+        },
+        "pt": {
+          "name": "Logo",
+          "description": "Coloque o logo da SUSE — a variante certa é escolhida automaticamente e exportada em vetor."
+        },
+        "sv": {
+          "name": "Logotyp",
+          "description": "Placera SUSE-logotypen — rätt variant väljs automatiskt och exporteras som vektor."
+        },
+        "tl": {
+          "name": "Logo",
+          "description": "Ilagay ang SUSE logo — awtomatikong pipiliin ang tamang variant at i-e-export bilang vector."
+        },
+        "vi": {
+          "name": "Logo",
+          "description": "Đặt logo SUSE — hệ thống tự động chọn phiên bản phù hợp và xuất dưới dạng vector."
+        },
+        "zh-hant": {
+          "name": "標誌",
+          "description": "放置 SUSE 標誌——自動選擇合適的版本並匯出為向量圖。"
+        },
+        "zh": {
+          "name": "徽标",
+          "description": "放置 SUSE 徽标——自动选择合适的版本并导出为矢量图。"
+        }
+      }
     },
     {
       "id": "email-signature",
@@ -281,7 +672,61 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\" /><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\" /></svg>",
       "preview": "/catalog/previews/email-signature.svg",
-      "personalized": true
+      "personalized": true,
+      "i18n": {
+        "cs": {
+          "name": "E-mailový podpis",
+          "description": "E-mailový podpis SUSE v souladu se značkou, připravený ke vložení do libovolného e-mailového klienta."
+        },
+        "de": {
+          "name": "E-Mail-Signatur",
+          "description": "Eine markenkonforme SUSE-E-Mail-Signatur, bereit zum Einfügen in jeden Client."
+        },
+        "es": {
+          "name": "Firma de correo electrónico",
+          "description": "Una firma de correo SUSE con tu marca, lista para pegar en cualquier cliente."
+        },
+        "fr": {
+          "name": "Signature e-mail",
+          "description": "Une signature e-mail SUSE à l'image de la marque, prête à coller dans n'importe quel client."
+        },
+        "ja": {
+          "name": "メール署名",
+          "description": "SUSEブランドに合ったメール署名です。あらゆるメールクライアントに貼り付けられます。"
+        },
+        "ms": {
+          "name": "Tandatangan E-mel",
+          "description": "Tandatangan e-mel SUSE mengikut jenama, sedia untuk ditampal ke dalam mana-mana klien e-mel."
+        },
+        "nl": {
+          "name": "E-mailhandtekening",
+          "description": "Een SUSE e-mailhandtekening volgens de huisstijl, klaar om in elke mailclient te plakken."
+        },
+        "pt": {
+          "name": "Assinatura de e-mail",
+          "description": "Uma assinatura de e-mail SUSE alinhada à marca, pronta para colar em qualquer cliente de e-mail."
+        },
+        "sv": {
+          "name": "E-postsignatur",
+          "description": "En SUSE e-postsignatur i rätt varumärkesstil, redo att klistras in i vilken e-postklient som helst."
+        },
+        "tl": {
+          "name": "Email Signature",
+          "description": "On-brand na SUSE email signature na pwede mong i-paste sa kahit anong email client."
+        },
+        "vi": {
+          "name": "Chữ ký email",
+          "description": "Chữ ký email SUSE đúng chuẩn thương hiệu, sẵn sàng dán vào bất kỳ ứng dụng email nào."
+        },
+        "zh-hant": {
+          "name": "郵件簽名",
+          "description": "符合SUSE品牌規範的郵件簽名,可貼到任何郵件用戶端。"
+        },
+        "zh": {
+          "name": "邮件签名",
+          "description": "符合SUSE品牌规范的邮件签名,可粘贴到任意邮件客户端。"
+        }
+      }
     },
     {
       "id": "chart-creator",
@@ -402,7 +847,61 @@
       "height": 800,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M7 3v18\" /><path d=\"M3 7.5h4\" /><path d=\"M3 12h18\" /><path d=\"M3 16.5h4\" /><path d=\"M17 3v18\" /><path d=\"M17 7.5h4\" /><path d=\"M17 16.5h4\" /></svg>",
-      "preview": "/tools/bag-video/card.svg"
+      "preview": "/tools/bag-video/card.svg",
+      "i18n": {
+        "cs": {
+          "name": "Video tašky",
+          "description": "Animované, značkové video pro vizuály tašky."
+        },
+        "de": {
+          "name": "Taschenvideo",
+          "description": "Ein animiertes, markenkonformes Video für Taschenmotive."
+        },
+        "es": {
+          "name": "Video de bolsa",
+          "description": "Un video animado, acorde a tu marca, para imágenes de bolsas."
+        },
+        "fr": {
+          "name": "Vidéo de sac",
+          "description": "Une vidéo animée à l'image de ta marque pour des visuels de sac."
+        },
+        "ja": {
+          "name": "バッグ動画",
+          "description": "バッグのビジュアル向けにブランドに合わせたアニメーション動画です。"
+        },
+        "ms": {
+          "name": "Video Beg",
+          "description": "Video animasi bersesuaian jenama untuk visual beg."
+        },
+        "nl": {
+          "name": "Tas-video",
+          "description": "Een geanimeerde video in jouw huisstijl voor tasvisuals."
+        },
+        "pt": {
+          "name": "Vídeo de Bolsa",
+          "description": "Um vídeo animado e alinhado à marca para visuais de bolsa."
+        },
+        "sv": {
+          "name": "Väskvideo",
+          "description": "En animerad video i varumärkets stil för väskbilder."
+        },
+        "tl": {
+          "name": "Video ng Bag",
+          "description": "Animated na video, naaayon sa brand, para sa visual ng bag."
+        },
+        "vi": {
+          "name": "Video túi xách",
+          "description": "Video hoạt họa theo đúng thương hiệu cho hình ảnh túi xách."
+        },
+        "zh-hant": {
+          "name": "包包影片",
+          "description": "為包包視覺打造的動畫品牌影片。"
+        },
+        "zh": {
+          "name": "包袋视频",
+          "description": "为包袋视觉打造的动画品牌视频。"
+        }
+      }
     },
     {
       "id": "color-palette",
@@ -418,7 +917,61 @@
       "height": 1080,
       "exportable": false,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" /></svg>",
-      "preview": "/catalog/previews/color-palette.png"
+      "preview": "/catalog/previews/color-palette.png",
+      "i18n": {
+        "cs": {
+          "name": "Paleta barev",
+          "description": "Prohlédni si barvy značky SUSE — kliknutím na vzorek ji zkopíruješ."
+        },
+        "de": {
+          "name": "Farbpalette",
+          "description": "Durchsuchen Sie die SUSE-Markenfarben — klicken Sie auf ein Farbfeld, um es zu kopieren."
+        },
+        "es": {
+          "name": "Paleta de colores",
+          "description": "Explora los colores de marca SUSE — haz clic en una muestra para copiarla."
+        },
+        "fr": {
+          "name": "Palette de couleurs",
+          "description": "Parcours les couleurs de marque SUSE — clique sur une nuance pour la copier."
+        },
+        "ja": {
+          "name": "カラーパレット",
+          "description": "SUSEのブランドカラーを閲覧できます — スウォッチをクリックしてコピーしてください。"
+        },
+        "ms": {
+          "name": "Palet Warna",
+          "description": "Semak imbas warna jenama SUSE — klik pada sampel untuk menyalinnya."
+        },
+        "nl": {
+          "name": "Kleurenpalet",
+          "description": "Bekijk de SUSE-merkkleuren — klik op een kleurstaal om die te kopiëren."
+        },
+        "pt": {
+          "name": "Paleta de cores",
+          "description": "Explore as cores da marca SUSE — clique em uma amostra para copiá-la."
+        },
+        "sv": {
+          "name": "Färgpalett",
+          "description": "Bläddra bland SUSE:s varumärkesfärger — klicka på ett färgprov för att kopiera det."
+        },
+        "tl": {
+          "name": "Paleta ng Kulay",
+          "description": "I-browse ang mga brand color ng SUSE — i-click ang swatch para kopyahin ito."
+        },
+        "vi": {
+          "name": "Bảng màu",
+          "description": "Xem các màu thương hiệu SUSE — nhấp vào mẫu màu để sao chép."
+        },
+        "zh-hant": {
+          "name": "調色盤",
+          "description": "瀏覽 SUSE 品牌色彩 — 點擊色塊即可複製。"
+        },
+        "zh": {
+          "name": "调色板",
+          "description": "浏览 SUSE 品牌色 — 点击色块即可复制。"
+        }
+      }
     },
     {
       "id": "countdown-timer",
@@ -814,6 +1367,73 @@
       "featured": {
         "order": 8,
         "blurb": "Conference name badges, colour-coded by role"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Jmenovka pro akce",
+          "description": "Konferenční jmenovky s barevně odlišenou rolí a volitelným QR kódem.",
+          "blurb": "Konferenční jmenovky barevně odlišené podle role"
+        },
+        "de": {
+          "name": "Namensschild für Veranstaltungen",
+          "description": "Konferenz-Namensschilder mit farblich codierter Rolle und optionalem QR-Code.",
+          "blurb": "Konferenz-Namensschilder, farblich codiert nach Rolle"
+        },
+        "es": {
+          "name": "Credencial de nombre para eventos",
+          "description": "Credenciales de conferencia con rol codificado por color y QR opcional.",
+          "blurb": "Credenciales de conferencia, codificadas por color según el rol"
+        },
+        "fr": {
+          "name": "Badge nominatif d'événement",
+          "description": "Badges de conférence avec rôle codé par couleur et QR code optionnel.",
+          "blurb": "Badges de conférence, codés par couleur selon le rôle"
+        },
+        "ja": {
+          "name": "イベント名札",
+          "description": "役割別に色分けされ、QRコードをオプションで追加できるカンファレンス名札です。",
+          "blurb": "役割別に色分けされたカンファレンス名札"
+        },
+        "ms": {
+          "name": "Lencana Nama Acara",
+          "description": "Lencana nama persidangan dengan peranan berkod warna dan QR pilihan.",
+          "blurb": "Lencana nama persidangan, berkod warna mengikut peranan"
+        },
+        "nl": {
+          "name": "Naambadge voor evenementen",
+          "description": "Congresbadges met kleurgecodeerde rol en optionele QR-code.",
+          "blurb": "Congresbadges, kleurgecodeerd per rol"
+        },
+        "pt": {
+          "name": "Crachá de nome para eventos",
+          "description": "Crachás de conferência com função codificada por cor e QR opcional.",
+          "blurb": "Crachás de conferência, codificados por cor conforme a função"
+        },
+        "sv": {
+          "name": "Namnbricka för evenemang",
+          "description": "Konferensnamnbrickor med färgkodad roll och valfri QR-kod.",
+          "blurb": "Konferensnamnbrickor, färgkodade efter roll"
+        },
+        "tl": {
+          "name": "Name Badge para sa Event",
+          "description": "Mga name badge para sa conference na may color-coded na role at opsyonal na QR.",
+          "blurb": "Mga name badge para sa conference, color-coded ayon sa role"
+        },
+        "vi": {
+          "name": "Thẻ tên sự kiện",
+          "description": "Thẻ tên hội nghị được mã màu theo vai trò, có mã QR tùy chọn.",
+          "blurb": "Thẻ tên hội nghị, mã màu theo vai trò"
+        },
+        "zh-hant": {
+          "name": "活動名牌",
+          "description": "會議名牌，依角色以顏色區分，QR code為選用項目。",
+          "blurb": "會議名牌，依角色以顏色區分"
+        },
+        "zh": {
+          "name": "活动姓名徽章",
+          "description": "会议姓名徽章，按角色颜色区分，可选二维码。",
+          "blurb": "会议姓名徽章，按角色颜色区分"
+        }
       }
     },
     {
@@ -840,6 +1460,73 @@
       "featured": {
         "order": 9,
         "blurb": "Directional event signs, print-ready"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Orientační značení",
+          "description": "Směrové cedule pro akce — cíle, každý se šipkou. Připraveno k tisku.",
+          "blurb": "Směrové cedule pro akce, připravené k tisku"
+        },
+        "de": {
+          "name": "Wegweiser-Beschilderung",
+          "description": "Richtungsweisende Veranstaltungsschilder – Ziele, jeweils mit einem Pfeil. Druckfertig.",
+          "blurb": "Richtungsweisende Veranstaltungsschilder, druckfertig"
+        },
+        "es": {
+          "name": "Señalización direccional",
+          "description": "Carteles direccionales para eventos: destinos, cada uno con una flecha. Listos para imprimir.",
+          "blurb": "Carteles direccionales para eventos, listos para imprimir"
+        },
+        "fr": {
+          "name": "Signalétique directionnelle",
+          "description": "Panneaux directionnels d'événement — destinations, chacune avec une flèche. Prêts à imprimer.",
+          "blurb": "Panneaux directionnels d'événement, prêts à imprimer"
+        },
+        "ja": {
+          "name": "誘導サイン",
+          "description": "イベント用の誘導サイン——目的地ごとに矢印付き。印刷対応です。",
+          "blurb": "印刷対応のイベント誘導サイン"
+        },
+        "ms": {
+          "name": "Papan Tanda Arah",
+          "description": "Papan tanda arah acara — destinasi, setiap satu dengan anak panah. Sedia untuk cetak.",
+          "blurb": "Papan tanda arah acara, sedia untuk cetak"
+        },
+        "nl": {
+          "name": "Bewegwijzering",
+          "description": "Richtingaanwijzende evenementborden — bestemmingen, elk met een pijl. Printklaar.",
+          "blurb": "Richtingaanwijzende evenementborden, printklaar"
+        },
+        "pt": {
+          "name": "Sinalização direcional",
+          "description": "Placas direcionais para eventos — destinos, cada um com uma seta. Prontas para impressão.",
+          "blurb": "Placas direcionais para eventos, prontas para impressão"
+        },
+        "sv": {
+          "name": "Vägvisningsskyltar",
+          "description": "Riktningsskyltar för evenemang — resmål, var och en med en pil. Tryckfärdiga.",
+          "blurb": "Riktningsskyltar för evenemang, tryckfärdiga"
+        },
+        "tl": {
+          "name": "Direksyonal na Signage",
+          "description": "Mga signage ng direksyon para sa event — mga destinasyon, bawat isa may arrow. Ready na for print.",
+          "blurb": "Mga signage ng direksyon para sa event, ready for print"
+        },
+        "vi": {
+          "name": "Biển chỉ dẫn sự kiện",
+          "description": "Biển chỉ dẫn sự kiện — các điểm đến, mỗi điểm có một mũi tên. Sẵn sàng để in.",
+          "blurb": "Biển chỉ dẫn sự kiện, sẵn sàng để in"
+        },
+        "zh-hant": {
+          "name": "導向標示牌",
+          "description": "活動方向標示——每個目的地配一個箭頭,可直接列印。",
+          "blurb": "活動方向標示,可直接列印"
+        },
+        "zh": {
+          "name": "导向标识牌",
+          "description": "活动方向标识——每个目的地配一支箭头,可直接打印。",
+          "blurb": "活动方向标识,可直接打印"
+        }
       }
     },
     {
@@ -925,6 +1612,73 @@
             }
           }
         ]
+      },
+      "i18n": {
+        "cs": {
+          "name": "Lockup značky",
+          "description": "Oficiální lockupy loga SUSE — chameleon, slovní značka a název.",
+          "blurb": "Oficiální lockupy loga SUSE, mnoho stylů"
+        },
+        "de": {
+          "name": "Marken-Lockup",
+          "description": "Offizielle SUSE-Logo-Lockups – Chamäleon, Wortmarke und ein Name.",
+          "blurb": "Offizielle SUSE-Logo-Lockups, viele Varianten"
+        },
+        "es": {
+          "name": "Lockup de marca",
+          "description": "Lockups oficiales del logo de SUSE: camaleón, logotipo y un nombre.",
+          "blurb": "Lockups oficiales del logo de SUSE, muchos estilos"
+        },
+        "fr": {
+          "name": "Lockup de marque",
+          "description": "Lockups officiels du logo SUSE — caméléon, logotype et un nom.",
+          "blurb": "Lockups officiels du logo SUSE, plusieurs styles"
+        },
+        "ja": {
+          "name": "ブランドロックアップ",
+          "description": "SUSE公式のロゴロックアップ——カメレオン、ワードマーク、名前で構成されます。",
+          "blurb": "SUSE公式のロゴロックアップ、多彩なスタイルです。"
+        },
+        "ms": {
+          "name": "Susunan Jenama",
+          "description": "Susunan logo rasmi SUSE — bunglon, logo perkataan dan nama.",
+          "blurb": "Susunan logo rasmi SUSE, pelbagai gaya"
+        },
+        "nl": {
+          "name": "Merklockup",
+          "description": "Officiële SUSE-logolockups — kameleon, woordmerk en een naam.",
+          "blurb": "Officiële SUSE-logolockups, veel stijlen"
+        },
+        "pt": {
+          "name": "Lockup de marca",
+          "description": "Lockups oficiais do logo da SUSE — camaleão, logotipo e um nome.",
+          "blurb": "Lockups oficiais do logo da SUSE, vários estilos"
+        },
+        "sv": {
+          "name": "Varumärkeslockup",
+          "description": "Officiella SUSE-logotyplockupar — kameleont, ordmärke och ett namn.",
+          "blurb": "Officiella SUSE-logotyplockupar, många stilar"
+        },
+        "tl": {
+          "name": "Brand Lockup",
+          "description": "Opisyal na SUSE logo lockups — chameleon, wordmark, at isang pangalan.",
+          "blurb": "Opisyal na SUSE logo lockups, maraming style"
+        },
+        "vi": {
+          "name": "Cụm logo thương hiệu",
+          "description": "Cụm logo chính thức của SUSE — tắc kè hoa, chữ logo và tên.",
+          "blurb": "Cụm logo chính thức của SUSE, nhiều kiểu"
+        },
+        "zh-hant": {
+          "name": "品牌標誌組合",
+          "description": "SUSE 官方標誌組合——變色龍圖示、文字標誌與名稱。",
+          "blurb": "SUSE 官方標誌組合，多種樣式"
+        },
+        "zh": {
+          "name": "品牌标志组合",
+          "description": "SUSE 官方标志组合——变色龙图标、文字标志和名称。",
+          "blurb": "SUSE 官方标志组合，多种样式"
+        }
       }
     },
     {
@@ -949,7 +1703,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12.296 3.464 3.02 3.956\" /><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\" /><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" /><path d=\"m6.18 5.276 3.1 3.899\" /></svg>",
-      "preview": "/tools/digi-ad/card.html"
+      "preview": "/tools/digi-ad/card.html",
+      "i18n": {
+        "cs": {
+          "name": "Animovaná reklama",
+          "description": "Vytvoř animované reklamy z vrstvených scén v libovolné standardní velikosti."
+        },
+        "de": {
+          "name": "Animierte Anzeige",
+          "description": "Erstellen Sie animierte Anzeigen aus mehrschichtigen Szenen für jedes Standardformat."
+        },
+        "es": {
+          "name": "Anuncio animado",
+          "description": "Crea anuncios animados a partir de escenas en capas, para cualquier tamaño estándar."
+        },
+        "fr": {
+          "name": "Publicité animée",
+          "description": "Crée des publicités animées à partir de scènes superposées, pour tous les formats standards."
+        },
+        "ja": {
+          "name": "アニメーション広告",
+          "description": "レイヤー化されたシーンから、あらゆる標準サイズのアニメーション広告を作成します。"
+        },
+        "ms": {
+          "name": "Iklan Animasi",
+          "description": "Bina iklan animasi daripada adegan berlapis untuk sebarang saiz standard."
+        },
+        "nl": {
+          "name": "Geanimeerde advertentie",
+          "description": "Maak geanimeerde advertenties van gelaagde scènes, in elk standaardformaat."
+        },
+        "pt": {
+          "name": "Anúncio animado",
+          "description": "Crie anúncios animados a partir de cenas em camadas, para qualquer tamanho padrão."
+        },
+        "sv": {
+          "name": "Animerad annons",
+          "description": "Skapa animerade annonser från lagrade scener, i alla standardstorlekar."
+        },
+        "tl": {
+          "name": "Animated Ad",
+          "description": "Gumawa ng animated ads gamit ang mga naka-layer na eksena, para sa kahit anong standard size."
+        },
+        "vi": {
+          "name": "Quảng cáo động",
+          "description": "Tạo quảng cáo động từ các cảnh xếp lớp, phù hợp với mọi kích thước tiêu chuẩn."
+        },
+        "zh-hant": {
+          "name": "動態廣告",
+          "description": "以分層場景製作動態廣告，適用於各種標準尺寸。"
+        },
+        "zh": {
+          "name": "动态广告",
+          "description": "从分层场景制作动态广告，适配任意标准尺寸。"
+        }
+      }
     },
     {
       "id": "calendar-ics",
@@ -967,7 +1775,61 @@
       "height": 460,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 2v4\" /><path d=\"M16 2v4\" /><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\" /><path d=\"M3 10h18\" /></svg>",
-      "preview": "/tools/calendar-ics/card.svg"
+      "preview": "/tools/calendar-ics/card.svg",
+      "i18n": {
+        "cs": {
+          "name": "Kalendář ICS",
+          "description": "Převede podrobnosti akce na soubor kalendáře (.ics) pro jakoukoli kalendářovou aplikaci."
+        },
+        "de": {
+          "name": "Kalender-ICS",
+          "description": "Wandeln Sie Termindetails in eine Kalenderdatei (.ics) für jede Kalender-App um."
+        },
+        "es": {
+          "name": "Calendario ICS",
+          "description": "Convierte los detalles de un evento en un archivo de calendario (.ics) para cualquier app de calendario."
+        },
+        "fr": {
+          "name": "Calendrier ICS",
+          "description": "Transforme les détails d'un événement en fichier calendrier (.ics) pour toute appli de calendrier."
+        },
+        "ja": {
+          "name": "カレンダー ICS",
+          "description": "イベントの詳細を、どのカレンダーアプリでも使えるカレンダーファイル(.ics)に変換します。"
+        },
+        "ms": {
+          "name": "Kalendar ICS",
+          "description": "Tukar butiran acara kepada fail kalendar (.ics) untuk mana-mana aplikasi kalendar."
+        },
+        "nl": {
+          "name": "Kalender ICS",
+          "description": "Zet evenementgegevens om in een kalenderbestand (.ics) voor elke agenda-app."
+        },
+        "pt": {
+          "name": "Calendário ICS",
+          "description": "Transforma os detalhes do evento em um arquivo de calendário (.ics) para qualquer app de calendário."
+        },
+        "sv": {
+          "name": "Kalender-ICS",
+          "description": "Omvandla evenemangsdetaljer till en kalenderfil (.ics) för valfri kalenderapp."
+        },
+        "tl": {
+          "name": "Calendar ICS",
+          "description": "I-convert ang mga detalye ng event sa isang calendar file (.ics) na pwedeng gamitin sa kahit anong calendar app."
+        },
+        "vi": {
+          "name": "Lịch ICS",
+          "description": "Chuyển chi tiết sự kiện thành tệp lịch (.ics) dùng được cho mọi ứng dụng lịch."
+        },
+        "zh-hant": {
+          "name": "行事曆 ICS",
+          "description": "將活動詳情轉換成行事曆檔案（.ics），適用於任何行事曆應用程式。"
+        },
+        "zh": {
+          "name": "日历 ICS",
+          "description": "把活动详情转换成日历文件（.ics），适用于任何日历应用。"
+        }
+      }
     },
     {
       "id": "compress-pdf",
@@ -1063,7 +1925,74 @@
         "order": 3,
         "blurb": "Multi-page PDFs — cover, content, back"
       },
-      "paged": true
+      "paged": true,
+      "i18n": {
+        "cs": {
+          "name": "Vícestránkové PDF",
+          "description": "Vytvoř vícestránkové PDF — titulní stranu, plynoucí bloky obsahu a zadní stranu.",
+          "blurb": "Vícestránková PDF — titulní strana, obsah, zadní strana"
+        },
+        "de": {
+          "name": "Mehrseitiges PDF",
+          "description": "Erstellen Sie ein mehrseitiges PDF – Deckblatt, fließende Inhaltsblöcke und eine Rückseite.",
+          "blurb": "Mehrseitige PDFs – Deckblatt, Inhalt, Rückseite"
+        },
+        "es": {
+          "name": "PDF multipágina",
+          "description": "Crea un PDF multipágina: portada, bloques de contenido fluido y contraportada.",
+          "blurb": "PDF multipágina — portada, contenido, contraportada"
+        },
+        "fr": {
+          "name": "PDF multi-pages",
+          "description": "Crée un PDF multi-pages : couverture, blocs de contenu fluide et page de dos.",
+          "blurb": "PDF multi-pages — couverture, contenu, dos"
+        },
+        "ja": {
+          "name": "複数ページ PDF",
+          "description": "表紙、流し込み式のコンテンツブロック、裏表紙からなる複数ページの PDF を作成します。",
+          "blurb": "複数ページ PDF — 表紙・コンテンツ・裏表紙"
+        },
+        "ms": {
+          "name": "PDF Berbilang Halaman",
+          "description": "Bina PDF berbilang halaman — muka depan, blok kandungan yang mengalir, dan muka belakang.",
+          "blurb": "PDF berbilang halaman — muka depan, kandungan, muka belakang"
+        },
+        "nl": {
+          "name": "PDF met meerdere pagina's",
+          "description": "Maak een PDF met meerdere pagina's — een cover, doorlopende inhoudsblokken en een achterpagina.",
+          "blurb": "PDF's met meerdere pagina's — cover, inhoud, achterpagina"
+        },
+        "pt": {
+          "name": "PDF de várias páginas",
+          "description": "Crie um PDF de várias páginas — capa, blocos de conteúdo fluido e contracapa.",
+          "blurb": "PDFs de várias páginas — capa, conteúdo, contracapa"
+        },
+        "sv": {
+          "name": "PDF med flera sidor",
+          "description": "Skapa en PDF med flera sidor — omslag, flytande innehållsblock och en baksida.",
+          "blurb": "PDF med flera sidor — omslag, innehåll, baksida"
+        },
+        "tl": {
+          "name": "Multi-Page PDF",
+          "description": "Gumawa ng multi-page PDF — cover, mga content block na dumadaloy, at back page.",
+          "blurb": "Multi-page PDF — cover, content, back page"
+        },
+        "vi": {
+          "name": "PDF nhiều trang",
+          "description": "Tạo PDF nhiều trang — gồm trang bìa, các khối nội dung tự động chảy và trang bìa sau.",
+          "blurb": "PDF nhiều trang — bìa, nội dung, bìa sau"
+        },
+        "zh-hant": {
+          "name": "多頁 PDF",
+          "description": "建立多頁 PDF——封面、流動內容區塊和封底。",
+          "blurb": "多頁 PDF——封面、內容、封底"
+        },
+        "zh": {
+          "name": "多页 PDF",
+          "description": "创建多页 PDF——封面、流动内容块和封底。",
+          "blurb": "多页 PDF——封面、内容、封底"
+        }
+      }
     },
     {
       "id": "filter-duotone",
@@ -1318,7 +2247,61 @@
       "height": 720,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"9.5\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"4\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"9.5\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"14\" width=\"5\" height=\"6\" rx=\"1\"/></svg>",
-      "preview": "/catalog/previews/logo-wall.svg"
+      "preview": "/catalog/previews/logo-wall.svg",
+      "i18n": {
+        "cs": {
+          "name": "Sestava log: mřížka (NASCAR)",
+          "description": "Uspořádej hromadu log do čisté, rovnoměrné sponzorské mřížky – zeď „NASCAR“."
+        },
+        "de": {
+          "name": "Logo-Lockup: Raster (NASCAR)",
+          "description": "Ordnen Sie viele Logos zu einem sauberen, gleichmäßigen Sponsoren-Raster – der „NASCAR“-Wand."
+        },
+        "es": {
+          "name": "Logos en cuadrícula (NASCAR)",
+          "description": "Ordena un montón de logos en una cuadrícula limpia y uniforme: el muro «NASCAR»."
+        },
+        "fr": {
+          "name": "Logos en grille (NASCAR)",
+          "description": "Range un tas de logos dans une grille de sponsors nette et régulière — le mur « NASCAR »."
+        },
+        "ja": {
+          "name": "ロゴロックアップ:グリッド(NASCAR)",
+          "description": "大量のロゴを、きれいで均等なスポンサーグリッド——「NASCAR」ウォールに整列します。"
+        },
+        "ms": {
+          "name": "Susunan Logo: Grid (NASCAR)",
+          "description": "Susun timbunan logo menjadi grid penaja yang kemas dan seimbang — dinding “NASCAR”."
+        },
+        "nl": {
+          "name": "Logo-lockup: raster (NASCAR)",
+          "description": "Zet een stapel logo's om in een strak, gelijkmatig sponsorraster — de “NASCAR”-muur."
+        },
+        "pt": {
+          "name": "Lockup de logos: grade (NASCAR)",
+          "description": "Organize um monte de logos em uma grade de patrocinadores limpa e uniforme — o mural “NASCAR”."
+        },
+        "sv": {
+          "name": "Logotyp-lockup: rutnät (NASCAR)",
+          "description": "Ordna en hög med logotyper i ett rent, jämnt sponsorrutnät — ”NASCAR”-väggen."
+        },
+        "tl": {
+          "name": "Logo Lockup: Grid (NASCAR)",
+          "description": "Ayusin ang tambak na logos sa malinis at pantay na sponsor grid — ang “NASCAR” wall."
+        },
+        "vi": {
+          "name": "Logo Lockup: Lưới (NASCAR)",
+          "description": "Sắp xếp một loạt logo thành lưới tài trợ gọn gàng, đều nhau — bức tường “NASCAR”."
+        },
+        "zh-hant": {
+          "name": "標誌組合:網格(NASCAR)",
+          "description": "將一堆標誌排成整齊均勻的贊助商網格——也就是「NASCAR」牆。"
+        },
+        "zh": {
+          "name": "标志组合:网格 (NASCAR)",
+          "description": "将一堆标志排成整齐均匀的赞助商网格——也就是“NASCAR”墙。"
+        }
+      }
     },
     {
       "id": "filter-posterize",
@@ -1419,6 +2402,73 @@
       "featured": {
         "order": 6,
         "blurb": "Turn cards or text into on-brand diagrams"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Tvůrce diagramů",
+          "description": "Organizační diagramy, vývojové diagramy, časové osy a další — z karet, textu, Mermaid nebo CSV.",
+          "blurb": "Změň karty nebo text na diagramy podle značky"
+        },
+        "de": {
+          "name": "Diagrammersteller",
+          "description": "Organigramme, Flussdiagramme, Zeitleisten und mehr — aus Karten, Text, Mermaid oder CSV.",
+          "blurb": "Verwandeln Sie Karten oder Text in markenkonforme Diagramme"
+        },
+        "es": {
+          "name": "Creador de diagramas",
+          "description": "Organigramas, diagramas de flujo, cronologías y más — a partir de tarjetas, texto, Mermaid o CSV.",
+          "blurb": "Convierte tarjetas o texto en diagramas con tu marca"
+        },
+        "fr": {
+          "name": "Créateur de diagrammes",
+          "description": "Organigrammes, diagrammes de flux, frises chronologiques et plus — à partir de cartes, de texte, Mermaid ou CSV.",
+          "blurb": "Transforme cartes ou texte en diagrammes à ta marque"
+        },
+        "ja": {
+          "name": "ダイアグラムビルダー",
+          "description": "組織図、フローチャート、タイムラインなどを、カード、テキスト、Mermaid、CSVから作成できます。",
+          "blurb": "カードやテキストをブランドに合わせた図表に変換します"
+        },
+        "ms": {
+          "name": "Pembina Rajah",
+          "description": "Carta organisasi, carta alir, garis masa dan banyak lagi — daripada kad, teks, Mermaid atau CSV.",
+          "blurb": "Tukar kad atau teks kepada rajah mengikut jenama anda"
+        },
+        "nl": {
+          "name": "Diagrammaker",
+          "description": "Organigrammen, stroomdiagrammen, tijdlijnen en meer — van kaarten, tekst, Mermaid of CSV.",
+          "blurb": "Verander kaarten of tekst in diagrammen in jouw huisstijl"
+        },
+        "pt": {
+          "name": "Criador de diagramas",
+          "description": "Organogramas, fluxogramas, linhas do tempo e muito mais — a partir de cartões, texto, Mermaid ou CSV.",
+          "blurb": "Transforme cartões ou texto em diagramas com a cara da sua marca"
+        },
+        "sv": {
+          "name": "Diagramskapare",
+          "description": "Org-scheman, flödesscheman, tidslinjer med mera — från kort, text, Mermaid eller CSV.",
+          "blurb": "Gör om kort eller text till diagram i din varumärkesstil"
+        },
+        "tl": {
+          "name": "Diagram Builder",
+          "description": "Mga org chart, flowchart, timeline, at marami pa — mula sa cards, text, Mermaid, o CSV.",
+          "blurb": "I-convert ang cards o text sa diagrams na naaayon sa brand mo"
+        },
+        "vi": {
+          "name": "Trình tạo sơ đồ",
+          "description": "Sơ đồ tổ chức, lưu đồ, dòng thời gian và hơn thế nữa — từ thẻ, văn bản, Mermaid hoặc CSV.",
+          "blurb": "Biến thẻ hoặc văn bản thành sơ đồ đúng thương hiệu"
+        },
+        "zh-hant": {
+          "name": "圖表產生器",
+          "description": "組織圖、流程圖、時間軸等——透過卡片、文字、Mermaid 或 CSV 建立。",
+          "blurb": "將卡片或文字轉換為符合品牌風格的圖表"
+        },
+        "zh": {
+          "name": "图表生成器",
+          "description": "组织结构图、流程图、时间轴等——通过卡片、文本、Mermaid 或 CSV 创建。",
+          "blurb": "将卡片或文本转换为符合品牌风格的图表"
+        }
       }
     },
     {
@@ -1517,7 +2567,61 @@
       "height": 360,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"7\" width=\"7.5\" height=\"10\" rx=\"1.4\"/><line x1=\"12\" y1=\"4.5\" x2=\"12\" y2=\"19.5\"/><rect x=\"14\" y=\"7\" width=\"7.5\" height=\"10\" rx=\"1.4\"/></svg>",
-      "preview": "/catalog/previews/logo-lockup-partner.svg"
+      "preview": "/catalog/previews/logo-lockup-partner.svg",
+      "i18n": {
+        "cs": {
+          "name": "Spojení log: Partner",
+          "description": "Logo SUSE vedle loga partnera, mezi nimi oddělovač — světlé nebo tmavé."
+        },
+        "de": {
+          "name": "Logo-Kombination: Partner",
+          "description": "Das SUSE-Logo neben dem eines Partners, mit einer Trennlinie dazwischen — hell oder dunkel."
+        },
+        "es": {
+          "name": "Logotipo combinado: Socio",
+          "description": "El logotipo de SUSE junto al de un socio, con un separador entre ambos — claro u oscuro."
+        },
+        "fr": {
+          "name": "Association de logos : Partenaire",
+          "description": "Le logo SUSE à côté de celui d'un partenaire, avec un séparateur entre les deux — clair ou foncé."
+        },
+        "ja": {
+          "name": "ロゴの組み合わせ:パートナー",
+          "description": "SUSEのロゴをパートナーのロゴと並べ、間に区切り線を入れます — ライトまたはダーク。"
+        },
+        "ms": {
+          "name": "Gabungan Logo: Rakan Kongsi",
+          "description": "Logo SUSE di sebelah logo rakan kongsi, dengan pembahagi di antaranya — cerah atau gelap."
+        },
+        "nl": {
+          "name": "Logo-combinatie: Partner",
+          "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen — licht of donker."
+        },
+        "pt": {
+          "name": "Combinação de logotipos: Parceiro",
+          "description": "O logotipo da SUSE ao lado do de um parceiro, com um divisor entre eles — claro ou escuro."
+        },
+        "sv": {
+          "name": "Logotypkombination: Partner",
+          "description": "SUSE-logotypen bredvid en partners, med en avdelare emellan — ljust eller mörkt."
+        },
+        "tl": {
+          "name": "Pagsasama ng Logo: Partner",
+          "description": "Ang logo ng SUSE sa tabi ng logo ng partner, may divider sa gitna — light o dark."
+        },
+        "vi": {
+          "name": "Kết hợp logo: Đối tác",
+          "description": "Logo SUSE đặt cạnh logo đối tác, có đường phân cách ở giữa — sáng hoặc tối."
+        },
+        "zh-hant": {
+          "name": "標誌組合:合作夥伴",
+          "description": "SUSE 標誌與合作夥伴標誌並排顯示,中間有分隔線——淺色或深色。"
+        },
+        "zh": {
+          "name": "标志组合：合作伙伴",
+          "description": "SUSE 标志与合作伙伴标志并排显示，中间有分隔线——浅色或深色。"
+        }
+      }
     },
     {
       "id": "web-icon",
@@ -1535,7 +2639,61 @@
       "height": 512,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"4\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.4\"/><path d=\"M7.5 16h9\"/></svg>",
-      "preview": "/tools/web-icon/card.svg"
+      "preview": "/tools/web-icon/card.svg",
+      "i18n": {
+        "cs": {
+          "name": "Tvůrce webových ikon",
+          "description": "Tvůrce faviconů a ikon aplikací — vícevelikostní .ico, plus PNG a SVG."
+        },
+        "de": {
+          "name": "Web-Icon-Generator",
+          "description": "Generator für Favicons und App-Icons – eine .ico-Datei mit mehreren Größen, plus PNG und SVG."
+        },
+        "es": {
+          "name": "Creador de iconos web",
+          "description": "Creador de favicons e iconos de app: un .ico multitamaño, más PNG y SVG."
+        },
+        "fr": {
+          "name": "Créateur d'icônes web",
+          "description": "Créateur de favicons et d'icônes d'appli — un .ico multi-tailles, plus PNG et SVG."
+        },
+        "ja": {
+          "name": "ウェブアイコンメーカー",
+          "description": "ファビコンとアプリアイコンを作成 — マルチサイズの.icoに加え、PNGとSVGも生成します。"
+        },
+        "ms": {
+          "name": "Pencipta Ikon Web",
+          "description": "Pencipta favicon dan ikon aplikasi — .ico pelbagai saiz, serta PNG dan SVG."
+        },
+        "nl": {
+          "name": "Web-icoonmaker",
+          "description": "Favicon- en app-icoonmaker — een .ico-bestand met meerdere formaten, plus PNG en SVG."
+        },
+        "pt": {
+          "name": "Criador de ícones para web",
+          "description": "Criador de favicon e ícone de app — um .ico multi-tamanho, além de PNG e SVG."
+        },
+        "sv": {
+          "name": "Webbikonskapare",
+          "description": "Skapare av favicon och appikoner — en .ico i flera storlekar, plus PNG och SVG."
+        },
+        "tl": {
+          "name": "Tagagawa ng Web Icon",
+          "description": "Gumagawa ng favicon at app icon — multi-size na .ico, plus PNG at SVG."
+        },
+        "vi": {
+          "name": "Trình tạo biểu tượng web",
+          "description": "Trình tạo favicon và biểu tượng ứng dụng — tệp .ico đa kích thước, cùng với PNG và SVG."
+        },
+        "zh-hant": {
+          "name": "網頁圖示產生器",
+          "description": "favicon 與應用程式圖示產生器——多尺寸 .ico,以及 PNG 和 SVG。"
+        },
+        "zh": {
+          "name": "网页图标生成器",
+          "description": "favicon 与应用图标生成器——多尺寸 .ico,附带 PNG 和 SVG。"
+        }
+      }
     },
     {
       "id": "layout-studio",
@@ -1558,6 +2716,60 @@
       "featured": {
         "order": 1,
         "blurb": "Free-form layouts on an open canvas"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Studio rozložení",
+          "blurb": "Volná rozložení na otevřeném plátně"
+        },
+        "de": {
+          "name": "Layout-Studio",
+          "blurb": "Frei gestaltbare Layouts auf einer offenen Zeichenfläche"
+        },
+        "es": {
+          "name": "Estudio de maquetación",
+          "blurb": "Maquetas libres sobre un lienzo abierto"
+        },
+        "fr": {
+          "name": "Studio de mise en page",
+          "blurb": "Des mises en page libres sur un canevas ouvert"
+        },
+        "ja": {
+          "name": "レイアウトスタジオ",
+          "blurb": "自由なキャンバスで作るフリーフォームレイアウト"
+        },
+        "ms": {
+          "name": "Studio Susun Atur",
+          "blurb": "Susun atur bebas bentuk pada kanvas terbuka"
+        },
+        "nl": {
+          "name": "Lay-outstudio",
+          "blurb": "Vrije lay-outs op een open canvas"
+        },
+        "pt": {
+          "name": "Estúdio de Layout",
+          "blurb": "Layouts livres em uma tela aberta"
+        },
+        "sv": {
+          "name": "Layoutstudio",
+          "blurb": "Fria layouter på en öppen yta"
+        },
+        "tl": {
+          "name": "Studio ng Layout",
+          "blurb": "Malayang layout sa bukas na canvas"
+        },
+        "vi": {
+          "name": "Xưởng Bố Cục",
+          "blurb": "Bố cục tự do trên khung vẽ mở"
+        },
+        "zh-hant": {
+          "name": "版面工作室",
+          "blurb": "在開放畫布上自由排版"
+        },
+        "zh": {
+          "name": "版面工作室",
+          "blurb": "在开放画布上自由排版"
+        }
       }
     },
     {
@@ -1580,7 +2792,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12.296 3.464 3.02 3.956\" /><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\" /><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" /><path d=\"m6.18 5.276 3.1 3.899\" /></svg>",
-      "preview": "/catalog/previews/lottie-digi-ad.svg"
+      "preview": "/catalog/previews/lottie-digi-ad.svg",
+      "i18n": {
+        "cs": {
+          "name": "Reklama Lottie",
+          "description": "Vytvoř animované reklamy z vrstvených scén, každá s animací Lottie, v libovolné standardní velikosti."
+        },
+        "de": {
+          "name": "Lottie-Anzeige",
+          "description": "Erstellen Sie animierte Anzeigen aus geschichteten Szenen, jede mit einer Lottie-Animation, in jeder Standardgröße."
+        },
+        "es": {
+          "name": "Anuncio Lottie",
+          "description": "Crea anuncios animados a partir de escenas en capas, cada una con una animación Lottie, en cualquier tamaño estándar."
+        },
+        "fr": {
+          "name": "Publicité Lottie",
+          "description": "Crée des publicités animées à partir de scènes superposées, chacune avec une animation Lottie, dans n'importe quel format standard."
+        },
+        "ja": {
+          "name": "Lottie広告",
+          "description": "レイヤー化されたシーンからアニメーション広告を作成します。各シーンにはLottieモーションアセットが含まれ、標準サイズに対応します。"
+        },
+        "ms": {
+          "name": "Iklan Lottie",
+          "description": "Bina iklan animasi daripada adegan berlapis, setiap satu membawa aset gerakan Lottie, untuk sebarang saiz standard."
+        },
+        "nl": {
+          "name": "Lottie-advertentie",
+          "description": "Maak geanimeerde advertenties van gelaagde scènes, elk met een Lottie-animatie, in elk standaardformaat."
+        },
+        "pt": {
+          "name": "Anúncio Lottie",
+          "description": "Crie anúncios animados a partir de cenas em camadas, cada uma com uma animação Lottie, em qualquer tamanho padrão."
+        },
+        "sv": {
+          "name": "Lottie-annons",
+          "description": "Skapa animerade annonser av lagrade scener, var och en med en Lottie-animation, i valfri standardstorlek."
+        },
+        "tl": {
+          "name": "Lottie Ad",
+          "description": "Gumawa ng animated ads mula sa layered scenes, bawat isa may Lottie motion asset, para sa kahit anong standard size."
+        },
+        "vi": {
+          "name": "Quảng cáo Lottie",
+          "description": "Tạo quảng cáo động từ các cảnh xếp lớp, mỗi cảnh có một tệp chuyển động Lottie, cho mọi kích thước chuẩn."
+        },
+        "zh-hant": {
+          "name": "Lottie 廣告",
+          "description": "透過分層場景製作動畫廣告,每個場景都搭載 Lottie 動態素材,適用於任何標準尺寸。"
+        },
+        "zh": {
+          "name": "Lottie 广告",
+          "description": "通过分层场景制作动画广告,每个场景都带有 Lottie 动效,适配任意标准尺寸。"
+        }
+      }
     },
     {
       "id": "pose-geeko",
@@ -1690,6 +2956,73 @@
             }
           }
         ]
+      },
+      "i18n": {
+        "cs": {
+          "name": "Pose Geeko",
+          "description": "Nastav pózu SUSE Geeka pomocí posuvníků — oči, mrkání a končetiny. Žádná animace, jen statický obrázek, který doladíš a exportuješ připravený k tisku.",
+          "blurb": "Nastav pózu SUSE Geeka — statické obrázky připravené k tisku"
+        },
+        "de": {
+          "name": "Pose Geeko",
+          "description": "Positionieren Sie den SUSE Geeko per Regler — Augen, Blinzeln und Gliedmaßen. Keine Animation, nur ein Standbild, das Sie anpassen und druckfertig exportieren.",
+          "blurb": "SUSE Geeko posieren — druckfertige Standbilder"
+        },
+        "es": {
+          "name": "Pose Geeko",
+          "description": "Posa al Geeko de SUSE con controles deslizantes: ojos, parpadeo y extremidades. Sin animación, solo una imagen fija que ajustas y exportas lista para imprenta.",
+          "blurb": "Posa al Geeko de SUSE — imágenes fijas listas para imprenta"
+        },
+        "fr": {
+          "name": "Pose Geeko",
+          "description": "Pose le Geeko SUSE avec des curseurs — yeux, clignement et membres. Pas d'animation, juste une image fixe à régler et exporter prête à imprimer.",
+          "blurb": "Pose le Geeko SUSE — images fixes prêtes à imprimer"
+        },
+        "ja": {
+          "name": "Pose Geeko",
+          "description": "スライダーで SUSE Geeko のポーズを調整します — 目、まばたき、手足。アニメーションではなく、調整して印刷用に書き出せる静止画です。",
+          "blurb": "SUSE Geeko のポーズ調整 — 印刷対応の静止画"
+        },
+        "ms": {
+          "name": "Pose Geeko",
+          "description": "Poskan SUSE Geeko menggunakan penggelangsar — mata, kelipan dan anggota badan. Tiada animasi, hanya imej statik yang anda boleh laraskan dan eksport sedia cetak.",
+          "blurb": "Poskan SUSE Geeko — imej statik sedia cetak"
+        },
+        "nl": {
+          "name": "Pose Geeko",
+          "description": "Stel de pose van de SUSE Geeko in met schuifregelaars — ogen, knipperen en ledematen. Geen animatie, gewoon een still die je kunt aanpassen en drukklaar exporteren.",
+          "blurb": "Stel de pose van de SUSE Geeko in — drukklare stills"
+        },
+        "pt": {
+          "name": "Pose Geeko",
+          "description": "Posicione o Geeko da SUSE com controles deslizantes — olhos, piscar e membros. Sem animação, apenas uma imagem estática que você ajusta e exporta pronta para impressão.",
+          "blurb": "Posicione o Geeko da SUSE — imagens estáticas prontas para impressão"
+        },
+        "sv": {
+          "name": "Pose Geeko",
+          "description": "Posera SUSE Geeko med reglage — ögon, blinkning och lemmar. Ingen animation, bara en stillbild du kan finjustera och exportera tryckfärdig.",
+          "blurb": "Posera SUSE Geeko — tryckfärdiga stillbilder"
+        },
+        "tl": {
+          "name": "Pose Geeko",
+          "description": "I-pose ang SUSE Geeko gamit ang mga slider — mata, kurap, at mga paa't kamay. Walang animation, isang still image lang na puwede mong i-adjust at i-export na print-ready.",
+          "blurb": "I-pose ang SUSE Geeko — print-ready na still images"
+        },
+        "vi": {
+          "name": "Pose Geeko",
+          "description": "Tạo dáng cho SUSE Geeko bằng thanh trượt — mắt, nháy mắt và tay chân. Không có hoạt ảnh, chỉ là ảnh tĩnh bạn chỉnh và xuất sẵn sàng để in.",
+          "blurb": "Tạo dáng cho SUSE Geeko — ảnh tĩnh sẵn sàng để in"
+        },
+        "zh-hant": {
+          "name": "Pose Geeko",
+          "description": "用滑桿擺出 SUSE Geeko 的姿勢——眼睛、眨眼和四肢。沒有動畫，只是一張可以調整並匯出為印刷就緒格式的靜態圖。",
+          "blurb": "擺出 SUSE Geeko 的姿勢——印刷就緒靜態圖"
+        },
+        "zh": {
+          "name": "Pose Geeko",
+          "description": "用滑块为 SUSE Geeko 摆姿势——眼睛、眨眼和四肢。没有动画，只是一张可调整、可导出为印刷就绪格式的静态图。",
+          "blurb": "为 SUSE Geeko 摆姿势——印刷就绪静态图"
+        }
       }
     },
     {
@@ -1710,7 +3043,61 @@
       "height": 1080,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 10a7 7 0 0 0 14 0\"/><line x1=\"12\" y1=\"19\" x2=\"12\" y2=\"22\"/><line x1=\"8\" y1=\"22\" x2=\"16\" y2=\"22\"/></svg>",
-      "preview": "/catalog/previews/voice-recorder.svg"
+      "preview": "/catalog/previews/voice-recorder.svg",
+      "i18n": {
+        "cs": {
+          "name": "Hlasový záznamník",
+          "description": "Nahraj hlasovou poznámku s živým ukazatelem hlasitosti a jemným koučováním, pak ji ulož jako MP3."
+        },
+        "de": {
+          "name": "Sprachrekorder",
+          "description": "Nehmen Sie eine Sprachnotiz mit Live-Pegelanzeige und sanfter Anleitung auf und speichern Sie sie als MP3."
+        },
+        "es": {
+          "name": "Grabadora de voz",
+          "description": "Graba una nota de voz con un medidor de nivel en vivo y una guía sutil, y guárdala como MP3."
+        },
+        "fr": {
+          "name": "Enregistreur vocal",
+          "description": "Enregistre une note vocale avec un indicateur de niveau en direct et des conseils en douceur, puis enregistre-la en MP3."
+        },
+        "ja": {
+          "name": "ボイスレコーダー",
+          "description": "リアルタイムのレベルメーターとやさしいコーチングを使ってボイスメモを録音し、MP3として保存できます。"
+        },
+        "ms": {
+          "name": "Perakam Suara",
+          "description": "Rakam nota suara dengan meter aras langsung dan bimbingan lembut, kemudian simpan sebagai MP3."
+        },
+        "nl": {
+          "name": "Spraakrecorder",
+          "description": "Neem een spraakbericht op met een live niveaumeter en zachte begeleiding, en sla het op als MP3."
+        },
+        "pt": {
+          "name": "Gravador de Voz",
+          "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3."
+        },
+        "sv": {
+          "name": "Röstinspelare",
+          "description": "Spela in ett röstmeddelande med en nivåmätare i realtid och mjuk vägledning, spara sedan som MP3."
+        },
+        "tl": {
+          "name": "Recorder ng Boses",
+          "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3."
+        },
+        "vi": {
+          "name": "Ghi Âm Giọng Nói",
+          "description": "Ghi một đoạn ghi âm giọng nói với đồng hồ đo mức âm thanh trực tiếp và hướng dẫn nhẹ nhàng, sau đó lưu dưới dạng MP3."
+        },
+        "zh-hant": {
+          "name": "語音錄音",
+          "description": "錄製語音備忘，搭配即時音量表與溫和的錄音提示，完成後另存為 MP3。"
+        },
+        "zh": {
+          "name": "语音录制",
+          "description": "录制语音备忘录，带实时电平表和柔和的录音提示，并保存为 MP3。"
+        }
+      }
     },
     {
       "id": "top-tail-recorder",
@@ -1735,7 +3122,61 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M3 15h18\"/><path d=\"m10 11 4 2.5-4 2.5z\" fill=\"currentColor\" stroke=\"none\"/></svg>",
       "preview": "/catalog/previews/top-tail-recorder.svg",
-      "personalized": true
+      "personalized": true,
+      "i18n": {
+        "cs": {
+          "name": "Video s úvodem a závěrem",
+          "description": "Nahraj klip v libovolné orientaci – automaticky ho obalíme značkovým úvodem a závěrem, spodním titulkem a hudebním podkresem."
+        },
+        "de": {
+          "name": "Video mit Intro & Outro",
+          "description": "Nehmen Sie einen Clip in beliebiger Ausrichtung auf und umrahmen Sie ihn automatisch mit gebrandetem Intro und Outro, einer Bauchbinde und Hintergrundmusik."
+        },
+        "es": {
+          "name": "Vídeo con intro y outro",
+          "description": "Graba un clip en cualquier orientación y añádele automáticamente una intro y un outro de marca, un rótulo inferior y música de fondo."
+        },
+        "fr": {
+          "name": "Vidéo avec intro et outro",
+          "description": "Enregistre un clip dans n'importe quelle orientation, puis habille-le automatiquement d'une intro et d'un outro à ton image, d'un bandeau et d'une musique de fond."
+        },
+        "ja": {
+          "name": "イントロ&アウトロ動画",
+          "description": "任意の向きでクリップを録画すると、ブランドのイントロとアウトロ、テロップ、BGMが自動で追加されます。"
+        },
+        "ms": {
+          "name": "Video Intro & Outro",
+          "description": "Rakam klip dalam sebarang orientasi, kemudian ia dibalut secara automatik dengan intro dan outro berjenama, teks bawah dan muzik latar."
+        },
+        "nl": {
+          "name": "Video met intro en outro",
+          "description": "Neem een clip op in elke oriëntatie; deze wordt automatisch omlijst met een gebrande intro en outro, een onderbalk en achtergrondmuziek."
+        },
+        "pt": {
+          "name": "Vídeo com Intro e Outro",
+          "description": "Grave um clipe em qualquer orientação e o vídeo é automaticamente emoldurado com intro e outro de marca, um rodapé e uma trilha sonora."
+        },
+        "sv": {
+          "name": "Video med intro och outro",
+          "description": "Spela in ett klipp i valfri orientering, så ramas det automatiskt in med varumärkesanpassad intro och outro, en nedre tredjedelstext och bakgrundsmusik."
+        },
+        "tl": {
+          "name": "Video na may Intro at Outro",
+          "description": "Mag-record ng clip sa kahit anong orientation, tapos awtomatiko itong madadagdagan ng branded na intro at outro, lower third, at background music."
+        },
+        "vi": {
+          "name": "Video Intro & Outro",
+          "description": "Quay clip ở bất kỳ hướng nào, sau đó tự động thêm intro và outro theo thương hiệu, thanh chú thích dưới và nhạc nền."
+        },
+        "zh-hant": {
+          "name": "片頭片尾影片",
+          "description": "以任意方向錄製片段,自動為其加上品牌片頭片尾、下方字幕條和背景音樂。"
+        },
+        "zh": {
+          "name": "片头片尾视频",
+          "description": "以任意方向录制视频片段,自动为其添加品牌片头片尾、下方字幕条和背景音乐。"
+        }
+      }
     },
     {
       "id": "filter-voronoi",
@@ -1838,7 +3279,61 @@
       "height": 1000,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"14\" rx=\"2\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.5\"/><path d=\"m21 15-5-5L5 21\"/><path d=\"M12 21v-6\"/><path d=\"m9 18 3 3 3-3\"/></svg>",
-      "preview": "/catalog/previews/asset-export.svg"
+      "preview": "/catalog/previews/asset-export.svg",
+      "i18n": {
+        "cs": {
+          "name": "Export zdroje",
+          "description": "Vykreslí libovolný zdroj z katalogu — nebo odkaz na nástroj Lolly — do libovolného formátu a velikosti."
+        },
+        "de": {
+          "name": "Asset-Export",
+          "description": "Rendern Sie jedes Katalog-Asset — oder einen Lolly-Tool-Link — in jedes Format und jede Größe."
+        },
+        "es": {
+          "name": "Exportar recurso",
+          "description": "Renderiza cualquier recurso del catálogo — o un enlace de herramienta Lolly — en cualquier formato y tamaño."
+        },
+        "fr": {
+          "name": "Export de ressource",
+          "description": "Exporte n'importe quelle ressource du catalogue — ou un lien d'outil Lolly — dans n'importe quel format et taille."
+        },
+        "ja": {
+          "name": "アセットエクスポート",
+          "description": "カタログ内の任意のアセット、またはLollyツールのリンクを、任意の形式とサイズで書き出します。"
+        },
+        "ms": {
+          "name": "Eksport Aset",
+          "description": "Render mana-mana aset katalog — atau pautan alat Lolly — kepada sebarang format dan saiz."
+        },
+        "nl": {
+          "name": "Asset-export",
+          "description": "Render elk asset uit de catalogus — of een Lolly-toollink — naar elk formaat en elke grootte."
+        },
+        "pt": {
+          "name": "Exportar recurso",
+          "description": "Renderize qualquer recurso do catálogo — ou um link de ferramenta Lolly — em qualquer formato e tamanho."
+        },
+        "sv": {
+          "name": "Exportera tillgång",
+          "description": "Rendera vilken katalogtillgång som helst — eller en Lolly-verktygslänk — till valfritt format och storlek."
+        },
+        "tl": {
+          "name": "Pag-export ng Asset",
+          "description": "I-render ang anumang asset sa catalog — o link ng Lolly tool — sa anumang format at sukat."
+        },
+        "vi": {
+          "name": "Xuất tài nguyên",
+          "description": "Xuất bất kỳ tài nguyên nào trong danh mục — hoặc liên kết công cụ Lolly — sang bất kỳ định dạng và kích thước nào."
+        },
+        "zh-hant": {
+          "name": "資源匯出",
+          "description": "將目錄中任何資源——或 Lolly 工具連結——匯出為任何格式和尺寸。"
+        },
+        "zh": {
+          "name": "资源导出",
+          "description": "将目录中任何资源——或 Lolly 工具链接——导出为任何格式和尺寸。"
+        }
+      }
     },
     {
       "id": "doc-studio",
@@ -1858,7 +3353,61 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z\"/><path d=\"M14 2v5h5\"/><line x1=\"8\" y1=\"12\" x2=\"16\" y2=\"12\"/><line x1=\"8\" y1=\"16\" x2=\"14\" y2=\"16\"/></svg>",
       "preview": "/tools/doc-studio/card.svg",
-      "paged": true
+      "paged": true,
+      "i18n": {
+        "cs": {
+          "name": "Studio dokumentů",
+          "description": "Piš vícestránkový dokument na plátně — formátovaný text, nadpisy, tabulky a vložené Lolly rendery, které plynou mezi stránkami a exportují se jako PDF."
+        },
+        "de": {
+          "name": "Dokumentstudio",
+          "description": "Schreiben Sie ein mehrseitiges Dokument auf der Leinwand – formatierten Text, Überschriften, Tabellen und eingefügte Lolly-Renderings, die über die Seiten fließen und sich als PDF exportieren lassen."
+        },
+        "es": {
+          "name": "Estudio de Documentos",
+          "description": "Escribe un documento de varias páginas en el lienzo: texto enriquecido, títulos, tablas y renders de Lolly insertados que fluyen entre páginas y se exportan como PDF."
+        },
+        "fr": {
+          "name": "Studio de Documents",
+          "description": "Écris un document multipage sur le canevas — texte enrichi, titres, tableaux et rendus Lolly insérés qui s'enchaînent sur les pages et s'exportent en PDF."
+        },
+        "ja": {
+          "name": "ドキュメントスタジオ",
+          "description": "キャンバス上で複数ページの文書を作成します。リッチテキスト、見出し、表、そしてページに流し込まれる挿入済みのLollyレンダーを使い、PDFとして書き出せます。"
+        },
+        "ms": {
+          "name": "Studio Dokumen",
+          "description": "Tulis dokumen berbilang muka surat pada kanvas — teks kaya, tajuk, jadual dan renderan Lolly yang disisipkan mengalir merentasi muka surat dan dieksport sebagai PDF."
+        },
+        "nl": {
+          "name": "Documentstudio",
+          "description": "Schrijf een document met meerdere pagina's op het canvas — opgemaakte tekst, koppen, tabellen en ingevoegde Lolly-renders die van pagina naar pagina doorlopen en als PDF worden geëxporteerd."
+        },
+        "pt": {
+          "name": "Estúdio de Documentos",
+          "description": "Escreva um documento com várias páginas na tela — texto rico, títulos, tabelas e renderizações da Lolly inseridas que fluem pelas páginas e são exportadas como PDF."
+        },
+        "sv": {
+          "name": "Dokumentstudio",
+          "description": "Skriv ett flersidigt dokument på canvasen — formaterad text, rubriker, tabeller och infogade Lolly-renderingar som flyter mellan sidorna och exporteras som PDF."
+        },
+        "tl": {
+          "name": "Doc Studio",
+          "description": "Gumawa ng multi-page na dokumento sa canvas — may rich text, headings, tables, at naka-insert na Lolly renders na dumadaloy sa mga page at ine-export bilang PDF."
+        },
+        "vi": {
+          "name": "Studio Tài liệu",
+          "description": "Viết tài liệu nhiều trang trên canvas — văn bản định dạng, tiêu đề, bảng và các bản dựng Lolly được chèn vào, chảy qua các trang và xuất thành PDF."
+        },
+        "zh-hant": {
+          "name": "文件工作室",
+          "description": "在畫布上撰寫多頁文件——富文本、標題、表格,以及隨頁面流動並匯出為 PDF 的 Lolly 算繪內容。"
+        },
+        "zh": {
+          "name": "文档工作室",
+          "description": "在画布上撰写多页文档——富文本、标题、表格,以及随页面排列并导出为 PDF 的 Lolly 渲染内容。"
+        }
+      }
     },
     {
       "id": "carousel-maker",
@@ -1884,7 +3433,74 @@
         "order": 2,
         "blurb": "Swipeable carousels & multi-page layouts"
       },
-      "paged": true
+      "paged": true,
+      "i18n": {
+        "cs": {
+          "name": "Tvůrce karuselu",
+          "description": "Navrhni vícestránkový karusel na jednom plátně — nastav 1–6 stejně velkých stránek, přidej objekty na každou stránku a exportuj sekvenci obrázků nebo vícestránkové PDF.",
+          "blurb": "Prolistovatelné karusely a vícestránkové layouty"
+        },
+        "de": {
+          "name": "Karussell-Ersteller",
+          "description": "Gestalten Sie ein mehrseitiges Karussell auf einer Leinwand — legen Sie 1–6 gleich große Seiten fest, platzieren Sie Objekte auf jeder Seite und exportieren Sie eine Bildsequenz oder ein mehrseitiges PDF.",
+          "blurb": "Wischbare Karussells und mehrseitige Layouts"
+        },
+        "es": {
+          "name": "Creador de Carruseles",
+          "description": "Diseña un carrusel de varias páginas en un mismo lienzo — define 1–6 páginas del mismo tamaño, coloca objetos en cada página y exporta una secuencia de imágenes o un PDF de varias páginas.",
+          "blurb": "Carruseles deslizables y diseños de varias páginas"
+        },
+        "fr": {
+          "name": "Créateur de carrousel",
+          "description": "Conçois un carrousel multi-pages sur un seul canevas — définis 1 à 6 pages de même taille, dépose des objets sur chaque page, exporte une séquence d'images ou un PDF multi-pages.",
+          "blurb": "Carrousels à glisser et mises en page multi-pages"
+        },
+        "ja": {
+          "name": "カルーセルメーカー",
+          "description": "1つのキャンバスでマルチページカルーセルをデザインします。1〜6ページの同サイズページを設定し、各ページにオブジェクトを配置して、画像シーケンスまたは複数ページPDFとして書き出せます。",
+          "blurb": "スワイプ可能なカルーセルとマルチページレイアウト"
+        },
+        "ms": {
+          "name": "Pembuat Karusel",
+          "description": "Reka bentuk karusel berbilang halaman pada satu kanvas — tetapkan 1–6 halaman bersaiz sama, seret objek ke setiap halaman, dan eksport jujukan imej atau PDF berbilang halaman.",
+          "blurb": "Karusel boleh leret & reka letak berbilang halaman"
+        },
+        "nl": {
+          "name": "Carrousel Maker",
+          "description": "Ontwerp een meerpagina-carrousel op één canvas — stel 1–6 even grote pagina's in, sleep objecten op elke pagina en exporteer een afbeeldingenreeks of een meerpagina-PDF.",
+          "blurb": "Swipebare carrousels & lay-outs met meerdere pagina's"
+        },
+        "pt": {
+          "name": "Criador de Carrossel",
+          "description": "Crie um carrossel de várias páginas em uma única tela — defina de 1 a 6 páginas do mesmo tamanho, adicione objetos em cada página e exporte uma sequência de imagens ou um PDF com várias páginas.",
+          "blurb": "Carrosséis deslizáveis e layouts com várias páginas"
+        },
+        "sv": {
+          "name": "Karusellskapare",
+          "description": "Designa en flersidig karusell på en enda canvas — ställ in 1–6 lika stora sidor, placera objekt på varje sida och exportera en bildsekvens eller en flersidig PDF.",
+          "blurb": "Swipebara karuseller och flersidiga layouter"
+        },
+        "tl": {
+          "name": "Carousel Maker",
+          "description": "Mag-design ng multi-page na carousel sa isang canvas — mag-set ng 1–6 pages na parehong laki, mag-drag ng mga object sa bawat page, at mag-export ng image sequence o multi-page PDF.",
+          "blurb": "Mga swipeable na carousel at multi-page na layout"
+        },
+        "vi": {
+          "name": "Công cụ tạo Carousel",
+          "description": "Thiết kế carousel nhiều trang trên một canvas — đặt 1–6 trang cùng kích thước, kéo thả đối tượng vào từng trang, xuất chuỗi ảnh hoặc PDF nhiều trang.",
+          "blurb": "Carousel vuốt được & bố cục nhiều trang"
+        },
+        "zh-hant": {
+          "name": "輪播圖製作工具",
+          "description": "在同一個畫布上設計多頁輪播圖——設定 1 至 6 個大小相同的頁面,在每個頁面加入物件,匯出圖片序列或多頁 PDF。",
+          "blurb": "可滑動輪播與多頁版面配置"
+        },
+        "zh": {
+          "name": "轮播图制作器",
+          "description": "在同一画布上设计多页轮播图——设置 1–6 个尺寸相同的页面,在每个页面添加对象,导出图片序列或多页 PDF。",
+          "blurb": "可滑动轮播图与多页版式"
+        }
+      }
     },
     {
       "id": "org-chart",
@@ -1908,6 +3524,73 @@
       "featured": {
         "order": 5,
         "blurb": "Cards + connectors that stick to the boxes"
+      },
+      "i18n": {
+        "cs": {
+          "name": "Vývojový diagram",
+          "description": "Vytvářej vývojové diagramy na volném plátně — přetahuj karty, propojuj je, čáry se vedou samy a drží se na krabicích.",
+          "blurb": "Karty a spojnice, které drží na krabicích"
+        },
+        "de": {
+          "name": "Flussdiagramm",
+          "description": "Erstellen Sie Flussdiagramme auf einer offenen Fläche — ziehen Sie Karten, verbinden Sie sie, und die Linien verlaufen automatisch und haften an den Boxen.",
+          "blurb": "Karten und Verbindungslinien, die an den Boxen haften"
+        },
+        "es": {
+          "name": "Diagrama de flujo",
+          "description": "Crea diagramas de flujo en un lienzo abierto — arrastra tarjetas, conéctalas, y las líneas se trazan solas y se pegan a los recuadros.",
+          "blurb": "Tarjetas y conectores que se pegan a los recuadros"
+        },
+        "fr": {
+          "name": "Diagramme de flux",
+          "description": "Crée des diagrammes de flux sur un canevas libre — glisse les cartes, relie-les, et les lignes se tracent seules et restent fixées aux blocs.",
+          "blurb": "Cartes et connecteurs qui restent fixés aux blocs"
+        },
+        "ja": {
+          "name": "フローチャート",
+          "description": "自由なキャンバス上でフローチャートを作成できます。カードをドラッグしてつなぐと、線は自動で経路を引き、ボックスに固定されます。",
+          "blurb": "ボックスに固定されるカードと接続線"
+        },
+        "ms": {
+          "name": "Carta Alir",
+          "description": "Bina carta alir pada kanvas terbuka — seret kad, sambungkan kad, dan garisan akan menyusun sendiri serta melekat pada kotak.",
+          "blurb": "Kad + penyambung yang melekat pada kotak"
+        },
+        "nl": {
+          "name": "Stroomdiagram",
+          "description": "Maak stroomdiagrammen op een open canvas — sleep kaarten, verbind ze, en de lijnen lopen vanzelf en blijven aan de vakken vastzitten.",
+          "blurb": "Kaarten + verbindingslijnen die vastzitten aan de vakken"
+        },
+        "pt": {
+          "name": "Fluxograma",
+          "description": "Crie fluxogramas em uma tela aberta — arraste os cartões, conecte-os, e as linhas se traçam sozinhas e ficam presas às caixas.",
+          "blurb": "Cartões + conectores que ficam presos às caixas"
+        },
+        "sv": {
+          "name": "Flödesschema",
+          "description": "Skapa flödesscheman på en öppen yta — dra kort, koppla ihop dem, och linjerna dras automatiskt och fastnar på rutorna.",
+          "blurb": "Kort och kopplingslinjer som fastnar på rutorna"
+        },
+        "tl": {
+          "name": "Flow Chart",
+          "description": "Gumawa ng flow chart sa open canvas — i-drag ang mga card, ikonekta sila, at awtomatikong mag-a-adjust ang mga linya at didikit sa mga box.",
+          "blurb": "Mga card + connector na dumidikit sa mga box"
+        },
+        "vi": {
+          "name": "Sơ đồ luồng",
+          "description": "Tạo sơ đồ luồng trên canvas mở — kéo thẻ, nối chúng lại, và các đường nối tự động chạy và dính vào các khung.",
+          "blurb": "Thẻ + đường nối dính chặt vào khung"
+        },
+        "zh-hant": {
+          "name": "流程圖",
+          "description": "在開放畫布上製作流程圖——拖曳卡片,將它們連接起來,線條會自動繞線並固定在方框上。",
+          "blurb": "卡片 + 連接線,緊貼方框"
+        },
+        "zh": {
+          "name": "流程图",
+          "description": "在开放画布上制作流程图——拖动卡片,连接它们,线条会自动排布并固定在方框上。",
+          "blurb": "卡片 + 连接线,紧贴方框"
+        }
       }
     },
     {
@@ -2027,7 +3710,61 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"2\"/><path d=\"M8 6v12\"/><path d=\"M16 6v12\"/><circle cx=\"12\" cy=\"12\" r=\"2.4\" fill=\"currentColor\" stroke=\"none\"/></svg>",
       "preview": "/tools/record/card.svg",
-      "paged": true
+      "paged": true,
+      "i18n": {
+        "cs": {
+          "name": "Nahrávka",
+          "description": "Navrhni si vlastní úvodní a závěrečné karty, nahraj klip a Lolly je kolem něj automaticky obalí."
+        },
+        "de": {
+          "name": "Aufnahme",
+          "description": "Gestalten Sie eigene Intro- und Outro-Karten, nehmen Sie einen Clip auf, und Lolly platziert sie automatisch darum."
+        },
+        "es": {
+          "name": "Grabación",
+          "description": "Diseña tus propias tarjetas de intro y cierre, graba un clip y Lolly las coloca alrededor automáticamente."
+        },
+        "fr": {
+          "name": "Enregistrement",
+          "description": "Crée tes propres cartes d'intro et d'outro, puis enregistre un clip : Lolly les place automatiquement autour."
+        },
+        "ja": {
+          "name": "録画",
+          "description": "独自のイントロカードとアウトロカードをデザインしてクリップを録画すると、Lollyが自動的にその前後に配置します。"
+        },
+        "ms": {
+          "name": "Rakaman",
+          "description": "Reka bentuk kad intro dan outro anda sendiri, kemudian rakam klip dan Lolly akan membalutnya secara automatik di sekelilingnya."
+        },
+        "nl": {
+          "name": "Opname",
+          "description": "Ontwerp je eigen intro- en outrokaarten, neem een clip op en Lolly plaatst ze automatisch eromheen."
+        },
+        "pt": {
+          "name": "Gravação",
+          "description": "Crie seus próprios cartões de abertura e encerramento, grave um clipe e o Lolly os posiciona automaticamente ao redor dele."
+        },
+        "sv": {
+          "name": "Inspelning",
+          "description": "Designa dina egna intro- och outrokort, spela sedan in ett klipp så lägger Lolly dem automatiskt runt det."
+        },
+        "tl": {
+          "name": "Record",
+          "description": "Gumawa ng sarili mong intro at outro cards, mag-record ng clip, at awtomatikong ibabalot ito ni Lolly sa paligid nito."
+        },
+        "vi": {
+          "name": "Ghi hình",
+          "description": "Tự thiết kế thẻ mở đầu và kết thúc, sau đó quay một đoạn clip và Lolly sẽ tự động bao quanh nó."
+        },
+        "zh-hant": {
+          "name": "錄製",
+          "description": "設計你自己的片頭與片尾卡,然後錄製一段影片,Lolly 會自動將它們包覆在影片前後。"
+        },
+        "zh": {
+          "name": "录制",
+          "description": "设计你自己的片头和片尾卡片,然后录制一段视频,Lolly 会自动将它们包裹在视频前后。"
+        }
+      }
     },
     {
       "id": "3d",
@@ -2048,7 +3785,61 @@
       "height": 1280,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"/><path d=\"m3.3 7 8.7 5 8.7-5\"/><path d=\"M12 22V12\"/></svg>",
-      "preview": "/tools/3d/card.svg"
+      "preview": "/tools/3d/card.svg",
+      "i18n": {
+        "cs": {
+          "name": "3D",
+          "description": "Načti 3D model do nasvícené scény, otáčej a polohuj kameru a vykresli statický snímek nebo otáčivou animaci."
+        },
+        "de": {
+          "name": "3D",
+          "description": "Laden Sie ein 3D-Modell in eine beleuchtete Szene, umkreisen und positionieren Sie die Kamera, und rendern Sie ein Standbild oder eine Turntable-Animation."
+        },
+        "es": {
+          "name": "3D",
+          "description": "Carga un modelo 3D en una escena iluminada, orbita y posiciona la cámara, y renderiza una imagen fija o una animación giratoria."
+        },
+        "fr": {
+          "name": "3D",
+          "description": "Charge un modèle 3D dans une scène éclairée, fais pivoter et positionne la caméra, puis génère une image fixe ou une animation en rotation."
+        },
+        "ja": {
+          "name": "3D",
+          "description": "3D モデルをライティングされたシーンに読み込み、カメラを周回・調整して、静止画またはターンテーブルアニメーションをレンダリングします。"
+        },
+        "ms": {
+          "name": "3D",
+          "description": "Muatkan model 3D ke dalam adegan bercahaya, putarkan dan laraskan kamera, kemudian render imej pegun atau animasi turntable."
+        },
+        "nl": {
+          "name": "3D",
+          "description": "Laad een 3D-model in een verlichte scene, draai en positioneer de camera, en render een still of een turntable-animatie."
+        },
+        "pt": {
+          "name": "3D",
+          "description": "Carregue um modelo 3D em uma cena iluminada, gire e posicione a câmera, e renderize uma imagem estática ou uma animação giratória."
+        },
+        "sv": {
+          "name": "3D",
+          "description": "Läs in en 3D-modell i en belyst scen, rotera och justera kameran, och rendera en stillbild eller en turntable-animation."
+        },
+        "tl": {
+          "name": "3D",
+          "description": "I-load ang 3D model sa isang naiilawang scene, i-orbit at i-adjust ang camera, at i-render ang isang still o turntable animation."
+        },
+        "vi": {
+          "name": "3D",
+          "description": "Tải mô hình 3D vào một cảnh có ánh sáng, xoay và chỉnh camera, rồi kết xuất ảnh tĩnh hoặc video quay vòng."
+        },
+        "zh-hant": {
+          "name": "3D",
+          "description": "將 3D 模型載入打光場景,環繞並調整鏡頭,算圖靜態影像或轉台動畫。"
+        },
+        "zh": {
+          "name": "3D",
+          "description": "将 3D 模型加载到打光的场景中,环绕并调整相机,渲染静态图像或转台动画。"
+        }
+      }
     },
     {
       "id": "mesh-gradient",

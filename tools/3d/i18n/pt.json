@@ -1,0 +1,4 @@
+{
+  "name": "3D",
+  "description": "Carregue um modelo 3D em uma cena iluminada, gire e posicione a câmera, e renderize uma imagem estática ou uma animação giratória."
+}

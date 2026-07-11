@@ -1,0 +1,4 @@
+{
+  "name": "3D",
+  "description": "Carga un modelo 3D en una escena iluminada, orbita y posiciona la cámara, y renderiza una imagen fija o una animación giratoria."
+}

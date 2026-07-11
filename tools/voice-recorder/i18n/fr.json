@@ -1,0 +1,4 @@
+{
+  "name": "Enregistreur vocal",
+  "description": "Enregistre une note vocale avec un indicateur de niveau en direct et des conseils en douceur, puis enregistre-la en MP3."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "3D",
+  "description": "Charge un modèle 3D dans une scène éclairée, fais pivoter et positionne la caméra, puis génère une image fixe ou une animation en rotation."
+}
