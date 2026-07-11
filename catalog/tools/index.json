@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-11T09:14:28.160Z",
+  "generatedAt": "2026-07-11T11:14:27.419Z",
   "tools": [
     {
       "id": "color-block",
@@ -69,6 +69,11 @@
           "name": "Bloco de cor",
           "description": "Blocos de cor — texto, imagem, logo — organizados automaticamente em grade.",
           "blurb": "Blocos de cor — texto, imagem, logo em grade"
+        },
+        "ro": {
+          "name": "Bloc de culoare",
+          "description": "Blocuri de culoare — text, imagine, siglă — aranjate automat într-o grilă.",
+          "blurb": "Blocuri de culoare — text, imagine, siglă, într-o grilă"
         },
         "sv": {
           "name": "Färgblock",
@@ -153,6 +158,10 @@
           "name": "Layout dinâmico",
           "description": "Um layout multiuso que se reorganiza em torno do que você adicionar, em qualquer tamanho."
         },
+        "ro": {
+          "name": "Layout dinamic",
+          "description": "Un layout universal, care se recompune în jurul a orice adaugi, la orice dimensiune."
+        },
         "sv": {
           "name": "Dynamisk layout",
           "description": "En layout för allt som omstrukturerar sig kring det du lägger till, i vilken storlek som helst."
@@ -234,6 +243,10 @@
           "name": "Cartão de citação",
           "description": "Cartões de citação com a sua marca para posts e slides."
         },
+        "ro": {
+          "name": "Card cu citat",
+          "description": "Carduri cu citate aliniate brandului, pentru postări sociale și slide-uri."
+        },
         "sv": {
           "name": "Citatkort",
           "description": "Varumärkesanpassade citatkort för sociala inlägg och presentationer."
@@ -308,6 +321,10 @@
           "name": "Planejador de Reuniões",
           "description": "Planeje uma reunião global e veja o horário no fuso horário de cada membro da equipe."
         },
+        "ro": {
+          "name": "Planificator de întâlniri",
+          "description": "Planifică o întâlnire globală și vezi ora din fusul orar al fiecărui coleg."
+        },
         "sv": {
           "name": "Mötesplanerare",
           "description": "Planera ett globalt möte och se tiden i varje teammedlems tidszon."
@@ -378,6 +395,10 @@
         "pt": {
           "name": "Tela de Código",
           "description": "Transforme trechos de código em imagens limpas, com destaque de sintaxe, prontas para compartilhar."
+        },
+        "ro": {
+          "name": "Canvas de cod",
+          "description": "Transformă fragmente de cod în imagini curate, cu evidențierea sintaxei, gata de distribuit."
         },
         "sv": {
           "name": "Kodkanvas",
@@ -473,6 +494,11 @@
           "description": "Códigos QR para qualquer URL, com controle total de cor e estilo.",
           "blurb": "Códigos QR em qualquer cor da marca"
         },
+        "ro": {
+          "name": "Generator de coduri QR",
+          "description": "Coduri QR pentru orice URL, cu control total asupra culorii și stilului.",
+          "blurb": "Coduri QR în orice culoare de brand"
+        },
         "sv": {
           "name": "QR-kodgenerator",
           "description": "QR-koder för valfri URL, med full kontroll över färg och stil.",
@@ -552,6 +578,10 @@
           "name": "Resumo do Dia",
           "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade."
         },
+        "ro": {
+          "name": "Rezumatul zilei",
+          "description": "Citatul zilei, cu vreme live, ora și o hartă pentru orice oraș."
+        },
         "sv": {
           "name": "Dagsöversikt",
           "description": "Dagens citat med aktuellt väder, tid och en karta för valfri stad."
@@ -630,6 +660,10 @@
           "name": "Logo",
           "description": "Coloque o logo da SUSE — a variante certa é escolhida automaticamente e exportada em vetor."
         },
+        "ro": {
+          "name": "Logo",
+          "description": "Plasează logo-ul SUSE — alege automat varianta potrivită și exportă vectorial."
+        },
         "sv": {
           "name": "Logotyp",
           "description": "Placera SUSE-logotypen — rätt variant väljs automatiskt och exporteras som vektor."
@@ -705,6 +739,10 @@
         "pt": {
           "name": "Assinatura de e-mail",
           "description": "Uma assinatura de e-mail SUSE alinhada à marca, pronta para colar em qualquer cliente de e-mail."
+        },
+        "ro": {
+          "name": "Semnătură de email",
+          "description": "O semnătură de email SUSE, aliniată brandului, gata de lipit în orice client de email."
         },
         "sv": {
           "name": "E-postsignatur",
@@ -798,6 +836,11 @@
           "description": "Gráficos alinhados à marca a partir dos seus dados — barras, rosca, pizza ou empilhado.",
           "blurb": "Gráficos alinhados à marca a partir dos seus dados, em qualquer formato"
         },
+        "ro": {
+          "name": "Generator de grafice",
+          "description": "Grafice în stilul brandului tău, din datele tale — bare, gogoașă, plăcintă sau stivuite.",
+          "blurb": "Grafice în stilul brandului tău, din datele tale, în orice formă"
+        },
         "sv": {
           "name": "Diagramskapare",
           "description": "Varumärkesanpassade diagram från din data – stapel, ring, cirkel eller staplat.",
@@ -881,6 +924,10 @@
           "name": "Vídeo de Bolsa",
           "description": "Um vídeo animado e alinhado à marca para visuais de bolsa."
         },
+        "ro": {
+          "name": "Video geantă",
+          "description": "Un videoclip animat, aliniat brandului, pentru vizualuri de geantă."
+        },
         "sv": {
           "name": "Väskvideo",
           "description": "En animerad video i varumärkets stil för väskbilder."
@@ -951,6 +998,10 @@
           "name": "Paleta de cores",
           "description": "Explore as cores da marca SUSE — clique em uma amostra para copiá-la."
         },
+        "ro": {
+          "name": "Paletă de culori",
+          "description": "Explorează culorile brandului SUSE — dă clic pe o mostră pentru a o copia."
+        },
         "sv": {
           "name": "Färgpalett",
           "description": "Bläddra bland SUSE:s varumärkesfärger — klicka på ett färgprov för att kopiera det."
@@ -1020,6 +1071,10 @@
         "pt": {
           "name": "Contagem Regressiva",
           "description": "Uma contagem regressiva focada com um anel de progresso ao vivo. Clique para pausar."
+        },
+        "ro": {
+          "name": "Numărătoare inversă",
+          "description": "O numărătoare inversă clară, cu un inel de progres live. Dă clic pentru pauză."
         },
         "sv": {
           "name": "Nedräkningstimer",
@@ -1098,6 +1153,10 @@
           "name": "Captura de Tela de URL",
           "description": "Qualquer página da web, em qualquer profundidade de rolagem, com CSS personalizado"
         },
+        "ro": {
+          "name": "Captură URL",
+          "description": "Orice pagină web, la orice nivel de derulare, cu CSS personalizat"
+        },
         "sv": {
           "name": "URL-skärmdump",
           "description": "Vilken webbsida som helst, på valfritt skrolldjup, med egen CSS"
@@ -1173,6 +1232,10 @@
           "name": "Mapa de Ruas",
           "description": "Mapas vetoriais limpos de quarteirões de qualquer cidade. Funciona offline."
         },
+        "ro": {
+          "name": "Hartă stradală",
+          "description": "Hărți vectoriale clare, cu blocuri stradale, pentru orice oraș. Funcționează offline."
+        },
         "sv": {
           "name": "Gatukarta",
           "description": "Rena vektorkartor över gatukvarter i valfri stad. Fungerar offline."
@@ -1247,6 +1310,10 @@
           "name": "Remover Dados Ocultos",
           "description": "Revele e remova metadados ocultos de imagens e PDFs — no seu dispositivo."
         },
+        "ro": {
+          "name": "Elimină datele ascunse",
+          "description": "Dezvăluie și elimină metadatele ascunse din imagini și PDF-uri — direct pe dispozitivul tău."
+        },
         "sv": {
           "name": "Ta bort dold data",
           "description": "Visa och ta bort dold metadata från bilder och PDF-filer – på din enhet."
@@ -1317,6 +1384,10 @@
         "pt": {
           "name": "Assistente de Texto",
           "description": "Formate, decodifique, gere hash e anonimize texto — JSON, JWT e muito mais."
+        },
+        "ro": {
+          "name": "Asistent de text",
+          "description": "Formatează, decodează, aplică hash și anonimizează text — JSON, JWT și altele."
         },
         "sv": {
           "name": "Texthjälp",
@@ -1408,6 +1479,11 @@
           "name": "Crachá de nome para eventos",
           "description": "Crachás de conferência com função codificada por cor e QR opcional.",
           "blurb": "Crachás de conferência, codificados por cor conforme a função"
+        },
+        "ro": {
+          "name": "Ecuson pentru eveniment",
+          "description": "Ecusoane de conferință cu rol codificat prin culoare și cod QR opțional.",
+          "blurb": "Ecusoane de conferință, codificate prin culoare în funcție de rol"
         },
         "sv": {
           "name": "Namnbricka för evenemang",
@@ -1501,6 +1577,11 @@
           "name": "Sinalização direcional",
           "description": "Placas direcionais para eventos — destinos, cada um com uma seta. Prontas para impressão.",
           "blurb": "Placas direcionais para eventos, prontas para impressão"
+        },
+        "ro": {
+          "name": "Semnalistică de orientare",
+          "description": "Panouri direcționale pentru evenimente — destinații, fiecare cu o săgeată. Gata de print.",
+          "blurb": "Panouri direcționale pentru evenimente, gata de print"
         },
         "sv": {
           "name": "Vägvisningsskyltar",
@@ -1654,6 +1735,11 @@
           "description": "Lockups oficiais do logo da SUSE — camaleão, logotipo e um nome.",
           "blurb": "Lockups oficiais do logo da SUSE, vários estilos"
         },
+        "ro": {
+          "name": "Lockup de brand",
+          "description": "Lockup-uri oficiale ale siglei SUSE — cameleon, wordmark și un nume.",
+          "blurb": "Lockup-uri oficiale ale siglei SUSE, mai multe variante"
+        },
         "sv": {
           "name": "Varumärkeslockup",
           "description": "Officiella SUSE-logotyplockupar — kameleont, ordmärke och ett namn.",
@@ -1737,6 +1823,10 @@
           "name": "Anúncio animado",
           "description": "Crie anúncios animados a partir de cenas em camadas, para qualquer tamanho padrão."
         },
+        "ro": {
+          "name": "Reclamă animată",
+          "description": "Creează reclame animate din scene stratificate, pentru orice dimensiune standard."
+        },
         "sv": {
           "name": "Animerad annons",
           "description": "Skapa animerade annonser från lagrade scener, i alla standardstorlekar."
@@ -1809,6 +1899,10 @@
           "name": "Calendário ICS",
           "description": "Transforma os detalhes do evento em um arquivo de calendário (.ics) para qualquer app de calendário."
         },
+        "ro": {
+          "name": "Calendar ICS",
+          "description": "Transformă detaliile unui eveniment într-un fișier de calendar (.ics) pentru orice aplicație de calendar."
+        },
         "sv": {
           "name": "Kalender-ICS",
           "description": "Omvandla evenemangsdetaljer till en kalenderfil (.ics) för valfri kalenderapp."
@@ -1879,6 +1973,10 @@
         "pt": {
           "name": "Compactar PDF",
           "description": "Reduza um PDF recompactando suas imagens — no seu dispositivo."
+        },
+        "ro": {
+          "name": "Comprimă PDF",
+          "description": "Micșorează un PDF recomprimând imaginile din el — direct pe dispozitivul tău."
         },
         "sv": {
           "name": "Komprimera PDF",
@@ -1967,6 +2065,11 @@
           "description": "Crie um PDF de várias páginas — capa, blocos de conteúdo fluido e contracapa.",
           "blurb": "PDFs de várias páginas — capa, conteúdo, contracapa"
         },
+        "ro": {
+          "name": "PDF multi-pagină",
+          "description": "Creează un PDF cu mai multe pagini — o copertă, blocuri de conținut care curg și o pagină finală.",
+          "blurb": "PDF-uri cu mai multe pagini — copertă, conținut, final"
+        },
         "sv": {
           "name": "PDF med flera sidor",
           "description": "Skapa en PDF med flera sidor — omslag, flytande innehållsblock och en baksida.",
@@ -2049,6 +2152,10 @@
           "name": "Filtro: Duotom",
           "description": "Um duotom de duas cores para qualquer foto — uma cor nas sombras, outra nas luzes."
         },
+        "ro": {
+          "name": "Filtru: Duoton",
+          "description": "Un duoton pe două culori pentru orice fotografie — o culoare pentru umbre, alta pentru lumini."
+        },
         "sv": {
           "name": "Filter: Duoton",
           "description": "En tvåfärgad duoton för valfritt foto – en färg i skuggorna, en annan i högdagrarna."
@@ -2129,6 +2236,10 @@
           "name": "Filtro: Meio-tom",
           "description": "Meio-tom vetorial a partir de qualquer foto — pontos dimensionados pelo brilho."
         },
+        "ro": {
+          "name": "Filtru: Tramă",
+          "description": "Tramă vectorială din orice fotografie — puncte dimensionate în funcție de luminozitate."
+        },
         "sv": {
           "name": "Filter: Raster",
           "description": "Vektorraster från valfritt foto – prickar med storlek efter ljusstyrka."
@@ -2206,6 +2317,10 @@
           "name": "Filtro: Scanline",
           "description": "Efeito vetorial de scanline com 'linhas infinitas' horizontais para qualquer foto"
         },
+        "ro": {
+          "name": "Filtru: Linii de scanare",
+          "description": "Efect vectorial de linii de scanare orizontale de tip „infinity lines”, din orice fotografie"
+        },
         "sv": {
           "name": "Filter: Skanlinjer",
           "description": "Horisontell vektoreffekt med “oändlighetslinjer” i skanlinjestil, från valfritt foto"
@@ -2280,6 +2395,10 @@
         "pt": {
           "name": "Lockup de logos: grade (NASCAR)",
           "description": "Organize um monte de logos em uma grade de patrocinadores limpa e uniforme — o mural “NASCAR”."
+        },
+        "ro": {
+          "name": "Logo Lockup: Grilă (NASCAR)",
+          "description": "Aranjează o grămadă de logo-uri într-o grilă de sponsori curată și uniformă — peretele „NASCAR”."
         },
         "sv": {
           "name": "Logotyp-lockup: rutnät (NASCAR)",
@@ -2358,6 +2477,10 @@
         "pt": {
           "name": "Filtro: Posterizar Bitmap",
           "description": "Transforme qualquer foto em separações de cor vetoriais planas, no estilo serigrafia."
+        },
+        "ro": {
+          "name": "Filtru: Posterizare Bitmap",
+          "description": "Transformă orice fotografie în separații de culoare vectoriale, plate, în stil serigrafie."
         },
         "sv": {
           "name": "Filter: Posterisering av bitmap",
@@ -2444,6 +2567,11 @@
           "description": "Organogramas, fluxogramas, linhas do tempo e muito mais — a partir de cartões, texto, Mermaid ou CSV.",
           "blurb": "Transforme cartões ou texto em diagramas com a cara da sua marca"
         },
+        "ro": {
+          "name": "Creator de diagrame",
+          "description": "Organigrame, diagrame de flux, cronologii și altele — din carduri, text, Mermaid sau CSV.",
+          "blurb": "Transformă carduri sau text în diagrame aliniate brandului"
+        },
         "sv": {
           "name": "Diagramskapare",
           "description": "Org-scheman, flödesscheman, tidslinjer med mera — från kort, text, Mermaid eller CSV.",
@@ -2526,6 +2654,10 @@
           "name": "Filtro: Esticar Pixels",
           "description": "Espalhe uma coluna de pixels por uma foto a partir de uma linha de limiar. Funciona ao vivo."
         },
+        "ro": {
+          "name": "Filtru: Întindere de pixeli",
+          "description": "Întinde o coloană de pixeli pe toată fotografia, pornind de la o linie de prag. Funcționează live."
+        },
         "sv": {
           "name": "Filter: Pixelsträckning",
           "description": "Smeta ut en pixelkolumn över ett foto från en tröskellinje. Fungerar live."
@@ -2601,6 +2733,10 @@
           "name": "Combinação de logotipos: Parceiro",
           "description": "O logotipo da SUSE ao lado do de um parceiro, com um divisor entre eles — claro ou escuro."
         },
+        "ro": {
+          "name": "Logo Lockup: Partener",
+          "description": "Logo-ul SUSE alături de cel al unui partener, cu un separator între ele — variantă deschisă sau întunecată."
+        },
         "sv": {
           "name": "Logotypkombination: Partner",
           "description": "SUSE-logotypen bredvid en partners, med en avdelare emellan — ljust eller mörkt."
@@ -2672,6 +2808,10 @@
         "pt": {
           "name": "Criador de ícones para web",
           "description": "Criador de favicon e ícone de app — um .ico multi-tamanho, além de PNG e SVG."
+        },
+        "ro": {
+          "name": "Creator de iconițe web",
+          "description": "Creator de favicon și iconițe de aplicație — un fișier .ico cu mai multe dimensiuni, plus PNG și SVG."
         },
         "sv": {
           "name": "Webbikonskapare",
@@ -2750,6 +2890,10 @@
           "name": "Estúdio de Layout",
           "blurb": "Layouts livres em uma tela aberta"
         },
+        "ro": {
+          "name": "Studio de layout",
+          "blurb": "Layout-uri libere pe un canvas deschis"
+        },
         "sv": {
           "name": "Layoutstudio",
           "blurb": "Fria layouter på en öppen yta"
@@ -2825,6 +2969,10 @@
         "pt": {
           "name": "Anúncio Lottie",
           "description": "Crie anúncios animados a partir de cenas em camadas, cada uma com uma animação Lottie, em qualquer tamanho padrão."
+        },
+        "ro": {
+          "name": "Reclamă Lottie",
+          "description": "Creează reclame animate din scene stratificate, fiecare cu un fișier de animație Lottie, pentru orice dimensiune standard."
         },
         "sv": {
           "name": "Lottie-annons",
@@ -2998,6 +3146,11 @@
           "description": "Posicione o Geeko da SUSE com controles deslizantes — olhos, piscar e membros. Sem animação, apenas uma imagem estática que você ajusta e exporta pronta para impressão.",
           "blurb": "Posicione o Geeko da SUSE — imagens estáticas prontas para impressão"
         },
+        "ro": {
+          "name": "Pose Geeko",
+          "description": "Poziționează Geeko-ul SUSE cu ajutorul sliderelor — ochi, clipit și membre. Fără animație, doar o imagine statică pe care o reglezi și o exporți gata de print.",
+          "blurb": "Poziționează Geeko-ul SUSE — imagini statice gata de print"
+        },
         "sv": {
           "name": "Pose Geeko",
           "description": "Posera SUSE Geeko med reglage — ögon, blinkning och lemmar. Ingen animation, bara en stillbild du kan finjustera och exportera tryckfärdig.",
@@ -3076,6 +3229,10 @@
         "pt": {
           "name": "Gravador de Voz",
           "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3."
+        },
+        "ro": {
+          "name": "Înregistrator vocal",
+          "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salveaz-o ca MP3."
         },
         "sv": {
           "name": "Röstinspelare",
@@ -3156,6 +3313,10 @@
           "name": "Vídeo com Intro e Outro",
           "description": "Grave um clipe em qualquer orientação e o vídeo é automaticamente emoldurado com intro e outro de marca, um rodapé e uma trilha sonora."
         },
+        "ro": {
+          "name": "Video deschidere & final",
+          "description": "Înregistrează un clip în orice orientare, apoi îl încadrează automat cu un intro și un outro de brand, un lower-third și un fundal muzical."
+        },
         "sv": {
           "name": "Video med intro och outro",
           "description": "Spela in ett klipp i valfri orientering, så ramas det automatiskt in med varumärkesanpassad intro och outro, en nedre tredjedelstext och bakgrundsmusik."
@@ -3233,6 +3394,10 @@
         "pt": {
           "name": "Filtro: Células de Voronoi",
           "description": "Fragmente qualquer foto em um mosaico de células de Voronoi — cada célula preenchida com a cor mais próxima, em vetor plano."
+        },
+        "ro": {
+          "name": "Filtru: Celule Voronoi",
+          "description": "Sparge orice fotografie într-un mozaic de celule Voronoi — fiecare celulă e umplută cu cea mai apropiată culoare, ca vector plat."
         },
         "sv": {
           "name": "Filter: Voronoi-celler",
@@ -3313,6 +3478,10 @@
           "name": "Exportar recurso",
           "description": "Renderize qualquer recurso do catálogo — ou um link de ferramenta Lolly — em qualquer formato e tamanho."
         },
+        "ro": {
+          "name": "Export de active",
+          "description": "Randează orice activ din catalog — sau un link către un instrument Lolly — în orice format și dimensiune."
+        },
         "sv": {
           "name": "Exportera tillgång",
           "description": "Rendera vilken katalogtillgång som helst — eller en Lolly-verktygslänk — till valfritt format och storlek."
@@ -3386,6 +3555,10 @@
         "pt": {
           "name": "Estúdio de Documentos",
           "description": "Escreva um documento com várias páginas na tela — texto rico, títulos, tabelas e renderizações da Lolly inseridas que fluem pelas páginas e são exportadas como PDF."
+        },
+        "ro": {
+          "name": "Doc Studio",
+          "description": "Scrie un document cu mai multe pagini pe canvas — text îmbogățit, titluri, tabele și randări Lolly inserate, care curg pe pagini și se exportă ca PDF."
         },
         "sv": {
           "name": "Dokumentstudio",
@@ -3474,6 +3647,11 @@
           "name": "Criador de Carrossel",
           "description": "Crie um carrossel de várias páginas em uma única tela — defina de 1 a 6 páginas do mesmo tamanho, adicione objetos em cada página e exporte uma sequência de imagens ou um PDF com várias páginas.",
           "blurb": "Carrosséis deslizáveis e layouts com várias páginas"
+        },
+        "ro": {
+          "name": "Creator de carusele",
+          "description": "Creează un carusel cu mai multe pagini pe un singur canvas — setează 1–6 pagini de aceeași dimensiune, adaugă obiecte pe fiecare pagină și exportă o secvență de imagini sau un PDF cu mai multe pagini.",
+          "blurb": "Carusele cu swipe și layouturi cu mai multe pagini"
         },
         "sv": {
           "name": "Karusellskapare",
@@ -3565,6 +3743,11 @@
           "name": "Fluxograma",
           "description": "Crie fluxogramas em uma tela aberta — arraste os cartões, conecte-os, e as linhas se traçam sozinhas e ficam presas às caixas.",
           "blurb": "Cartões + conectores que ficam presos às caixas"
+        },
+        "ro": {
+          "name": "Diagramă de flux",
+          "description": "Creează diagrame de flux pe un canvas deschis — trage carduri, conectează-le, iar liniile se trasează și rămân lipite de casete.",
+          "blurb": "Carduri + conectori care rămân lipiți de casete"
         },
         "sv": {
           "name": "Flödesschema",
@@ -3663,6 +3846,11 @@
           "description": "Gráficos potentes orientados a dados com D3 — cole uma tabela e o gráfico se monta sozinho. Barras, linhas, áreas, dispersão, pizza, radar, treemap, mapa de calor e muito mais, alinhados à marca e em vetor limpo.",
           "blurb": "Cole uma tabela — o D3 monta o gráfico, alinhado à marca e em vetor limpo"
         },
+        "ro": {
+          "name": "Studio Grafice D3",
+          "description": "Grafice puternice, generate din datele tale, cu D3 — lipește un tabel și se transformă singur în grafic. Bare, linii, arii, scatter, plăcintă, radar, treemap, heatmap și altele, pe brand și impecabile ca vectori.",
+          "blurb": "Lipește un tabel — D3 îl transformă în grafic, pe brand și impecabil ca vector"
+        },
         "sv": {
           "name": "D3-diagramstudio",
           "description": "Kraftfulla datadrivna diagram med D3 – klistra in en tabell så diagramför den sig själv. Stapel, linje, yta, punkt, cirkel, radar, träddiagram, värmekarta med mera, varumärkesanpassat och vektorrent.",
@@ -3744,6 +3932,10 @@
           "name": "Gravação",
           "description": "Crie seus próprios cartões de abertura e encerramento, grave um clipe e o Lolly os posiciona automaticamente ao redor dele."
         },
+        "ro": {
+          "name": "Înregistrare",
+          "description": "Creează-ți propriile carduri de deschidere și închidere, apoi înregistrează un clip, iar Lolly le adaugă automat în jurul lui."
+        },
         "sv": {
           "name": "Inspelning",
           "description": "Designa dina egna intro- och outrokort, spela sedan in ett klipp så lägger Lolly dem automatiskt runt det."
@@ -3818,6 +4010,10 @@
         "pt": {
           "name": "3D",
           "description": "Carregue um modelo 3D em uma cena iluminada, gire e posicione a câmera, e renderize uma imagem estática ou uma animação giratória."
+        },
+        "ro": {
+          "name": "3D",
+          "description": "Încarcă un model 3D într-o scenă luminată, rotește și poziționează camera, apoi randează o imagine statică sau o animație turntable."
         },
         "sv": {
           "name": "3D",
@@ -3894,6 +4090,10 @@
         "pt": {
           "name": "Gradiente em Malha",
           "description": "Gradientes suaves em estilo malha a partir das amostras da sua marca. Arraste os pontos de cor diretamente na tela."
+        },
+        "ro": {
+          "name": "Degrade Mesh",
+          "description": "Degrade-uri mesh delicate din mostrele brandului tău. Trage punctele de culoare direct pe canvas."
         },
         "sv": {
           "name": "Nätgradient",

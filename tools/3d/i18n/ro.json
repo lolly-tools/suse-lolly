@@ -1,0 +1,4 @@
+{
+  "name": "3D",
+  "description": "Încarcă un model 3D într-o scenă luminată, rotește și poziționează camera, apoi randează o imagine statică sau o animație turntable."
+}
