@@ -1,4 +1,19 @@
 {
   "name": "Recorder ng Boses",
-  "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3."
+  "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3.",
+  "a11yLabel": "Recorder ng boses — level {{default dbText \"idle\"}}",
+  "inputs.title.label": "Label",
+  "inputs.title.help": "Ito ang magiging pangalan ng recording card at ng na-save na file.",
+  "inputs.targetLevel.label": "Target na level",
+  "inputs.targetLevel.help": "Ano ang itinuturing na 'tamang-tama' para sa mga coaching prompt.",
+  "inputs.targetLevel.options.soft": "Mahina · malapit na mic",
+  "inputs.targetLevel.options.normal": "Normal na pagsasalita",
+  "inputs.targetLevel.options.loud": "Malakas · silid",
+  "inputs.showTips.label": "Mga tip sa coaching",
+  "inputs.showTips.help": "Mga live na prompt tulad ng 'lumapit ka pa' o 'sumasabog na ang boses mo'.",
+  "inputs.theme.label": "Estilo ng card",
+  "inputs.theme.options.dark": "Madilim",
+  "inputs.theme.options.light": "Maliwanag",
+  "inputs.theme.options.green": "SUSE Berde",
+  "inputs.accent.label": "Accent"
 }

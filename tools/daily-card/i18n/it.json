@@ -1,0 +1,14 @@
+{
+  "name": "Riepilogo del giorno",
+  "description": "Citazione del giorno con meteo in tempo reale, orario e una mappa per qualsiasi città.",
+  "inputs.city.label": "Città",
+  "inputs.city.help": "Facoltativo. Nome della città, aeroporto (LAX, LHR) o abbreviazione (LA, NYC, SF…)",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Scuro",
+  "inputs.theme.options.light": "Chiaro",
+  "inputs.theme.options.green": "Verde SUSE",
+  "inputs.quoteWeight.label": "Peso della citazione",
+  "inputs.quoteWeight.help": "Peso del testo della citazione (100 Sottile → 900 Nero).",
+  "inputs.ambientMotion.label": "Movimento ambientale",
+  "inputs.ambientMotion.help": "Un bagliore che si muove molto lentamente dietro alla scheda, visibile solo a schermo. Disattivato, il fermo immagine esportato resta pulito."
+}

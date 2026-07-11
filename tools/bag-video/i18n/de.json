@@ -1,4 +1,26 @@
 {
   "name": "Taschenvideo",
-  "description": "Ein animiertes, markenkonformes Video für Taschenmotive."
+  "description": "Ein animiertes, markenkonformes Video für Taschenmotive.",
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Neugierig",
+  "inputs.pose.options.sitting": "Sitzend",
+  "inputs.pose.options.laying": "Liegend",
+  "inputs.pose.options.dangling": "Baumelnd",
+  "inputs.geeko.label": "Skalierung & Position",
+  "inputs.geeko.section": "Geeko-Optionen",
+  "inputs.geeko.help": "Die Skalierung bestimmt die Größe von Geeko; X/Y verschieben ihn im Bild (%). Ziehen Sie eine Beschriftung oder geben Sie einen Wert ein.",
+  "inputs.geeko.fields.scale.label": "Skalierung",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+  "inputs.animSpeed.label": "Animationsgeschwindigkeit",
+  "inputs.animSpeed.section": "Geeko-Optionen",
+  "inputs.blinkRate.label": "Blinzelrate (s)",
+  "inputs.blinkRate.section": "Geeko-Optionen",
+  "inputs.flip.label": "Geeko spiegeln",
+  "inputs.flip.section": "Geeko-Optionen",
+  "inputs.theme.label": "Design",
+  "inputs.theme.options.dark": "Dunkel",
+  "inputs.theme.options.light": "Hell",
+  "inputs.theme.options.pine": "Kiefer",
+  "inputs.theme.options.transparent": "Transparent"
 }

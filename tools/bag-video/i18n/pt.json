@@ -1,4 +1,26 @@
 {
   "name": "Vídeo de Bolsa",
-  "description": "Um vídeo animado e alinhado à marca para visuais de bolsa."
+  "description": "Um vídeo animado e alinhado à marca para visuais de bolsa.",
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Curioso",
+  "inputs.pose.options.sitting": "Sentado",
+  "inputs.pose.options.laying": "Deitado",
+  "inputs.pose.options.dangling": "Pendurado",
+  "inputs.geeko.label": "Escala e posição",
+  "inputs.geeko.section": "Opções do Geeko",
+  "inputs.geeko.help": "A escala redimensiona o Geeko; X / Y ajusta a posição dele no quadro (%). Arraste um rótulo ou digite um valor.",
+  "inputs.geeko.fields.scale.label": "Escala",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+  "inputs.animSpeed.label": "Velocidade da animação",
+  "inputs.animSpeed.section": "Opções do Geeko",
+  "inputs.blinkRate.label": "Frequência de piscada (s)",
+  "inputs.blinkRate.section": "Opções do Geeko",
+  "inputs.flip.label": "Inverter Geeko",
+  "inputs.flip.section": "Opções do Geeko",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Escuro",
+  "inputs.theme.options.light": "Claro",
+  "inputs.theme.options.pine": "Pinho",
+  "inputs.theme.options.transparent": "Transparente"
 }

@@ -1,5 +1,67 @@
 {
   "name": "活动姓名徽章",
   "description": "会议姓名徽章，按角色颜色区分，可选二维码。",
-  "featured.blurb": "会议姓名徽章，按角色颜色区分"
+  "featured.blurb": "会议姓名徽章，按角色颜色区分",
+  "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}}的活动姓名徽章，{{default status \"attendee\"}}",
+
+  "inputs.size.label": "徽章尺寸",
+  "inputs.size.help": "设置徽章比例和导出打印尺寸（设计时会显示在徽章上）。如需要，可在导出栏中微调精确尺寸。",
+  "inputs.size.options.a7": "A7 竖版 · 74 × 105 mm（小）",
+  "inputs.size.options.3x4in": "3 × 4 英寸竖版 · 76 × 102 mm",
+  "inputs.size.options.a6": "A6 竖版 · 105 × 148 mm",
+  "inputs.size.options.4x6in": "4 × 6 英寸竖版 · 102 × 152 mm（大）",
+  "inputs.size.options.4x3in": "4 × 3 英寸横版 · 102 × 76 mm",
+  "inputs.size.options.a6land": "A6 横版 · 148 × 105 mm",
+  "inputs.size.options.6x4in": "6 × 4 英寸横版 · 152 × 102 mm（大）",
+
+  "inputs.status.label": "参会者身份",
+  "inputs.status.help": "为徽章设置颜色编码，并显示角色色带。",
+  "inputs.status.options.attendee": "参会者",
+  "inputs.status.options.speaker": "演讲者",
+  "inputs.status.options.presenter": "主讲人",
+  "inputs.status.options.sponsor": "赞助商",
+  "inputs.status.options.exhibitor": "参展商",
+  "inputs.status.options.organizer": "组织者",
+  "inputs.status.options.staff": "工作人员／员工",
+  "inputs.status.options.press": "媒体／记者",
+  "inputs.status.options.vip": "VIP",
+  "inputs.status.options.volunteer": "志愿者",
+
+  "inputs.roleColor.label": "角色颜色覆盖",
+  "inputs.roleColor.help": "可选——覆盖状态颜色。留空则使用所选状态对应的颜色。",
+
+  "inputs.background.label": "卡片背景",
+
+  "inputs.eventLogo.label": "活动标志",
+  "inputs.eventLogo.help": "你的活动标志。留空则使用 SUSE 标志（根据卡片颜色自动选择浅色或深色版本）。",
+
+  "inputs.eventName.label": "活动名称",
+  "inputs.eventName.help": "显示在标志下方。清空后仅显示标志。",
+
+  "inputs.eventWeight.label": "活动名称字重",
+  "inputs.eventWeight.help": "活动名称文字的字体粗细（100 细体 → 800 特粗体）。",
+
+  "inputs.firstname.label": "名",
+  "inputs.lastname.label": "姓",
+
+  "inputs.pronouns.label": "代词",
+  "inputs.pronouns.help": "可选——显示在姓名旁边。",
+
+  "inputs.nameWeight.label": "姓名字重",
+  "inputs.nameWeight.help": "参会者姓名文字的字体粗细（100 细体 → 800 特粗体）。",
+
+  "inputs.jobTitle.label": "职位",
+
+  "inputs.company.label": "公司",
+
+  "inputs.tracks.label": "专题标签",
+  "inputs.tracks.help": "可选的分会议题标签，以彩色标签形式显示。可为每个标签单独设置颜色，留空则以角色颜色作为描边样式。",
+  "inputs.tracks.fields.label.label": "专题名称",
+  "inputs.tracks.fields.label.placeholder": "例如：平台工程",
+  "inputs.tracks.fields.color.label": "标签颜色",
+
+  "inputs.showQr.label": "显示二维码",
+
+  "inputs.url.label": "二维码链接至",
+  "inputs.url.help": "参会者资料、日程或联系方式页面。留空则隐藏二维码。"
 }

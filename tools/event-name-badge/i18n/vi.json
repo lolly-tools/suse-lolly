@@ -1,5 +1,66 @@
 {
   "name": "Thẻ tên sự kiện",
   "description": "Thẻ tên hội nghị được mã màu theo vai trò, có mã QR tùy chọn.",
-  "featured.blurb": "Thẻ tên hội nghị, mã màu theo vai trò"
+  "featured.blurb": "Thẻ tên hội nghị, mã màu theo vai trò",
+  "a11yLabel": "Thẻ tên sự kiện dành cho {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",
+
+  "inputs.size.label": "Kích thước thẻ",
+  "inputs.size.help": "Đặt tỷ lệ thẻ và kích thước in khi xuất (hiển thị trên thẻ khi bạn thiết kế). Tinh chỉnh kích thước chính xác trong thanh xuất nếu cần.",
+  "inputs.size.options.a7": "A7 dọc · 74 × 105 mm (nhỏ)",
+  "inputs.size.options.3x4in": "3 × 4 in dọc · 76 × 102 mm",
+  "inputs.size.options.a6": "A6 dọc · 105 × 148 mm",
+  "inputs.size.options.4x6in": "4 × 6 in dọc · 102 × 152 mm (lớn)",
+  "inputs.size.options.4x3in": "4 × 3 in ngang · 102 × 76 mm",
+  "inputs.size.options.a6land": "A6 ngang · 148 × 105 mm",
+  "inputs.size.options.6x4in": "6 × 4 in ngang · 152 × 102 mm (lớn)",
+
+  "inputs.status.label": "Vai trò người tham dự",
+  "inputs.status.help": "Mã màu cho thẻ và đặt dải vai trò tương ứng.",
+  "inputs.status.options.attendee": "Người tham dự",
+  "inputs.status.options.speaker": "Diễn giả",
+  "inputs.status.options.presenter": "Người thuyết trình",
+  "inputs.status.options.sponsor": "Nhà tài trợ",
+  "inputs.status.options.exhibitor": "Đơn vị trưng bày",
+  "inputs.status.options.organizer": "Ban tổ chức",
+  "inputs.status.options.staff": "Nhân viên / Nhân sự",
+  "inputs.status.options.press": "Báo chí / Truyền thông",
+  "inputs.status.options.vip": "VIP",
+  "inputs.status.options.volunteer": "Tình nguyện viên",
+
+  "inputs.roleColor.label": "Ghi đè màu vai trò",
+  "inputs.roleColor.help": "Tùy chọn — thay thế màu của vai trò. Để trống để dùng màu mặc định theo vai trò đã chọn.",
+
+  "inputs.background.label": "Nền thẻ",
+
+  "inputs.eventLogo.label": "Logo sự kiện",
+  "inputs.eventLogo.help": "Logo của sự kiện bạn. Để trống để dùng logo SUSE (tự động sáng/tối theo màu thẻ).",
+
+  "inputs.eventName.label": "Tên sự kiện",
+  "inputs.eventName.help": "Hiển thị bên dưới logo. Xóa trống để chỉ hiện logo.",
+
+  "inputs.eventWeight.label": "Độ đậm tên sự kiện",
+  "inputs.eventWeight.help": "Độ đậm phông chữ của tên sự kiện (100 Mảnh → 800 Đậm nhất).",
+
+  "inputs.firstname.label": "Tên",
+  "inputs.lastname.label": "Họ",
+
+  "inputs.pronouns.label": "Đại từ nhân xưng",
+  "inputs.pronouns.help": "Tùy chọn — hiển thị bên cạnh tên.",
+
+  "inputs.nameWeight.label": "Độ đậm tên",
+  "inputs.nameWeight.help": "Độ đậm phông chữ của tên người tham dự (100 Mảnh → 800 Đậm nhất).",
+
+  "inputs.jobTitle.label": "Chức danh",
+  "inputs.company.label": "Công ty",
+
+  "inputs.tracks.label": "Chuyên đề",
+  "inputs.tracks.help": "Chuyên đề phiên tùy chọn, hiển thị dạng thẻ nhỏ (chip). Đặt màu riêng cho từng thẻ, hoặc để trống để dùng viền màu vai trò.",
+  "inputs.tracks.fields.label.label": "Chuyên đề",
+  "inputs.tracks.fields.label.placeholder": "vd. Kỹ thuật nền tảng",
+  "inputs.tracks.fields.color.label": "Màu chip",
+
+  "inputs.showQr.label": "Hiện mã QR",
+
+  "inputs.url.label": "Mã QR liên kết đến",
+  "inputs.url.help": "Hồ sơ người tham dự, lịch trình hoặc trang liên hệ. Ẩn khi để trống."
 }

@@ -1,4 +1,17 @@
 {
   "name": "標誌",
-  "description": "放置 SUSE 標誌——自動選擇合適的版本並匯出為向量圖。"
+  "description": "放置 SUSE 標誌——自動選擇合適的版本並匯出為向量圖。",
+
+  "inputs.background.label": "背景",
+  "inputs.background.help": "標誌所在的背景顏色。系統會自動選擇對應的標誌版本(深色背景用反白版,淺色背景用一般版)。匯出時開啟「無背景」可移除背景。",
+
+  "inputs.orientation.label": "版面配置",
+  "inputs.orientation.options.horizontal": "水平",
+  "inputs.orientation.options.vertical": "堆疊",
+  "inputs.orientation.help": "水平是寬版標誌組合;堆疊則是適合窄小或正方形空間的方形版本。",
+
+  "inputs.ink.label": "樣式",
+  "inputs.ink.options.brand": "品牌綠",
+  "inputs.ink.options.mono": "單色",
+  "inputs.ink.help": "品牌綠可用於任何背景;高對比單色則深色背景用白色、淺色背景用黑色。"
 }

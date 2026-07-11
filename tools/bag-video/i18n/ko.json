@@ -1,0 +1,32 @@
+{
+  "name": "가방 비디오",
+  "description": "가방 비주얼을 위한 브랜드에 맞춘 애니메이션 동영상입니다.",
+
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "호기심",
+  "inputs.pose.options.sitting": "앉음",
+  "inputs.pose.options.laying": "누움",
+  "inputs.pose.options.dangling": "매달림",
+
+  "inputs.geeko.label": "스케일 및 위치",
+  "inputs.geeko.help": "스케일은 Geeko의 크기를 조정하고, X / Y는 프레임 안에서 위치를 미세 조정합니다(%). 라벨을 드래그하거나 값을 직접 입력하세요.",
+  "inputs.geeko.section": "Geeko 옵션",
+  "inputs.geeko.fields.scale.label": "스케일",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+
+  "inputs.animSpeed.label": "애니메이션 속도",
+  "inputs.animSpeed.section": "Geeko 옵션",
+
+  "inputs.blinkRate.label": "깜빡임 간격(초)",
+  "inputs.blinkRate.section": "Geeko 옵션",
+
+  "inputs.flip.label": "Geeko 반전",
+  "inputs.flip.section": "Geeko 옵션",
+
+  "inputs.theme.label": "테마",
+  "inputs.theme.options.dark": "다크",
+  "inputs.theme.options.light": "라이트",
+  "inputs.theme.options.pine": "파인",
+  "inputs.theme.options.transparent": "투명"
+}

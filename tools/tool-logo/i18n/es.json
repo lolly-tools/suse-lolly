@@ -1,4 +1,14 @@
 {
   "name": "Logo",
-  "description": "Coloca el logo de SUSE: elige automáticamente la variante correcta y lo exporta en vectorial."
+  "description": "Coloca el logo de SUSE: elige automáticamente la variante correcta y lo exporta en vectorial.",
+  "inputs.background.label": "Fondo",
+  "inputs.background.help": "El color sobre el que se sitúa el logo. Se elige automáticamente el logo adecuado (invertido para fondos oscuros, normal para fondos claros). Activa \"Sin fondo\" en la exportación para eliminarlo.",
+  "inputs.orientation.label": "Orientación",
+  "inputs.orientation.help": "Horizontal es el lockup ancho; Apilado es el cuadrado para espacios reducidos o cuadrados.",
+  "inputs.orientation.options.horizontal": "Horizontal",
+  "inputs.orientation.options.vertical": "Apilado",
+  "inputs.ink.label": "Estilo",
+  "inputs.ink.help": "Verde de marca sobre cualquier fondo, o mono de alto contraste (blanco sobre oscuro, negro sobre claro).",
+  "inputs.ink.options.brand": "Verde de marca",
+  "inputs.ink.options.mono": "Mono"
 }

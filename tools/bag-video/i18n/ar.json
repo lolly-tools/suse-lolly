@@ -1,4 +1,32 @@
 {
   "name": "فيديو الحقيبة",
-  "description": "فيديو متحرك متوافق مع الهوية لتصاميم الحقائب."
+  "description": "فيديو متحرك متوافق مع الهوية لتصاميم الحقائب.",
+
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "فضولي",
+  "inputs.pose.options.sitting": "جالس",
+  "inputs.pose.options.laying": "مستلقٍ",
+  "inputs.pose.options.dangling": "متدلٍ",
+
+  "inputs.geeko.label": "المقياس والموضع",
+  "inputs.geeko.section": "خيارات Geeko",
+  "inputs.geeko.help": "يحدد المقياس حجم Geeko؛ بينما يحرّك X / Y موضعه داخل الإطار (%). اسحب التسمية أو أدخل قيمة.",
+  "inputs.geeko.fields.scale.label": "المقياس",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+
+  "inputs.animSpeed.label": "سرعة الرسوم المتحركة",
+  "inputs.animSpeed.section": "خيارات Geeko",
+
+  "inputs.blinkRate.label": "معدل الرمش (ث)",
+  "inputs.blinkRate.section": "خيارات Geeko",
+
+  "inputs.flip.label": "عكس Geeko",
+  "inputs.flip.section": "خيارات Geeko",
+
+  "inputs.theme.label": "السمة",
+  "inputs.theme.options.dark": "داكن",
+  "inputs.theme.options.light": "فاتح",
+  "inputs.theme.options.pine": "الصنوبر",
+  "inputs.theme.options.transparent": "شفاف"
 }

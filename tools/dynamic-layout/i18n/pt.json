@@ -1,4 +1,104 @@
 {
   "name": "Layout dinâmico",
-  "description": "Um layout multiuso que se reorganiza em torno do que você adicionar, em qualquer tamanho."
+  "description": "Um layout multiuso que se reorganiza em torno do que você adicionar, em qualquer tamanho.",
+  "a11yLabel": "{{default heading cta}} — prévia do Layout dinâmico",
+
+  "inputs.logo.label": "Logo",
+  "inputs.logo.section": "Logo",
+  "inputs.logo.help": "Coloque o logo da SUSE em um canto. A variante certa para o tema é escolhida automaticamente.",
+  "inputs.logo.options.none": "Nenhum",
+  "inputs.logo.options.top-left": "Superior esquerdo",
+  "inputs.logo.options.top-right": "Superior direito",
+  "inputs.logo.options.bottom-left": "Inferior esquerdo",
+  "inputs.logo.options.bottom-right": "Inferior direito",
+
+  "inputs.logoStyle.label": "Estilo do logo",
+  "inputs.logoStyle.section": "Logo",
+  "inputs.logoStyle.help": "O mono permanece legível em qualquer tema; o verde da marca usa o símbolo verde do logo.",
+  "inputs.logoStyle.options.mono": "Mono (branco / preto)",
+  "inputs.logoStyle.options.brand": "Verde da marca",
+
+  "inputs.bgImage.label": "Imagem de fundo",
+  "inputs.bgImage.section": "Fundo",
+  "inputs.bgImage.help": "Fundo opcional de sangria total atrás do conteúdo.",
+
+  "inputs.imageFilter.label": "Filtro de imagem",
+  "inputs.imageFilter.section": "Fundo",
+  "inputs.imageFilter.options.none": "Nenhum",
+  "inputs.imageFilter.options.mono": "Mono",
+  "inputs.imageFilter.options.punch": "Vibrante",
+  "inputs.imageFilter.options.warm": "Quente",
+  "inputs.imageFilter.options.cool": "Frio",
+  "inputs.imageFilter.options.fade": "Fade",
+
+  "inputs.imageFraming.label": "Posição",
+  "inputs.imageFraming.section": "Fundo",
+  "inputs.imageFraming.help": "O zoom amplia a imagem de fundo para recortar; X / Y a movem. Arraste um rótulo ou digite um valor.",
+  "inputs.imageFraming.fields.zoom.label": "Zoom",
+  "inputs.imageFraming.fields.x.label": "X",
+  "inputs.imageFraming.fields.y.label": "Y",
+
+  "inputs.bgOpacity.label": "Sobreposição",
+  "inputs.bgOpacity.section": "Fundo",
+  "inputs.bgOpacity.help": "Tinge a imagem com a cor do tema para manter o texto legível.",
+
+  "inputs.theme.label": "Tema",
+  "inputs.theme.help": "Combinações de cores da marca SUSE para o cartão, o texto e a chamada para ação.",
+  "inputs.theme.options.pine": "Pinho",
+  "inputs.theme.options.jungle": "Selva",
+  "inputs.theme.options.white": "Branco",
+  "inputs.theme.options.midnight": "Meia-noite",
+  "inputs.theme.options.persimmon": "Caqui",
+
+  "inputs.fgColor.label": "Cor do texto",
+  "inputs.fgColor.help": "Opcional. Substitui a cor do texto e do contorno do botão (tudo que segue currentColor). Deixe sem definir para usar a cor de primeiro plano do tema.",
+
+  "inputs.heading.label": "Título",
+  "inputs.heading.help": "A linha grande e de impacto. Deixe vazio para omiti-la.",
+
+  "inputs.headingFontSize.label": "Tamanho",
+  "inputs.headingFontSize.section": "Tipografia do título",
+  "inputs.headingFontSize.help": "Tamanho relativo — o layout se ajusta automaticamente à tela.",
+
+  "inputs.headingFontWeight.label": "Peso",
+  "inputs.headingFontWeight.section": "Tipografia do título",
+
+  "inputs.subheading.label": "Subtítulo",
+  "inputs.subheading.help": "Uma linha de apoio abaixo do título. Aceita markdown: **negrito**, *itálico*, ~~tachado~~.",
+
+  "inputs.subheadingFontSize.label": "Tamanho",
+  "inputs.subheadingFontSize.section": "Tipografia do subtítulo",
+  "inputs.subheadingFontSize.help": "Tamanho relativo — o layout se ajusta automaticamente à tela.",
+
+  "inputs.subheadingFontWeight.label": "Peso",
+  "inputs.subheadingFontWeight.section": "Tipografia do subtítulo",
+
+  "inputs.body.label": "Texto do corpo",
+  "inputs.body.help": "Aceita markdown: **negrito**, *itálico*, ~~tachado~~, e listas com marcadores (linhas iniciadas com - ).",
+
+  "inputs.bodyFontSize.label": "Tamanho",
+  "inputs.bodyFontSize.section": "Tipografia do corpo",
+  "inputs.bodyFontSize.help": "Tamanho relativo — o layout se ajusta automaticamente à tela.",
+
+  "inputs.bodyFontWeight.label": "Peso",
+  "inputs.bodyFontWeight.section": "Tipografia do corpo",
+
+  "inputs.cta.label": "Chamada para ação",
+  "inputs.cta.help": "Um rótulo de botão curto — até 20 caracteres.",
+
+  "inputs.ctaTypography.label": "Fonte",
+  "inputs.ctaTypography.section": "Tipografia da chamada para ação",
+  "inputs.ctaTypography.help": "SUSE Mono dá ao botão uma sensação técnica, como de código.",
+  "inputs.ctaTypography.options.sans": "SUSE Sans",
+  "inputs.ctaTypography.options.mono": "SUSE Mono",
+
+  "inputs.ctaFontSize.label": "Tamanho",
+  "inputs.ctaFontSize.section": "Tipografia da chamada para ação",
+  "inputs.ctaFontSize.help": "Tamanho relativo — o layout se ajusta automaticamente à tela.",
+
+  "inputs.ctaFontWeight.label": "Peso",
+  "inputs.ctaFontWeight.section": "Tipografia da chamada para ação",
+
+  "inputs.headshot.label": "Retrato",
+  "inputs.headshot.help": "Retrato opcional. Quando definido, ancora seu próprio bloco de cor ao lado do texto."
 }

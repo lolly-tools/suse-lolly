@@ -1,4 +1,19 @@
 {
   "name": "Gravador de Voz",
-  "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3."
+  "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3.",
+  "a11yLabel": "Gravador de voz — nível {{default dbText \"idle\"}}",
+  "inputs.title.label": "Rótulo",
+  "inputs.title.help": "Nomeia o cartão de gravação e o arquivo salvo.",
+  "inputs.targetLevel.label": "Nível-alvo",
+  "inputs.targetLevel.help": "O que conta como ‘ideal’ para as dicas de coaching.",
+  "inputs.targetLevel.options.soft": "Suave · microfone próximo",
+  "inputs.targetLevel.options.normal": "Fala normal",
+  "inputs.targetLevel.options.loud": "Alto · ambiente",
+  "inputs.showTips.label": "Dicas de coaching",
+  "inputs.showTips.help": "Avisos ao vivo como ‘aproxime-se’ ou ‘você está estourando o áudio’.",
+  "inputs.theme.label": "Estilo do cartão",
+  "inputs.theme.options.dark": "Escuro",
+  "inputs.theme.options.light": "Claro",
+  "inputs.theme.options.green": "Verde SUSE",
+  "inputs.accent.label": "Destaque"
 }

@@ -1,4 +1,128 @@
 {
   "name": "Animated Ad",
-  "description": "Gumawa ng animated ads gamit ang mga naka-layer na eksena, para sa kahit anong standard size."
+  "description": "Gumawa ng animated ads gamit ang mga naka-layer na eksena, para sa kahit anong standard size.",
+  "a11yLabel": "Animated ad na may {{sceneCount}} eksena",
+
+  "inputs.size.label": "Sukat ng ad",
+  "inputs.size.help": "Itinatakda ang hugis ng canvas at ang na-export na pixel size. Nag-aadjust ang layout para sa square, portrait, story, landscape, at skinny banner na hugis.",
+  "inputs.size.options.sq": "Square · 1080 × 1080",
+  "inputs.size.options.portrait": "Portrait 4:5 · 1080 × 1350",
+  "inputs.size.options.story": "Story 9:16 · 1080 × 1920",
+  "inputs.size.options.landscape": "Landscape 1.91:1 · 1200 × 628",
+  "inputs.size.options.mrec": "Medium Rectangle · 300 × 250",
+  "inputs.size.options.halfpage": "Half Page · 300 × 600",
+  "inputs.size.options.skyscraper": "Wide Skyscraper · 160 × 600",
+  "inputs.size.options.billboard": "Billboard · 970 × 250",
+  "inputs.size.options.leaderboard": "Leaderboard · 728 × 90",
+  "inputs.size.options.mobile": "Mobile Banner · 320 × 50",
+
+  "inputs.animated.label": "I-animate",
+  "inputs.animated.section": "Animation",
+  "inputs.animated.help": "Kapag naka-on ito, sunud-sunod na magpe-play ang mga eksena. I-off para panatilihing still na larawan ang huling eksena.",
+
+  "inputs.motion.label": "Istilo ng galaw",
+  "inputs.motion.section": "Animation",
+  "inputs.motion.help": "Ang default na paraan ng pagpasok ng bawat eksena. Mabilis mag-fade in ang bawat istilo (para malinaw ang mga export) at gumagalaw sa loob ng tagal ng transition. Puwedeng i-override ito ng isang eksena.",
+  "inputs.motion.options.fade": "Fade",
+  "inputs.motion.options.slide-up": "Slide pataas",
+  "inputs.motion.options.slide-down": "Slide pababa",
+  "inputs.motion.options.slide-left": "Slide pakaliwa",
+  "inputs.motion.options.slide-right": "Slide pakanan",
+  "inputs.motion.options.rise": "Umakyat",
+  "inputs.motion.options.drop": "Bumagsak",
+  "inputs.motion.options.zoom-in": "Mag-zoom in",
+  "inputs.motion.options.zoom-out": "Mag-zoom out",
+  "inputs.motion.options.grow": "Lumaki",
+  "inputs.motion.options.pop": "Pop",
+  "inputs.motion.options.tilt": "Tumagilid",
+  "inputs.motion.options.swoop": "Swoop",
+  "inputs.motion.options.drift": "Drift",
+  "inputs.motion.options.none": "Cut",
+
+  "inputs.transDur.label": "Tagal ng transition",
+  "inputs.transDur.section": "Animation",
+  "inputs.transDur.help": "Gaano katagal bago gumalaw papasok ang bawat eksena. Palaging mabilis mag-fade in ang opacity para manatiling malinaw ang gif/video exports; mas mataas ang value, mas malambot ang galaw ng slides, zooms, at spins.",
+
+  "inputs.speed.label": "Bilis",
+  "inputs.speed.section": "Animation",
+  "inputs.speed.help": "Pinapabilis o pinapabagal ang buong sequence nang hindi binabago ang timing ng bawat eksena.",
+
+  "inputs.loop.label": "Loop",
+  "inputs.loop.section": "Animation",
+  "inputs.loop.help": "Ilang beses magpe-play ang sequence. Karaniwang 3 beses lang ang limitasyon ng mga display ad network.",
+  "inputs.loop.options.loop": "Walang katapusang loop",
+  "inputs.loop.options.play3": "I-play nang 3 beses",
+  "inputs.loop.options.once": "I-play nang isang beses",
+
+  "inputs.focusScene.label": "I-pause sa eksena",
+  "inputs.focusScene.help": "0 = mag-play. Itakda sa numero ng eksena para i-freeze ang preview doon at ma-edit mo ito — patuloy pa ring magpe-play ang mga export (ang still poster ay gagamit ng eksenang ito, o ang huli).",
+
+  "inputs.scenes.label": "Mga eksena",
+  "inputs.scenes.help": "Bawat eksena ay isang bahagi ng sequence — ito ay umaanimate sa ibabaw ng nauna rito. I-reorder sa pamamagitan ng pag-drag. Ang huling eksena ang nakatigil na end card.",
+  "inputs.scenes.addMenu.label": "Magdagdag ng eksena",
+
+  "inputs.scenes.fields.kind.label": "Uri ng eksena",
+  "inputs.scenes.fields.kind.options.title": "Pamagat",
+  "inputs.scenes.fields.kind.options.text": "Teksto",
+  "inputs.scenes.fields.kind.options.image": "Larawan",
+  "inputs.scenes.fields.kind.options.cta": "Panawagan sa aksyon",
+  "inputs.scenes.fields.kind.options.logo": "Logo",
+  "inputs.scenes.fields.kind.options.end": "Panghuling card",
+
+  "inputs.scenes.fields.bgColor.label": "Background",
+  "inputs.scenes.fields.fgColor.label": "Kulay ng text",
+
+  "inputs.scenes.fields.headline.label": "Headline",
+  "inputs.scenes.fields.headline.placeholder": "Buuin nang minsan.",
+
+  "inputs.scenes.fields.subheadline.label": "Subheadline",
+  "inputs.scenes.fields.subheadline.placeholder": "Patakbuhin kahit saan.",
+
+  "inputs.scenes.fields.body.label": "Teksto",
+  "inputs.scenes.fields.body.placeholder": "Sumusuportang linya ng teksto.",
+
+  "inputs.scenes.fields.cta.label": "Teksto ng button",
+  "inputs.scenes.fields.cta.placeholder": "Alamin pa",
+
+  "inputs.scenes.fields.ctaStyle.label": "Istilo ng button",
+  "inputs.scenes.fields.ctaStyle.options.pill": "Pill",
+  "inputs.scenes.fields.ctaStyle.options.arrow": "Palaso →",
+  "inputs.scenes.fields.ctaStyle.options.plain": "Simpleng teksto",
+
+  "inputs.scenes.fields.logo.label": "Lockup ng logo",
+  "inputs.scenes.fields.logo.options.horizontal": "Horizontal",
+  "inputs.scenes.fields.logo.options.stacked": "Nakapatong",
+
+  "inputs.scenes.fields.logoColor.label": "Kulay ng logo",
+  "inputs.scenes.fields.logoColor.options.mono": "Mono — itim / puti",
+  "inputs.scenes.fields.logoColor.options.green": "Berde",
+
+  "inputs.scenes.fields.image.label": "Larawan",
+
+  "inputs.scenes.fields.imageFocus.label": "Fokus ng larawan",
+  "inputs.scenes.fields.imageFocus.options.center": "Gitna",
+  "inputs.scenes.fields.imageFocus.options.top": "Itaas",
+  "inputs.scenes.fields.imageFocus.options.bottom": "Ibaba",
+  "inputs.scenes.fields.imageFocus.options.left": "Kaliwa",
+  "inputs.scenes.fields.imageFocus.options.right": "Kanan",
+
+  "inputs.scenes.fields.hold.label": "Tagal (segundo)",
+
+  "inputs.scenes.fields.transition.label": "Pumasok gamit ang",
+  "inputs.scenes.fields.transition.options.inherit": "Default",
+  "inputs.scenes.fields.transition.options.fade": "Fade",
+  "inputs.scenes.fields.transition.options.slide-up": "Slide pataas",
+  "inputs.scenes.fields.transition.options.slide-down": "Slide pababa",
+  "inputs.scenes.fields.transition.options.slide-left": "Slide pakaliwa",
+  "inputs.scenes.fields.transition.options.slide-right": "Slide pakanan",
+  "inputs.scenes.fields.transition.options.rise": "Umakyat",
+  "inputs.scenes.fields.transition.options.drop": "Bumagsak",
+  "inputs.scenes.fields.transition.options.zoom-in": "Mag-zoom in",
+  "inputs.scenes.fields.transition.options.zoom-out": "Mag-zoom out",
+  "inputs.scenes.fields.transition.options.grow": "Lumaki",
+  "inputs.scenes.fields.transition.options.pop": "Pop",
+  "inputs.scenes.fields.transition.options.tilt": "Tumagilid",
+  "inputs.scenes.fields.transition.options.swoop": "Swoop",
+  "inputs.scenes.fields.transition.options.drift": "Drift",
+  "inputs.scenes.fields.transition.options.none": "Cut"
 }

@@ -1,4 +1,19 @@
 {
   "name": "Înregistrator vocal",
-  "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salveaz-o ca MP3."
+  "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salvează-o ca MP3.",
+  "a11yLabel": "Înregistrator vocal — nivel {{default dbText \"idle\"}}",
+  "inputs.title.label": "Etichetă",
+  "inputs.title.help": "Denumește cardul înregistrării și fișierul salvat.",
+  "inputs.targetLevel.label": "Nivel țintă",
+  "inputs.targetLevel.help": "Ce este considerat „ideal” pentru mesajele de îndrumare.",
+  "inputs.targetLevel.options.soft": "Slab · microfon apropiat",
+  "inputs.targetLevel.options.normal": "Vorbire normală",
+  "inputs.targetLevel.options.loud": "Puternic · cameră",
+  "inputs.showTips.label": "Sfaturi de îndrumare",
+  "inputs.showTips.help": "Mesaje live precum „apropie-te mai mult” sau „saturezi semnalul”.",
+  "inputs.theme.label": "Stil card",
+  "inputs.theme.options.dark": "Întunecat",
+  "inputs.theme.options.light": "Deschis",
+  "inputs.theme.options.green": "Verde SUSE",
+  "inputs.accent.label": "Accent"
 }

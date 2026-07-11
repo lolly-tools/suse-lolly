@@ -1,4 +1,14 @@
 {
-  "name": "Daily Brief",
-  "description": "Quote ng araw kasama ang live na weather, oras, at mapa ng kahit anong city."
+  "name": "Buod ng Araw",
+  "description": "Quote ng araw kasama ang live na weather, oras, at mapa ng kahit anong city.",
+  "inputs.city.label": "Lungsod",
+  "inputs.city.help": "Opsyonal. Pangalan ng lungsod, airport code (LAX, LHR), o abbreviation (LA, NYC, SF…)",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Madilim",
+  "inputs.theme.options.light": "Maliwanag",
+  "inputs.theme.options.green": "SUSE Berde",
+  "inputs.quoteWeight.label": "Bigat ng quote",
+  "inputs.quoteWeight.help": "Bigat ng font ng quote text (100 Manipis → 900 Itim).",
+  "inputs.ambientMotion.label": "Galaw sa paligid",
+  "inputs.ambientMotion.help": "Isang napakabagal na dumadaloy na liwanag sa likod ng card, sa screen lang ito makikita. Kapag naka-off, mananatiling malinis ang na-export na still image."
 }

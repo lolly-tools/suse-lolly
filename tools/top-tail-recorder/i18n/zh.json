@@ -1,4 +1,33 @@
 {
   "name": "片头片尾视频",
-  "description": "以任意方向录制视频片段,自动为其添加品牌片头片尾、下方字幕条和背景音乐。"
+  "description": "以任意方向录制视频片段,自动为其添加品牌片头片尾、下方字幕条和背景音乐。",
+  "a11yLabel": "片头片尾视频 — {{default introTitle \"片头\"}} 至 {{default outroTitle \"片尾\"}}",
+
+  "inputs.orientation.label": "方向",
+  "inputs.orientation.options.portrait": "竖版 · 1080 × 1920",
+  "inputs.orientation.options.landscape": "横版 · 1920 × 1080",
+  "inputs.orientation.options.square": "方形 · 1080 × 1080",
+
+  "inputs.clip.label": "你的片段",
+  "inputs.clip.help": "点击画布上的 ● 进行拍摄,或上传一段视频。片头片尾会包裹在其外层,以任意方向填满画面。",
+
+  "inputs.clipFit.label": "视频适配方式",
+  "inputs.clipFit.help": "决定你的片段在画面中的呈现方式。“填满画面”会裁剪视频以铺满整个画面;“显示完整视频”会展示整段视频并留出黑边——适合将横版或方形片段上传到竖版画面时使用。",
+  "inputs.clipFit.options.cover": "填满画面(裁剪)",
+  "inputs.clipFit.options.contain": "显示完整视频",
+
+  "inputs.brandColor.label": "片头片尾颜色",
+  "inputs.accent.label": "强调色",
+
+  "inputs.logo.label": "徽标",
+  "inputs.logo.help": "显示在片头和片尾卡片上。",
+
+  "inputs.introTitle.label": "片头标题",
+  "inputs.introSubtitle.label": "片头副标题",
+
+  "inputs.lowerName.label": "姓名",
+  "inputs.lowerRole.label": "角色 / 账号",
+
+  "inputs.outroTitle.label": "片尾标题",
+  "inputs.outroCta.label": "片尾行动号召"
 }

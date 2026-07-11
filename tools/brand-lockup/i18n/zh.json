@@ -1,5 +1,49 @@
 {
   "name": "品牌标志组合",
   "description": "SUSE 官方标志组合——变色龙图标、文字标志和名称。",
-  "featured.blurb": "SUSE 官方标志组合，多种样式"
+  "featured.blurb": "SUSE 官方标志组合，多种样式",
+
+  "inputs.name.label": "名称",
+  "inputs.name.help": "紧跟在 SUSE 后面的文字——例如“Storage”“AI Factory”或“Data Team”。留空则仅显示 SUSE 主标志。",
+
+  "inputs.category.label": "类型",
+  "inputs.category.help": "产品（Product）使用最简洁的标题（例如 SUSE AI）；项目（Program）以“Program”结尾；团队（Team）以“Team”结尾；活动（Event）带有地点信息。",
+  "inputs.category.options.product": "产品",
+  "inputs.category.options.program": "项目",
+  "inputs.category.options.team": "团队",
+  "inputs.category.options.event": "活动",
+
+  "inputs.location.label": "地点",
+  "inputs.location.help": "城市或地点——单独占一行（例如“Madrid”）。仅在类型为活动或团队时显示。",
+
+  "inputs.orientation.label": "布局",
+  "inputs.orientation.options.horizontal": "水平",
+  "inputs.orientation.options.stacked": "堆叠",
+
+  "inputs.polarity.label": "极性",
+  "inputs.polarity.help": "浅色背景使用正片；深色背景使用负片。",
+  "inputs.polarity.options.positive": "正片（浅色背景）",
+  "inputs.polarity.options.negative": "负片（深色背景）",
+
+  "inputs.treatment.label": "颜色",
+  "inputs.treatment.help": "全彩会保留变色龙图标的绿色；单色则将所有元素渲染为同一种颜色（浅色背景为黑色，深色背景为白色）。",
+  "inputs.treatment.options.colour": "全彩",
+  "inputs.treatment.options.mono": "单色",
+
+  "inputs.wrapMode.label": "名称换行",
+  "inputs.wrapMode.help": "仅适用于堆叠布局：名称在 SUSE 下方的换行方式。紧凑会将每个长单词单独换行；宽松则每行保留更多单词。",
+  "inputs.wrapMode.options.compact": "紧凑",
+  "inputs.wrapMode.options.balanced": "均衡",
+  "inputs.wrapMode.options.wide": "宽松",
+
+  "inputs.size.label": "导出尺寸",
+  "inputs.size.help": "“适配”会让画布紧贴标志组合本身。固定尺寸会将其在画布中居中——预览会显示画布的变化。",
+  "inputs.size.options.fit": "适配标志组合",
+  "inputs.size.options.square": "正方形 — 1080×1080",
+  "inputs.size.options.wide": "横向 — 1920×1080",
+  "inputs.size.options.portrait": "纵向 — 1080×1350",
+  "inputs.size.options.story": "故事版 — 1080×1920",
+
+  "inputs.background.label": "背景",
+  "inputs.background.help": "透明与品牌源文件保持一致。设置颜色可将背景面板一并烘焙进导出文件。"
 }

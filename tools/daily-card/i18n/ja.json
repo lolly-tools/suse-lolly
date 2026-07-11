@@ -1,4 +1,14 @@
 {
   "name": "デイリーブリーフ",
-  "description": "今日の名言と、任意の都市のリアルタイムの天気・時刻・地図です。"
+  "description": "今日の名言と、任意の都市のリアルタイムの天気・時刻・地図です。",
+  "inputs.city.label": "都市",
+  "inputs.city.help": "任意項目です。都市名、空港コード（LAX、LHR）、または略称（LA、NYC、SFなど）を入力してください。",
+  "inputs.theme.label": "テーマ",
+  "inputs.theme.options.dark": "ダーク",
+  "inputs.theme.options.light": "ライト",
+  "inputs.theme.options.green": "SUSE グリーン",
+  "inputs.quoteWeight.label": "引用文の太さ",
+  "inputs.quoteWeight.help": "引用文のフォントウェイトです（100: Thin → 900: Black）。",
+  "inputs.ambientMotion.label": "アンビエントモーション",
+  "inputs.ambientMotion.help": "画面上でカード背景にごくゆっくりと漂う光の演出です。オフにすると、書き出す静止画はクリーンな状態を保ちます。"
 }

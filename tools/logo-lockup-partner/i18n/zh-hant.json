@@ -1,4 +1,93 @@
 {
   "name": "標誌組合:合作夥伴",
-  "description": "SUSE 標誌與合作夥伴標誌並排顯示,中間有分隔線——淺色或深色。"
+  "description": "SUSE 標誌與合作夥伴標誌並排顯示,中間有分隔線——淺色或深色。",
+  "a11yLabel": "包含 {{partners.length}} 個合作夥伴標誌的 SUSE 合作夥伴標誌組合",
+
+  "inputs.theme.label": "主題",
+  "inputs.theme.help": "淺色會將深色標誌放在淺色背景上；深色則相反。SUSE 標誌會自動切換為與主題相符的淺色版／深色版圖稿。",
+  "inputs.theme.options.light": "淺色",
+  "inputs.theme.options.dark": "深色",
+
+  "inputs.lead.label": "主要標誌",
+  "inputs.lead.help": "預設為 SUSE 標誌，會隨主題切換。可換成自己的標誌，以其他品牌作為主要標誌。",
+
+  "inputs.leadTreatment.label": "主要標誌色彩",
+  "inputs.leadTreatment.help": "全彩會保留 SUSE 變色龍綠；單色會使用單色版 SUSE 標誌（淺色背景用黑色，深色背景用白色）。若使用自己的主要標誌，單色會將其去除飽和度。",
+  "inputs.leadTreatment.options.colour": "全彩",
+  "inputs.leadTreatment.options.mono": "單色",
+
+  "inputs.leadPresence.label": "主要標誌顯著度",
+  "inputs.leadPresence.help": "在自動平衡之外，設定主要標誌的顯著程度。想呈現明確的主辦方（「powered by」）層級，可選用「大」／「主打」（或更極端的等級）。整組標誌仍會縮放以符合畫布，因此這裡設定的是相對顯著度。",
+  "inputs.leadPresence.options.xxlarge": "超大",
+  "inputs.leadPresence.options.xlarge": "特大",
+  "inputs.leadPresence.options.hero": "主打",
+  "inputs.leadPresence.options.large": "大",
+  "inputs.leadPresence.options.normal": "正常",
+  "inputs.leadPresence.options.small": "小",
+  "inputs.leadPresence.options.xsmall": "特小",
+  "inputs.leadPresence.options.xxsmall": "極小",
+
+  "inputs.layout.label": "版面配置",
+  "inputs.layout.help": "均等同排會將所有標誌排在同一行；主要標誌 + 合作夥伴會突顯主要標誌，並讓合作夥伴標誌整齊地折行排列在一旁。",
+  "inputs.layout.options.row": "均等同排",
+  "inputs.layout.options.lead": "主要標誌 + 合作夥伴",
+
+  "inputs.connector.label": "連接元素",
+  "inputs.connector.help": "主要標誌與合作夥伴之間顯示的內容。",
+  "inputs.connector.options.bar": "豎線",
+  "inputs.connector.options.symbol": "符號",
+  "inputs.connector.options.text": "文字",
+  "inputs.connector.options.none": "無（僅留間距）",
+
+  "inputs.symbol.label": "符號",
+  "inputs.symbol.options.times": "×（乘號）",
+  "inputs.symbol.options.plus": "+（加號）",
+  "inputs.symbol.options.amp": "&（和號）",
+
+  "inputs.connectorText.label": "連接文字",
+  "inputs.connectorText.help": "例如「in partnership with」、「powered by」、「×」。",
+
+  "inputs.connectorWeight.label": "連接文字字重",
+  "inputs.connectorWeight.help": "連接文字的字重（100 極細 → 900 特黑）。",
+
+  "inputs.partnerDivider.label": "合作夥伴之間",
+  "inputs.partnerDivider.help": "在每個合作夥伴標誌之間加上一條豎線。合作夥伴達兩個以上時才會套用。",
+  "inputs.partnerDivider.options.none": "無（僅留間距）",
+  "inputs.partnerDivider.options.bar": "豎線",
+
+  "inputs.size.label": "標誌大小",
+  "inputs.size.help": "標誌的基礎高度。平衡大小與各標誌的顯著度都會以此為基準縮放。",
+
+  "inputs.gap.label": "間距",
+  "inputs.gap.help": "連接元素周圍以及合作夥伴標誌之間的間距。",
+
+  "inputs.balance.label": "平衡大小",
+  "inputs.balance.help": "依各標誌的視覺份量自動調整大小，讓主要標誌與合作夥伴看起來同樣顯著。各標誌的顯著度設定仍會在此基礎上疊加。關閉則所有標誌高度相同。",
+
+  "inputs.partners.label": "合作夥伴",
+
+  "inputs.partners.fields.logo.label": "合作夥伴標誌",
+
+  "inputs.partners.fields.presence.label": "顯著度",
+  "inputs.partners.fields.presence.help": "在自動平衡之外，設定這個合作夥伴標誌的顯著程度。最極端的等級（從超大到極小）可讓某個標誌更突出或更收斂；整組標誌仍會縮放以符合畫布。",
+  "inputs.partners.fields.presence.options.xxlarge": "超大",
+  "inputs.partners.fields.presence.options.xlarge": "特大",
+  "inputs.partners.fields.presence.options.hero": "主打",
+  "inputs.partners.fields.presence.options.large": "大",
+  "inputs.partners.fields.presence.options.normal": "正常",
+  "inputs.partners.fields.presence.options.small": "小",
+  "inputs.partners.fields.presence.options.xsmall": "特小",
+  "inputs.partners.fields.presence.options.xxsmall": "極小",
+
+  "inputs.partners.fields.filter.label": "效果",
+  "inputs.partners.fields.filter.help": "統一風格不一致的合作夥伴標誌：灰階或去飽和會去除色彩，提亮能改善偏暗的標誌，加深可壓制過淡的標誌，反轉可挽救深色主題下的深色標誌，轉為墨色則會將其還原為主題墨色的純色剪影。點陣圖標誌在所有格式中都會保留此效果；SVG 檔案標誌僅在 PNG 格式中保留。",
+  "inputs.partners.fields.filter.options.none": "無",
+  "inputs.partners.fields.filter.options.grayscale": "灰階",
+  "inputs.partners.fields.filter.options.desaturate": "去飽和",
+  "inputs.partners.fields.filter.options.brighten": "提亮",
+  "inputs.partners.fields.filter.options.darken": "加深",
+  "inputs.partners.fields.filter.options.invert": "反轉",
+  "inputs.partners.fields.filter.options.ink": "轉為墨色",
+
+  "inputs.partners.fields.opacity.label": "不透明度"
 }

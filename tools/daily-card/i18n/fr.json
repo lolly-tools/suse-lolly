@@ -1,4 +1,14 @@
 {
   "name": "Résumé du jour",
-  "description": "Citation du jour avec météo, heure et carte en direct pour n'importe quelle ville."
+  "description": "Citation du jour avec météo, heure et carte en direct pour n'importe quelle ville.",
+  "inputs.city.label": "Ville",
+  "inputs.city.help": "Facultatif. Nom de ville, aéroport (LAX, LHR) ou abréviation (LA, NYC, SF…)",
+  "inputs.theme.label": "Thème",
+  "inputs.theme.options.dark": "Sombre",
+  "inputs.theme.options.light": "Clair",
+  "inputs.theme.options.green": "Vert SUSE",
+  "inputs.quoteWeight.label": "Graisse de la citation",
+  "inputs.quoteWeight.help": "Graisse de la police du texte de citation (100 Fine → 900 Noire).",
+  "inputs.ambientMotion.label": "Mouvement ambiant",
+  "inputs.ambientMotion.help": "Une lueur qui dérive très lentement derrière la carte, à l'écran. Désactivé, l'export final reste net."
 }

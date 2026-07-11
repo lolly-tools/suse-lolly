@@ -1,4 +1,128 @@
 {
   "name": "Quảng cáo động",
-  "description": "Tạo quảng cáo động từ các cảnh xếp lớp, phù hợp với mọi kích thước tiêu chuẩn."
+  "description": "Tạo quảng cáo động từ các cảnh xếp lớp, phù hợp với mọi kích thước tiêu chuẩn.",
+  "a11yLabel": "Quảng cáo động với {{sceneCount}} cảnh",
+
+  "inputs.size.label": "Kích thước quảng cáo",
+  "inputs.size.help": "Đặt hình dạng khung vẽ và kích thước pixel khi xuất. Bố cục sẽ tự sắp xếp lại cho các hình dạng vuông, dọc, story, ngang và banner hẹp.",
+  "inputs.size.options.sq": "Vuông · 1080 × 1080",
+  "inputs.size.options.portrait": "Dọc 4:5 · 1080 × 1350",
+  "inputs.size.options.story": "Story 9:16 · 1080 × 1920",
+  "inputs.size.options.landscape": "Ngang 1.91:1 · 1200 × 628",
+  "inputs.size.options.mrec": "Hình chữ nhật vừa · 300 × 250",
+  "inputs.size.options.halfpage": "Nửa trang · 300 × 600",
+  "inputs.size.options.skyscraper": "Skyscraper rộng · 160 × 600",
+  "inputs.size.options.billboard": "Billboard · 970 × 250",
+  "inputs.size.options.leaderboard": "Leaderboard · 728 × 90",
+  "inputs.size.options.mobile": "Banner di động · 320 × 50",
+
+  "inputs.animated.label": "Hoạt ảnh",
+  "inputs.animated.section": "Hoạt ảnh",
+  "inputs.animated.help": "Khi bật, các cảnh sẽ phát lần lượt theo trình tự. Tắt để giữ cảnh cuối cùng làm ảnh tĩnh.",
+
+  "inputs.motion.label": "Kiểu chuyển động",
+  "inputs.motion.section": "Hoạt ảnh",
+  "inputs.motion.help": "Cách mặc định mỗi cảnh xuất hiện. Mọi kiểu đều mờ dần nhanh (để bản xuất sắc nét) và di chuyển trong suốt thời lượng chuyển cảnh. Từng cảnh có thể ghi đè kiểu này.",
+  "inputs.motion.options.fade": "Mờ dần",
+  "inputs.motion.options.slide-up": "Trượt lên",
+  "inputs.motion.options.slide-down": "Trượt xuống",
+  "inputs.motion.options.slide-left": "Trượt trái",
+  "inputs.motion.options.slide-right": "Trượt phải",
+  "inputs.motion.options.rise": "Nổi lên",
+  "inputs.motion.options.drop": "Rơi xuống",
+  "inputs.motion.options.zoom-in": "Phóng to",
+  "inputs.motion.options.zoom-out": "Thu nhỏ",
+  "inputs.motion.options.grow": "Lớn dần",
+  "inputs.motion.options.pop": "Bật lên",
+  "inputs.motion.options.tilt": "Nghiêng",
+  "inputs.motion.options.swoop": "Lướt vào",
+  "inputs.motion.options.drift": "Trôi nhẹ",
+  "inputs.motion.options.none": "Cắt cảnh",
+
+  "inputs.transDur.label": "Độ dài chuyển cảnh",
+  "inputs.transDur.section": "Hoạt ảnh",
+  "inputs.transDur.help": "Thời gian mỗi cảnh di chuyển vào. Độ mờ luôn mờ dần nhanh để giữ bản xuất gif/video sắc nét; giá trị lớn hơn giúp hiệu ứng trượt, phóng to và xoay diễn ra mượt hơn.",
+
+  "inputs.speed.label": "Tốc độ",
+  "inputs.speed.section": "Hoạt ảnh",
+  "inputs.speed.help": "Phát toàn bộ chuỗi cảnh nhanh hơn hoặc chậm hơn mà không thay đổi thời gian riêng của từng cảnh.",
+
+  "inputs.loop.label": "Lặp lại",
+  "inputs.loop.section": "Hoạt ảnh",
+  "inputs.loop.help": "Số lần chuỗi cảnh được phát. Các mạng quảng cáo hiển thị thường giới hạn ở 3 lượt phát.",
+  "inputs.loop.options.loop": "Lặp vô hạn",
+  "inputs.loop.options.play3": "Phát 3 lần",
+  "inputs.loop.options.once": "Phát một lần",
+
+  "inputs.focusScene.label": "Tạm dừng ở cảnh",
+  "inputs.focusScene.help": "0 = phát bình thường. Đặt số cảnh để giữ bản xem trước dừng tại đó nhằm chỉnh sửa dễ hơn — bản xuất vẫn phát bình thường (ảnh tĩnh sẽ dùng cảnh này, hoặc cảnh cuối cùng).",
+
+  "inputs.scenes.label": "Các cảnh",
+  "inputs.scenes.help": "Mỗi cảnh là một đoạn trong chuỗi — nó xuất hiện chồng lên cảnh trước đó. Kéo để sắp xếp lại thứ tự. Cảnh cuối cùng là thẻ kết thúc đứng yên.",
+  "inputs.scenes.addMenu.label": "Thêm cảnh",
+
+  "inputs.scenes.fields.kind.label": "Loại cảnh",
+  "inputs.scenes.fields.kind.options.title": "Tiêu đề",
+  "inputs.scenes.fields.kind.options.text": "Văn bản nội dung",
+  "inputs.scenes.fields.kind.options.image": "Hình ảnh",
+  "inputs.scenes.fields.kind.options.cta": "Kêu gọi hành động",
+  "inputs.scenes.fields.kind.options.logo": "Logo",
+  "inputs.scenes.fields.kind.options.end": "Thẻ kết thúc",
+
+  "inputs.scenes.fields.bgColor.label": "Nền",
+  "inputs.scenes.fields.fgColor.label": "Màu chữ",
+
+  "inputs.scenes.fields.headline.label": "Tiêu đề chính",
+  "inputs.scenes.fields.headline.placeholder": "Xây dựng một lần.",
+
+  "inputs.scenes.fields.subheadline.label": "Tiêu đề phụ",
+  "inputs.scenes.fields.subheadline.placeholder": "Chạy ở mọi nơi.",
+
+  "inputs.scenes.fields.body.label": "Nội dung",
+  "inputs.scenes.fields.body.placeholder": "Dòng nội dung bổ trợ.",
+
+  "inputs.scenes.fields.cta.label": "Nội dung nút",
+  "inputs.scenes.fields.cta.placeholder": "Tìm hiểu thêm",
+
+  "inputs.scenes.fields.ctaStyle.label": "Kiểu nút",
+  "inputs.scenes.fields.ctaStyle.options.pill": "Bo tròn",
+  "inputs.scenes.fields.ctaStyle.options.arrow": "Mũi tên →",
+  "inputs.scenes.fields.ctaStyle.options.plain": "Văn bản thường",
+
+  "inputs.scenes.fields.logo.label": "Bố cục logo",
+  "inputs.scenes.fields.logo.options.horizontal": "Ngang",
+  "inputs.scenes.fields.logo.options.stacked": "Xếp chồng",
+
+  "inputs.scenes.fields.logoColor.label": "Màu logo",
+  "inputs.scenes.fields.logoColor.options.mono": "Đơn sắc — đen / trắng",
+  "inputs.scenes.fields.logoColor.options.green": "Xanh lá",
+
+  "inputs.scenes.fields.image.label": "Hình ảnh",
+
+  "inputs.scenes.fields.imageFocus.label": "Tiêu điểm ảnh",
+  "inputs.scenes.fields.imageFocus.options.center": "Giữa",
+  "inputs.scenes.fields.imageFocus.options.top": "Trên",
+  "inputs.scenes.fields.imageFocus.options.bottom": "Dưới",
+  "inputs.scenes.fields.imageFocus.options.left": "Trái",
+  "inputs.scenes.fields.imageFocus.options.right": "Phải",
+
+  "inputs.scenes.fields.hold.label": "Thời gian giữ (giây)",
+
+  "inputs.scenes.fields.transition.label": "Vào bằng",
+  "inputs.scenes.fields.transition.options.inherit": "Mặc định",
+  "inputs.scenes.fields.transition.options.fade": "Mờ dần",
+  "inputs.scenes.fields.transition.options.slide-up": "Trượt lên",
+  "inputs.scenes.fields.transition.options.slide-down": "Trượt xuống",
+  "inputs.scenes.fields.transition.options.slide-left": "Trượt trái",
+  "inputs.scenes.fields.transition.options.slide-right": "Trượt phải",
+  "inputs.scenes.fields.transition.options.rise": "Nổi lên",
+  "inputs.scenes.fields.transition.options.drop": "Rơi xuống",
+  "inputs.scenes.fields.transition.options.zoom-in": "Phóng to",
+  "inputs.scenes.fields.transition.options.zoom-out": "Thu nhỏ",
+  "inputs.scenes.fields.transition.options.grow": "Lớn dần",
+  "inputs.scenes.fields.transition.options.pop": "Bật lên",
+  "inputs.scenes.fields.transition.options.tilt": "Nghiêng",
+  "inputs.scenes.fields.transition.options.swoop": "Lướt vào",
+  "inputs.scenes.fields.transition.options.drift": "Trôi nhẹ",
+  "inputs.scenes.fields.transition.options.none": "Cắt cảnh"
 }

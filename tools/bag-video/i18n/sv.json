@@ -1,4 +1,26 @@
 {
   "name": "Väskvideo",
-  "description": "En animerad video i varumärkets stil för väskbilder."
+  "description": "En animerad video i varumärkets stil för väskbilder.",
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Nyfiken",
+  "inputs.pose.options.sitting": "Sittande",
+  "inputs.pose.options.laying": "Liggande",
+  "inputs.pose.options.dangling": "Hängande",
+  "inputs.geeko.label": "Skala & position",
+  "inputs.geeko.section": "Geeko-alternativ",
+  "inputs.geeko.help": "Skala ändrar storleken på Geeko; X/Y flyttar den i bilden (%). Dra en etikett eller skriv in ett värde.",
+  "inputs.geeko.fields.scale.label": "Skala",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+  "inputs.animSpeed.label": "Animationshastighet",
+  "inputs.animSpeed.section": "Geeko-alternativ",
+  "inputs.blinkRate.label": "Blinkfrekvens (s)",
+  "inputs.blinkRate.section": "Geeko-alternativ",
+  "inputs.flip.label": "Spegelvänd Geeko",
+  "inputs.flip.section": "Geeko-alternativ",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Mörkt",
+  "inputs.theme.options.light": "Ljust",
+  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.transparent": "Transparent"
 }

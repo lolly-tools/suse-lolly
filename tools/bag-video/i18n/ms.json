@@ -1,4 +1,26 @@
 {
   "name": "Video Beg",
-  "description": "Video animasi bersesuaian jenama untuk visual beg."
+  "description": "Video animasi bersesuaian jenama untuk visual beg.",
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Ingin Tahu",
+  "inputs.pose.options.sitting": "Duduk",
+  "inputs.pose.options.laying": "Berbaring",
+  "inputs.pose.options.dangling": "Berjuntai",
+  "inputs.geeko.label": "Skala & Kedudukan",
+  "inputs.geeko.section": "Pilihan Geeko",
+  "inputs.geeko.help": "Skala menentukan saiz Geeko; X / Y menolaknya sedikit dalam bingkai (%). Seret label atau taip nilai.",
+  "inputs.geeko.fields.scale.label": "Skala",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+  "inputs.animSpeed.label": "Kelajuan Animasi",
+  "inputs.animSpeed.section": "Pilihan Geeko",
+  "inputs.blinkRate.label": "Kadar Kelipan (s)",
+  "inputs.blinkRate.section": "Pilihan Geeko",
+  "inputs.flip.label": "Balikkan Geeko",
+  "inputs.flip.section": "Pilihan Geeko",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Gelap",
+  "inputs.theme.options.light": "Terang",
+  "inputs.theme.options.pine": "Pain",
+  "inputs.theme.options.transparent": "Lutsinar"
 }

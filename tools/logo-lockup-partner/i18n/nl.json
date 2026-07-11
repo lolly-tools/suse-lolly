@@ -1,4 +1,93 @@
 {
   "name": "Logo-combinatie: Partner",
-  "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen — licht of donker."
+  "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen — licht of donker.",
+  "a11yLabel": "SUSE-partnercombinatie met {{partners.length}} partnerlogo's",
+
+  "inputs.theme.label": "Thema",
+  "inputs.theme.help": "Licht plaatst donkere logo's op een lichte achtergrond; donker draait dit om. Het SUSE-logo schakelt automatisch naar de bijbehorende on-light- / on-dark-variant.",
+  "inputs.theme.options.light": "Licht",
+  "inputs.theme.options.dark": "Donker",
+
+  "inputs.lead.label": "Hoofdlogo",
+  "inputs.lead.help": "Standaard het SUSE-logo, dat het thema volgt. Vervang dit door je eigen logo om met een ander merk te leiden.",
+
+  "inputs.leadTreatment.label": "Kleur hoofdlogo",
+  "inputs.leadTreatment.help": "Volledige kleur behoudt het SUSE-kameleongroen; monochroom gebruikt het eenkleurige SUSE-merkteken (zwart op licht, wit op donker). Bij je eigen hoofdlogo ontneemt monochroom de kleur.",
+  "inputs.leadTreatment.options.colour": "Volledige kleur",
+  "inputs.leadTreatment.options.mono": "Monochroom",
+
+  "inputs.leadPresence.label": "Aanwezigheid hoofdlogo",
+  "inputs.leadPresence.help": "Hoe prominent het hoofdlogo is, bovenop eventuele balancering. Gebruik Groot / Hero (of de extreme niveaus) voor een duidelijke host-hiërarchie (“powered by”). De hele combinatie schaalt nog steeds om binnen het werkgebied te passen, dus dit bepaalt de relatieve prominentie.",
+  "inputs.leadPresence.options.xxlarge": "Enorm",
+  "inputs.leadPresence.options.xlarge": "Extra groot",
+  "inputs.leadPresence.options.hero": "Hero",
+  "inputs.leadPresence.options.large": "Groot",
+  "inputs.leadPresence.options.normal": "Normaal",
+  "inputs.leadPresence.options.small": "Klein",
+  "inputs.leadPresence.options.xsmall": "Extra klein",
+  "inputs.leadPresence.options.xxsmall": "Piepklein",
+
+  "inputs.layout.label": "Lay-out",
+  "inputs.layout.help": "Gelijke rij houdt alle logo's op één lijn. Hoofd + partners benadrukt het hoofdlogo en laat de partners in een nette groep ernaast terugvouwen.",
+  "inputs.layout.options.row": "Gelijke rij",
+  "inputs.layout.options.lead": "Hoofd + partners",
+
+  "inputs.connector.label": "Verbinder",
+  "inputs.connector.help": "Wat er tussen het hoofdlogo en de partner(s) staat.",
+  "inputs.connector.options.bar": "Verticale streep",
+  "inputs.connector.options.symbol": "Symbool",
+  "inputs.connector.options.text": "Tekst",
+  "inputs.connector.options.none": "Niets (alleen ruimte)",
+
+  "inputs.symbol.label": "Symbool",
+  "inputs.symbol.options.times": "× (maal)",
+  "inputs.symbol.options.plus": "+ (plus)",
+  "inputs.symbol.options.amp": "& (en)",
+
+  "inputs.connectorText.label": "Connectortekst",
+  "inputs.connectorText.help": "bijv. “in samenwerking met”, “aangedreven door”, “×”.",
+
+  "inputs.connectorWeight.label": "Lettergewicht connectortekst",
+  "inputs.connectorWeight.help": "Lettergewicht van de connectortekst (100 Dun → 900 Zwart).",
+
+  "inputs.partnerDivider.label": "Tussen partners",
+  "inputs.partnerDivider.help": "Plaats een verticale streep tussen elk partnerlogo. Van toepassing zodra er twee of meer partners zijn.",
+  "inputs.partnerDivider.options.none": "Niets (alleen ruimte)",
+  "inputs.partnerDivider.options.bar": "Verticale streep",
+
+  "inputs.size.label": "Logogrootte",
+  "inputs.size.help": "Basishoogte van de logo's. Balancering en de aanwezigheid van elk logo schalen van hieruit.",
+
+  "inputs.gap.label": "Ruimte",
+  "inputs.gap.help": "Ruimte rond de connector en tussen partnerlogo's.",
+
+  "inputs.balance.label": "Groottes balanceren",
+  "inputs.balance.help": "Past de grootte van elk logo automatisch aan op basis van het optische gewicht, zodat het hoofdlogo en de partners even prominent overkomen. De aanwezigheid van elk logo blijft daarbovenop van toepassing. Schakel dit uit voor logo's met gelijke hoogte.",
+
+  "inputs.partners.label": "Partners",
+
+  "inputs.partners.fields.logo.label": "Partnerlogo",
+
+  "inputs.partners.fields.presence.label": "Aanwezigheid",
+  "inputs.partners.fields.presence.help": "Hoe prominent deze partner is, bovenop eventuele balancering. Met de extreme niveaus (Enorm … Piepklein) kan één logo domineren of naar de achtergrond verdwijnen; de hele combinatie schaalt nog steeds om binnen het werkgebied te passen.",
+  "inputs.partners.fields.presence.options.xxlarge": "Enorm",
+  "inputs.partners.fields.presence.options.xlarge": "Extra groot",
+  "inputs.partners.fields.presence.options.hero": "Hero",
+  "inputs.partners.fields.presence.options.large": "Groot",
+  "inputs.partners.fields.presence.options.normal": "Normaal",
+  "inputs.partners.fields.presence.options.small": "Klein",
+  "inputs.partners.fields.presence.options.xsmall": "Extra klein",
+  "inputs.partners.fields.presence.options.xxsmall": "Piepklein",
+
+  "inputs.partners.fields.filter.label": "Bewerking",
+  "inputs.partners.fields.filter.help": "Corrigeer een niet-passend partnerlogo: grijswaarden of verzadiging verlagen ontneemt de kleur, verhelderen verlevendigt een dof merkteken, verdonkeren temt een verbleekt logo, omkeren redt een donker logo op een donker thema, en omzetten naar inkt reduceert het tot een effen eenkleurig silhouet in de inktkleur van het thema. Bitmaplogo's behouden de bewerking in elk formaat; een SVG-bestandslogo behoudt het alleen in PNG.",
+  "inputs.partners.fields.filter.options.none": "Geen",
+  "inputs.partners.fields.filter.options.grayscale": "Grijswaarden",
+  "inputs.partners.fields.filter.options.desaturate": "Verzadiging verlagen",
+  "inputs.partners.fields.filter.options.brighten": "Verhelderen",
+  "inputs.partners.fields.filter.options.darken": "Verdonkeren",
+  "inputs.partners.fields.filter.options.invert": "Omkeren",
+  "inputs.partners.fields.filter.options.ink": "Omzetten naar inkt",
+
+  "inputs.partners.fields.opacity.label": "Dekking"
 }

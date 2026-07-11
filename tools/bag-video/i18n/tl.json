@@ -1,4 +1,26 @@
 {
   "name": "Video ng Bag",
-  "description": "Animated na video, naaayon sa brand, para sa visual ng bag."
+  "description": "Animated na video, naaayon sa brand, para sa visual ng bag.",
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Mausisa",
+  "inputs.pose.options.sitting": "Nakaupo",
+  "inputs.pose.options.laying": "Nakahiga",
+  "inputs.pose.options.dangling": "Nakabitin",
+  "inputs.geeko.label": "Sukat at Posisyon",
+  "inputs.geeko.section": "Mga Opsyon sa Geeko",
+  "inputs.geeko.help": "Ang Scale ang nagpapalaki o nagpapaliit sa Geeko; ang X / Y naman ang nag-aadjust sa posisyon nito sa frame (%). I-drag ang isang label o mag-type ng value.",
+  "inputs.geeko.fields.scale.label": "Sukat",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+  "inputs.animSpeed.label": "Bilis ng Animation",
+  "inputs.animSpeed.section": "Mga Opsyon sa Geeko",
+  "inputs.blinkRate.label": "Dalas ng Pagkurap (s)",
+  "inputs.blinkRate.section": "Mga Opsyon sa Geeko",
+  "inputs.flip.label": "I-flip ang Geeko",
+  "inputs.flip.section": "Mga Opsyon sa Geeko",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Madilim",
+  "inputs.theme.options.light": "Maliwanag",
+  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.transparent": "Transparent"
 }

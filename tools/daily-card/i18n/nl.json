@@ -1,4 +1,14 @@
 {
   "name": "Dagoverzicht",
-  "description": "Citaat van de dag met actueel weer, tijd en een kaart van elke stad."
+  "description": "Citaat van de dag met actueel weer, tijd en een kaart van elke stad.",
+  "inputs.city.label": "Stad",
+  "inputs.city.help": "Optioneel. Naam van de stad, luchthaven (LAX, LHR) of afkorting (LA, NYC, SF…)",
+  "inputs.theme.label": "Thema",
+  "inputs.theme.options.dark": "Donker",
+  "inputs.theme.options.light": "Licht",
+  "inputs.theme.options.green": "SUSE-groen",
+  "inputs.quoteWeight.label": "Citaatgewicht",
+  "inputs.quoteWeight.help": "Lettergewicht van de citaattekst (100 Dun → 900 Zwart).",
+  "inputs.ambientMotion.label": "Omgevingsbeweging",
+  "inputs.ambientMotion.help": "Een zeer langzaam driftende gloed achter de kaart, op het scherm. Uit houdt de geëxporteerde still schoon."
 }

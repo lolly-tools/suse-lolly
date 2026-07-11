@@ -1,4 +1,14 @@
 {
   "name": "الشعار",
-  "description": "ضع شعار SUSE — يختار النسخة المناسبة تلقائيا ويصدر بصيغة متجهة."
+  "description": "ضع شعار SUSE — يختار النسخة المناسبة تلقائيا ويصدر بصيغة متجهة.",
+  "inputs.background.label": "الخلفية",
+  "inputs.background.help": "اللون الذي يظهر خلفه الشعار. يتم اختيار الشعار المطابق تلقائيًا (معكوس للخلفيات الداكنة، عادي للخلفيات الفاتحة). فعّل خيار «بلا خلفية» (No BG) في التصدير لإزالتها.",
+  "inputs.orientation.label": "الاتجاه",
+  "inputs.orientation.help": "الأفقي هو التركيبة العريضة؛ أما المكدّس فهو التركيبة المربعة المناسبة للمساحات الضيقة أو المربعة.",
+  "inputs.orientation.options.horizontal": "أفقي",
+  "inputs.orientation.options.vertical": "مكدّس",
+  "inputs.ink.label": "النمط",
+  "inputs.ink.help": "أخضر العلامة التجارية على أي خلفية، أو نمط أحادي عالي التباين (أبيض على الداكن، أسود على الفاتح).",
+  "inputs.ink.options.brand": "أخضر العلامة التجارية",
+  "inputs.ink.options.mono": "أحادي اللون"
 }

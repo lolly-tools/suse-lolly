@@ -1,0 +1,19 @@
+{
+  "name": "음성 녹음기",
+  "description": "실시간 레벨 미터와 친절한 안내를 보며 음성 메모를 녹음하고 MP3로 저장해요.",
+  "a11yLabel": "음성 녹음기 — 레벨 {{default dbText \"idle\"}}",
+  "inputs.title.label": "라벨",
+  "inputs.title.help": "녹음 카드와 저장되는 파일의 이름을 지정해요.",
+  "inputs.targetLevel.label": "목표 레벨",
+  "inputs.targetLevel.help": "코칭 안내에서 '딱 알맞은' 수준으로 간주하는 레벨이에요.",
+  "inputs.targetLevel.options.soft": "부드럽게 · 마이크 근접",
+  "inputs.targetLevel.options.normal": "보통 말하기",
+  "inputs.targetLevel.options.loud": "크게 · 방 전체 소리",
+  "inputs.showTips.label": "코칭 팁",
+  "inputs.showTips.help": "'더 가까이 와주세요'나 '소리가 깨지고 있어요' 같은 실시간 안내가 표시돼요.",
+  "inputs.theme.label": "카드 스타일",
+  "inputs.theme.options.dark": "다크",
+  "inputs.theme.options.light": "라이트",
+  "inputs.theme.options.green": "SUSE 그린",
+  "inputs.accent.label": "강조 색상"
+}

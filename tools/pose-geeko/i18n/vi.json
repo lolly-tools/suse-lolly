@@ -1,5 +1,64 @@
 {
   "name": "Pose Geeko",
   "description": "Tạo dáng cho SUSE Geeko bằng thanh trượt — mắt, nháy mắt và tay chân. Không có hoạt ảnh, chỉ là ảnh tĩnh bạn chỉnh và xuất sẵn sàng để in.",
-  "featured.blurb": "Tạo dáng cho SUSE Geeko — ảnh tĩnh sẵn sàng để in"
+  "featured.blurb": "Tạo dáng cho SUSE Geeko — ảnh tĩnh sẵn sàng để in",
+
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Tò mò",
+  "inputs.pose.options.sitting": "Ngồi",
+  "inputs.pose.options.laying": "Nằm",
+  "inputs.pose.options.dangling": "Đung đưa",
+
+  "inputs.eyeX.label": "Mắt trái / phải",
+  "inputs.eyeX.section": "Tư thế",
+  "inputs.eyeX.help": "Di chuyển con ngươi trong mắt. Giá trị dương nhìn sang phải.",
+
+  "inputs.eyeY.label": "Mắt lên / xuống",
+  "inputs.eyeY.section": "Tư thế",
+  "inputs.eyeY.help": "Di chuyển con ngươi trong mắt. Giá trị dương nhìn xuống.",
+
+  "inputs.blink.label": "Nháy mắt",
+  "inputs.blink.section": "Tư thế",
+  "inputs.blink.help": "0 = mắt mở to tỉnh táo, giá trị càng cao mắt càng nhắm.",
+
+  "inputs.headTilt.label": "Nghiêng đầu",
+  "inputs.headTilt.section": "Tư thế",
+  "inputs.headTilt.help": "Nghiêng đầu của Geeko.",
+
+  "inputs.foliage.label": "Lá & cành cây",
+  "inputs.foliage.section": "Tư thế",
+  "inputs.foliage.help": "Xoay cành cây và lá. Dùng cho tư thế leo trèo.",
+
+  "inputs.legFront.label": "Chân trước",
+  "inputs.legFront.section": "Tư thế",
+  "inputs.legFront.help": "Đung đưa chân trước. Dùng cho tư thế đung đưa.",
+
+  "inputs.legBack.label": "Chân sau",
+  "inputs.legBack.section": "Tư thế",
+  "inputs.legBack.help": "Đung đưa chân sau. Dùng cho tư thế đung đưa.",
+
+  "inputs.tail.label": "Cong đuôi",
+  "inputs.tail.section": "Tư thế",
+  "inputs.tail.help": "Cuộn cong đuôi. Dùng cho tư thế ngồi.",
+
+  "inputs.geeko.label": "Tỷ lệ & Vị trí",
+  "inputs.geeko.section": "Tùy chọn Geeko",
+  "inputs.geeko.help": "Tỷ lệ chỉnh kích thước Geeko; X / Y dịch chuyển vị trí trong khung hình (%). Kéo nhãn hoặc nhập giá trị.",
+  "inputs.geeko.fields.scale.label": "Tỷ lệ",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+
+  "inputs.flip.label": "Lật Geeko",
+  "inputs.flip.section": "Tùy chọn Geeko",
+
+  "inputs.idle.label": "Chuyển động chờ",
+  "inputs.idle.help": "Một vòng lặp \"thở\" nhẹ nhàng trên màn hình. Tắt để có tư thế đứng yên hoàn toàn. Không bao giờ ảnh hưởng đến file xuất (SVG/PDF/TIFF/JPG chụp một khung hình tĩnh).",
+  "inputs.idle.section": "Tùy chọn Geeko",
+
+  "inputs.bg.label": "Nền",
+  "inputs.bg.section": "Tùy chọn Geeko",
+  "inputs.bg.options.transparent": "Trong suốt",
+  "inputs.bg.options.dark": "Tối",
+  "inputs.bg.options.light": "Sáng",
+  "inputs.bg.options.pine": "Pine"
 }

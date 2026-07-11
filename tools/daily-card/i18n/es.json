@@ -1,4 +1,14 @@
 {
   "name": "Resumen del día",
-  "description": "Cita del día con clima, hora y mapa en vivo de cualquier ciudad."
+  "description": "Cita del día con clima, hora y mapa en vivo de cualquier ciudad.",
+  "inputs.city.label": "Ciudad",
+  "inputs.city.help": "Opcional. Nombre de la ciudad, aeropuerto (LAX, LHR) o abreviatura (LA, NYC, SF…)",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Oscuro",
+  "inputs.theme.options.light": "Claro",
+  "inputs.theme.options.green": "Verde SUSE",
+  "inputs.quoteWeight.label": "Grosor de la cita",
+  "inputs.quoteWeight.help": "Grosor de la fuente del texto de la cita (100 Fina → 900 Negra).",
+  "inputs.ambientMotion.label": "Movimiento ambiental",
+  "inputs.ambientMotion.help": "Un resplandor que se desplaza muy lentamente detrás de la tarjeta, en pantalla. Desactivado, la exportación final se mantiene limpia."
 }

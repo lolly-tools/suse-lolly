@@ -1,0 +1,19 @@
+{
+  "name": "Stemmeopptaker",
+  "description": "Ta opp en talemelding med en nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3.",
+  "a11yLabel": "Stemmeopptaker — nivå {{default dbText \"idle\"}}",
+  "inputs.title.label": "Etikett",
+  "inputs.title.help": "Navngir opptakskortet og den lagrede filen.",
+  "inputs.targetLevel.label": "Målnivå",
+  "inputs.targetLevel.help": "Hva som regnes som «akkurat riktig» for veiledningstipsene.",
+  "inputs.targetLevel.options.soft": "Svakt · nær mikrofonen",
+  "inputs.targetLevel.options.normal": "Normal tale",
+  "inputs.targetLevel.options.loud": "Høyt · i rommet",
+  "inputs.showTips.label": "Veiledningstips",
+  "inputs.showTips.help": "Live tips som «kom nærmere» eller «du klipper».",
+  "inputs.theme.label": "Kortstil",
+  "inputs.theme.options.dark": "Mørk",
+  "inputs.theme.options.light": "Lys",
+  "inputs.theme.options.green": "SUSE-grønn",
+  "inputs.accent.label": "Aksentfarge"
+}

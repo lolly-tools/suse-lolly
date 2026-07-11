@@ -1,4 +1,14 @@
 {
   "name": "Logotyp",
-  "description": "Placera SUSE-logotypen — rätt variant väljs automatiskt och exporteras som vektor."
+  "description": "Placera SUSE-logotypen — rätt variant väljs automatiskt och exporteras som vektor.",
+  "inputs.background.label": "Bakgrund",
+  "inputs.background.help": "Färgen som logotypen placeras mot. Rätt logotyp (omvänd för mörkt, normal för ljust) väljs automatiskt åt dig. Slå på \"Ingen bakgrund\" i exporten för att ta bort den.",
+  "inputs.orientation.label": "Orientering",
+  "inputs.orientation.help": "Horisontell är den breda lockupen; Staplad är den kvadratiska varianten för trånga eller kvadratiska ytor.",
+  "inputs.orientation.options.horizontal": "Horisontell",
+  "inputs.orientation.options.vertical": "Staplad",
+  "inputs.ink.label": "Stil",
+  "inputs.ink.help": "Märkesgrönt mot valfri bakgrund, eller kontrastrikt enfärgat (vitt på mörkt, svart på ljust).",
+  "inputs.ink.options.brand": "Märkesgrönt",
+  "inputs.ink.options.mono": "Enfärgat"
 }

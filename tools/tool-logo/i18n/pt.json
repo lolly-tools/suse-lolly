@@ -1,4 +1,14 @@
 {
   "name": "Logo",
-  "description": "Coloque o logo da SUSE — a variante certa é escolhida automaticamente e exportada em vetor."
+  "description": "Coloque o logo da SUSE — a variante certa é escolhida automaticamente e exportada em vetor.",
+  "inputs.background.label": "Fundo",
+  "inputs.background.help": "A cor sobre a qual o logo é colocado. O logo correspondente (invertido para fundo escuro, normal para fundo claro) é escolhido automaticamente para você. Ative \"Sem fundo\" na exportação para removê-lo.",
+  "inputs.orientation.label": "Orientação",
+  "inputs.orientation.help": "Horizontal é a versão larga; Empilhado é a versão quadrada para espaços apertados ou quadrados.",
+  "inputs.orientation.options.horizontal": "Horizontal",
+  "inputs.orientation.options.vertical": "Empilhado",
+  "inputs.ink.label": "Estilo",
+  "inputs.ink.help": "Verde da marca em qualquer fundo, ou monocromático de alto contraste (branco no escuro, preto no claro).",
+  "inputs.ink.options.brand": "Verde da marca",
+  "inputs.ink.options.mono": "Monocromático"
 }

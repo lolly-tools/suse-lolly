@@ -1,4 +1,51 @@
 {
   "name": "郵件簽名",
-  "description": "符合SUSE品牌規範的郵件簽名,可貼到任何郵件用戶端。"
+  "description": "符合 SUSE 品牌規範的郵件簽名，可貼到任何郵件用戶端。",
+
+  "inputs.logo.label": "標誌",
+  "inputs.logo.help": "如果你認為大多數收件者偏好深色模式，可選擇灰色版本。",
+  "inputs.logo.options.standard": "標準",
+  "inputs.logo.options.grey": "灰色",
+
+  "inputs.headshot.label": "大頭照",
+  "inputs.headshot.help": "選填的大頭照，將以圓形顯示。",
+
+  "inputs.emailPromo.label": "郵件宣傳圖",
+  "inputs.emailPromo.help": "選填的宣傳橫幅，顯示於簽名下方。會縮放至 400×200px 以內，並保持長寬比。",
+
+  "inputs.firstname.label": "名字",
+
+  "inputs.lastname.label": "姓氏",
+
+  "inputs.nameWeight.label": "姓名字重",
+  "inputs.nameWeight.help": "姓名文字的字重（100 極細 → 900 特黑）。",
+
+  "inputs.jobTitle.label": "職稱、部門",
+  "inputs.jobTitle.placeholder": "例如：資深工程師，產品部",
+
+  "inputs.titleWeight.label": "職稱字重",
+  "inputs.titleWeight.help": "職稱那一行文字的字重（100 極細 → 900 特黑）。",
+
+  "inputs.certs.label": "認證",
+
+  "inputs.email.label": "電子郵件",
+
+  "inputs.phone.label": "座機電話",
+
+  "inputs.mobile.label": "手機",
+
+  "inputs.fax.label": "傳真",
+
+  "inputs.address.label": "地址",
+
+  "inputs.address2.label": "地址第二行",
+
+  "inputs.im.label": "即時通訊帳號",
+  "inputs.im.placeholder": "例如：Slack 上的 @帳號",
+
+  "inputs.append.label": "附加內容",
+  "inputs.append.options.none": "無",
+  "inputs.append.options.germany": "德國",
+  "inputs.append.options.business": "商業",
+  "inputs.append.options.wellbeing": "身心健康"
 }

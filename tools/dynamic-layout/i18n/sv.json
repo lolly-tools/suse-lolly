@@ -1,4 +1,104 @@
 {
   "name": "Dynamisk layout",
-  "description": "En layout för allt som omstrukturerar sig kring det du lägger till, i vilken storlek som helst."
+  "description": "En layout för allt som omstrukturerar sig kring det du lägger till, i vilken storlek som helst.",
+  "a11yLabel": "{{default heading cta}} — förhandsgranskning av Dynamisk layout",
+
+  "inputs.logo.label": "Logotyp",
+  "inputs.logo.section": "Logotyp",
+  "inputs.logo.help": "Placera SUSE-logotypen i ett hörn. Rätt variant för temat väljs automatiskt.",
+  "inputs.logo.options.none": "Ingen",
+  "inputs.logo.options.top-left": "Uppe till vänster",
+  "inputs.logo.options.top-right": "Uppe till höger",
+  "inputs.logo.options.bottom-left": "Nere till vänster",
+  "inputs.logo.options.bottom-right": "Nere till höger",
+
+  "inputs.logoStyle.label": "Logotypstil",
+  "inputs.logoStyle.section": "Logotyp",
+  "inputs.logoStyle.help": "Mono är läsbar oavsett tema, medan varumärkesgrönt använder den gröna logotypen.",
+  "inputs.logoStyle.options.mono": "Mono (vit/svart)",
+  "inputs.logoStyle.options.brand": "Varumärkesgrön",
+
+  "inputs.bgImage.label": "Bakgrundsbild",
+  "inputs.bgImage.section": "Bakgrund",
+  "inputs.bgImage.help": "Valfri helsidesbakgrund bakom innehållet.",
+
+  "inputs.imageFilter.label": "Bildfilter",
+  "inputs.imageFilter.section": "Bakgrund",
+  "inputs.imageFilter.options.none": "Ingen",
+  "inputs.imageFilter.options.mono": "Mono",
+  "inputs.imageFilter.options.punch": "Kontrastrik",
+  "inputs.imageFilter.options.warm": "Varm",
+  "inputs.imageFilter.options.cool": "Sval",
+  "inputs.imageFilter.options.fade": "Blekt",
+
+  "inputs.imageFraming.label": "Position",
+  "inputs.imageFraming.section": "Bakgrund",
+  "inputs.imageFraming.help": "Zoom skalar upp bakgrundsbilden för att beskära in den. X/Y panorerar den. Dra en etikett eller skriv in ett värde.",
+  "inputs.imageFraming.fields.zoom.label": "Zoom",
+  "inputs.imageFraming.fields.x.label": "X",
+  "inputs.imageFraming.fields.y.label": "Y",
+
+  "inputs.bgOpacity.label": "Överlagring",
+  "inputs.bgOpacity.section": "Bakgrund",
+  "inputs.bgOpacity.help": "Tonar bilden med temats färg så att texten förblir läsbar.",
+
+  "inputs.theme.label": "Tema",
+  "inputs.theme.help": "SUSE:s varumärkesfärgkombinationer för kortet, texten och uppmaningsknappen.",
+  "inputs.theme.options.pine": "Tall",
+  "inputs.theme.options.jungle": "Djungel",
+  "inputs.theme.options.white": "Vit",
+  "inputs.theme.options.midnight": "Midnatt",
+  "inputs.theme.options.persimmon": "Kaki",
+
+  "inputs.fgColor.label": "Textfärg",
+  "inputs.fgColor.help": "Valfritt. Åsidosätter färgen på texten och knappkonturen (allt som följer currentColor). Lämna tomt för att använda temats förgrundsfärg.",
+
+  "inputs.heading.label": "Rubrik",
+  "inputs.heading.help": "Den stora, slagkraftiga raden. Lämna tom för att utelämna den.",
+
+  "inputs.headingFontSize.label": "Storlek",
+  "inputs.headingFontSize.section": "Rubriktypografi",
+  "inputs.headingFontSize.help": "Relativ storlek — layouten anpassar sig ändå automatiskt till kanvasen.",
+
+  "inputs.headingFontWeight.label": "Vikt",
+  "inputs.headingFontWeight.section": "Rubriktypografi",
+
+  "inputs.subheading.label": "Underrubrik",
+  "inputs.subheading.help": "En stödjande rad under rubriken. Stöder Markdown: **fet**, *kursiv*, ~~genomstruken~~.",
+
+  "inputs.subheadingFontSize.label": "Storlek",
+  "inputs.subheadingFontSize.section": "Underrubrikstypografi",
+  "inputs.subheadingFontSize.help": "Relativ storlek — layouten anpassar sig ändå automatiskt till kanvasen.",
+
+  "inputs.subheadingFontWeight.label": "Vikt",
+  "inputs.subheadingFontWeight.section": "Underrubrikstypografi",
+
+  "inputs.body.label": "Brödtext",
+  "inputs.body.help": "Stöder Markdown: **fet**, *kursiv*, ~~genomstruken~~ och punktlistor (rader som börjar med - ).",
+
+  "inputs.bodyFontSize.label": "Storlek",
+  "inputs.bodyFontSize.section": "Brödtextstypografi",
+  "inputs.bodyFontSize.help": "Relativ storlek — layouten anpassar sig ändå automatiskt till kanvasen.",
+
+  "inputs.bodyFontWeight.label": "Vikt",
+  "inputs.bodyFontWeight.section": "Brödtextstypografi",
+
+  "inputs.cta.label": "Uppmaning till handling",
+  "inputs.cta.help": "En kort knapptext — upp till 20 tecken.",
+
+  "inputs.ctaTypography.label": "Typsnitt",
+  "inputs.ctaTypography.section": "Uppmaningstypografi",
+  "inputs.ctaTypography.help": "SUSE Mono ger knappen en teknisk, kodliknande känsla.",
+  "inputs.ctaTypography.options.sans": "SUSE Sans",
+  "inputs.ctaTypography.options.mono": "SUSE Mono",
+
+  "inputs.ctaFontSize.label": "Storlek",
+  "inputs.ctaFontSize.section": "Uppmaningstypografi",
+  "inputs.ctaFontSize.help": "Relativ storlek — layouten anpassar sig ändå automatiskt till kanvasen.",
+
+  "inputs.ctaFontWeight.label": "Vikt",
+  "inputs.ctaFontWeight.section": "Uppmaningstypografi",
+
+  "inputs.headshot.label": "Porträtt",
+  "inputs.headshot.help": "Valfritt porträtt. När det är angivet ankrar det ett eget färgblock bredvid texten."
 }

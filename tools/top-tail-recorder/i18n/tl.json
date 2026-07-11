@@ -1,4 +1,25 @@
 {
   "name": "Video na may Intro at Outro",
-  "description": "Mag-record ng clip sa kahit anong orientation, tapos awtomatiko itong madadagdagan ng branded na intro at outro, lower third, at background music."
+  "description": "Mag-record ng clip sa kahit anong orientation, tapos awtomatiko itong madadagdagan ng branded na intro at outro, lower third, at background music.",
+  "a11yLabel": "Video na may intro at outro — {{default introTitle \"intro\"}} hanggang {{default outroTitle \"outro\"}}",
+  "inputs.orientation.label": "Oryentasyon",
+  "inputs.orientation.options.portrait": "Patayo · 1080 × 1920",
+  "inputs.orientation.options.landscape": "Pahalang · 1920 × 1080",
+  "inputs.orientation.options.square": "Parisukat · 1080 × 1080",
+  "inputs.clip.label": "Ang iyong clip",
+  "inputs.clip.help": "Pindutin ang ● Record sa canvas para kumuha ng clip — o mag-upload ng video. Babalutan ito ng mga bookend, punan ang frame sa kahit anong oryentasyon.",
+  "inputs.clipFit.label": "Fit ng video",
+  "inputs.clipFit.options.cover": "Punuin ang frame (crop)",
+  "inputs.clipFit.options.contain": "Ipakita ang buong video",
+  "inputs.clipFit.help": "Kung paano nakaayos ang iyong clip sa frame. Pinupunan ng Fill ang buong frame sa pamamagitan ng pag-crop; ipinapakita naman ng Fit ang buong video kasama ang mga bar — magamit kapag nag-upload ka ng landscape o square na clip papunta sa portrait na frame.",
+  "inputs.brandColor.label": "Kulay ng bookend",
+  "inputs.accent.label": "Accent",
+  "inputs.logo.label": "Logo",
+  "inputs.logo.help": "Ipinapakita sa mga intro at outro card.",
+  "inputs.introTitle.label": "Pamagat ng intro",
+  "inputs.introSubtitle.label": "Subtitle ng intro",
+  "inputs.lowerName.label": "Pangalan",
+  "inputs.lowerRole.label": "Papel / handle",
+  "inputs.outroTitle.label": "Pamagat ng outro",
+  "inputs.outroCta.label": "Call-to-action ng outro"
 }

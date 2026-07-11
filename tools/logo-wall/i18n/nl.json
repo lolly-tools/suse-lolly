@@ -1,4 +1,70 @@
 {
   "name": "Logo-lockup: raster (NASCAR)",
-  "description": "Zet een stapel logo's om in een strak, gelijkmatig sponsorraster — de “NASCAR”-muur."
+  "description": "Zet een stapel logo's om in een strak, gelijkmatig sponsorraster — de “NASCAR”-muur.",
+  "a11yLabel": "Een raster van {{logos.length}} logo's",
+
+  "inputs.columns.label": "Kolommen",
+  "inputs.columns.help": "Hoeveel logo's er in elke rij staan.",
+
+  "inputs.gap.label": "Ruimte",
+  "inputs.gap.help": "Ruimte tussen de logo's.",
+
+  "inputs.padding.label": "Opvulling",
+  "inputs.padding.help": "Witruimte rond de hele muur.",
+
+  "inputs.background.label": "Achtergrond",
+
+  "inputs.balance.label": "Groottes balanceren",
+  "inputs.balance.help": "Past de grootte van elk logo automatisch aan op basis van het optische gewicht — zwaardere logo's krimpen, lichtere groeien — zodat de muur gelijkmatig gewogen oogt. De eigen Grootte % van elk logo blijft daarbovenop van toepassing. Schakel uit voor uniforme grootte.",
+
+  "inputs.inkColor.label": "Inktkleur",
+  "inputs.inkColor.help": "De enkele inkt voor elk logo dat op “Als vector renderen” staat (per logo, hieronder).",
+
+  "inputs.threshold.label": "Vectordrempel",
+  "inputs.threshold.help": "Standaard helderheidsgrens voor vectorlogo's. Hoger behoudt meer van elk logo; stel een lastig logo hieronder apart in.",
+
+  "inputs.invert.label": "Vector omkeren",
+  "inputs.invert.help": "Standaard voor vectorlogo's — wisselt welke kant van de drempel inkt wordt. Witte / lichte logo's worden automatisch omgekeerd, dus dit is zelden nodig; stel het hieronder per logo in als dat nodig is.",
+
+  "inputs.detail.label": "Vectordetail",
+  "inputs.detail.help": "Standaard tekenresolutie voor vectorlogo's. Hoger legt fijnere vormen vast, maar is zwaarder.",
+
+  "inputs.smoothing.label": "Vectorafvlakking",
+  "inputs.smoothing.help": "Standaard voor vectorlogo's: hoeveel de nagetekende contouren afronden tot curves. Laag houdt randen scherp; hoog laat ze overvloeien in vloeiende Bézier-curves.",
+
+  "inputs.logos.label": "Logo's",
+
+  "inputs.logos.fields.logo.label": "Afbeelding",
+
+  "inputs.logos.fields.presence.label": "Aanwezigheid",
+  "inputs.logos.fields.presence.help": "Hoe prominent dit logo is. Balanceren maakt eerst iedereen gelijk; Aanwezigheid weegt dit logo vervolgens bewust op of af — sponsorniveau-grootte.",
+  "inputs.logos.fields.presence.options.hero": "Hero",
+  "inputs.logos.fields.presence.options.large": "Groot",
+  "inputs.logos.fields.presence.options.normal": "Normaal",
+  "inputs.logos.fields.presence.options.small": "Klein",
+
+  "inputs.logos.fields.scale.label": "Grootte %",
+  "inputs.logos.fields.scale.help": "Fijne aanpassing bovenop Aanwezigheid en balanceren.",
+
+  "inputs.logos.fields.opacity.label": "Dekking",
+
+  "inputs.logos.fields.filter.label": "Filter",
+  "inputs.logos.fields.filter.options.none": "Geen",
+  "inputs.logos.fields.filter.options.grayscale": "Grijswaarden",
+
+  "inputs.logos.fields.vectorize.label": "Als vector renderen",
+  "inputs.logos.fields.vectorize.help": "Reduceert dit logo tot de enkele inktkleur (scherpe vector). Uit houdt het als de originele afbeelding.",
+
+  "inputs.logos.fields.tune.label": "Dit logo afstellen",
+  "inputs.logos.fields.tune.help": "Geef dit logo zijn eigen vectorinstellingen — voor lastige merktekens die een andere drempel of omkering nodig hebben.",
+
+  "inputs.logos.fields.threshold.label": "Drempel",
+  "inputs.logos.fields.threshold.help": "Helderheidsgrens voor dit logo. Hoger behoudt er meer van.",
+
+  "inputs.logos.fields.invert.label": "Omkeren",
+  "inputs.logos.fields.invert.help": "Voor een wit of licht logo.",
+
+  "inputs.logos.fields.detail.label": "Detail",
+
+  "inputs.logos.fields.smoothing.label": "Afvlakking"
 }

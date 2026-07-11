@@ -1,4 +1,104 @@
 {
   "name": "Dynamische lay-out",
-  "description": "Een alleskunner-lay-out die zich herschikt rond alles wat je toevoegt, op elk formaat."
+  "description": "Een alleskunner-lay-out die zich herschikt rond alles wat je toevoegt, op elk formaat.",
+  "a11yLabel": "{{default heading cta}} — Dynamische lay-out voorbeeld",
+
+  "inputs.logo.label": "Logo",
+  "inputs.logo.section": "Logo",
+  "inputs.logo.help": "Plaats het SUSE-logo in een hoek. De juiste variant voor het thema wordt automatisch gekozen.",
+  "inputs.logo.options.none": "Geen",
+  "inputs.logo.options.top-left": "Linksboven",
+  "inputs.logo.options.top-right": "Rechtsboven",
+  "inputs.logo.options.bottom-left": "Linksonder",
+  "inputs.logo.options.bottom-right": "Rechtsonder",
+
+  "inputs.logoStyle.label": "Logostijl",
+  "inputs.logoStyle.section": "Logo",
+  "inputs.logoStyle.help": "Mono blijft leesbaar bij elk thema; merkgroen gebruikt het groene beeldmerk.",
+  "inputs.logoStyle.options.mono": "Mono (wit / zwart)",
+  "inputs.logoStyle.options.brand": "Merkgroen",
+
+  "inputs.bgImage.label": "Achtergrondafbeelding",
+  "inputs.bgImage.section": "Achtergrond",
+  "inputs.bgImage.help": "Optionele randloze achtergrond achter de inhoud.",
+
+  "inputs.imageFilter.label": "Afbeeldingsfilter",
+  "inputs.imageFilter.section": "Achtergrond",
+  "inputs.imageFilter.options.none": "Geen",
+  "inputs.imageFilter.options.mono": "Mono",
+  "inputs.imageFilter.options.punch": "Fel",
+  "inputs.imageFilter.options.warm": "Warm",
+  "inputs.imageFilter.options.cool": "Koel",
+  "inputs.imageFilter.options.fade": "Vervagen",
+
+  "inputs.imageFraming.label": "Positie",
+  "inputs.imageFraming.section": "Achtergrond",
+  "inputs.imageFraming.help": "Zoom vergroot de achtergrondafbeelding om in te zoomen; X / Y verschuiven de positie. Sleep een label of typ een waarde.",
+  "inputs.imageFraming.fields.zoom.label": "Zoom",
+  "inputs.imageFraming.fields.x.label": "X",
+  "inputs.imageFraming.fields.y.label": "Y",
+
+  "inputs.bgOpacity.label": "Overlay",
+  "inputs.bgOpacity.section": "Achtergrond",
+  "inputs.bgOpacity.help": "Tint de afbeelding met de themakleur zodat de tekst leesbaar blijft.",
+
+  "inputs.theme.label": "Thema",
+  "inputs.theme.help": "Merkgetrouwe SUSE-kleurcombinaties voor de kaart, tekst en knoptekst.",
+  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.jungle": "Jungle",
+  "inputs.theme.options.white": "White",
+  "inputs.theme.options.midnight": "Midnight",
+  "inputs.theme.options.persimmon": "Persimmon",
+
+  "inputs.fgColor.label": "Tekstkleur",
+  "inputs.fgColor.help": "Optioneel. Overschrijft de kleur van de tekst en de knopomlijning (alles dat currentColor volgt). Laat leeg om de voorgrondkleur van het thema te gebruiken.",
+
+  "inputs.heading.label": "Titel",
+  "inputs.heading.help": "De grote, krachtige regel. Laat leeg om deze weg te laten.",
+
+  "inputs.headingFontSize.label": "Grootte",
+  "inputs.headingFontSize.section": "Titel-typografie",
+  "inputs.headingFontSize.help": "Relatieve grootte — de lay-out past zich nog steeds automatisch aan het canvas aan.",
+
+  "inputs.headingFontWeight.label": "Gewicht",
+  "inputs.headingFontWeight.section": "Titel-typografie",
+
+  "inputs.subheading.label": "Ondertitel",
+  "inputs.subheading.help": "Een ondersteunende regel onder de titel. Ondersteunt markdown: **vet**, *cursief*, ~~doorhalen~~.",
+
+  "inputs.subheadingFontSize.label": "Grootte",
+  "inputs.subheadingFontSize.section": "Ondertitel-typografie",
+  "inputs.subheadingFontSize.help": "Relatieve grootte — de lay-out past zich nog steeds automatisch aan het canvas aan.",
+
+  "inputs.subheadingFontWeight.label": "Gewicht",
+  "inputs.subheadingFontWeight.section": "Ondertitel-typografie",
+
+  "inputs.body.label": "Broodtekst",
+  "inputs.body.help": "Ondersteunt markdown: **vet**, *cursief*, ~~doorhalen~~, en opsommingslijsten (regels die beginnen met - ).",
+
+  "inputs.bodyFontSize.label": "Grootte",
+  "inputs.bodyFontSize.section": "Broodtekst-typografie",
+  "inputs.bodyFontSize.help": "Relatieve grootte — de lay-out past zich nog steeds automatisch aan het canvas aan.",
+
+  "inputs.bodyFontWeight.label": "Gewicht",
+  "inputs.bodyFontWeight.section": "Broodtekst-typografie",
+
+  "inputs.cta.label": "Knoptekst",
+  "inputs.cta.help": "Een korte knoptekst — tot 20 tekens.",
+
+  "inputs.ctaTypography.label": "Lettertype",
+  "inputs.ctaTypography.section": "Knop-typografie",
+  "inputs.ctaTypography.help": "SUSE Mono geeft de knop een technisch, code-achtig gevoel.",
+  "inputs.ctaTypography.options.sans": "SUSE Sans",
+  "inputs.ctaTypography.options.mono": "SUSE Mono",
+
+  "inputs.ctaFontSize.label": "Grootte",
+  "inputs.ctaFontSize.section": "Knop-typografie",
+  "inputs.ctaFontSize.help": "Relatieve grootte — de lay-out past zich nog steeds automatisch aan het canvas aan.",
+
+  "inputs.ctaFontWeight.label": "Gewicht",
+  "inputs.ctaFontWeight.section": "Knop-typografie",
+
+  "inputs.headshot.label": "Portret",
+  "inputs.headshot.help": "Optioneel portret. Indien ingesteld, verankert dit een eigen kleurblok naast de tekst."
 }

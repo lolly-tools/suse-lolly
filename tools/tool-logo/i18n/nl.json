@@ -1,4 +1,14 @@
 {
   "name": "Logo",
-  "description": "Plaats het SUSE-logo — de juiste variant wordt automatisch gekozen en als vector geëxporteerd."
+  "description": "Plaats het SUSE-logo — de juiste variant wordt automatisch gekozen en als vector geëxporteerd.",
+  "inputs.background.label": "Achtergrond",
+  "inputs.background.help": "De kleur waarop het logo staat. Het bijpassende logo (omgekeerd voor donker, normaal voor licht) wordt automatisch voor je gekozen. Zet \"Geen achtergrond\" aan bij exporteren om deze te verwijderen.",
+  "inputs.orientation.label": "Oriëntatie",
+  "inputs.orientation.help": "Horizontaal is de brede lockup; Gestapeld is de vierkante variant voor smalle of vierkante ruimtes.",
+  "inputs.orientation.options.horizontal": "Horizontaal",
+  "inputs.orientation.options.vertical": "Gestapeld",
+  "inputs.ink.label": "Stijl",
+  "inputs.ink.help": "Merkgroen op elke achtergrond, of contrastrijk mono (wit op donker, zwart op licht).",
+  "inputs.ink.options.brand": "Merkgroen",
+  "inputs.ink.options.mono": "Mono"
 }

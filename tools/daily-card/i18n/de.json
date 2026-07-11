@@ -1,4 +1,14 @@
 {
   "name": "Tagesüberblick",
-  "description": "Tageszitat mit aktuellem Wetter, Uhrzeit und einer Karte für jede Stadt."
+  "description": "Tageszitat mit aktuellem Wetter, Uhrzeit und einer Karte für jede Stadt.",
+  "inputs.city.label": "Stadt",
+  "inputs.city.help": "Optional. Stadtname, Flughafen (LAX, LHR) oder Abkürzung (LA, NYC, SF…)",
+  "inputs.theme.label": "Design",
+  "inputs.theme.options.dark": "Dunkel",
+  "inputs.theme.options.light": "Hell",
+  "inputs.theme.options.green": "SUSE Grün",
+  "inputs.quoteWeight.label": "Schriftstärke des Zitats",
+  "inputs.quoteWeight.help": "Schriftstärke des Zitattexts (100 Dünn → 900 Schwarz).",
+  "inputs.ambientMotion.label": "Ambiente-Bewegung",
+  "inputs.ambientMotion.help": "Ein sehr langsam driftendes Leuchten hinter der Karte, nur auf dem Bildschirm sichtbar. Deaktiviert bleibt das exportierte Standbild sauber."
 }

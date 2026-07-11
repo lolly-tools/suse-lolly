@@ -1,4 +1,25 @@
 {
   "name": "Video met intro en outro",
-  "description": "Neem een clip op in elke oriëntatie; deze wordt automatisch omlijst met een gebrande intro en outro, een onderbalk en achtergrondmuziek."
+  "description": "Neem een clip op in elke oriëntatie; deze wordt automatisch omlijst met een gebrande intro en outro, een onderbalk en achtergrondmuziek.",
+  "a11yLabel": "Video met intro en outro — {{default introTitle \"intro\"}} tot {{default outroTitle \"outro\"}}",
+  "inputs.orientation.label": "Oriëntatie",
+  "inputs.orientation.options.portrait": "Portret · 1080 × 1920",
+  "inputs.orientation.options.landscape": "Liggend · 1920 × 1080",
+  "inputs.orientation.options.square": "Vierkant · 1080 × 1080",
+  "inputs.clip.label": "Jouw clip",
+  "inputs.clip.help": "Tik op ● Opnemen op het canvas om een clip te filmen — of upload een video. De omlijsting sluit eromheen aan en vult het frame, in elke oriëntatie.",
+  "inputs.clipFit.label": "Video-aanpassing",
+  "inputs.clipFit.options.cover": "Frame vullen (bijsnijden)",
+  "inputs.clipFit.options.contain": "Hele video passend maken",
+  "inputs.clipFit.help": "Hoe je clip in het frame past. Vullen snijdt de video bij zodat die het frame vult; Passend maken toont de hele video met balken — handig als je een liggende of vierkante clip uploadt in een portretframe.",
+  "inputs.brandColor.label": "Kleur van de omlijsting",
+  "inputs.accent.label": "Accent",
+  "inputs.logo.label": "Logo",
+  "inputs.logo.help": "Te zien op de intro- en outrokaarten.",
+  "inputs.introTitle.label": "Introtitel",
+  "inputs.introSubtitle.label": "Introondertitel",
+  "inputs.lowerName.label": "Naam",
+  "inputs.lowerRole.label": "Functie / handle",
+  "inputs.outroTitle.label": "Outrotitel",
+  "inputs.outroCta.label": "Call-to-action outro"
 }

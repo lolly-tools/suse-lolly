@@ -1,4 +1,89 @@
 {
   "name": "Gabungan Logo: Rakan Kongsi",
-  "description": "Logo SUSE di sebelah logo rakan kongsi, dengan pembahagi di antaranya — cerah atau gelap."
+  "description": "Logo SUSE di sebelah logo rakan kongsi, dengan pembahagi di antaranya — cerah atau gelap.",
+  "a11yLabel": "Gabungan rakan kongsi SUSE dengan {{partners.length}} logo rakan kongsi",
+
+  "inputs.theme.label": "Tema",
+  "inputs.theme.help": "Cerah meletakkan logo gelap pada latar belakang cerah; gelap pula membalikkannya. Logo SUSE akan bertukar secara automatik kepada seni grafik on-light / on-dark yang sepadan.",
+  "inputs.theme.options.light": "Cerah",
+  "inputs.theme.options.dark": "Gelap",
+
+  "inputs.lead.label": "Logo utama",
+  "inputs.lead.help": "Lalai kepada logo SUSE, yang mengikut tema. Tukar kepada logo anda sendiri untuk mendahului dengan jenama lain.",
+
+  "inputs.leadTreatment.label": "Warna utama",
+  "inputs.leadTreatment.help": "Warna penuh mengekalkan hijau chameleon SUSE; monokrom menggunakan tanda SUSE satu warna (hitam pada cerah, putih pada gelap). Untuk logo utama anda sendiri, monokrom akan menyahtepukan warnanya.",
+  "inputs.leadTreatment.options.colour": "Warna penuh",
+  "inputs.leadTreatment.options.mono": "Monokrom",
+
+  "inputs.leadPresence.label": "Kehadiran utama",
+  "inputs.leadPresence.help": "Sejauh mana logo utama menonjol, selain daripada sebarang pengimbangan. Gunakan Besar / Hero (atau tahap paling ekstrem) untuk hierarki hos yang jelas (“dikuasakan oleh”). Keseluruhan gabungan logo masih berskala mengikut kanvas, jadi tetapan ini menentukan penonjolan relatif.",
+  "inputs.leadPresence.options.xxlarge": "Gergasi",
+  "inputs.leadPresence.options.xlarge": "Ekstra besar",
+  "inputs.leadPresence.options.hero": "Hero",
+  "inputs.leadPresence.options.large": "Besar",
+  "inputs.leadPresence.options.normal": "Biasa",
+  "inputs.leadPresence.options.small": "Kecil",
+  "inputs.leadPresence.options.xsmall": "Ekstra kecil",
+  "inputs.leadPresence.options.xxsmall": "Kecil sekali",
+
+  "inputs.layout.label": "Susun atur",
+  "inputs.layout.help": "Baris sama rata mengekalkan setiap logo pada satu baris. Utama + rakan kongsi menonjolkan logo utama dan membenarkan rakan kongsi dibalut menjadi kumpulan kemas di sebelahnya.",
+  "inputs.layout.options.row": "Baris sama rata",
+  "inputs.layout.options.lead": "Utama + rakan kongsi",
+
+  "inputs.connector.label": "Penyambung",
+  "inputs.connector.help": "Apa yang berada di antara logo utama dan rakan kongsi.",
+  "inputs.connector.options.bar": "Bar menegak",
+  "inputs.connector.options.symbol": "Simbol",
+  "inputs.connector.options.text": "Teks",
+  "inputs.connector.options.none": "Tiada (jarak sahaja)",
+
+  "inputs.symbol.label": "Simbol",
+  "inputs.symbol.options.times": "× (kali)",
+  "inputs.symbol.options.plus": "+ (tambah)",
+  "inputs.symbol.options.amp": "& (dan)",
+
+  "inputs.connectorText.label": "Teks penyambung",
+  "inputs.connectorText.help": "cth. “bekerjasama dengan”, “dikuasakan oleh”, “×”.",
+
+  "inputs.connectorWeight.label": "Berat teks penyambung",
+  "inputs.connectorWeight.help": "Berat fon teks penyambung (100 Nipis → 900 Hitam).",
+
+  "inputs.partnerDivider.label": "Antara rakan kongsi",
+  "inputs.partnerDivider.help": "Letakkan bar menegak antara setiap logo rakan kongsi. Terpakai apabila terdapat dua atau lebih rakan kongsi.",
+  "inputs.partnerDivider.options.none": "Tiada (jarak sahaja)",
+  "inputs.partnerDivider.options.bar": "Bar menegak",
+
+  "inputs.size.label": "Saiz logo",
+  "inputs.size.help": "Tinggi asas logo. Pengimbangan dan kehadiran setiap logo berskala daripada nilai ini.",
+
+  "inputs.gap.label": "Jarak",
+  "inputs.gap.help": "Jarak di sekitar penyambung dan antara logo rakan kongsi.",
+
+  "inputs.balance.label": "Imbangkan saiz",
+  "inputs.balance.help": "Saiz automatik setiap logo mengikut berat optiknya supaya logo utama dan rakan kongsi kelihatan sama menonjol. Kehadiran setiap logo masih terpakai di atasnya. Matikan untuk logo dengan tinggi yang sama.",
+
+  "inputs.partners.label": "Rakan kongsi",
+  "inputs.partners.fields.logo.label": "Logo rakan kongsi",
+  "inputs.partners.fields.presence.label": "Kehadiran",
+  "inputs.partners.fields.presence.help": "Sejauh mana rakan kongsi ini menonjol, selain daripada sebarang pengimbangan. Tahap paling ekstrem (Gergasi … Kecil sekali) membolehkan satu logo mendominasi atau mengecil; keseluruhan gabungan logo masih berskala mengikut kanvas.",
+  "inputs.partners.fields.presence.options.xxlarge": "Gergasi",
+  "inputs.partners.fields.presence.options.xlarge": "Ekstra besar",
+  "inputs.partners.fields.presence.options.hero": "Hero",
+  "inputs.partners.fields.presence.options.large": "Besar",
+  "inputs.partners.fields.presence.options.normal": "Biasa",
+  "inputs.partners.fields.presence.options.small": "Kecil",
+  "inputs.partners.fields.presence.options.xsmall": "Ekstra kecil",
+  "inputs.partners.fields.presence.options.xxsmall": "Kecil sekali",
+  "inputs.partners.fields.filter.label": "Rawatan",
+  "inputs.partners.fields.filter.help": "Seimbangkan logo rakan kongsi yang tidak sepadan: skala kelabu atau nyahketepuan membuang warnanya, cerahkan menaikkan tanda yang kusam, gelapkan menjinakkan tanda yang pudar, songsang menyelamatkan logo gelap pada tema gelap, dan dakwat mengembalikannya kepada siluet satu warna pejal mengikut warna dakwat tema. Logo bitmap mengekalkan rawatan ini dalam setiap format; logo fail SVG hanya mengekalkannya dalam PNG sahaja.",
+  "inputs.partners.fields.filter.options.none": "Tiada",
+  "inputs.partners.fields.filter.options.grayscale": "Skala kelabu",
+  "inputs.partners.fields.filter.options.desaturate": "Nyahketepuan",
+  "inputs.partners.fields.filter.options.brighten": "Cerahkan",
+  "inputs.partners.fields.filter.options.darken": "Gelapkan",
+  "inputs.partners.fields.filter.options.invert": "Songsang",
+  "inputs.partners.fields.filter.options.ink": "Tukar kepada dakwat",
+  "inputs.partners.fields.opacity.label": "Kelegapan"
 }

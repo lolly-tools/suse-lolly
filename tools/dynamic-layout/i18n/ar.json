@@ -1,4 +1,104 @@
 {
   "name": "تخطيط ديناميكي",
-  "description": "تخطيط متعدد الاستخدامات يعيد ترتيب نفسه حول ما تضيفه، بأي حجم."
+  "description": "تخطيط متعدد الاستخدامات يعيد ترتيب نفسه حول ما تضيفه، بأي حجم.",
+  "a11yLabel": "{{default heading cta}} — معاينة تخطيط ديناميكي",
+
+  "inputs.logo.label": "الشعار",
+  "inputs.logo.section": "الشعار",
+  "inputs.logo.help": "ضع شعار SUSE في إحدى الزوايا. يتم اختيار النسخة المناسبة للسمة تلقائيًا.",
+  "inputs.logo.options.none": "بلا",
+  "inputs.logo.options.top-left": "أعلى اليسار",
+  "inputs.logo.options.top-right": "أعلى اليمين",
+  "inputs.logo.options.bottom-left": "أسفل اليسار",
+  "inputs.logo.options.bottom-right": "أسفل اليمين",
+
+  "inputs.logoStyle.label": "نمط الشعار",
+  "inputs.logoStyle.section": "الشعار",
+  "inputs.logoStyle.help": "يظل النمط الأحادي واضحًا مع أي سمة؛ بينما يستخدم النمط الأخضر علامة SUSE الخضراء.",
+  "inputs.logoStyle.options.mono": "أحادي (أبيض / أسود)",
+  "inputs.logoStyle.options.brand": "أخضر العلامة التجارية",
+
+  "inputs.bgImage.label": "صورة الخلفية",
+  "inputs.bgImage.section": "الخلفية",
+  "inputs.bgImage.help": "خلفية اختيارية تمتد على كامل الإطار خلف المحتوى.",
+
+  "inputs.imageFilter.label": "فلتر الصورة",
+  "inputs.imageFilter.section": "الخلفية",
+  "inputs.imageFilter.options.none": "بلا",
+  "inputs.imageFilter.options.mono": "أحادي اللون",
+  "inputs.imageFilter.options.punch": "تباين قوي",
+  "inputs.imageFilter.options.warm": "دافئ",
+  "inputs.imageFilter.options.cool": "بارد",
+  "inputs.imageFilter.options.fade": "باهت",
+
+  "inputs.imageFraming.label": "الموضع",
+  "inputs.imageFraming.section": "الخلفية",
+  "inputs.imageFraming.help": "التكبير يقوم بتكبير صورة الخلفية للتأطير عن قرب؛ بينما يحرك X / Y الصورة أفقيًا وعموديًا. اسحب التسمية أو أدخل قيمة.",
+  "inputs.imageFraming.fields.zoom.label": "تكبير",
+  "inputs.imageFraming.fields.x.label": "X",
+  "inputs.imageFraming.fields.y.label": "Y",
+
+  "inputs.bgOpacity.label": "التراكب",
+  "inputs.bgOpacity.section": "الخلفية",
+  "inputs.bgOpacity.help": "امزج الصورة بلون السمة حتى يظل النص واضحًا للقراءة.",
+
+  "inputs.theme.label": "السمة",
+  "inputs.theme.help": "تركيبات ألوان SUSE للبطاقة والنص وزر الدعوة لاتخاذ إجراء.",
+  "inputs.theme.options.pine": "الصنوبري",
+  "inputs.theme.options.jungle": "الأدغال",
+  "inputs.theme.options.white": "أبيض",
+  "inputs.theme.options.midnight": "منتصف الليل",
+  "inputs.theme.options.persimmon": "الكاكي",
+
+  "inputs.fgColor.label": "لون النص",
+  "inputs.fgColor.help": "اختياري. يتجاوز لون النص وحدود الزر (كل ما يتبع currentColor). اتركه بلا تعيين لاستخدام لون المقدمة الخاص بالسمة.",
+
+  "inputs.heading.label": "العنوان",
+  "inputs.heading.help": "السطر الرئيسي المؤثر. اتركه فارغًا لحذفه.",
+
+  "inputs.headingFontSize.label": "الحجم",
+  "inputs.headingFontSize.section": "نوع العنوان",
+  "inputs.headingFontSize.help": "حجم نسبي — يظل التخطيط يتكيف تلقائيًا مع اللوحة.",
+
+  "inputs.headingFontWeight.label": "الوزن",
+  "inputs.headingFontWeight.section": "نوع العنوان",
+
+  "inputs.subheading.label": "العنوان الفرعي",
+  "inputs.subheading.help": "سطر داعم أسفل العنوان. يدعم Markdown: **غامق**، *مائل*، ~~يتوسطه خط~~.",
+
+  "inputs.subheadingFontSize.label": "الحجم",
+  "inputs.subheadingFontSize.section": "نوع العنوان الفرعي",
+  "inputs.subheadingFontSize.help": "حجم نسبي — يظل التخطيط يتكيف تلقائيًا مع اللوحة.",
+
+  "inputs.subheadingFontWeight.label": "الوزن",
+  "inputs.subheadingFontWeight.section": "نوع العنوان الفرعي",
+
+  "inputs.body.label": "نص المحتوى",
+  "inputs.body.help": "يدعم Markdown: **غامق**، *مائل*، ~~يتوسطه خط~~، والقوائم النقطية (الأسطر التي تبدأ بـ - ).",
+
+  "inputs.bodyFontSize.label": "الحجم",
+  "inputs.bodyFontSize.section": "نوع نص المحتوى",
+  "inputs.bodyFontSize.help": "حجم نسبي — يظل التخطيط يتكيف تلقائيًا مع اللوحة.",
+
+  "inputs.bodyFontWeight.label": "الوزن",
+  "inputs.bodyFontWeight.section": "نوع نص المحتوى",
+
+  "inputs.cta.label": "دعوة لاتخاذ إجراء",
+  "inputs.cta.help": "تسمية زر قصيرة — حتى 20 حرفًا.",
+
+  "inputs.ctaTypography.label": "الخط",
+  "inputs.ctaTypography.section": "نوع دعوة اتخاذ الإجراء",
+  "inputs.ctaTypography.help": "يمنح SUSE Mono الزر طابعًا تقنيًا يشبه الشيفرة البرمجية.",
+  "inputs.ctaTypography.options.sans": "SUSE Sans",
+  "inputs.ctaTypography.options.mono": "SUSE Mono",
+
+  "inputs.ctaFontSize.label": "الحجم",
+  "inputs.ctaFontSize.section": "نوع دعوة اتخاذ الإجراء",
+  "inputs.ctaFontSize.help": "حجم نسبي — يظل التخطيط يتكيف تلقائيًا مع اللوحة.",
+
+  "inputs.ctaFontWeight.label": "الوزن",
+  "inputs.ctaFontWeight.section": "نوع دعوة اتخاذ الإجراء",
+
+  "inputs.headshot.label": "صورة شخصية",
+  "inputs.headshot.help": "صورة بورتريه اختيارية. عند تعيينها، تُثبّت كتلة لونية خاصة بها بجانب النص."
 }

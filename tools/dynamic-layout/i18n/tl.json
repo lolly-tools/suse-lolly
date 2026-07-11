@@ -1,4 +1,104 @@
 {
   "name": "Dynamic Layout",
-  "description": "Isang all-purpose na layout na awtomatikong nag-aayos base sa idinagdag mo, sa kahit anong size."
+  "description": "Isang all-purpose na layout na awtomatikong nag-aayos base sa idinagdag mo, sa kahit anong size.",
+  "a11yLabel": "{{default heading cta}} — preview ng Dynamic Layout",
+
+  "inputs.logo.label": "Logo",
+  "inputs.logo.section": "Logo",
+  "inputs.logo.help": "I-drop ang SUSE logo sa isang sulok. Awtomatikong pipiliin ang tamang variant para sa theme.",
+  "inputs.logo.options.none": "Wala",
+  "inputs.logo.options.top-left": "Kaliwang itaas",
+  "inputs.logo.options.top-right": "Kanang itaas",
+  "inputs.logo.options.bottom-left": "Kaliwang ibaba",
+  "inputs.logo.options.bottom-right": "Kanang ibaba",
+
+  "inputs.logoStyle.label": "Style ng Logo",
+  "inputs.logoStyle.section": "Logo",
+  "inputs.logoStyle.help": "Nananatiling madaling basahin ang Mono sa anumang theme; ang Berde ng Brand naman ang gumagamit ng berdeng mark.",
+  "inputs.logoStyle.options.mono": "Mono (puti / itim)",
+  "inputs.logoStyle.options.brand": "Berde ng Brand",
+
+  "inputs.bgImage.label": "Larawan ng Background",
+  "inputs.bgImage.section": "Background",
+  "inputs.bgImage.help": "Opsyonal na full-bleed na background sa likod ng content.",
+
+  "inputs.imageFilter.label": "Filter ng Larawan",
+  "inputs.imageFilter.section": "Background",
+  "inputs.imageFilter.options.none": "Wala",
+  "inputs.imageFilter.options.mono": "Mono",
+  "inputs.imageFilter.options.punch": "Punch",
+  "inputs.imageFilter.options.warm": "Warm",
+  "inputs.imageFilter.options.cool": "Cool",
+  "inputs.imageFilter.options.fade": "Fade",
+
+  "inputs.imageFraming.label": "Posisyon",
+  "inputs.imageFraming.section": "Background",
+  "inputs.imageFraming.help": "Pinapalaki ng Zoom ang background na larawan para mag-crop in; ipinapa-pan naman ito ng X / Y. I-drag ang isang label o mag-type ng value.",
+  "inputs.imageFraming.fields.zoom.label": "Zoom",
+  "inputs.imageFraming.fields.x.label": "X",
+  "inputs.imageFraming.fields.y.label": "Y",
+
+  "inputs.bgOpacity.label": "Overlay",
+  "inputs.bgOpacity.section": "Background",
+  "inputs.bgOpacity.help": "I-tint ang larawan gamit ang kulay ng theme para manatiling madaling basahin ang text.",
+
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.jungle": "Jungle",
+  "inputs.theme.options.white": "White",
+  "inputs.theme.options.midnight": "Midnight",
+  "inputs.theme.options.persimmon": "Persimmon",
+  "inputs.theme.help": "Mga kumbinasyon ng kulay ng SUSE na naaayon sa brand — para sa card, text, at call-to-action.",
+
+  "inputs.fgColor.label": "Kulay ng text",
+  "inputs.fgColor.help": "Opsyonal. Ino-override nito ang kulay ng text at ng outline ng button (lahat ng sumusunod sa currentColor). Huwag itakda para gamitin na lang ang foreground ng theme.",
+
+  "inputs.heading.label": "Pamagat",
+  "inputs.heading.help": "Ang malaki at may dating na linya. Iwanang blangko para tanggalin ito.",
+
+  "inputs.headingFontSize.label": "Laki",
+  "inputs.headingFontSize.section": "Tipograpiya ng Pamagat",
+  "inputs.headingFontSize.help": "Relative na laki — awtomatiko pa ring nagfi-fit ang layout sa canvas.",
+
+  "inputs.headingFontWeight.label": "Weight",
+  "inputs.headingFontWeight.section": "Tipograpiya ng Pamagat",
+
+  "inputs.subheading.label": "Subpamagat",
+  "inputs.subheading.help": "Isang sumusuportang linya sa ilalim ng pamagat. May suporta sa markdown: **bold**, *italic*, ~~strikethrough~~.",
+
+  "inputs.subheadingFontSize.label": "Laki",
+  "inputs.subheadingFontSize.section": "Tipograpiya ng Subpamagat",
+  "inputs.subheadingFontSize.help": "Relative na laki — awtomatiko pa ring nagfi-fit ang layout sa canvas.",
+
+  "inputs.subheadingFontWeight.label": "Weight",
+  "inputs.subheadingFontWeight.section": "Tipograpiya ng Subpamagat",
+
+  "inputs.body.label": "Body Text",
+  "inputs.body.help": "May suporta sa markdown: **bold**, *italic*, ~~strikethrough~~, at bullet lists (mga linyang nagsisimula sa - ).",
+
+  "inputs.bodyFontSize.label": "Laki",
+  "inputs.bodyFontSize.section": "Tipograpiya ng Body",
+  "inputs.bodyFontSize.help": "Relative na laki — awtomatiko pa ring nagfi-fit ang layout sa canvas.",
+
+  "inputs.bodyFontWeight.label": "Weight",
+  "inputs.bodyFontWeight.section": "Tipograpiya ng Body",
+
+  "inputs.cta.label": "Call to Action",
+  "inputs.cta.help": "Maikling label ng button — hanggang 20 characters.",
+
+  "inputs.ctaTypography.label": "Font",
+  "inputs.ctaTypography.section": "Tipograpiya ng Call-to-action",
+  "inputs.ctaTypography.options.sans": "SUSE Sans",
+  "inputs.ctaTypography.options.mono": "SUSE Mono",
+  "inputs.ctaTypography.help": "Nagbibigay ang SUSE Mono ng technical, parang-code na feel sa button.",
+
+  "inputs.ctaFontSize.label": "Laki",
+  "inputs.ctaFontSize.section": "Tipograpiya ng Call-to-action",
+  "inputs.ctaFontSize.help": "Relative na laki — awtomatiko pa ring nagfi-fit ang layout sa canvas.",
+
+  "inputs.ctaFontWeight.label": "Weight",
+  "inputs.ctaFontWeight.section": "Tipograpiya ng Call-to-action",
+
+  "inputs.headshot.label": "Headshot",
+  "inputs.headshot.help": "Opsyonal na portrait. Kapag naitakda, magkakaroon ito ng sariling colour block sa tabi ng text."
 }

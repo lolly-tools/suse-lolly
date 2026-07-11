@@ -1,4 +1,19 @@
 {
   "name": "ボイスレコーダー",
-  "description": "リアルタイムのレベルメーターとやさしいコーチングを使ってボイスメモを録音し、MP3として保存できます。"
+  "description": "リアルタイムのレベルメーターとやさしいコーチングを使ってボイスメモを録音し、MP3として保存できます。",
+  "a11yLabel": "ボイスレコーダー — レベル {{default dbText \"idle\"}}",
+  "inputs.title.label": "ラベル",
+  "inputs.title.help": "録音カードと保存されるファイルの名前を設定します。",
+  "inputs.targetLevel.label": "目標レベル",
+  "inputs.targetLevel.help": "コーチングのプロンプトにおける「ちょうど良い」基準を設定します。",
+  "inputs.targetLevel.options.soft": "ソフト（マイク近接）",
+  "inputs.targetLevel.options.normal": "ノーマル（通常の発話）",
+  "inputs.targetLevel.options.loud": "ラウド（部屋の音量）",
+  "inputs.showTips.label": "コーチングのヒント",
+  "inputs.showTips.help": "「もっと近づいてください」「音が割れています」などのリアルタイムのヒントを表示します。",
+  "inputs.theme.label": "カードスタイル",
+  "inputs.theme.options.dark": "ダーク",
+  "inputs.theme.options.light": "ライト",
+  "inputs.theme.options.green": "SUSE グリーン",
+  "inputs.accent.label": "アクセント"
 }

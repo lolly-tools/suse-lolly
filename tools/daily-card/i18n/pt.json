@@ -1,4 +1,14 @@
 {
   "name": "Resumo do Dia",
-  "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade."
+  "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade.",
+  "inputs.city.label": "Cidade",
+  "inputs.city.help": "Opcional. Nome da cidade, aeroporto (LAX, LHR) ou abreviação (LA, NYC, SF…)",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Escuro",
+  "inputs.theme.options.light": "Claro",
+  "inputs.theme.options.green": "Verde SUSE",
+  "inputs.quoteWeight.label": "Peso da fonte da frase",
+  "inputs.quoteWeight.help": "Peso da fonte do texto da frase (100 Fina → 900 Preta).",
+  "inputs.ambientMotion.label": "Movimento ambiente",
+  "inputs.ambientMotion.help": "Um brilho lento e sutil atrás do cartão, visível apenas na tela. Desativado, a exportação permanece estática e limpa."
 }

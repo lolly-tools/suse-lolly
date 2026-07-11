@@ -1,4 +1,32 @@
 {
   "name": "Video túi xách",
-  "description": "Video hoạt họa theo đúng thương hiệu cho hình ảnh túi xách."
+  "description": "Video hoạt họa theo đúng thương hiệu cho hình ảnh túi xách.",
+
+  "inputs.pose.label": "Geeko",
+  "inputs.pose.options.curious": "Tò mò",
+  "inputs.pose.options.sitting": "Ngồi",
+  "inputs.pose.options.laying": "Nằm",
+  "inputs.pose.options.dangling": "Đung đưa",
+
+  "inputs.geeko.label": "Tỷ lệ & Vị trí",
+  "inputs.geeko.section": "Tùy chọn Geeko",
+  "inputs.geeko.help": "Tỷ lệ thay đổi kích thước Geeko; X / Y dịch chuyển nó trong khung hình (%). Kéo nhãn hoặc nhập giá trị.",
+  "inputs.geeko.fields.scale.label": "Tỷ lệ",
+  "inputs.geeko.fields.x.label": "X",
+  "inputs.geeko.fields.y.label": "Y",
+
+  "inputs.animSpeed.label": "Tốc độ hoạt ảnh",
+  "inputs.animSpeed.section": "Tùy chọn Geeko",
+
+  "inputs.blinkRate.label": "Tần suất chớp mắt (giây)",
+  "inputs.blinkRate.section": "Tùy chọn Geeko",
+
+  "inputs.flip.label": "Lật Geeko",
+  "inputs.flip.section": "Tùy chọn Geeko",
+
+  "inputs.theme.label": "Chủ đề",
+  "inputs.theme.options.dark": "Tối",
+  "inputs.theme.options.light": "Sáng",
+  "inputs.theme.options.pine": "Xanh thông",
+  "inputs.theme.options.transparent": "Trong suốt"
 }
