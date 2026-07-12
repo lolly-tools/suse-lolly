@@ -1,0 +1,19 @@
+{
+  "name": "وائس ریکارڈر",
+  "description": "لائیو لیول میٹر اور نرم رہنمائی کے ساتھ ایک وائس نوٹ ریکارڈ کریں، پھر اسے MP3 کے طور پر محفوظ کریں۔",
+  "a11yLabel": "آواز ریکارڈر — لیول {{default dbText \"idle\"}}",
+  "inputs.title.label": "لیبل",
+  "inputs.title.help": "ریکارڈنگ کارڈ اور محفوظ شدہ فائل کا نام رکھتا ہے۔",
+  "inputs.targetLevel.label": "ٹارگٹ لیول",
+  "inputs.targetLevel.help": "کوچنگ اشاروں کے لیے 'بالکل ٹھیک' کیا شمار ہوتا ہے۔",
+  "inputs.targetLevel.options.soft": "نرم · قریبی مائیک",
+  "inputs.targetLevel.options.normal": "عام گفتگو",
+  "inputs.targetLevel.options.loud": "بلند · کمرہ",
+  "inputs.showTips.label": "کوچنگ ٹپس",
+  "inputs.showTips.help": "‘قریب آئیں’ یا ‘آپ کی آواز کلپ ہو رہی ہے’ جیسے لائیو اشارے۔",
+  "inputs.theme.label": "کارڈ اسٹائل",
+  "inputs.theme.options.dark": "تاریک",
+  "inputs.theme.options.light": "ہلکا",
+  "inputs.theme.options.green": "SUSE گرین",
+  "inputs.accent.label": "ایکسنٹ"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "वॉइस रिकॉर्डर",
+  "description": "लाइव लेवल मीटर और हल्की-फुल्की कोचिंग के साथ वॉइस नोट रिकॉर्ड करें, फिर उसे MP3 के रूप में सेव करें।",
+  "a11yLabel": "वॉइस रिकॉर्डर — लेवल {{default dbText \"idle\"}}",
+  "inputs.title.label": "लेबल",
+  "inputs.title.help": "रिकॉर्डिंग कार्ड और सहेजी गई फ़ाइल का नाम तय करता है।",
+  "inputs.targetLevel.label": "टारगेट लेवल",
+  "inputs.targetLevel.help": "कोचिंग संकेतों के लिए क्या 'बिलकुल सही' माना जाए।",
+  "inputs.targetLevel.options.soft": "धीमा · माइक पास",
+  "inputs.targetLevel.options.normal": "सामान्य बोलचाल",
+  "inputs.targetLevel.options.loud": "तेज़ · रूम",
+  "inputs.showTips.label": "कोचिंग टिप्स",
+  "inputs.showTips.help": "‘पास आइए’ या ‘आवाज़ क्लिप हो रही है’ जैसे लाइव संकेत।",
+  "inputs.theme.label": "कार्ड स्टाइल",
+  "inputs.theme.options.dark": "डार्क",
+  "inputs.theme.options.light": "लाइट",
+  "inputs.theme.options.green": "SUSE ग्रीन",
+  "inputs.accent.label": "एक्सेंट"
+}

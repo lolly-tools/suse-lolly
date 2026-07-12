@@ -1,0 +1,14 @@
+{
+  "name": "روزانہ خلاصہ",
+  "description": "کسی بھی شہر کے لیے لائیو موسم، وقت اور نقشے کے ساتھ روز کا اقتباس۔",
+  "inputs.city.label": "شہر",
+  "inputs.city.help": "اختیاری۔ شہر کا نام، ایئرپورٹ (LAX, LHR)، یا مخفف (LA, NYC, SF…)",
+  "inputs.theme.label": "تھیم",
+  "inputs.theme.options.dark": "ڈارک",
+  "inputs.theme.options.light": "ہلکا",
+  "inputs.theme.options.green": "SUSE Green",
+  "inputs.quoteWeight.label": "اقتباس کا وزن",
+  "inputs.quoteWeight.help": "اقتباس کے متن کا فونٹ وزن (100 پتلا → 900 بلیک)۔",
+  "inputs.ambientMotion.label": "ماحولیاتی حرکت",
+  "inputs.ambientMotion.help": "کارڈ کے پیچھے ایک انتہائی سست بہتی چمک، اسکرین پر۔ آف رکھنے سے ایکسپورٹ شدہ نتیجہ صاف رہتا ہے۔"
+}

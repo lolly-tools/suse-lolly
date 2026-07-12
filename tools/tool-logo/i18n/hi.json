@@ -1,0 +1,14 @@
+{
+  "name": "लोगो",
+  "description": "SUSE लोगो लगाएँ — यह सही वैरिएंट अपने आप चुनता है और वेक्टर एक्सपोर्ट करता है।",
+  "inputs.background.label": "बैकग्राउंड",
+  "inputs.background.help": "वह रंग जिस पर लोगो रखा जाता है। मेल खाता लोगो (डार्क के लिए रिवर्स्ड, लाइट के लिए सामान्य) अपने आप चुन लिया जाता है। इसे हटाने के लिए एक्सपोर्ट में \"No BG\" चालू करें।",
+  "inputs.orientation.label": "ओरिएंटेशन",
+  "inputs.orientation.help": "हॉरिज़ॉन्टल चौड़ा लॉकअप है; स्टैक्ड वर्गाकार है — तंग या चौकोर जगहों के लिए।",
+  "inputs.orientation.options.horizontal": "हॉरिज़ॉन्टल",
+  "inputs.orientation.options.vertical": "स्टैक्ड",
+  "inputs.ink.label": "स्टाइल",
+  "inputs.ink.help": "किसी भी बैकग्राउंड पर ब्रांड ग्रीन, या हाई-कॉन्ट्रास्ट मोनो (डार्क पर सफ़ेद, लाइट पर काला)।",
+  "inputs.ink.options.brand": "ब्रांड ग्रीन",
+  "inputs.ink.options.mono": "मोनो"
+}

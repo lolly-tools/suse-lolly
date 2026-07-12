@@ -1,0 +1,14 @@
+{
+  "name": "Ringkasan Harian",
+  "description": "Kutipan hari ini lengkap dengan cuaca langsung, waktu, dan peta untuk kota mana pun.",
+  "inputs.city.label": "Kota",
+  "inputs.city.help": "Opsional. Nama kota, bandara (LAX, LHR), atau singkatan (LA, NYC, SF…)",
+  "inputs.theme.label": "Tema",
+  "inputs.theme.options.dark": "Gelap",
+  "inputs.theme.options.light": "Terang",
+  "inputs.theme.options.green": "SUSE Green",
+  "inputs.quoteWeight.label": "Ketebalan kutipan",
+  "inputs.quoteWeight.help": "Ketebalan font teks kutipan (100 Tipis → 900 Hitam).",
+  "inputs.ambientMotion.label": "Gerakan ambient",
+  "inputs.ambientMotion.help": "Cahaya yang perlahan bergerak di belakang kartu, di layar. Nonaktifkan agar hasil ekspor tetap bersih."
+}

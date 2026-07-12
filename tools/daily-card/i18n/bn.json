@@ -1,0 +1,14 @@
+{
+  "name": "ডে ব্রিফ",
+  "description": "দিনের উক্তি, সঙ্গে যেকোনো শহরের লাইভ আবহাওয়া, সময় ও মানচিত্র।",
+  "inputs.city.label": "শহর",
+  "inputs.city.help": "ঐচ্ছিক। শহরের নাম, বিমানবন্দর (LAX, LHR), বা সংক্ষিপ্ত রূপ (LA, NYC, SF…)",
+  "inputs.theme.label": "থিম",
+  "inputs.theme.options.dark": "ডার্ক",
+  "inputs.theme.options.light": "লাইট",
+  "inputs.theme.options.green": "SUSE গ্রিন",
+  "inputs.quoteWeight.label": "উক্তির ওয়েট",
+  "inputs.quoteWeight.help": "উক্তির টেক্সটের ফন্ট ওয়েট (100 থিন → 900 ব্ল্যাক)।",
+  "inputs.ambientMotion.label": "অ্যাম্বিয়েন্ট মোশন",
+  "inputs.ambientMotion.help": "কার্ডের পেছনে খুব ধীর ভাসমান আভা, শুধু স্ক্রিনে। বন্ধ রাখলে এক্সপোর্ট করা স্টিল পরিচ্ছন্ন থাকে।"
+}
