@@ -17,13 +17,17 @@
 // ── primitives ─────────────────────────────────────────────────────────────────
 function toInputs(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function str(v) { return (typeof v === 'string') ? v : (v == null ? '' : String(v)); }
 function r2(x) { return Math.round(x * 100) / 100; }
+// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// === /lolly:shared esc ===
 
 // Colour / font-family reaching a style="" attribute — only validated shapes pass.
 var COLOUR_RE = /^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$|^(?:rgb|rgba|hsl|hsla)\([0-9.,%\s/]+\)$/;

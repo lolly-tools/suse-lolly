@@ -125,15 +125,19 @@ var VALID_TYPES = { org: 1, layercake: 1, process: 1, timeline: 1, cycle: 1, pyr
 // ── small helpers ─────────────────────────────────────────────────────────────
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
 function arr(v) { return Array.isArray(v) ? v : []; }
 function trim(v) { return String(v == null ? '' : v).trim(); }
 function lerp(a, b, t) { return a + (b - a) * t; }
+// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// === /lolly:shared esc ===
 function color(v, fallback) {
   var s = (typeof v === 'string' ? v : '').trim();
   if (s.toLowerCase() === 'transparent') return 'transparent';

@@ -74,7 +74,9 @@ var _bg = THEME_BG.transparent;
 
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function clampRange(v, r) { return r ? clamp(v, r[0], r[1]) : v; }
 function round(x) { return Math.round(x * 100) / 100; }
 function rot(deg, piv) { return deg ? 'rotate(' + round(deg) + ' ' + piv[0] + ' ' + piv[1] + ')' : ''; }

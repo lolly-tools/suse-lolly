@@ -67,22 +67,29 @@ var _transparent = false, _bg = '#ffffff';
 
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
+// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// === /lolly:shared esc ===
 // A valid-ish CSS colour string, or a fallback. Keeps stray input out of the SVG.
 function color(v, fallback) { var s = (typeof v === 'string' ? v : '').trim(); return s ? s : fallback; }
 
 // Whether this shell can decode pixels (a real browser canvas with a 2D context).
+// === lolly:shared canRaster — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function canRaster() {
   if (typeof document === 'undefined' || !document.createElement) return false;
   try { var c = document.createElement('canvas'); return !!(c.getContext && c.getContext('2d')); }
   catch (e) { return false; }
 }
+// === /lolly:shared canRaster ===
 
+// === lolly:shared loadImage — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function loadImage(url) {
   return new Promise(function (resolve, reject) {
     if (typeof Image === 'undefined') { reject(new Error('no Image')); return; }
@@ -93,6 +100,7 @@ function loadImage(url) {
     im.src = url;
   });
 }
+// === /lolly:shared loadImage ===
 
 function getImage(url) {
   if (_imgCache[url]) return _imgCache[url];

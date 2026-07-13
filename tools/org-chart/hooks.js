@@ -38,17 +38,21 @@ function inputsFrom(model) {
   return o;
 }
 function num(v, d) { var x = typeof v === 'number' ? v : parseFloat(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
 
+// === lolly:shared safeColor — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function safeColor(v, fallback) {
   var s = String(v == null ? '' : v).trim();
   if (!s) return fallback;
   if (/^#[0-9a-fA-F]{3,8}$/.test(s)) return s;
   if (/^(rgb|rgba|hsl|hsla)\([0-9.,%\s/]+\)$/i.test(s)) return s;
-  if (/^[a-zA-Z]+$/.test(s)) return s;
+  if (/^[a-zA-Z]+$/.test(s)) return s; // named colour (e.g. "transparent", "tomato")
   return fallback;
 }
+// === /lolly:shared safeColor ===
 function boolVal(v, dflt) {
   if (v === true || v === false) return v;
   if (v == null || v === '') return dflt;
@@ -57,10 +61,12 @@ function boolVal(v, dflt) {
   if (s === 'false' || s === '0' || s === 'no' || s === 'off') return false;
   return dflt;
 }
+// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// === /lolly:shared esc ===
 
 // ── semi-rich text (same tiny markdown subset as Layout Studio) ────────────────────
 function inlineMd(s) {

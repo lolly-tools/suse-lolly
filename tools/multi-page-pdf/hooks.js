@@ -38,7 +38,9 @@ function toInputs(model) {
   return o;
 }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function str(v) { return (typeof v === 'string') ? v : (v == null ? '' : String(v)); }
 function r2(x) { return Math.round(x * 100) / 100; }
 

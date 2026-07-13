@@ -54,7 +54,9 @@ var AVAIL_H = CANVAS_H - 2 * PAD_Y;   // usable height (280)
 // ── small helpers ────────────────────────────────────────────────────────────
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
 function color(v, fallback) { var s = (typeof v === 'string' ? v : '').trim(); return s ? s : fallback; }
 
 // Hex → [r,g,b]. Used to pre-blend connector colours so they don't rely on CSS
@@ -73,12 +75,15 @@ function mix(fg, bg, a) {
   return 'rgb(' + ch(0) + ',' + ch(1) + ',' + ch(2) + ')';
 }
 
+// === lolly:shared canRaster — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function canRaster() {
   if (typeof document === 'undefined' || !document.createElement) return false;
   try { var c = document.createElement('canvas'); return !!(c.getContext && c.getContext('2d')); }
   catch (e) { return false; }
 }
+// === /lolly:shared canRaster ===
 
+// === lolly:shared loadImage — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function loadImage(url) {
   return new Promise(function (resolve, reject) {
     if (typeof Image === 'undefined') { reject(new Error('no Image')); return; }
@@ -89,6 +94,7 @@ function loadImage(url) {
     im.src = url;
   });
 }
+// === /lolly:shared loadImage ===
 
 function getImage(url) {
   if (_imgCache[url]) return _imgCache[url];
