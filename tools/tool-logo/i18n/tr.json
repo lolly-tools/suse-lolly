@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "SUSE logosunu yerleştir — doğru varyantı otomatik seçer ve vektör olarak dışa aktarır.",
+  "inputs.background.label": "Arka plan",
+  "inputs.background.help": "Logonun üzerinde durduğu renk. Eşleşen logo (koyu için ters çevrilmiş, açık için normal) senin için seçilir. Kaldırmak için dışa aktarımda \"Arka Plan Yok\"u aç.",
+  "inputs.orientation.label": "Yönlendirme",
+  "inputs.orientation.help": "Yatay, geniş logo düzenidir; Dikey olan ise dar ya da kare alanlar için kare şekilli olandır.",
+  "inputs.orientation.options.horizontal": "Yatay",
+  "inputs.orientation.options.vertical": "Yığılmış",
+  "inputs.ink.label": "Stil",
+  "inputs.ink.help": "Herhangi bir arka planda marka yeşili veya yüksek kontrastlı tek renk (koyu üzerinde beyaz, açık üzerinde siyah).",
+  "inputs.ink.options.brand": "Marka yeşili",
+  "inputs.ink.options.mono": "Mono"
+}

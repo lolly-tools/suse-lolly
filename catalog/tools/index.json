@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-12T03:50:14.656Z",
+  "generatedAt": "2026-07-13T04:14:41.830Z",
   "tools": [
     {
       "id": "color-block",
@@ -125,6 +125,11 @@
           "description": "Mga color block — text, larawan, logo — awtomatikong inaayos sa grid.",
           "blurb": "Mga color block — text, larawan, logo sa grid"
         },
+        "tr": {
+          "name": "Renk Bloğu",
+          "description": "Renk blokları — metin, görüntü, logo — otomatik olarak bir ızgaraya yerleştirilir.",
+          "blurb": "Renk blokları — ızgarada metin, görüntü, logo"
+        },
         "ur": {
           "name": "رنگ بلاک",
           "description": "رنگ بلاکس — متن، تصویر، لوگو — خودکار طور پر گرڈ میں ترتیب پاتے ہیں۔",
@@ -247,6 +252,10 @@
           "name": "Dynamic Layout",
           "description": "Isang all-purpose na layout na awtomatikong nag-aayos base sa idinagdag mo, sa kahit anong size."
         },
+        "tr": {
+          "name": "Dinamik Düzen",
+          "description": "Ne eklersen ekle onun etrafında, her boyutta yeniden düzenlenen, her işe yarayan bir düzen."
+        },
         "ur": {
           "name": "ڈائنامک لے آؤٹ",
           "description": "ایک ہمہ گیر لے آؤٹ جو آپ جو کچھ بھی شامل کریں اس کے گرد، کسی بھی سائز میں، دوبارہ ترتیب پا جاتا ہے۔"
@@ -368,6 +377,10 @@
           "name": "Quote Card",
           "description": "Naka-brand na quote cards para sa social media posts at slides."
         },
+        "tr": {
+          "name": "Alıntı Kartı",
+          "description": "Sosyal medya gönderileri ve slaytlar için markaya uygun alıntı kartları."
+        },
         "ur": {
           "name": "اقتباس کارڈ",
           "description": "سوشل پوسٹس اور سلائیڈز کے لیے آن برانڈ اقتباس کارڈز۔"
@@ -482,6 +495,10 @@
           "name": "Planner ng Meeting",
           "description": "Mag-plano ng global na meeting at tingnan ang oras sa time zone ng bawat miyembro ng team."
         },
+        "tr": {
+          "name": "Toplantı Planlayıcı",
+          "description": "Küresel bir toplantı planla ve her ekip arkadaşının saat dilimindeki saati gör."
+        },
         "ur": {
           "name": "میٹنگ پلانر",
           "description": "عالمی میٹنگ کی منصوبہ بندی کریں اور ہر ٹیم ممبر کے ٹائم زون کا وقت دیکھیں۔"
@@ -592,6 +609,10 @@
         "tl": {
           "name": "Canvas ng Code",
           "description": "I-convert ang mga code snippet sa malinis, may syntax highlighting, at shareable na mga larawan."
+        },
+        "tr": {
+          "name": "Kod Kanvası",
+          "description": "Kod parçacıklarını temiz, sözdizimi vurgulamalı, paylaşılabilir görüntülere dönüştür."
         },
         "ur": {
           "name": "کوڈ کینوس",
@@ -738,6 +759,11 @@
           "description": "Mga QR code para sa kahit anong URL, may kumpletong kontrol sa kulay at istilo.",
           "blurb": "Mga QR code sa kahit anong kulay ng brand"
         },
+        "tr": {
+          "name": "QR Kod Oluşturucu",
+          "description": "Her URL için QR kodları, tam renk ve stil kontrolüyle.",
+          "blurb": "Her marka renginde QR kodları"
+        },
         "ur": {
           "name": "QR کوڈ جنریٹر",
           "description": "کسی بھی URL کے لیے QR کوڈز، مکمل رنگ اور اسٹائل کنٹرول کے ساتھ۔",
@@ -855,6 +881,10 @@
         "tl": {
           "name": "Buod ng Araw",
           "description": "Quote ng araw kasama ang live na weather, oras, at mapa ng kahit anong city."
+        },
+        "tr": {
+          "name": "Günlük Özet",
+          "description": "Herhangi bir şehir için canlı hava durumu, saat ve haritayla günün sözü."
         },
         "ur": {
           "name": "روزانہ خلاصہ",
@@ -974,6 +1004,10 @@
           "name": "Logo",
           "description": "Ilagay ang SUSE logo — awtomatikong pipiliin ang tamang variant at i-e-export bilang vector."
         },
+        "tr": {
+          "name": "Logo",
+          "description": "SUSE logosunu yerleştir — doğru varyantı otomatik seçer ve vektör olarak dışa aktarır."
+        },
         "ur": {
           "name": "لوگو",
           "description": "SUSE لوگو رکھیں — یہ خودکار طور پر درست قسم منتخب کرتا ہے اور ویکٹر کے طور پر ایکسپورٹ کرتا ہے۔"
@@ -1089,6 +1123,10 @@
         "tl": {
           "name": "Email Signature",
           "description": "On-brand na SUSE email signature na pwede mong i-paste sa kahit anong email client."
+        },
+        "tr": {
+          "name": "E-posta İmzası",
+          "description": "Herhangi bir e-posta istemcisine yapıştırmaya hazır, markaya uygun bir SUSE e-posta imzası."
         },
         "ur": {
           "name": "ای میل دستخط",
@@ -1233,6 +1271,11 @@
           "description": "Mga chart na naaayon sa iyong brand, mula sa data mo — bar, donut, pie, o stacked.",
           "blurb": "On-brand na mga chart mula sa iyong data, anumang hugis"
         },
+        "tr": {
+          "name": "Grafik Oluşturucu",
+          "description": "Verilerinden markana uygun grafikler — çubuk, halka, pasta veya yığılmış.",
+          "blurb": "Verilerinden markana uygun grafikler, her şekilde"
+        },
         "ur": {
           "name": "چارٹ کریئٹر",
           "description": "آپ کے ڈیٹا سے برانڈ کے مطابق چارٹس — بار، ڈونٹ، پائی یا اسٹیکڈ۔",
@@ -1355,6 +1398,10 @@
           "name": "Video ng Bag",
           "description": "Animated na video, naaayon sa brand, para sa visual ng bag."
         },
+        "tr": {
+          "name": "Çanta Videosu",
+          "description": "Çanta görselleri için markaya uygun, animasyonlu bir video."
+        },
         "ur": {
           "name": "بیگ ویڈیو",
           "description": "بیگ ویژولز کے لیے ایک متحرک، برانڈ کے مطابق ویڈیو۔"
@@ -1465,6 +1512,10 @@
           "name": "Paleta ng Kulay",
           "description": "I-browse ang mga brand color ng SUSE — i-click ang swatch para kopyahin ito."
         },
+        "tr": {
+          "name": "Renk Paleti",
+          "description": "SUSE marka renklerine göz at — kopyalamak için bir renk örneğine tıkla."
+        },
         "ur": {
           "name": "رنگ پیلیٹ",
           "description": "SUSE برانڈ کے رنگ دیکھیں — کاپی کرنے کے لیے کسی سواچ پر کلک کریں۔"
@@ -1574,6 +1625,10 @@
         "tl": {
           "name": "Orasang Countdown",
           "description": "Isang nakatutok na countdown na may live na progress ring. I-click para mag-pause."
+        },
+        "tr": {
+          "name": "Geri Sayım Zamanlayıcı",
+          "description": "Canlı ilerleme halkalı, odaklanmış bir geri sayım. Duraklatmak için tıkla."
         },
         "ur": {
           "name": "کاؤنٹ ڈاؤن ٹائمر",
@@ -1694,6 +1749,10 @@
           "name": "Screenshot ng URL",
           "description": "Kahit anong web page, sa kahit anong scroll-depth, may custom na CSS"
         },
+        "tr": {
+          "name": "URL Ekran Görüntüsü",
+          "description": "Herhangi bir web sayfası, herhangi bir kaydırma derinliğinde, özel CSS ile"
+        },
         "ur": {
           "name": "URL اسکرین شاٹ",
           "description": "کوئی بھی ویب پیج، کسی بھی اسکرول گہرائی پر، اپنی مرضی کے CSS کے ساتھ"
@@ -1809,6 +1868,10 @@
           "name": "Mapa ng Kalye",
           "description": "Malinis na vector na mapa ng mga kalye ng kahit anong lungsod. Gumagana kahit offline."
         },
+        "tr": {
+          "name": "Sokak Haritası",
+          "description": "Herhangi bir şehrin temiz vektörel sokak bloğu haritaları. Çevrimdışı çalışır."
+        },
         "ur": {
           "name": "اسٹریٹ میپ",
           "description": "کسی بھی شہر کے صاف ستھرے ویکٹر اسٹریٹ بلاک نقشے۔ آف لائن کام کرتا ہے۔"
@@ -1923,6 +1986,10 @@
           "name": "Alisin ang Nakatagong Data",
           "description": "Ipakita at alisin ang nakatagong metadata mula sa mga larawan at PDF — sa mismong device mo."
         },
+        "tr": {
+          "name": "Gizli Verileri Kaldır",
+          "description": "Görsellerdeki ve PDF'lerdeki gizli meta verileri ortaya çıkar ve kaldır — cihazında."
+        },
         "ur": {
           "name": "پوشیدہ ڈیٹا ہٹائیں",
           "description": "تصاویر اور PDF سے پوشیدہ میٹا ڈیٹا ظاہر اور حذف کریں — آپ کے ڈیوائس پر۔"
@@ -2033,6 +2100,10 @@
         "tl": {
           "name": "Katulong sa Text",
           "description": "I-format, i-decode, i-hash, at i-de-identify ang text — JSON, JWT, at marami pa."
+        },
+        "tr": {
+          "name": "Metin Yardımcısı",
+          "description": "Metni biçimlendir, çöz, hash'le ve anonimleştir — JSON, JWT ve daha fazlası."
         },
         "ur": {
           "name": "ٹیکسٹ ہیلپر",
@@ -2176,6 +2247,11 @@
           "description": "Mga name badge para sa conference na may color-coded na role at opsyonal na QR.",
           "blurb": "Mga name badge para sa conference, color-coded ayon sa role"
         },
+        "tr": {
+          "name": "Etkinlik İsim Rozeti",
+          "description": "Renk kodlu role sahip ve isteğe bağlı QR içeren konferans isim rozetleri.",
+          "blurb": "Role göre renk kodlanmış konferans isim rozetleri"
+        },
         "ur": {
           "name": "ایونٹ نام بیج",
           "description": "کانفرنس نام بیجز جو کردار کے مطابق رنگ کوڈڈ ہیں، اختیاری QR کے ساتھ۔",
@@ -2318,6 +2394,11 @@
           "name": "Direksyonal na Signage",
           "description": "Mga signage ng direksyon para sa event — mga destinasyon, bawat isa may arrow. Ready na for print.",
           "blurb": "Mga signage ng direksyon para sa event, ready for print"
+        },
+        "tr": {
+          "name": "Yönlendirme Tabelaları",
+          "description": "Yönlü etkinlik tabelaları — her biri bir okla gösterilen varış noktaları. Baskıya hazır.",
+          "blurb": "Yönlü etkinlik tabelaları, baskıya hazır"
         },
         "ur": {
           "name": "راستہ نما سائنیج",
@@ -2521,6 +2602,11 @@
           "description": "Opisyal na SUSE logo lockups — chameleon, wordmark, at isang pangalan.",
           "blurb": "Opisyal na SUSE logo lockups, maraming style"
         },
+        "tr": {
+          "name": "Marka Yerleşimi",
+          "description": "Resmi SUSE logo yerleşimleri — bukalemun, yazı logosu ve bir isim.",
+          "blurb": "Resmi SUSE logo yerleşimleri, birçok görünüm"
+        },
         "ur": {
           "name": "برانڈ لاک اپ",
           "description": "سرکاری SUSE لوگو لاک اپس — گرگٹ، ورڈ مارک اور ایک نام۔",
@@ -2643,6 +2729,10 @@
           "name": "Animated Ad",
           "description": "Gumawa ng animated ads gamit ang mga naka-layer na eksena, para sa kahit anong standard size."
         },
+        "tr": {
+          "name": "Animasyonlu Reklam",
+          "description": "Herhangi bir standart boyut için katmanlı sahnelerden animasyonlu reklamlar oluştur."
+        },
         "ur": {
           "name": "اینیمیٹڈ اشتہار",
           "description": "کسی بھی معیاری سائز کے لیے تہہ دار سینز سے اینیمیٹڈ اشتہارات بنائیں۔"
@@ -2755,6 +2845,10 @@
           "name": "Calendar ICS",
           "description": "I-convert ang mga detalye ng event sa isang calendar file (.ics) na pwedeng gamitin sa kahit anong calendar app."
         },
+        "tr": {
+          "name": "Takvim ICS",
+          "description": "Etkinlik bilgilerini herhangi bir takvim uygulaması için bir takvim (.ics) dosyasına dönüştür."
+        },
         "ur": {
           "name": "کیلنڈر ICS",
           "description": "ایونٹ کی تفصیلات کو کسی بھی کیلنڈر ایپ کے لیے کیلنڈر (.ics) فائل میں تبدیل کریں۔"
@@ -2865,6 +2959,10 @@
         "tl": {
           "name": "I-compress ang PDF",
           "description": "Paliitin ang PDF sa pamamagitan ng pag-compress ulit ng mga larawan dito — sa mismong device mo."
+        },
+        "tr": {
+          "name": "PDF Sıkıştır",
+          "description": "Görsellerini yeniden sıkıştırarak bir PDF'yi küçült — cihazında."
         },
         "ur": {
           "name": "PDF کمپریس کریں",
@@ -3004,6 +3102,11 @@
           "description": "Gumawa ng multi-page PDF — cover, mga content block na dumadaloy, at back page.",
           "blurb": "Multi-page PDF — cover, content, back page"
         },
+        "tr": {
+          "name": "Çok Sayfalı PDF",
+          "description": "Kapak, akan içerik blokları ve bir arka sayfadan oluşan çok sayfalı bir PDF oluştur.",
+          "blurb": "Çok sayfalı PDF'ler — kapak, içerik, arka sayfa"
+        },
         "ur": {
           "name": "ملٹی پیج PDF",
           "description": "ایک ملٹی پیج PDF بنائیں — کور، بہاؤ والے مواد بلاکس، اور ایک بیک پیج۔",
@@ -3125,6 +3228,10 @@
           "name": "Filter: Duotone",
           "description": "Two-color duotone para sa kahit anong larawan — isang kulay ang shadows, iba ang highlights."
         },
+        "tr": {
+          "name": "Filtre: Duotone",
+          "description": "Herhangi bir fotoğraf için iki renkli bir duotone — gölgeler bir renk, vurgular başka bir renk."
+        },
         "ur": {
           "name": "فلٹر: ڈوٹون",
           "description": "کسی بھی تصویر کے لیے دو رنگوں والا ڈوٹون — سائے ایک رنگ میں اور ہائی لائٹس دوسرے رنگ میں۔"
@@ -3245,6 +3352,10 @@
           "name": "Filter: Halftone",
           "description": "Vector halftone mula sa kahit anong larawan — ang laki ng tuldok ay base sa liwanag."
         },
+        "tr": {
+          "name": "Filtre: Halftone",
+          "description": "Herhangi bir fotoğraftan vektör halftone — noktalar parlaklığa göre boyutlanır."
+        },
         "ur": {
           "name": "فلٹر: ہاف ٹون",
           "description": "کسی بھی تصویر سے ویکٹر ہاف ٹون — نقطے چمک کے مطابق سائز کیے گئے۔"
@@ -3362,6 +3473,10 @@
           "name": "Filter: Scanline",
           "description": "Horizontal na 'infinity lines' na scanline vector effect mula sa kahit anong larawan"
         },
+        "tr": {
+          "name": "Filtre: Scanline",
+          "description": "Herhangi bir fotoğraftan yatay 'sonsuzluk çizgileri' scanline vektör efekti"
+        },
         "ur": {
           "name": "فلٹر: اسکین لائن",
           "description": "کسی بھی تصویر سے افقی 'انفینٹی لائنز' اسکین لائن ویکٹر ایفیکٹ"
@@ -3476,6 +3591,10 @@
         "tl": {
           "name": "Logo Lockup: Grid (NASCAR)",
           "description": "Ayusin ang tambak na logos sa malinis at pantay na sponsor grid — ang “NASCAR” wall."
+        },
+        "tr": {
+          "name": "Logo Blok: Izgara (NASCAR)",
+          "description": "Bir logo yığınını temiz, düzenli bir sponsor ızgarasına diz — “NASCAR” duvarı."
         },
         "ur": {
           "name": "لوگو لاک اپ: گرڈ (NASCAR)",
@@ -3594,6 +3713,10 @@
         "tl": {
           "name": "Filter: I-posterize ang Bitmap",
           "description": "I-trace ang kahit anong larawan patungo sa flat, screenprint-style na vector color separations."
+        },
+        "tr": {
+          "name": "Filtre: Posterize Bitmap",
+          "description": "Herhangi bir fotoğrafı düz, serigrafi tarzı vektör renk ayrımlarına dönüştürür."
         },
         "ur": {
           "name": "فلٹر: پوسٹرائز بٹ میپ",
@@ -3731,6 +3854,11 @@
           "description": "Mga org chart, flowchart, timeline, at marami pa — mula sa cards, text, Mermaid, o CSV.",
           "blurb": "I-convert ang cards o text sa diagrams na naaayon sa brand mo"
         },
+        "tr": {
+          "name": "Diyagram Oluşturucu",
+          "description": "Org şemaları, akış şemaları, zaman çizelgeleri ve daha fazlası — kartlardan, metinden, Mermaid'den veya CSV'den.",
+          "blurb": "Kartları veya metni markana uygun diyagramlara dönüştür"
+        },
         "ur": {
           "name": "ڈایاگرام بلڈر",
           "description": "آرگ چارٹس، فلو چارٹس، ٹائم لائنز اور مزید — کارڈز، متن، Mermaid یا CSV سے۔",
@@ -3852,6 +3980,10 @@
           "name": "Filter: Pag-stretch ng Pixel",
           "description": "Ikalat ang isang column ng pixels sa buong larawan mula sa threshold line. Gumagana ito nang live."
         },
+        "tr": {
+          "name": "Filtre: Pixel Stretch",
+          "description": "Bir eşik çizgisinden başlayarak bir piksel sütununu fotoğraf boyunca sürükle. Canlı çalışır."
+        },
         "ur": {
           "name": "فلٹر: پکسل اسٹریچ",
           "description": "ایک تھریشولڈ لائن سے تصویر پر پکسلز کے کالم کو پھیلائیں۔ لائیو بھی کام کرتا ہے۔"
@@ -3967,6 +4099,10 @@
           "name": "Pagsasama ng Logo: Partner",
           "description": "Ang logo ng SUSE sa tabi ng logo ng partner, may divider sa gitna — light o dark."
         },
+        "tr": {
+          "name": "Logo Blok: Partner",
+          "description": "SUSE logosu, aralarında bir ayırıcı ile partner logosunun yanında yer alır — açık ya da koyu."
+        },
         "ur": {
           "name": "لوگو لاک اپ: پارٹنر",
           "description": "SUSE لوگو پارٹنر کے لوگو کے ساتھ، درمیان میں ایک ڈیوائیڈر کے ساتھ — لائٹ یا ڈارک۔"
@@ -4078,6 +4214,10 @@
         "tl": {
           "name": "Tagagawa ng Web Icon",
           "description": "Gumagawa ng favicon at app icon — multi-size na .ico, plus PNG at SVG."
+        },
+        "tr": {
+          "name": "Web İkonu Oluşturucu",
+          "description": "Favicon ve uygulama ikonu oluşturucu — çoklu boyutlu bir .ico, artı PNG ve SVG."
         },
         "ur": {
           "name": "ویب آئیکون میکر",
@@ -4196,6 +4336,10 @@
           "name": "Studio ng Layout",
           "blurb": "Malayang layout sa bukas na canvas"
         },
+        "tr": {
+          "name": "Düzen Stüdyosu",
+          "blurb": "Açık bir kanvasta serbest biçimli düzenler"
+        },
         "ur": {
           "name": "لے آؤٹ اسٹوڈیو",
           "blurb": "کھلے کینوس پر آزاد شکل کے لے آؤٹس"
@@ -4311,6 +4455,10 @@
         "tl": {
           "name": "Lottie Ad",
           "description": "Gumawa ng animated ads mula sa layered scenes, bawat isa may Lottie motion asset, para sa kahit anong standard size."
+        },
+        "tr": {
+          "name": "Lottie Reklamı",
+          "description": "Her biri bir Lottie hareket varlığı taşıyan katmanlı sahnelerden, herhangi bir standart boyut için animasyonlu reklamlar oluştur."
         },
         "ur": {
           "name": "Lottie اشتہار",
@@ -4535,6 +4683,11 @@
           "description": "I-pose ang SUSE Geeko gamit ang mga slider — mata, kurap, at mga paa't kamay. Walang animation, isang still image lang na puwede mong i-adjust at i-export na print-ready.",
           "blurb": "I-pose ang SUSE Geeko — print-ready na still images"
         },
+        "tr": {
+          "name": "Pose Geeko",
+          "description": "SUSE Geeko'ya kaydırıcılarla poz verdir — gözler, göz kırpma ve uzuvlar. Animasyon yok, sadece ayarlayabileceğin ve baskıya hazır dışa aktarabileceğin durağan bir görüntü.",
+          "blurb": "SUSE Geeko'ya poz verdir — baskıya hazır durağan görüntüler"
+        },
         "ur": {
           "name": "Pose Geeko",
           "description": "SUSE Geeko کو سلائیڈرز سے پوز کریں — آنکھیں، پلک جھپکنا اور اعضاء۔ کوئی اینیمیشن نہیں، بس ایک اسٹِل جسے آپ ایڈجسٹ کر کے پرنٹ کے لیے تیار ایکسپورٹ کر سکتے ہیں۔",
@@ -4652,6 +4805,10 @@
         "tl": {
           "name": "Recorder ng Boses",
           "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3."
+        },
+        "tr": {
+          "name": "Ses Kaydedici",
+          "description": "Canlı seviye göstergesi ve yumuşak yönlendirmelerle bir ses notunu kayda al, ardından MP3 olarak kaydet."
         },
         "ur": {
           "name": "وائس ریکارڈر",
@@ -4772,6 +4929,10 @@
           "name": "Video na may Intro at Outro",
           "description": "Mag-record ng clip sa kahit anong orientation, tapos awtomatiko itong madadagdagan ng branded na intro at outro, lower third, at background music."
         },
+        "tr": {
+          "name": "Baş & Son Video",
+          "description": "Herhangi bir yönde bir klip kaydet, ardından markalı giriş ve çıkış ayraçları, bir alt bant ve bir müzik altyapısıyla otomatik olarak sarılsın."
+        },
         "ur": {
           "name": "ٹاپ اینڈ ٹیل ویڈیو",
           "description": "کسی بھی رخ میں کلپ ریکارڈ کریں، پھر اسے برانڈڈ انٹرو اور آؤٹرو بک اینڈز، ایک لوئر تھرڈ، اور میوزک بیڈ کے ساتھ خودکار طور پر لپیٹ دیں۔"
@@ -4889,6 +5050,10 @@
         "tl": {
           "name": "Filter: Voronoi Cells",
           "description": "Pira-pirasuhin ang kahit anong larawan patungo sa isang Voronoi cell mosaic — bawat cell ay puno ng pinakamalapit na kulay, bilang flat vector."
+        },
+        "tr": {
+          "name": "Filtre: Voronoi Hücreleri",
+          "description": "Herhangi bir fotoğrafı düz vektör olarak Voronoi hücre mozaiğine ayırır — her hücre en yakın renkle doldurulur."
         },
         "ur": {
           "name": "فلٹر: Voronoi سیلز",
@@ -5009,6 +5174,10 @@
           "name": "Pag-export ng Asset",
           "description": "I-render ang anumang asset sa catalog — o link ng Lolly tool — sa anumang format at sukat."
         },
+        "tr": {
+          "name": "Varlık Dışa Aktarma",
+          "description": "Herhangi bir katalog varlığını — ya da bir Lolly araç bağlantısını — istediğin format ve boyutta oluştur."
+        },
         "ur": {
           "name": "ایسٹ ایکسپورٹ",
           "description": "کسی بھی کیٹلاگ ایسٹ — یا Lolly ٹول لنک — کو کسی بھی فارمیٹ اور سائز میں رینڈر کریں۔"
@@ -5122,6 +5291,10 @@
         "tl": {
           "name": "Doc Studio",
           "description": "Gumawa ng multi-page na dokumento sa canvas — may rich text, headings, tables, at naka-insert na Lolly renders na dumadaloy sa mga page at ine-export bilang PDF."
+        },
+        "tr": {
+          "name": "Belge Stüdyosu",
+          "description": "Kanvasta çok sayfalı bir belge yaz — sayfalara akıp PDF olarak dışa aktarılan zengin metin, başlıklar, tablolar ve eklenmiş Lolly render'ları."
         },
         "ur": {
           "name": "دستاویز اسٹوڈیو",
@@ -5261,6 +5434,11 @@
           "name": "Carousel Maker",
           "description": "Mag-design ng multi-page na carousel sa isang canvas — mag-set ng 1–6 pages na parehong laki, mag-drag ng mga object sa bawat page, at mag-export ng image sequence o multi-page PDF.",
           "blurb": "Mga swipeable na carousel at multi-page na layout"
+        },
+        "tr": {
+          "name": "Karusel Oluşturucu",
+          "description": "Tek bir kanvasta çok sayfalı bir karusel tasarla — 1–6 arasında aynı boyutta sayfa ayarla, her sayfaya nesneler bırak, görüntü dizisi ya da çok sayfalı PDF olarak dışa aktar.",
+          "blurb": "Kaydırmalı karuseller & çok sayfalı düzenler"
         },
         "ur": {
           "name": "کیروسل میکر",
@@ -5402,6 +5580,11 @@
           "name": "Flow Chart",
           "description": "Gumawa ng flow chart sa open canvas — i-drag ang mga card, ikonekta sila, at awtomatikong mag-a-adjust ang mga linya at didikit sa mga box.",
           "blurb": "Mga card + connector na dumidikit sa mga box"
+        },
+        "tr": {
+          "name": "Akış Şeması",
+          "description": "Açık bir kanvasta akış şemaları oluştur — kartları sürükle, birbirine bağla; çizgiler otomatik yönlenir ve kutulara yapışık kalır.",
+          "blurb": "Kutulara yapışan kartlar + bağlayıcılar"
         },
         "ur": {
           "name": "فلو چارٹ",
@@ -5550,6 +5733,11 @@
           "description": "Makapangyarihang mga chart na base sa data gamit ang D3 — i-paste lang ang table at awtomatiko na itong gagawing chart. Bars, lines, areas, scatter, pie, radar, treemap, heatmap, at marami pang iba — on-brand at malinis na vector.",
           "blurb": "I-paste ang table — ico-chart ito ng D3, on-brand at malinis na vector"
         },
+        "tr": {
+          "name": "D3 Grafik Stüdyosu",
+          "description": "D3 ile güçlü, veriye dayalı grafikler — bir tablo yapıştır, kendiliğinden grafiğe dönüşsün. Çubuk, çizgi, alan, dağılım, pasta, radar, ağaç haritası, ısı haritası ve daha fazlası, markana uygun ve vektör netliğinde.",
+          "blurb": "Bir tablo yapıştır — D3 onu grafiğe dönüştürsün, markana uygun ve vektör netliğinde"
+        },
         "ur": {
           "name": "D3 چارٹ اسٹوڈیو",
           "description": "D3 کے ساتھ طاقتور ڈیٹا پر مبنی چارٹس — ایک ٹیبل پیسٹ کریں اور یہ خود بخود چارٹ بنا دیتا ہے۔ بار، لائن، ایریا، اسکیٹر، پائی، ریڈار، ٹری میپ، ہیٹ میپ اور مزید، برانڈ کے مطابق اور ویکٹر لحاظ سے صاف۔",
@@ -5670,6 +5858,10 @@
           "name": "Record",
           "description": "Gumawa ng sarili mong intro at outro cards, mag-record ng clip, at awtomatikong ibabalot ito ni Lolly sa paligid nito."
         },
+        "tr": {
+          "name": "Kayıt",
+          "description": "Kendi baş ve son kartlarını tasarla, ardından bir klip kaydet; Lolly bunları otomatik olarak klibin etrafına sarar."
+        },
         "ur": {
           "name": "ریکارڈ",
           "description": "اپنے ٹاپ اور ٹیل کارڈز ڈیزائن کریں، پھر ایک کلپ ریکارڈ کریں اور Lolly خودکار طور پر انہیں اس کے گرد لپیٹ دے گا۔"
@@ -5784,6 +5976,10 @@
         "tl": {
           "name": "3D",
           "description": "I-load ang 3D model sa isang naiilawang scene, i-orbit at i-adjust ang camera, at i-render ang isang still o turntable animation."
+        },
+        "tr": {
+          "name": "3D",
+          "description": "Bir 3D modeli aydınlatılmış bir sahneye yükle, kamerayı döndürüp konumlandır, ardından durağan bir görüntü ya da döner bir animasyon oluştur."
         },
         "ur": {
           "name": "3D",
@@ -5900,6 +6096,10 @@
         "tl": {
           "name": "Mesh Gradient",
           "description": "Malambot na mesh-style na gradient mula sa mga swatch ng brand mo. I-drag ang mga color point diretso sa canvas."
+        },
+        "tr": {
+          "name": "Mesh Gradyan",
+          "description": "Marka renklerinden yumuşak, mesh tarzı gradyanlar. Renk noktalarını doğrudan kanvas üzerinde sürükle."
         },
         "ur": {
           "name": "میش گریڈینٹ",

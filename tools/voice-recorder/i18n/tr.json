@@ -1,0 +1,19 @@
+{
+  "name": "Ses Kaydedici",
+  "description": "Canlı seviye göstergesi ve yumuşak yönlendirmelerle bir ses notunu kayda al, ardından MP3 olarak kaydet.",
+  "a11yLabel": "Ses kaydedici — seviye {{default dbText \"idle\"}}",
+  "inputs.title.label": "Etiket",
+  "inputs.title.help": "Kayıt kartını ve kaydedilen dosyayı adlandırır.",
+  "inputs.targetLevel.label": "Hedef seviye",
+  "inputs.targetLevel.help": "Yönlendirme mesajları için neyin 'tam kararında' sayıldığı.",
+  "inputs.targetLevel.options.soft": "Yumuşak · yakın mikrofon",
+  "inputs.targetLevel.options.normal": "Normal konuşma",
+  "inputs.targetLevel.options.loud": "Yüksek sesli · oda",
+  "inputs.showTips.label": "Yönlendirme ipuçları",
+  "inputs.showTips.help": "‘yaklaş’ veya ‘sesin kırpılıyor’ gibi canlı yönlendirmeler.",
+  "inputs.theme.label": "Kart stili",
+  "inputs.theme.options.dark": "Koyu",
+  "inputs.theme.options.light": "Açık",
+  "inputs.theme.options.green": "SUSE yeşili",
+  "inputs.accent.label": "Vurgu"
+}
