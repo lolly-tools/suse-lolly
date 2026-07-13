@@ -3,7 +3,6 @@
   "description": "Organizační diagramy, vývojové diagramy, časové osy a další — z karet, textu, Mermaid nebo CSV.",
   "featured.blurb": "Změň karty nebo text na diagramy podle značky",
   "a11yLabel": "{{default title \"Bez názvu\"}} — diagram {{diagramType}}",
-
   "inputs.preset.label": "Předvolba",
   "inputs.preset.help": "Výchozí bod na jedno kliknutí, který nastaví typ, motiv a rozestupy. Vyber jednu a pak si cokoliv doladíš — tvé pozdější úpravy zůstanou zachované.",
   "inputs.preset.options.custom": "Vlastní",
@@ -12,7 +11,6 @@
   "inputs.preset.options.process-lr": "Proces — zleva doprava",
   "inputs.preset.options.blueprint": "Blueprint",
   "inputs.preset.options.mono": "Minimalistické mono",
-
   "inputs.diagramType.label": "Typ diagramu",
   "inputs.diagramType.help": "Org diagram / myšlenková mapa vytvoří strom z nadřízeného každé karty. Layercake/Kanban seskupí karty podle jejich ID „Group“ (pásma na sobě vs. sloupce vedle sebe). Proces/Časová osa/Cyklus rozmístí karty podle toku/pořadí. Pyramida, Matice a Gantt mají vlastní ovládací prvky níže.",
   "inputs.diagramType.options.org": "Organizační diagram (hierarchie)",
@@ -25,7 +23,6 @@
   "inputs.diagramType.options.pyramid": "Pyramida / trychtýř",
   "inputs.diagramType.options.matrix": "Matice (kvadranty 2×2)",
   "inputs.diagramType.options.gantt": "Gantt / plán",
-
   "inputs.source.label": "Sestavit z",
   "inputs.source.help": "Vizuální edituje karty jako řádky formuláře. Text vykreslí napsaný popis. ASCII art obkreslí krabice, které nakreslíš. Mermaid vloží podmnožinu grafu TD/LR. Tabulka načte vložené CSV.",
   "inputs.source.options.visual": "Vizuální editor",
@@ -33,7 +30,6 @@
   "inputs.source.options.ascii": "ASCII art (nakreslit)",
   "inputs.source.options.mermaid": "Mermaid (vložit)",
   "inputs.source.options.table": "Tabulka / CSV (vložit)",
-
   "inputs.theme.label": "Motiv",
   "inputs.theme.section": "Styl",
   "inputs.theme.help": "Nastaví barvy níže. Vyber jeden motiv a pak libovolnou barvu přepiš vlastní.",
@@ -43,50 +39,38 @@
   "inputs.theme.options.blueprint": "Blueprint",
   "inputs.theme.options.mono": "Mono",
   "inputs.theme.options.mint": "Mátová",
-
   "inputs.cardLayout.label": "Rozvržení karty",
   "inputs.cardLayout.section": "Styl",
   "inputs.cardLayout.help": "Jak každá karta rozmístí obrázek a text. Vedle sebe umístí obrázek vlevo s textem zarovnaným doleva — karta bez obrázku využije celou šířku. Obrázek nahoře naskládá vystředěný obrázek nad vystředěný text.",
   "inputs.cardLayout.options.row": "Vedle sebe (obrázek vlevo)",
   "inputs.cardLayout.options.stacked": "Obrázek nahoře",
-
   "inputs.nodeFill.label": "Výplň karty",
   "inputs.nodeFill.section": "Styl",
-
   "inputs.nodeStroke.label": "Okraj karty",
   "inputs.nodeStroke.section": "Styl",
-
   "inputs.cardBorderWidth.label": "Šířka okraje karty",
   "inputs.cardBorderWidth.section": "Styl",
   "inputs.cardBorderWidth.help": "0 = karty bez okraje.",
-
   "inputs.nodeText.label": "Text karty",
   "inputs.nodeText.section": "Styl",
-
   "inputs.labelSize.label": "Velikost popisku",
   "inputs.labelSize.section": "Styl",
-
   "inputs.labelWeight.label": "Řez písma popisku",
   "inputs.labelWeight.section": "Styl",
   "inputs.labelWeight.help": "Řez písma popisků karet (100 tenké → 900 černé).",
-
   "inputs.edgeColor.label": "Spojnice",
   "inputs.edgeColor.section": "Styl",
   "inputs.edgeColor.help": "Barva automatických spojnic / os.",
-
   "inputs.connectorWidth.label": "Šířka spojnice",
   "inputs.connectorWidth.section": "Styl",
-
   "inputs.background.label": "Pozadí",
   "inputs.background.section": "Styl",
   "inputs.background.help": "Nastav na Průhlednou, pokud chceš odkryté (průhledné) pozadí.",
-
   "inputs.gridBg.label": "Vzor pozadí",
   "inputs.gridBg.section": "Styl",
   "inputs.gridBg.options.none": "Žádný",
   "inputs.gridBg.options.dots": "Tečky",
   "inputs.gridBg.options.grid": "Mřížka",
-
   "inputs.density.label": "Hustota",
   "inputs.density.section": "Rozvržení",
   "inputs.density.help": "Nastaví rozestupy a velikost karet níže. Vyber jednu možnost a pak doladíš posuvníky.",
@@ -95,96 +79,69 @@
   "inputs.density.options.cozy": "Útulná",
   "inputs.density.options.comfortable": "Pohodlná",
   "inputs.density.options.spacious": "Prostorná",
-
   "inputs.cardWidth.label": "Šířka karty",
   "inputs.cardWidth.section": "Rozvržení",
-
   "inputs.cardScale.label": "Velikost karty",
   "inputs.cardScale.section": "Rozvržení",
   "inputs.cardScale.help": "Zvětší nebo zmenší velikost karty, vnitřní okraje a text zároveň.",
-
   "inputs.rowGap.label": "Mezera mezi řádky / vrstvami",
   "inputs.rowGap.section": "Rozvržení",
   "inputs.rowGap.help": "Rozestup ve směru toku (úrovně, řady, pásma).",
-
   "inputs.siblingGap.label": "Mezera mezi sourozenci",
   "inputs.siblingGap.section": "Rozvržení",
   "inputs.siblingGap.help": "Rozestup mezi sousedy na stejné úrovni.",
-
   "inputs.cornerRadius.label": "Zaoblení rohů",
   "inputs.cornerRadius.section": "Rozvržení",
   "inputs.cornerRadius.help": "Zaoblení karet tvaru „Zaoblený“ (Obdélník a Pilulka si drží svůj tvar).",
-
   "inputs.canvasPadding.label": "Odsazení plátna",
   "inputs.canvasPadding.section": "Rozvržení",
   "inputs.canvasPadding.help": "Prázdné místo kolem diagramu.",
-
   "inputs.title.label": "Název",
   "inputs.title.placeholder": "Volitelný nadpis zobrazený nad diagramem",
-
   "inputs.orgDir.label": "Směr",
   "inputs.orgDir.help": "Rozlož strom shora dolů, nebo zleva doprava pro hluboké hierarchie.",
   "inputs.orgDir.options.down": "Shora dolů",
   "inputs.orgDir.options.right": "Zleva doprava",
-
   "inputs.mindmapStyle.label": "Rozvržení větví",
   "inputs.mindmapStyle.options.balanced": "Vyvážené (obě strany)",
   "inputs.mindmapStyle.options.right": "Pouze vpravo",
-
   "inputs.branchColors.label": "Barva podle větve",
   "inputs.branchColors.help": "Obarví každou hlavní větev vlastní barvou z palety.",
-
   "inputs.flowDir.label": "Směr toku",
   "inputs.flowDir.help": "Kterým směrem proces postupuje mezi kroky.",
   "inputs.flowDir.options.down": "Shora dolů",
   "inputs.flowDir.options.right": "Zleva doprava",
-
   "inputs.timelineDir.label": "Směr",
   "inputs.timelineDir.options.right": "Zleva doprava",
   "inputs.timelineDir.options.down": "Shora dolů",
-
   "inputs.cycleArrows.label": "Zobrazit šipky smyčky",
-
   "inputs.cycleCurved.label": "Zakřivené šipky",
   "inputs.cycleCurved.help": "Prohne šipky kruhu ven místo rovných tětiv.",
-
   "inputs.pyramidStyle.label": "Styl",
   "inputs.pyramidStyle.help": "Karty jsou seřazené shora dolů. Pyramida se směrem dolů rozšiřuje, trychtýř se zužuje, obrácená pyramida se rozšiřuje směrem nahoru.",
   "inputs.pyramidStyle.options.pyramid": "Pyramida (široká základna)",
   "inputs.pyramidStyle.options.funnel": "Trychtýř (zužující se)",
   "inputs.pyramidStyle.options.inverted": "Obrácená pyramida",
-
   "inputs.kanbanCount.label": "Zobrazit počet karet",
-
   "inputs.matrixXHigh.label": "Osa X — vysoká",
   "inputs.matrixXHigh.placeholder": "např. Vysoký dopad",
-
   "inputs.matrixXLow.label": "Osa X — nízká",
   "inputs.matrixXLow.placeholder": "např. Nízký dopad",
-
   "inputs.matrixYHigh.label": "Osa Y — vysoká",
   "inputs.matrixYHigh.placeholder": "např. Vysoké úsilí",
-
   "inputs.matrixYLow.label": "Osa Y — nízká",
   "inputs.matrixYLow.placeholder": "např. Nízké úsilí",
-
   "inputs.ganttGrid.label": "Zobrazit časovou mřížku",
-
   "inputs.ganttUnit.label": "Popisek časové jednotky",
   "inputs.ganttUnit.placeholder": "např. týd",
-
   "inputs.dsl.label": "Text diagramu",
   "inputs.dsl.help": "Org diagram / myšlenková mapa: hierarchii vytvoříš odsazením. Layercake/Kanban: nadpisy „# Group“ a pod nimi karty. Proces/Gantt: „A -> B“ (Gantt navíc „ : 0..3“). Časová osa/Cyklus/Pyramida: jedna položka na řádek, v daném pořadí. Matice: sekce „# top-right“ nebo „Item @ (0.8,0.3)“. Společné: „:: subtitle“, výplň „#hex“, tvar „(Rounded)“/„[Box]“/„([Pill])“, obrázek „@ https://…/logo.png“, styly čar --> -.-> ==> <->, komentář „// comment“.",
-
   "inputs.asciiArt.label": "ASCII art",
   "inputs.asciiArt.help": "Kresli krabice pomocí + - | a propojuj je pomocí - | a šipek > < ^ v. Dbej na to, aby boční strany | každé krabice lícovaly s jejími okraji +---+. První řádek uvnitř krabice je její titulek, zbytek podtitulek, a řádek „@ https://…/logo.png“ přidá obrázek. Tvé rozvržení zůstane zachované — jen ho vykreslíme jako přehledné karty.",
-
   "inputs.mermaid.label": "Mermaid",
   "inputs.mermaid.help": "Vlož podmnožinu vývojového diagramu Mermaid. „graph TD/LR“ určuje směr; A[Box], A(Rounded), A([Pill]), A{Diamond} definují uzly; A-->B, A---B, A-.->B, A==>B, A-->|label|B jsou hrany; subgraph Name … end se stane pásmem vrstvy. Nepodporované řádky (classDef, click, style…) se přeskočí a nikdy se nespustí.",
-
   "inputs.table.label": "Tabulka / CSV",
   "inputs.table.help": "Vlož řádky oddělené čárkou nebo tabulátorem. Org diagram / myšlenková mapa: id,label,detail,parent. Proces: from,to,label (seznam hran — id se vytvoří automaticky). Časová osa/Cyklus/Pyramida: label,detail. Řádek se záhlavím (id/label/from/…) se rozpozná a přeskočí.",
-
   "inputs.nodes.label": "Karty",
   "inputs.nodes.help": "Jedna karta na řádek. V org diagramu / myšlenkové mapě přetáhni kartu na jinou, aby se do ní vnořila — pusť ji nad nebo pod pro vytvoření sourozence, nebo doprostřed pro vytvoření potomka. Jinde přetažením měníš pořadí (pořadí určuje pořadí sourozenců, pořadí vrstev/sloupců a sekvenci pro časovou osu/cyklus/pyramidu/gantt). ID je volitelný krátký identifikátor.",
   "inputs.nodes.addMenu.label": "Přidat kartu",
@@ -216,7 +173,6 @@
   "inputs.nodes.fields.ganttStart.help": "Začátek pruhu na časové ose.",
   "inputs.nodes.fields.ganttLen.label": "Délka",
   "inputs.nodes.fields.ganttLen.help": "Délka pruhu ve stejných jednotkách.",
-
   "inputs.layers.label": "Vrstvy / sloupce (v pořadí)",
   "inputs.layers.help": "Každé pásmo layercake, naskládané v tomto pořadí. Karty odkazují na pásmo pomocí jeho ID. (Sloupce Kanbanu se vytvoří automaticky z ID skupiny každé karty.)",
   "inputs.layers.addMenu.label": "Přidat vrstvu",
@@ -227,7 +183,6 @@
   "inputs.layers.fields.label.label": "Popisek",
   "inputs.layers.fields.label.placeholder": "např. Experience",
   "inputs.layers.fields.bandFill.label": "Barva pásma",
-
   "inputs.arrows.label": "Šipky toku",
   "inputs.arrows.help": "V procesu/ganttu tyto šipky JSOU tok / závislosti. V org diagramu/layercake atd. jsou to šipky navíc nad rámec automatických spojnic. Vyber karty (nebo vrstvy), mezi kterými každá šipka vede.",
   "inputs.arrows.fields.from.label": "Odkud",
@@ -249,14 +204,12 @@
   "inputs.arrows.fields.width.label": "Šířka",
   "inputs.arrows.fields.width.help": "0 = použije se globální šířka šipky.",
   "inputs.arrows.fields.color.label": "Barva",
-
   "inputs.arrowStyle.label": "Čára šipky",
   "inputs.arrowStyle.section": "Šipky",
   "inputs.arrowStyle.help": "Výchozí styl čáry pro šipky, které nemají nastavený vlastní.",
   "inputs.arrowStyle.options.solid": "Plná",
   "inputs.arrowStyle.options.dashed": "Čárkovaná",
   "inputs.arrowStyle.options.dotted": "Tečkovaná",
-
   "inputs.arrowHead.label": "Hrot šipky",
   "inputs.arrowHead.section": "Šipky",
   "inputs.arrowHead.help": "Výchozí hrot šipky pro šipky, které nemají nastavený vlastní.",
@@ -267,10 +220,9 @@
   "inputs.arrowHead.options.bar": "Příčka",
   "inputs.arrowHead.options.double": "Oboustranný",
   "inputs.arrowHead.options.none": "Žádný",
-
   "inputs.arrowWidth.label": "Šířka šipky",
   "inputs.arrowWidth.section": "Šipky",
-
   "inputs.arrowHeadSize.label": "Velikost hrotu šipky",
-  "inputs.arrowHeadSize.section": "Šipky"
+  "inputs.arrowHeadSize.section": "Šipky",
+  "inputs.arrows.fields.head.options.": "Výchozí"
 }

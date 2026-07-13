@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-13T04:14:41.830Z",
+  "generatedAt": "2026-07-13T04:31:06.585Z",
   "tools": [
     {
       "id": "color-block",
@@ -105,6 +105,11 @@
           "description": "Fargeblokker — tekst, bilde, logo — automatisk arrangert i et rutenett.",
           "blurb": "Fargeblokker — tekst, bilde, logo i et rutenett"
         },
+        "pl": {
+          "name": "Blok koloru",
+          "description": "Kolorowe bloki — tekst, obraz, logo — automatycznie ułożone w siatkę.",
+          "blurb": "Kolorowe bloki — tekst, obraz, logo w siatce"
+        },
         "pt": {
           "name": "Bloco de cor",
           "description": "Blocos de cor — texto, imagem, logo — organizados automaticamente em grade.",
@@ -129,6 +134,11 @@
           "name": "Renk Bloğu",
           "description": "Renk blokları — metin, görüntü, logo — otomatik olarak bir ızgaraya yerleştirilir.",
           "blurb": "Renk blokları — ızgarada metin, görüntü, logo"
+        },
+        "uk": {
+          "name": "Колірний блок",
+          "description": "Колірні блоки — текст, зображення, логотип — автоматично впорядковані в сітку.",
+          "blurb": "Колірні блоки — текст, зображення, логотип у сітці"
         },
         "ur": {
           "name": "رنگ بلاک",
@@ -236,6 +246,10 @@
           "name": "Dynamisk layout",
           "description": "En altmulig-layout som omorganiserer seg rundt alt du legger til, uansett størrelse."
         },
+        "pl": {
+          "name": "Dynamiczny układ",
+          "description": "Wszechstronny układ, który przekomponowuje się wokół tego, co dodasz, w każdym rozmiarze."
+        },
         "pt": {
           "name": "Layout dinâmico",
           "description": "Um layout multiuso que se reorganiza em torno do que você adicionar, em qualquer tamanho."
@@ -255,6 +269,10 @@
         "tr": {
           "name": "Dinamik Düzen",
           "description": "Ne eklersen ekle onun etrafında, her boyutta yeniden düzenlenen, her işe yarayan bir düzen."
+        },
+        "uk": {
+          "name": "Dynamic Layout",
+          "description": "Універсальний макет, який перебудовується навколо всього, що ви додасте, за будь-якого розміру."
         },
         "ur": {
           "name": "ڈائنامک لے آؤٹ",
@@ -361,6 +379,10 @@
           "name": "Sitatkort",
           "description": "Merkevaretilpassede sitatkort for sosiale innlegg og lysbilder."
         },
+        "pl": {
+          "name": "Karta z cytatem",
+          "description": "Karty z cytatami zgodne z marką do postów w social media i slajdów."
+        },
         "pt": {
           "name": "Cartão de citação",
           "description": "Cartões de citação com a sua marca para posts e slides."
@@ -380,6 +402,10 @@
         "tr": {
           "name": "Alıntı Kartı",
           "description": "Sosyal medya gönderileri ve slaytlar için markaya uygun alıntı kartları."
+        },
+        "uk": {
+          "name": "Картка з цитатою",
+          "description": "Фірмові картки з цитатами для постів у соцмережах та слайдів."
         },
         "ur": {
           "name": "اقتباس کارڈ",
@@ -479,6 +505,10 @@
           "name": "Møteplanlegger",
           "description": "Planlegg et globalt møte og se klokkeslettet i tidssonen til hvert teammedlem."
         },
+        "pl": {
+          "name": "Planer spotkań",
+          "description": "Zaplanuj globalne spotkanie i sprawdź czas w strefie czasowej każdego członka zespołu."
+        },
         "pt": {
           "name": "Planejador de Reuniões",
           "description": "Planeje uma reunião global e veja o horário no fuso horário de cada membro da equipe."
@@ -498,6 +528,10 @@
         "tr": {
           "name": "Toplantı Planlayıcı",
           "description": "Küresel bir toplantı planla ve her ekip arkadaşının saat dilimindeki saati gör."
+        },
+        "uk": {
+          "name": "Планувальник зустрічей",
+          "description": "Плануйте глобальну зустріч і бачте час для часового поясу кожного учасника команди."
         },
         "ur": {
           "name": "میٹنگ پلانر",
@@ -594,6 +628,10 @@
           "name": "Kodelerret",
           "description": "Gjør kodesnutter om til rene, syntaksmarkerte bilder, klare til å dele."
         },
+        "pl": {
+          "name": "Code Canvas",
+          "description": "Zmień fragmenty kodu w czyste obrazy z podświetloną składnią, gotowe do udostępnienia."
+        },
         "pt": {
           "name": "Tela de Código",
           "description": "Transforme trechos de código em imagens limpas, com destaque de sintaxe, prontas para compartilhar."
@@ -613,6 +651,10 @@
         "tr": {
           "name": "Kod Kanvası",
           "description": "Kod parçacıklarını temiz, sözdizimi vurgulamalı, paylaşılabilir görüntülere dönüştür."
+        },
+        "uk": {
+          "name": "Code Canvas",
+          "description": "Перетворює фрагменти коду на чисті зображення з підсвіткою синтаксису, зручні для поширення."
         },
         "ur": {
           "name": "کوڈ کینوس",
@@ -739,6 +781,11 @@
           "description": "QR-koder for enhver URL, med full kontroll over farge og stil.",
           "blurb": "QR-koder i valgfri merkefarge"
         },
+        "pl": {
+          "name": "Generator kodów QR",
+          "description": "Kody QR dla dowolnego adresu URL, z pełną kontrolą kolorów i stylu.",
+          "blurb": "Kody QR w każdym kolorze marki"
+        },
         "pt": {
           "name": "Gerador de Código QR",
           "description": "Códigos QR para qualquer URL, com controle total de cor e estilo.",
@@ -763,6 +810,11 @@
           "name": "QR Kod Oluşturucu",
           "description": "Her URL için QR kodları, tam renk ve stil kontrolüyle.",
           "blurb": "Her marka renginde QR kodları"
+        },
+        "uk": {
+          "name": "Генератор QR-кодів",
+          "description": "QR-коди для будь-якої URL-адреси з повним контролем кольору й стилю.",
+          "blurb": "QR-коди у будь-якому брендовому кольорі"
         },
         "ur": {
           "name": "QR کوڈ جنریٹر",
@@ -866,6 +918,10 @@
           "name": "Dagsoversikt",
           "description": "Dagens sitat med aktuelt vær, klokkeslett og et kart for valgfri by."
         },
+        "pl": {
+          "name": "Podsumowanie dnia",
+          "description": "Cytat dnia z aktualną pogodą, czasem i mapą dla każdego miasta."
+        },
         "pt": {
           "name": "Resumo do Dia",
           "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade."
@@ -885,6 +941,10 @@
         "tr": {
           "name": "Günlük Özet",
           "description": "Herhangi bir şehir için canlı hava durumu, saat ve haritayla günün sözü."
+        },
+        "uk": {
+          "name": "Огляд дня",
+          "description": "Цитата дня з поточною погодою, часом і картою для будь-якого міста."
         },
         "ur": {
           "name": "روزانہ خلاصہ",
@@ -988,6 +1048,10 @@
           "name": "Logo",
           "description": "Plasser SUSE-logoen — den velger automatisk riktig variant og eksporterer som vektor."
         },
+        "pl": {
+          "name": "Logo",
+          "description": "Umieść logo SUSE — automatycznie wybiera odpowiedni wariant i eksportuje jako wektor."
+        },
         "pt": {
           "name": "Logo",
           "description": "Coloque o logo da SUSE — a variante certa é escolhida automaticamente e exportada em vetor."
@@ -1007,6 +1071,10 @@
         "tr": {
           "name": "Logo",
           "description": "SUSE logosunu yerleştir — doğru varyantı otomatik seçer ve vektör olarak dışa aktarır."
+        },
+        "uk": {
+          "name": "Логотип",
+          "description": "Розмістіть логотип SUSE — він автоматично обирає потрібний варіант і експортується у векторі."
         },
         "ur": {
           "name": "لوگو",
@@ -1108,6 +1176,10 @@
           "name": "E-postsignatur",
           "description": "En merkevaretilpasset SUSE-e-postsignatur, klar til å lime inn i en hvilken som helst e-postklient."
         },
+        "pl": {
+          "name": "Podpis e-mail",
+          "description": "Podpis e-mail w stylu SUSE, gotowy do wklejenia w każdym kliencie pocztowym."
+        },
         "pt": {
           "name": "Assinatura de e-mail",
           "description": "Uma assinatura de e-mail SUSE alinhada à marca, pronta para colar em qualquer cliente de e-mail."
@@ -1127,6 +1199,10 @@
         "tr": {
           "name": "E-posta İmzası",
           "description": "Herhangi bir e-posta istemcisine yapıştırmaya hazır, markaya uygun bir SUSE e-posta imzası."
+        },
+        "uk": {
+          "name": "Підпис електронної пошти",
+          "description": "Фірмовий підпис електронної пошти SUSE, готовий для вставлення в будь-який клієнт."
         },
         "ur": {
           "name": "ای میل دستخط",
@@ -1247,9 +1323,14 @@
           "blurb": "Grafieken uit je data, in elke vorm en in je huisstijl"
         },
         "no": {
-          "name": "Chart Creator",
+          "name": "Diagramskaper",
           "description": "Merkevaretilpassede diagrammer fra dataene dine — søyler, smultring, sirkel eller stablet.",
           "blurb": "Merkevaretilpassede diagrammer fra dataene dine, i alle former"
+        },
+        "pl": {
+          "name": "Kreator wykresów",
+          "description": "Wykresy w barwach marki na podstawie Twoich danych — słupkowe, pierścieniowe, kołowe lub skumulowane.",
+          "blurb": "Wykresy w barwach marki na podstawie Twoich danych, w każdej formie"
         },
         "pt": {
           "name": "Criador de Gráficos",
@@ -1275,6 +1356,11 @@
           "name": "Grafik Oluşturucu",
           "description": "Verilerinden markana uygun grafikler — çubuk, halka, pasta veya yığılmış.",
           "blurb": "Verilerinden markana uygun grafikler, her şekilde"
+        },
+        "uk": {
+          "name": "Конструктор діаграм",
+          "description": "Фірмові діаграми з ваших даних — стовпчикові, кільцеві, кругові або накопичувальні.",
+          "blurb": "Фірмові діаграми з ваших даних, будь-якої форми"
         },
         "ur": {
           "name": "چارٹ کریئٹر",
@@ -1382,6 +1468,10 @@
           "name": "Veskevideo",
           "description": "En animert, merkevaretilpasset video for veskemotiver."
         },
+        "pl": {
+          "name": "Wideo z torbą",
+          "description": "Animowane, zgodne z marką wideo do wizualizacji na torbach."
+        },
         "pt": {
           "name": "Vídeo de Bolsa",
           "description": "Um vídeo animado e alinhado à marca para visuais de bolsa."
@@ -1401,6 +1491,10 @@
         "tr": {
           "name": "Çanta Videosu",
           "description": "Çanta görselleri için markaya uygun, animasyonlu bir video."
+        },
+        "uk": {
+          "name": "Bag Video",
+          "description": "Анімоване, фірмове відео для візуалів на сумках."
         },
         "ur": {
           "name": "بیگ ویڈیو",
@@ -1438,15 +1532,14 @@
       "i18n": {
         "ar": {
           "name": "لوحة الألوان",
-          "description": "تصفح ألوان علامة SUSE — انقر على أي لون لنسخه."
+          "description": "تصفح ألوان علامة SUSE — انقر على عينة لنسخها."
         },
         "bg": {
-          "name": "Цветова палитра",
-          "description": "Разгледай брандовите цветове на SUSE — щракни върху мостра, за да я копираш."
+          "description": "Разгледай цветовите марки на SUSE — кликни върху проба, за да я копираш."
         },
         "bn": {
           "name": "কালার প্যালেট",
-          "description": "SUSE ব্র্যান্ডের রংগুলো দেখুন — কপি করতে সোয়াচে ক্লিক করুন।"
+          "description": "SUSE ব্র্যান্ডের রং ব্রাউজ করুন — কপি করতে একটি সোয়াচে ক্লিক করুন।"
         },
         "cs": {
           "name": "Paleta barev",
@@ -1454,7 +1547,7 @@
         },
         "de": {
           "name": "Farbpalette",
-          "description": "Durchsuchen Sie die SUSE-Markenfarben — klicken Sie auf ein Farbfeld, um es zu kopieren."
+          "description": "Durchsuchen Sie die SUSE-Markenfarben – klicken Sie auf ein Farbfeld, um es zu kopieren."
         },
         "es": {
           "name": "Paleta de colores",
@@ -1465,12 +1558,11 @@
           "description": "Parcours les couleurs de marque SUSE — clique sur une nuance pour la copier."
         },
         "hi": {
-          "name": "कलर पैलेट",
-          "description": "SUSE ब्रांड के रंग ब्राउज़ करें — कॉपी करने के लिए किसी स्वैच पर क्लिक करें।"
+          "description": "SUSE ब्रांड रंग ब्राउज़ करें — कॉपी करने के लिए किसी स्वैच पर क्लिक करें।"
         },
         "id": {
           "name": "Palet Warna",
-          "description": "Jelajahi warna brand SUSE — klik swatch untuk menyalinnya."
+          "description": "Jelajahi warna merek SUSE — klik swatch untuk menyalinnya."
         },
         "it": {
           "name": "Tavolozza colori",
@@ -1496,6 +1588,10 @@
           "name": "Fargepalett",
           "description": "Bla gjennom SUSEs merkevarefarger — klikk på en fargeprøve for å kopiere den."
         },
+        "pl": {
+          "name": "Paleta kolorów",
+          "description": "Przeglądaj kolory marki SUSE — kliknij próbkę, aby ją skopiować."
+        },
         "pt": {
           "name": "Paleta de cores",
           "description": "Explore as cores da marca SUSE — clique em uma amostra para copiá-la."
@@ -1516,9 +1612,13 @@
           "name": "Renk Paleti",
           "description": "SUSE marka renklerine göz at — kopyalamak için bir renk örneğine tıkla."
         },
+        "uk": {
+          "name": "Палітра кольорів",
+          "description": "Перегляньте фірмові кольори SUSE — натисніть на зразок, щоб скопіювати його."
+        },
         "ur": {
-          "name": "رنگ پیلیٹ",
-          "description": "SUSE برانڈ کے رنگ دیکھیں — کاپی کرنے کے لیے کسی سواچ پر کلک کریں۔"
+          "name": "کلر پیلٹ",
+          "description": "SUSE برانڈ کے رنگ دیکھیں — کاپی کرنے کے لیے کسی سویچ پر کلک کریں۔"
         },
         "vi": {
           "name": "Bảng màu",
@@ -1610,6 +1710,10 @@
           "name": "Nedtellingsklokke",
           "description": "En fokusert nedtelling med en fremdriftsring i sanntid. Klikk for å sette på pause."
         },
+        "pl": {
+          "name": "Minutnik odliczający",
+          "description": "Skoncentrowane odliczanie z pierścieniem postępu na żywo. Kliknij, aby wstrzymać."
+        },
         "pt": {
           "name": "Contagem Regressiva",
           "description": "Uma contagem regressiva focada com um anel de progresso ao vivo. Clique para pausar."
@@ -1629,6 +1733,10 @@
         "tr": {
           "name": "Geri Sayım Zamanlayıcı",
           "description": "Canlı ilerleme halkalı, odaklanmış bir geri sayım. Duraklatmak için tıkla."
+        },
+        "uk": {
+          "name": "Таймер зворотного відліку",
+          "description": "Зосереджений зворотний відлік із живим кільцем прогресу. Клацніть, щоб призупинити."
         },
         "ur": {
           "name": "کاؤنٹ ڈاؤن ٹائمر",
@@ -1730,8 +1838,12 @@
           "description": "Elke webpagina, op elke scrolldiepte, met eigen CSS."
         },
         "no": {
-          "name": "URL Screenshot",
+          "name": "URL-skjermbilde",
           "description": "Alle nettsider, uansett scroll-dybde, med egendefinert CSS"
+        },
+        "pl": {
+          "name": "Zrzut ekranu URL",
+          "description": "Każda strona internetowa, na dowolnej głębokości przewijania, z własnym CSS"
         },
         "pt": {
           "name": "Captura de Tela de URL",
@@ -1752,6 +1864,10 @@
         "tr": {
           "name": "URL Ekran Görüntüsü",
           "description": "Herhangi bir web sayfası, herhangi bir kaydırma derinliğinde, özel CSS ile"
+        },
+        "uk": {
+          "name": "Скриншот URL",
+          "description": "Будь-яка веб-сторінка, на будь-якій глибині прокручування, з власним CSS"
         },
         "ur": {
           "name": "URL اسکرین شاٹ",
@@ -1852,6 +1968,10 @@
           "name": "Gatekart",
           "description": "Rene vektor-gatekart for enhver by. Fungerer offline."
         },
+        "pl": {
+          "name": "Mapa ulic",
+          "description": "Czyste, wektorowe mapy siatki ulic dla każdego miasta. Działa offline."
+        },
         "pt": {
           "name": "Mapa de Ruas",
           "description": "Mapas vetoriais limpos de quarteirões de qualquer cidade. Funciona offline."
@@ -1871,6 +1991,10 @@
         "tr": {
           "name": "Sokak Haritası",
           "description": "Herhangi bir şehrin temiz vektörel sokak bloğu haritaları. Çevrimdışı çalışır."
+        },
+        "uk": {
+          "name": "Карта вулиць",
+          "description": "Чисті векторні карти вуличних квартàлів будь-якого міста. Працює офлайн."
         },
         "ur": {
           "name": "اسٹریٹ میپ",
@@ -1970,6 +2094,10 @@
           "name": "Fjern skjulte data",
           "description": "Vis og fjern skjult metadata fra bilder og PDF-er — på din egen enhet."
         },
+        "pl": {
+          "name": "Usuń ukryte dane",
+          "description": "Wykryj i usuń ukryte metadane ze zdjęć i plików PDF — na Twoim urządzeniu."
+        },
         "pt": {
           "name": "Remover Dados Ocultos",
           "description": "Revele e remova metadados ocultos de imagens e PDFs — no seu dispositivo."
@@ -1989,6 +2117,10 @@
         "tr": {
           "name": "Gizli Verileri Kaldır",
           "description": "Görsellerdeki ve PDF'lerdeki gizli meta verileri ortaya çıkar ve kaldır — cihazında."
+        },
+        "uk": {
+          "name": "Видалення прихованих даних",
+          "description": "Виявляйте та видаляйте приховані метадані із зображень і PDF — на вашому пристрої."
         },
         "ur": {
           "name": "پوشیدہ ڈیٹا ہٹائیں",
@@ -2085,6 +2217,10 @@
           "name": "Tekstverktøy",
           "description": "Formater, dekod, hash og anonymiser tekst — JSON, JWT og mer."
         },
+        "pl": {
+          "name": "Pomocnik tekstu",
+          "description": "Formatuj, dekoduj, hashuj i anonimizuj tekst — JSON, JWT i inne."
+        },
         "pt": {
           "name": "Assistente de Texto",
           "description": "Formate, decodifique, gere hash e anonimize texto — JSON, JWT e muito mais."
@@ -2104,6 +2240,10 @@
         "tr": {
           "name": "Metin Yardımcısı",
           "description": "Metni biçimlendir, çöz, hash'le ve anonimleştir — JSON, JWT ve daha fazlası."
+        },
+        "uk": {
+          "name": "Текстовий помічник",
+          "description": "Форматуйте, декодуйте, хешуйте та деідентифікуйте текст — JSON, JWT та інше."
         },
         "ur": {
           "name": "ٹیکسٹ ہیلپر",
@@ -2227,6 +2367,11 @@
           "description": "Konferansenavneskilt med fargekodet rolle og valgfri QR-kode.",
           "blurb": "Konferansenavneskilt, fargekodet etter rolle"
         },
+        "pl": {
+          "name": "Identyfikator na wydarzenie",
+          "description": "Identyfikatory konferencyjne z kolorowym oznaczeniem roli i opcjonalnym kodem QR.",
+          "blurb": "Identyfikatory konferencyjne z kolorowym oznaczeniem roli"
+        },
         "pt": {
           "name": "Crachá de nome para eventos",
           "description": "Crachás de conferência com função codificada por cor e QR opcional.",
@@ -2251,6 +2396,11 @@
           "name": "Etkinlik İsim Rozeti",
           "description": "Renk kodlu role sahip ve isteğe bağlı QR içeren konferans isim rozetleri.",
           "blurb": "Role göre renk kodlanmış konferans isim rozetleri"
+        },
+        "uk": {
+          "name": "Бейдж імені на заході",
+          "description": "Бейджі учасників конференції з кольоровим кодуванням ролі та опціональним QR-кодом.",
+          "blurb": "Бейджі учасників конференції з кольоровим кодуванням за роллю"
         },
         "ur": {
           "name": "ایونٹ نام بیج",
@@ -2375,6 +2525,11 @@
           "description": "Retningsskilt for arrangementer — reisemål, hver med en pil. Trykkeklart.",
           "blurb": "Retningsskilt for arrangementer, trykkeklart"
         },
+        "pl": {
+          "name": "Tablice informacyjne",
+          "description": "Tablice informacyjne dla wydarzeń — miejsca docelowe, każde ze strzałką. Gotowe do druku.",
+          "blurb": "Tablice informacyjne dla wydarzeń, gotowe do druku"
+        },
         "pt": {
           "name": "Sinalização direcional",
           "description": "Placas direcionais para eventos — destinos, cada um com uma seta. Prontas para impressão.",
@@ -2399,6 +2554,11 @@
           "name": "Yönlendirme Tabelaları",
           "description": "Yönlü etkinlik tabelaları — her biri bir okla gösterilen varış noktaları. Baskıya hazır.",
           "blurb": "Yönlü etkinlik tabelaları, baskıya hazır"
+        },
+        "uk": {
+          "name": "Навігаційні вказівники",
+          "description": "Напрямні вказівники для заходу — пункти призначення, кожен зі стрілкою. Готово до друку.",
+          "blurb": "Напрямні вказівники для заходу, готові до друку"
         },
         "ur": {
           "name": "راستہ نما سائنیج",
@@ -2582,6 +2742,11 @@
           "description": "Offisielle SUSE-logolockuper — kameleon, ordmerke og et navn.",
           "blurb": "Offisielle SUSE-logolockuper, mange stiler"
         },
+        "pl": {
+          "name": "Logotyp marki",
+          "description": "Oficjalne układy logo SUSE — kameleon, logotyp i nazwa.",
+          "blurb": "Oficjalne układy logo SUSE w wielu wariantach"
+        },
         "pt": {
           "name": "Lockup de marca",
           "description": "Lockups oficiais do logo da SUSE — camaleão, logotipo e um nome.",
@@ -2606,6 +2771,11 @@
           "name": "Marka Yerleşimi",
           "description": "Resmi SUSE logo yerleşimleri — bukalemun, yazı logosu ve bir isim.",
           "blurb": "Resmi SUSE logo yerleşimleri, birçok görünüm"
+        },
+        "uk": {
+          "name": "Brand Lockup",
+          "description": "Офіційні логотипні комбінації SUSE — хамелеон, словесний знак та назва.",
+          "blurb": "Офіційні логотипні комбінації SUSE, багато варіантів"
         },
         "ur": {
           "name": "برانڈ لاک اپ",
@@ -2713,6 +2883,10 @@
           "name": "Animert annonse",
           "description": "Lag animerte annonser fra lagdelte scener, i alle standardstørrelser."
         },
+        "pl": {
+          "name": "Animowana reklama",
+          "description": "Twórz animowane reklamy z warstwowych scen w każdym standardowym rozmiarze."
+        },
         "pt": {
           "name": "Anúncio animado",
           "description": "Crie anúncios animados a partir de cenas em camadas, para qualquer tamanho padrão."
@@ -2732,6 +2906,10 @@
         "tr": {
           "name": "Animasyonlu Reklam",
           "description": "Herhangi bir standart boyut için katmanlı sahnelerden animasyonlu reklamlar oluştur."
+        },
+        "uk": {
+          "name": "Анімована реклама",
+          "description": "Створюйте анімовану рекламу з шаруватих сцен для будь-якого стандартного розміру."
         },
         "ur": {
           "name": "اینیمیٹڈ اشتہار",
@@ -2829,6 +3007,10 @@
           "name": "Kalender-ICS",
           "description": "Gjør hendelsesdetaljer om til en kalenderfil (.ics) for alle kalenderapper."
         },
+        "pl": {
+          "name": "Kalendarz ICS",
+          "description": "Zmień szczegóły wydarzenia w plik kalendarza (.ics) dla każdej aplikacji kalendarza."
+        },
         "pt": {
           "name": "Calendário ICS",
           "description": "Transforma os detalhes do evento em um arquivo de calendário (.ics) para qualquer app de calendário."
@@ -2848,6 +3030,10 @@
         "tr": {
           "name": "Takvim ICS",
           "description": "Etkinlik bilgilerini herhangi bir takvim uygulaması için bir takvim (.ics) dosyasına dönüştür."
+        },
+        "uk": {
+          "name": "Календар ICS",
+          "description": "Перетворює деталі події на файл календаря (.ics) для будь-якого календарного застосунку."
         },
         "ur": {
           "name": "کیلنڈر ICS",
@@ -2944,6 +3130,10 @@
           "name": "Komprimer PDF",
           "description": "Krymp en PDF ved å komprimere bildene på nytt — på din enhet."
         },
+        "pl": {
+          "name": "Kompresuj PDF",
+          "description": "Zmniejsz plik PDF, kompresując ponownie jego obrazy — na Twoim urządzeniu."
+        },
         "pt": {
           "name": "Compactar PDF",
           "description": "Reduza um PDF recompactando suas imagens — no seu dispositivo."
@@ -2963,6 +3153,10 @@
         "tr": {
           "name": "PDF Sıkıştır",
           "description": "Görsellerini yeniden sıkıştırarak bir PDF'yi küçült — cihazında."
+        },
+        "uk": {
+          "name": "Стиснути PDF",
+          "description": "Зменшіть розмір PDF, повторно стиснувши зображення в ньому — на вашому пристрої."
         },
         "ur": {
           "name": "PDF کمپریس کریں",
@@ -3082,6 +3276,11 @@
           "description": "Bygg en flersidig PDF — en forside, flytende innholdsblokker og en bakside.",
           "blurb": "Flersidige PDF-er — forside, innhold, bakside"
         },
+        "pl": {
+          "name": "Wielostronicowy PDF",
+          "description": "Twórz wielostronicowy PDF — okładkę, płynące bloki treści i stronę tylną.",
+          "blurb": "Wielostronicowe PDF-y — okładka, treść, tył"
+        },
         "pt": {
           "name": "PDF de várias páginas",
           "description": "Crie um PDF de várias páginas — capa, blocos de conteúdo fluido e contracapa.",
@@ -3106,6 +3305,11 @@
           "name": "Çok Sayfalı PDF",
           "description": "Kapak, akan içerik blokları ve bir arka sayfadan oluşan çok sayfalı bir PDF oluştur.",
           "blurb": "Çok sayfalı PDF'ler — kapak, içerik, arka sayfa"
+        },
+        "uk": {
+          "name": "Багатосторінковий PDF",
+          "description": "Створюйте багатосторінковий PDF — обкладинка, текучі блоки контенту та задня сторінка.",
+          "blurb": "Багатосторінкові PDF — обкладинка, контент, задня сторінка"
         },
         "ur": {
           "name": "ملٹی پیج PDF",
@@ -3205,12 +3409,16 @@
           "description": "Kesan dwiwarna untuk sebarang foto — satu warna untuk bayang, satu lagi untuk sorotan."
         },
         "nl": {
-          "name": "Filter: Duotone",
+          "name": "Filter: Duotoon",
           "description": "Een tweekleurige duotone voor elke foto — schaduwen in de ene kleur, lichtpartijen in de andere."
         },
         "no": {
           "name": "Filter: Duotone",
           "description": "En tofarget duotone-effekt for ethvert foto — skygger i én farge, høylys i en annen."
+        },
+        "pl": {
+          "name": "Filtr: Dwutonowy",
+          "description": "Dwukolorowy duotone dla każdego zdjęcia — jeden kolor dla cieni, inny dla świateł."
         },
         "pt": {
           "name": "Filtro: Duotom",
@@ -3231,6 +3439,10 @@
         "tr": {
           "name": "Filtre: Duotone",
           "description": "Herhangi bir fotoğraf için iki renkli bir duotone — gölgeler bir renk, vurgular başka bir renk."
+        },
+        "uk": {
+          "name": "Фільтр: дуотон",
+          "description": "Двоколірний дуотон для будь-якого фото — один колір для тіней, інший для світлих ділянок."
         },
         "ur": {
           "name": "فلٹر: ڈوٹون",
@@ -3336,6 +3548,10 @@
           "name": "Filter: Raster",
           "description": "Vektorraster fra ethvert foto – prikkstørrelse etter lysstyrke."
         },
+        "pl": {
+          "name": "Filtr: Rastr (halftone)",
+          "description": "Wektorowy rastr z każdego zdjęcia — rozmiar punktów zależny od jasności."
+        },
         "pt": {
           "name": "Filtro: Meio-tom",
           "description": "Meio-tom vetorial a partir de qualquer foto — pontos dimensionados pelo brilho."
@@ -3355,6 +3571,10 @@
         "tr": {
           "name": "Filtre: Halftone",
           "description": "Herhangi bir fotoğraftan vektör halftone — noktalar parlaklığa göre boyutlanır."
+        },
+        "uk": {
+          "name": "Фільтр: Растрування",
+          "description": "Векторне растрування будь-якого фото — розмір точок залежить від яскравості."
         },
         "ur": {
           "name": "فلٹر: ہاف ٹون",
@@ -3457,6 +3677,10 @@
           "name": "Filter: Skannelinjer",
           "description": "Horisontal vektoreffekt med «uendelighetslinjer» i skannelinjestil, fra ethvert foto"
         },
+        "pl": {
+          "name": "Filtr: Linie skanujące",
+          "description": "Efekt wektorowych poziomych linii skanujących „infinity lines” z dowolnego zdjęcia"
+        },
         "pt": {
           "name": "Filtro: Scanline",
           "description": "Efeito vetorial de scanline com 'linhas infinitas' horizontais para qualquer foto"
@@ -3476,6 +3700,10 @@
         "tr": {
           "name": "Filtre: Scanline",
           "description": "Herhangi bir fotoğraftan yatay 'sonsuzluk çizgileri' scanline vektör efekti"
+        },
+        "uk": {
+          "name": "Фільтр: Скан-лінії",
+          "description": "Ефект горизонтальних «ліній нескінченності» скан-лінії з будь-якого фото"
         },
         "ur": {
           "name": "فلٹر: اسکین لائن",
@@ -3576,6 +3804,10 @@
           "name": "Logolockup: Rutenett (NASCAR)",
           "description": "Ordne en haug med logoer i et ryddig, jevnt sponsor-rutenett — «NASCAR»-veggen."
         },
+        "pl": {
+          "name": "Układ logo: Siatka (NASCAR)",
+          "description": "Ułóż zestaw logo w czystą, równą siatkę sponsorów — mur „NASCAR”."
+        },
         "pt": {
           "name": "Lockup de logos: grade (NASCAR)",
           "description": "Organize um monte de logos em uma grade de patrocinadores limpa e uniforme — o mural “NASCAR”."
@@ -3595,6 +3827,10 @@
         "tr": {
           "name": "Logo Blok: Izgara (NASCAR)",
           "description": "Bir logo yığınını temiz, düzenli bir sponsor ızgarasına diz — “NASCAR” duvarı."
+        },
+        "uk": {
+          "name": "Блок логотипів: сітка (NASCAR)",
+          "description": "Впорядкуйте купу логотипів у чітку, рівну сітку спонсорів — стіну «NASCAR»."
         },
         "ur": {
           "name": "لوگو لاک اپ: گرڈ (NASCAR)",
@@ -3698,6 +3934,10 @@
           "name": "Filter: Posterisering (bitmap)",
           "description": "Omdanner ethvert foto til flate vektorbaserte fargeseparasjoner i silketrykk-stil."
         },
+        "pl": {
+          "name": "Filtr: Posteryzacja bitmapy",
+          "description": "Zamień dowolne zdjęcie w płaskie, wektorowe separacje kolorów w stylu sitodruku."
+        },
         "pt": {
           "name": "Filtro: Posterizar Bitmap",
           "description": "Transforme qualquer foto em separações de cor vetoriais planas, no estilo serigrafia."
@@ -3717,6 +3957,10 @@
         "tr": {
           "name": "Filtre: Posterize Bitmap",
           "description": "Herhangi bir fotoğrafı düz, serigrafi tarzı vektör renk ayrımlarına dönüştürür."
+        },
+        "uk": {
+          "name": "Фільтр: Постеризація у растрі",
+          "description": "Перетворення будь-якого фото на плоскі векторні кольорові розділення у стилі шовкографії."
         },
         "ur": {
           "name": "فلٹر: پوسٹرائز بٹ میپ",
@@ -3834,6 +4078,11 @@
           "description": "Organisasjonskart, flytskjemaer, tidslinjer og mer — fra kort, tekst, Mermaid eller CSV.",
           "blurb": "Gjør kort eller tekst om til diagrammer i din merkevarestil"
         },
+        "pl": {
+          "name": "Konstruktor diagramów",
+          "description": "Schematy organizacyjne, schematy blokowe, harmonogramy i więcej — z kart, tekstu, Mermaid lub CSV.",
+          "blurb": "Zamień karty lub tekst w diagramy zgodne z marką"
+        },
         "pt": {
           "name": "Criador de diagramas",
           "description": "Organogramas, fluxogramas, linhas do tempo e muito mais — a partir de cartões, texto, Mermaid ou CSV.",
@@ -3858,6 +4107,11 @@
           "name": "Diyagram Oluşturucu",
           "description": "Org şemaları, akış şemaları, zaman çizelgeleri ve daha fazlası — kartlardan, metinden, Mermaid'den veya CSV'den.",
           "blurb": "Kartları veya metni markana uygun diyagramlara dönüştür"
+        },
+        "uk": {
+          "name": "Конструктор діаграм",
+          "description": "Організаційні схеми, блок-схеми, таймлайни та інше — з карток, тексту, Mermaid або CSV.",
+          "blurb": "Перетворюйте картки або текст на фірмові діаграми"
         },
         "ur": {
           "name": "ڈایاگرام بلڈر",
@@ -3964,6 +4218,10 @@
           "name": "Filter: Pikselstrekk",
           "description": "Smører en pikselkolonne utover et bilde fra en terskellinje. Fungerer live."
         },
+        "pl": {
+          "name": "Filtr: Rozciąganie pikseli",
+          "description": "Rozmazuje kolumnę pikseli po zdjęciu od linii progowej. Działa na żywo."
+        },
         "pt": {
           "name": "Filtro: Esticar Pixels",
           "description": "Espalhe uma coluna de pixels por uma foto a partir de uma linha de limiar. Funciona ao vivo."
@@ -3983,6 +4241,10 @@
         "tr": {
           "name": "Filtre: Pixel Stretch",
           "description": "Bir eşik çizgisinden başlayarak bir piksel sütununu fotoğraf boyunca sürükle. Canlı çalışır."
+        },
+        "uk": {
+          "name": "Фільтр: Розтягування пікселів",
+          "description": "Розмазує стовпець пікселів по фото від лінії порогу. Працює в реальному часі."
         },
         "ur": {
           "name": "فلٹر: پکسل اسٹریچ",
@@ -4083,6 +4345,10 @@
           "name": "Logolockup: Partner",
           "description": "SUSE-logoen ved siden av en partnerlogo, med en skillelinje mellom — lys eller mørk."
         },
+        "pl": {
+          "name": "Zestawienie logo: Partner",
+          "description": "Logo SUSE obok logo partnera, z separatorem pomiędzy nimi — w wersji jasnej lub ciemnej."
+        },
         "pt": {
           "name": "Combinação de logotipos: Parceiro",
           "description": "O logotipo da SUSE ao lado do de um parceiro, com um divisor entre eles — claro ou escuro."
@@ -4102,6 +4368,10 @@
         "tr": {
           "name": "Logo Blok: Partner",
           "description": "SUSE logosu, aralarında bir ayırıcı ile partner logosunun yanında yer alır — açık ya da koyu."
+        },
+        "uk": {
+          "name": "Компонування логотипів: партнер",
+          "description": "Логотип SUSE поруч із логотипом партнера, з розділювачем між ними — світлий або темний."
         },
         "ur": {
           "name": "لوگو لاک اپ: پارٹنر",
@@ -4199,6 +4469,10 @@
           "name": "Webikon-generator",
           "description": "Generator for favicon og app-ikoner — en .ico-fil med flere størrelser, pluss PNG og SVG."
         },
+        "pl": {
+          "name": "Web Icon Maker",
+          "description": "Generator favicon i ikon aplikacji — wielorozmiarowy plik .ico oraz PNG i SVG."
+        },
         "pt": {
           "name": "Criador de ícones para web",
           "description": "Criador de favicon e ícone de app — um .ico multi-tamanho, além de PNG e SVG."
@@ -4218,6 +4492,10 @@
         "tr": {
           "name": "Web İkonu Oluşturucu",
           "description": "Favicon ve uygulama ikonu oluşturucu — çoklu boyutlu bir .ico, artı PNG ve SVG."
+        },
+        "uk": {
+          "name": "Створення веб-іконок",
+          "description": "Створення фавіконок та іконок застосунків — багаторозмірний .ico, а також PNG і SVG."
         },
         "ur": {
           "name": "ویب آئیکون میکر",
@@ -4320,6 +4598,10 @@
           "name": "Layout Studio",
           "blurb": "Frie layouter på et åpent lerret"
         },
+        "pl": {
+          "name": "Layout Studio",
+          "blurb": "Swobodne układy na otwartym płótnie"
+        },
         "pt": {
           "name": "Estúdio de Layout",
           "blurb": "Layouts livres em uma tela aberta"
@@ -4339,6 +4621,10 @@
         "tr": {
           "name": "Düzen Stüdyosu",
           "blurb": "Açık bir kanvasta serbest biçimli düzenler"
+        },
+        "uk": {
+          "name": "Студія макетів",
+          "blurb": "Довільні макети на відкритому канвасі"
         },
         "ur": {
           "name": "لے آؤٹ اسٹوڈیو",
@@ -4440,6 +4726,10 @@
           "name": "Lottie-annonse",
           "description": "Lag animerte annonser fra lagdelte scener, hver med en Lottie-animasjon, i alle standardstørrelser."
         },
+        "pl": {
+          "name": "Reklama Lottie",
+          "description": "Twórz animowane reklamy z warstwowych scen, każda z zasobem animacji Lottie, w dowolnym standardowym rozmiarze."
+        },
         "pt": {
           "name": "Anúncio Lottie",
           "description": "Crie anúncios animados a partir de cenas em camadas, cada uma com uma animação Lottie, em qualquer tamanho padrão."
@@ -4459,6 +4749,10 @@
         "tr": {
           "name": "Lottie Reklamı",
           "description": "Her biri bir Lottie hareket varlığı taşıyan katmanlı sahnelerden, herhangi bir standart boyut için animasyonlu reklamlar oluştur."
+        },
+        "uk": {
+          "name": "Lottie-реклама",
+          "description": "Створюйте анімовану рекламу з шаруватих сцен, кожна з яких містить Lottie-анімацію, для будь-якого стандартного розміру."
         },
         "ur": {
           "name": "Lottie اشتہار",
@@ -4663,6 +4957,11 @@
           "description": "Posisjoner SUSE Geeko med glidebrytere — øyne, blunking og lemmer. Ingen animasjon, bare et stillbilde du kan finjustere og eksportere trykkeklart.",
           "blurb": "Poser SUSE Geeko — trykkeklare stillbilder"
         },
+        "pl": {
+          "name": "Pose Geeko",
+          "description": "Ustaw pozę SUSE Geeko za pomocą suwaków — oczy, mrugnięcie i kończyny. Bez animacji, tylko nieruchomy obraz, który dopracujesz i wyeksportujesz w jakości do druku.",
+          "blurb": "Ustaw pozę SUSE Geeko — nieruchome obrazy w jakości do druku"
+        },
         "pt": {
           "name": "Pose Geeko",
           "description": "Posicione o Geeko da SUSE com controles deslizantes — olhos, piscar e membros. Sem animação, apenas uma imagem estática que você ajusta e exporta pronta para impressão.",
@@ -4687,6 +4986,11 @@
           "name": "Pose Geeko",
           "description": "SUSE Geeko'ya kaydırıcılarla poz verdir — gözler, göz kırpma ve uzuvlar. Animasyon yok, sadece ayarlayabileceğin ve baskıya hazır dışa aktarabileceğin durağan bir görüntü.",
           "blurb": "SUSE Geeko'ya poz verdir — baskıya hazır durağan görüntüler"
+        },
+        "uk": {
+          "name": "Pose Geeko",
+          "description": "Позиціонуйте SUSE Geeko за допомогою слайдерів — очі, кліпання та кінцівки. Без анімації, лише статичне зображення, яке можна налаштувати та експортувати у якості для друку.",
+          "blurb": "Позиціонуйте SUSE Geeko — статичні зображення для друку"
         },
         "ur": {
           "name": "Pose Geeko",
@@ -4790,6 +5094,10 @@
           "name": "Stemmeopptaker",
           "description": "Ta opp en talemelding med en nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3."
         },
+        "pl": {
+          "name": "Nagrywanie głosu",
+          "description": "Nagraj notatkę głosową z licznikiem poziomu na żywo i delikatnymi wskazówkami, a następnie zapisz jako MP3."
+        },
         "pt": {
           "name": "Gravador de Voz",
           "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3."
@@ -4809,6 +5117,10 @@
         "tr": {
           "name": "Ses Kaydedici",
           "description": "Canlı seviye göstergesi ve yumuşak yönlendirmelerle bir ses notunu kayda al, ardından MP3 olarak kaydet."
+        },
+        "uk": {
+          "name": "Диктофон",
+          "description": "Запишіть голосову нотатку з індикатором рівня в реальному часі та м'якими підказками, потім збережіть як MP3."
         },
         "ur": {
           "name": "وائس ریکارڈر",
@@ -4913,6 +5225,10 @@
           "name": "Video med intro og outro",
           "description": "Ta opp et klipp i valgfri retning, så rammes det automatisk inn med merkevaretilpasset intro og outro, en buktekst og bakgrunnsmusikk."
         },
+        "pl": {
+          "name": "Wideo z klamrą",
+          "description": "Nagraj klip w każdej orientacji, a Lolly automatycznie owinie go markowym intro i outro, dolnym paskiem informacyjnym i podkładem muzycznym."
+        },
         "pt": {
           "name": "Vídeo com Intro e Outro",
           "description": "Grave um clipe em qualquer orientação e o vídeo é automaticamente emoldurado com intro e outro de marca, um rodapé e uma trilha sonora."
@@ -4932,6 +5248,10 @@
         "tr": {
           "name": "Baş & Son Video",
           "description": "Herhangi bir yönde bir klip kaydet, ardından markalı giriş ve çıkış ayraçları, bir alt bant ve bir müzik altyapısıyla otomatik olarak sarılsın."
+        },
+        "uk": {
+          "name": "Відео з обкладинкою (top & tail)",
+          "description": "Запишіть клип у будь-якій орієнтації, а система автоматично обгорне його брендованими вступом і завершенням, нижньою третиною і музичним фоном."
         },
         "ur": {
           "name": "ٹاپ اینڈ ٹیل ویڈیو",
@@ -5035,6 +5355,10 @@
           "name": "Filter: Voronoi-celler",
           "description": "Splitter et hvilket som helst bilde til en Voronoi-cellemosaikk — hver celle fylt med nærmeste farge, som flat vektor."
         },
+        "pl": {
+          "name": "Filtr: Komórki Voronoi",
+          "description": "Rozbij dowolne zdjęcie w mozaikę komórek Voronoi — każda komórka wypełniona najbliższym kolorem, jako płaski wektor."
+        },
         "pt": {
           "name": "Filtro: Células de Voronoi",
           "description": "Fragmente qualquer foto em um mosaico de células de Voronoi — cada célula preenchida com a cor mais próxima, em vetor plano."
@@ -5054,6 +5378,10 @@
         "tr": {
           "name": "Filtre: Voronoi Hücreleri",
           "description": "Herhangi bir fotoğrafı düz vektör olarak Voronoi hücre mozaiğine ayırır — her hücre en yakın renkle doldurulur."
+        },
+        "uk": {
+          "name": "Фільтр: Комірки Вороного",
+          "description": "Розбиває будь-яке фото на мозаїку комірок Вороного — кожна комірка заповнена найближчим кольором, як плоский вектор."
         },
         "ur": {
           "name": "فلٹر: Voronoi سیلز",
@@ -5158,6 +5486,10 @@
           "name": "Eksporter ressurs",
           "description": "Render en hvilken som helst ressurs fra katalogen — eller en Lolly-verktøylenke — til et vilkårlig format og størrelse."
         },
+        "pl": {
+          "name": "Eksport zasobu",
+          "description": "Wyrenderuj każdy zasób z katalogu — lub link do narzędzia Lolly — w każdym formacie i rozmiarze."
+        },
         "pt": {
           "name": "Exportar recurso",
           "description": "Renderize qualquer recurso do catálogo — ou um link de ferramenta Lolly — em qualquer formato e tamanho."
@@ -5177,6 +5509,10 @@
         "tr": {
           "name": "Varlık Dışa Aktarma",
           "description": "Herhangi bir katalog varlığını — ya da bir Lolly araç bağlantısını — istediğin format ve boyutta oluştur."
+        },
+        "uk": {
+          "name": "Експорт активу",
+          "description": "Рендерить будь-який актив з каталогу — або посилання на інструмент Lolly — у будь-якому форматі й розмірі."
         },
         "ur": {
           "name": "ایسٹ ایکسپورٹ",
@@ -5276,6 +5612,10 @@
           "name": "Dokumentstudio",
           "description": "Skriv et flersidig dokument på lerretet — formatert tekst, overskrifter, tabeller og innsatte Lolly-renderinger som flyter over sidene og eksporteres som PDF."
         },
+        "pl": {
+          "name": "Doc Studio",
+          "description": "Pisz wielostronicowy dokument na płótnie — tekst sformatowany, nagłówki, tabele i wstawione rendery Lolly, które rozkładają się na strony i eksportują jako PDF."
+        },
         "pt": {
           "name": "Estúdio de Documentos",
           "description": "Escreva um documento com várias páginas na tela — texto rico, títulos, tabelas e renderizações da Lolly inseridas que fluem pelas páginas e são exportadas como PDF."
@@ -5295,6 +5635,10 @@
         "tr": {
           "name": "Belge Stüdyosu",
           "description": "Kanvasta çok sayfalı bir belge yaz — sayfalara akıp PDF olarak dışa aktarılan zengin metin, başlıklar, tablolar ve eklenmiş Lolly render'ları."
+        },
+        "uk": {
+          "name": "Doc Studio",
+          "description": "Пишіть багатосторінковий документ на полотні — форматований текст, заголовки, таблиці та вставлені рендери Lolly, які розподіляються на сторінки та експортуються як PDF."
         },
         "ur": {
           "name": "دستاویز اسٹوڈیو",
@@ -5415,6 +5759,11 @@
           "description": "Design en karusell med flere sider på ett lerret — sett 1–6 like store sider, dra objekter inn på hver side, og eksporter en bildesekvens eller en flersidig PDF.",
           "blurb": "Sveipbare karuseller og flersidige layouter"
         },
+        "pl": {
+          "name": "Carousel Maker",
+          "description": "Zaprojektuj wielostronicową karuzelę na jednym płótnie — ustaw 1–6 stron tego samego rozmiaru, umieszczaj obiekty na każdej stronie, eksportuj sekwencję obrazów lub wielostronicowy plik PDF.",
+          "blurb": "Przewijane karuzele i wielostronicowe układy"
+        },
         "pt": {
           "name": "Criador de Carrossel",
           "description": "Crie um carrossel de várias páginas em uma única tela — defina de 1 a 6 páginas do mesmo tamanho, adicione objetos em cada página e exporte uma sequência de imagens ou um PDF com várias páginas.",
@@ -5439,6 +5788,11 @@
           "name": "Karusel Oluşturucu",
           "description": "Tek bir kanvasta çok sayfalı bir karusel tasarla — 1–6 arasında aynı boyutta sayfa ayarla, her sayfaya nesneler bırak, görüntü dizisi ya da çok sayfalı PDF olarak dışa aktar.",
           "blurb": "Kaydırmalı karuseller & çok sayfalı düzenler"
+        },
+        "uk": {
+          "name": "Карусель",
+          "description": "Створюйте багатосторінкову карусель на одному канвасі — задайте 1–6 сторінок однакового розміру, розмістіть об'єкти на кожній сторінці, експортуйте послідовність зображень або багатосторінковий PDF.",
+          "blurb": "Гортабельні каруселі та багатосторінкові макети"
         },
         "ur": {
           "name": "کیروسل میکر",
@@ -5561,6 +5915,11 @@
           "description": "Bygg flytskjemaer på en åpen flate — dra kort, koble dem sammen, og linjene trekkes automatisk og fester seg til boksene.",
           "blurb": "Kort og forbindelseslinjer som fester seg til boksene"
         },
+        "pl": {
+          "name": "Schemat blokowy",
+          "description": "Twórz schematy blokowe na otwartym płótnie — przeciągaj karty, łącz je, a linie same się prowadzą i przylegają do pól.",
+          "blurb": "Karty i łączniki przylegające do pól"
+        },
         "pt": {
           "name": "Fluxograma",
           "description": "Crie fluxogramas em uma tela aberta — arraste os cartões, conecte-os, e as linhas se traçam sozinhas e ficam presas às caixas.",
@@ -5585,6 +5944,11 @@
           "name": "Akış Şeması",
           "description": "Açık bir kanvasta akış şemaları oluştur — kartları sürükle, birbirine bağla; çizgiler otomatik yönlenir ve kutulara yapışık kalır.",
           "blurb": "Kutulara yapışan kartlar + bağlayıcılar"
+        },
+        "uk": {
+          "name": "Блок-схема",
+          "description": "Створюйте блок-схеми на відкритому полотні — перетягуйте картки, з'єднуйте їх, а лінії самі прокладаються та прилипають до блоків.",
+          "blurb": "Картки та з'єднувачі, що прилипають до блоків"
         },
         "ur": {
           "name": "فلو چارٹ",
@@ -5713,6 +6077,11 @@
           "description": "Kraftfulle datadrevne diagrammer med D3 — lim inn en tabell, så lager den diagrammet selv. Stolper, linjer, flater, punktdiagram, kakediagram, radar, tremap, varmekart og mer, merkevaretilpasset og vektorrent.",
           "blurb": "Lim inn en tabell — D3 lager diagrammet, merkevaretilpasset og vektorrent"
         },
+        "pl": {
+          "name": "D3 Chart Studio",
+          "description": "Zaawansowane wykresy oparte na danych, zasilane przez D3 — wklej tabelę, a wykres utworzy się sam. Słupkowe, liniowe, obszarowe, punktowe, kołowe, radarowe, mapy drzewa, mapy ciepła i więcej, w barwach marki i w czystej wektorowej jakości.",
+          "blurb": "Wklej tabelę — D3 utworzy wykres, w barwach marki i w czystej wektorowej jakości"
+        },
         "pt": {
           "name": "Estúdio de Gráficos D3",
           "description": "Gráficos potentes orientados a dados com D3 — cole uma tabela e o gráfico se monta sozinho. Barras, linhas, áreas, dispersão, pizza, radar, treemap, mapa de calor e muito mais, alinhados à marca e em vetor limpo.",
@@ -5737,6 +6106,11 @@
           "name": "D3 Grafik Stüdyosu",
           "description": "D3 ile güçlü, veriye dayalı grafikler — bir tablo yapıştır, kendiliğinden grafiğe dönüşsün. Çubuk, çizgi, alan, dağılım, pasta, radar, ağaç haritası, ısı haritası ve daha fazlası, markana uygun ve vektör netliğinde.",
           "blurb": "Bir tablo yapıştır — D3 onu grafiğe dönüştürsün, markana uygun ve vektör netliğinde"
+        },
+        "uk": {
+          "name": "Студія діаграм D3",
+          "description": "Потужні діаграми на основі даних із D3 — вставте таблицю, і вона побудує діаграму сама. Стовпчикові, лінійні, площинні, точкові, кругові, радарні, дерево-карти, теплові карти й інше — фірмові та чисто векторні.",
+          "blurb": "Вставте таблицю — D3 побудує діаграму, фірмово і чисто векторно"
         },
         "ur": {
           "name": "D3 چارٹ اسٹوڈیو",
@@ -5842,6 +6216,10 @@
           "name": "Opptak",
           "description": "Design dine egne intro- og outrokort, ta opp et klipp, og Lolly plasserer dem automatisk rundt det."
         },
+        "pl": {
+          "name": "Nagraj",
+          "description": "Zaprojektuj własne karty na początek i koniec, nagraj klip, a Lolly automatycznie owinie go nimi."
+        },
         "pt": {
           "name": "Gravação",
           "description": "Crie seus próprios cartões de abertura e encerramento, grave um clipe e o Lolly os posiciona automaticamente ao redor dele."
@@ -5861,6 +6239,10 @@
         "tr": {
           "name": "Kayıt",
           "description": "Kendi baş ve son kartlarını tasarla, ardından bir klip kaydet; Lolly bunları otomatik olarak klibin etrafına sarar."
+        },
+        "uk": {
+          "name": "Запис",
+          "description": "Створіть власні вступну та завершальну картки, а Lolly автоматично обгорне ними записаний вами клип."
         },
         "ur": {
           "name": "ریکارڈ",
@@ -5961,6 +6343,10 @@
           "name": "3D",
           "description": "Last en 3D-modell inn i en belyst scene, roter og posisjoner kameraet, og render et stillbilde eller en turntable-animasjon."
         },
+        "pl": {
+          "name": "3D",
+          "description": "Wczytaj model 3D do oświetlonej sceny, obróć i ustaw kamerę, a następnie wyrenderuj kadr lub animację obrotową."
+        },
         "pt": {
           "name": "3D",
           "description": "Carregue um modelo 3D em uma cena iluminada, gire e posicione a câmera, e renderize uma imagem estática ou uma animação giratória."
@@ -5980,6 +6366,10 @@
         "tr": {
           "name": "3D",
           "description": "Bir 3D modeli aydınlatılmış bir sahneye yükle, kamerayı döndürüp konumlandır, ardından durağan bir görüntü ya da döner bir animasyon oluştur."
+        },
+        "uk": {
+          "name": "3D",
+          "description": "Завантажте 3D-модель у освітлену сцену, обертайте й позиціонуйте камеру та створіть статичне зображення або анімацію-турнтейбл."
         },
         "ur": {
           "name": "3D",
@@ -6081,6 +6471,10 @@
           "name": "Mesh Gradient",
           "description": "Myke mesh-gradienter fra fargene i merkevaren din. Dra fargepunktene rett på lerretet."
         },
+        "pl": {
+          "name": "Gradient siatkowy",
+          "description": "Miękkie gradienty siatkowe z próbek kolorów Twojej marki. Przesuwaj punkty kolorów bezpośrednio na płótnie."
+        },
         "pt": {
           "name": "Gradiente em Malha",
           "description": "Gradientes suaves em estilo malha a partir das amostras da sua marca. Arraste os pontos de cor diretamente na tela."
@@ -6100,6 +6494,10 @@
         "tr": {
           "name": "Mesh Gradyan",
           "description": "Marka renklerinden yumuşak, mesh tarzı gradyanlar. Renk noktalarını doğrudan kanvas üzerinde sürükle."
+        },
+        "uk": {
+          "name": "Сітковий градієнт",
+          "description": "М'які градієнти у стилі сітки з ваших брендових зразків. Перетягуйте точки кольору прямо на полотні."
         },
         "ur": {
           "name": "میش گریڈینٹ",

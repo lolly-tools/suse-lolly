@@ -223,5 +223,6 @@
   "inputs.arrowWidth.section": "Pijlen",
   "inputs.arrowHeadSize.label": "Grootte pijlpunt",
   "inputs.arrowHeadSize.section": "Pijlen",
-  "featured.blurb": "Verander kaarten of tekst in diagrammen in jouw huisstijl"
+  "featured.blurb": "Verander kaarten of tekst in diagrammen in jouw huisstijl",
+  "inputs.arrows.fields.head.options.": "Standaard"
 }

@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "তীরের প্রস্থ",
   "inputs.arrowWidth.section": "তীর",
   "inputs.arrowHeadSize.label": "তীরের মাথার আকার",
-  "inputs.arrowHeadSize.section": "তীর"
+  "inputs.arrowHeadSize.section": "তীর",
+  "inputs.arrows.fields.head.options.": "ডিফল্ট"
 }

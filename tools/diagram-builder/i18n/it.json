@@ -3,7 +3,6 @@
   "description": "Organigrammi, diagrammi di flusso, timeline e altro — da schede, testo, Mermaid o CSV.",
   "featured.blurb": "Trasforma schede o testo in diagrammi in linea con il brand",
   "a11yLabel": "{{default title \"Untitled\"}} — diagramma {{diagramType}}",
-
   "inputs.preset.label": "Preset",
   "inputs.preset.help": "Un punto di partenza pronto in un clic che imposta tipo, tema e spaziatura. Scegline uno, poi perfeziona quello che vuoi — le modifiche che farai dopo vengono mantenute.",
   "inputs.preset.options.custom": "Personalizzato",
@@ -12,7 +11,6 @@
   "inputs.preset.options.process-lr": "Processo — da sinistra a destra",
   "inputs.preset.options.blueprint": "Blueprint",
   "inputs.preset.options.mono": "Mono minimale",
-
   "inputs.diagramType.label": "Tipo di diagramma",
   "inputs.diagramType.help": "Organigramma/Mappa mentale costruiscono un albero in base al genitore di ogni scheda. A strati/Kanban raggruppano le schede in base al loro ID “Gruppo” (bande impilate anziché colonne affiancate). Processo/Timeline/Ciclo dispongono le schede lungo il flusso o l'ordine. Piramide, Matrice e Gantt hanno i propri controlli più sotto.",
   "inputs.diagramType.options.org": "Organigramma (gerarchia)",
@@ -25,7 +23,6 @@
   "inputs.diagramType.options.pyramid": "Piramide / imbuto",
   "inputs.diagramType.options.matrix": "Matrice (quadrante 2×2)",
   "inputs.diagramType.options.gantt": "Gantt / roadmap",
-
   "inputs.source.label": "Crea da",
   "inputs.source.help": "Editor visivo modifica le schede come righe di un modulo. Testo genera una descrizione scritta. Arte ASCII ricalca i riquadri che disegni. Mermaid incolla un sottoinsieme di graph TD/LR. Tabella legge un CSV incollato.",
   "inputs.source.options.visual": "Editor visivo",
@@ -33,7 +30,6 @@
   "inputs.source.options.ascii": "Arte ASCII (disegnala)",
   "inputs.source.options.mermaid": "Mermaid (incollalo)",
   "inputs.source.options.table": "Tabella / CSV (incollala)",
-
   "inputs.theme.label": "Tema",
   "inputs.theme.section": "Stile",
   "inputs.theme.help": "Imposta i colori qui sotto. Scegline uno, poi sovrascrivi ogni singolo colore.",
@@ -43,50 +39,38 @@
   "inputs.theme.options.blueprint": "Blueprint",
   "inputs.theme.options.mono": "Mono",
   "inputs.theme.options.mint": "Menta",
-
   "inputs.cardLayout.label": "Layout scheda",
   "inputs.cardLayout.section": "Stile",
   "inputs.cardLayout.help": "Come ogni scheda dispone immagine e testo. Affiancati mette l'immagine a sinistra con il testo allineato a sinistra — una scheda senza immagine occupa tutta la larghezza. Immagine sopra impila un'immagine centrata sopra un testo centrato.",
   "inputs.cardLayout.options.row": "Affiancati (immagine a sinistra)",
   "inputs.cardLayout.options.stacked": "Immagine sopra",
-
   "inputs.nodeFill.label": "Riempimento scheda",
   "inputs.nodeFill.section": "Stile",
-
   "inputs.nodeStroke.label": "Bordo scheda",
   "inputs.nodeStroke.section": "Stile",
-
   "inputs.cardBorderWidth.label": "Spessore bordo scheda",
   "inputs.cardBorderWidth.section": "Stile",
   "inputs.cardBorderWidth.help": "0 = schede senza bordo.",
-
   "inputs.nodeText.label": "Testo scheda",
   "inputs.nodeText.section": "Stile",
-
   "inputs.labelSize.label": "Dimensione etichetta",
   "inputs.labelSize.section": "Stile",
-
   "inputs.labelWeight.label": "Peso etichetta",
   "inputs.labelWeight.section": "Stile",
   "inputs.labelWeight.help": "Peso del carattere delle etichette delle schede (100 Sottile → 900 Nero).",
-
   "inputs.edgeColor.label": "Connettori",
   "inputs.edgeColor.section": "Stile",
   "inputs.edgeColor.help": "Colore dei connettori / delle spine automatici.",
-
   "inputs.connectorWidth.label": "Spessore connettore",
   "inputs.connectorWidth.section": "Stile",
-
   "inputs.background.label": "Sfondo",
   "inputs.background.section": "Stile",
   "inputs.background.help": "Scegli Trasparente per uno sfondo ritagliato.",
-
   "inputs.gridBg.label": "Motivo di sfondo",
   "inputs.gridBg.section": "Stile",
   "inputs.gridBg.options.none": "Nessuno",
   "inputs.gridBg.options.dots": "Puntini",
   "inputs.gridBg.options.grid": "Griglia",
-
   "inputs.density.label": "Densità",
   "inputs.density.section": "Layout",
   "inputs.density.help": "Imposta la spaziatura e la scala delle schede qui sotto. Scegline una, poi regola gli slider.",
@@ -95,96 +79,69 @@
   "inputs.density.options.cozy": "Comoda",
   "inputs.density.options.comfortable": "Confortevole",
   "inputs.density.options.spacious": "Spaziosa",
-
   "inputs.cardWidth.label": "Larghezza scheda",
   "inputs.cardWidth.section": "Layout",
-
   "inputs.cardScale.label": "Scala scheda",
   "inputs.cardScale.section": "Layout",
   "inputs.cardScale.help": "Scala insieme dimensione, padding e testo della scheda.",
-
   "inputs.rowGap.label": "Spazio riga / livello",
   "inputs.rowGap.section": "Layout",
   "inputs.rowGap.help": "Spaziatura lungo il flusso (livelli, ranghi, bande).",
-
   "inputs.siblingGap.label": "Spazio tra elementi dello stesso livello",
   "inputs.siblingGap.section": "Layout",
   "inputs.siblingGap.help": "Spaziatura tra elementi vicini all'interno dello stesso livello.",
-
   "inputs.cornerRadius.label": "Raggio angoli",
   "inputs.cornerRadius.section": "Layout",
   "inputs.cornerRadius.help": "Arrotondamento delle schede “Arrotondata” (Box e Pillola mantengono la propria forma).",
-
   "inputs.canvasPadding.label": "Margine canvas",
   "inputs.canvasPadding.section": "Layout",
   "inputs.canvasPadding.help": "Spazio vuoto intorno al diagramma.",
-
   "inputs.title.label": "Titolo",
   "inputs.title.placeholder": "Intestazione facoltativa mostrata sopra il diagramma",
-
   "inputs.orgDir.label": "Direzione",
   "inputs.orgDir.help": "Disponi l'albero dall'alto verso il basso, oppure da sinistra a destra per gerarchie profonde.",
   "inputs.orgDir.options.down": "Dall'alto verso il basso",
   "inputs.orgDir.options.right": "Da sinistra a destra",
-
   "inputs.mindmapStyle.label": "Layout dei rami",
   "inputs.mindmapStyle.options.balanced": "Bilanciato (entrambi i lati)",
   "inputs.mindmapStyle.options.right": "Solo a destra",
-
   "inputs.branchColors.label": "Colora per ramo",
   "inputs.branchColors.help": "Colora ogni ramo di primo livello con un colore della palette.",
-
   "inputs.flowDir.label": "Direzione del flusso",
   "inputs.flowDir.help": "In che direzione scorre un processo tra i passaggi.",
   "inputs.flowDir.options.down": "Dall'alto verso il basso",
   "inputs.flowDir.options.right": "Da sinistra a destra",
-
   "inputs.timelineDir.label": "Direzione",
   "inputs.timelineDir.options.right": "Da sinistra a destra",
   "inputs.timelineDir.options.down": "Dall'alto verso il basso",
-
   "inputs.cycleArrows.label": "Mostra frecce del loop",
-
   "inputs.cycleCurved.label": "Frecce curve",
   "inputs.cycleCurved.help": "Inarca le frecce dell'anello verso l'esterno invece di corde dritte.",
-
   "inputs.pyramidStyle.label": "Stile",
   "inputs.pyramidStyle.help": "Le schede sono elencate dall'alto verso il basso. Piramide si allarga verso il basso, imbuto si restringe, invertita si allarga verso l'alto.",
   "inputs.pyramidStyle.options.pyramid": "Piramide (base larga)",
   "inputs.pyramidStyle.options.funnel": "Imbuto (che si restringe)",
   "inputs.pyramidStyle.options.inverted": "Piramide invertita",
-
   "inputs.kanbanCount.label": "Mostra conteggio schede",
-
   "inputs.matrixXHigh.label": "Asse X — alto",
   "inputs.matrixXHigh.placeholder": "es. Impatto alto",
-
   "inputs.matrixXLow.label": "Asse X — basso",
   "inputs.matrixXLow.placeholder": "es. Impatto basso",
-
   "inputs.matrixYHigh.label": "Asse Y — alto",
   "inputs.matrixYHigh.placeholder": "es. Sforzo alto",
-
   "inputs.matrixYLow.label": "Asse Y — basso",
   "inputs.matrixYLow.placeholder": "es. Sforzo basso",
-
   "inputs.ganttGrid.label": "Mostra griglia temporale",
-
   "inputs.ganttUnit.label": "Etichetta unità di tempo",
   "inputs.ganttUnit.placeholder": "es. sett.",
-
   "inputs.dsl.label": "Testo del diagramma",
   "inputs.dsl.help": "Organigramma/Mappa mentale: usa il rientro per la gerarchia. A strati/Kanban: intestazioni “# Gruppo” con le schede sotto. Processo/Gantt: “A -> B” (Gantt aggiunge “ : 0..3”). Timeline/Ciclo/Piramide: un elemento per riga, in ordine. Matrice: sezioni “# top-right” oppure “Elemento @ (0.8,0.3)”. In comune: “:: sottotitolo”, riempimento “#hex”, forma “(Arrotondata)”/“[Box]”/“([Pillola])”, immagine “@ https://…/logo.png”, stili di linea --> -.-> ==> <->, “// commento”.",
-
   "inputs.asciiArt.label": "Arte ASCII",
   "inputs.asciiArt.help": "Disegna riquadri con + - | e collegali con - | e punte di freccia > < ^ v. Mantieni i lati | di ogni riquadro allineati con i suoi bordi +---+. La prima riga dentro un riquadro è il titolo, il resto è il sottotitolo, e una riga “@ https://…/logo.png” aggiunge un'immagine. Il tuo layout viene mantenuto — lo renderizziamo semplicemente come schede pulite.",
-
   "inputs.mermaid.label": "Mermaid",
   "inputs.mermaid.help": "Incolla un sottoinsieme di flowchart Mermaid. “graph TD/LR” imposta la direzione; A[Box], A(Arrotondata), A([Pillola]), A{Diamante} definiscono i nodi; A-->B, A---B, A-.->B, A==>B, A-->|etichetta|B sono collegamenti; subgraph Nome … end diventa bande di livello. Le righe non supportate (classDef, click, style…) vengono ignorate, mai eseguite.",
-
   "inputs.table.label": "Tabella / CSV",
   "inputs.table.help": "Incolla righe separate da virgole o tabulazioni. Organigramma/Mappa mentale: id,label,detail,parent. Processo: from,to,label (un elenco di collegamenti — gli ID vengono creati automaticamente). Timeline/Ciclo/Piramide: label,detail. Una riga di intestazione (id/label/from/…) viene rilevata e saltata automaticamente.",
-
   "inputs.nodes.label": "Schede",
   "inputs.nodes.help": "Una scheda per riga. In organigramma / mappa mentale, trascina una scheda sopra un'altra per annidarla — rilasciala sopra o sotto per renderla un pari livello, oppure al centro per renderla figlia. Altrove, trascina per riordinare (l'ordine imposta l'ordine tra pari livello, l'ordine di livello/colonna e la sequenza per timeline/ciclo/piramide/gantt). L'ID è un identificativo breve facoltativo.",
   "inputs.nodes.addMenu.label": "Aggiungi scheda",
@@ -216,7 +173,6 @@
   "inputs.nodes.fields.ganttStart.help": "Inizio della barra sull'asse del tempo.",
   "inputs.nodes.fields.ganttLen.label": "Durata",
   "inputs.nodes.fields.ganttLen.help": "Durata della barra nella stessa unità di misura.",
-
   "inputs.layers.label": "Livelli / colonne (in ordine)",
   "inputs.layers.help": "Ogni banda della struttura a strati, impilata in questo ordine. Le schede fanno riferimento a una banda tramite il suo ID. (Le colonne Kanban vengono create automaticamente dall'ID Gruppo di ogni scheda.)",
   "inputs.layers.addMenu.label": "Aggiungi livello",
@@ -227,7 +183,6 @@
   "inputs.layers.fields.label.label": "Etichetta",
   "inputs.layers.fields.label.placeholder": "es. Esperienza",
   "inputs.layers.fields.bandFill.label": "Colore banda",
-
   "inputs.arrows.label": "Frecce di flusso",
   "inputs.arrows.help": "In processo/gantt queste frecce SONO il flusso / le dipendenze. Altrove (organigramma/a strati/ecc.) sono frecce aggiuntive sopra i connettori automatici. Scegli tra quali schede (o livelli) va ogni freccia.",
   "inputs.arrows.fields.from.label": "Da",
@@ -249,14 +204,12 @@
   "inputs.arrows.fields.width.label": "Spessore",
   "inputs.arrows.fields.width.help": "0 = usa lo spessore globale della freccia.",
   "inputs.arrows.fields.color.label": "Colore",
-
   "inputs.arrowStyle.label": "Linea freccia",
   "inputs.arrowStyle.section": "Frecce",
   "inputs.arrowStyle.help": "Stile di linea predefinito per le frecce che non impostano il proprio.",
   "inputs.arrowStyle.options.solid": "Continua",
   "inputs.arrowStyle.options.dashed": "Tratteggiata",
   "inputs.arrowStyle.options.dotted": "Punteggiata",
-
   "inputs.arrowHead.label": "Punta della freccia",
   "inputs.arrowHead.section": "Frecce",
   "inputs.arrowHead.help": "Punta di freccia predefinita per le frecce che non impostano la propria.",
@@ -267,10 +220,9 @@
   "inputs.arrowHead.options.bar": "Barra",
   "inputs.arrowHead.options.double": "Doppia punta",
   "inputs.arrowHead.options.none": "Nessuna",
-
   "inputs.arrowWidth.label": "Spessore freccia",
   "inputs.arrowWidth.section": "Frecce",
-
   "inputs.arrowHeadSize.label": "Dimensione punta freccia",
-  "inputs.arrowHeadSize.section": "Frecce"
+  "inputs.arrowHeadSize.section": "Frecce",
+  "inputs.arrows.fields.head.options.": "Predefinito"
 }

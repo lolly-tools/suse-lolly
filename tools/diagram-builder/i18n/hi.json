@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "तीर की चौड़ाई",
   "inputs.arrowWidth.section": "तीर",
   "inputs.arrowHeadSize.label": "तीर की नोक का आकार",
-  "inputs.arrowHeadSize.section": "तीर"
+  "inputs.arrowHeadSize.section": "तीर",
+  "inputs.arrows.fields.head.options.": "डिफ़ॉल्ट"
 }

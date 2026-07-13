@@ -1,0 +1,14 @@
+{
+  "name": "Podsumowanie dnia",
+  "description": "Cytat dnia z aktualną pogodą, czasem i mapą dla każdego miasta.",
+  "inputs.city.label": "Miasto",
+  "inputs.city.help": "Opcjonalne. Nazwa miasta, kod lotniska (LAX, LHR) lub skrót (LA, NYC, SF…)",
+  "inputs.theme.label": "Motyw",
+  "inputs.theme.options.dark": "Ciemny",
+  "inputs.theme.options.light": "Jasny",
+  "inputs.theme.options.green": "SUSE Green",
+  "inputs.quoteWeight.label": "Waga cytatu",
+  "inputs.quoteWeight.help": "Waga czcionki tekstu cytatu (100 Thin → 900 Black).",
+  "inputs.ambientMotion.label": "Ruch w tle",
+  "inputs.ambientMotion.help": "Bardzo wolno dryfujący blask za kartą, na ekranie. Wyłączenie zachowuje czysty wygląd eksportu."
+}

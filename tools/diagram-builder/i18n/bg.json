@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "Дебелина на стрелките",
   "inputs.arrowWidth.section": "Стрелки",
   "inputs.arrowHeadSize.label": "Размер на върха",
-  "inputs.arrowHeadSize.section": "Стрелки"
+  "inputs.arrowHeadSize.section": "Стрелки",
+  "inputs.arrows.fields.head.options.": "По подразбиране"
 }

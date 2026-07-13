@@ -223,5 +223,6 @@
   "inputs.arrowWidth.section": "Mũi tên",
   "inputs.arrowHeadSize.label": "Cỡ đầu mũi tên",
   "inputs.arrowHeadSize.section": "Mũi tên",
-  "featured.blurb": "Biến thẻ hoặc văn bản thành sơ đồ đúng thương hiệu"
+  "featured.blurb": "Biến thẻ hoặc văn bản thành sơ đồ đúng thương hiệu",
+  "inputs.arrows.fields.head.options.": "Mặc định"
 }

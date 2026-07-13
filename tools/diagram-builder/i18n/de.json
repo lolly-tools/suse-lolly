@@ -223,5 +223,6 @@
   "inputs.arrowWidth.section": "Pfeile",
   "inputs.arrowHeadSize.label": "Pfeilspitzengröße",
   "inputs.arrowHeadSize.section": "Pfeile",
-  "featured.blurb": "Verwandeln Sie Karten oder Text in markenkonforme Diagramme"
+  "featured.blurb": "Verwandeln Sie Karten oder Text in markenkonforme Diagramme",
+  "inputs.arrows.fields.head.options.": "Standard"
 }

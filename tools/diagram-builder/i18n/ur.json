@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "تیر کی چوڑائی",
   "inputs.arrowWidth.section": "تیر",
   "inputs.arrowHeadSize.label": "تیر کے سرے کا سائز",
-  "inputs.arrowHeadSize.section": "تیر"
+  "inputs.arrowHeadSize.section": "تیر",
+  "inputs.arrows.fields.head.options.": "ڈیفالٹ"
 }
