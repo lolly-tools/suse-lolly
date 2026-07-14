@@ -217,9 +217,13 @@
 
     if (!img) { drawPlaceholder(ctx, s, p); return c; }
 
+    // Fit is per-panel (the sidebar's icon-toggle on each image slot), so read it
+    // off the slot rather than a global.
+    var slot = cfg.panels[p.role];
+    var fit = (slot && slot.fit) || 'cover';
     var iw = img.naturalWidth || img.width || 1;
     var ih = img.naturalHeight || img.height || 1;
-    if (cfg.fit === 'contain') {
+    if (fit === 'contain') {
       var pad = (cfg.padding / 100) * Math.min(s.w, s.h);
       var aw = Math.max(1, s.w - pad * 2), ah = Math.max(1, s.h - pad * 2);
       var k = Math.min(aw / iw, ah / ih);

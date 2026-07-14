@@ -26,11 +26,15 @@ function num(v, fallback) {
 // (resolveAssetRefs) as a full AssetRef object — so read `.url` off it. Anything
 // else (unset, or a bare id the runtime could not resolve) means "empty panel",
 // which the renderer draws as a labelled placeholder rather than failing.
-function panelFrom(v) {
+function panelFrom(v, fit) {
   if (!v || typeof v !== 'object' || !v.url) return null;
   var meta = (v.meta && typeof v.meta === 'object') ? v.meta : {};
   return {
     url: v.url,
+    // Per-panel, from the role's `<id>Fit` companion input (the sidebar's
+    // icon-toggle). A wordmark on the fascia and a photo on the back wall want
+    // opposite answers, so one global fit was never right.
+    fit: fit === 'contain' ? 'contain' : 'cover',
     name: typeof meta.name === 'string' ? meta.name : '',
     width: num(v.width, 0),
     height: num(v.height, 0),
@@ -42,7 +46,7 @@ function compute(model) {
   for (var i = 0; i < model.length; i++) inp[model[i].id] = model[i].value;
 
   var panels = {};
-  for (var r = 0; r < ROLES.length; r++) panels[ROLES[r]] = panelFrom(inp[ROLES[r]]);
+  for (var r = 0; r < ROLES.length; r++) panels[ROLES[r]] = panelFrom(inp[ROLES[r]], inp[ROLES[r] + 'Fit']);
 
   var cam = (inp.camera && typeof inp.camera === 'object') ? inp.camera : {};
 
@@ -51,8 +55,7 @@ function compute(model) {
     structure: inp.structure || '#1c1f26',
     panelBase: inp.panelBase || '#30ba78',
     panels: panels,
-    fit: inp.fit === 'contain' ? 'contain' : 'cover',
-    padding: Math.max(0, Math.min(25, num(inp.padding, 0))),
+    padding: Math.max(0, Math.min(25, num(inp.padding, 6))),
 
     scene: inp.scene || 'expo',
     background: inp.background || '#0f1115',
