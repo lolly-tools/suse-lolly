@@ -196,6 +196,36 @@
     return p;
   }
 
+  // Background video. Cached on `window` like the images, and for a stronger
+  // reason: the template re-runs on EVERY paint, so a per-paint <video> would
+  // restart playback on every slider nudge. The element is deliberately detached
+  // (never in the DOM) — it exists only as a frame source to draw from.
+  var vidCache = window.__lollyBoothVids = window.__lollyBoothVids || {};
+  function loadVideo(url) {
+    if (vidCache[url]) return vidCache[url];
+    var p = new Promise(function (res, rej) {
+      var v = document.createElement('video');
+      v.crossOrigin = 'anonymous';
+      v.muted = true;          // required for autoplay
+      v.loop = true;
+      v.playsInline = true;
+      v.preload = 'auto';
+      v.onloadeddata = function () { res(v); };
+      v.onerror = function () { rej(new Error('video load failed: ' + url)); };
+      v.src = url;
+    });
+    p.catch(function () { delete vidCache[url]; });
+    vidCache[url] = p;
+    return p;
+  }
+
+  function loadMedia(slot) {
+    return slot.kind === 'video' ? loadVideo(slot.url) : loadImage(slot.url);
+  }
+  function mediaSize(m) {
+    return { w: m.naturalWidth || m.videoWidth || m.width || 1, h: m.naturalHeight || m.videoHeight || m.height || 1 };
+  }
+
   // Texture pixels for a panel of a given aspect, capped so a wall and a fascia
   // both stay sharp without allocating 1024² for a thin strip.
   function texSize(w, h) {
@@ -262,13 +292,60 @@
     return t;
   }
 
-  function gradientTexture(THREE, top, bottom) {
-    var c = document.createElement('canvas'); c.width = 4; c.height = 256;
+  // The backdrop, composited on a 2D canvas: colour/gradient base, then the
+  // background content blurred + blended over it. Doing it in 2D (rather than as
+  // a textured quad in the scene) is what makes blend modes and a real blur free —
+  // globalCompositeOperation and ctx.filter do both natively, and the result maps
+  // 1:1 onto scene.background because it's authored at the render aspect.
+  //
+  // BG_W is well under the render width on purpose: this is a backdrop, usually
+  // blurred, and it is re-composited EVERY FRAME when the source is a video —
+  // so full-resolution blur per frame would be paid for nothing visible.
+  var BG_W = 1280;
+  function backgroundCanvas(cfg, media, aspect) {
+    var w = BG_W, h = Math.max(1, Math.round(BG_W / aspect));
+    var c = document.createElement('canvas'); c.width = w; c.height = h;
     var ctx = c.getContext('2d');
-    var g = ctx.createLinearGradient(0, 0, 0, 256);
-    g.addColorStop(0, top); g.addColorStop(1, bottom);
-    ctx.fillStyle = g; ctx.fillRect(0, 0, 4, 256);
-    return texFromCanvas(THREE, c);
+
+    if (cfg.gradientBg) {
+      var g = ctx.createLinearGradient(0, 0, 0, h);
+      g.addColorStop(0, cfg.bgColor2); g.addColorStop(1, cfg.background);
+      ctx.fillStyle = g;
+    } else {
+      ctx.fillStyle = cfg.background;
+    }
+    ctx.fillRect(0, 0, w, h);
+
+    if (media && cfg.bgOpacity > 0) {
+      // Blur is authored against the 1600-wide render, so scale it to this canvas
+      // — otherwise the slider would mean different amounts at different BG_W.
+      var blur = cfg.bgBlur * (w / 1600);
+      // Overscan by the blur radius. A blur samples beyond the source edges, so an
+      // image drawn exactly to the canvas edge fades to transparent at the border
+      // and the base colour shows through as a bright halo — very visible under a
+      // blend mode. Growing the draw rect pushes that fade off-canvas.
+      var over = blur * 3;
+      ctx.save();
+      if (blur > 0.01) ctx.filter = 'blur(' + blur.toFixed(2) + 'px)';
+      ctx.globalAlpha = cfg.bgOpacity;
+      ctx.globalCompositeOperation = cfg.bgBlend;
+      drawMedia(ctx, media, w, h, cfg.bgFit, cfg.bgPosition, over);
+      ctx.restore();
+    }
+    return c;
+  }
+
+  // Fit `media` into a w×h box (grown by `over` on every side), cover or contain,
+  // anchored by pos {x,y} in percent — the same idea as CSS object-fit +
+  // object-position, which is what the two fit icons in the sidebar promise.
+  function drawMedia(ctx, media, w, h, fit, pos, over) {
+    var s = mediaSize(media);
+    var tw = w + over * 2, th = h + over * 2;
+    var k = fit === 'contain' ? Math.min(tw / s.w, th / s.h) : Math.max(tw / s.w, th / s.h);
+    var dw = s.w * k, dh = s.h * k;
+    // For cover, (tw-dw) is negative — the overflow — so x=0 pins the left edge and
+    // x=100 the right. For contain it's positive and slides within the letterbox.
+    ctx.drawImage(media, -over + (tw - dw) * (pos.x / 100), -over + (th - dh) * (pos.y / 100), dw, dh);
   }
 
   // A person silhouette, drawn once and billboarded — it sells the scale of the
@@ -302,6 +379,9 @@
     // `disposed`, and addPeople() populates `people` before the render loop is
     // set up — `var` hoisting would otherwise make these undefined at use.
     var raf = 0, disposed = false, hovered = null, people = [];
+    // Backdrop state. bgVideo is set only for a moving background, and is the flag
+    // the render loop uses to decide whether to re-composite per frame.
+    var bgTex = null, bgCanvas = null, bgVideo = null;
 
     // preserveDrawingBuffer:true is LOAD-BEARING: the export path reads the canvas
     // via toDataURL() after the frame composites, so without it every raster/video
@@ -325,6 +405,20 @@
     scene.environment = envTex;
 
     applyScene(THREE, scene, renderer);
+
+    // The backdrop. Installed synchronously with whatever we have (colour/gradient
+    // only), then upgraded once the content decodes — so the stand is never held
+    // behind a background download, and a failed one degrades to the plain sweep
+    // rather than to nothing.
+    function paintBackdrop(media) {
+      if (cfg.transparentBg) return;
+      bgCanvas = backgroundCanvas(cfg, media || null, W / H);
+      var t = texFromCanvas(THREE, bgCanvas);
+      if (bgTex) bgTex.dispose();
+      bgTex = t;
+      scene.background = t;
+    }
+    paintBackdrop(null);
 
     var booth = new THREE.Group();
     scene.add(booth);
@@ -381,6 +475,21 @@
         }).catch(function (e) { console.warn('[booth-studio] panel ' + p.role + ':', e && e.message); }));
       }
     });
+
+    if (cfg.bg && !cfg.transparentBg) {
+      pending.push(loadMedia(cfg.bg).then(function (m) {
+        if (!alive() || disposed) return;
+        if (cfg.bg.kind === 'video') {
+          bgVideo = m;
+          // Autoplay can be refused (no gesture / power saving). The frame that IS
+          // decoded still composites, so a refused play degrades to a still frame
+          // rather than a blank backdrop.
+          var go = m.play();
+          if (go && go.catch) go.catch(function () {});
+        }
+        paintBackdrop(m);
+      }).catch(function (e) { console.warn('[booth-studio] background:', e && e.message); }));
+    }
 
     // Frame the stand from its real bounds, so every design (and any panel sizes
     // we add later) composes itself without hand-tuned per-design camera numbers.
@@ -489,7 +598,35 @@
       return { azi: azi, elev: elev, zoom: Math.max(0.1, zoom), pan: pan, fov: fov };
     }
 
+    // Re-draw a moving backdrop into the SAME canvas the texture already wraps —
+    // needsUpdate re-uploads it, so a video costs one texture, not one per frame.
+    function refreshBackdrop() {
+      if (!bgVideo || !bgCanvas || !bgTex || cfg.transparentBg) return;
+      if (bgVideo.readyState < 2) return;                 // nothing decoded yet
+      var ctx = bgCanvas.getContext('2d');
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
+      var w = bgCanvas.width, h = bgCanvas.height;
+      if (cfg.gradientBg) {
+        var g = ctx.createLinearGradient(0, 0, 0, h);
+        g.addColorStop(0, cfg.bgColor2); g.addColorStop(1, cfg.background);
+        ctx.fillStyle = g;
+      } else { ctx.fillStyle = cfg.background; }
+      ctx.fillRect(0, 0, w, h);
+      if (cfg.bgOpacity > 0) {
+        var blur = cfg.bgBlur * (w / 1600);
+        ctx.save();
+        if (blur > 0.01) ctx.filter = 'blur(' + blur.toFixed(2) + 'px)';
+        ctx.globalAlpha = cfg.bgOpacity;
+        ctx.globalCompositeOperation = cfg.bgBlend;
+        drawMedia(ctx, bgVideo, w, h, cfg.bgFit, cfg.bgPosition, blur * 3);
+        ctx.restore();
+      }
+      bgTex.needsUpdate = true;
+    }
+
     function renderFrame(t) {
+      refreshBackdrop();
       var q = poseAt(t);
       var target = new THREE.Vector3(frame.center.x + q.pan * frame.size * 0.5, frame.center.y, frame.center.z);
       var dist = frame.fitDist / q.zoom;
@@ -634,6 +771,11 @@
         canvas.removeEventListener('pointermove', onMove);
         canvas.removeEventListener('pointerleave', onLeave);
         canvas.removeEventListener('click', onClick);
+        // The element stays in vidCache (that's what keeps playback continuous
+        // across paints) but MUST stop decoding — otherwise navigating away from
+        // the tool leaves a video running for the rest of the session.
+        if (bgVideo) { try { bgVideo.pause(); } catch (e) {} bgVideo = null; }
+        if (bgTex) { try { bgTex.dispose(); } catch (e) {} bgTex = null; }
         disposables.forEach(function (d) { try { d.dispose(); } catch (e) {} });
         try { pmrem.dispose(); } catch (e) {}
         try { renderer.dispose(); } catch (e) {}
@@ -644,13 +786,10 @@
 
   // ---- hall lighting presets -----------------------------------------------
   function applyScene(THREE, scene, renderer) {
-    if (cfg.transparentBg) {
-      scene.background = null; renderer.setClearColor(0x000000, 0);
-    } else if (cfg.gradientBg) {
-      scene.background = gradientTexture(THREE, cfg.bgColor2, cfg.background);
-    } else {
-      scene.background = new THREE.Color(cfg.background);
-    }
+    // Transparency wins over everything: the point is to hand back an alpha PNG,
+    // so a backdrop colour/gradient/photo would defeat it.
+    if (cfg.transparentBg) { scene.background = null; renderer.setClearColor(0x000000, 0); }
+    // else: the caller installs the composited backdrop (it may need to await media).
 
     function dir(color, intensity, x, y, z, shadow) {
       var l = new THREE.DirectionalLight(color, intensity);

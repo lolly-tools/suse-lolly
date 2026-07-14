@@ -423,6 +423,166 @@
       "help": "Breathing room around any panel set to Fit whole, as a percent of the panel's short edge."
     },
     {
+      "id": "bgImage",
+      "label": "Background content",
+      "section": "Background",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "help": "An image, a video, or a Lolly tool link (paste one in the picker) behind the stand — a hall photo, a stage shot, a keynote loop. Blend and blur it below so it sets a scene without competing with the artwork."
+    },
+    {
+      "id": "bgImageFit",
+      "label": "Background fit",
+      "section": "Background",
+      "type": "select",
+      "default": "cover",
+      "attachTo": "bgImage",
+      "display": "icon-toggle",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Fill frame (crop)",
+          "icon": "fitCover"
+        },
+        {
+          "value": "contain",
+          "label": "Fit whole (letterbox)",
+          "icon": "fitContain"
+        }
+      ]
+    },
+    {
+      "id": "bgBlur",
+      "label": "Bokeh blur",
+      "section": "Background",
+      "type": "number",
+      "display": "slider",
+      "default": 12,
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "help": "Throws the background out of focus, like a long lens would. Defaults on: a sharp background fights the stand for attention."
+    },
+    {
+      "id": "bgOpacity",
+      "label": "Opacity",
+      "section": "Background",
+      "type": "number",
+      "display": "slider",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "step": 0.01
+    },
+    {
+      "id": "bgBlend",
+      "label": "Blend mode",
+      "section": "Background",
+      "type": "select",
+      "default": "source-over",
+      "help": "How the content mixes with the backdrop colour below it.",
+      "options": [
+        {
+          "value": "source-over",
+          "label": "Normal"
+        },
+        {
+          "value": "multiply",
+          "label": "Multiply"
+        },
+        {
+          "value": "screen",
+          "label": "Screen"
+        },
+        {
+          "value": "overlay",
+          "label": "Overlay"
+        },
+        {
+          "value": "soft-light",
+          "label": "Soft light"
+        },
+        {
+          "value": "lighten",
+          "label": "Lighten"
+        },
+        {
+          "value": "darken",
+          "label": "Darken"
+        },
+        {
+          "value": "color-dodge",
+          "label": "Colour dodge"
+        },
+        {
+          "value": "difference",
+          "label": "Difference"
+        },
+        {
+          "value": "luminosity",
+          "label": "Luminosity"
+        }
+      ]
+    },
+    {
+      "id": "bgPosition",
+      "label": "Position",
+      "section": "Background",
+      "type": "vector",
+      "help": "Which part of the content stays in frame when it is cropped — like CSS object-position. 50/50 is centred.",
+      "fields": [
+        {
+          "id": "x",
+          "label": "Horizontal",
+          "symbol": "↔",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "id": "y",
+          "label": "Vertical",
+          "symbol": "↕",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        }
+      ]
+    },
+    {
+      "id": "gradientBg",
+      "label": "Gradient background",
+      "section": "Background",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "bgColor2",
+      "label": "Gradient top",
+      "section": "Background",
+      "type": "color",
+      "default": "#242c3a"
+    },
+    {
+      "id": "background",
+      "label": "Background",
+      "section": "Background",
+      "type": "color",
+      "default": "#0d1014",
+      "help": "The bottom of the backdrop. Deliberately neutral — the brand colour belongs on the panels, and a brand-coloured hall behind brand-coloured panels reads as mud."
+    },
+    {
+      "id": "transparentBg",
+      "label": "Transparent background",
+      "section": "Background",
+      "type": "boolean",
+      "default": false,
+      "help": "Render on transparency (PNG/WebP keep the alpha). Overrides the background colour."
+    },
+    {
       "id": "scene",
       "label": "Hall lighting",
       "section": "Look",
@@ -446,36 +606,6 @@
           "label": "Keynote stage"
         }
       ]
-    },
-    {
-      "id": "background",
-      "label": "Background",
-      "section": "Look",
-      "type": "color",
-      "default": "#0d1014",
-      "help": "The bottom of the backdrop. Deliberately neutral — the brand colour belongs on the panels, and a brand-coloured hall behind brand-coloured panels reads as mud."
-    },
-    {
-      "id": "bgColor2",
-      "label": "Gradient top",
-      "section": "Look",
-      "type": "color",
-      "default": "#242c3a"
-    },
-    {
-      "id": "gradientBg",
-      "label": "Gradient background",
-      "section": "Look",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "transparentBg",
-      "label": "Transparent background",
-      "section": "Look",
-      "type": "boolean",
-      "default": false,
-      "help": "Render on transparency (PNG/WebP keep the alpha). Overrides the background colour."
     },
     {
       "id": "exposure",

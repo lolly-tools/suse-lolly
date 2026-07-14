@@ -41,6 +41,32 @@ function panelFrom(v, fit) {
   };
 }
 
+// Blend modes we hand to canvas 2D globalCompositeOperation. Allow-listed rather
+// than passed through: an unknown value there silently falls back to source-over,
+// so a typo would look like the blend simply not working.
+var BLENDS = [
+  'source-over', 'multiply', 'screen', 'overlay', 'soft-light', 'hard-light',
+  'lighten', 'darken', 'color-dodge', 'difference', 'luminosity', 'color',
+];
+
+// The background slot. Unlike a panel this may be a VIDEO (or a Lolly tool link,
+// which the runtime has already resolved to an image via compose.renderUrl), so
+// carry the asset's type through — the renderer needs it to decide between an
+// <img> and a <video>. A `lottie` ref's url is animation JSON that no canvas can
+// draw, so fall back to its poster frame if the host minted one.
+function bgFrom(v) {
+  if (!v || typeof v !== 'object' || !v.url) return null;
+  var meta = (v.meta && typeof v.meta === 'object') ? v.meta : {};
+  var kind = v.type === 'video' ? 'video' : 'image';
+  var url = v.url;
+  if (v.type === 'lottie') {
+    if (typeof meta.posterUrl !== 'string' || !meta.posterUrl) return null;
+    url = meta.posterUrl;
+    kind = 'image';
+  }
+  return { url: url, kind: kind, name: typeof meta.name === 'string' ? meta.name : '' };
+}
+
 function compute(model) {
   var inp = {};
   for (var i = 0; i < model.length; i++) inp[model[i].id] = model[i].value;
@@ -49,6 +75,7 @@ function compute(model) {
   for (var r = 0; r < ROLES.length; r++) panels[ROLES[r]] = panelFrom(inp[ROLES[r]], inp[ROLES[r] + 'Fit']);
 
   var cam = (inp.camera && typeof inp.camera === 'object') ? inp.camera : {};
+  var bgPos = (inp.bgPosition && typeof inp.bgPosition === 'object') ? inp.bgPosition : {};
 
   var cfg = {
     design: inp.design || 'inline',
@@ -58,10 +85,22 @@ function compute(model) {
     padding: Math.max(0, Math.min(25, num(inp.padding, 6))),
 
     scene: inp.scene || 'expo',
-    background: inp.background || '#0f1115',
-    bgColor2: inp.bgColor2 || '#2453ff',
+    // Fallbacks only — the manifest defaults normally win. Kept in step with them.
+    background: inp.background || '#0d1014',
+    bgColor2: inp.bgColor2 || '#242c3a',
     gradientBg: inp.gradientBg !== false,
     transparentBg: inp.transparentBg === true,
+
+    bg: bgFrom(inp.bgImage),
+    bgFit: inp.bgImageFit === 'contain' ? 'contain' : 'cover',
+    bgBlur: Math.max(0, Math.min(60, num(inp.bgBlur, 12))),
+    // 0–1, per the canonical `bgOpacity` in schemas/canonical-inputs.json.
+    bgOpacity: Math.max(0, Math.min(1, num(inp.bgOpacity, 0.7))),
+    bgBlend: BLENDS.indexOf(inp.bgBlend) >= 0 ? inp.bgBlend : 'source-over',
+    bgPosition: {
+      x: Math.max(0, Math.min(100, num(bgPos.x, 50))),
+      y: Math.max(0, Math.min(100, num(bgPos.y, 50))),
+    },
     exposure: num(inp.exposure, 1),
     shadows: inp.shadows !== false,
     people: inp.people !== false,
