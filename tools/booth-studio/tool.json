@@ -1,0 +1,209 @@
+{
+  "id": "booth-studio",
+  "name": "Booth Studio",
+  "version": "0.1.0",
+  "engineVersion": "^1.0.0",
+  "status": "experimental",
+  "category": "event",
+  "description": "Dress a 3D event booth with sponsor artwork. Click any panel to drop an image on it, pick a booth design, and render a still or a turntable for a sponsor pitch.",
+  "a11yLabel": "3D mockup of {{default design \"an inline\"}} event booth dressed with sponsor artwork",
+  "tags": ["booth", "event", "sponsor", "3d", "mockup", "stand", "exhibition"],
+  "render": {
+    "width": 1600,
+    "height": 1000,
+    "formats": ["png", "jpg", "webp", "webm", "mp4", "gif"],
+    "actions": ["copy", "download", "save"],
+    "convertPaths": false,
+    "video": { "wait": 2, "duration": 6 }
+  },
+  "hooks": {
+    "onInit": true,
+    "onInput": true
+  },
+  "inputs": [
+    {
+      "id": "design",
+      "label": "Booth design",
+      "section": "Booth",
+      "type": "select",
+      "default": "inline",
+      "help": "The stand shape. Your panel artwork carries across designs — a back wall stays a back wall.",
+      "options": [
+        { "value": "inline", "label": "Inline 3×3 — back wall + counter" },
+        { "value": "corner", "label": "Corner L — two open sides" },
+        { "value": "island", "label": "Island — three walls, overhead header + tower" },
+        { "value": "kiosk", "label": "Kiosk — totem + counter" }
+      ]
+    },
+    {
+      "id": "structure",
+      "label": "Frame finish",
+      "section": "Booth",
+      "type": "color",
+      "default": "#1c1f26",
+      "help": "The extrusion and counter body colour."
+    },
+    {
+      "id": "panelBase",
+      "label": "Empty panel colour",
+      "section": "Booth",
+      "type": "color",
+      "default": "{color.semantic.primary}",
+      "help": "Shown on panels with no artwork, and as the letterbox behind artwork set to Fit whole."
+    },
+
+    {
+      "id": "backWall",
+      "label": "Back wall",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["inline", "corner", "island"] },
+      "help": "The hero graphic. Click the panel on the canvas to set it."
+    },
+    {
+      "id": "leftWing",
+      "label": "Left wing",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["corner", "island"] }
+    },
+    {
+      "id": "rightWing",
+      "label": "Right wing",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["island"] }
+    },
+    {
+      "id": "header",
+      "label": "Header / fascia",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["inline", "corner", "island"] },
+      "help": "The overhead band. Usually a wordmark."
+    },
+    {
+      "id": "counter",
+      "label": "Counter front",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true
+    },
+    {
+      "id": "tower",
+      "label": "Tower / totem",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["island", "kiosk"] }
+    },
+    {
+      "id": "screen",
+      "label": "Screen",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["inline", "corner", "island"] },
+      "help": "Content on the wall-mounted monitor."
+    },
+    {
+      "id": "floor",
+      "label": "Floor decal",
+      "section": "Panels",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "showIf": { "design": ["inline", "corner", "island"] }
+    },
+    {
+      "id": "fit",
+      "label": "Artwork fit",
+      "section": "Panels",
+      "type": "select",
+      "default": "cover",
+      "help": "Fill crops to the panel edge. Fit whole keeps the entire artwork visible and letterboxes it — safer for sponsor logos.",
+      "options": [
+        { "value": "cover", "label": "Fill panel (crop)" },
+        { "value": "contain", "label": "Fit whole (letterbox)" }
+      ]
+    },
+    {
+      "id": "padding",
+      "label": "Artwork padding",
+      "section": "Panels",
+      "type": "number",
+      "display": "slider",
+      "default": 0,
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "help": "Breathing room inside each panel, as a percent of the panel's short edge.",
+      "showIf": { "fit": "contain" }
+    },
+
+    {
+      "id": "scene",
+      "label": "Hall lighting",
+      "section": "Look",
+      "type": "select",
+      "default": "expo",
+      "options": [
+        { "value": "expo", "label": "Expo hall" },
+        { "value": "bright", "label": "Bright studio" },
+        { "value": "evening", "label": "Evening reception" },
+        { "value": "keynote", "label": "Keynote stage" }
+      ]
+    },
+    { "id": "background", "label": "Background", "section": "Look", "type": "color", "default": "#0d1014", "help": "The bottom of the backdrop. Deliberately neutral — the brand colour belongs on the panels, and a brand-coloured hall behind brand-coloured panels reads as mud." },
+    { "id": "bgColor2", "label": "Gradient top", "section": "Look", "type": "color", "default": "#242c3a" },
+    { "id": "gradientBg", "label": "Gradient background", "section": "Look", "type": "boolean", "default": true },
+    { "id": "transparentBg", "label": "Transparent background", "section": "Look", "type": "boolean", "default": false, "help": "Render on transparency (PNG/WebP keep the alpha). Overrides the background colour." },
+    { "id": "exposure", "label": "Exposure", "section": "Look", "type": "number", "display": "slider", "default": 1, "min": 0.1, "max": 3, "step": 0.05 },
+    { "id": "shadows", "label": "Contact shadow", "section": "Look", "type": "boolean", "default": true },
+    { "id": "people", "label": "Show a person for scale", "section": "Look", "type": "boolean", "default": true, "help": "A 1.76 m silhouette beside the stand — it sells how big the stand actually is." },
+
+    {
+      "id": "camera",
+      "label": "Camera",
+      "section": "Camera",
+      "type": "vector",
+      "help": "The base shot. A camera move (below) animates from here.",
+      "fields": [
+        { "id": "fov", "label": "Field of view", "symbol": "°", "min": 20, "max": 90, "step": 1, "default": 38 },
+        { "id": "rotation", "label": "Rotation", "symbol": "°", "min": 0, "max": 360, "step": 1, "default": 32 },
+        { "id": "tilt", "label": "Tilt", "symbol": "°", "min": -5, "max": 70, "step": 1, "default": 8 },
+        { "id": "zoom", "label": "Zoom", "symbol": "×", "min": 0.4, "max": 2.5, "step": 0.05, "default": 1 },
+        { "id": "pan", "label": "Pan", "symbol": "", "min": -1, "max": 1, "step": 0.05, "default": 0 }
+      ]
+    },
+
+    {
+      "id": "cameraMove",
+      "label": "Camera move",
+      "section": "Animation",
+      "type": "select",
+      "default": "static",
+      "help": "Applies to video and animated exports. Stills always render the base pose.",
+      "options": [
+        { "value": "static", "label": "Static (no move)" },
+        { "value": "orbit", "label": "Orbit 360°" },
+        { "value": "arc", "label": "Arc (sweep past the stand)" },
+        { "value": "push-in", "label": "Push in" },
+        { "value": "reveal", "label": "Reveal (rise + settle)" }
+      ]
+    },
+    { "id": "duration", "label": "Loop seconds", "section": "Animation", "type": "number", "display": "slider", "default": 6, "min": 1, "max": 30, "step": 0.5, "help": "Seconds for one loop of the move. Match the export Duration for a clean loop.", "showIf": { "cameraMove": ["orbit", "arc", "push-in", "reveal"] } },
+    { "id": "easing", "label": "Easing", "section": "Animation", "type": "select", "default": "ease-in-out", "showIf": { "cameraMove": ["arc", "push-in", "reveal"] }, "options": [ { "value": "linear", "label": "Linear" }, { "value": "ease-in-out", "label": "Ease in-out" } ] }
+  ]
+}
