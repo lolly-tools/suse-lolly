@@ -58,9 +58,22 @@
   }
   /* Opt-out (live) and flip guard: the flip <g> carries its OWN transform attribute,
      which a CSS `transform` animation would clobber, so skip the breath when flipped
-     (rare; the still is unaffected either way). The default card is never flipped. */
+     (rare; the still is unaffected either way). The default card is never flipped.
+
+     `animation: none` is NOT sufficient on its own: transform-box/transform-origin
+     above are static, so they keep applying to a <g> whose breath is switched off —
+     and they retarget the flip transform ATTRIBUTE too, not just the CSS animation.
+     That attribute (`translate(2*minX+width 0) scale(-1 1)`) is written against SVG
+     user space, so under fill-box + centre origin the scale(-1) mirrors about the
+     art's own bbox centre (already in place) and the translate then shoves it a full
+     width off-canvas — the Geeko vanished for every flipped pose. Restore the SVG
+     defaults so the attribute means what it says. */
   .scene[data-idle="off"] .spot-illustration > g,
-  .scene[data-flip="on"] .spot-illustration > g { animation: none; }
+  .scene[data-flip="on"] .spot-illustration > g {
+    animation: none;
+    transform-box: view-box;
+    transform-origin: 0 0;
+  }
   @keyframes gk-breathe {
     0%, 100% { transform: scale(1); }
     50%      { transform: scale(1.024); }
