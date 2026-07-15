@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-14T21:28:12.710Z",
+  "generatedAt": "2026-07-15T13:24:58.447Z",
   "tools": [
     {
       "id": "color-block",
@@ -1528,7 +1528,7 @@
       "height": 1080,
       "exportable": false,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" /></svg>",
-      "preview": "/catalog/previews/color-palette.webp",
+      "preview": "/catalog/previews/color-palette.png",
       "i18n": {
         "ar": {
           "name": "لوحة الألوان",
@@ -1906,7 +1906,7 @@
       "height": 900,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /><path d=\"M15 5.764v15\" /><path d=\"M9 3.236v15\" /></svg>",
-      "preview": "/catalog/previews/street-map.webp",
+      "preview": "/catalog/previews/street-map.png",
       "i18n": {
         "ar": {
           "name": "خريطة الشوارع",
@@ -3486,7 +3486,7 @@
       "height": 1000,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"1\" /><circle cx=\"19\" cy=\"5\" r=\"1\" /><circle cx=\"5\" cy=\"5\" r=\"1\" /><circle cx=\"12\" cy=\"12\" r=\"1\" /><circle cx=\"19\" cy=\"12\" r=\"1\" /><circle cx=\"5\" cy=\"12\" r=\"1\" /><circle cx=\"12\" cy=\"19\" r=\"1\" /><circle cx=\"19\" cy=\"19\" r=\"1\" /><circle cx=\"5\" cy=\"19\" r=\"1\" /></svg>",
-      "preview": "/catalog/previews/filter-halftone.webp",
+      "preview": "/catalog/previews/filter-halftone.png",
       "i18n": {
         "ar": {
           "name": "مرشح: الألوان النصفية",
@@ -6409,7 +6409,7 @@
       "height": 900,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"9\" cy=\"9\" r=\"7\"/><circle cx=\"15\" cy=\"15\" r=\"7\"/></svg>",
-      "preview": "/catalog/previews/mesh-gradient.webp",
+      "preview": "/catalog/previews/mesh-gradient.png",
       "i18n": {
         "ar": {
           "name": "تدرج شبكي",
@@ -6537,6 +6537,24 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"3.5\" rx=\"1\"/><path d=\"M4.5 6.5V20\"/><path d=\"M19.5 6.5V20\"/><rect x=\"7\" y=\"9\" width=\"10\" height=\"6.5\" rx=\"1\"/><path d=\"M2 20h20\"/><rect x=\"13.5\" y=\"15.5\" width=\"5\" height=\"4.5\" rx=\"1\"/></svg>",
       "preview": "/catalog/previews/booth-studio.svg"
+    },
+    {
+      "id": "prompt-to-image",
+      "name": "Prompt to Image",
+      "description": "AI models are cheaper at processing images than they are text",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "utility",
+      "privacy": "on-device",
+      "formats": [
+        "png",
+        "webp"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M7 8h4\" /><path d=\"M7 12h4\" /><path d=\"M7 16h4\" /><path d=\"M14 8h3\" /><path d=\"M14 12h3\" /><path d=\"M14 16h3\" /></svg>",
+      "preview": "/catalog/previews/prompt-to-image.png"
     }
   ]
 }
