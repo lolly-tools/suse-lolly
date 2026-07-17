@@ -53,7 +53,7 @@
 
   "inputs.idle.label": "アイドルモーション",
   "inputs.idle.section": "Geeko の設定",
-  "inputs.idle.help": "画面上でゆるやかに呼吸するようなループです。完全に静止したポーズにするにはオフにしてください。書き出す静止画(SVG/PDF/TIFF/JPG は1フレームのスナップショット)には影響しません。",
+  "inputs.idle.help": "画面上でゆるやかに呼吸するようなループです。完全に静止したポーズにするにはオフにしてください。書き出す静止画(SVG/PNG/WebP/AVIF/PDF/TIFF/JPG は1フレームのスナップショット)には影響しません。",
 
   "inputs.bg.label": "背景",
   "inputs.bg.section": "Geeko の設定",

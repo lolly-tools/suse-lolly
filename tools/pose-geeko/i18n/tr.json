@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko Seçenekleri",
   "inputs.idle.label": "Boşta hareket",
   "inputs.idle.section": "Geeko Seçenekleri",
-  "inputs.idle.help": "Ekranda hafif bir nefes alma döngüsü. Tamamen durağan bir poz için kapat. Dışa aktarılan görüntüyü asla etkilemez (SVG/PDF/TIFF/JPG tek kare görüntü alır).",
+  "inputs.idle.help": "Ekranda hafif bir nefes alma döngüsü. Tamamen durağan bir poz için kapat. Dışa aktarılan görüntüyü asla etkilemez (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG tek kare görüntü alır).",
   "inputs.bg.label": "Arka plan",
   "inputs.bg.section": "Geeko Seçenekleri",
   "inputs.bg.options.transparent": "Saydam",

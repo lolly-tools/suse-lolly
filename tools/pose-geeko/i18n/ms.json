@@ -52,7 +52,7 @@
   "inputs.flip.section": "Pilihan Geeko",
 
   "inputs.idle.label": "Gerakan melahu",
-  "inputs.idle.help": "Gelung pernafasan lembut pada skrin. Matikan untuk pose yang benar-benar statik. Fungsi ini tidak sekali-kali menjejaskan imej statik yang dieksport (tangkapan satu bingkai SVG/PDF/TIFF/JPG).",
+  "inputs.idle.help": "Gelung pernafasan lembut pada skrin. Matikan untuk pose yang benar-benar statik. Fungsi ini tidak sekali-kali menjejaskan imej statik yang dieksport (tangkapan satu bingkai SVG/PNG/WebP/AVIF/PDF/TIFF/JPG).",
   "inputs.idle.section": "Pilihan Geeko",
 
   "inputs.bg.label": "Latar belakang",

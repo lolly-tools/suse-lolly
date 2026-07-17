@@ -52,7 +52,7 @@
   "inputs.flip.section": "Tùy chọn Geeko",
 
   "inputs.idle.label": "Chuyển động chờ",
-  "inputs.idle.help": "Một vòng lặp \"thở\" nhẹ nhàng trên màn hình. Tắt để có tư thế đứng yên hoàn toàn. Không bao giờ ảnh hưởng đến file xuất (SVG/PDF/TIFF/JPG chụp một khung hình tĩnh).",
+  "inputs.idle.help": "Một vòng lặp \"thở\" nhẹ nhàng trên màn hình. Tắt để có tư thế đứng yên hoàn toàn. Không bao giờ ảnh hưởng đến file xuất (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG chụp một khung hình tĩnh).",
   "inputs.idle.section": "Tùy chọn Geeko",
 
   "inputs.bg.label": "Nền",

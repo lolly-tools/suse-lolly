@@ -40,7 +40,7 @@
   "inputs.flip.label": "Віддзеркалити Geeko",
   "inputs.flip.section": "Параметри Geeko",
   "inputs.idle.label": "Рух у стані очікування",
-  "inputs.idle.help": "М'який цикл \"дихання\" на екрані. Вимкніть для повністю статичної пози. Ніколи не впливає на експортоване зображення (SVG/PDF/TIFF/JPG — знімок одного кадру).",
+  "inputs.idle.help": "М'який цикл \"дихання\" на екрані. Вимкніть для повністю статичної пози. Ніколи не впливає на експортоване зображення (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG — знімок одного кадру).",
   "inputs.idle.section": "Параметри Geeko",
   "inputs.bg.label": "Фон",
   "inputs.bg.section": "Параметри Geeko",

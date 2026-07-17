@@ -40,7 +40,7 @@
   "inputs.flip.label": "Vänd Geeko",
   "inputs.flip.section": "Geeko-alternativ",
   "inputs.idle.label": "Viloanimation",
-  "inputs.idle.help": "En mjuk andningsloop på skärmen. Stäng av för en helt stilla pose. Påverkar aldrig den exporterade stillbilden (SVG/PDF/TIFF/JPG fångar en enda bildruta).",
+  "inputs.idle.help": "En mjuk andningsloop på skärmen. Stäng av för en helt stilla pose. Påverkar aldrig den exporterade stillbilden (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG fångar en enda bildruta).",
   "inputs.idle.section": "Geeko-alternativ",
   "inputs.bg.label": "Bakgrund",
   "inputs.bg.section": "Geeko-alternativ",

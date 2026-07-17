@@ -40,7 +40,7 @@
   "inputs.flip.label": "Geeko spiegelen",
   "inputs.flip.section": "Geeko-opties",
   "inputs.idle.label": "Rustanimatie",
-  "inputs.idle.help": "Een zachte ademhalingslus op het scherm. Zet uit voor een volledig stilstaande pose. Heeft geen invloed op de geëxporteerde still (SVG/PDF/TIFF/JPG leggen altijd één beeld vast).",
+  "inputs.idle.help": "Een zachte ademhalingslus op het scherm. Zet uit voor een volledig stilstaande pose. Heeft geen invloed op de geëxporteerde still (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG leggen altijd één beeld vast).",
   "inputs.idle.section": "Geeko-opties",
   "inputs.bg.label": "Achtergrond",
   "inputs.bg.section": "Geeko-opties",

@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko विकल्प",
   "inputs.idle.label": "आइडल मोशन",
   "inputs.idle.section": "Geeko विकल्प",
-  "inputs.idle.help": "स्क्रीन पर एक हल्का साँस लेने-जैसा लूप। एकदम स्थिर पोज़ के लिए बंद कर दें। एक्सपोर्ट किए गए स्टिल पर कभी असर नहीं डालता (SVG/PDF/TIFF/JPG एक ही फ़्रेम का स्नैपशॉट लेते हैं)।",
+  "inputs.idle.help": "स्क्रीन पर एक हल्का साँस लेने-जैसा लूप। एकदम स्थिर पोज़ के लिए बंद कर दें। एक्सपोर्ट किए गए स्टिल पर कभी असर नहीं डालता (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG एक ही फ़्रेम का स्नैपशॉट लेते हैं)।",
   "inputs.bg.label": "बैकग्राउंड",
   "inputs.bg.section": "Geeko विकल्प",
   "inputs.bg.options.transparent": "पारदर्शी",

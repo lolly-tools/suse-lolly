@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko অপশন",
   "inputs.idle.label": "আইডল মোশন",
   "inputs.idle.section": "Geeko অপশন",
-  "inputs.idle.help": "স্ক্রিনে একটি মৃদু শ্বাস-প্রশ্বাসের লুপ। সম্পূর্ণ স্থির পোজের জন্য বন্ধ করুন। এক্সপোর্ট করা স্টিলকে কখনও প্রভাবিত করে না (SVG/PDF/TIFF/JPG এক ফ্রেমের স্ন্যাপশট নেয়)।",
+  "inputs.idle.help": "স্ক্রিনে একটি মৃদু শ্বাস-প্রশ্বাসের লুপ। সম্পূর্ণ স্থির পোজের জন্য বন্ধ করুন। এক্সপোর্ট করা স্টিলকে কখনও প্রভাবিত করে না (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG এক ফ্রেমের স্ন্যাপশট নেয়)।",
   "inputs.bg.label": "ব্যাকগ্রাউন্ড",
   "inputs.bg.section": "Geeko অপশন",
   "inputs.bg.options.transparent": "স্বচ্ছ",

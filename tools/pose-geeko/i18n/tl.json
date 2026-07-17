@@ -53,7 +53,7 @@
 
   "inputs.idle.label": "Idle motion",
   "inputs.idle.section": "Mga Opsyon ng Geeko",
-  "inputs.idle.help": "Isang mahinahong paghinga na loop sa screen. I-off para sa ganap na hindi gumagalaw na pose. Hindi ito naaapektuhan ang na-export na still (SVG/PDF/TIFF/JPG na kuha ng isang frame lang).",
+  "inputs.idle.help": "Isang mahinahong paghinga na loop sa screen. I-off para sa ganap na hindi gumagalaw na pose. Hindi ito naaapektuhan ang na-export na still (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG na kuha ng isang frame lang).",
 
   "inputs.bg.label": "Background",
   "inputs.bg.section": "Mga Opsyon ng Geeko",

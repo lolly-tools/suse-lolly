@@ -12,7 +12,7 @@
   "render": {
     "width": 800,
     "height": 800,
-    "formats": ["svg", "pdf", "dxf", "cmyk-tiff", "jpg"],
+    "formats": ["svg", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg"],
     "actions": ["download", "copy", "save"]
   },
   "featured": {
@@ -228,7 +228,7 @@
     {
       "id": "idle",
       "label": "Idle motion",
-      "help": "A gentle breathing loop on screen. Turn off for a dead-still pose. Never affects the exported still (SVG/PDF/TIFF/JPG snapshot one frame).",
+      "help": "A gentle breathing loop on screen. Turn off for a dead-still pose. Never affects the exported still (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG snapshot one frame).",
       "type": "boolean",
       "section": "Geeko Options",
       "default": true

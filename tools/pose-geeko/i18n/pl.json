@@ -40,7 +40,7 @@
   "inputs.flip.label": "Odwróć Geeko",
   "inputs.flip.section": "Opcje Geeko",
   "inputs.idle.label": "Ruch spoczynkowy",
-  "inputs.idle.help": "Delikatna pętla oddychania na ekranie. Wyłącz dla całkowicie nieruchomej pozy. Nigdy nie wpływa na wyeksportowany obraz (SVG/PDF/TIFF/JPG zapisują jedną klatkę).",
+  "inputs.idle.help": "Delikatna pętla oddychania na ekranie. Wyłącz dla całkowicie nieruchomej pozy. Nigdy nie wpływa na wyeksportowany obraz (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG zapisują jedną klatkę).",
   "inputs.idle.section": "Opcje Geeko",
   "inputs.bg.label": "Tło",
   "inputs.bg.section": "Opcje Geeko",

@@ -41,7 +41,7 @@
   "inputs.flip.section": "Опции за Geeko",
   "inputs.idle.label": "Движение в покой",
   "inputs.idle.section": "Опции за Geeko",
-  "inputs.idle.help": "Лек цикъл на дишане на екрана. Изключи го за напълно неподвижна поза. Никога не засяга експортираното статично изображение (SVG/PDF/TIFF/JPG заснемат един кадър).",
+  "inputs.idle.help": "Лек цикъл на дишане на екрана. Изключи го за напълно неподвижна поза. Никога не засяга експортираното статично изображение (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG заснемат един кадър).",
   "inputs.bg.label": "Фон",
   "inputs.bg.section": "Опции за Geeko",
   "inputs.bg.options.transparent": "Прозрачен",

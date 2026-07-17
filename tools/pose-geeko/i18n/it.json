@@ -41,7 +41,7 @@
   "inputs.flip.section": "Opzioni Geeko",
   "inputs.idle.label": "Movimento a riposo",
   "inputs.idle.section": "Opzioni Geeko",
-  "inputs.idle.help": "Un delicato ciclo di respirazione a schermo. Disattivalo per una posa completamente ferma. Non influisce mai sul fermo immagine esportato (SVG/PDF/TIFF/JPG cattura un solo fotogramma).",
+  "inputs.idle.help": "Un delicato ciclo di respirazione a schermo. Disattivalo per una posa completamente ferma. Non influisce mai sul fermo immagine esportato (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG cattura un solo fotogramma).",
   "inputs.bg.label": "Sfondo",
   "inputs.bg.section": "Opzioni Geeko",
   "inputs.bg.options.transparent": "Trasparente",

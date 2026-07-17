@@ -41,7 +41,7 @@
   "inputs.flip.section": "Opciones de Geeko",
   "inputs.idle.label": "Movimiento en reposo",
   "inputs.idle.section": "Opciones de Geeko",
-  "inputs.idle.help": "Un suave bucle de respiración en pantalla. Desactívalo para una postura totalmente estática. Nunca afecta a la imagen exportada (SVG/PDF/TIFF/JPG capturan un solo fotograma).",
+  "inputs.idle.help": "Un suave bucle de respiración en pantalla. Desactívalo para una postura totalmente estática. Nunca afecta a la imagen exportada (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG capturan un solo fotograma).",
   "inputs.bg.label": "Fondo",
   "inputs.bg.section": "Opciones de Geeko",
   "inputs.bg.options.transparent": "Transparente",

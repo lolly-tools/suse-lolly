@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko-Optionen",
   "inputs.idle.label": "Ruhebewegung",
   "inputs.idle.section": "Geeko-Optionen",
-  "inputs.idle.help": "Eine sanfte Atem-Animation auf dem Bildschirm. Für eine vollkommen reglose Pose deaktivieren. Betrifft nie den Export als Standbild (SVG/PDF/TIFF/JPG erfassen immer nur ein Einzelbild).",
+  "inputs.idle.help": "Eine sanfte Atem-Animation auf dem Bildschirm. Für eine vollkommen reglose Pose deaktivieren. Betrifft nie den Export als Standbild (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG erfassen immer nur ein Einzelbild).",
   "inputs.bg.label": "Hintergrund",
   "inputs.bg.section": "Geeko-Optionen",
   "inputs.bg.options.transparent": "Transparent",

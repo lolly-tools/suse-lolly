@@ -40,7 +40,7 @@
   "inputs.flip.label": "Oglindește Geeko",
   "inputs.flip.section": "Opțiuni Geeko",
   "inputs.idle.label": "Mișcare de repaus",
-  "inputs.idle.help": "O buclă de respirație lină pe ecran. Dezactiveaz-o pentru o poziție complet statică. Nu afectează niciodată imaginea exportată (SVG/PDF/TIFF/JPG surprinde un singur cadru).",
+  "inputs.idle.help": "O buclă de respirație lină pe ecran. Dezactiveaz-o pentru o poziție complet statică. Nu afectează niciodată imaginea exportată (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG surprinde un singur cadru).",
   "inputs.idle.section": "Opțiuni Geeko",
   "inputs.bg.label": "Fundal",
   "inputs.bg.section": "Opțiuni Geeko",

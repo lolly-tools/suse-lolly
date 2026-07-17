@@ -53,7 +53,7 @@
 
   "inputs.idle.label": "대기 동작",
   "inputs.idle.section": "Geeko 옵션",
-  "inputs.idle.help": "화면에서 부드럽게 숨쉬는 듯한 루프예요. 완전히 정지된 포즈를 원하면 꺼주세요. 내보낸 정지 이미지(SVG/PDF/TIFF/JPG는 한 프레임만 캡처해요)에는 영향을 주지 않아요.",
+  "inputs.idle.help": "화면에서 부드럽게 숨쉬는 듯한 루프예요. 완전히 정지된 포즈를 원하면 꺼주세요. 내보낸 정지 이미지(SVG/PNG/WebP/AVIF/PDF/TIFF/JPG는 한 프레임만 캡처해요)에는 영향을 주지 않아요.",
 
   "inputs.bg.label": "배경",
   "inputs.bg.section": "Geeko 옵션",

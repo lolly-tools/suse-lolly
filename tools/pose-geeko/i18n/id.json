@@ -41,7 +41,7 @@
   "inputs.flip.section": "Opsi Geeko",
   "inputs.idle.label": "Gerakan idle",
   "inputs.idle.section": "Opsi Geeko",
-  "inputs.idle.help": "Loop napas lembut di layar. Matikan untuk pose diam total. Tidak pernah memengaruhi gambar diam yang diekspor (snapshot satu bingkai SVG/PDF/TIFF/JPG).",
+  "inputs.idle.help": "Loop napas lembut di layar. Matikan untuk pose diam total. Tidak pernah memengaruhi gambar diam yang diekspor (snapshot satu bingkai SVG/PNG/WebP/AVIF/PDF/TIFF/JPG).",
   "inputs.bg.label": "Latar belakang",
   "inputs.bg.section": "Opsi Geeko",
   "inputs.bg.options.transparent": "Transparan",

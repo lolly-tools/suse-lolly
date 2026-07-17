@@ -41,7 +41,7 @@
   "inputs.flip.section": "Opções do Geeko",
   "inputs.idle.label": "Movimento em repouso",
   "inputs.idle.section": "Opções do Geeko",
-  "inputs.idle.help": "Um loop suave de respiração na tela. Desative para uma pose totalmente parada. Nunca afeta a imagem exportada (SVG/PDF/TIFF/JPG capturam um único quadro).",
+  "inputs.idle.help": "Um loop suave de respiração na tela. Desative para uma pose totalmente parada. Nunca afeta a imagem exportada (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG capturam um único quadro).",
   "inputs.bg.label": "Fundo",
   "inputs.bg.section": "Opções do Geeko",
   "inputs.bg.options.transparent": "Transparente",

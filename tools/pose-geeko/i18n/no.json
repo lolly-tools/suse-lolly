@@ -40,7 +40,7 @@
   "inputs.flip.label": "Speilvend Geeko",
   "inputs.flip.section": "Geeko-alternativer",
   "inputs.idle.label": "Hvilebevegelse",
-  "inputs.idle.help": "En rolig pustesløyfe på skjermen. Slå av for en helt stillestående positur. Påvirker aldri det eksporterte stillbildet (SVG/PDF/TIFF/JPG fanger ett enkelt bilde).",
+  "inputs.idle.help": "En rolig pustesløyfe på skjermen. Slå av for en helt stillestående positur. Påvirker aldri det eksporterte stillbildet (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG fanger ett enkelt bilde).",
   "inputs.idle.section": "Geeko-alternativer",
   "inputs.bg.label": "Bakgrunn",
   "inputs.bg.section": "Geeko-alternativer",

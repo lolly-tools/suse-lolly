@@ -41,7 +41,7 @@
   "inputs.flip.section": "خيارات Geeko",
   "inputs.idle.label": "حركة الخمول",
   "inputs.idle.section": "خيارات Geeko",
-  "inputs.idle.help": "حلقة تنفّس هادئة على الشاشة. أوقفها للحصول على وضعية ثابتة تمامًا. لا تؤثر أبدًا على الصورة الثابتة المُصدَّرة (SVG/PDF/TIFF/JPG تلتقط إطارًا واحدًا فقط).",
+  "inputs.idle.help": "حلقة تنفّس هادئة على الشاشة. أوقفها للحصول على وضعية ثابتة تمامًا. لا تؤثر أبدًا على الصورة الثابتة المُصدَّرة (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG تلتقط إطارًا واحدًا فقط).",
   "inputs.bg.label": "الخلفية",
   "inputs.bg.section": "خيارات Geeko",
   "inputs.bg.options.transparent": "شفافة",

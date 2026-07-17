@@ -41,7 +41,7 @@
   "inputs.flip.section": "Options Geeko",
   "inputs.idle.label": "Mouvement au repos",
   "inputs.idle.section": "Options Geeko",
-  "inputs.idle.help": "Une légère boucle de respiration à l'écran. Désactive pour une pose totalement immobile. N'affecte jamais l'export final (SVG/PDF/TIFF/JPG capture une seule image).",
+  "inputs.idle.help": "Une légère boucle de respiration à l'écran. Désactive pour une pose totalement immobile. N'affecte jamais l'export final (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG capture une seule image).",
   "inputs.bg.label": "Arrière-plan",
   "inputs.bg.section": "Options Geeko",
   "inputs.bg.options.transparent": "Transparent",

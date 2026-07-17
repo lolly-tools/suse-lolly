@@ -53,7 +53,7 @@
 
   "inputs.idle.label": "Klidová animace",
   "inputs.idle.section": "Možnosti Geeko",
-  "inputs.idle.help": "Jemná dechová smyčka na obrazovce. Vypni pro zcela nehybnou pózu. Nikdy neovlivní exportovaný statický obrázek (SVG/PDF/TIFF/JPG zachytí jeden snímek).",
+  "inputs.idle.help": "Jemná dechová smyčka na obrazovce. Vypni pro zcela nehybnou pózu. Nikdy neovlivní exportovaný statický obrázek (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG zachytí jeden snímek).",
 
   "inputs.bg.label": "Pozadí",
   "inputs.bg.section": "Možnosti Geeko",

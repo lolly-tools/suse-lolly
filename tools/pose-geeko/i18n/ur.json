@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko اختیارات",
   "inputs.idle.label": "آرام کی حرکت",
   "inputs.idle.section": "Geeko اختیارات",
-  "inputs.idle.help": "اسکرین پر ایک ہلکا سانس لینے والا لوپ۔ بالکل ساکت پوز کے لیے اسے بند کریں۔ ایکسپورٹ شدہ اسٹل (SVG/PDF/TIFF/JPG ایک فریم کا سنیپ شاٹ) پر کبھی اثر نہیں ڈالتا۔",
+  "inputs.idle.help": "اسکرین پر ایک ہلکا سانس لینے والا لوپ۔ بالکل ساکت پوز کے لیے اسے بند کریں۔ ایکسپورٹ شدہ اسٹل (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG ایک فریم کا سنیپ شاٹ) پر کبھی اثر نہیں ڈالتا۔",
   "inputs.bg.label": "بیک گراؤنڈ",
   "inputs.bg.section": "Geeko اختیارات",
   "inputs.bg.options.transparent": "شفاف",

@@ -41,7 +41,7 @@
   "inputs.flip.section": "Geeko 选项",
   "inputs.idle.label": "待机动效",
   "inputs.idle.section": "Geeko 选项",
-  "inputs.idle.help": "屏幕上的轻柔呼吸循环动画。关闭可获得完全静止的姿势。不影响导出的静态图（SVG/PDF/TIFF/JPG 均导出单帧快照）。",
+  "inputs.idle.help": "屏幕上的轻柔呼吸循环动画。关闭可获得完全静止的姿势。不影响导出的静态图（SVG/PNG/WebP/AVIF/PDF/TIFF/JPG 均导出单帧快照）。",
   "inputs.bg.label": "背景",
   "inputs.bg.section": "Geeko 选项",
   "inputs.bg.options.transparent": "透明",
