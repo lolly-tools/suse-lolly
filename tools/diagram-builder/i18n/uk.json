@@ -139,7 +139,7 @@
   "inputs.asciiArt.label": "ASCII-арт",
   "inputs.asciiArt.help": "Малюйте прямокутники символами + - | і сполучайте їх лініями - | та наконечниками > < ^ v. Стежте, щоб сторони | кожного прямокутника збігалися з межами +---+. Перший рядок у прямокутнику — це його заголовок, решта — підзаголовок, а рядок «@ https://…/logo.png» додає зображення. Ваша розкладка зберігається — ми лише відображаємо її як чисті картки.",
   "inputs.mermaid.label": "Mermaid",
-  "inputs.mermaid.help": "Paste a Mermaid flowchart subset. “graph TD/LR” sets direction; A[Box], A(Rounded), A([Pill]), A{Diamond} define nodes; A-->B, A---B, A-.->B, A==>B, A-->|label|B are edges; subgraph Name … end becomes layer bands. Unsupported lines (classDef, click, style…) are skipped, never run.",
+  "inputs.mermaid.help": "Вставте підмножину блок-схеми Mermaid. «graph TD/LR» задає напрямок; A[Box], A(Rounded), A([Pill]), A{Diamond} визначають вузли; A-->B, A---B, A-.->B, A==>B, A-->|label|B - це зв'язки; subgraph Name … end стає смугами шарів. Непідтримувані рядки (classDef, click, style…) пропускаються, ніколи не виконуються.",
   "inputs.table.label": "Таблиця / CSV",
   "inputs.table.help": "Вставте рядки, розділені комами або табуляцією. Орг/mind-мапа: id,label,detail,parent. Процес: from,to,label (список звʼязків — id створюються автоматично). Часова шкала/Цикл/Піраміда: label,detail. Рядок заголовка (id/label/from/…) визначається і пропускається.",
   "inputs.nodes.label": "Картки",

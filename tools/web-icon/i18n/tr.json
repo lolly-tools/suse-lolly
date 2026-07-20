@@ -20,7 +20,7 @@
   "inputs.shape.options.square": "Kare",
   "inputs.weight.label": "Kalınlık",
   "inputs.weight.help": "Daha kalın ağırlıklar küçük boyutlarda daha iyi okunur. (SUSE Mono'nun en kalın kesimi Extra bold'dur.)",
-  "inputs.weight.options.800": "Extra bold",
+  "inputs.weight.options.800": "Ekstra kalın",
   "inputs.weight.options.700": "Kalın",
   "inputs.weight.options.600": "Yarı Kalın",
   "inputs.tracking.label": "Harf aralığı",

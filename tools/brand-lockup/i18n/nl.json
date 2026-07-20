@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Vierkant — 1080×1080",
   "inputs.size.options.wide": "Liggend — 1920×1080",
   "inputs.size.options.portrait": "Staand — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Achtergrond",
   "inputs.background.help": "Transparant komt overeen met de bronbestanden van het merk. Stel een kleur in om een achtergrondvlak in de export te bakken."
 }

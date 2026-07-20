@@ -2,69 +2,47 @@
   "name": "Logo Lockup: Grid (NASCAR)",
   "description": "Ayusin ang tambak na logos sa malinis at pantay na sponsor grid — ang “NASCAR” wall.",
   "a11yLabel": "Grid na may {{logos.length}} logo",
-
   "inputs.columns.label": "Mga Column",
   "inputs.columns.help": "Ilang logo ang nasa bawat row.",
-
   "inputs.gap.label": "Espasyo",
   "inputs.gap.help": "Espasyo sa pagitan ng mga logo.",
-
   "inputs.padding.label": "Padding",
   "inputs.padding.help": "Puwang sa palibot ng buong wall.",
-
   "inputs.background.label": "Background",
-
   "inputs.balance.label": "I-balance ang mga sukat",
   "inputs.balance.help": "Awtomatikong isasaayos ang sukat ng bawat logo ayon sa optical weight nito — lumiliit ang mas mabibigat na logo, lumalaki ang mas magagaan — para magmukhang pantay ang timbang ng buong wall. Nalalapat pa rin ang sariling Sukat % ng bawat logo sa ibabaw nito. I-off para sa pantay-pantay na sukat.",
-
   "inputs.inkColor.label": "Kulay ng ink",
   "inputs.inkColor.help": "Ang iisang ink para sa anumang logo na naka-set sa “I-render bilang vector” (kada logo, sa ibaba).",
-
   "inputs.threshold.label": "Threshold ng vector",
   "inputs.threshold.help": "Default na brightness cut-off para sa mga vector logo. Mas mataas, mas maraming naiiwan sa bawat logo; i-tune ang mahirap na logo nang paisa-isa sa ibaba.",
-
   "inputs.invert.label": "I-invert ang vector",
   "inputs.invert.help": "Default para sa mga vector logo — pinapalitan kung aling side ng threshold ang magiging ink. Awtomatikong nai-invert ang mga logo na puti o maputla, kaya bihira mo itong kakailanganin; i-tune kada logo sa ibaba kung meron mang nangangailangan.",
-
   "inputs.detail.label": "Detail ng vector",
   "inputs.detail.help": "Default na tracing resolution para sa mga vector logo. Mas mataas, mas detalyado ang nahuhuling hugis pero mas mabigat.",
-
   "inputs.smoothing.label": "Smoothing ng vector",
   "inputs.smoothing.help": "Default para sa mga vector logo: gaano ka-rounded ang mga traced outline papuntang curves. Mababang value, pinapanatiling matalas ang mga gilid; mataas na value, ginagawang makinis na Bézier curve ang mga ito.",
-
   "inputs.logos.label": "Mga Logo",
-
   "inputs.logos.fields.logo.label": "Larawan",
-
-  "inputs.logos.fields.presence.label": "Presence",
+  "inputs.logos.fields.presence.label": "Presensya",
   "inputs.logos.fields.presence.help": "Kung gaano kaprominente ang logo na ito. Pinapantay muna ng balancing ang lahat; sinasadya namang tinitimbang ito ng Presence pataas o pababa — sponsor-tier na sizing.",
   "inputs.logos.fields.presence.options.hero": "Hero",
   "inputs.logos.fields.presence.options.large": "Malaki",
   "inputs.logos.fields.presence.options.normal": "Normal",
   "inputs.logos.fields.presence.options.small": "Maliit",
-
   "inputs.logos.fields.scale.label": "Sukat %",
   "inputs.logos.fields.scale.help": "Fine-tune sa ibabaw ng Presence at balancing.",
-
   "inputs.logos.fields.opacity.label": "Opacity",
-
   "inputs.logos.fields.filter.label": "Filter",
   "inputs.logos.fields.filter.options.none": "Wala",
   "inputs.logos.fields.filter.options.grayscale": "Grayscale",
-
   "inputs.logos.fields.vectorize.label": "I-render bilang vector",
   "inputs.logos.fields.vectorize.help": "I-flatten ang logo na ito papunta sa iisang kulay ng ink (matalas na vector). Kapag naka-off, mananatili itong orihinal na larawan nito.",
-
   "inputs.logos.fields.tune.label": "I-tune ang logo na ito",
   "inputs.logos.fields.tune.help": "Bigyan ang logo na ito ng sarili nitong vector settings — para sa mga mahirap na marka na nangangailangan ng ibang threshold o pag-invert.",
-
   "inputs.logos.fields.threshold.label": "Threshold",
   "inputs.logos.fields.threshold.help": "Brightness cut-off para sa logo na ito. Mas mataas, mas maraming naiiwan dito.",
-
   "inputs.logos.fields.invert.label": "Baligtarin",
   "inputs.logos.fields.invert.help": "Para sa puti o maputlang logo.",
-
-  "inputs.logos.fields.detail.label": "Detail",
-
+  "inputs.logos.fields.detail.label": "Detalye",
   "inputs.logos.fields.smoothing.label": "Smoothing"
 }

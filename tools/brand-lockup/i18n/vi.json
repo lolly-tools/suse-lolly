@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Vuông — 1080×1080",
   "inputs.size.options.wide": "Ngang — 1920×1080",
   "inputs.size.options.portrait": "Dọc — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Nền",
   "inputs.background.help": "Trong suốt khớp với tệp nguồn thương hiệu. Đặt một màu để đưa bảng nền vào tệp xuất."
 }

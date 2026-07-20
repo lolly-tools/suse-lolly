@@ -1,48 +1,31 @@
 {
   "name": "Firma email",
   "description": "Una firma email SUSE coerente con il brand, pronta da incollare in qualsiasi client.",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.help": "Seleziona Grigio se pensi che la maggior parte del tuo pubblico preferisca la modalità scura",
   "inputs.logo.options.standard": "Standard",
   "inputs.logo.options.grey": "Grigio",
-
   "inputs.headshot.label": "Foto profilo",
   "inputs.headshot.help": "Foto profilo facoltativa. Visualizzata come cerchio.",
-
   "inputs.emailPromo.label": "Promo email",
   "inputs.emailPromo.help": "Banner promozionale facoltativo sotto la firma. Ridimensionato per rientrare in 400×200px, mantenendo le proporzioni.",
-
   "inputs.firstname.label": "Nome",
-
   "inputs.lastname.label": "Cognome",
-
   "inputs.nameWeight.label": "Peso del nome",
   "inputs.nameWeight.help": "Peso del carattere del tuo nome (100 Sottile → 900 Nerissimo).",
-
   "inputs.jobTitle.label": "Qualifica, reparto",
-  "inputs.jobTitle.placeholder": "Senior Engineer, Product",
-
+  "inputs.jobTitle.placeholder": "Ingegnere Senior, Prodotto",
   "inputs.titleWeight.label": "Peso della qualifica",
   "inputs.titleWeight.help": "Peso del carattere della riga della qualifica (100 Sottile → 900 Nerissimo).",
-
   "inputs.certs.label": "Certificazioni",
-
   "inputs.email.label": "Email",
-
   "inputs.phone.label": "Telefono fisso",
-
   "inputs.mobile.label": "Cellulare",
-
   "inputs.fax.label": "Fax",
-
   "inputs.address.label": "Indirizzo",
-
   "inputs.address2.label": "Indirizzo riga 2",
-
   "inputs.im.label": "ID messaggistica",
   "inputs.im.placeholder": "@handle su Slack",
-
   "inputs.append.label": "Aggiungi in coda",
   "inputs.append.options.none": "Nessuno",
   "inputs.append.options.germany": "Germania",

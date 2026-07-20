@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Quadratisch — 1080×1080",
   "inputs.size.options.wide": "Querformat — 1920×1080",
   "inputs.size.options.portrait": "Hochformat — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Hintergrund",
   "inputs.background.help": "Transparent entspricht den Quelldateien der Marke. Legen Sie eine Farbe fest, um eine Hintergrundfläche in den Export einzubinden."
 }

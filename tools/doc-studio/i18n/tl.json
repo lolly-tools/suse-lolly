@@ -23,7 +23,7 @@
   "inputs.pageNumbers.help": "Ipinapakita ang \"n / kabuuan\" sa footer ng bawat pahina.",
   "inputs.columns.label": "Mga column",
   "inputs.columns.help": "Bilang ng column ng text kada pahina. Dumadaloy ang nilalaman pababa sa bawat column, at pagkatapos ay sa susunod na pahina.",
-  "inputs.columns.options.1": "1 column",
+  "inputs.columns.options.1": "1 hanay",
   "inputs.columns.options.2": "2 na column",
   "inputs.columns.options.3": "3 na column",
   "inputs.content.label": "Dokumento",

@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "Lebar panah",
   "inputs.arrowWidth.section": "Panah",
   "inputs.arrowHeadSize.label": "Ukuran kepala panah",
-  "inputs.arrowHeadSize.section": "Panah"
+  "inputs.arrowHeadSize.section": "Panah",
+  "inputs.arrows.fields.head.options.": "Default"
 }

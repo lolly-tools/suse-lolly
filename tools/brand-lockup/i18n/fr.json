@@ -33,8 +33,8 @@
   "inputs.size.options.fit": "Ajusté au lockup",
   "inputs.size.options.square": "Carré — 1080×1080",
   "inputs.size.options.wide": "Paysage — 1920×1080",
-  "inputs.size.options.portrait": "Portrait — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.portrait": "Portrait - 1080×1350",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Arrière-plan",
   "inputs.background.help": "Transparent correspond aux fichiers source de la marque. Définis une couleur pour intégrer un panneau d'arrière-plan à l'export."
 }

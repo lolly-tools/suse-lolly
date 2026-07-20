@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Segi empat sama — 1080×1080",
   "inputs.size.options.wide": "Landskap — 1920×1080",
   "inputs.size.options.portrait": "Potret — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Latar belakang",
   "inputs.background.help": "Lutsinar sepadan dengan fail sumber jenama. Tetapkan warna untuk membakar panel latar belakang ke dalam eksport."
 }

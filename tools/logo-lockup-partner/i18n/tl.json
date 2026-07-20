@@ -2,20 +2,16 @@
   "name": "Pagsasama ng Logo: Partner",
   "description": "Ang logo ng SUSE sa tabi ng logo ng partner, may divider sa gitna — light o dark.",
   "a11yLabel": "SUSE partner lockup na may {{partners.length}} partner logo",
-
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Inilalagay ng Maliwanag ang mga madilim na logo sa maliwanag na background; binabaligtad naman ito ng Madilim. Awtomatikong nagpapalit ang logo ng SUSE sa tumutugmang on-light / on-dark na artwork.",
   "inputs.theme.options.light": "Maliwanag",
   "inputs.theme.options.dark": "Madilim",
-
   "inputs.lead.label": "Pangunahing logo",
   "inputs.lead.help": "Naka-default sa logo ng SUSE, na sumusunod sa tema. Palitan ito ng sarili mong logo para mangunahin gamit ang ibang brand.",
-
   "inputs.leadTreatment.label": "Kulay ng pangunahing logo",
   "inputs.leadTreatment.help": "Pinapanatili ng Full colour ang chameleon green ng SUSE; gumagamit ang monochrome ng iisang-kulay na marka ng SUSE (itim sa light, puti sa dark). Para sa sarili mong pangunahing logo, dini-desaturate ito ng monochrome.",
   "inputs.leadTreatment.options.colour": "Full colour",
   "inputs.leadTreatment.options.mono": "Monochrome",
-
   "inputs.leadPresence.label": "Presence ng pangunahing logo",
   "inputs.leadPresence.help": "Kung gaano kaprominente ang pangunahing logo, sa ibabaw ng anumang balancing. Gamitin ang Malaki / Hero (o ang mga sukdulang tier) para sa malinaw na hierarchy ng host (“powered by”). Nag-a-adjust pa rin ang buong lockup para bumagay sa artboard, kaya itinatakda ng mga ito ang relatibong presence.",
   "inputs.leadPresence.options.xxlarge": "Napakalaki",
@@ -26,49 +22,37 @@
   "inputs.leadPresence.options.small": "Maliit",
   "inputs.leadPresence.options.xsmall": "Sobrang Liit",
   "inputs.leadPresence.options.xxsmall": "Napakaliit",
-
   "inputs.layout.label": "Layout",
   "inputs.layout.help": "Pinapanatili ng Even row ang lahat ng logo sa iisang linya. Binibigyang-diin naman ng Lead + Partners ang pangunahing logo at hinahayaang mag-wrap ang mga partner sa isang maayos na grupo sa tabi nito.",
   "inputs.layout.options.row": "Pantay na Hilera",
   "inputs.layout.options.lead": "Lead + Partners",
-
   "inputs.connector.label": "Connector",
   "inputs.connector.help": "Ano ang nasa pagitan ng lead at ng partner(s).",
   "inputs.connector.options.bar": "Patayong Bar",
   "inputs.connector.options.symbol": "Simbolo",
   "inputs.connector.options.text": "Text",
   "inputs.connector.options.none": "Wala (spacing lang)",
-
   "inputs.symbol.label": "Simbolo",
-  "inputs.symbol.options.times": "× (times)",
-  "inputs.symbol.options.plus": "+ (plus)",
-  "inputs.symbol.options.amp": "& (and)",
-
-  "inputs.connectorText.label": "Connector text",
+  "inputs.symbol.options.times": "× (beses)",
+  "inputs.symbol.options.plus": "+ (dagdag)",
+  "inputs.symbol.options.amp": "& (at)",
+  "inputs.connectorText.label": "Text ng connector",
   "inputs.connectorText.help": "hal. “in partnership with”, “powered by”, “×”.",
-
   "inputs.connectorWeight.label": "Timbang ng connector text",
   "inputs.connectorWeight.help": "Font weight ng connector text (100 Thin → 900 Black).",
-
   "inputs.partnerDivider.label": "Sa pagitan ng mga partner",
   "inputs.partnerDivider.help": "Maglagay ng patayong bar sa pagitan ng bawat partner logo. Nalalapat ito kapag dalawa o higit pang partner ang mayroon.",
   "inputs.partnerDivider.options.none": "Wala (spacing lang)",
   "inputs.partnerDivider.options.bar": "Patayong Bar",
-
   "inputs.size.label": "Sukat ng logo",
   "inputs.size.help": "Base height ng mga logo. Ang balancing at presence ng bawat logo ay nag-scale mula rito.",
-
   "inputs.gap.label": "Espasyo",
   "inputs.gap.help": "Espasyo sa paligid ng connector at sa pagitan ng mga partner logo.",
-
   "inputs.balance.label": "I-balance ang mga sukat",
   "inputs.balance.help": "Awtomatikong isasaayos ang sukat ng bawat logo ayon sa optical weight nito para magmukhang pantay-pantay ang presence ng lead at ng mga partner. Nalalapat pa rin ang presence ng bawat logo sa ibabaw nito. I-off para sa magkakapantay-taas na logo.",
-
   "inputs.partners.label": "Mga Partner",
-
   "inputs.partners.fields.logo.label": "Logo ng partner",
-
-  "inputs.partners.fields.presence.label": "Presence",
+  "inputs.partners.fields.presence.label": "Presensya",
   "inputs.partners.fields.presence.help": "Kung gaano kaprominente ang partner na ito, sa ibabaw ng anumang balancing. Ang mga sukdulang tier (Napakalaki … Napakaliit) ay nagpapahintulot sa isang logo na mangibabaw o umatras; nag-a-adjust pa rin ang buong lockup para bumagay sa artboard.",
   "inputs.partners.fields.presence.options.xxlarge": "Napakalaki",
   "inputs.partners.fields.presence.options.xlarge": "Sobrang Laki",
@@ -78,16 +62,14 @@
   "inputs.partners.fields.presence.options.small": "Maliit",
   "inputs.partners.fields.presence.options.xsmall": "Sobrang Liit",
   "inputs.partners.fields.presence.options.xxsmall": "Napakaliit",
-
   "inputs.partners.fields.filter.label": "Treatment",
   "inputs.partners.fields.filter.help": "Ayusin ang hindi tugmang partner logo: inaalis ng grayscale o desaturate ang kulay nito, pinapaliwanag ng brighten ang mapurol na marka, pinapadilim ng darken ang isang malabo, isinasauli ng invert ang isang madilim na logo sa isang madilim na tema, at binabawasan ito ng ink sa isang solidong iisang-kulay na silhouette gamit ang ink ng tema. Pinapanatili ng mga bitmap logo ang treatment sa bawat format; pinapanatili naman ito ng SVG-file na logo sa PNG lang.",
   "inputs.partners.fields.filter.options.none": "Wala",
   "inputs.partners.fields.filter.options.grayscale": "Grayscale",
-  "inputs.partners.fields.filter.options.desaturate": "Desaturate",
+  "inputs.partners.fields.filter.options.desaturate": "I-desaturate",
   "inputs.partners.fields.filter.options.brighten": "Paliwanagin",
   "inputs.partners.fields.filter.options.darken": "Padilimin",
   "inputs.partners.fields.filter.options.invert": "Baligtarin",
   "inputs.partners.fields.filter.options.ink": "Gawing Ink",
-
   "inputs.partners.fields.opacity.label": "Opacity"
 }

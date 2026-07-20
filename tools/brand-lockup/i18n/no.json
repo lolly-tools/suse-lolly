@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Kvadrat — 1080×1080",
   "inputs.size.options.wide": "Liggende — 1920×1080",
   "inputs.size.options.portrait": "Stående — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Bakgrunn",
   "inputs.background.help": "Transparent samsvarer med merkevarens kildefiler. Angi en farge for å bake inn et bakgrunnspanel i eksporten."
 }

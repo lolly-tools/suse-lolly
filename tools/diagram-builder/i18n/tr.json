@@ -223,5 +223,6 @@
   "inputs.arrowWidth.label": "Ok genişliği",
   "inputs.arrowWidth.section": "Oklar",
   "inputs.arrowHeadSize.label": "Ok ucu boyutu",
-  "inputs.arrowHeadSize.section": "Oklar"
+  "inputs.arrowHeadSize.section": "Oklar",
+  "inputs.arrows.fields.head.options.": "Varsayılan"
 }

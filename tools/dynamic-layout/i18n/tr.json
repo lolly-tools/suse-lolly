@@ -37,7 +37,7 @@
   "inputs.bgOpacity.help": "Metnin okunaklı kalması için görseli tema rengiyle tonla.",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Kart, metin ve harekete geçirici mesaj için markaya uygun SUSE renk kombinasyonları.",
-  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.pine": "Çam",
   "inputs.theme.options.jungle": "Orman",
   "inputs.theme.options.white": "Beyaz",
   "inputs.theme.options.midnight": "Gece Yarısı",

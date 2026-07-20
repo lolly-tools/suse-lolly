@@ -2,59 +2,46 @@
   "name": "Pose Geeko",
   "description": "I-pose ang SUSE Geeko gamit ang mga slider — mata, kurap, at mga paa't kamay. Walang animation, isang still image lang na puwede mong i-adjust at i-export na print-ready.",
   "featured.blurb": "I-pose ang SUSE Geeko — print-ready na still images",
-
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Mausisa",
   "inputs.pose.options.sitting": "Nakaupo",
   "inputs.pose.options.laying": "Nakahiga",
   "inputs.pose.options.dangling": "Nakabitin",
-
   "inputs.eyeX.label": "Mata kaliwa / kanan",
   "inputs.eyeX.section": "Pose",
   "inputs.eyeX.help": "Isinasalansang ang pupil sa mata. Positibo ay tumitingin pakanan.",
-
   "inputs.eyeY.label": "Mata taas / baba",
   "inputs.eyeY.section": "Pose",
   "inputs.eyeY.help": "Isinasalansang ang pupil sa mata. Positibo ay tumitingin pababa.",
-
   "inputs.blink.label": "Kurap",
   "inputs.blink.section": "Pose",
   "inputs.blink.help": "0 = gising na gising, mas mataas = nakapikit ang mata.",
-
   "inputs.headTilt.label": "Hilig ng ulo",
   "inputs.headTilt.section": "Pose",
   "inputs.headTilt.help": "Ikinikiling ang ulo ng Geeko.",
-
   "inputs.foliage.label": "Mga dahon at sanga",
   "inputs.foliage.section": "Pose",
   "inputs.foliage.help": "Iniikot ang sanga at mga dahon. Para sa pose na umaakyat.",
-
   "inputs.legFront.label": "Harapang paa",
   "inputs.legFront.section": "Pose",
   "inputs.legFront.help": "Iginagalaw ang harapang paa. Para sa pose na nakabitin.",
-
   "inputs.legBack.label": "Likurang paa",
   "inputs.legBack.section": "Pose",
   "inputs.legBack.help": "Iginagalaw ang likurang paa. Para sa pose na nakabitin.",
-
   "inputs.tail.label": "Kulot ng buntot",
   "inputs.tail.section": "Pose",
   "inputs.tail.help": "Kinukulot ang buntot. Para sa pose na nakaupo.",
-
   "inputs.geeko.label": "Sukat at Posisyon",
   "inputs.geeko.section": "Mga Opsyon ng Geeko",
   "inputs.geeko.help": "Ang Scale ay nagpapalaki o nagpapaliit sa Geeko; X / Y ay nag-aadjust sa posisyon nito sa frame (%). I-drag ang label o mag-type ng value.",
   "inputs.geeko.fields.scale.label": "Sukat",
   "inputs.geeko.fields.x.label": "X",
   "inputs.geeko.fields.y.label": "Y",
-
   "inputs.flip.label": "I-flip ang Geeko",
   "inputs.flip.section": "Mga Opsyon ng Geeko",
-
-  "inputs.idle.label": "Idle motion",
+  "inputs.idle.label": "Paggalaw kapag idle",
   "inputs.idle.section": "Mga Opsyon ng Geeko",
   "inputs.idle.help": "Isang mahinahong paghinga na loop sa screen. I-off para sa ganap na hindi gumagalaw na pose. Hindi ito naaapektuhan ang na-export na still (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG na kuha ng isang frame lang).",
-
   "inputs.bg.label": "Background",
   "inputs.bg.section": "Mga Opsyon ng Geeko",
   "inputs.bg.options.transparent": "Transparent",

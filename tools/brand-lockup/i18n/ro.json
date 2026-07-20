@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Pătrat — 1080×1080",
   "inputs.size.options.wide": "Peisaj — 1920×1080",
   "inputs.size.options.portrait": "Portret — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Fundal",
   "inputs.background.help": "Transparent corespunde fișierelor sursă ale brandului. Setează o culoare pentru a include un panou de fundal în export."
 }

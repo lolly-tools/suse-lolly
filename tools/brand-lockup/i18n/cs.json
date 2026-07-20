@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Čtverec — 1080×1080",
   "inputs.size.options.wide": "Na šířku — 1920×1080",
   "inputs.size.options.portrait": "Na výšku — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Pozadí",
   "inputs.background.help": "Průhledné odpovídá zdrojovým souborům značky. Nastav barvu, aby se do exportu zapekl panel pozadí."
 }

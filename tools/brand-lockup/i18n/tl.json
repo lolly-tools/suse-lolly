@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Parisukat — 1080×1080",
   "inputs.size.options.wide": "Pahalang — 1920×1080",
   "inputs.size.options.portrait": "Patayo — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Background",
   "inputs.background.help": "Tumutugma ang transparent sa mga source file ng brand. Magtakda ng kulay para isama ang background panel sa export."
 }

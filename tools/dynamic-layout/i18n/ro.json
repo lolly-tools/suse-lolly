@@ -2,7 +2,6 @@
   "name": "Layout dinamic",
   "description": "Un layout universal, care se recompune în jurul a orice adaugi, la orice dimensiune.",
   "a11yLabel": "{{default heading cta}} — previzualizare Layout dinamic",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",
   "inputs.logo.help": "Adaugă logoul SUSE într-un colț. Varianta potrivită pentru temă este aleasă automat.",
@@ -11,17 +10,14 @@
   "inputs.logo.options.top-right": "Sus dreapta",
   "inputs.logo.options.bottom-left": "Jos stânga",
   "inputs.logo.options.bottom-right": "Jos dreapta",
-
   "inputs.logoStyle.label": "Stil logo",
   "inputs.logoStyle.section": "Logo",
   "inputs.logoStyle.help": "Mono rămâne lizibil pe orice temă; verde brand folosește semnul verde.",
   "inputs.logoStyle.options.mono": "Mono (alb / negru)",
   "inputs.logoStyle.options.brand": "Verde brand",
-
   "inputs.bgImage.label": "Imagine de fundal",
   "inputs.bgImage.section": "Fundal",
   "inputs.bgImage.help": "Fundal opțional pe toată pagina, în spatele conținutului.",
-
   "inputs.imageFilter.label": "Filtru imagine",
   "inputs.imageFilter.section": "Fundal",
   "inputs.imageFilter.options.none": "Fără",
@@ -30,75 +26,57 @@
   "inputs.imageFilter.options.warm": "Cald",
   "inputs.imageFilter.options.cool": "Rece",
   "inputs.imageFilter.options.fade": "Estompat",
-
   "inputs.imageFraming.label": "Poziție",
   "inputs.imageFraming.section": "Fundal",
   "inputs.imageFraming.help": "Zoom mărește imaginea de fundal pentru a decupa în cadru; X / Y o deplasează. Trage o etichetă sau introdu o valoare.",
   "inputs.imageFraming.fields.zoom.label": "Zoom",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "Suprapunere",
   "inputs.bgOpacity.section": "Fundal",
   "inputs.bgOpacity.help": "Nuanțează imaginea cu culoarea temei, ca textul să rămână lizibil.",
-
   "inputs.theme.label": "Temă",
   "inputs.theme.help": "Combinații de culori SUSE pentru card, text și buton de acțiune.",
   "inputs.theme.options.pine": "Pine",
-  "inputs.theme.options.jungle": "Jungle",
+  "inputs.theme.options.jungle": "Junglă",
   "inputs.theme.options.white": "Alb",
-  "inputs.theme.options.midnight": "Midnight",
-  "inputs.theme.options.persimmon": "Persimmon",
-
+  "inputs.theme.options.midnight": "Miezul nopții",
+  "inputs.theme.options.persimmon": "Kaki",
   "inputs.fgColor.label": "Culoare text",
   "inputs.fgColor.help": "Opțional. Suprascrie culoarea textului și conturul butonului (tot ce urmează currentColor). Lasă nesetat pentru a folosi culoarea de prim-plan a temei.",
-
   "inputs.heading.label": "Titlu",
   "inputs.heading.help": "Rândul mare, cu impact. Lasă gol pentru a-l omite.",
-
   "inputs.headingFontSize.label": "Dimensiune",
   "inputs.headingFontSize.section": "Tip titlu",
   "inputs.headingFontSize.help": "Dimensiune relativă — layout-ul se ajustează automat la canvas.",
-
   "inputs.headingFontWeight.label": "Greutate",
   "inputs.headingFontWeight.section": "Tip titlu",
-
   "inputs.subheading.label": "Subtitlu",
   "inputs.subheading.help": "Un rând de sprijin sub titlu. Suportă markdown: **aldin**, *cursiv*, ~~tăiat~~.",
-
   "inputs.subheadingFontSize.label": "Dimensiune",
   "inputs.subheadingFontSize.section": "Tip subtitlu",
   "inputs.subheadingFontSize.help": "Dimensiune relativă — layout-ul se ajustează automat la canvas.",
-
   "inputs.subheadingFontWeight.label": "Greutate",
   "inputs.subheadingFontWeight.section": "Tip subtitlu",
-
   "inputs.body.label": "Text corp",
   "inputs.body.help": "Suportă markdown: **aldin**, *cursiv*, ~~tăiat~~ și liste cu marcatori (rânduri care încep cu - ).",
-
   "inputs.bodyFontSize.label": "Dimensiune",
   "inputs.bodyFontSize.section": "Tip corp",
   "inputs.bodyFontSize.help": "Dimensiune relativă — layout-ul se ajustează automat la canvas.",
-
   "inputs.bodyFontWeight.label": "Greutate",
   "inputs.bodyFontWeight.section": "Tip corp",
-
   "inputs.cta.label": "Îndemn la acțiune",
   "inputs.cta.help": "O etichetă scurtă de buton — până la 20 de caractere.",
-
   "inputs.ctaTypography.label": "Font",
   "inputs.ctaTypography.section": "Tip îndemn la acțiune",
   "inputs.ctaTypography.help": "SUSE Mono dă butonului un aer tehnic, de tip cod.",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "Dimensiune",
   "inputs.ctaFontSize.section": "Tip îndemn la acțiune",
   "inputs.ctaFontSize.help": "Dimensiune relativă — layout-ul se ajustează automat la canvas.",
-
   "inputs.ctaFontWeight.label": "Greutate",
   "inputs.ctaFontWeight.section": "Tip îndemn la acțiune",
-
   "inputs.headshot.label": "Fotografie",
   "inputs.headshot.help": "Portret opțional. Când este setat, ancorează propriul bloc de culoare lângă text."
 }

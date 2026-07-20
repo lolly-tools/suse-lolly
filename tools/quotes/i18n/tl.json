@@ -28,7 +28,7 @@
   "inputs.company.help": "Title, organisasyon, o pangalan ng kumpanya na ipapakita sa ilalim ng pangalan.",
   "inputs.headshot.label": "Headshot",
   "inputs.headshot.help": "Opsyonal na headshot o litrato ng mukha. Mag-upload ng sarili o pumili mula sa library.",
-  "inputs.bgImage.label": "Background Image",
+  "inputs.bgImage.label": "Larawang Background",
   "inputs.bgImage.section": "Mga Opsyon sa Background",
   "inputs.bgImage.help": "Opsyonal na background image sa likod ng quote.",
   "inputs.bgOpacity.label": "Opacity",

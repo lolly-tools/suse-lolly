@@ -43,7 +43,7 @@
   "inputs.company.label": "Companie",
   "inputs.tracks.label": "Track-uri",
   "inputs.tracks.help": "Track-uri opționale de sesiuni, afișate ca etichete (chips). Poți da unei etichete propria culoare sau o poți lăsa să folosească conturul culorii rolului.",
-  "inputs.tracks.fields.label.label": "Track",
+  "inputs.tracks.fields.label.label": "Piesă",
   "inputs.tracks.fields.label.placeholder": "de ex. Platform Engineering",
   "inputs.tracks.fields.color.label": "Culoare etichetă",
   "inputs.showQr.label": "Afișează codul QR",

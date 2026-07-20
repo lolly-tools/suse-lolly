@@ -34,7 +34,7 @@
   "inputs.size.options.square": "Quadrado — 1080×1080",
   "inputs.size.options.wide": "Paisagem — 1920×1080",
   "inputs.size.options.portrait": "Retrato — 1080×1350",
-  "inputs.size.options.story": "Story — 1080×1920",
+  "inputs.size.options.story": "Story - 1080×1920",
   "inputs.background.label": "Fundo",
   "inputs.background.help": "Transparente corresponde aos arquivos de origem da marca. Defina uma cor para incluir um painel de fundo na exportação."
 }

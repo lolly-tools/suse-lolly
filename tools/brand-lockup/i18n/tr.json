@@ -8,7 +8,7 @@
   "inputs.category.help": "Ürünler en yalın başlığı kullanır (örn. SUSE AI). Programlar \"Program\" ile, ekipler \"Team\" ile biter; etkinlikler bir konum taşır.",
   "inputs.category.options.product": "Ürün",
   "inputs.category.options.program": "Program",
-  "inputs.category.options.team": "Team",
+  "inputs.category.options.team": "Ekip",
   "inputs.category.options.event": "Etkinlik",
   "inputs.location.label": "Konum",
   "inputs.location.help": "Şehir ya da yer — kendi satırında yer alır (örn. \"Madrid\"). Etkinlikler ve ekipler için gösterilir.",

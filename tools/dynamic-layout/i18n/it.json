@@ -2,7 +2,6 @@
   "name": "Layout dinamico",
   "description": "Un layout multiuso che si ricompone attorno a tutto ciò che aggiungi, in qualsiasi dimensione.",
   "a11yLabel": "{{default heading cta}} — anteprima Layout dinamico",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",
   "inputs.logo.help": "Posiziona il logo SUSE in un angolo. La variante giusta per il tema viene scelta automaticamente.",
@@ -11,94 +10,73 @@
   "inputs.logo.options.top-right": "In alto a destra",
   "inputs.logo.options.bottom-left": "In basso a sinistra",
   "inputs.logo.options.bottom-right": "In basso a destra",
-
   "inputs.logoStyle.label": "Stile del logo",
   "inputs.logoStyle.section": "Logo",
   "inputs.logoStyle.help": "Mono resta leggibile su qualsiasi tema; verde brand usa il marchio verde.",
   "inputs.logoStyle.options.mono": "Mono (bianco / nero)",
   "inputs.logoStyle.options.brand": "Verde brand",
-
   "inputs.bgImage.label": "Immagine di sfondo",
   "inputs.bgImage.section": "Sfondo",
   "inputs.bgImage.help": "Sfondo opzionale a piena pagina dietro al contenuto.",
-
   "inputs.imageFilter.label": "Filtro immagine",
   "inputs.imageFilter.section": "Sfondo",
   "inputs.imageFilter.options.none": "Nessuno",
   "inputs.imageFilter.options.mono": "Mono",
-  "inputs.imageFilter.options.punch": "Punch",
+  "inputs.imageFilter.options.punch": "Grinta",
   "inputs.imageFilter.options.warm": "Caldo",
   "inputs.imageFilter.options.cool": "Freddo",
   "inputs.imageFilter.options.fade": "Sfumato",
-
   "inputs.imageFraming.label": "Posizione",
   "inputs.imageFraming.section": "Sfondo",
   "inputs.imageFraming.help": "Lo zoom ingrandisce l'immagine di sfondo per ritagliarla; X / Y la spostano. Trascina un'etichetta o digita un valore.",
   "inputs.imageFraming.fields.zoom.label": "Zoom",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "Sovrapposizione",
   "inputs.bgOpacity.section": "Sfondo",
   "inputs.bgOpacity.help": "Tinge l'immagine con il colore del tema così il testo resta leggibile.",
-
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Combinazioni di colore SUSE per la card, il testo e la call-to-action.",
   "inputs.theme.options.pine": "Pine",
-  "inputs.theme.options.jungle": "Jungle",
+  "inputs.theme.options.jungle": "Giungla",
   "inputs.theme.options.white": "Bianco",
-  "inputs.theme.options.midnight": "Midnight",
-  "inputs.theme.options.persimmon": "Persimmon",
-
+  "inputs.theme.options.midnight": "Mezzanotte",
+  "inputs.theme.options.persimmon": "Cachi",
   "inputs.fgColor.label": "Colore testo",
   "inputs.fgColor.help": "Opzionale. Sovrascrive il colore del testo e del contorno del pulsante (tutto ciò che segue currentColor). Lascia non impostato per usare il colore in primo piano del tema.",
-
   "inputs.heading.label": "Titolo",
   "inputs.heading.help": "La riga principale, di grande impatto. Lascia vuoto per ometterla.",
-
   "inputs.headingFontSize.label": "Dimensione",
   "inputs.headingFontSize.section": "Tipografia titolo",
   "inputs.headingFontSize.help": "Dimensione relativa — il layout si adatta comunque automaticamente alla tela.",
-
   "inputs.headingFontWeight.label": "Peso",
   "inputs.headingFontWeight.section": "Tipografia titolo",
-
   "inputs.subheading.label": "Sottotitolo",
   "inputs.subheading.help": "Una riga di supporto sotto il titolo. Supporta markdown: **grassetto**, *corsivo*, ~~barrato~~.",
-
   "inputs.subheadingFontSize.label": "Dimensione",
   "inputs.subheadingFontSize.section": "Tipografia sottotitolo",
   "inputs.subheadingFontSize.help": "Dimensione relativa — il layout si adatta comunque automaticamente alla tela.",
-
   "inputs.subheadingFontWeight.label": "Peso",
   "inputs.subheadingFontWeight.section": "Tipografia sottotitolo",
-
   "inputs.body.label": "Testo del corpo",
   "inputs.body.help": "Supporta markdown: **grassetto**, *corsivo*, ~~barrato~~, ed elenchi puntati (righe che iniziano con - ).",
-
   "inputs.bodyFontSize.label": "Dimensione",
   "inputs.bodyFontSize.section": "Tipografia corpo",
   "inputs.bodyFontSize.help": "Dimensione relativa — il layout si adatta comunque automaticamente alla tela.",
-
   "inputs.bodyFontWeight.label": "Peso",
   "inputs.bodyFontWeight.section": "Tipografia corpo",
-
   "inputs.cta.label": "Call to action",
   "inputs.cta.help": "Un'etichetta breve per il pulsante — fino a 20 caratteri.",
-
   "inputs.ctaTypography.label": "Font",
   "inputs.ctaTypography.section": "Tipografia call-to-action",
   "inputs.ctaTypography.help": "SUSE Mono dà al pulsante un'atmosfera tecnica, da codice.",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "Dimensione",
   "inputs.ctaFontSize.section": "Tipografia call-to-action",
   "inputs.ctaFontSize.help": "Dimensione relativa — il layout si adatta comunque automaticamente alla tela.",
-
   "inputs.ctaFontWeight.label": "Peso",
   "inputs.ctaFontWeight.section": "Tipografia call-to-action",
-
   "inputs.headshot.label": "Ritratto",
   "inputs.headshot.help": "Ritratto opzionale. Se impostato, ancora un proprio blocco di colore accanto al testo."
 }

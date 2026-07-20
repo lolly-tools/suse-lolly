@@ -2,7 +2,6 @@
   "name": "Dynamické rozvržení",
   "description": "Univerzální rozvržení, které se přizpůsobí všemu, co přidáš, v jakékoli velikosti.",
   "a11yLabel": "{{default heading cta}} — náhled Dynamického rozvržení",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",
   "inputs.logo.help": "Umísti logo SUSE do rohu. Správná varianta pro dané téma se zvolí automaticky.",
@@ -11,94 +10,73 @@
   "inputs.logo.options.top-right": "Vpravo nahoře",
   "inputs.logo.options.bottom-left": "Vlevo dole",
   "inputs.logo.options.bottom-right": "Vpravo dole",
-
   "inputs.logoStyle.label": "Styl loga",
   "inputs.logoStyle.section": "Logo",
   "inputs.logoStyle.help": "Mono zůstává čitelné v jakémkoli tématu; značková zelená používá zelenou verzi značky.",
   "inputs.logoStyle.options.mono": "Mono (bílá / černá)",
   "inputs.logoStyle.options.brand": "Značková zelená",
-
   "inputs.bgImage.label": "Obrázek na pozadí",
   "inputs.bgImage.section": "Pozadí",
   "inputs.bgImage.help": "Volitelné pozadí do krve za obsahem.",
-
   "inputs.imageFilter.label": "Filtr obrázku",
   "inputs.imageFilter.section": "Pozadí",
   "inputs.imageFilter.options.none": "Žádný",
   "inputs.imageFilter.options.mono": "Mono",
-  "inputs.imageFilter.options.punch": "Punch",
+  "inputs.imageFilter.options.punch": "Úder",
   "inputs.imageFilter.options.warm": "Teplý",
   "inputs.imageFilter.options.cool": "Studený",
   "inputs.imageFilter.options.fade": "Vyblednutí",
-
   "inputs.imageFraming.label": "Pozice",
   "inputs.imageFraming.section": "Pozadí",
   "inputs.imageFraming.help": "Přiblížení zvětší obrázek na pozadí a oříznou ho; X / Y ho posouvají. Přetáhni popisek nebo zadej hodnotu.",
   "inputs.imageFraming.fields.zoom.label": "Přiblížení",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "Překryv",
   "inputs.bgOpacity.section": "Pozadí",
   "inputs.bgOpacity.help": "Obrázek se probarví barvou tématu, aby text zůstal čitelný.",
-
   "inputs.theme.label": "Téma",
   "inputs.theme.help": "Barevné kombinace SUSE pro kartu, text a výzvu k akci.",
   "inputs.theme.options.pine": "Pine",
-  "inputs.theme.options.jungle": "Jungle",
+  "inputs.theme.options.jungle": "Džungle",
   "inputs.theme.options.white": "White",
   "inputs.theme.options.midnight": "Midnight",
   "inputs.theme.options.persimmon": "Persimmon",
-
   "inputs.fgColor.label": "Barva textu",
   "inputs.fgColor.help": "Volitelné. Přepíše barvu textu a obrysu tlačítka (vše, co dědí currentColor). Necháš-li nevyplněné, použije se barva popředí z tématu.",
-
   "inputs.heading.label": "Nadpis",
   "inputs.heading.help": "Velký, výrazný řádek. Necháš-li prázdné, vynechá se.",
-
   "inputs.headingFontSize.label": "Velikost",
   "inputs.headingFontSize.section": "Typografie nadpisu",
   "inputs.headingFontSize.help": "Relativní velikost — rozvržení se stále automaticky přizpůsobí plátnu.",
-
   "inputs.headingFontWeight.label": "Řez",
   "inputs.headingFontWeight.section": "Typografie nadpisu",
-
   "inputs.subheading.label": "Podnadpis",
   "inputs.subheading.help": "Podpůrný řádek pod nadpisem. Podporuje markdown: **tučné**, *kurzíva*, ~~přeškrtnuté~~.",
-
   "inputs.subheadingFontSize.label": "Velikost",
   "inputs.subheadingFontSize.section": "Typografie podnadpisu",
   "inputs.subheadingFontSize.help": "Relativní velikost — rozvržení se stále automaticky přizpůsobí plátnu.",
-
   "inputs.subheadingFontWeight.label": "Řez",
   "inputs.subheadingFontWeight.section": "Typografie podnadpisu",
-
   "inputs.body.label": "Text",
   "inputs.body.help": "Podporuje markdown: **tučné**, *kurzíva*, ~~přeškrtnuté~~ a odrážkové seznamy (řádky začínající - ).",
-
   "inputs.bodyFontSize.label": "Velikost",
   "inputs.bodyFontSize.section": "Typografie textu",
   "inputs.bodyFontSize.help": "Relativní velikost — rozvržení se stále automaticky přizpůsobí plátnu.",
-
   "inputs.bodyFontWeight.label": "Řez",
   "inputs.bodyFontWeight.section": "Typografie textu",
-
   "inputs.cta.label": "Výzva k akci",
   "inputs.cta.help": "Krátký popisek tlačítka — max. 20 znaků.",
-
   "inputs.ctaTypography.label": "Písmo",
   "inputs.ctaTypography.section": "Typografie výzvy k akci",
   "inputs.ctaTypography.help": "SUSE Mono dodá tlačítku technický, kódový nádech.",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "Velikost",
   "inputs.ctaFontSize.section": "Typografie výzvy k akci",
   "inputs.ctaFontSize.help": "Relativní velikost — rozvržení se stále automaticky přizpůsobí plátnu.",
-
   "inputs.ctaFontWeight.label": "Řez",
   "inputs.ctaFontWeight.section": "Typografie výzvy k akci",
-
   "inputs.headshot.label": "Portrét",
   "inputs.headshot.help": "Volitelný portrét. Když ho nastavíš, ukotví si vlastní barevný blok vedle textu."
 }

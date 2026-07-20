@@ -7,7 +7,7 @@
   "inputs.orientation.help": "Ang Horizontal ang malapad na lockup; ang Stacked naman ay ang parisukat na bersyon para sa masikip o parisukat na espasyo.",
   "inputs.orientation.options.horizontal": "Horizontal",
   "inputs.orientation.options.vertical": "Stacked",
-  "inputs.ink.label": "Style",
+  "inputs.ink.label": "Estilo",
   "inputs.ink.help": "Brand green sa kahit anong background, o high-contrast mono (puti sa dark, itim sa light).",
   "inputs.ink.options.brand": "Brand green",
   "inputs.ink.options.mono": "Mono"

@@ -21,6 +21,6 @@
   "inputs.theme.label": "Tema",
   "inputs.theme.options.dark": "Koyu",
   "inputs.theme.options.light": "Açık",
-  "inputs.theme.options.pine": "Pine",
+  "inputs.theme.options.pine": "Çam",
   "inputs.theme.options.transparent": "Saydam"
 }
