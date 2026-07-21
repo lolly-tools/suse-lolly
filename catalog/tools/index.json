@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-20T23:47:25.435Z",
+  "generatedAt": "2026-07-21T13:34:22.470Z",
   "tools": [
     {
       "id": "color-block",
@@ -1695,7 +1695,7 @@
       "height": 1080,
       "exportable": false,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" /></svg>",
-      "preview": "/catalog/previews/color-palette.webp",
+      "preview": "/catalog/previews/color-palette.png",
       "i18n": {
         "ar": {
           "name": "لوحة الألوان",
@@ -2075,7 +2075,7 @@
       "height": 900,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /><path d=\"M15 5.764v15\" /><path d=\"M9 3.236v15\" /></svg>",
-      "preview": "/catalog/previews/street-map.webp",
+      "preview": "/catalog/previews/street-map.png",
       "examples": [
         {
           "label": "Paris in ink",
@@ -3727,7 +3727,7 @@
       "height": 1000,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"1\" /><circle cx=\"19\" cy=\"5\" r=\"1\" /><circle cx=\"5\" cy=\"5\" r=\"1\" /><circle cx=\"12\" cy=\"12\" r=\"1\" /><circle cx=\"19\" cy=\"12\" r=\"1\" /><circle cx=\"5\" cy=\"12\" r=\"1\" /><circle cx=\"12\" cy=\"19\" r=\"1\" /><circle cx=\"19\" cy=\"19\" r=\"1\" /><circle cx=\"5\" cy=\"19\" r=\"1\" /></svg>",
-      "preview": "/catalog/previews/filter-halftone.webp",
+      "preview": "/catalog/previews/filter-halftone.png",
       "examples": [
         {
           "label": "Newsprint",
@@ -4886,13 +4886,15 @@
     {
       "id": "layout-studio",
       "name": "Layout Studio",
-      "version": "1.4.0",
+      "version": "1.6.0",
       "status": "community",
       "category": "designer",
       "formats": [
         "png",
         "svg",
         "pdf",
+        "pdf-cmyk",
+        "cmyk-tiff",
         "jpg",
         "webp"
       ],
@@ -6857,7 +6859,7 @@
       "height": 900,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"9\" cy=\"9\" r=\"7\"/><circle cx=\"15\" cy=\"15\" r=\"7\"/></svg>",
-      "preview": "/catalog/previews/mesh-gradient.webp",
+      "preview": "/catalog/previews/mesh-gradient.png",
       "examples": [
         {
           "label": "Sunset haze",
@@ -7178,7 +7180,7 @@
       "height": 1024,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M7 8h4\" /><path d=\"M7 12h4\" /><path d=\"M7 16h4\" /><path d=\"M14 8h3\" /><path d=\"M14 12h3\" /><path d=\"M14 16h3\" /></svg>",
-      "preview": "/catalog/previews/prompt-to-image.webp",
+      "preview": "/catalog/previews/prompt-to-image.png",
       "examples": [
         {
           "label": "Two-column brief",
@@ -7590,7 +7592,7 @@
       "height": 720,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"13\" rx=\"1.5\"/><path d=\"M7 20h10\"/><path d=\"M12 17v3\"/><path d=\"M6.5 8.5h6\"/><path d=\"M6.5 11.5h4\"/><rect x=\"14.5\" y=\"8\" width=\"3.5\" height=\"5.5\" rx=\"0.5\"/></svg>",
-      "preview": "/catalog/previews/deck-studio.webp",
+      "preview": "/catalog/previews/deck-studio.png",
       "examples": [
         {
           "label": "Boardroom title",

@@ -1,7 +1,7 @@
 {
   "id": "layout-studio",
   "name": "Layout Studio",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "engineVersion": "^1.12.0",
   "status": "community",
   "category": "designer",
@@ -13,7 +13,7 @@
   "render": {
     "width": 1080,
     "height": 1080,
-    "formats": ["png", "svg", "pdf", "jpg", "webp"],
+    "formats": ["png", "svg", "pdf", "pdf-cmyk", "cmyk-tiff", "jpg", "webp"],
     "actions": ["copy", "download", "save", "share"],
     "layout": "editor",
     "transparentBg": true,
@@ -58,6 +58,7 @@
         "ligaturesField": "ligatures",
         "alternatesField": "alternates",
         "padField": "pad",
+        "fitTextField": "fitText",
         "fitField": "fit",
         "blendField": "blend",
         "groupField": "group",
@@ -71,6 +72,7 @@
         "import": { "formats": ["svg", "penpot", "pdf", "ai", "idml"] },
         "addKinds": [
           { "id": "box", "label": "Box", "seed": { "kind": "box", "bg": "#30BA78", "shape": "rounded", "text": "" } },
+          { "id": "circle", "label": "Circle", "seed": { "kind": "box", "bg": "#30BA78", "shape": "circle", "text": "", "w": 480, "h": 480 } },
           { "id": "text", "label": "Text", "seed": { "kind": "text", "bg": "", "shape": "rect", "text": "Text", "fg": "#0c322c", "fontSize": 64, "valign": "top", "font": "SUSE", "lineHeight": 1.12 } },
           { "id": "image", "label": "Image", "seed": { "kind": "image", "bg": "#eef1f0", "shape": "rounded", "fit": "contain", "text": "" } },
           { "id": "lottie", "label": "Animation", "seed": { "kind": "image", "bg": "", "shape": "rounded", "fit": "contain", "text": "" } },
@@ -104,7 +106,8 @@
             { "value": "rect", "label": "Rectangle" },
             { "value": "rounded", "label": "Rounded" },
             { "value": "pill", "label": "Pill" },
-            { "value": "ellipse", "label": "Ellipse" }
+            { "value": "ellipse", "label": "Ellipse" },
+            { "value": "circle", "label": "Circle" }
           ]
         },
         { "id": "radius", "type": "number", "label": "Corner radius", "default": 16, "min": 0, "showIf": { "shape": "rounded" } },
@@ -241,7 +244,8 @@
             { "value": "center bottom", "label": "Bottom" },
             { "value": "right bottom", "label": "Bottom right" }
           ]
-        }
+        },
+        { "id": "fitText", "type": "boolean", "label": "Shrink text to fit", "default": false, "help": "Automatically shrink the text so it fits inside the box (shrink-only — never larger than the set size). Off by default, so the box grows to the text instead." }
       ],
       "default": [
         { "id": "byq0l1tji", "kind": "box", "x": 0, "y": 0, "w": 1080, "h": 1080, "rot": 0, "shape": "rounded", "bg": "#0c322c" },
