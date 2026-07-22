@@ -3,7 +3,12 @@
 
 .es-root {
   width: 100%;
-  height: 100%;
+  /* height:auto (not 100%) so the box grows to fit longer signatures — extra
+     contact lines, an address, a promo banner or an append block — instead of
+     being clipped by the fixed frame. The inline <script> below then sizes the
+     export canvas to match. overflow:hidden stays: with height:auto nothing
+     overflows vertically, so it only trims any horizontal spill. */
+  height: auto;
   background: #ffffff;
   font-family: 'SUSE', Arial, Helvetica, sans-serif;
   padding: 0;
@@ -99,3 +104,56 @@
   {{/if}}
 
 </div>
+
+<script>
+/* Grow the export canvas to the signature's natural height so longer content is
+   never clipped by the fixed 600×300 frame. Runs after every render (the shell
+   re-executes template <script>s on each paint). Width stays 600. Web shell only:
+   #tool-canvas and the export-size fields are shell-private DOM (absent off-web,
+   where the render already returns at its natural size). */
+(function () {
+  // Act ONLY on this render's live canvas host. In the off-screen batch/compose
+  // renderer the script's parent is a `.pro-export-canvas` div (no id), so bail —
+  // that path controls its own output size.
+  var script = document.currentScript;
+  var host = script ? script.parentElement : document.getElementById('tool-canvas');
+  if (!host || host.id !== 'tool-canvas') return;
+  var root = host.querySelector('.es-root');
+  if (!root) return;
+  var wIn = document.querySelector('[data-action="export-width"]');
+  var hIn = document.querySelector('[data-action="export-height"]');
+
+  function sync() {
+    // offsetHeight is the layout height — immune to fitCanvas's preview-scale
+    // transform (unlike getBoundingClientRect). height:auto on .es-root makes it
+    // track content exactly, so the frame grows AND shrinks with no ratchet.
+    var h = Math.ceil(root.offsetHeight);
+    if (h < 1) return;
+    if ((parseInt(host.style.height, 10) || 0) === h) return; // unchanged → no-op
+    host.style.width = '600px';
+    host.style.height = h + 'px';
+    // Keep the export dimension fields in step so PNG/SVG/HTML export at the grown
+    // size, not the manifest's 300px default. Setting .value directly does NOT fire
+    // the input listener, so this stays clear of refreshCanvasPreview's preview-scale
+    // path (which would shrink the whole signature to fit 300px).
+    if (wIn) wIn.value = '600';
+    if (hIn) hIn.value = String(h);
+    // Re-fit the resized canvas to the stage. canvas-resize avoids the URL sync a
+    // synthetic 'input' event would trigger.
+    host.dispatchEvent(new CustomEvent('canvas-resize'));
+  }
+
+  sync(); // measure what's already laid out (text, the fixed-size headshot)
+
+  // The logo/promo images (data URIs, no fixed height) and the SUSE webfont reflow
+  // the signature AFTER this script runs with no further re-paint, so watch the root
+  // and re-sync when its height settles. One observer, reconnected to the current
+  // root each paint; observing a detached old root is inert. sync() only resizes the
+  // parent, never the root, so it can't feed back into the observer.
+  if (typeof ResizeObserver !== 'undefined') {
+    if (window.__esSigRO) window.__esSigRO.disconnect();
+    window.__esSigRO = new ResizeObserver(sync);
+    window.__esSigRO.observe(root);
+  }
+})();
+</script>
