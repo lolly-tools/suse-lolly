@@ -3,12 +3,7 @@
 
 .es-root {
   width: 100%;
-  /* height:auto (not 100%) so the box grows to fit longer signatures — extra
-     contact lines, an address, a promo banner or an append block — instead of
-     being clipped by the fixed frame. The inline <script> below then sizes the
-     export canvas to match. overflow:hidden stays: with height:auto nothing
-     overflows vertically, so it only trims any horizontal spill. */
-  height: auto;
+  height: auto; /* grow to fit the content; the canvas is sized to match below */
   background: #ffffff;
   font-family: 'SUSE', Arial, Helvetica, sans-serif;
   padding: 0;
