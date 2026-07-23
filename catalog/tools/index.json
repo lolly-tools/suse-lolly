@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-23T15:46:07.218Z",
+  "generatedAt": "2026-07-23T16:40:26.487Z",
   "tools": [
     {
       "id": "color-block",
@@ -1683,8 +1683,8 @@
     },
     {
       "id": "color-palette",
-      "name": "Color Palette",
-      "description": "Browse SUSE brand colors — click a swatch to copy it.",
+      "name": "Color Picker",
+      "description": "A handy color picker for the SUSE brand palette — click any swatch to copy it.",
       "version": "1.1.0",
       "status": "official",
       "category": "utility",
