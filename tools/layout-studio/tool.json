@@ -1,7 +1,7 @@
 {
   "id": "layout-studio",
   "name": "Layout Studio",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "engineVersion": "^1.12.0",
   "status": "community",
   "category": "designer",
@@ -43,6 +43,7 @@
         "shapeField": "shape",
         "radiusField": "radius",
         "fillField": "bg",
+        "gradField": "grad",
         "opacityField": "opacity",
         "imageField": "image",
         "imgPosField": "imgpos",
@@ -275,7 +276,8 @@
         { "id": "lane", "showFor": [], "type": "select", "label": "Lane", "default": "", "options": [{ "value": "", "label": "Overlay" }, { "value": "seq", "label": "Sequence" }] },
         { "id": "strokeDash", "type": "select", "label": "Stroke style", "default": "", "showFor": ["path"], "options": [{ "value": "", "label": "Solid" }, { "value": "dashed", "label": "Dashed" }, { "value": "dotted", "label": "Dotted" }], "help": "Solid, dashed or dotted. The dash pattern is derived from the stroke width, so it keeps its proportions when the width changes." },
         { "id": "strokeCap", "type": "select", "label": "Line ends", "default": "round", "showFor": ["path"], "options": [{ "value": "round", "label": "Round" }, { "value": "butt", "label": "Flat" }, { "value": "square", "label": "Square" }] },
-        { "id": "strokeJoin", "type": "select", "label": "Corners", "default": "round", "showFor": ["path"], "options": [{ "value": "round", "label": "Round" }, { "value": "miter", "label": "Sharp" }, { "value": "bevel", "label": "Bevelled" }] }
+        { "id": "strokeJoin", "type": "select", "label": "Corners", "default": "round", "showFor": ["path"], "options": [{ "value": "round", "label": "Round" }, { "value": "miter", "label": "Sharp" }, { "value": "bevel", "label": "Bevelled" }] },
+        { "id": "grad", "type": "text", "label": "Gradient", "default": "", "description": "Gradient fill as a Lolly gradient spec — kind_angle_colour-pos_colour-pos, e.g. lin_90_30ba78-0_efefef-100 (lin/rad/con; add .srgb or .oklch.longer to the kind to change how the colours are interpolated). Painted over the flat Fill, so a translucent stop composites onto it. Empty means no gradient." }
       ],
       "default": [
         { "id": "byq0l1tji", "kind": "box", "x": 0, "y": 0, "w": 1080, "h": 1080, "rot": 0, "shape": "rounded", "bg": "#0c322c" },
