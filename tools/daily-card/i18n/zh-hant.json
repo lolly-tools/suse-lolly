@@ -1,18 +1,14 @@
 {
   "name": "每日簡報",
   "description": "每日金句,附任何城市的即時天氣、時間與地圖。",
-
   "inputs.city.label": "城市",
   "inputs.city.help": "選填。城市名稱、機場代碼(LAX、LHR)或縮寫(LA、NYC、SF…)",
-
   "inputs.theme.label": "主題",
   "inputs.theme.options.dark": "深色",
   "inputs.theme.options.light": "淺色",
   "inputs.theme.options.green": "SUSE 綠",
-
   "inputs.quoteWeight.label": "金句字重",
   "inputs.quoteWeight.help": "金句文字的字重(100 極細 → 900 特黑)。",
-
   "inputs.ambientMotion.label": "環境動態",
   "inputs.ambientMotion.help": "卡片背後有一道非常緩慢飄移的光暈,僅顯示於畫面上。關閉可讓匯出的靜態圖保持乾淨。"
 }

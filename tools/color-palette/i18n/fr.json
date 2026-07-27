@@ -1,5 +1,4 @@
 {
-  "name": "Palette de couleurs",
-  "description": "Parcours les couleurs de marque SUSE — clique sur une nuance pour la copier."
+  "name": "Color Picker",
+  "description": "A handy color picker for the SUSE brand palette — click any swatch to copy it."
 }
-

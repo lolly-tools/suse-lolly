@@ -1,6 +1,6 @@
 {
   "name": "Layout Studio",
-  "featured.blurb": "Frie layouter på et åpent lerret",
+  "featured.blurb": "Fritt utformbare layouter på et åpent lerret",
   "inputs.background.label": "Lerretsbakgrunn",
   "inputs.boxes.label": "Bokser",
   "inputs.boxes.addMenu.label": "Legg til boks",

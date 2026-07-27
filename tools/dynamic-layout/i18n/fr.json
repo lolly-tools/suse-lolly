@@ -2,7 +2,6 @@
   "name": "Mise en page dynamique",
   "description": "Une mise en page polyvalente qui se recompose autour de ce que tu ajoutes, à toute taille.",
   "a11yLabel": "{{default heading cta}} — aperçu de la mise en page dynamique",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",
   "inputs.logo.help": "Place le logo SUSE dans un coin. La variante adaptée au thème est choisie automatiquement.",
@@ -11,17 +10,14 @@
   "inputs.logo.options.top-right": "Haut droite",
   "inputs.logo.options.bottom-left": "Bas gauche",
   "inputs.logo.options.bottom-right": "Bas droite",
-
   "inputs.logoStyle.label": "Style du logo",
   "inputs.logoStyle.section": "Logo",
   "inputs.logoStyle.help": "Mono reste lisible sur n'importe quel thème ; le vert de marque utilise le symbole vert.",
   "inputs.logoStyle.options.mono": "Mono (blanc / noir)",
   "inputs.logoStyle.options.brand": "Vert de marque",
-
   "inputs.bgImage.label": "Image de fond",
   "inputs.bgImage.section": "Arrière-plan",
   "inputs.bgImage.help": "Arrière-plan optionnel à fond perdu, derrière le contenu.",
-
   "inputs.imageFilter.label": "Filtre d'image",
   "inputs.imageFilter.section": "Arrière-plan",
   "inputs.imageFilter.options.none": "Aucun",
@@ -30,18 +26,15 @@
   "inputs.imageFilter.options.warm": "Chaud",
   "inputs.imageFilter.options.cool": "Froid",
   "inputs.imageFilter.options.fade": "Délavé",
-
   "inputs.imageFraming.label": "Position",
   "inputs.imageFraming.section": "Arrière-plan",
   "inputs.imageFraming.help": "Le zoom agrandit l'image de fond pour cadrer plus près ; X / Y la déplacent. Fais glisser une étiquette ou saisis une valeur.",
   "inputs.imageFraming.fields.zoom.label": "Zoom",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "Superposition",
   "inputs.bgOpacity.section": "Arrière-plan",
   "inputs.bgOpacity.help": "Teinte l'image avec la couleur du thème pour que le texte reste lisible.",
-
   "inputs.theme.label": "Thème",
   "inputs.theme.help": "Combinaisons de couleurs SUSE pour la carte, le texte et l'appel à l'action.",
   "inputs.theme.options.pine": "Pin",
@@ -49,56 +42,41 @@
   "inputs.theme.options.white": "Blanc",
   "inputs.theme.options.midnight": "Minuit",
   "inputs.theme.options.persimmon": "Kaki",
-
   "inputs.fgColor.label": "Couleur du texte",
   "inputs.fgColor.help": "Facultatif. Remplace la couleur du texte et du contour du bouton (tout ce qui suit currentColor). Laisse-le vide pour utiliser la couleur de premier plan du thème.",
-
   "inputs.heading.label": "Titre",
   "inputs.heading.help": "La grande ligne percutante. Laisse-la vide pour l'omettre.",
-
   "inputs.headingFontSize.label": "Taille",
   "inputs.headingFontSize.section": "Typographie du titre",
   "inputs.headingFontSize.help": "Taille relative — la mise en page continue de s'ajuster automatiquement au canevas.",
-
   "inputs.headingFontWeight.label": "Graisse",
   "inputs.headingFontWeight.section": "Typographie du titre",
-
   "inputs.subheading.label": "Sous-titre",
   "inputs.subheading.help": "Une ligne de soutien sous le titre. Prend en charge le markdown : **gras**, *italique*, ~~barré~~.",
-
   "inputs.subheadingFontSize.label": "Taille",
   "inputs.subheadingFontSize.section": "Typographie du sous-titre",
   "inputs.subheadingFontSize.help": "Taille relative — la mise en page continue de s'ajuster automatiquement au canevas.",
-
   "inputs.subheadingFontWeight.label": "Graisse",
   "inputs.subheadingFontWeight.section": "Typographie du sous-titre",
-
   "inputs.body.label": "Corps de texte",
   "inputs.body.help": "Prend en charge le markdown : **gras**, *italique*, ~~barré~~, ainsi que les listes à puces (lignes commençant par - ).",
-
   "inputs.bodyFontSize.label": "Taille",
   "inputs.bodyFontSize.section": "Typographie du corps de texte",
   "inputs.bodyFontSize.help": "Taille relative — la mise en page continue de s'ajuster automatiquement au canevas.",
-
   "inputs.bodyFontWeight.label": "Graisse",
   "inputs.bodyFontWeight.section": "Typographie du corps de texte",
-
   "inputs.cta.label": "Appel à l'action",
   "inputs.cta.help": "Une étiquette de bouton courte — jusqu'à 20 caractères.",
-
   "inputs.ctaTypography.label": "Police",
   "inputs.ctaTypography.section": "Typographie de l'appel à l'action",
   "inputs.ctaTypography.help": "SUSE Mono donne au bouton une allure technique, façon code.",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "Taille",
   "inputs.ctaFontSize.section": "Typographie de l'appel à l'action",
   "inputs.ctaFontSize.help": "Taille relative — la mise en page continue de s'ajuster automatiquement au canevas.",
-
   "inputs.ctaFontWeight.label": "Graisse",
   "inputs.ctaFontWeight.section": "Typographie de l'appel à l'action",
-
   "inputs.headshot.label": "Portrait",
   "inputs.headshot.help": "Portrait optionnel. Une fois défini, il ancre son propre bloc de couleur à côté du texte."
 }

@@ -1,6 +1,6 @@
 {
   "name": "Stemmeopptaker",
-  "description": "Ta opp en talemelding med en nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3.",
+  "description": "Spill inn en talemelding med nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3.",
   "a11yLabel": "Stemmeopptaker — nivå {{default dbText \"idle\"}}",
   "inputs.title.label": "Etikett",
   "inputs.title.help": "Navngir opptakskortet og den lagrede filen.",

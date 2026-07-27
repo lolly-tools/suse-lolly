@@ -2,9 +2,7 @@
   "name": "Flussdiagramm",
   "description": "Erstellen Sie Flussdiagramme auf einer offenen Fläche — ziehen Sie Karten, verbinden Sie sie, und die Linien verlaufen automatisch und haften an den Boxen.",
   "featured.blurb": "Karten und Verbindungslinien, die an den Boxen haften",
-
   "inputs.background.label": "Hintergrund der Zeichenfläche",
-
   "inputs.boxes.label": "Karten",
   "inputs.boxes.addMenu.label": "Karte hinzufügen",
   "inputs.boxes.fields.kind.label": "Art",
@@ -95,7 +93,6 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "Unten links",
   "inputs.boxes.fields.imgpos.options.center bottom": "Unten",
   "inputs.boxes.fields.imgpos.options.right bottom": "Unten rechts",
-
   "inputs.connectors.label": "Verbindungen",
   "inputs.connectors.fields.from.label": "Von Karte",
   "inputs.connectors.fields.to.label": "Zu Karte",

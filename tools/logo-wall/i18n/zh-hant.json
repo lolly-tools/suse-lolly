@@ -2,69 +2,47 @@
   "name": "標誌組合:網格(NASCAR)",
   "description": "將一堆標誌排成整齊均勻的贊助商網格——也就是「NASCAR」牆。",
   "a11yLabel": "由 {{logos.length}} 個標誌組成的網格",
-
   "inputs.columns.label": "欄數",
   "inputs.columns.help": "每一列會放幾個標誌。",
-
   "inputs.gap.label": "間距",
   "inputs.gap.help": "標誌之間的間距。",
-
   "inputs.padding.label": "內距",
   "inputs.padding.help": "整面牆四周的留白空間。",
-
   "inputs.background.label": "背景",
-
   "inputs.balance.label": "平衡大小",
   "inputs.balance.help": "依各標誌的視覺份量自動調整大小——較重的標誌縮小，較輕的則放大——讓整面牆看起來份量均衡。各標誌自己的「大小 %」仍會在此基礎上疊加。關閉則所有標誌大小一致。",
-
   "inputs.inkColor.label": "墨色",
   "inputs.inkColor.help": "任何設為「轉為向量」的標誌所使用的單一墨色（逐一標誌設定於下方）。",
-
   "inputs.threshold.label": "向量閾值",
   "inputs.threshold.help": "向量標誌的預設亮度分界點。數值越高，保留的標誌內容越多；若某個標誌特別難處理，可在下方逐一標誌調整。",
-
   "inputs.invert.label": "向量反轉",
   "inputs.invert.help": "向量標誌的預設設定——決定閾值的哪一側變成墨色。白色／淺色標誌會自動反轉，因此很少需要用到這個選項；若有需要，可在下方逐一標誌調整。",
-
   "inputs.detail.label": "向量細節",
   "inputs.detail.help": "向量標誌的預設描繪解析度。數值越高能擷取越精細的形狀，但運算也越重。",
-
   "inputs.smoothing.label": "向量平滑",
   "inputs.smoothing.help": "向量標誌的預設設定：描繪輪廓轉為曲線的程度。數值低可保持邊緣銳利；數值高則會轉為流暢的貝茲曲線。",
-
   "inputs.logos.label": "標誌",
-
   "inputs.logos.fields.logo.label": "圖片",
-
   "inputs.logos.fields.presence.label": "顯著度",
   "inputs.logos.fields.presence.help": "此標誌有多顯眼。平衡大小會先讓所有標誌份量一致；顯著度接著會刻意將這個標誌調高或調低——用於贊助等級的大小區分。",
   "inputs.logos.fields.presence.options.hero": "主打",
   "inputs.logos.fields.presence.options.large": "大",
   "inputs.logos.fields.presence.options.normal": "正常",
   "inputs.logos.fields.presence.options.small": "小",
-
   "inputs.logos.fields.scale.label": "大小 %",
   "inputs.logos.fields.scale.help": "在顯著度與平衡大小之外的微調。",
-
   "inputs.logos.fields.opacity.label": "不透明度",
-
   "inputs.logos.fields.filter.label": "濾鏡",
   "inputs.logos.fields.filter.options.none": "無",
   "inputs.logos.fields.filter.options.grayscale": "灰階",
-
   "inputs.logos.fields.vectorize.label": "轉為向量",
   "inputs.logos.fields.vectorize.help": "將此標誌簡化為單一墨色（銳利向量）。關閉則保留原始圖片。",
-
   "inputs.logos.fields.tune.label": "調整此標誌",
   "inputs.logos.fields.tune.help": "為此標誌設定專屬的向量參數——適合需要不同閾值或反轉設定的難處理標誌。",
-
   "inputs.logos.fields.threshold.label": "閾值",
   "inputs.logos.fields.threshold.help": "此標誌的亮度分界點。數值越高，保留的內容越多。",
-
   "inputs.logos.fields.invert.label": "反轉",
   "inputs.logos.fields.invert.help": "適用於白色或淺色標誌。",
-
   "inputs.logos.fields.detail.label": "細節",
-
   "inputs.logos.fields.smoothing.label": "平滑"
 }

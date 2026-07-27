@@ -1,6 +1,6 @@
 {
   "name": "Layout Studio",
-  "featured.blurb": "열린 캔버스에서 자유롭게 구성하는 레이아웃",
+  "featured.blurb": "열린 캔버스에서 자유롭게 만드는 레이아웃",
   "inputs.background.label": "캔버스 배경",
   "inputs.boxes.label": "박스",
   "inputs.boxes.addMenu.label": "박스 추가",

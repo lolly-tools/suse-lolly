@@ -2,9 +2,7 @@
   "name": "مخطط انسيابي",
   "description": "أنشئ مخططات انسيابية على لوحة مفتوحة — اسحب البطاقات واربط بينها، وتتوجه الخطوط وتلتصق بالمربعات تلقائيا.",
   "featured.blurb": "بطاقات وموصلات تلتصق بالمربعات",
-
   "inputs.background.label": "خلفية اللوحة",
-
   "inputs.boxes.label": "البطاقات",
   "inputs.boxes.addMenu.label": "إضافة بطاقة",
   "inputs.boxes.fields.kind.label": "النوع",
@@ -95,7 +93,6 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "أسفل اليسار",
   "inputs.boxes.fields.imgpos.options.center bottom": "أسفل",
   "inputs.boxes.fields.imgpos.options.right bottom": "أسفل اليمين",
-
   "inputs.connectors.label": "الموصلات",
   "inputs.connectors.fields.from.label": "من بطاقة",
   "inputs.connectors.fields.to.label": "إلى بطاقة",

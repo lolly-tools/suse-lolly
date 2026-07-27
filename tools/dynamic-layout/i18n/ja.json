@@ -2,7 +2,6 @@
   "name": "ダイナミックレイアウト",
   "description": "何を追加しても自動で再構成される、あらゆるサイズに対応する万能レイアウトです。",
   "a11yLabel": "{{default heading cta}} — ダイナミックレイアウト プレビュー",
-
   "inputs.logo.label": "ロゴ",
   "inputs.logo.section": "ロゴ",
   "inputs.logo.help": "SUSE のロゴを角に配置します。テーマに合わせて適切なバリエーションが自動的に選ばれます。",
@@ -11,17 +10,14 @@
   "inputs.logo.options.top-right": "右上",
   "inputs.logo.options.bottom-left": "左下",
   "inputs.logo.options.bottom-right": "右下",
-
   "inputs.logoStyle.label": "ロゴスタイル",
   "inputs.logoStyle.section": "ロゴ",
   "inputs.logoStyle.help": "モノクロはどのテーマでも視認性が保たれます。ブランドグリーンは緑色のマークを使用します。",
   "inputs.logoStyle.options.mono": "モノクロ（白 / 黒）",
   "inputs.logoStyle.options.brand": "ブランドグリーン",
-
   "inputs.bgImage.label": "背景画像",
   "inputs.bgImage.section": "背景",
   "inputs.bgImage.help": "コンテンツの背後に配置する、任意の全面背景です。",
-
   "inputs.imageFilter.label": "画像フィルター",
   "inputs.imageFilter.section": "背景",
   "inputs.imageFilter.options.none": "なし",
@@ -30,18 +26,15 @@
   "inputs.imageFilter.options.warm": "ウォーム",
   "inputs.imageFilter.options.cool": "クール",
   "inputs.imageFilter.options.fade": "フェード",
-
   "inputs.imageFraming.label": "位置",
   "inputs.imageFraming.section": "背景",
   "inputs.imageFraming.help": "ズームで背景画像を拡大してトリミングします。X / Y でパン（移動）します。ラベルをドラッグするか、値を直接入力してください。",
   "inputs.imageFraming.fields.zoom.label": "ズーム",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "オーバーレイ",
   "inputs.bgOpacity.section": "背景",
   "inputs.bgOpacity.help": "画像をテーマカラーで着色し、テキストの視認性を保ちます。",
-
   "inputs.theme.label": "テーマ",
   "inputs.theme.help": "カード、テキスト、CTA（行動喚起）に適用される SUSE のブランドカラー配色です。",
   "inputs.theme.options.pine": "パイン",
@@ -49,56 +42,41 @@
   "inputs.theme.options.white": "ホワイト",
   "inputs.theme.options.midnight": "ミッドナイト",
   "inputs.theme.options.persimmon": "パーシモン",
-
   "inputs.fgColor.label": "テキストカラー",
   "inputs.fgColor.help": "任意設定。テキストとボタンの輪郭線（currentColor を継承するすべての要素）の色を上書きします。未設定の場合はテーマの前景色が使用されます。",
-
   "inputs.heading.label": "見出し",
   "inputs.heading.help": "大きく目を引く一行です。空欄にすると省略されます。",
-
   "inputs.headingFontSize.label": "サイズ",
   "inputs.headingFontSize.section": "見出しのタイポグラフィ",
   "inputs.headingFontSize.help": "相対サイズです。レイアウトはキャンバスに合わせて自動調整されます。",
-
   "inputs.headingFontWeight.label": "太さ",
   "inputs.headingFontWeight.section": "見出しのタイポグラフィ",
-
   "inputs.subheading.label": "サブ見出し",
   "inputs.subheading.help": "見出しを補足する一行です。マークダウンに対応しています：**太字**、*斜体*、~~取り消し線~~。",
-
   "inputs.subheadingFontSize.label": "サイズ",
   "inputs.subheadingFontSize.section": "サブ見出しのタイポグラフィ",
   "inputs.subheadingFontSize.help": "相対サイズです。レイアウトはキャンバスに合わせて自動調整されます。",
-
   "inputs.subheadingFontWeight.label": "太さ",
   "inputs.subheadingFontWeight.section": "サブ見出しのタイポグラフィ",
-
   "inputs.body.label": "本文テキスト",
   "inputs.body.help": "マークダウンに対応しています：**太字**、*斜体*、~~取り消し線~~、および箇条書き（- で始まる行）。",
-
   "inputs.bodyFontSize.label": "サイズ",
   "inputs.bodyFontSize.section": "本文のタイポグラフィ",
   "inputs.bodyFontSize.help": "相対サイズです。レイアウトはキャンバスに合わせて自動調整されます。",
-
   "inputs.bodyFontWeight.label": "太さ",
   "inputs.bodyFontWeight.section": "本文のタイポグラフィ",
-
   "inputs.cta.label": "行動喚起（CTA）",
   "inputs.cta.help": "短いボタンラベルです（最大20文字）。",
-
   "inputs.ctaTypography.label": "フォント",
   "inputs.ctaTypography.section": "CTAのタイポグラフィ",
   "inputs.ctaTypography.help": "SUSE Mono を使うと、ボタンにテクニカルでコードのような印象を与えます。",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "サイズ",
   "inputs.ctaFontSize.section": "CTAのタイポグラフィ",
   "inputs.ctaFontSize.help": "相対サイズです。レイアウトはキャンバスに合わせて自動調整されます。",
-
   "inputs.ctaFontWeight.label": "太さ",
   "inputs.ctaFontWeight.section": "CTAのタイポグラフィ",
-
   "inputs.headshot.label": "ヘッドショット",
   "inputs.headshot.help": "任意のポートレート画像です。設定すると、テキストの横に専用のカラーブロックとして配置されます。"
 }

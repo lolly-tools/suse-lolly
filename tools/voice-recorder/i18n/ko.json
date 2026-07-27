@@ -1,6 +1,6 @@
 {
   "name": "음성 녹음기",
-  "description": "실시간 레벨 미터와 친절한 안내를 보며 음성 메모를 녹음하고 MP3로 저장해요.",
+  "description": "실시간 레벨 미터와 부드러운 코칭으로 음성 메모를 녹음하고 MP3로 저장하세요.",
   "a11yLabel": "음성 녹음기 — 레벨 {{default dbText \"idle\"}}",
   "inputs.title.label": "라벨",
   "inputs.title.help": "녹음 카드와 저장되는 파일의 이름을 지정해요.",

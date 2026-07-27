@@ -2,7 +2,6 @@
   "name": "إعلان متحرك",
   "description": "أنشئ إعلانات متحركة من مشاهد متعددة الطبقات بأي مقاس قياسي.",
   "a11yLabel": "إعلان متحرك بعدد {{sceneCount}} من المشاهد",
-
   "inputs.size.label": "مقاس الإعلان",
   "inputs.size.help": "يحدد هذا الخيار شكل مساحة العمل وحجم البكسل عند التصدير. يُعاد تنسيق التخطيط تلقائيًا ليلائم الأشكال المربعة والعمودية وقصص التواصل الاجتماعي واللافتات العريضة والضيقة.",
   "inputs.size.options.sq": "مربع · 1080 × 1080",
@@ -15,11 +14,9 @@
   "inputs.size.options.billboard": "لوحة إعلانية · 970 × 250",
   "inputs.size.options.leaderboard": "لافتة قمة الصفحة · 728 × 90",
   "inputs.size.options.mobile": "لافتة جوال · 320 × 50",
-
   "inputs.animated.label": "تحريك",
   "inputs.animated.section": "الحركة",
   "inputs.animated.help": "عند التفعيل، تُعرض المشاهد بالتتابع. عطّل هذا الخيار لإبقاء المشهد الأخير ثابتًا.",
-
   "inputs.motion.label": "نمط الحركة",
   "inputs.motion.section": "الحركة",
   "inputs.motion.help": "الطريقة الافتراضية لدخول كل مشهد. تتلاشى جميع الأنماط بسرعة عند الظهور (للحفاظ على وضوح الملفات المُصدَّرة) وتتحرك طوال مدة الانتقال. يمكن لأي مشهد تجاوز هذا الإعداد.",
@@ -38,29 +35,23 @@
   "inputs.motion.options.swoop": "انقضاض",
   "inputs.motion.options.drift": "انجراف",
   "inputs.motion.options.none": "قطع",
-
   "inputs.transDur.label": "مدة الانتقال",
   "inputs.transDur.section": "الحركة",
   "inputs.transDur.help": "المدة التي يستغرقها كل مشهد للدخول. تتلاشى الشفافية دائمًا بسرعة للحفاظ على وضوح ملفات GIF والفيديو المُصدَّرة؛ وكلما زادت القيمة، أصبحت حركات الانزلاق والتقريب والدوران أكثر سلاسة.",
-
   "inputs.speed.label": "السرعة",
   "inputs.speed.section": "الحركة",
   "inputs.speed.help": "يشغّل التسلسل بأكمله بشكل أسرع أو أبطأ دون إعادة ضبط توقيت كل مشهد على حدة.",
-
   "inputs.loop.label": "التكرار",
   "inputs.loop.section": "الحركة",
   "inputs.loop.help": "عدد مرات تشغيل التسلسل. عادةً ما تحدّ شبكات الإعلانات المصوّرة عدد مرات التشغيل بثلاث مرات.",
   "inputs.loop.options.loop": "تكرار مستمر",
   "inputs.loop.options.play3": "تشغيل 3 مرات",
   "inputs.loop.options.once": "تشغيل مرة واحدة",
-
   "inputs.focusScene.label": "إيقاف مؤقت عند مشهد",
   "inputs.focusScene.help": "0 = تشغيل. حدد رقم مشهد لتجميد المعاينة عنده لتتمكن من تعديله — تستمر الملفات المُصدَّرة في التشغيل (تستخدم الصورة الثابتة هذا المشهد، أو المشهد الأخير).",
-
   "inputs.scenes.label": "المشاهد",
   "inputs.scenes.help": "كل مشهد هو جزء من التسلسل — يدخل بحركة فوق المشهد السابق. أعد الترتيب بالسحب. المشهد الأخير هو بطاقة الختام الثابتة.",
   "inputs.scenes.addMenu.label": "إضافة مشهد",
-
   "inputs.scenes.fields.kind.label": "نوع المشهد",
   "inputs.scenes.fields.kind.options.title": "عنوان",
   "inputs.scenes.fields.kind.options.text": "نص أساسي",
@@ -68,46 +59,34 @@
   "inputs.scenes.fields.kind.options.cta": "دعوة لاتخاذ إجراء",
   "inputs.scenes.fields.kind.options.logo": "الشعار",
   "inputs.scenes.fields.kind.options.end": "بطاقة الختام",
-
   "inputs.scenes.fields.bgColor.label": "الخلفية",
   "inputs.scenes.fields.fgColor.label": "لون النص",
-
   "inputs.scenes.fields.headline.label": "العنوان الرئيسي",
   "inputs.scenes.fields.headline.placeholder": "ابنِ مرة واحدة.",
-
   "inputs.scenes.fields.subheadline.label": "العنوان الفرعي",
   "inputs.scenes.fields.subheadline.placeholder": "شغّله في أي مكان.",
-
   "inputs.scenes.fields.body.label": "النص",
   "inputs.scenes.fields.body.placeholder": "سطر نصي داعم.",
-
   "inputs.scenes.fields.cta.label": "نص الزر",
   "inputs.scenes.fields.cta.placeholder": "اعرف المزيد",
-
   "inputs.scenes.fields.ctaStyle.label": "نمط الزر",
   "inputs.scenes.fields.ctaStyle.options.pill": "كبسولي",
   "inputs.scenes.fields.ctaStyle.options.arrow": "سهم →",
   "inputs.scenes.fields.ctaStyle.options.plain": "نص عادي",
-
   "inputs.scenes.fields.logo.label": "تنسيق الشعار",
   "inputs.scenes.fields.logo.options.horizontal": "أفقي",
   "inputs.scenes.fields.logo.options.stacked": "مكدّس",
-
   "inputs.scenes.fields.logoColor.label": "لون الشعار",
   "inputs.scenes.fields.logoColor.options.mono": "أحادي — أسود / أبيض",
   "inputs.scenes.fields.logoColor.options.green": "أخضر",
-
   "inputs.scenes.fields.image.label": "صورة",
-
   "inputs.scenes.fields.imageFocus.label": "بؤرة الصورة",
   "inputs.scenes.fields.imageFocus.options.center": "الوسط",
   "inputs.scenes.fields.imageFocus.options.top": "الأعلى",
   "inputs.scenes.fields.imageFocus.options.bottom": "الأسفل",
   "inputs.scenes.fields.imageFocus.options.left": "اليسار",
   "inputs.scenes.fields.imageFocus.options.right": "اليمين",
-
   "inputs.scenes.fields.hold.label": "مدة الثبات (بالثواني)",
-
   "inputs.scenes.fields.transition.label": "الدخول بـ",
   "inputs.scenes.fields.transition.options.inherit": "افتراضي",
   "inputs.scenes.fields.transition.options.fade": "تلاشي",

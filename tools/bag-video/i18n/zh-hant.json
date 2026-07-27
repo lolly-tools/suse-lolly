@@ -1,29 +1,23 @@
 {
   "name": "包包影片",
   "description": "為包包視覺打造的動畫品牌影片。",
-
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "好奇",
   "inputs.pose.options.sitting": "坐姿",
   "inputs.pose.options.laying": "躺姿",
   "inputs.pose.options.dangling": "懸吊",
-
   "inputs.geeko.label": "縮放與位置",
   "inputs.geeko.section": "Geeko 選項",
   "inputs.geeko.help": "縮放可調整 Geeko 的大小；X／Y 可在畫面內微調位置（%）。拖曳標籤或直接輸入數值。",
   "inputs.geeko.fields.scale.label": "縮放",
   "inputs.geeko.fields.x.label": "X",
   "inputs.geeko.fields.y.label": "Y",
-
   "inputs.animSpeed.label": "動畫速度",
   "inputs.animSpeed.section": "Geeko 選項",
-
   "inputs.blinkRate.label": "眨眼頻率（秒）",
   "inputs.blinkRate.section": "Geeko 選項",
-
   "inputs.flip.label": "翻轉 Geeko",
   "inputs.flip.section": "Geeko 選項",
-
   "inputs.theme.label": "主題",
   "inputs.theme.options.dark": "深色",
   "inputs.theme.options.light": "淺色",

@@ -2,32 +2,24 @@
   "name": "Video mit Intro & Outro",
   "description": "Nehmen Sie einen Clip in beliebiger Ausrichtung auf und umrahmen Sie ihn automatisch mit gebrandetem Intro und Outro, einer Bauchbinde und Hintergrundmusik.",
   "a11yLabel": "Video mit Intro & Outro — {{default introTitle \"intro\"}} bis {{default outroTitle \"outro\"}}",
-
   "inputs.orientation.label": "Ausrichtung",
   "inputs.orientation.options.portrait": "Hochformat · 1080 × 1920",
   "inputs.orientation.options.landscape": "Querformat · 1920 × 1080",
   "inputs.orientation.options.square": "Quadratisch · 1080 × 1080",
-
   "inputs.clip.label": "Ihr Clip",
   "inputs.clip.help": "Tippen Sie auf der Zeichenfläche auf ● Aufnehmen, um einen Clip zu filmen – oder laden Sie ein Video hoch. Intro und Outro umrahmen ihn und füllen den Rahmen in jeder Ausrichtung aus.",
-
   "inputs.clipFit.label": "Videoanpassung",
   "inputs.clipFit.options.cover": "Rahmen ausfüllen (zuschneiden)",
   "inputs.clipFit.options.contain": "Gesamtes Video anzeigen",
   "inputs.clipFit.help": "So sitzt Ihr Clip im Rahmen. „Ausfüllen“ schneidet ihn zu, damit er den Rahmen ausfüllt; „Anzeigen“ zeigt das gesamte Video mit Balken – praktisch, wenn Sie einen Quer- oder Quadratformat-Clip in ein Hochformat hochladen.",
-
   "inputs.brandColor.label": "Intro-/Outro-Farbe",
   "inputs.accent.label": "Akzent",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.help": "Wird auf der Intro- und Outro-Karte angezeigt.",
-
   "inputs.introTitle.label": "Intro-Titel",
   "inputs.introSubtitle.label": "Intro-Untertitel",
-
   "inputs.lowerName.label": "Name",
   "inputs.lowerRole.label": "Rolle / Handle",
-
   "inputs.outroTitle.label": "Outro-Titel",
   "inputs.outroCta.label": "Outro-Call-to-Action"
 }

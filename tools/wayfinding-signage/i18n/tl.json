@@ -3,10 +3,8 @@
   "description": "Mga signage ng direksyon para sa event — mga destinasyon, bawat isa may arrow. Ready na for print.",
   "featured.blurb": "Mga signage ng direksyon para sa event, ready for print",
   "a11yLabel": "Signage ng direksyon para sa {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
-
   "inputs.textWeight.label": "Bigat ng text",
   "inputs.textWeight.help": "Bigat ng stroke ng heading, mga label, at mga arrow (SUSE variable font).",
-
   "inputs.size.label": "Sukat ng sign",
   "inputs.size.help": "Itinatakda ang proporsyon ng sign at ang export print size. I-fine-tune ang eksaktong dimensions sa export bar kung kailangan.",
   "inputs.size.options.a4": "A4 patayo · 210 × 297 mm",
@@ -17,16 +15,12 @@
   "inputs.size.options.a2land": "A2 pahalang · 594 × 420 mm",
   "inputs.size.options.18x24in": "Poster 18 × 24 in · 457 × 610 mm",
   "inputs.size.options.24x36in": "Poster 24 × 36 in · 610 × 914 mm",
-
   "inputs.eventLogo.label": "Logo ng event",
   "inputs.eventLogo.help": "Ang logo ng iyong event. Opsyonal — iwanang blangko para walang logo.",
-
   "inputs.eventName.label": "Pangalan ng event",
   "inputs.eventName.help": "Ipinapakita sa ilalim ng logo. Iwanang blangko para itago ito.",
-
   "inputs.heading.label": "Heading ng sign",
   "inputs.heading.help": "Malaking title sa itaas ng mga direksyon — hal. isang level, hall, o 'Welcome'. I-clear para itago.",
-
   "inputs.directions.label": "Mga Direksyon",
   "inputs.directions.help": "Bawat row ay isang destinasyon na may arrow. Piliin ang direksyon ng arrow at kung ito ay nasa kaliwa o kanan ng label.",
   "inputs.directions.fields.label.label": "Destinasyon",
@@ -46,9 +40,7 @@
   "inputs.directions.fields.side.options.left": "Arrow sa kaliwa",
   "inputs.directions.fields.side.options.right": "Arrow sa kanan",
   "inputs.directions.fields.color.label": "Kulay ng row",
-
   "inputs.background.label": "Background",
-
   "inputs.accent.label": "Kulay ng arrow",
   "inputs.accent.help": "Default na kulay para sa mga arrow at rules. Ang row na may sariling kulay ang mag-o-override nito."
 }

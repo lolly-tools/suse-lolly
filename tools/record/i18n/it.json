@@ -2,7 +2,6 @@
   "name": "Registrazione",
   "description": "Crea le tue schede di apertura e chiusura, registra un clip e Lolly le posiziona automaticamente intorno.",
   "a11yLabel": "Registrazione — un'intro e un outro modificabili attorno a un clip della fotocamera",
-
   "inputs.frames.label": "Fotogrammi",
   "inputs.frames.help": "Fissato a tre: una scheda di apertura, la tua fotocamera e una scheda di chiusura.",
   "inputs.pageW.label": "Larghezza fotogramma",
@@ -22,10 +21,8 @@
   "inputs.outroMs.help": "Per quanto tempo la scheda di chiusura resta a schermo dopo il clip della fotocamera.",
   "inputs.enterMs.label": "Velocità di ingresso",
   "inputs.enterMs.help": "Quanto tempo impiega ogni oggetto ad animarsi in entrata con la transizione scelta.",
-
   "inputs.boxes.label": "Oggetti",
   "inputs.boxes.addMenu.label": "Aggiungi oggetto",
-
   "inputs.boxes.fields.kind.label": "Tipo",
   "inputs.boxes.fields.kind.options.box": "Riquadro",
   "inputs.boxes.fields.kind.options.text": "Testo",

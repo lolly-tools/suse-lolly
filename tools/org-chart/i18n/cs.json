@@ -2,9 +2,7 @@
   "name": "Vývojový diagram",
   "description": "Vytvářej vývojové diagramy na volném plátně — přetahuj karty, propojuj je, čáry se vedou samy a drží se na krabicích.",
   "featured.blurb": "Karty a spojnice, které drží na krabicích",
-
   "inputs.background.label": "Pozadí plátna",
-
   "inputs.boxes.label": "Karty",
   "inputs.boxes.addMenu.label": "Přidat kartu",
   "inputs.boxes.fields.kind.label": "Typ",
@@ -95,7 +93,6 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "Vlevo dole",
   "inputs.boxes.fields.imgpos.options.center bottom": "Dole",
   "inputs.boxes.fields.imgpos.options.right bottom": "Vpravo dole",
-
   "inputs.connectors.label": "Spojnice",
   "inputs.connectors.fields.from.label": "Z karty",
   "inputs.connectors.fields.to.label": "Do karty",

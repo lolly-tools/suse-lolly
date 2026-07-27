@@ -2,9 +2,7 @@
   "name": "流程图",
   "description": "在开放画布上制作流程图——拖动卡片,连接它们,线条会自动排布并固定在方框上。",
   "featured.blurb": "卡片 + 连接线,紧贴方框",
-
   "inputs.background.label": "画布背景",
-
   "inputs.boxes.label": "卡片",
   "inputs.boxes.addMenu.label": "添加卡片",
   "inputs.boxes.fields.kind.label": "类型",
@@ -95,7 +93,6 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "左下",
   "inputs.boxes.fields.imgpos.options.center bottom": "底部",
   "inputs.boxes.fields.imgpos.options.right bottom": "右下",
-
   "inputs.connectors.label": "连接线",
   "inputs.connectors.fields.from.label": "起始卡片",
   "inputs.connectors.fields.to.label": "目标卡片",

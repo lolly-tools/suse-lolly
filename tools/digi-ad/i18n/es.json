@@ -2,7 +2,6 @@
   "name": "Anuncio animado",
   "description": "Crea anuncios animados a partir de escenas en capas, para cualquier tamaño estándar.",
   "a11yLabel": "Anuncio animado con {{sceneCount}} escenas",
-
   "inputs.size.label": "Tamaño del anuncio",
   "inputs.size.help": "Define la forma del lienzo y el tamaño en píxeles de la exportación. El diseño se reorganiza según la forma: cuadrado, vertical, historia, panorámico o banners estrechos.",
   "inputs.size.options.sq": "Cuadrado · 1080 × 1080",
@@ -15,11 +14,9 @@
   "inputs.size.options.billboard": "Cartelera · 970 × 250",
   "inputs.size.options.leaderboard": "Leaderboard · 728 × 90",
   "inputs.size.options.mobile": "Banner móvil · 320 × 50",
-
   "inputs.animated.label": "Animar",
   "inputs.animated.section": "Animación",
   "inputs.animated.help": "Si está activado, las escenas se reproducen en secuencia. Desactívalo para mantener la última escena como imagen fija.",
-
   "inputs.motion.label": "Estilo de movimiento",
   "inputs.motion.section": "Animación",
   "inputs.motion.help": "La forma predeterminada en la que entra cada escena. Todos los estilos aparecen con un fundido rápido (para exportaciones nítidas) y se desplazan durante la duración de la transición. Cada escena puede anularlo.",
@@ -38,29 +35,23 @@
   "inputs.motion.options.swoop": "Barrido",
   "inputs.motion.options.drift": "Deriva",
   "inputs.motion.options.none": "Corte",
-
   "inputs.transDur.label": "Duración de la transición",
   "inputs.transDur.section": "Animación",
   "inputs.transDur.help": "Cuánto tarda cada escena en entrar. La opacidad siempre aparece con un fundido rápido para mantener nítidas las exportaciones en gif/vídeo; un valor mayor permite que los deslizamientos, zooms y giros se muevan con más fluidez.",
-
   "inputs.speed.label": "Velocidad",
   "inputs.speed.section": "Animación",
   "inputs.speed.help": "Reproduce toda la secuencia más rápido o más lento sin cambiar el tiempo individual de cada escena.",
-
   "inputs.loop.label": "Repetición",
   "inputs.loop.section": "Animación",
   "inputs.loop.help": "Cuántas veces se reproduce la secuencia. Las redes de anuncios gráficos suelen limitar a 3 reproducciones.",
   "inputs.loop.options.loop": "Repetir siempre",
   "inputs.loop.options.play3": "Reproducir 3 veces",
   "inputs.loop.options.once": "Reproducir una vez",
-
   "inputs.focusScene.label": "Pausar en la escena",
   "inputs.focusScene.help": "0 = reproducir. Ajusta un número de escena para congelar ahí la vista previa y poder editarla — las exportaciones se siguen reproduciendo (la imagen fija usa esta escena, o la última).",
-
   "inputs.scenes.label": "Escenas",
   "inputs.scenes.help": "Cada escena es un segmento de la secuencia — se anima sobre la anterior. Reordénalas arrastrando. La última escena es la tarjeta final de reposo.",
   "inputs.scenes.addMenu.label": "Añadir escena",
-
   "inputs.scenes.fields.kind.label": "Tipo de escena",
   "inputs.scenes.fields.kind.options.title": "Título",
   "inputs.scenes.fields.kind.options.text": "Texto de cuerpo",
@@ -68,46 +59,34 @@
   "inputs.scenes.fields.kind.options.cta": "Llamada a la acción",
   "inputs.scenes.fields.kind.options.logo": "Logo",
   "inputs.scenes.fields.kind.options.end": "Tarjeta final",
-
   "inputs.scenes.fields.bgColor.label": "Fondo",
   "inputs.scenes.fields.fgColor.label": "Color de texto",
-
   "inputs.scenes.fields.headline.label": "Titular",
   "inputs.scenes.fields.headline.placeholder": "Crea una vez.",
-
   "inputs.scenes.fields.subheadline.label": "Subtítulo",
   "inputs.scenes.fields.subheadline.placeholder": "Ejecuta en cualquier lugar.",
-
   "inputs.scenes.fields.body.label": "Cuerpo",
   "inputs.scenes.fields.body.placeholder": "Línea de apoyo de texto.",
-
   "inputs.scenes.fields.cta.label": "Texto del botón",
   "inputs.scenes.fields.cta.placeholder": "Más información",
-
   "inputs.scenes.fields.ctaStyle.label": "Estilo de botón",
   "inputs.scenes.fields.ctaStyle.options.pill": "Píldora",
   "inputs.scenes.fields.ctaStyle.options.arrow": "Flecha →",
   "inputs.scenes.fields.ctaStyle.options.plain": "Texto sencillo",
-
   "inputs.scenes.fields.logo.label": "Lockup del logo",
   "inputs.scenes.fields.logo.options.horizontal": "Horizontal",
   "inputs.scenes.fields.logo.options.stacked": "Apilado",
-
   "inputs.scenes.fields.logoColor.label": "Color del logo",
   "inputs.scenes.fields.logoColor.options.mono": "Monocromo — blanco y negro",
   "inputs.scenes.fields.logoColor.options.green": "Verde",
-
   "inputs.scenes.fields.image.label": "Imagen",
-
   "inputs.scenes.fields.imageFocus.label": "Enfoque de imagen",
   "inputs.scenes.fields.imageFocus.options.center": "Centro",
   "inputs.scenes.fields.imageFocus.options.top": "Arriba",
   "inputs.scenes.fields.imageFocus.options.bottom": "Abajo",
   "inputs.scenes.fields.imageFocus.options.left": "Izquierda",
   "inputs.scenes.fields.imageFocus.options.right": "Derecha",
-
   "inputs.scenes.fields.hold.label": "Duración (segundos)",
-
   "inputs.scenes.fields.transition.label": "Entrar con",
   "inputs.scenes.fields.transition.options.inherit": "Predeterminado",
   "inputs.scenes.fields.transition.options.fade": "Fundido",

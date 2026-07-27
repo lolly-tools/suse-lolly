@@ -2,53 +2,41 @@
   "name": "플로우 차트",
   "description": "열린 캔버스에서 플로우 차트를 만들어요 — 카드를 드래그해서 연결하면 선이 자동으로 경로를 그리고 박스에 붙어요.",
   "featured.blurb": "박스에 붙는 카드와 연결선",
-
   "inputs.background.label": "캔버스 배경",
-
   "inputs.boxes.label": "카드",
   "inputs.boxes.addMenu.label": "카드 추가",
-
   "inputs.boxes.fields.kind.label": "종류",
   "inputs.boxes.fields.kind.options.card": "사람 / 카드",
   "inputs.boxes.fields.kind.options.text": "텍스트",
   "inputs.boxes.fields.kind.options.box": "박스",
   "inputs.boxes.fields.kind.options.image": "이미지",
-
   "inputs.boxes.fields.layout.label": "카드 레이아웃",
   "inputs.boxes.fields.layout.help": "카드가 사진/아이콘과 텍스트를 배치하는 방식이에요. 인물 사진 왼쪽과 아이콘 왼쪽은 이미지를 텍스트 옆에 두고, 사진 위에는 이미지와 텍스트를 위아래로 쌓아요. 단순 박스는 꾸밈없는 박스예요(이미지가 안을 채우고 텍스트가 위에 겹쳐져요).",
   "inputs.boxes.fields.layout.options.row": "인물 사진 왼쪽",
   "inputs.boxes.fields.layout.options.icon": "아이콘 왼쪽",
   "inputs.boxes.fields.layout.options.stacked": "사진 위",
   "inputs.boxes.fields.layout.options.plain": "단순 박스",
-
   "inputs.boxes.fields.x.label": "X",
   "inputs.boxes.fields.y.label": "Y",
   "inputs.boxes.fields.w.label": "너비",
   "inputs.boxes.fields.h.label": "높이",
   "inputs.boxes.fields.rot.label": "회전",
-
   "inputs.boxes.fields.shape.label": "모양",
   "inputs.boxes.fields.shape.options.rect": "사각형",
   "inputs.boxes.fields.shape.options.rounded": "둥근 사각형",
   "inputs.boxes.fields.shape.options.pill": "필 모양",
   "inputs.boxes.fields.shape.options.ellipse": "타원",
-
   "inputs.boxes.fields.radius.label": "모서리 반경",
   "inputs.boxes.fields.bg.label": "카드 채우기",
-
   "inputs.boxes.fields.accent.label": "강조색",
   "inputs.boxes.fields.accent.help": "카드의 아바타 링 / 아이콘 칩 / 이니셜 색상이에요.",
-
   "inputs.boxes.fields.opacity.label": "불투명도",
-
   "inputs.boxes.fields.image.label": "사진 또는 아이콘",
   "inputs.boxes.fields.image.help": "인물 사진, 로고 또는 아이콘이에요. 카드에서는 아바타 자리에 표시되고, 지정하지 않으면 카드에 이름 이니셜이 표시돼요.",
-
   "inputs.boxes.fields.fit.label": "이미지 맞춤",
   "inputs.boxes.fields.fit.options.contain": "포함 (안에 맞추기)",
   "inputs.boxes.fields.fit.options.cover": "채우기 (잘라서 채움)",
   "inputs.boxes.fields.fit.options.fill": "늘리기",
-
   "inputs.boxes.fields.blend.label": "블렌드 모드",
   "inputs.boxes.fields.blend.options.normal": "표준",
   "inputs.boxes.fields.blend.options.multiply": "곱하기",
@@ -56,23 +44,18 @@
   "inputs.boxes.fields.blend.options.overlay": "오버레이",
   "inputs.boxes.fields.blend.options.darken": "어둡게 하기",
   "inputs.boxes.fields.blend.options.lighten": "밝게 하기",
-
   "inputs.boxes.fields.text.label": "텍스트",
   "inputs.boxes.fields.text.help": "첫 줄은 이름이에요(**굵게** 표시하세요) — 다음 줄들은 직함/세부 정보예요. 리치 텍스트: **굵게**, *기울임*, 그리고 -로 시작하는 줄은 글머리 기호가 돼요.",
-
   "inputs.boxes.fields.fg.label": "텍스트 색상",
   "inputs.boxes.fields.fontSize.label": "텍스트 크기",
-
   "inputs.boxes.fields.align.label": "정렬",
   "inputs.boxes.fields.align.options.left": "왼쪽",
   "inputs.boxes.fields.align.options.center": "가운데",
   "inputs.boxes.fields.align.options.right": "오른쪽",
-
   "inputs.boxes.fields.valign.label": "세로",
   "inputs.boxes.fields.valign.options.top": "위",
   "inputs.boxes.fields.valign.options.middle": "중간",
   "inputs.boxes.fields.valign.options.bottom": "아래",
-
   "inputs.boxes.fields.weight.label": "굵기",
   "inputs.boxes.fields.weight.options.200": "엑스트라 라이트",
   "inputs.boxes.fields.weight.options.300": "라이트",
@@ -81,31 +64,25 @@
   "inputs.boxes.fields.weight.options.600": "세미볼드",
   "inputs.boxes.fields.weight.options.700": "볼드",
   "inputs.boxes.fields.weight.options.800": "엑스트라볼드",
-
   "inputs.boxes.fields.font.label": "글꼴",
   "inputs.boxes.fields.font.options.SUSE": "SUSE Sans",
   "inputs.boxes.fields.font.options.SUSE Mono": "SUSE Mono",
-
   "inputs.boxes.fields.lineHeight.label": "줄 간격",
-
   "inputs.boxes.fields.tracking.label": "커닝",
   "inputs.boxes.fields.ligatures.label": "합자",
   "inputs.boxes.fields.alternates.label": "스타일 대체 문자",
   "inputs.boxes.fields.group.label": "그룹",
   "inputs.boxes.fields.clip.label": "클립 대상",
   "inputs.boxes.fields.pad.label": "여백",
-
   "inputs.boxes.fields.shadow.label": "그림자",
   "inputs.boxes.fields.shadow.options.none": "없음",
   "inputs.boxes.fields.shadow.options.box": "박스",
   "inputs.boxes.fields.shadow.options.text": "텍스트",
   "inputs.boxes.fields.shadow.options.content": "콘텐츠",
-
   "inputs.boxes.fields.shadowColor.label": "그림자 색상",
   "inputs.boxes.fields.shadowX.label": "그림자 X",
   "inputs.boxes.fields.shadowY.label": "그림자 Y",
   "inputs.boxes.fields.shadowBlur.label": "그림자 흐림",
-
   "inputs.boxes.fields.imgpos.label": "이미지 위치",
   "inputs.boxes.fields.imgpos.options.left top": "왼쪽 위",
   "inputs.boxes.fields.imgpos.options.center top": "위",
@@ -116,12 +93,9 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "왼쪽 아래",
   "inputs.boxes.fields.imgpos.options.center bottom": "아래",
   "inputs.boxes.fields.imgpos.options.right bottom": "오른쪽 아래",
-
   "inputs.connectors.label": "커넥터",
-
   "inputs.connectors.fields.from.label": "시작 카드",
   "inputs.connectors.fields.to.label": "도착 카드",
-
   "inputs.connectors.fields.style.label": "선 스타일",
   "inputs.connectors.fields.style.options.straight": "직선",
   "inputs.connectors.fields.style.options.elbow": "꺾은선 — 자동",
@@ -136,24 +110,20 @@
   "inputs.connectors.fields.style.options.arc-wide": "호 — 넓은 활 모양",
   "inputs.connectors.fields.style.options.arc-flip": "호 — 반대 활 모양",
   "inputs.connectors.fields.style.options.arc-flip-wide": "호 — 넓은 반대 활 모양",
-
   "inputs.connectors.fields.arrow.label": "화살표 표시",
   "inputs.connectors.fields.arrow.options.none": "없음",
   "inputs.connectors.fields.arrow.options.end": "끝에",
   "inputs.connectors.fields.arrow.options.both": "양쪽 끝",
-
   "inputs.connectors.fields.head.label": "화살촉 모양",
   "inputs.connectors.fields.head.options.triangle": "삼각형",
   "inputs.connectors.fields.head.options.open": "열림",
   "inputs.connectors.fields.head.options.circle": "원",
   "inputs.connectors.fields.head.options.diamond": "다이아몬드",
   "inputs.connectors.fields.head.options.bar": "막대",
-
   "inputs.connectors.fields.dash.label": "선 종류",
   "inputs.connectors.fields.dash.options.solid": "실선",
   "inputs.connectors.fields.dash.options.dashed": "파선",
   "inputs.connectors.fields.dash.options.dotted": "점선",
-
   "inputs.connectors.fields.color.label": "선 색상",
   "inputs.connectors.fields.width.label": "선 두께"
 }

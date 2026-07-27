@@ -1,29 +1,23 @@
 {
   "name": "包袋视频",
   "description": "为包袋视觉打造的动画品牌视频。",
-
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "好奇",
   "inputs.pose.options.sitting": "坐姿",
   "inputs.pose.options.laying": "躺姿",
   "inputs.pose.options.dangling": "悬垂",
-
   "inputs.geeko.label": "缩放与位置",
   "inputs.geeko.section": "Geeko 选项",
   "inputs.geeko.help": "缩放用于调整 Geeko 的大小；X / Y 用于在画面中微调其位置（百分比）。拖动标签或直接输入数值。",
   "inputs.geeko.fields.scale.label": "缩放",
   "inputs.geeko.fields.x.label": "X",
   "inputs.geeko.fields.y.label": "Y",
-
   "inputs.animSpeed.label": "动画速度",
   "inputs.animSpeed.section": "Geeko 选项",
-
   "inputs.blinkRate.label": "眨眼频率（秒）",
   "inputs.blinkRate.section": "Geeko 选项",
-
   "inputs.flip.label": "翻转 Geeko",
   "inputs.flip.section": "Geeko 选项",
-
   "inputs.theme.label": "主题",
   "inputs.theme.options.dark": "深色",
   "inputs.theme.options.light": "浅色",

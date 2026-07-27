@@ -3,10 +3,8 @@
   "description": "Biển chỉ dẫn sự kiện — các điểm đến, mỗi điểm có một mũi tên. Sẵn sàng để in.",
   "featured.blurb": "Biển chỉ dẫn sự kiện, sẵn sàng để in",
   "a11yLabel": "Biển chỉ dẫn dành cho {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
-
   "inputs.textWeight.label": "Độ đậm chữ",
   "inputs.textWeight.help": "Độ đậm nét của tiêu đề, nhãn và mũi tên (phông chữ biến thể SUSE).",
-
   "inputs.size.label": "Kích thước biển",
   "inputs.size.help": "Đặt tỷ lệ biển và kích thước in khi xuất. Tinh chỉnh kích thước chính xác trong thanh xuất nếu cần.",
   "inputs.size.options.a4": "A4 dọc · 210 × 297 mm",
@@ -17,16 +15,12 @@
   "inputs.size.options.a2land": "A2 ngang · 594 × 420 mm",
   "inputs.size.options.18x24in": "Áp phích 18 × 24 in · 457 × 610 mm",
   "inputs.size.options.24x36in": "Áp phích 24 × 36 in · 610 × 914 mm",
-
   "inputs.eventLogo.label": "Logo sự kiện",
   "inputs.eventLogo.help": "Logo sự kiện của bạn. Tùy chọn — để trống nếu không có logo.",
-
   "inputs.eventName.label": "Tên sự kiện",
   "inputs.eventName.help": "Hiển thị bên dưới logo. Để trống để ẩn.",
-
   "inputs.heading.label": "Tiêu đề biển",
   "inputs.heading.help": "Tiêu đề lớn phía trên các chỉ dẫn — ví dụ: một tầng, một hội trường hoặc 'Chào mừng'. Xóa để ẩn.",
-
   "inputs.directions.label": "Chỉ dẫn",
   "inputs.directions.help": "Mỗi hàng là một điểm đến kèm một mũi tên. Chọn hướng mũi tên và vị trí mũi tên nằm bên trái hay bên phải nhãn.",
   "inputs.directions.fields.label.label": "Điểm đến",
@@ -46,9 +40,7 @@
   "inputs.directions.fields.side.options.left": "Mũi tên bên trái",
   "inputs.directions.fields.side.options.right": "Mũi tên bên phải",
   "inputs.directions.fields.color.label": "Màu hàng",
-
   "inputs.background.label": "Nền",
-
   "inputs.accent.label": "Màu mũi tên",
   "inputs.accent.help": "Màu mặc định cho mũi tên và đường kẻ. Một hàng có màu riêng sẽ ghi đè màu này."
 }

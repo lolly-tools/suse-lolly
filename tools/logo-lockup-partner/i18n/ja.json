@@ -2,20 +2,16 @@
   "name": "ロゴの組み合わせ:パートナー",
   "description": "SUSEのロゴをパートナーのロゴと並べ、間に区切り線を入れます — ライトまたはダーク。",
   "a11yLabel": "パートナーロゴ{{partners.length}}点を含むSUSEパートナーロゴの組み合わせ",
-
   "inputs.theme.label": "テーマ",
   "inputs.theme.help": "ライトでは明るい背景に暗い色のロゴを配置し、ダークではその逆になります。SUSEのロゴは、テーマに合わせてオンライト/オンダーク用のアートワークに自動的に切り替わります。",
   "inputs.theme.options.light": "ライト",
   "inputs.theme.options.dark": "ダーク",
-
   "inputs.lead.label": "リードロゴ",
   "inputs.lead.help": "既定ではSUSEのロゴが使用され、テーマに応じて切り替わります。別のブランドを先頭に配置したい場合は、任意のロゴに差し替えてください。",
-
   "inputs.leadTreatment.label": "リードカラー",
   "inputs.leadTreatment.help": "フルカラーではSUSEのカメレオングリーンがそのまま使用され、モノクロでは単色のSUSEマーク(ライトでは黒、ダークでは白)が使用されます。独自のリードロゴを使用している場合、モノクロにすると彩度が落とされます。",
   "inputs.leadTreatment.options.colour": "フルカラー",
   "inputs.leadTreatment.options.mono": "モノクロ",
-
   "inputs.leadPresence.label": "リードの存在感",
   "inputs.leadPresence.help": "バランス調整に加えて、リードロゴをどれだけ目立たせるかを設定します。「Powered by」のようなホストとしての明確な階層を示したい場合は、「大」や「ヒーロー」(または極端な段階)を使用してください。組み合わせ全体はアートボードに収まるように拡大縮小されるため、これらは相対的な目立ちやすさを設定するものです。",
   "inputs.leadPresence.options.xxlarge": "超特大",
@@ -26,48 +22,36 @@
   "inputs.leadPresence.options.small": "小",
   "inputs.leadPresence.options.xsmall": "特小",
   "inputs.leadPresence.options.xxsmall": "極小",
-
   "inputs.layout.label": "レイアウト",
   "inputs.layout.help": "均等な横並びでは、すべてのロゴが1行に収まります。「リード+パートナー」ではリードロゴを強調し、パートナーロゴをその横にまとめて折り返し配置します。",
   "inputs.layout.options.row": "均等な横並び",
   "inputs.layout.options.lead": "リード+パートナー",
-
   "inputs.connector.label": "コネクター",
   "inputs.connector.help": "リードとパートナーの間に配置する要素です。",
   "inputs.connector.options.bar": "縦棒",
   "inputs.connector.options.symbol": "記号",
   "inputs.connector.options.text": "テキスト",
   "inputs.connector.options.none": "なし(間隔のみ)",
-
   "inputs.symbol.label": "記号",
   "inputs.symbol.options.times": "×(かける)",
   "inputs.symbol.options.plus": "+(プラス)",
   "inputs.symbol.options.amp": "&(アンド)",
-
   "inputs.connectorText.label": "コネクターテキスト",
   "inputs.connectorText.help": "例:「in partnership with」「powered by」「×」など。",
-
   "inputs.connectorWeight.label": "コネクターテキストの太さ",
   "inputs.connectorWeight.help": "コネクターテキストのフォントウェイト(100:細字 → 900:極太)。",
-
   "inputs.partnerDivider.label": "パートナー間",
   "inputs.partnerDivider.help": "各パートナーロゴの間に縦棒を配置します。パートナーが2つ以上ある場合に適用されます。",
   "inputs.partnerDivider.options.none": "なし(間隔のみ)",
   "inputs.partnerDivider.options.bar": "縦棒",
-
   "inputs.size.label": "ロゴサイズ",
   "inputs.size.help": "ロゴの基準の高さです。バランス調整と各ロゴの存在感はここを基準に拡大縮小されます。",
-
   "inputs.gap.label": "間隔",
   "inputs.gap.help": "コネクターの周囲およびパートナーロゴ間のスペースです。",
-
   "inputs.balance.label": "サイズのバランス調整",
   "inputs.balance.help": "各ロゴの視覚的な重さに応じて自動的にサイズを調整し、リードとパートナーが均等に目立つようにします。各ロゴの存在感の設定はこれに加えて適用されます。すべてのロゴを同じ高さにしたい場合はオフにしてください。",
-
   "inputs.partners.label": "パートナー",
-
   "inputs.partners.fields.logo.label": "パートナーロゴ",
-
   "inputs.partners.fields.presence.label": "存在感",
   "inputs.partners.fields.presence.help": "バランス調整に加えて、このパートナーロゴをどれだけ目立たせるかを設定します。極端な段階(「超特大」〜「極小」)を使うと、1つのロゴを際立たせたり控えめにしたりできます。組み合わせ全体はアートボードに収まるように拡大縮小されます。",
   "inputs.partners.fields.presence.options.xxlarge": "超特大",
@@ -78,7 +62,6 @@
   "inputs.partners.fields.presence.options.small": "小",
   "inputs.partners.fields.presence.options.xsmall": "特小",
   "inputs.partners.fields.presence.options.xxsmall": "極小",
-
   "inputs.partners.fields.filter.label": "加工",
   "inputs.partners.fields.filter.help": "色味が合わないパートナーロゴを調整します。グレースケールまたは彩度を下げると色を落とし、明るくすると沈んだロゴを引き立て、暗くすると色あせたロゴを抑え、反転はダークテーマ上の暗いロゴを救済し、インクはテーマのインクカラーによる単色のシルエットに変換します。ビットマップのロゴはすべての形式で加工が保持されますが、SVGファイルのロゴはPNGでのみ保持されます。",
   "inputs.partners.fields.filter.options.none": "なし",
@@ -88,6 +71,5 @@
   "inputs.partners.fields.filter.options.darken": "暗くする",
   "inputs.partners.fields.filter.options.invert": "反転",
   "inputs.partners.fields.filter.options.ink": "インクに変換",
-
   "inputs.partners.fields.opacity.label": "不透明度"
 }

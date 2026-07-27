@@ -2,59 +2,46 @@
   "name": "Pose Geeko",
   "description": "Nastav pózu SUSE Geeka pomocí posuvníků — oči, mrkání a končetiny. Žádná animace, jen statický obrázek, který doladíš a exportuješ připravený k tisku.",
   "featured.blurb": "Nastav pózu SUSE Geeka — statické obrázky připravené k tisku",
-
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Zvědavý",
   "inputs.pose.options.sitting": "Sedící",
   "inputs.pose.options.laying": "Ležící",
   "inputs.pose.options.dangling": "Visící",
-
   "inputs.eyeX.label": "Oko vlevo / vpravo",
   "inputs.eyeX.section": "Póza",
   "inputs.eyeX.help": "Posouvá zorničku po oku. Kladná hodnota = pohled doprava.",
-
   "inputs.eyeY.label": "Oko nahoru / dolů",
   "inputs.eyeY.section": "Póza",
   "inputs.eyeY.help": "Posouvá zorničku po oku. Kladná hodnota = pohled dolů.",
-
   "inputs.blink.label": "Mrkání",
   "inputs.blink.section": "Póza",
   "inputs.blink.help": "0 = doširoka otevřené oči, vyšší hodnota = zavřené oči.",
-
   "inputs.headTilt.label": "Náklon hlavy",
   "inputs.headTilt.section": "Póza",
   "inputs.headTilt.help": "Naklání hlavu Geeka.",
-
   "inputs.foliage.label": "Listy a větev",
   "inputs.foliage.section": "Póza",
   "inputs.foliage.help": "Otáčí větví a listy. Póza šplhání.",
-
   "inputs.legFront.label": "Přední noha",
   "inputs.legFront.section": "Póza",
   "inputs.legFront.help": "Pohybuje přední nohou. Póza visení.",
-
   "inputs.legBack.label": "Zadní noha",
   "inputs.legBack.section": "Póza",
   "inputs.legBack.help": "Pohybuje zadní nohou. Póza visení.",
-
   "inputs.tail.label": "Zatočení ocasu",
   "inputs.tail.section": "Póza",
   "inputs.tail.help": "Zatáčí ocas. Póza sezení.",
-
   "inputs.geeko.label": "Měřítko a pozice",
   "inputs.geeko.section": "Možnosti Geeko",
   "inputs.geeko.help": "Měřítko určuje velikost Geeka; X / Y ho posouvá v rámu (%). Přetáhni popisek nebo zadej hodnotu.",
   "inputs.geeko.fields.scale.label": "Měřítko",
   "inputs.geeko.fields.x.label": "X",
   "inputs.geeko.fields.y.label": "Y",
-
   "inputs.flip.label": "Převrátit Geeka",
   "inputs.flip.section": "Možnosti Geeko",
-
   "inputs.idle.label": "Klidová animace",
   "inputs.idle.section": "Možnosti Geeko",
   "inputs.idle.help": "Jemná dechová smyčka na obrazovce. Vypni pro zcela nehybnou pózu. Nikdy neovlivní exportovaný statický obrázek (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG zachytí jeden snímek).",
-
   "inputs.bg.label": "Pozadí",
   "inputs.bg.section": "Možnosti Geeko",
   "inputs.bg.options.transparent": "Průhledný",

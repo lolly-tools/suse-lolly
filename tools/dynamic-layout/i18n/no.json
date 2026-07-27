@@ -2,7 +2,6 @@
   "name": "Dynamisk layout",
   "description": "En altmulig-layout som omorganiserer seg rundt alt du legger til, uansett størrelse.",
   "a11yLabel": "{{default heading cta}} — Dynamisk layout-forhåndsvisning",
-
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",
   "inputs.logo.help": "Plasser SUSE-logoen i et hjørne. Riktig variant for temaet velges automatisk.",
@@ -11,17 +10,14 @@
   "inputs.logo.options.top-right": "Øverst til høyre",
   "inputs.logo.options.bottom-left": "Nederst til venstre",
   "inputs.logo.options.bottom-right": "Nederst til høyre",
-
   "inputs.logoStyle.label": "Logostil",
   "inputs.logoStyle.section": "Logo",
   "inputs.logoStyle.help": "Mono er lesbar i alle temaer; merkegrønn bruker den grønne logoen.",
   "inputs.logoStyle.options.mono": "Mono (hvit/svart)",
   "inputs.logoStyle.options.brand": "Merkegrønn",
-
   "inputs.bgImage.label": "Bakgrunnsbilde",
   "inputs.bgImage.section": "Bakgrunn",
   "inputs.bgImage.help": "Valgfritt bakgrunnsbilde i full bredde bak innholdet.",
-
   "inputs.imageFilter.label": "Bildefilter",
   "inputs.imageFilter.section": "Bakgrunn",
   "inputs.imageFilter.options.none": "Ingen",
@@ -30,18 +26,15 @@
   "inputs.imageFilter.options.warm": "Varm",
   "inputs.imageFilter.options.cool": "Kjølig",
   "inputs.imageFilter.options.fade": "Falmet",
-
   "inputs.imageFraming.label": "Posisjon",
   "inputs.imageFraming.section": "Bakgrunn",
   "inputs.imageFraming.help": "Zoom forstørrer bakgrunnsbildet for å beskjære inn; X/Y flytter det. Dra en etikett eller skriv inn en verdi.",
   "inputs.imageFraming.fields.zoom.label": "Zoom",
   "inputs.imageFraming.fields.x.label": "X",
   "inputs.imageFraming.fields.y.label": "Y",
-
   "inputs.bgOpacity.label": "Overlegg",
   "inputs.bgOpacity.section": "Bakgrunn",
   "inputs.bgOpacity.help": "Fargelegger bildet med temafargen slik at teksten forblir lesbar.",
-
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "SUSE-fargekombinasjoner for kortet, teksten og handlingsoppfordringen.",
   "inputs.theme.options.pine": "Furu",
@@ -49,56 +42,41 @@
   "inputs.theme.options.white": "Hvit",
   "inputs.theme.options.midnight": "Midnatt",
   "inputs.theme.options.persimmon": "Kaki",
-
   "inputs.fgColor.label": "Tekstfarge",
   "inputs.fgColor.help": "Valgfritt. Overstyrer fargen på teksten og knappekanten (alt som følger currentColor). La stå tomt for å bruke temaets forgrunnsfarge.",
-
   "inputs.heading.label": "Overskrift",
   "inputs.heading.help": "Den store, slagkraftige linjen. La stå tom for å utelate den.",
-
   "inputs.headingFontSize.label": "Størrelse",
   "inputs.headingFontSize.section": "Overskrift-typografi",
   "inputs.headingFontSize.help": "Relativ størrelse — layouten tilpasser seg fortsatt automatisk til lerretet.",
-
   "inputs.headingFontWeight.label": "Vekt",
   "inputs.headingFontWeight.section": "Overskrift-typografi",
-
   "inputs.subheading.label": "Underoverskrift",
   "inputs.subheading.help": "En støttende linje under overskriften. Støtter markdown: **fet**, *kursiv*, ~~gjennomstreket~~.",
-
   "inputs.subheadingFontSize.label": "Størrelse",
   "inputs.subheadingFontSize.section": "Underoverskrift-typografi",
   "inputs.subheadingFontSize.help": "Relativ størrelse — layouten tilpasser seg fortsatt automatisk til lerretet.",
-
   "inputs.subheadingFontWeight.label": "Vekt",
   "inputs.subheadingFontWeight.section": "Underoverskrift-typografi",
-
   "inputs.body.label": "Brødtekst",
   "inputs.body.help": "Støtter markdown: **fet**, *kursiv*, ~~gjennomstreket~~, og punktlister (linjer som starter med - ).",
-
   "inputs.bodyFontSize.label": "Størrelse",
   "inputs.bodyFontSize.section": "Brødtekst-typografi",
   "inputs.bodyFontSize.help": "Relativ størrelse — layouten tilpasser seg fortsatt automatisk til lerretet.",
-
   "inputs.bodyFontWeight.label": "Vekt",
   "inputs.bodyFontWeight.section": "Brødtekst-typografi",
-
   "inputs.cta.label": "Handlingsoppfordring",
   "inputs.cta.help": "En kort knappetekst — opptil 20 tegn.",
-
   "inputs.ctaTypography.label": "Skrift",
   "inputs.ctaTypography.section": "Handlingsoppfordring-typografi",
   "inputs.ctaTypography.help": "SUSE Mono gir knappen et teknisk, kodeaktig preg.",
   "inputs.ctaTypography.options.sans": "SUSE Sans",
   "inputs.ctaTypography.options.mono": "SUSE Mono",
-
   "inputs.ctaFontSize.label": "Størrelse",
   "inputs.ctaFontSize.section": "Handlingsoppfordring-typografi",
   "inputs.ctaFontSize.help": "Relativ størrelse — layouten tilpasser seg fortsatt automatisk til lerretet.",
-
   "inputs.ctaFontWeight.label": "Vekt",
   "inputs.ctaFontWeight.section": "Handlingsoppfordring-typografi",
-
   "inputs.headshot.label": "Portrettbilde",
   "inputs.headshot.help": "Valgfritt portrett. Når det er angitt, forankrer det sin egen fargeblokk ved siden av teksten."
 }

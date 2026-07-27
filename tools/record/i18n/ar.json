@@ -2,7 +2,6 @@
   "name": "تسجيل",
   "description": "صمم بطاقتي البداية والنهاية بنفسك، ثم سجل مقطعا وسيغلفه Lolly بهما تلقائيا.",
   "a11yLabel": "تسجيل — مقدّمة وخاتمة قابلتان للتحرير تحيطان بمقطع من الكاميرا",
-
   "inputs.frames.label": "الإطارات",
   "inputs.frames.help": "ثابتة عند ثلاثة: بطاقة المقدمة، الكاميرا، وبطاقة الخاتمة.",
   "inputs.pageW.label": "عرض الإطار",
@@ -24,7 +23,6 @@
   "inputs.enterMs.help": "المدة التي يستغرقها كل عنصر للظهور بحركته الانتقالية المختارة.",
   "inputs.boxes.label": "العناصر",
   "inputs.boxes.addMenu.label": "إضافة عنصر",
-
   "inputs.boxes.fields.kind.label": "النوع",
   "inputs.boxes.fields.kind.options.box": "مربع",
   "inputs.boxes.fields.kind.options.text": "نص",

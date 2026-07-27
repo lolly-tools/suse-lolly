@@ -3,10 +3,8 @@
   "description": "Cartelli direzionali per eventi — destinazioni, ciascuna con una freccia. Pronti per la stampa.",
   "a11yLabel": "Cartello direzionale per {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
   "featured.blurb": "Cartelli direzionali per eventi, pronti per la stampa",
-
   "inputs.textWeight.label": "Peso del testo",
   "inputs.textWeight.help": "Spessore del tratto di titolo, etichette e frecce (font variabile SUSE).",
-
   "inputs.size.label": "Dimensione cartello",
   "inputs.size.help": "Imposta le proporzioni del cartello e le dimensioni di stampa in esportazione. Se necessario, perfeziona le dimensioni esatte nella barra di esportazione.",
   "inputs.size.options.a4": "A4 verticale · 210 × 297 mm",
@@ -17,16 +15,12 @@
   "inputs.size.options.a2land": "A2 orizzontale · 594 × 420 mm",
   "inputs.size.options.18x24in": "Poster 18 × 24 in · 457 × 610 mm",
   "inputs.size.options.24x36in": "Poster 24 × 36 in · 610 × 914 mm",
-
   "inputs.eventLogo.label": "Logo evento",
   "inputs.eventLogo.help": "Il logo del tuo evento. Facoltativo — lascia vuoto per non mostrare alcun logo.",
-
   "inputs.eventName.label": "Nome evento",
   "inputs.eventName.help": "Mostrato sotto il logo. Lascia vuoto per nasconderlo.",
-
   "inputs.heading.label": "Titolo del cartello",
   "inputs.heading.help": "Titolo grande sopra le indicazioni — ad esempio un piano, una sala o 'Benvenuti'. Cancella per nasconderlo.",
-
   "inputs.directions.label": "Indicazioni",
   "inputs.directions.help": "Ogni riga è una destinazione con una freccia. Scegli la direzione della freccia e se si trova a sinistra o a destra dell'etichetta.",
   "inputs.directions.fields.label.label": "Destinazione",
@@ -46,9 +40,7 @@
   "inputs.directions.fields.side.options.left": "Freccia a sinistra",
   "inputs.directions.fields.side.options.right": "Freccia a destra",
   "inputs.directions.fields.color.label": "Colore riga",
-
   "inputs.background.label": "Sfondo",
-
   "inputs.accent.label": "Colore freccia",
   "inputs.accent.help": "Colore predefinito per frecce e linee. Una riga con un colore proprio lo sovrascrive."
 }

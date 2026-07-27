@@ -2,32 +2,24 @@
   "name": "イントロ&アウトロ動画",
   "description": "任意の向きでクリップを録画すると、ブランドのイントロとアウトロ、テロップ、BGMが自動で追加されます。",
   "a11yLabel": "イントロ&アウトロ動画 — {{default introTitle \"intro\"}}から{{default outroTitle \"outro\"}}まで",
-
   "inputs.orientation.label": "向き",
   "inputs.orientation.options.portrait": "縦向き · 1080 × 1920",
   "inputs.orientation.options.landscape": "横向き · 1920 × 1080",
   "inputs.orientation.options.square": "正方形 · 1080 × 1080",
-
   "inputs.clip.label": "クリップ",
   "inputs.clip.help": "キャンバス上の「● 録画」をタップしてクリップを撮影するか、動画をアップロードしてください。ブックエンドがクリップの前後を囲み、どの向きでもフレームいっぱいに表示されます。",
-
   "inputs.clipFit.label": "動画のフィット",
   "inputs.clipFit.options.cover": "フレームいっぱいに表示(切り抜き)",
   "inputs.clipFit.options.contain": "動画全体を表示",
   "inputs.clipFit.help": "クリップをフレームにどう収めるかです。「フレームいっぱいに表示(切り抜き)」はフレームを覆うように切り抜いて埋めます。「動画全体を表示」は横長・正方形のクリップを縦長フレームにアップロードした場合などに便利で、動画全体を余白付きで表示します。",
-
   "inputs.brandColor.label": "ブックエンドカラー",
   "inputs.accent.label": "アクセント",
-
   "inputs.logo.label": "ロゴ",
   "inputs.logo.help": "イントロカードとアウトロカードに表示されます。",
-
   "inputs.introTitle.label": "イントロタイトル",
   "inputs.introSubtitle.label": "イントロサブタイトル",
-
   "inputs.lowerName.label": "名前",
   "inputs.lowerRole.label": "役職 / ハンドル名",
-
   "inputs.outroTitle.label": "アウトロタイトル",
   "inputs.outroCta.label": "アウトロの行動喚起(CTA)"
 }

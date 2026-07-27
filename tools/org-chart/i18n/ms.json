@@ -2,9 +2,7 @@
   "name": "Carta Alir",
   "description": "Bina carta alir pada kanvas terbuka — seret kad, sambungkan kad, dan garisan akan menyusun sendiri serta melekat pada kotak.",
   "featured.blurb": "Kad + penyambung yang melekat pada kotak",
-
   "inputs.background.label": "Latar belakang kanvas",
-
   "inputs.boxes.label": "Kad",
   "inputs.boxes.addMenu.label": "Tambah kad",
   "inputs.boxes.fields.kind.label": "Jenis",
@@ -95,7 +93,6 @@
   "inputs.boxes.fields.imgpos.options.left bottom": "Bawah kiri",
   "inputs.boxes.fields.imgpos.options.center bottom": "Bawah",
   "inputs.boxes.fields.imgpos.options.right bottom": "Bawah kanan",
-
   "inputs.connectors.label": "Penyambung",
   "inputs.connectors.fields.from.label": "Dari kad",
   "inputs.connectors.fields.to.label": "Ke kad",

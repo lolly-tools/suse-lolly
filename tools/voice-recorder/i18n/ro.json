@@ -1,6 +1,6 @@
 {
   "name": "Înregistrator vocal",
-  "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salvează-o ca MP3.",
+  "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salveaz-o ca MP3.",
   "a11yLabel": "Înregistrator vocal — nivel {{default dbText \"idle\"}}",
   "inputs.title.label": "Etichetă",
   "inputs.title.help": "Denumește cardul înregistrării și fișierul salvat.",

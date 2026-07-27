@@ -2,7 +2,6 @@
   "name": "Lottie 廣告",
   "description": "透過分層場景製作動畫廣告,每個場景都搭載 Lottie 動態素材,適用於任何標準尺寸。",
   "a11yLabel": "含 {{sceneCount}} 個場景的 Lottie 動畫廣告",
-
   "inputs.size.label": "廣告尺寸",
   "inputs.size.help": "設定畫布形狀與匯出的像素尺寸。版面會依方形、直式、限時動態、寬版與窄版橫幅形狀重新排列。",
   "inputs.size.options.sq": "方形・1080 × 1080",
@@ -15,11 +14,9 @@
   "inputs.size.options.billboard": "看板式・970 × 250",
   "inputs.size.options.leaderboard": "橫幅・728 × 90",
   "inputs.size.options.mobile": "行動版橫幅・320 × 50",
-
   "inputs.animated.label": "動畫",
   "inputs.animated.section": "動畫設定",
   "inputs.animated.help": "開啟後,場景會依序播放。關閉則停留在最後一個場景作為靜態畫面(Lottie 素材本身仍會在預覽中持續播放)。",
-
   "inputs.motion.label": "動態樣式",
   "inputs.motion.section": "動畫設定",
   "inputs.motion.help": "每個場景進場時預設的方式。所有樣式都會快速淡入(讓匯出的畫面清晰),並在轉場時間內移入。個別場景可覆寫此設定。",
@@ -38,22 +35,18 @@
   "inputs.motion.options.swoop": "俯衝",
   "inputs.motion.options.drift": "飄移",
   "inputs.motion.options.none": "直接切換",
-
   "inputs.transDur.label": "轉場長度",
   "inputs.transDur.section": "動畫設定",
   "inputs.transDur.help": "每個場景移入所需的時間。為了讓 gif／影片匯出畫面清晰,透明度一律快速淡入;數值越大,滑動、縮放與旋轉的效果就越流暢。",
-
   "inputs.speed.label": "速度",
   "inputs.speed.section": "動畫設定",
   "inputs.speed.help": "加快或放慢整個場景序列的播放速度,但不會重新調整各場景本身的時間設定。",
-
   "inputs.loop.label": "循環播放",
   "inputs.loop.section": "動畫設定",
   "inputs.loop.help": "整個序列播放的次數。多數展示型廣告聯播網通常限制最多播放 3 次。",
   "inputs.loop.options.loop": "無限循環",
   "inputs.loop.options.play3": "播放 3 次",
   "inputs.loop.options.once": "播放一次",
-
   "inputs.scenes.label": "場景",
   "inputs.scenes.help": "每個場景是序列中的一個段落,會以動畫方式接續前一個場景進場,並在其上循環播放各自的 Lottie 動畫。最後一個場景是靜止的結尾卡片。",
   "inputs.scenes.addMenu.label": "新增場景",

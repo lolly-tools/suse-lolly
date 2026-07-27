@@ -2,59 +2,46 @@
   "name": "Pose Geeko",
   "description": "Poskan SUSE Geeko menggunakan penggelangsar — mata, kelipan dan anggota badan. Tiada animasi, hanya imej statik yang anda boleh laraskan dan eksport sedia cetak.",
   "featured.blurb": "Poskan SUSE Geeko — imej statik sedia cetak",
-
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Ingin tahu",
   "inputs.pose.options.sitting": "Duduk",
   "inputs.pose.options.laying": "Baring",
   "inputs.pose.options.dangling": "Tergantung",
-
   "inputs.eyeX.label": "Mata kiri / kanan",
   "inputs.eyeX.section": "Pose",
   "inputs.eyeX.help": "Gerakkan anak mata merentasi mata. Nilai positif memandang ke kanan.",
-
   "inputs.eyeY.label": "Mata atas / bawah",
   "inputs.eyeY.section": "Pose",
   "inputs.eyeY.help": "Gerakkan anak mata merentasi mata. Nilai positif memandang ke bawah.",
-
   "inputs.blink.label": "Kelip",
   "inputs.blink.section": "Pose",
   "inputs.blink.help": "0 = mata terbuka luas, semakin tinggi = mata tertutup.",
-
   "inputs.headTilt.label": "Condong kepala",
   "inputs.headTilt.section": "Pose",
   "inputs.headTilt.help": "Mencondongkan kepala Geeko.",
-
   "inputs.foliage.label": "Daun & dahan",
   "inputs.foliage.section": "Pose",
   "inputs.foliage.help": "Memutarkan dahan dan daun. Untuk pose memanjat.",
-
   "inputs.legFront.label": "Kaki depan",
   "inputs.legFront.section": "Pose",
   "inputs.legFront.help": "Mengayunkan kaki depan. Untuk pose tergantung.",
-
   "inputs.legBack.label": "Kaki belakang",
   "inputs.legBack.section": "Pose",
   "inputs.legBack.help": "Mengayunkan kaki belakang. Untuk pose tergantung.",
-
   "inputs.tail.label": "Lengkung ekor",
   "inputs.tail.section": "Pose",
   "inputs.tail.help": "Melengkungkan ekor. Untuk pose duduk.",
-
   "inputs.geeko.label": "Skala & Kedudukan",
   "inputs.geeko.section": "Pilihan Geeko",
   "inputs.geeko.help": "Skala menentukan saiz Geeko; X / Y menggerakkannya sedikit dalam bingkai (%). Seret label atau taip nilai.",
   "inputs.geeko.fields.scale.label": "Skala",
   "inputs.geeko.fields.x.label": "X",
   "inputs.geeko.fields.y.label": "Y",
-
   "inputs.flip.label": "Balikkan Geeko",
   "inputs.flip.section": "Pilihan Geeko",
-
   "inputs.idle.label": "Gerakan melahu",
   "inputs.idle.help": "Gelung pernafasan lembut pada skrin. Matikan untuk pose yang benar-benar statik. Fungsi ini tidak sekali-kali menjejaskan imej statik yang dieksport (tangkapan satu bingkai SVG/PNG/WebP/AVIF/PDF/TIFF/JPG).",
   "inputs.idle.section": "Pilihan Geeko",
-
   "inputs.bg.label": "Latar belakang",
   "inputs.bg.section": "Pilihan Geeko",
   "inputs.bg.options.transparent": "Lutsinar",

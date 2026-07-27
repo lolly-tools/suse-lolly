@@ -2,32 +2,24 @@
   "name": "인트로 & 아웃트로 영상",
   "description": "어떤 방향으로든 클립을 녹화하면 브랜드 인트로·아웃트로와 하단 자막, 배경 음악을 자동으로 둘러줘요.",
   "a11yLabel": "인트로 & 아웃트로 영상 — {{default introTitle \"intro\"}}부터 {{default outroTitle \"outro\"}}까지",
-
   "inputs.orientation.label": "방향",
   "inputs.orientation.options.portrait": "세로 · 1080 × 1920",
   "inputs.orientation.options.landscape": "가로 · 1920 × 1080",
   "inputs.orientation.options.square": "정사각형 · 1080 × 1080",
-
   "inputs.clip.label": "내 클립",
   "inputs.clip.help": "캔버스에서 ● 녹화를 탭하여 클립을 촬영하거나 동영상을 업로드하세요. 인트로·아웃트로가 클립을 감싸면서 어떤 방향에서도 프레임을 가득 채워요.",
-
   "inputs.clipFit.label": "동영상 맞춤 방식",
   "inputs.clipFit.options.cover": "프레임 채우기(자르기)",
   "inputs.clipFit.options.contain": "전체 영상 보기",
   "inputs.clipFit.help": "클립이 프레임에 표시되는 방식이에요. '프레임 채우기'는 프레임을 가득 채우도록 잘라내고, '전체 영상 보기'는 여백과 함께 영상 전체를 보여줘요. 가로 또는 정사각형 클립을 세로 프레임에 업로드할 때 유용해요.",
-
   "inputs.brandColor.label": "인트로·아웃트로 색상",
   "inputs.accent.label": "강조색",
-
   "inputs.logo.label": "로고",
   "inputs.logo.help": "인트로·아웃트로 카드에 표시돼요.",
-
   "inputs.introTitle.label": "인트로 제목",
   "inputs.introSubtitle.label": "인트로 부제목",
-
   "inputs.lowerName.label": "이름",
   "inputs.lowerRole.label": "역할 / 핸들",
-
   "inputs.outroTitle.label": "아웃트로 제목",
   "inputs.outroCta.label": "아웃트로 CTA"
 }
