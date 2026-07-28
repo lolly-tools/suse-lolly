@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-28T19:41:59.557Z",
+  "generatedAt": "2026-07-28T21:58:39.106Z",
   "tools": [
     {
       "id": "color-block",
@@ -7325,7 +7325,7 @@
       "id": "screencap",
       "name": "Screen Capture",
       "description": "Screenshot or record your whole screen, a window, or a browser tab. Drag on the canvas to crop — the export stays the exact pixels you captured.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "status": "community",
       "category": "utility",
       "capabilities": [
@@ -7872,7 +7872,7 @@
       "id": "rebrand-deck",
       "name": "Rebrand a Deck",
       "description": "Upload a PowerPoint deck and snap its colours and fonts to your brand — rebuilt on your device, nothing uploaded.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -8299,7 +8299,7 @@
       "id": "audiogram",
       "name": "Audiogram",
       "description": "Turn a voice clip or song into a branded video that actually moves with the sound — bars, spectrum, ring, ridgeline or scope, ready for social.",
-      "version": "2.2.2",
+      "version": "2.2.3",
       "status": "community",
       "category": "everyone",
       "formats": [
