@@ -69,12 +69,24 @@
     </tr>
   </table>
 
-  <!-- Brand footer -->
+  <!-- Brand footer.
+       The wordmark is sized three ways on purpose. A pasted signature gets
+       re-saved by whatever client it lands in, and they don't agree on what to
+       keep: some honour the width/height ATTRIBUTES and drop inline CSS, some do
+       the reverse, and a few strip both — which is what left the logo at its full
+       intrinsic size in a customer's mail, shoving "| suse.com" onto its own line.
+       So: attributes AND matching inline CSS AND a max-width ceiling, over an
+       asset that is exactly 2x the display box (hooks.js) so the strip-everything
+       case is merely 2x too big instead of unrecognisable.
+       border="0" keeps Outlook from drawing a link border round it, and
+       -ms-interpolation-mode makes Outlook's downscale bicubic rather than nearest. -->
   <table cellpadding="0" cellspacing="0" border="0" style="margin-top:14px; border-collapse:collapse; ">
     <tr>
       <td style="padding-top:11px; border-top:1px solid {{cBorder}};">
         <a style="color:currentColor; text-decoration:none" href="https://www.suse.com/"><span class="es-brand-name" style="font-size:15px; font-weight:800; color:{{cAccent}}; letter-spacing:0.04em; font-family:'SUSE',Arial,Helvetica,sans-serif;">
-          <img width="100" style="width:100px;max-width:110px;display:inline-block;vertical-align:middle;" src="{{logoSrc}}" alt="SUSE" data-lolly-anno="{{logo}}" />
+          <img src="{{logoSrc}}" width="102" height="19" border="0" alt="SUSE"
+               style="width:102px; height:19px; max-width:102px; display:inline-block; vertical-align:middle; border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic;"
+               data-lolly-anno="{{logo}}" />
 </span><span style="color:{{cSep}}; margin:0 7px;">|</span><span class="es-brand-url" style="font-size:11px; color:{{cMuted}}; font-family:'SUSE',Arial,Helvetica,sans-serif;">suse.com</span>
       </a></td>
     </tr>
