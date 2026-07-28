@@ -46,6 +46,41 @@ function palette(logoKey) {
   };
 }
 
+// Custom links: the `links` blocks input, turned into a render-ready list.
+//
+// Only http(s), mailto and tel are allowed through. A signature is HTML that
+// gets pasted into other people's mail, so `javascript:` / `data:` in an href
+// would ride along as a live link — those rows are dropped, not sanitised into
+// something half-working. A bare address ("calendar.suse.com/you", which is what
+// people actually type) gets https:// so it doesn't resolve relative to whatever
+// page the signature is being edited on.
+var SAFE_SCHEME = /^(https?:|mailto:|tel:)/i;
+
+function normaliseHref(raw) {
+  var url = String(raw == null ? '' : raw).trim();
+  if (!url) return '';
+  if (SAFE_SCHEME.test(url)) return url;
+  // A scheme we don't allow — including javascript:/data: — is refused outright.
+  // Anything before a colon that looks like a scheme counts; "suse.com:8080/x"
+  // does not (a port is digits).
+  if (/^[a-z][a-z0-9+.-]*:/i.test(url) && !/^[a-z][a-z0-9+.-]*:\d/i.test(url)) return '';
+  if (url.indexOf('@') > 0 && url.indexOf('/') === -1) return 'mailto:' + url;
+  return 'https://' + url;
+}
+
+function linkList(rows) {
+  if (!Array.isArray(rows)) return [];
+  return rows.reduce(function (out, row) {
+    if (!row) return out;
+    var title = String(row.title == null ? '' : row.title).trim();
+    var href  = normaliseHref(row.url);
+    // Both halves are required: a title with no address isn't a link, and an
+    // address with no title has nothing to render as.
+    if (title && href) out.push({ title: title, href: href });
+    return out;
+  }, []);
+}
+
 // Raster inputs (headshot, promo) are shrunk client-side so the data URI we
 // inline stays small enough to paste. Aspect is preserved; the image is
 // flattened onto white (the signature background) and emitted as JPEG.
@@ -90,6 +125,7 @@ async function onInit({ model }) {
   var logo = val('logo') || 'standard';
   return Object.assign({
     appendHtml: appendBlock(val('append') || 'none'),
+    linkList:   linkList(val('links')),
     photoSrc:   await resizeImage(val('headshot'),   PHOTO_MAX, PHOTO_MAX),
     promoSrc:   await resizeImage(val('emailPromo'), PROMO_MAX_W, PROMO_MAX_H),
     logoSrc:    logoSrc(logo),
@@ -97,6 +133,7 @@ async function onInit({ model }) {
 }
 
 async function onInput({ id, value }) {
+  if (id === 'links')      return { linkList: linkList(value) };
   if (id === 'append')     return { appendHtml: appendBlock(value) };
   if (id === 'headshot')   return { photoSrc: await resizeImage(value, PHOTO_MAX, PHOTO_MAX) };
   if (id === 'emailPromo') return { promoSrc: await resizeImage(value, PROMO_MAX_W, PROMO_MAX_H) };

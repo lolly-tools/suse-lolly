@@ -8,4 +8,5 @@ TEL;TYPE=WORK,VOICE:{{phone}}
 TEL;TYPE=CELL:{{mobile}}
 TEL;TYPE=FAX:{{fax}}
 ADR;TYPE=WORK:;;{{rfcText address}};{{rfcText address2}};;;
-END:VCARD
+{{#each linkList}}URL:{{{href}}}
+{{/each}}END:VCARD

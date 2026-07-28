@@ -18,6 +18,13 @@
 .es-contact { margin-top: 10px; font-size: 12px; color: #0c322c; line-height: 1.6; }
 .es-contact a { color: #30ba78; text-decoration: none; }
 
+/* Custom links share the contact block's type scale so they read as one group,
+   but stay underlined and in the body colour — the green is the email address's
+   own signal, and re-using it would make every link look like a mailto. */
+.es-links { font-size: 12px; color: #0c322c; line-height: 1.6; }
+.es-links a { color: #0c322c; text-decoration: underline; }
+.es-links-sep { color: rgba(12,50,44,0.35); }
+
 .es-meta { margin-top: 5px; font-size: 11px; color: #4b7a70; line-height: 1.5; }
 
 .es-brand { margin-top: 14px; padding-top: 11px; border-top: 1px solid rgba(12,50,44,0.1); display: flex; align-items: baseline; gap: 8px; }
@@ -55,6 +62,13 @@
           {{#if phone}}        <tr><td style="padding:0; white-space:nowrap;">T:&ensp;{{phone}}</td></tr>          {{/if}}
           {{#if mobile}}       <tr><td style="padding:0; white-space:nowrap;">M:&ensp;{{mobile}}</td></tr>          {{/if}}
           {{#if fax}}          <tr><td style="padding:0; white-space:nowrap;">F:&ensp;{{fax}}</td></tr>          {{/if}}
+          <!-- Custom links (booking page, team portal, LinkedIn …), pipe-separated
+               on one wrapping line. hooks.js has already dropped rows missing a
+               title or an address and refused any scheme that isn't http(s)/
+               mailto/tel, so every entry here is safe to emit as a live href. -->
+          {{#if linkList}}
+          <tr><td class="es-links" style="padding:0; font-size:12px; color:{{cText}}; line-height:1.6;">{{#each linkList}}{{#unless @first}}<span class="es-links-sep" style="color:{{../cSep}}; margin:0 6px;">|</span>{{/unless}}<a href="{{href}}" style="color:{{../cText}}; text-decoration:underline;">{{title}}</a>{{/each}}</td></tr>
+          {{/if}}
         </table>
 
         <!-- Address + IM -->
