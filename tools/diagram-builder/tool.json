@@ -305,10 +305,10 @@
         { "id": "ganttLen", "label": "Length", "type": "number", "min": 0.5, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar length in the same units." }
       ],
       "default": [
-        { "shape": "rounded", "nodeId": "ceo",   "label": "CEO",                   "detail": "DP Van Leeuwen", "parent": "",      "layer": "experience", "fill": "", "image": { "source": "library", "id": "suse/headshots/dirk-peter-van-leeuwen" } },
+        { "shape": "rounded", "nodeId": "ceo",   "label": "CEO",                   "detail": "DP Van Leeuwen", "parent": "",      "layer": "experience", "fill": "" },
         { "shape": "rounded", "nodeId": "ceo-2", "label": "CAISO",                 "detail": "Frank Feldmann", "parent": "ceo",   "layer": "CAISO",      "fill": "", "image": { "source": "library", "id": "suse/headshots/frank-feldmann" } },
-        { "shape": "rounded", "nodeId": "CAISO", "label": "Corporate Development", "detail": "Charlie Metz",   "parent": "ceo-2", "layer": "",           "fill": "", "image": { "source": "library", "id": "suse/headshots/charlie-metz" } },
-        { "shape": "rounded", "nodeId": "",      "label": "CIO",                   "detail": "Jochen Jasser",  "parent": "ceo-2", "layer": "",           "fill": "", "image": { "source": "library", "id": "suse/headshots/jochen-jaser" } },
+        { "shape": "rounded", "nodeId": "CAISO", "label": "Corporate Development", "detail": "Charlie Metz",   "parent": "ceo-2", "layer": "",           "fill": "" },
+        { "shape": "rounded", "nodeId": "",      "label": "CIO",                   "detail": "Jochen Jasser",  "parent": "ceo-2", "layer": "",           "fill": "" },
         { "shape": "rounded", "nodeId": "quality-execution", "label": "Lolly's Dad", "detail": "Andy Fitzsimon", "parent": "ceo-2", "layer": "", "fill": "", "image": { "source": "library", "id": "suse/headshots/andy-fitzsimon" } },
         { "shape": "rounded", "nodeId": "",      "label": "Sovereign Solutions",   "detail": "Andreas Prins",  "parent": "ceo-2", "layer": "",           "fill": "", "image": { "source": "library", "id": "suse/headshots/andreas-prins" } },
         { "shape": "rounded", "nodeId": "",      "label": "EPMO",                  "detail": "Frank Rego",     "parent": "ceo-2", "layer": "",           "fill": "" }

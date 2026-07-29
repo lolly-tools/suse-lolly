@@ -2,7 +2,7 @@
   "id": "email-signature",
   "name": "Email Signature",
   "description": "An on-brand SUSE email signature, ready to paste into any client.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -32,6 +32,13 @@
       "type": "text",
       "default": "",
       "bindToProfile": "lastname"
+    },
+    {
+      "id": "pronouns",
+      "type": "text",
+      "label": "Pronouns",
+      "default": "",
+      "placeholder": "they/them"
     },
     {
       "id": "jobTitle",
