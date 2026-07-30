@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-30T10:50:18.898Z",
+  "generatedAt": "2026-07-30T12:53:18.635Z",
   "tools": [
     {
       "id": "color-block",
@@ -1137,7 +1137,7 @@
       "id": "email-signature",
       "name": "Email Signature",
       "description": "An on-brand SUSE email signature, ready to paste into any client.",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "status": "official",
       "category": "everyone",
       "formats": [

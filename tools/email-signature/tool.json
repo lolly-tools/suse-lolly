@@ -2,7 +2,7 @@
   "id": "email-signature",
   "name": "Email Signature",
   "description": "An on-brand SUSE email signature, ready to paste into any client.",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -194,5 +194,32 @@
         { "value": "wellbeing", "label": "Wellbeing" }
       ]
     }
-  ]
+  ],
+  "guide": {
+    "title": "Put it in Gmail",
+    "tracks": [
+      {
+        "id": "desktop",
+        "label": "On a computer",
+        "steps": [
+          "Open **Export**, set the format to **HTML**, and press **Copy**. The signature goes to your clipboard as formatted text, images and all.",
+          "In Gmail, open **Settings** (the cog, top right) and choose **See all settings**.",
+          "On the **General** tab, scroll to **Signature** and create one, or select the one you already have.",
+          "Click into the signature box and paste (**Ctrl+V**, or **Cmd+V** on a Mac).",
+          "Scroll to the bottom and press **Save Changes** — Gmail discards the signature if you leave without it."
+        ],
+        "note": "Outlook, Apple Mail and Thunderbird take the same paste: copy as HTML, then paste into their signature editor."
+      },
+      {
+        "id": "mobile",
+        "label": "On a phone",
+        "steps": [
+          "Tap **Export**, set the format to **HTML**, and tap **Copy**.",
+          "Open Gmail in your phone's **browser** (not the Gmail app) and switch it to the desktop site — **aA → Request Desktop Website** on iPhone, **⋮ → Desktop site** on Android.",
+          "Go to **Settings → See all settings → General → Signature**, paste into the box, and press **Save Changes**."
+        ],
+        "note": "The Gmail app's own signature setting is plain text only, so a signature with a logo has to be set this way once. It then applies to mail you send from the app too."
+      }
+    ]
+  }
 }
