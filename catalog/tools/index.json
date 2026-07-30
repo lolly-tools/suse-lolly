@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-29T11:25:13.066Z",
+  "generatedAt": "2026-07-30T08:19:24.649Z",
   "tools": [
     {
       "id": "color-block",
@@ -9184,6 +9184,25 @@
           "blurb": "Cut clips, cards and music on a timeline"
         }
       }
+    },
+    {
+      "id": "battlecards",
+      "name": "Battlecards",
+      "description": "Turn any table into a deck of cards — one card per row, ready as a multi-page PDF. Paste straight from your spreadsheet, doc, or chat.",
+      "version": "1.0.0",
+      "status": "community",
+      "category": "everyone",
+      "formats": [
+        "pdf",
+        "png",
+        "webp",
+        "jpeg"
+      ],
+      "width": 1200,
+      "height": 900,
+      "exportable": true,
+      "preview": "/catalog/previews/battlecards.webp",
+      "paged": true
     }
   ]
 }
