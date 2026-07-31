@@ -375,7 +375,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/executives/andreas-prins.jpg",
           "checksum": "sha256-weuwbNFHlbvvqadsEXWO/0LfMYnDAwIGA9ferHNX1V0=",
-          "size": 63383
+          "size": 63383,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -383,7 +384,8 @@
           "width": 540,
           "height": 600,
           "checksum": "sha256-aTx9kBTGbFadWTgsA2qz9N0+tBkGgNJF7GWzIh176GE=",
-          "size": 14826
+          "size": 14826,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -403,7 +405,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/executives/andy-fitzsimon.jpg",
           "checksum": "sha256-y/HAtC4MpeZ1f+vdhQK9G/Q1cfn+8iVyWzbupvNSqjE=",
-          "size": 134369
+          "size": 134369,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -411,7 +414,8 @@
           "width": 800,
           "height": 800,
           "checksum": "sha256-QyaeE+72/+qcAtuIWDk6+P++QlTLrpMb0If/Um0zyWU=",
-          "size": 43474
+          "size": 43474,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -431,7 +435,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/executives/frank-feldmann2.jpg",
           "checksum": "sha256-CMrU/aAmL7RlXeF9nKMpUoFqiIDMsY8Y6P9AxHuSlcw=",
-          "size": 221405
+          "size": 221405,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -439,7 +444,8 @@
           "width": 800,
           "height": 800,
           "checksum": "sha256-SX58cjJCjxkUFbV1jTQZUiNo7LxgCOOfdKIFuy+Gwsc=",
-          "size": 23968
+          "size": 23968,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -3849,7 +3855,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-1.jpg",
           "checksum": "sha256-ACi0/bQMluKKeAdYgf4Iw+jJqVC2fmyas102+sTCSDE=",
-          "size": 169417
+          "size": 169417,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -3857,7 +3864,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-1RpQnAorvFTG7EDL2N/WbvMHPIPu/N352JCZT5Yyu9A=",
-          "size": 26176
+          "size": 26176,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -3880,7 +3888,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-2.jpg",
           "checksum": "sha256-uAQtMN2pncrqsgReaE1x2xI6jjxck9fczuyt/NKAC9g=",
-          "size": 118823
+          "size": 118823,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -3888,7 +3897,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-LkYh2NY2ZqHThwAc7qmV4xTk50rAICG2pUoAaDC/cu8=",
-          "size": 18348
+          "size": 18348,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -3911,7 +3921,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-3.jpg",
           "checksum": "sha256-Fd4H/hLznF6VsbNiOfuWpFLVZCrQG+Ixf1EhpPqrWck=",
-          "size": 122729
+          "size": 122729,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -3919,7 +3930,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-9zHYuBbz47flwxJTHztl5KZ9DYt8wsAjKn9UB6uOqy0=",
-          "size": 18608
+          "size": 18608,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -3942,7 +3954,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-4.jpg",
           "checksum": "sha256-0Rv7CXb8EECMK1qi1tY4/37igGnToSAPeQxR9fEdzko=",
-          "size": 123865
+          "size": 123865,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -3950,7 +3963,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-8W3ZKgHdwHfVDW5kfFRgQaPQtoozH/OJFItzGeXXFrA=",
-          "size": 17718
+          "size": 17718,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -3973,7 +3987,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-5.jpg",
           "checksum": "sha256-NTCZR++EiBhzG8vBrjZOMEpNzViGFyVtGfH2HikHJm4=",
-          "size": 98261
+          "size": 98261,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -3981,7 +3996,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-KCPmXuBOWwcHgb5q56m6Ecy47ZHuEsn+VHorhm9QE+Q=",
-          "size": 12808
+          "size": 12808,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4004,7 +4020,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-6.jpg",
           "checksum": "sha256-xtnLTZONG/6gFPgYkND1YdBhy644rXZwQPQF/BBt4cI=",
-          "size": 98719
+          "size": 98719,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4012,7 +4029,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-kAhGmw3I7Wo+JTD2JgWqIfsoBamThpliIQjTJ+9fz3k=",
-          "size": 12698
+          "size": 12698,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4035,7 +4053,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-7.jpg",
           "checksum": "sha256-/RaraahQ7x3kSWFI/f86hnTdQah04I27wkS+ONVvUNU=",
-          "size": 72976
+          "size": 72976,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4043,7 +4062,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-L2ijW3FEH57uMjjsUmsDjhTwK/OtrbF3X7fpfnYxono=",
-          "size": 10636
+          "size": 10636,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4066,7 +4086,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-8.jpg",
           "checksum": "sha256-qrPxh37QtVLXiCjo6++vk/M1uC+JBtz13kkajscuTKY=",
-          "size": 65652
+          "size": 65652,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4074,7 +4095,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-rso/pB+8/oEHhAbhfb2dype6SQkZPeG6tls1BWEDvso=",
-          "size": 9290
+          "size": 9290,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4097,7 +4119,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-9.jpg",
           "checksum": "sha256-XuBbLVL3jsYnCveGoKdfilqfP9wd97arDdx9gjqJFVE=",
-          "size": 75368
+          "size": 75368,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4105,7 +4128,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-CsMrxu8ix0JRgF2ZaU7dnyfi9jqkx4G9TLlNFDR3Htk=",
-          "size": 12064
+          "size": 12064,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4128,7 +4152,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-10.jpg",
           "checksum": "sha256-nKJjVpu4y9vwfvt5o1IDTbKzOWSlRdSR0g5za2V0d0c=",
-          "size": 108929
+          "size": 108929,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4136,7 +4161,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-qJp65TGeg890rq+BPZJMJguSkv5ldrfchIc2n1TNVI8=",
-          "size": 18690
+          "size": 18690,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4159,7 +4185,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-11.jpg",
           "checksum": "sha256-e2Pkf689S4PkF0a6XAprR0F6u5jgE+G0h5lAQ5vcbgI=",
-          "size": 96652
+          "size": 96652,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4167,7 +4194,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-yigwHXVA7HWg/nKcxHzvNIvYlcBXVHATHt2GeOzGxmU=",
-          "size": 13448
+          "size": 13448,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4190,7 +4218,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-12.jpg",
           "checksum": "sha256-uHOplEhkVlfMUjFokbGkxA4qk6q75wNDVX9/RnpIqZQ=",
-          "size": 95908
+          "size": 95908,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4198,7 +4227,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-QT6YCcCQQ4WKyBnhc+V4Hh4BYjyDIWr7uFoy4wGuOqg=",
-          "size": 16338
+          "size": 16338,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4221,7 +4251,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-13.jpg",
           "checksum": "sha256-JEasIR7ZeBzp5zBWtdS6fIanmY2MRjUvH98RsNPi2os=",
-          "size": 105353
+          "size": 105353,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4229,7 +4260,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-31ZZ957OQxsmRWuYYQsTGKHynbLQmd5sXuBAs/AGURY=",
-          "size": 17220
+          "size": 17220,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4252,7 +4284,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-14.jpg",
           "checksum": "sha256-cNpUiLIVQd+9Nsr7vTppAN1uPSzsmvCbi7Fe6XcdVnE=",
-          "size": 154044
+          "size": 154044,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4260,7 +4293,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-/7QFP9gV6eOJH58BONmhgBFNrgH0+5Tlu7E7sdPDIK0=",
-          "size": 26030
+          "size": 26030,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4283,7 +4317,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/innovate-15.jpg",
           "checksum": "sha256-spuOwB1tXI23DOUTI1MqmNJWnd/tvBPxmFTq3V9qKDo=",
-          "size": 163408
+          "size": 163408,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4291,7 +4326,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-+z8BP4l7+3crCoT1Zy4PAfXUriNloAT6dLNkADIeTOY=",
-          "size": 27018
+          "size": 27018,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4314,7 +4350,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-1.jpg",
           "checksum": "sha256-PmynUKv9Ffveb/O6biWFvD3hOX+2wMh9nzvdKFx8CqI=",
-          "size": 150906
+          "size": 150906,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4322,7 +4359,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-uzPEW9x3nyf5MOtjNcyXuVcHEqg9dEqJbEcI+yEz3MI=",
-          "size": 24890
+          "size": 24890,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4345,7 +4383,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-2.jpg",
           "checksum": "sha256-0bteMFVag7U4PSqRTM6f8NhUoGdqoIeJStm5bc6ogU8=",
-          "size": 110044
+          "size": 110044,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4353,7 +4392,8 @@
           "width": 800,
           "height": 691,
           "checksum": "sha256-IPAYzKawpCw7PwX7jnP0jFrM+Ao7lmlK+D38JfPX9ZU=",
-          "size": 15906
+          "size": 15906,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4376,7 +4416,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-3.jpg",
           "checksum": "sha256-CLsx4TmUtbaU9/rznkN6kEUaoFxSN987s41a2++xZ+M=",
-          "size": 113559
+          "size": 113559,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4384,7 +4425,8 @@
           "width": 800,
           "height": 696,
           "checksum": "sha256-+pt1ALgAxAx65dmKWsYdMNcj170MQLaD+dEcz2HGXpc=",
-          "size": 16638
+          "size": 16638,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4407,7 +4449,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-4.jpg",
           "checksum": "sha256-JAIfozlVN742mVp9lCF2iDT/u05jsv9SRJjvFQFJ0QI=",
-          "size": 125637
+          "size": 125637,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4415,7 +4458,8 @@
           "width": 786,
           "height": 800,
           "checksum": "sha256-9zbn3W5v3UYql/PizLt4o0QdGHouMEsPDfLg3LxiOI0=",
-          "size": 16454
+          "size": 16454,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4438,7 +4482,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-5.jpg",
           "checksum": "sha256-l9gqWOHa53McHwpuSARa00v06BUNIzLvCnbV7wFsrI4=",
-          "size": 90265
+          "size": 90265,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4446,7 +4491,8 @@
           "width": 669,
           "height": 800,
           "checksum": "sha256-VGymvs5J5FN+BLKHncehnGaTZ7BnN/NV+BU5Unye7to=",
-          "size": 12322
+          "size": 12322,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4469,7 +4515,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-6.jpg",
           "checksum": "sha256-bWpzb7vH1iriFLmySNPcfERmIWwCZOdDGIhaTjx/u2M=",
-          "size": 91357
+          "size": 91357,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4477,7 +4524,8 @@
           "width": 733,
           "height": 800,
           "checksum": "sha256-ZZLGWvG00EjRua2QGHJJz3lOCYI/3y4cQLbUq+c8o9o=",
-          "size": 12960
+          "size": 12960,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4500,7 +4548,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-7.jpg",
           "checksum": "sha256-0ZewVRAvzGcuwjkZOWrXKsJhELhIvxsC3EhH285kjjA=",
-          "size": 135482
+          "size": 135482,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4508,7 +4557,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-LigxrxfKQ2QoH9ETKXfw8Gm+3GU7+cxB8dyfYhm2fFg=",
-          "size": 22674
+          "size": 22674,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4531,7 +4581,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-8.jpg",
           "checksum": "sha256-EMDqIqWd8Mvh8UufgDnmPTdxOb1fIIH6Yc5/j1K0qfI=",
-          "size": 165234
+          "size": 165234,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4539,7 +4590,8 @@
           "width": 800,
           "height": 775,
           "checksum": "sha256-+u37gjY1ozxURRkGPgi/5UjdkiUKpKHHswkpnILwhp0=",
-          "size": 25316
+          "size": 25316,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4562,7 +4614,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-9.jpg",
           "checksum": "sha256-gDecG076Yms3Y260Md6FZlUKeIPMBTud1HymbFG7h7Q=",
-          "size": 164886
+          "size": 164886,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4570,7 +4623,8 @@
           "width": 800,
           "height": 588,
           "checksum": "sha256-5S98cAtA9inixz8Wc0l0/pCImvHwD7Sx4z15kEFx/OA=",
-          "size": 24088
+          "size": 24088,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4593,7 +4647,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-10.jpg",
           "checksum": "sha256-+iulKigeUCJM0inuYBFO2r4fPsJ7+CbmII1ST1tr1U0=",
-          "size": 117483
+          "size": 117483,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4601,7 +4656,8 @@
           "width": 729,
           "height": 800,
           "checksum": "sha256-oP1xpnytNSfhoBR9T8CVx9+XYm/nKX3XpZ5pSfmjZLU=",
-          "size": 17392
+          "size": 17392,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4624,7 +4680,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/manage-secure-11.jpg",
           "checksum": "sha256-Q3qbFq+ntPJTjeISbSshtwACmzIjVcNkOPeQ4c2eqc0=",
-          "size": 126005
+          "size": 126005,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4632,7 +4689,8 @@
           "width": 707,
           "height": 800,
           "checksum": "sha256-AQKxkieapTVMWoyzoG0iw+O6dVJh/wEPUcqkcr9Pgb0=",
-          "size": 18632
+          "size": 18632,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4655,7 +4713,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-1.jpg",
           "checksum": "sha256-948TbL/Bo/KrpfgxKG4yX8OT6m1F0bMCHlqbt8dv+y4=",
-          "size": 158243
+          "size": 158243,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4663,7 +4722,8 @@
           "width": 800,
           "height": 547,
           "checksum": "sha256-2TQbldnkwQXsTsCP27F4uh0FsH/kTS+mdj3oVtgHTdk=",
-          "size": 26604
+          "size": 26604,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4686,7 +4746,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-2.jpg",
           "checksum": "sha256-gCMXJn/s9/jGdUIw/EkhloXIHxL9IwzIHa8gdQPdlmM=",
-          "size": 171350
+          "size": 171350,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4694,7 +4755,8 @@
           "width": 800,
           "height": 569,
           "checksum": "sha256-r3ev7hdvd8iAkjP1qela0BseDbnV6hKco8cmvvIWf7A=",
-          "size": 29334
+          "size": 29334,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4717,7 +4779,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-3.jpg",
           "checksum": "sha256-1O0VFiiYj1mLklxP+Je0ErwDyCnRlpszqFXiBMYEq7s=",
-          "size": 166107
+          "size": 166107,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4725,7 +4788,8 @@
           "width": 800,
           "height": 687,
           "checksum": "sha256-GCgHO/Dj1wkTr0ZbhoAuOK8cWLMjKw9pN5edfNsBDEA=",
-          "size": 27362
+          "size": 27362,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4748,7 +4812,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-4.jpg",
           "checksum": "sha256-x5GnXrOkweQQ3q6KEOiFT/90TL6GL/qfbpnAopeVmKA=",
-          "size": 139898
+          "size": 139898,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4756,7 +4821,8 @@
           "width": 800,
           "height": 548,
           "checksum": "sha256-1/IVMJA/G+JV5miQzEEUcKWKpetXj6r+aYUcYxmLsus=",
-          "size": 23168
+          "size": 23168,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4779,7 +4845,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-5.jpg",
           "checksum": "sha256-a+t5J7QaCaeAjBTxWQEJc+CUvLEtACLgmLCiZVW+03I=",
-          "size": 70836
+          "size": 70836,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4787,7 +4854,8 @@
           "width": 627,
           "height": 800,
           "checksum": "sha256-/3fTHQ2NiEw44VfB8+a6uPVFweWnktt4vOZ6gpVJSA8=",
-          "size": 9148
+          "size": 9148,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4810,7 +4878,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-6.jpg",
           "checksum": "sha256-wi34QDx5ecuVQPZPNSHM++UYbSVboX68dsEJHOeW/vc=",
-          "size": 103481
+          "size": 103481,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4818,7 +4887,8 @@
           "width": 800,
           "height": 753,
           "checksum": "sha256-lwfYp3Eoux5fBTAvGaQaBpZ3k8hndEA1LZHi34yWFM4=",
-          "size": 12954
+          "size": 12954,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4841,7 +4911,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-7.jpg",
           "checksum": "sha256-uLwOHG+JAERXw5ipW0twW3MVxzpTfhxp7U5EYKcuqpI=",
-          "size": 79794
+          "size": 79794,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4849,7 +4920,8 @@
           "width": 673,
           "height": 800,
           "checksum": "sha256-Ds3ZYrLoBO/aLB3PoiODcap3ddNSB7HySKz6lPHOmuo=",
-          "size": 10266
+          "size": 10266,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4872,7 +4944,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-8.jpg",
           "checksum": "sha256-0raaIkGdzj0JebYzeJkb69OjCjHM6KSfaeG3BdOXzFw=",
-          "size": 76206
+          "size": 76206,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4880,7 +4953,8 @@
           "width": 800,
           "height": 730,
           "checksum": "sha256-z6drUgIc7XZ4r84LVFVV8RVtFPc6wjATqDJvopBGFe0=",
-          "size": 10478
+          "size": 10478,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4903,7 +4977,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-9.jpg",
           "checksum": "sha256-+2MCxFJZge+A5KkQDseM/4VyU3SGyOOIJ+hkrTzzNl4=",
-          "size": 84015
+          "size": 84015,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4911,7 +4986,8 @@
           "width": 800,
           "height": 718,
           "checksum": "sha256-XZdi9VrpGhdkew7zXbEgDpwj5tmOQSLgcnbhNx/MLXo=",
-          "size": 11430
+          "size": 11430,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4934,7 +5010,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-10.jpg",
           "checksum": "sha256-SVNsRLrhBNvHWxx8zJPCvDAq9LjfcgLq8c9Ch+aVEUA=",
-          "size": 123006
+          "size": 123006,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4942,7 +5019,8 @@
           "width": 800,
           "height": 789,
           "checksum": "sha256-41F8Jffo3uxUbzx+LK2MWZ0ZxrAOYAHeoQJiGJSVH18=",
-          "size": 16998
+          "size": 16998,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4965,7 +5043,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-11.jpg",
           "checksum": "sha256-lfTIGMvFBY+hf8PZfjERrgsKVLR1okWnYSUKhtxHh2k=",
-          "size": 130368
+          "size": 130368,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -4973,7 +5052,8 @@
           "width": 800,
           "height": 710,
           "checksum": "sha256-CzQa0eM5dp2n5gOHTNkdxY0Lfb7nRW+PekjePeUpkns=",
-          "size": 18842
+          "size": 18842,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -4996,7 +5076,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-12.jpg",
           "checksum": "sha256-zwQWIYgj0CI6W+utBTWe++R8oUs/85OXKVh1huyRlyM=",
-          "size": 124857
+          "size": 124857,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5004,7 +5085,8 @@
           "width": 800,
           "height": 686,
           "checksum": "sha256-dazvRjXLlW7sM3PYmcVwzjKApdZGTZoy7i0Jx6W1DSs=",
-          "size": 19028
+          "size": 19028,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5027,7 +5109,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-13.jpg",
           "checksum": "sha256-/zqROqUh+cQ94ROjHJMETUVF8yfhIQ50Gs1vBF7pu3k=",
-          "size": 117668
+          "size": 117668,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5035,7 +5118,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-TIuHx4J2S3LMGIDgUmgJbLxnAJ68sWJfQfcBC/QBRZQ=",
-          "size": 20102
+          "size": 20102,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5058,7 +5142,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-14.jpg",
           "checksum": "sha256-2Kep4MouPjNHW9CgXZuFLnmpcUCJECpJtAzHx5Vo0L8=",
-          "size": 132770
+          "size": 132770,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5066,7 +5151,8 @@
           "width": 800,
           "height": 728,
           "checksum": "sha256-eVgswZgKy7G+CA1a/Wgu1YU/gv4p8p9tJvNXNeQcARY=",
-          "size": 18088
+          "size": 18088,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5089,7 +5175,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/modernize-15.jpg",
           "checksum": "sha256-iVtDpohWonuGMK+DeE9t7LM3SoeuEGtCX1QFgsouLLU=",
-          "size": 112188
+          "size": 112188,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5097,7 +5184,8 @@
           "width": 800,
           "height": 719,
           "checksum": "sha256-GEUzPHctLsF7Ab7LWYECJABRhGEj2ZCTHSqQsMJzNcg=",
-          "size": 15900
+          "size": 15900,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5120,7 +5208,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-1.jpg",
           "checksum": "sha256-0HL1amC/VP8x5X4O9dBcUg0+NPsOH/xoNwupFud9T28=",
-          "size": 125383
+          "size": 125383,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5128,7 +5217,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-lIHo1qpTt4ZM60NXN8A1jL51xo3FF/b5cnehuoKyCDk=",
-          "size": 20012
+          "size": 20012,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5151,7 +5241,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-2.jpg",
           "checksum": "sha256-A77aNymKgzEp3EUHf7ztV8w+UZzPrvt3bykzUzAUN9k=",
-          "size": 163695
+          "size": 163695,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5159,7 +5250,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-4MKqLfYgZGcs49mbK89JExQ66hLM+4kOoLH5N19g0gE=",
-          "size": 24420
+          "size": 24420,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5182,7 +5274,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-3.jpg",
           "checksum": "sha256-dea8yVYsb7lUurQ+yZyAUpeU3wV08LjuaHNUSVV+/Hg=",
-          "size": 137196
+          "size": 137196,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5190,7 +5283,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-nE2SSRxqXPDlqYM2Yx8cSWJ8ZQ4jGNvVlzL5GM3H6Pk=",
-          "size": 18542
+          "size": 18542,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5213,7 +5307,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-4.jpg",
           "checksum": "sha256-T7saAvXh8XEmuK00j1WvbGa7XccRZq0geqEe2pwED9U=",
-          "size": 115632
+          "size": 115632,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5221,7 +5316,8 @@
           "width": 800,
           "height": 534,
           "checksum": "sha256-bZhjGEOcHjhnaAHWAhr20tEQ+lr+ToxT07I55ybg3rc=",
-          "size": 17054
+          "size": 17054,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5244,7 +5340,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-5.jpg",
           "checksum": "sha256-cR8126/1NKiy9wH6eRE/m1l4AYsKaQ4V4ex7a2wLQbY=",
-          "size": 150194
+          "size": 150194,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5252,7 +5349,8 @@
           "width": 800,
           "height": 720,
           "checksum": "sha256-7dyV3EeiwhbMtTsjs64yhrq5kScHGupnTVbUFs+kK3g=",
-          "size": 22668
+          "size": 22668,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5275,7 +5373,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-6.jpg",
           "checksum": "sha256-DYBG0mccXUOP0worqymBNQcyBVCrus5lHH8jZK4yuBc=",
-          "size": 151907
+          "size": 151907,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5283,7 +5382,8 @@
           "width": 800,
           "height": 749,
           "checksum": "sha256-WFy2hXI0oq7M/Ylfrehs8AkL1t1KyHaiu4FVg36JaLc=",
-          "size": 23712
+          "size": 23712,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5306,7 +5406,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-7.jpg",
           "checksum": "sha256-QPce4C41h5P4CE17O1vTyZKTtWrRQa6C/T5/fNCv4+4=",
-          "size": 85578
+          "size": 85578,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5314,7 +5415,8 @@
           "width": 800,
           "height": 669,
           "checksum": "sha256-ZroPFDQDx4iF8hBR1vSnv2SZ9DW3ST+yFIw/r6xNTxc=",
-          "size": 11180
+          "size": 11180,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5337,7 +5439,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-8.jpg",
           "checksum": "sha256-7DL1k/Nr/ZKaWNKpeR4ZGwrqOsWUjUNwoUcu9XDnFAo=",
-          "size": 109515
+          "size": 109515,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5345,7 +5448,8 @@
           "width": 800,
           "height": 691,
           "checksum": "sha256-UVpUBLxbzRBSACpDbPAyfYH38da66DLRLZUcs+TKAT8=",
-          "size": 14646
+          "size": 14646,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5368,7 +5472,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-9.jpg",
           "checksum": "sha256-BvNlL3jYC1hG6+obNDbyhMnu1IoEIg6Q8aOy+1LFk6U=",
-          "size": 127527
+          "size": 127527,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5376,7 +5481,8 @@
           "width": 800,
           "height": 793,
           "checksum": "sha256-VXAOIjhnbVBltQ0LdrQ6W1y0ADbNAFnoQC6aY0/6DpU=",
-          "size": 16406
+          "size": 16406,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5399,7 +5505,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-10.jpg",
           "checksum": "sha256-/qRRMjdQvi+fHNKw5hIn70/Qt0Ik32W02rZe8fPnBpk=",
-          "size": 86848
+          "size": 86848,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5407,7 +5514,8 @@
           "width": 800,
           "height": 766,
           "checksum": "sha256-W/KgBuuy7Y91x4e4AK6dA0X96gZYroSgQ+xqIuCdCro=",
-          "size": 10940
+          "size": 10940,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5430,7 +5538,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-11.jpg",
           "checksum": "sha256-GtLAqOgaKFzEX6AnT+YlhIisnUvcQHJsytzgp94xi9E=",
-          "size": 178994
+          "size": 178994,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5438,7 +5547,8 @@
           "width": 800,
           "height": 751,
           "checksum": "sha256-8j3k0vw9UFMmIUslJo3zw94BRYQsZovC6nRzUBnn6e4=",
-          "size": 33118
+          "size": 33118,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5461,7 +5571,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-12.jpg",
           "checksum": "sha256-G114pUsi6Nf3mKYfyrt/47xoYUgTI6D7MZy9EaxOXhE=",
-          "size": 125161
+          "size": 125161,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5469,7 +5580,8 @@
           "width": 779,
           "height": 800,
           "checksum": "sha256-F8wjZbgNUE/QZiNhN88UiKzQ9eJESVf2mhYDc6UCNz4=",
-          "size": 17908
+          "size": 17908,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5492,7 +5604,8 @@
           "format": "jpg",
           "url": "/catalog/assets/suse/campaign/optimize-13.jpg",
           "checksum": "sha256-91o3dxm9tuYgPczgQ6Yg0vmwhi/MqprjY0152rrKM+s=",
-          "size": 129019
+          "size": 129019,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5500,7 +5613,8 @@
           "width": 800,
           "height": 760,
           "checksum": "sha256-gQZeb0kDtIW4VMbIH2POGwG9NjJJhZolqHoBh0YfY+8=",
-          "size": 18600
+          "size": 18600,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5524,7 +5638,8 @@
           "checksum": "sha256-BN9FiR6pLzJB+t4jUjqQsrz60Il+yr1ATE+IURNfECQ=",
           "size": 256305,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5532,7 +5647,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-oMZ4oXX29bSrYznN5iPiV5j1kMDB0zpWg6bkDsnJBjI=",
-          "size": 23944
+          "size": 23944,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5556,7 +5672,8 @@
           "checksum": "sha256-JaLnbYo/jdkObkbZjArgUKhQ6Bh09adqXyQjEauMCPc=",
           "size": 426473,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5564,7 +5681,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-g9k24EDx1Fxn3xSEHZuHoDCbDvFyLrl6KinteN0HiTI=",
-          "size": 44932
+          "size": 44932,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5589,7 +5707,8 @@
           "checksum": "sha256-NwfhT8xFvVNxGIoOQNDj1DZQUg2AU6A5WY7bYgVuz20=",
           "size": 423827,
           "width": 1600,
-          "height": 1172
+          "height": 1172,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5597,7 +5716,8 @@
           "width": 800,
           "height": 586,
           "checksum": "sha256-rZDR7LJo4t5Y9V97WhsON1LbNaxhE+EqLbHPIkuOwsw=",
-          "size": 52974
+          "size": 52974,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5623,7 +5743,8 @@
           "checksum": "sha256-+egDfF4SEaicb214YXtpHX+0LqWolM46K9bhWxsqDdk=",
           "size": 495795,
           "width": 1600,
-          "height": 1200
+          "height": 1200,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5631,7 +5752,8 @@
           "width": 800,
           "height": 600,
           "checksum": "sha256-SCy+WUkggrYOgOxEUiNm9uHbb8vA2RGQEKh67MVWYN8=",
-          "size": 56596
+          "size": 56596,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5657,7 +5779,8 @@
           "checksum": "sha256-u4acqYyU5PzNdejBV/iBD6Ns5uYmGjuYUD1DJB3Sf7o=",
           "size": 524588,
           "width": 1600,
-          "height": 1200
+          "height": 1200,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5665,7 +5788,8 @@
           "width": 800,
           "height": 600,
           "checksum": "sha256-ZIEO5ubppmNoCR25GPOO/21y4rbeFC+QO4egYTntXzc=",
-          "size": 60176
+          "size": 60176,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5690,7 +5814,8 @@
           "checksum": "sha256-ZdqZXyQZAjKEk1fNvarLRq/+zco9OB87TM2j4e2MZdQ=",
           "size": 463666,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5698,7 +5823,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-GC1XBvsWgyz/6r8XPR6n7brZA4z1df/aPV/Vs7MfZvs=",
-          "size": 52106
+          "size": 52106,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5723,7 +5849,8 @@
           "checksum": "sha256-seDWczp45QpqmpR8i1B0+QiL0h39iMOKm/QVXY/sQSA=",
           "size": 432665,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5731,7 +5858,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-AczPMeYHTyFJirURMY+IWIf5o5Y0KuiGwG1SvFBIwkY=",
-          "size": 45958
+          "size": 45958,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5756,7 +5884,8 @@
           "checksum": "sha256-oFZ82GxLSibfN5P/mJoL4knC8QV69qar3NSVtJsghwU=",
           "size": 526183,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5764,7 +5893,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-SF+dSK6uy4iW0ktovPZM4t0MV9aGy0g/eqaIt2hYSP0=",
-          "size": 64270
+          "size": 64270,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5789,7 +5919,8 @@
           "checksum": "sha256-rqpgR75+qB0Qx14CLq5Jdstd2Wn667ImfoRh0B4JTjw=",
           "size": 469798,
           "width": 1600,
-          "height": 972
+          "height": 972,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5797,7 +5928,8 @@
           "width": 800,
           "height": 486,
           "checksum": "sha256-2AermVKLQqN8918suHUHYwWgmJ7cCelo56hgkje2et4=",
-          "size": 68018
+          "size": 68018,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5822,7 +5954,8 @@
           "checksum": "sha256-Qm38tZE2l6Zdq+ECKmn5MQCpmognct7AQtMwnvsxPuI=",
           "size": 350169,
           "width": 1200,
-          "height": 800
+          "height": 800,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5830,7 +5963,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-1paMEYj2w27oKOZnOpd/Nh5dLBTuwEvWJJDKvzB+H+s=",
-          "size": 70718
+          "size": 70718,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5855,7 +5989,8 @@
           "checksum": "sha256-hl1HXdEm886kMfVfCMqwcDBbPk1D2S336LfZI8rM1PM=",
           "size": 451848,
           "width": 1600,
-          "height": 1063
+          "height": 1063,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5863,7 +5998,8 @@
           "width": 800,
           "height": 532,
           "checksum": "sha256-/N0+ungs5k4KVwkJdHvBpHRXXX4au1r8s6/q14BRx2s=",
-          "size": 59694
+          "size": 59694,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5887,7 +6023,8 @@
           "checksum": "sha256-hNcBo86GR+g17E1c0P1V2cJdoN/LDyp1UGDIo9SGRKE=",
           "size": 242194,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5895,7 +6032,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-SSQgKFqmbMR9SIRsS3jdHpueZ1NwEd+wzojHHWoiH8I=",
-          "size": 23614
+          "size": 23614,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5919,7 +6057,8 @@
           "checksum": "sha256-9dg8zhKwUlg4qOWDk7pdSzIfCKsppOrLWTRyeklb3dw=",
           "size": 205340,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5927,7 +6066,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-Gy/k8TSknuJjQVbtBaBhwdFRiQE7zNUXqMmyHb5Yuwg=",
-          "size": 14252
+          "size": 14252,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5951,7 +6091,8 @@
           "checksum": "sha256-N0wvXgdNz4Yz0ki30nodZ/VNWRjr0rbbJ33aJBgCjfE=",
           "size": 178269,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5959,7 +6100,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-s472DbrAth9H0FLFO+pVneFkR3BQ2uFj08Zk6ZVn5+g=",
-          "size": 14278
+          "size": 14278,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -5983,7 +6125,8 @@
           "checksum": "sha256-KWt+juNpeM66KzqryzsC7NhomQBXHv48MW16xKLWGFc=",
           "size": 237802,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -5991,7 +6134,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-CF2vJiIHHgJisCH4gantAQw/ww0MiUTJhLZK8faKg54=",
-          "size": 15662
+          "size": 15662,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6015,7 +6159,8 @@
           "checksum": "sha256-lk+loRLWpRUYninOGlIRjEKLhGdJtuCVWzGrMdcB0RE=",
           "size": 362446,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6023,7 +6168,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-AJHKaWIgGKz6ew112+iAjTOuPL+3UATob+FtMIfCYxU=",
-          "size": 40256
+          "size": 40256,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6047,7 +6193,8 @@
           "checksum": "sha256-Qqap8POTLs753HcWvuRVKIZxdERjbzlu59dVaD86Guw=",
           "size": 200571,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6055,7 +6202,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-dghkyDJoDTNVyAZPfrUj671xooojr693OCN6RIBX8U4=",
-          "size": 19576
+          "size": 19576,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6079,7 +6227,8 @@
           "checksum": "sha256-4wlI6J6B4VDChZtdL441Y8ss1kEZR9nzenUH0GoNcVU=",
           "size": 239477,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6087,7 +6236,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-BIysZi5QysdOqfNgybAbWIzyBs8wFJmLM2IujP/fRjo=",
-          "size": 20430
+          "size": 20430,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6111,7 +6261,8 @@
           "checksum": "sha256-dLEHLX+VqrBsX3g2H6ONNWQwZ7NSbZLEtc41ZPHQ0y8=",
           "size": 194216,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6119,7 +6270,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-UEXrElSBQ562D1Tst+ahmZzMCZ/qBDZM6FLg6wGhuxs=",
-          "size": 16746
+          "size": 16746,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6143,7 +6295,8 @@
           "checksum": "sha256-35DburCvsNtk83tv/JpNDRMmufQFz7mFD8T21XIfZ7Y=",
           "size": 243873,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6151,7 +6304,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-hAEUa88EP5dPUQljkNmLt38T63xdiDZ1QqCDbcgBRF8=",
-          "size": 20928
+          "size": 20928,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6175,7 +6329,8 @@
           "checksum": "sha256-gs+nPAr9HGwsCVTYVZs4MiwNkJKGS2/KA3cjzvgg3t8=",
           "size": 263448,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6183,7 +6338,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-CvwrazAIexD8WSqUp7chRFECLI/eTkaLpRh0Q44oe9M=",
-          "size": 28234
+          "size": 28234,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6207,7 +6363,8 @@
           "checksum": "sha256-MEmutl1ZQyzzBF7yvDaqxDh8o0H3l3GGijtTgrH2PVw=",
           "size": 354548,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6215,7 +6372,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-0DiZJVDqdZ0ZhBoDdrAfhEn/5zTKRUUhW6S2YJN8MmQ=",
-          "size": 40486
+          "size": 40486,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6239,7 +6397,8 @@
           "checksum": "sha256-LGMkxWy7OgRIJyecw2lSX7NFJ4Cr+E5xJ7lkRUda3nk=",
           "size": 337146,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6247,7 +6406,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-xaU5SgK7+6oD/RBjxpAeB0aDX3txPzevIbvwvbjCVzY=",
-          "size": 32170
+          "size": 32170,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6271,7 +6431,8 @@
           "checksum": "sha256-yCkhMZanhgdYrf0EGLdTCwuHW7emLfWQuWmO+czQgsw=",
           "size": 182227,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6279,7 +6440,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-6K5P63VqQbb1F4hM/AP3zhAeULmGVZ3VJZ1yfNzPF5U=",
-          "size": 15338
+          "size": 15338,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6303,7 +6465,8 @@
           "checksum": "sha256-2fL+ak8rpRNzQlNe0O4tG3gBkOmmSq87cuqZ/pPy2ic=",
           "size": 145933,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6311,7 +6474,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-4xQ8cM5OjQOaisWsvf6/MGoJAwBDzqk4OJD3VicSDI4=",
-          "size": 10082
+          "size": 10082,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6335,7 +6499,8 @@
           "checksum": "sha256-DvjFU5Gu63UdwDJ9pGJPDX9cN1FfcXZvOfYUx5/dPqE=",
           "size": 151867,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6343,7 +6508,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-TLuGVSvu41rXoZ0paro/yGqUQWtVL6ve2oHxp1w0hsk=",
-          "size": 9132
+          "size": 9132,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6367,7 +6533,8 @@
           "checksum": "sha256-8cn9yAhwhe59doFAsfN+2BnsDkpKz+KAIsi5A5ocj4Q=",
           "size": 228462,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6375,7 +6542,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-i5mKgZ95AdTlNnQ5ei2pmmzil8R6a1WVvsxQF/nWI2Y=",
-          "size": 18822
+          "size": 18822,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6399,7 +6567,8 @@
           "checksum": "sha256-6Xn4KzvAYjMBP8XhQBuhgufqfApS6Vk9c7tmcA9uVko=",
           "size": 207633,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6407,7 +6576,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-T5GTz0hBFXxzg6Vmtjx1EA5f6UiZe0XqjncesLP/rME=",
-          "size": 18784
+          "size": 18784,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6431,7 +6601,8 @@
           "checksum": "sha256-LJXM6loB0l8gvlH/NYzvjGkYfb74ly5wckf+4fE9nGs=",
           "size": 134055,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6439,7 +6610,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-SkAQi7RJ3kadk4ngeGBsOFIqpilcvsHA1X6qEcT360E=",
-          "size": 10614
+          "size": 10614,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6463,7 +6635,8 @@
           "checksum": "sha256-PNNbLMIpG/1r8lzMB63C+JHxBErsrjRoXeRMP5xQMOs=",
           "size": 132332,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6471,7 +6644,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-U84XVer1Scezw7IdD2ux6+c326zASGtG1lQurZoLZ8s=",
-          "size": 10046
+          "size": 10046,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6495,7 +6669,8 @@
           "checksum": "sha256-uCF8BWy6ebTX7O/ST+xy++qp3zKW277bbEOJv5DdddI=",
           "size": 172906,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6503,7 +6678,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ZTFWjkgmCEeXmdxsWgZEZMRuiSftWauWLHJLTEa7ZPg=",
-          "size": 12678
+          "size": 12678,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6527,7 +6703,8 @@
           "checksum": "sha256-px107VkN7tLQP77MjNgGcUoo1wBf6Y9fHQ16uigvr10=",
           "size": 200146,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6535,7 +6712,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-Knk9laOcIcC0lKJT8nCw0KN4hbUWBP6qW84EoyRTbmg=",
-          "size": 15574
+          "size": 15574,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6559,7 +6737,8 @@
           "checksum": "sha256-JgiQKn8ofjGgZ28iHYF6Ph//Ut8Kq+j004E5OLySH1Y=",
           "size": 230019,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6567,7 +6746,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-GiBMjA0fRdw+Mkl+r8MV0M57tAtexR1QzcmAQEopehA=",
-          "size": 19180
+          "size": 19180,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6591,7 +6771,8 @@
           "checksum": "sha256-+YKDorcrpT+HfTg6fdYL0w1WuKTpnkjWCx77wNG22ZU=",
           "size": 156528,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6599,7 +6780,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-UOV//JDfCo0ynOobNloof3X6HtQ9oT387M8nNsopka0=",
-          "size": 9922
+          "size": 9922,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6623,7 +6805,8 @@
           "checksum": "sha256-7A8T/NXZVVSanPfGuXH5qHVbm1zPGkxls59nIJqwmkg=",
           "size": 273608,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6631,7 +6814,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-kNCd/YLr1AgnRuExxpvYR+GpfhrYO+HnYD48rAlnjuU=",
-          "size": 21514
+          "size": 21514,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6655,7 +6839,8 @@
           "checksum": "sha256-IBg73lW/5BW21winQDWAHNy4MUTi9A/GppRSajDxDik=",
           "size": 370315,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6663,7 +6848,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-YjB00oPFPK/wIGtOfXULLqXhP4wMya5ydsSo/CDFnRE=",
-          "size": 40534
+          "size": 40534,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6687,7 +6873,8 @@
           "checksum": "sha256-OnZDO+9kx/u5VK8G3PEGLoXtNmLSKXwOSlLfCVbk7ME=",
           "size": 180282,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6695,7 +6882,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-CUgO80nklwKgt2h0ErOc2moLybXXaI+0WsDWCp75GIY=",
-          "size": 12674
+          "size": 12674,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6719,7 +6907,8 @@
           "checksum": "sha256-Ndz5hv2+hQyYMPyBu6v2ulkknU5pknBBRf6dqbGHxgI=",
           "size": 225567,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6727,7 +6916,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-r7vwyJMzRoeGwL3LPJOQgQupNoROX7wA4s08ljYbMKw=",
-          "size": 21182
+          "size": 21182,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6751,7 +6941,8 @@
           "checksum": "sha256-Ka8UCcAeo2k77Pe3xl26RTgJpRkkGr0e7ja/qNM76XU=",
           "size": 258092,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6759,7 +6950,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-tlebyb+Mro3eOck7zwc/tX32EWWZr7FcWdAOtZOvuwk=",
-          "size": 27046
+          "size": 27046,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6783,7 +6975,8 @@
           "checksum": "sha256-9VcScD5IVH2DQkdaDFNi88xk8aQI7rzaBVN41IaYkuk=",
           "size": 237205,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6791,7 +6984,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-EjzhW5T2R09DrTGLyVaCATuG50T++9xXuSYs4eIbvig=",
-          "size": 19396
+          "size": 19396,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6815,7 +7009,8 @@
           "checksum": "sha256-zIVTnbQiOQcfUDimfrwWjeVfDo64SGXXYddCW+VwB78=",
           "size": 211667,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6823,7 +7018,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-4i8053HXNfvc86QFGo0L/XwQ6f4i8wgCkS6Z9lmS830=",
-          "size": 18776
+          "size": 18776,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6847,7 +7043,8 @@
           "checksum": "sha256-YoqXtZNoSL5VYnlbaabQZPpJB2TG356h2ydn+wFp4fg=",
           "size": 233970,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6855,7 +7052,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-Fhdf3e3nIclLBTrAUIrrq++k+yJA37U4CJG4MrhxNRo=",
-          "size": 20888
+          "size": 20888,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6879,7 +7077,8 @@
           "checksum": "sha256-eFlZCIZIMLioRlVeeTCY6nd6FMD8/JUNG3KQszSrOIQ=",
           "size": 166140,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6887,7 +7086,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-52tiJeOMgKwscxMlS5kXeqFhw39bVI46FpoAL1L7fJI=",
-          "size": 11882
+          "size": 11882,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6911,7 +7111,8 @@
           "checksum": "sha256-AD6z7utVD8v9EZtjErcyqxo5Fmr7KWnUNdrussRw4OQ=",
           "size": 316795,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6919,7 +7120,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-B4lBoYhEc3u4O5Qfj/woF/i3JXzE/AS4xFKGAl5lYF0=",
-          "size": 30662
+          "size": 30662,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6943,7 +7145,8 @@
           "checksum": "sha256-tm2k2ANIimLrzUbcwLyHsyjVBpnpXp2hijkO6xi1IaY=",
           "size": 247640,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6951,7 +7154,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ptJlhPF27rS1GhqV6YqRWfGYp3NIFxwV0o5wEO86OCw=",
-          "size": 24506
+          "size": 24506,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -6975,7 +7179,8 @@
           "checksum": "sha256-HiRNlBnPy3LqH/5wrAfSYI7g+/NkfCuf68Afb4zKgPM=",
           "size": 192144,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -6983,7 +7188,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-4/r0iDhSanG9fp7hKFGDbsrv/M/4qZ/Y3PA8BFwRuHQ=",
-          "size": 15518
+          "size": 15518,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7007,7 +7213,8 @@
           "checksum": "sha256-ZTehWmzkKFB4MpJa8KgrUBiN7AD0p54qg5DeCVwrYXU=",
           "size": 374530,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7015,7 +7222,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-NdUsevEe3UOyoyYp+TXvCRqxBQTQadBERgysF1Dt5Qg=",
-          "size": 46188
+          "size": 46188,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7039,7 +7247,8 @@
           "checksum": "sha256-o6En5GzXdgbeB4FKkyA7NiYRVc5BoXYcGkTNDWXUkuE=",
           "size": 173198,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7047,7 +7256,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-LoV/KprgtVtdkvFyl4YB/T9PATyp4vUgImYiMSEzapY=",
-          "size": 14228
+          "size": 14228,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7071,7 +7281,8 @@
           "checksum": "sha256-4INFFZUtWC1HvcLxSWY/Qq/J+o6kTepKZhhpYb3bPbM=",
           "size": 238525,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7079,7 +7290,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ZbJHa9JV9nDQFEeYrnHdlKoY7j8pA2llv04WjCMmxDw=",
-          "size": 21920
+          "size": 21920,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7103,7 +7315,8 @@
           "checksum": "sha256-bDUaOUWjkqOKWz2oKmWOu/hk+RBvRxXsedOHMc3x0+E=",
           "size": 203005,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7111,7 +7324,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-v69ZT+U8CdjDGdYq+SbF7UmAusmyNLYtNbMkH+Q8cjU=",
-          "size": 17752
+          "size": 17752,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7135,7 +7349,8 @@
           "checksum": "sha256-DCBvmOZDXp8u9kwvEJ3Kj9sEc/0kdimpsCDOiHAmzRU=",
           "size": 193820,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7143,7 +7358,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-I5krMlg1aZSkfIFCy9AcsBiAJTrAwQmQwwfs1qR24lc=",
-          "size": 13274
+          "size": 13274,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7167,7 +7383,8 @@
           "checksum": "sha256-0ZFcyHPk+bUMn0y7BllpBfuaXDXkgkvZ7jJdmuXJ5ug=",
           "size": 172017,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7175,7 +7392,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-+0DeOlVoj1g7I4s79tmvsqr5Lx8C7sL3Gr6jftS/BvY=",
-          "size": 13946
+          "size": 13946,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7199,7 +7417,8 @@
           "checksum": "sha256-nEEuVtmG1Zk5pqKor2L47nmuipXqRfKAYf/lN7TSxUE=",
           "size": 183580,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7207,7 +7426,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-EXNPfgfKZWAvp4cSzun3Jt4/zNMquMH/ne4BwmuJEiU=",
-          "size": 15922
+          "size": 15922,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7231,7 +7451,8 @@
           "checksum": "sha256-BtoK2/fYrTS2k/A2z4HH5P9TXuhidKCC1asCksbQiUA=",
           "size": 129622,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7239,7 +7460,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-kMLdKKoluppXh3Q6/v2KSfJ4d2Gb1yRz/NHB1VhwosM=",
-          "size": 7136
+          "size": 7136,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7263,7 +7485,8 @@
           "checksum": "sha256-WTHihIVkFBgsgWghY1+mxq+Tv5rr4pdm4eRMdMD6qF8=",
           "size": 222018,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7271,7 +7494,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-qyiTQ8JCQLeij1aN5cbCMQi6m8fbVYzzxArph+VEoxg=",
-          "size": 18390
+          "size": 18390,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7295,7 +7519,8 @@
           "checksum": "sha256-W/KMabwhsWyto/mGkGLonwCVLF2nzaGN9ORzVH2f2/g=",
           "size": 179170,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7303,7 +7528,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ysKaekF8mxaE7j4Kt8mvJ8I0dfSLXq5ZNHkDY9F27Pw=",
-          "size": 15656
+          "size": 15656,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7327,7 +7553,8 @@
           "checksum": "sha256-p0R01LkO1vnDJhWEf5hIBkScRdu/LEa07MN1RNhzQHE=",
           "size": 211688,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7335,7 +7562,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-i5uGdvvu2WfYKNkCIwmfFISFxTyg4g/9iEF6PjVO+xY=",
-          "size": 20602
+          "size": 20602,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7359,7 +7587,8 @@
           "checksum": "sha256-NxRKmShKOPN76ldMlyCyLtkCF8pNaIFe93LDYShDzNI=",
           "size": 223516,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7367,7 +7596,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-BcYz5QaaqndcEbvgcPRjkwSqYKmZiwKSk8aaewdwMF8=",
-          "size": 19634
+          "size": 19634,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7391,7 +7621,8 @@
           "checksum": "sha256-o09IDs1wuONQgGBgXvX82z0KsZ/fNmhmac/uS3lQAwQ=",
           "size": 158957,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7399,7 +7630,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-n7gHNqDjDvvnd5murD/CVN1Z6Kp7GBRFJzWcCg281Cc=",
-          "size": 9242
+          "size": 9242,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7423,7 +7655,8 @@
           "checksum": "sha256-GATUJWv1nrycyTEHt1mqBYWcVGSW+ZcEm5hU4sePbcI=",
           "size": 271942,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7431,7 +7664,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-9aFfRgiPUfI0QMS4fpH1WSSa3kVoSykW7YfCVgE+DsM=",
-          "size": 25858
+          "size": 25858,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7455,7 +7689,8 @@
           "checksum": "sha256-rs7fEz+IIVbez3zVyu6SPaAVZIiRedEm/zx5E1Oe+4s=",
           "size": 161613,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7463,7 +7698,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ruRzUGRhJIZY863D4+XSwTilp+lwuA7BgQfLsu18U0s=",
-          "size": 9786
+          "size": 9786,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7487,7 +7723,8 @@
           "checksum": "sha256-aPVR0s67/nPfbUZ4RLFt9fZcqTG7LssJlWCd2XF4T0U=",
           "size": 159264,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7495,7 +7732,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-GOtejwNwTQQqncN9MDomhSdSepUAgItyepNgHu8cKlg=",
-          "size": 9836
+          "size": 9836,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7519,7 +7757,8 @@
           "checksum": "sha256-iVKQGqT144/KQEjWOaimwsxRBAPxNeZStNV5j7sdhgI=",
           "size": 162615,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7527,7 +7766,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-nv5HYf1aPdfX76wE1C7mpNP3Bsl/nFgxJUwn/aOtJlw=",
-          "size": 11048
+          "size": 11048,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7551,7 +7791,8 @@
           "checksum": "sha256-7PLrUWUPSOnGzR1luSWTmY/P6OOVUZhtwNKs+4wdR6E=",
           "size": 184527,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7559,7 +7800,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-4zG/DtGsneL/dZwn39+h7WK2gRb9YdTQmn7otFhPtxk=",
-          "size": 12654
+          "size": 12654,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7583,7 +7825,8 @@
           "checksum": "sha256-GFvdTqdR+wJ5pRAQ35g6ECKyusOE0SIDpRprvDSAa8U=",
           "size": 304023,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7591,7 +7834,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-Sx7eQKgxVY70YcPCkYXli0tws+Fx3HtlHiLr4JZ8tQk=",
-          "size": 33500
+          "size": 33500,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7615,7 +7859,8 @@
           "checksum": "sha256-bP6xX7C4IhFSVa/atNu+cjycMO+QDq8lsZdOMrMzdjY=",
           "size": 168651,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7623,7 +7868,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-5hIhn/1oH2ZvyJQPn4gMIr/pvVLXsB9u+6/RkvOQBP0=",
-          "size": 11472
+          "size": 11472,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7647,7 +7893,8 @@
           "checksum": "sha256-nYiYbZo49wh0+cM3zfXFAUQ5vfSxCuikWXZYrEXV3fM=",
           "size": 167824,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7655,7 +7902,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-0ml3fECBbYENCpo1kj7qTa0XhISom/JRaHzmuTsBL9Y=",
-          "size": 10876
+          "size": 10876,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7679,7 +7927,8 @@
           "checksum": "sha256-C/T0BXKNpMMNP6we3JSvBdR4hNcVeuFRAlCuy0RBCEU=",
           "size": 247870,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7687,7 +7936,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-qfYLLvOCbPwqthJpGLfSruIcRxy+IHm7ni0pgLzfm0w=",
-          "size": 23822
+          "size": 23822,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7711,7 +7961,8 @@
           "checksum": "sha256-I+JmPzHuOcGPaW/t9fuAqk+TiotI3bSOknFgiiWcofU=",
           "size": 216791,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7719,7 +7970,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-+V+LXQEHi1ltotUblt7JuprxqxWZ+RJ43mwp/vFQaOg=",
-          "size": 17136
+          "size": 17136,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7743,7 +7995,8 @@
           "checksum": "sha256-wEOlEOefvqZ/1U/8cgb4ZupgS3YaZNNnglKittBlZoE=",
           "size": 207892,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7751,7 +8004,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-kXSwDN78pXyLbyf2hsW/S2oE61qedkoZT7NgtKGAXps=",
-          "size": 19456
+          "size": 19456,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7775,7 +8029,8 @@
           "checksum": "sha256-cLI4EfRp8BClHyEBQ6K2EhtbHLTxAWuH/JgNH3d5eqQ=",
           "size": 283560,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7783,7 +8038,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-0XKBhGwEPR946Q+79d1sC3ec/f1D8guYrk9pCt0ljms=",
-          "size": 30274
+          "size": 30274,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7807,7 +8063,8 @@
           "checksum": "sha256-cfAYaSzzN0cutwX9MuE5Nq+4mKK8KE1dm4UsVlpNJQ0=",
           "size": 152401,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7815,7 +8072,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-ZuXHWsMFnydYAIT1uy9sShTXMAMpc3Y5t5Dr8CGBKbY=",
-          "size": 12748
+          "size": 12748,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7839,7 +8097,8 @@
           "checksum": "sha256-FeYveYwzhapoEg74Rgbz8SCsdHTbHKzZMVwEi7EDBkE=",
           "size": 238931,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7847,7 +8106,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-biakXzCs7YYkGvzPKC8LSYn+MCi1QmlA51XAicAVooM=",
-          "size": 23092
+          "size": 23092,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7871,7 +8131,8 @@
           "checksum": "sha256-RwZANXGKWYJOntN4PNvKML1FGh4XYzi3df20ntG3p1Y=",
           "size": 223957,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7879,7 +8140,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-cgCpaFXQx6B2dRkKea2qE7x6vwZ4hoZqF/Bd6wAl+WM=",
-          "size": 17036
+          "size": 17036,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7903,7 +8165,8 @@
           "checksum": "sha256-53PYSUAR64kyippmZihyNEnmorMy7N3odRma8Ob3p60=",
           "size": 152439,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7911,7 +8174,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-TW34eVvE8w5ksvYmRFEPhS308OGRw2Vjw3kKQ2ONPDA=",
-          "size": 12786
+          "size": 12786,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7935,7 +8199,8 @@
           "checksum": "sha256-RX0B1hLwfLBOtmv8/LN6CTpFf707e8nyg+Qd4CKtNXE=",
           "size": 290353,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7943,7 +8208,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-/wBMgP20k05eVHBVUUZKXxAbCfD6CLywHAWKGrCSxM0=",
-          "size": 30664
+          "size": 30664,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -7967,7 +8233,8 @@
           "checksum": "sha256-+q0BZlEdRwmNzzLo6BhjvMDVOtrpoLWTflrf31PRbHY=",
           "size": 184350,
           "width": 1600,
-          "height": 900
+          "height": 900,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -7975,7 +8242,8 @@
           "width": 800,
           "height": 450,
           "checksum": "sha256-n95K0cDJfmqhOQP26gV5VATrW7btOz4uNMAiiYETy+E=",
-          "size": 11210
+          "size": 11210,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8001,7 +8269,8 @@
           "checksum": "sha256-NG/V2nSLISFT+OSpePVYEMk2vaYuMhAD1XivZ/YoLoc=",
           "size": 584383,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8009,7 +8278,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-xC4tr9necc5btul40zLhMMEOSdGpJlvjyXoZpdtOh70=",
-          "size": 69994
+          "size": 69994,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8035,7 +8305,8 @@
           "checksum": "sha256-7MaJVWgsu3OJLE4KxUPpsFas8QswqwDhDzYjxaAlCrw=",
           "size": 223904,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8043,7 +8314,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-olze0LnvMfHbeo7koeTTx7bSHuta9VeBwWMeAWrAlmM=",
-          "size": 16654
+          "size": 16654,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8069,7 +8341,8 @@
           "checksum": "sha256-CoILB+UJCgolj3sa0CyCxHYyZjK8t19QA3MrlWEKvn4=",
           "size": 237600,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8077,7 +8350,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-yxs1pqDVV+7UUCCid8iM9ccnsWRfY6GyC2KIAurU+2Y=",
-          "size": 21204
+          "size": 21204,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8103,7 +8377,8 @@
           "checksum": "sha256-fKUFNG1ZT57PSXsWe+cDP9NgPgvOw2xpFx1dck2j+os=",
           "size": 288467,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8111,7 +8386,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-XoemlHC4P0z2G2JMzvfB5vcfBy5BMenf4xD9LpEz+k8=",
-          "size": 27116
+          "size": 27116,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8137,7 +8413,8 @@
           "checksum": "sha256-0mV/fTzCNouXX0Qm+qYCDgbysHH+d45JNCP4F+LfEKo=",
           "size": 265897,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8145,7 +8422,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-wr/yCWPc07QZuGhrF1LG2Elb0GLNbHEnwFDkXfpu4OE=",
-          "size": 23014
+          "size": 23014,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8171,7 +8449,8 @@
           "checksum": "sha256-bG5nwNUF3HmeDRPtSIPwrcjdLg6Xux0eHViGIszMWL4=",
           "size": 365236,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8179,7 +8458,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-gNYvVskfTLDascMwqac6QkUSApdtG5wM5oiafcDAevQ=",
-          "size": 33402
+          "size": 33402,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8205,7 +8485,8 @@
           "checksum": "sha256-vPt+hnru3MeHWJ6UdzRKbz/pqkbIWHMMUnvTtZJtPag=",
           "size": 294007,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8213,7 +8494,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-VBJEKXT7o0j+20lzGEGaQL+D+cb1dFJ59ZQqwqr7Oa4=",
-          "size": 24354
+          "size": 24354,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8239,7 +8521,8 @@
           "checksum": "sha256-AnurXlHJ/GvB98iYZA0SstI7Y2a3kxlfTcgD+wZpzpg=",
           "size": 480285,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8247,7 +8530,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-gxdcZByi94bbF57eUtyR8E2smfRaK4MVE56a+yaFx+8=",
-          "size": 22378
+          "size": 22378,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8273,7 +8557,8 @@
           "checksum": "sha256-j43sQJX3Xl3So2qCATM5JVItVaC/rnDPg782JQzamms=",
           "size": 440868,
           "width": 1066,
-          "height": 1600
+          "height": 1600,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8281,7 +8566,8 @@
           "width": 533,
           "height": 800,
           "checksum": "sha256-CIQmhhw3zmZyDygjW4Bra5ySSOTTEp3i45LXqQciQAo=",
-          "size": 36804
+          "size": 36804,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8307,7 +8593,8 @@
           "checksum": "sha256-SnDOjfdn5T/fInx/rahf3nitngorH/UDFd7NTpyMpvQ=",
           "size": 332068,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8315,7 +8602,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-zEQ1mGkSok9iYnR7yIENy4Wha4JwRzPqGex+fmzrPDE=",
-          "size": 15756
+          "size": 15756,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
@@ -8341,7 +8629,8 @@
           "checksum": "sha256-LIcbFaVCC42of5BIpkiTf778k4rVOL3VbrP/7VNbki0=",
           "size": 311556,
           "width": 1600,
-          "height": 1066
+          "height": 1066,
+          "depth": 8
         },
         {
           "format": "thumb",
@@ -8349,7 +8638,8 @@
           "width": 800,
           "height": 533,
           "checksum": "sha256-UnAEHtCPoxUnM01w7Uju5eL20sroMTmIW6rq7FAk1sM=",
-          "size": 22150
+          "size": 22150,
+          "depth": 8
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"
