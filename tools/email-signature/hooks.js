@@ -143,8 +143,8 @@ async function onInput({ id, value }) {
 function appendBlock(key) {
   switch (key) {
     case 'germany':
-      return '<p style="margin:0 0 3px 0;">SUSE Software Solutions Germany GmbH &bull; Frankenstr. 146 &bull; 90461 N&uuml;rnberg &bull; Germany</p>'
-           + '<p style="margin:0;">Registergericht: Amtsgericht N&uuml;rnberg &bull; HRB 36994 &bull; Gesch&auml;ftsf&uuml;hrer: Andy Macdonald</p>';
+      return '<p style="margin:0;">SUSE Software Solutions Germany GmbH, Frankenstr. 146, 90461 N&uuml;rnberg, Germany, www.suse.com, '
+           + 'Gesch&auml;ftsf&uuml;hrer: Jochen Jaser, Andrew McDonald, Abhinav Puri, (HRB 36809, AG N&uuml;rnberg)</p>';
     case 'business':
       return '<p style="margin:0;">This email and any attachments may be confidential and are intended solely for the use of the individual to whom it is addressed. '
            + 'If you are not the intended recipient, please notify the sender immediately and delete this message. '
