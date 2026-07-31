@@ -78,6 +78,8 @@
         "exitField": "exit",
         "enterMsField": "enterMs",
         "exitMsField": "exitMs",
+        "enterEaseField": "enterEase",
+        "exitEaseField": "exitEase",
         "muteField": "mute",
         "laneField": "lane",
         "minSize": 8,
@@ -287,7 +289,9 @@
         { "id": "blur", "type": "number", "label": "Blur", "default": 0, "min": 0, "max": 300, "help": "Gaussian blur of the whole box (layer blur), px. 0 = off. Raster-faithful; carried as a real SVG filter in vector export." },
         { "id": "strokeDashLen", "type": "number", "label": "Dash length", "default": 0, "min": 0, "max": 400, "showFor": ["path"], "showIf": { "strokeDash": "dashed" }, "help": "Length of each dash in px. 0 uses a pattern based on the stroke width." },
         { "id": "strokeGapLen", "type": "number", "label": "Gap length", "default": 0, "min": 0, "max": 400, "showFor": ["path"], "showIf": { "strokeDash": "dashed" }, "help": "Space between dashes in px. 0 uses a pattern based on the stroke width." },
-        { "id": "bgBlur", "type": "number", "label": "Backdrop blur", "default": 0, "min": 0, "max": 300, "showFor": ["box"], "help": "Frosted glass. Blurs whatever sits behind the box, px. 0 = off." }
+        { "id": "bgBlur", "type": "number", "label": "Backdrop blur", "default": 0, "min": 0, "max": 300, "showFor": ["box"], "help": "Frosted glass. Blurs whatever sits behind the box, px. 0 = off." },
+        { "id": "enterEase", "showFor": [], "type": "text", "label": "In easing", "default": "", "help": "The timing curve the animate-in preset's GEOMETRY follows: a preset name (linear, ease-out, ease-in, ease-in-out, overshoot, anticipate) or a CSS cubic-bezier(a,b,c,d). Empty leaves the preset on its own built-in curve, which is what every composition authored before this control existed still renders with. Opacity is not governed by it." },
+        { "id": "exitEase", "showFor": [], "type": "text", "label": "Out easing", "default": "", "help": "The same curve control for the animate-out preset. Same wire format, same geometry-only reach." }
       ],
       "default": [
         { "id": "byq0l1tji", "kind": "box", "x": 0, "y": 0, "w": 1080, "h": 1080, "rot": 0, "shape": "rounded", "bg": "#0c322c" },

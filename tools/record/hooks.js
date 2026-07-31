@@ -148,6 +148,37 @@ var TRANSITIONS = {
 };
 function transitionOf(b) { var t = String(b && b.transition || 'fade'); return TRANSITIONS[t] ? t : 'fade'; }
 
+// The named easing curves the export compositor implements (lib/transitions.ts EASINGS).
+var EASINGS = {
+  linear: 1, 'ease-out': 1, 'ease-in': 1, 'ease-in-out': 1, overshoot: 1, anticipate: 1,
+};
+
+// An authored easing, canonicalised for the attribute: a whitelisted preset name, or a
+// cubic-bezier re-emitted from its own PARSED numbers rather than the user's string.
+// The x controls are TIME and must stay inside 0..1 or the curve is not a function of
+// progress (CSS refuses the same thing); y is unbounded, which is the overshoot family.
+// Anything else answers '' and the compositor keeps the transition's built-in curve —
+// the same shape sequence-studio's timeAttrsFor uses, and the same vocabulary
+// shells/web/src/lib/transitions.ts re-validates on the way in.
+function easeOf(b) {
+  var v = b && b.transitionEase;
+  if (typeof v !== 'string') return '';
+  var s = v.trim();
+  if (Object.prototype.hasOwnProperty.call(EASINGS, s)) return s;
+  var m = /^cubic-bezier\(([^)]*)\)$/i.exec(s);
+  if (!m) return '';
+  var raw = m[1].split(',');
+  if (raw.length !== 4) return '';
+  var n = [];
+  for (var i = 0; i < 4; i++) {
+    var x = Number(raw[i].trim());
+    if (!isFinite(x)) return '';
+    n.push(Math.round(x * 1000) / 1000);
+  }
+  if (n[0] < 0 || n[0] > 1 || n[2] < 0 || n[2] > 1) return '';
+  return 'cubic-bezier(' + n.join(',') + ')';
+}
+
 function boxCss(b) {
   var x = Math.round(num(b.x, 0));
   var y = Math.round(num(b.y, 0));
@@ -330,6 +361,7 @@ function compute(model) {
       id: b.id != null ? b.id : i,
       role: frames[fr].role,
       transition: transitionOf(b),
+      transitionEase: easeOf(b),
       delay: Math.round(clamp(num(b.delay, 0), 0, 4000)),
       boxStyle: boxCss(lb) + clipCss(b, byId) + shadows[i].box + shadows[i].filter,
       textStyle: textCss(lb) + shadows[i].text,

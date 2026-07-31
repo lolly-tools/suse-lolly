@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-31T10:06:02.994Z",
+  "generatedAt": "2026-07-31T12:00:32.399Z",
   "tools": [
     {
       "id": "color-block",
@@ -9,6 +9,15 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "layout",
+        "blocks",
+        "grid",
+        "responsive",
+        "poster",
+        "social",
+        "composition"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -169,6 +178,16 @@
       "version": "1.0.0",
       "status": "experimental",
       "category": "everyone",
+      "tags": [
+        "layout",
+        "responsive",
+        "hero",
+        "social",
+        "poster",
+        "cta",
+        "headshot",
+        "text"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -299,6 +318,12 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "quote",
+        "social",
+        "marketing",
+        "card"
+      ],
       "formats": [
         "png",
         "svg",
@@ -432,6 +457,19 @@
       "version": "1.0.0",
       "status": "official",
       "category": "event",
+      "tags": [
+        "map",
+        "team",
+        "timezone",
+        "world",
+        "time",
+        "meeting",
+        "schedule",
+        "planner",
+        "clock",
+        "widget",
+        "d3"
+      ],
       "formats": [
         "png",
         "jpeg",
@@ -558,6 +596,12 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "code",
+        "developer",
+        "snippet",
+        "export"
+      ],
       "formats": [
         "png",
         "svg"
@@ -681,6 +725,12 @@
       "version": "2.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "qr",
+        "url",
+        "link",
+        "marketing"
+      ],
       "formats": [
         "svg",
         "emf",
@@ -884,6 +934,12 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "quote",
+        "weather",
+        "daily",
+        "inspiration"
+      ],
       "formats": [
         "png",
         "jpeg",
@@ -1010,6 +1066,12 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "logo",
+        "brand",
+        "identity",
+        "svg"
+      ],
       "formats": [
         "svg",
         "png",
@@ -1140,6 +1202,12 @@
       "version": "1.7.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "email",
+        "signature",
+        "contact",
+        "branding"
+      ],
       "formats": [
         "html",
         "txt",
@@ -1268,6 +1336,16 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "chart",
+        "data",
+        "visualization",
+        "bar",
+        "pie",
+        "donut",
+        "infographic",
+        "svg"
+      ],
       "formats": [
         "png",
         "svg",
@@ -1558,6 +1636,11 @@
       "version": "0.5.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "video",
+        "bag",
+        "animation"
+      ],
       "formats": [
         "webm",
         "mp4",
@@ -1688,6 +1771,11 @@
       "version": "1.1.0",
       "status": "official",
       "category": "utility",
+      "tags": [
+        "color",
+        "reference",
+        "brand"
+      ],
       "formats": [
         "html"
       ],
@@ -1810,6 +1898,11 @@
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
+      "tags": [
+        "timer",
+        "productivity",
+        "utility"
+      ],
       "formats": [
         "html"
       ],
@@ -1934,6 +2027,15 @@
       "category": "utility",
       "capabilities": [
         "capture"
+      ],
+      "tags": [
+        "url",
+        "screenshot",
+        "capture",
+        "web",
+        "preview",
+        "developer",
+        "qa"
       ],
       "formats": [
         "png",
@@ -2063,6 +2165,15 @@
       "version": "0.4.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "map",
+        "street",
+        "city",
+        "location",
+        "vector",
+        "offline",
+        "osm"
+      ],
       "formats": [
         "svg",
         "emf",
@@ -2231,6 +2342,24 @@
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "privacy",
+        "exif",
+        "metadata",
+        "gps",
+        "image",
+        "photo",
+        "strip",
+        "clean",
+        "jpeg",
+        "png",
+        "svg",
+        "vector",
+        "pdf",
+        "document",
+        "inkscape",
+        "illustrator"
+      ],
       "formats": [
         "jpg",
         "png",
@@ -2357,6 +2486,27 @@
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "privacy",
+        "json",
+        "yaml",
+        "helm",
+        "kubernetes",
+        "jwt",
+        "base64",
+        "url",
+        "hash",
+        "sha256",
+        "developer",
+        "format",
+        "decode",
+        "text",
+        "de-identify",
+        "anonymise",
+        "anonymize",
+        "redact",
+        "pii"
+      ],
       "formats": [
         "html"
       ],
@@ -2481,6 +2631,17 @@
       "category": "event",
       "capabilities": [
         "compose"
+      ],
+      "tags": [
+        "badge",
+        "name tag",
+        "event",
+        "conference",
+        "lanyard",
+        "qr",
+        "tracks",
+        "speaker",
+        "sponsor"
       ],
       "formats": [
         "pdf",
@@ -2640,6 +2801,18 @@
       "version": "1.2.0",
       "status": "official",
       "category": "event",
+      "tags": [
+        "signage",
+        "wayfinding",
+        "directional",
+        "arrow",
+        "event",
+        "conference",
+        "venue",
+        "directory",
+        "poster",
+        "navigation"
+      ],
       "formats": [
         "pdf",
         "pdf-cmyk",
@@ -2800,6 +2973,16 @@
       "category": "designer",
       "capabilities": [
         "wasm"
+      ],
+      "tags": [
+        "lockup",
+        "logo",
+        "brand",
+        "chameleon",
+        "wordmark",
+        "product",
+        "program",
+        "team"
       ],
       "formats": [
         "svg",
@@ -3015,6 +3198,18 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "ad",
+        "advertising",
+        "banner",
+        "animation",
+        "video",
+        "social",
+        "scenes",
+        "motion",
+        "gif",
+        "html5"
+      ],
       "formats": [
         "mp4",
         "gif",
@@ -3145,6 +3340,15 @@
       "version": "1.0.0",
       "status": "official",
       "category": "event",
+      "tags": [
+        "calendar",
+        "ics",
+        "event",
+        "ical",
+        "invite",
+        "meeting",
+        "schedule"
+      ],
       "formats": [
         "ics",
         "png",
@@ -3270,6 +3474,19 @@
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "pdf",
+        "compress",
+        "shrink",
+        "optimize",
+        "reduce",
+        "size",
+        "document",
+        "scan",
+        "image",
+        "downsample",
+        "privacy"
+      ],
       "formats": [
         "pdf"
       ],
@@ -3392,6 +3609,15 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "pdf",
+        "document",
+        "report",
+        "multi-page",
+        "brochure",
+        "layout",
+        "print"
+      ],
       "formats": [
         "pdf",
         "pptx",
@@ -3549,6 +3775,13 @@
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "photo",
+        "filter",
+        "duotone",
+        "color",
+        "effect"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -3710,6 +3943,17 @@
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "halftone",
+        "dots",
+        "photo",
+        "filter",
+        "effect",
+        "newspaper",
+        "comic",
+        "vector",
+        "image"
+      ],
       "formats": [
         "svg",
         "pdf",
@@ -3883,6 +4127,17 @@
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "scanline",
+        "crt",
+        "pixel",
+        "retro",
+        "posterize",
+        "halftone",
+        "image",
+        "filter",
+        "effect"
+      ],
       "formats": [
         "svg",
         "png",
@@ -4047,6 +4302,24 @@
       "version": "1.1.0",
       "status": "experimental",
       "category": "designer",
+      "tags": [
+        "logo",
+        "lockup",
+        "wall",
+        "grid",
+        "nascar",
+        "logos",
+        "brand",
+        "partners",
+        "customers",
+        "sponsors",
+        "clients",
+        "montage",
+        "cloud",
+        "vector",
+        "threshold",
+        "on-device"
+      ],
       "formats": [
         "png",
         "svg",
@@ -4174,6 +4447,20 @@
       "version": "1.1.0",
       "status": "experimental",
       "category": "designer",
+      "tags": [
+        "photo",
+        "filter",
+        "posterize",
+        "posterise",
+        "vector",
+        "trace",
+        "screenprint",
+        "separations",
+        "halftone",
+        "portrait",
+        "headshot",
+        "on-device"
+      ],
       "formats": [
         "png",
         "svg",
@@ -4328,6 +4615,33 @@
       "version": "1.4.0",
       "status": "experimental",
       "category": "everyone",
+      "tags": [
+        "diagram",
+        "org-chart",
+        "org chart",
+        "architecture",
+        "layercake",
+        "flowchart",
+        "process",
+        "hierarchy",
+        "mind map",
+        "mindmap",
+        "timeline",
+        "roadmap",
+        "cycle",
+        "pyramid",
+        "funnel",
+        "kanban",
+        "matrix",
+        "quadrant",
+        "gantt",
+        "cards",
+        "arrows",
+        "ascii",
+        "text",
+        "mermaid",
+        "csv"
+      ],
       "formats": [
         "svg",
         "pdf",
@@ -4483,6 +4797,16 @@
       "version": "1.3.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "photo",
+        "filter",
+        "pixel",
+        "stretch",
+        "smear",
+        "glitch",
+        "distort",
+        "effect"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -4639,6 +4963,18 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "logo",
+        "lockup",
+        "partner",
+        "co-brand",
+        "brand",
+        "suse",
+        "partnership",
+        "sponsor",
+        "powered-by",
+        "on-device"
+      ],
       "formats": [
         "svg",
         "png",
@@ -4766,6 +5102,14 @@
       "version": "1.0.0",
       "status": "community",
       "category": "everyone",
+      "tags": [
+        "favicon",
+        "icon",
+        "ico",
+        "app icon",
+        "web",
+        "logo"
+      ],
       "formats": [
         "ico",
         "png",
@@ -4889,6 +5233,25 @@
       "version": "1.10.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "canvas",
+        "layout",
+        "wysiwyg",
+        "editor",
+        "poster",
+        "compose",
+        "design",
+        "free-form",
+        "import",
+        "figma",
+        "penpot",
+        "pdf",
+        "ai",
+        "illustrator",
+        "idml",
+        "indesign",
+        "adobe"
+      ],
       "formats": [
         "png",
         "svg",
@@ -5021,6 +5384,19 @@
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "ad",
+        "advertising",
+        "banner",
+        "animation",
+        "lottie",
+        "motion",
+        "video",
+        "social",
+        "scenes",
+        "gif",
+        "apng"
+      ],
       "formats": [
         "mp4",
         "gif",
@@ -5150,6 +5526,13 @@
       "status": "official",
       "category": "designer",
       "new": true,
+      "tags": [
+        "geeko",
+        "mascot",
+        "pose",
+        "illustration",
+        "svg"
+      ],
       "formats": [
         "svg",
         "png",
@@ -5397,6 +5780,18 @@
       "capabilities": [
         "microphone"
       ],
+      "tags": [
+        "audio",
+        "voice",
+        "record",
+        "recording",
+        "microphone",
+        "voiceover",
+        "podcast",
+        "mp3",
+        "meter",
+        "levels"
+      ],
       "formats": [
         "png",
         "svg"
@@ -5523,6 +5918,25 @@
       "capabilities": [
         "camera",
         "microphone"
+      ],
+      "tags": [
+        "video",
+        "record",
+        "recording",
+        "camera",
+        "microphone",
+        "audio",
+        "sound",
+        "intro",
+        "outro",
+        "bookend",
+        "lower-third",
+        "reel",
+        "social",
+        "portrait",
+        "landscape",
+        "music",
+        "levels"
       ],
       "formats": [
         "mp4",
@@ -5651,6 +6065,19 @@
       "version": "1.0.0",
       "status": "experimental",
       "category": "designer",
+      "tags": [
+        "photo",
+        "filter",
+        "voronoi",
+        "cells",
+        "mesh",
+        "mosaic",
+        "low-poly",
+        "vector",
+        "camera",
+        "live",
+        "on-device"
+      ],
       "formats": [
         "png",
         "svg",
@@ -5810,6 +6237,17 @@
       "status": "official",
       "category": "everyone",
       "listed": false,
+      "tags": [
+        "asset",
+        "export",
+        "convert",
+        "format",
+        "logo",
+        "image",
+        "svg",
+        "png",
+        "pdf"
+      ],
       "formats": [
         "svg",
         "png",
@@ -5940,6 +6378,21 @@
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "document",
+        "doc",
+        "word",
+        "rich text",
+        "editor",
+        "pages",
+        "pdf",
+        "report",
+        "letter",
+        "writing",
+        "wysiwyg",
+        "tables",
+        "compose"
+      ],
       "formats": [
         "pdf",
         "pptx",
@@ -6066,6 +6519,22 @@
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "carousel",
+        "pages",
+        "multi-page",
+        "social",
+        "instagram",
+        "linkedin",
+        "slides",
+        "swipe",
+        "deck",
+        "layout",
+        "wysiwyg",
+        "editor",
+        "pdf",
+        "sequence"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -6224,6 +6693,25 @@
       "version": "1.0.0",
       "status": "community",
       "category": "everyone",
+      "tags": [
+        "flow chart",
+        "flowchart",
+        "flow",
+        "diagram",
+        "org chart",
+        "org-chart",
+        "orgchart",
+        "hierarchy",
+        "team",
+        "people",
+        "connectors",
+        "canvas",
+        "editor",
+        "process",
+        "structure",
+        "nodes",
+        "wysiwyg"
+      ],
       "formats": [
         "png",
         "svg",
@@ -6380,6 +6868,27 @@
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "chart",
+        "d3",
+        "data",
+        "visualization",
+        "graph",
+        "plot",
+        "bar",
+        "line",
+        "area",
+        "scatter",
+        "pie",
+        "donut",
+        "radar",
+        "treemap",
+        "heatmap",
+        "histogram",
+        "svg",
+        "vector",
+        "csv"
+      ],
       "formats": [
         "md",
         "png",
@@ -6595,6 +7104,27 @@
         "camera",
         "microphone"
       ],
+      "tags": [
+        "video",
+        "record",
+        "recording",
+        "camera",
+        "microphone",
+        "talking head",
+        "intro",
+        "outro",
+        "bookend",
+        "lower-third",
+        "reel",
+        "social",
+        "portrait",
+        "editor",
+        "layout",
+        "transition",
+        "animation",
+        "motion",
+        "wysiwyg"
+      ],
       "formats": [
         "mp4",
         "webm"
@@ -6719,6 +7249,14 @@
       "version": "1.0.0",
       "status": "experimental",
       "category": "designer",
+      "tags": [
+        "3d",
+        "gltf",
+        "glb",
+        "render",
+        "turntable",
+        "product"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -6846,6 +7384,14 @@
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
+      "tags": [
+        "gradient",
+        "mesh",
+        "background",
+        "wallpaper",
+        "hero",
+        "brand"
+      ],
       "formats": [
         "svg",
         "png",
@@ -7044,6 +7590,15 @@
       "version": "0.1.0",
       "status": "experimental",
       "category": "event",
+      "tags": [
+        "booth",
+        "event",
+        "sponsor",
+        "3d",
+        "mockup",
+        "stand",
+        "exhibition"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -7172,6 +7727,19 @@
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "ai",
+        "llm",
+        "prompt",
+        "tokens",
+        "context",
+        "text",
+        "image",
+        "vision",
+        "developer",
+        "paste",
+        "on-device"
+      ],
       "formats": [
         "png",
         "webp"
@@ -7332,6 +7900,15 @@
         "screen",
         "microphone"
       ],
+      "tags": [
+        "screenshot",
+        "screen",
+        "recording",
+        "capture",
+        "crop",
+        "developer",
+        "qa"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -7456,6 +8033,16 @@
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "slides",
+        "deck",
+        "presentation",
+        "pptx",
+        "powerpoint",
+        "video",
+        "layout",
+        "blocks"
+      ],
       "formats": [
         "pptx",
         "pdf",
@@ -7582,6 +8169,16 @@
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "slides",
+        "deck",
+        "presentation",
+        "pptx",
+        "powerpoint",
+        "tables",
+        "brand",
+        "blocks"
+      ],
       "formats": [
         "pptx",
         "pdf",
@@ -7749,6 +8346,14 @@
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
+      "tags": [
+        "deck",
+        "slides",
+        "presentation",
+        "editor",
+        "pptx",
+        "on-canvas"
+      ],
       "formats": [
         "pptx",
         "pdf",
@@ -7876,6 +8481,20 @@
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "pptx",
+        "powerpoint",
+        "presentation",
+        "deck",
+        "slides",
+        "rebrand",
+        "brand",
+        "theme",
+        "colors",
+        "fonts",
+        "convert",
+        "privacy"
+      ],
       "formats": [
         "pptx"
       ],
@@ -7998,6 +8617,14 @@
       "version": "1.0.1",
       "status": "community",
       "category": "everyone",
+      "tags": [
+        "wordmark",
+        "logo",
+        "type",
+        "font",
+        "lockup",
+        "svg"
+      ],
       "formats": [
         "svg",
         "emf",
@@ -8178,6 +8805,22 @@
       "status": "community",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "image",
+        "convert",
+        "heic",
+        "heif",
+        "avif",
+        "tiff",
+        "webp",
+        "jpeg",
+        "png",
+        "photo",
+        "compress",
+        "resize",
+        "iphone",
+        "privacy"
+      ],
       "formats": [
         "webp",
         "jpg",
@@ -8302,6 +8945,19 @@
       "version": "2.2.3",
       "status": "community",
       "category": "everyone",
+      "tags": [
+        "audio",
+        "audiogram",
+        "waveform",
+        "spectrum",
+        "podcast",
+        "music",
+        "voice",
+        "video",
+        "social",
+        "quote",
+        "visualizer"
+      ],
       "formats": [
         "png",
         "webm",
@@ -8483,6 +9139,24 @@
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
+      "tags": [
+        "provenance",
+        "copyright",
+        "licence",
+        "license",
+        "watermark",
+        "imprint",
+        "c2pa",
+        "content credentials",
+        "metadata",
+        "exif",
+        "creative commons",
+        "image",
+        "photo",
+        "artist",
+        "ip",
+        "rights"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -8609,6 +9283,26 @@
       "status": "community",
       "category": "everyone",
       "new": true,
+      "tags": [
+        "video",
+        "timeline",
+        "sequence",
+        "edit",
+        "editor",
+        "canvas",
+        "clip",
+        "montage",
+        "reel",
+        "social",
+        "motion",
+        "transition",
+        "audio",
+        "music",
+        "overlay",
+        "lower-third",
+        "compose",
+        "story"
+      ],
       "formats": [
         "png",
         "mp4",
@@ -9192,6 +9886,16 @@
       "version": "1.2.0",
       "status": "community",
       "category": "everyone",
+      "tags": [
+        "battlecard",
+        "sales",
+        "competitive",
+        "table",
+        "cards",
+        "pdf",
+        "pages",
+        "batch"
+      ],
       "formats": [
         "pdf",
         "png",
@@ -9314,10 +10018,28 @@
       "id": "redact",
       "name": "Redact",
       "description": "Black out sensitive content by rebuilding the file, then verify the output before it downloads, all on your device.",
-      "version": "1.3.0",
+      "version": "1.5.0",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "tags": [
+        "privacy",
+        "redact",
+        "redaction",
+        "black out",
+        "censor",
+        "remove",
+        "metadata",
+        "exif",
+        "image",
+        "photo",
+        "screenshot",
+        "pdf",
+        "document",
+        "svg",
+        "acropalypse",
+        "hidden text"
+      ],
       "formats": [
         "png",
         "jpg",
@@ -9338,14 +10060,33 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "imperfections",
+        "print",
+        "risograph",
+        "misregistration",
+        "photocopy",
+        "grain",
+        "paper",
+        "photo",
+        "filter",
+        "effect",
+        "vector",
+        "image"
+      ],
       "formats": [
         "svg",
+        "pdf",
+        "pdf-cmyk",
         "png",
         "jpg",
         "webp",
         "avif",
+        "tiff",
+        "cmyk-tiff",
         "gif",
         "apng",
+        "webp-anim",
         "webm",
         "mp4"
       ],
@@ -9354,6 +10095,10 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"13\" height=\"13\" rx=\"1.5\" /><rect x=\"7.5\" y=\"7.5\" width=\"13\" height=\"13\" rx=\"1.5\" /><path d=\"M10.5 14.5c1 -1 2 1 3 0\" /></svg>",
       "preview": "/catalog/previews/filter-imperfections.svg",
+      "featured": {
+        "order": 7,
+        "blurb": "Risograph, misregistration and photocopy wear, on purpose"
+      },
       "examples": [
         {
           "label": "Subtle press",
@@ -9367,8 +10112,6 @@
           "label": "Risograph",
           "values": {
             "preset": "riso",
-            "ink1": "#0078bf",
-            "ink2": "#ff48b0",
             "paperTint": "#f7f2e7",
             "grainAmount": 35,
             "seed": 21
@@ -9509,14 +10252,35 @@
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
+      "tags": [
+        "finish",
+        "foil",
+        "spot-uv",
+        "emboss",
+        "deboss",
+        "soft-touch",
+        "print",
+        "plate",
+        "spot-colour",
+        "photo",
+        "filter",
+        "effect",
+        "vector",
+        "image"
+      ],
       "formats": [
         "svg",
         "pdf",
+        "pdf-cmyk",
         "png",
+        "jpg",
         "webp",
         "avif",
+        "tiff",
+        "cmyk-tiff",
         "gif",
         "apng",
+        "webp-anim",
         "webm",
         "mp4"
       ],
@@ -9525,6 +10289,10 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"3.5\" width=\"17\" height=\"17\" rx=\"2.5\"/><path d=\"M6.5 17.5 17.5 6.5\"/><path d=\"M10.5 20.5 20.5 10.5\"/><path d=\"M8 8v3M6.5 9.5h3\"/></svg>",
       "preview": "/catalog/previews/finish-preview.svg",
+      "featured": {
+        "order": 6,
+        "blurb": "Foil, spot UV and emboss — with the plate your printer needs"
+      },
       "examples": [
         {
           "label": "Gold foil highlights",

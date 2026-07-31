@@ -298,6 +298,23 @@
             { "value": "center bottom", "label": "Bottom" },
             { "value": "right bottom", "label": "Bottom right" }
           ]
+        },
+        {
+          "id": "transitionEase",
+          "type": "select",
+          "label": "Easing",
+          "default": "",
+          "group": "Motion",
+          "help": "The timing curve this object's entrance follows. Geometry only \u2014 the fade keeps its own fast ramp, deliberately, because a slow one turns to mud through video compression. Default leaves the transition on its built-in curve.",
+          "options": [
+            { "value": "", "label": "Default" },
+            { "value": "linear", "label": "Linear" },
+            { "value": "ease-out", "label": "Ease out" },
+            { "value": "ease-in", "label": "Ease in" },
+            { "value": "ease-in-out", "label": "Ease in and out" },
+            { "value": "overshoot", "label": "Overshoot" },
+            { "value": "anticipate", "label": "Anticipate" }
+          ]
         }
       ],
       "default": [
