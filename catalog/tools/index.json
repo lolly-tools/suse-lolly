@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-07-31T22:13:12.365Z",
+  "generatedAt": "2026-08-01T15:35:32.576Z",
   "tools": [
     {
       "id": "color-block",
@@ -9898,7 +9898,13 @@
       ],
       "formats": [
         "pdf",
+        "svg",
+        "pdf",
+        "pdf-cmyk",
+        "emf",
         "png",
+        "webp",
+        "avif",
         "webp",
         "jpeg"
       ],
