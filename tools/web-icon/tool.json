@@ -107,8 +107,8 @@
       "type": "number",
       "display": "slider",
       "default": -4,
-      "min": -40,
-      "max": 8,
+      "min": -4,
+      "max": 14,
       "step": 1,
       "help": "Negative values tuck the letters together — essential for fitting 3–4 monospace caps into a 16 px tile. Mono is wide, so push it well into the negatives."
     },

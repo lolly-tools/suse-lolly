@@ -11,11 +11,10 @@
   "render": {
     "width": 794,
     "height": 1123,
-    "formats": ["pdf", "pptx", "svg", "md"],
+    "formats": ["pdf", "pptx", "svg", "md", "docx", "odt"],
     "actions": ["download", "save"],
     "layout": "document",
     "paged": true,
-    "printMarks": false,
     "c2pa": true,
     "aspectWarning": {
       "max": 1,

@@ -36,6 +36,24 @@
       "help": "Contain shows the whole asset inside the frame; Cover fills the frame and may crop the edges."
     },
     {
+      "id": "width",
+      "label": "Width",
+      "type": "number",
+      "default": 1000,
+      "min": 1,
+      "max": 8000,
+      "group": "export"
+    },
+    {
+      "id": "height",
+      "label": "Height",
+      "type": "number",
+      "default": 1000,
+      "min": 1,
+      "max": 8000,
+      "group": "export"
+    },
+    {
       "id": "background",
       "label": "Background",
       "type": "color",

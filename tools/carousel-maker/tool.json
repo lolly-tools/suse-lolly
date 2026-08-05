@@ -19,7 +19,6 @@
     "layout": "editor",
     "paged": true,
     "dims": false,
-    "printMarks": false,
     "transparentBg": true,
     "pages": {
       "count": "pages",

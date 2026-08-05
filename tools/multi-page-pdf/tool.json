@@ -18,7 +18,6 @@
     "formats": ["pdf", "pptx", "svg", "md"],
     "actions": ["download", "save"],
     "paged": true,
-    "printMarks": false,
     "c2pa": true,
     "aspectWarning": {
       "max": 1,
