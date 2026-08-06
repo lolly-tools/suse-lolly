@@ -156,6 +156,20 @@
               ]
             }
           }
+        },
+        "ultra-black": {
+          "$value": "#050505",
+          "$description": "Ultra Black",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                80,
+                70,
+                60,
+                100
+              ]
+            }
+          }
         }
       },
       "ramp": {
