@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-06T12:31:37.303Z",
+  "generatedAt": "2026-08-06T17:18:51.800Z",
   "tools": [
     {
       "id": "color-block",
@@ -7434,7 +7434,7 @@
       "height": 900,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"9\" cy=\"9\" r=\"7\"/><circle cx=\"15\" cy=\"15\" r=\"7\"/></svg>",
-      "preview": "/catalog/previews/mesh-gradient.webp",
+      "preview": "/catalog/previews/mesh-gradient.png",
       "examples": [
         {
           "label": "Sunset haze",
