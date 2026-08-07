@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-06T20:16:21.691Z",
+  "generatedAt": "2026-08-07T15:44:04.620Z",
   "tools": [
     {
       "id": "color-block",
@@ -8503,143 +8503,6 @@
       }
     },
     {
-      "id": "rebrand-deck",
-      "name": "Rebrand a Deck",
-      "description": "Upload a PowerPoint deck and snap its colours and fonts to your brand — rebuilt on your device, nothing uploaded.",
-      "version": "1.1.0",
-      "status": "official",
-      "category": "utility",
-      "privacy": "on-device",
-      "tags": [
-        "pptx",
-        "powerpoint",
-        "presentation",
-        "deck",
-        "slides",
-        "rebrand",
-        "brand",
-        "theme",
-        "colors",
-        "fonts",
-        "convert",
-        "privacy"
-      ],
-      "formats": [
-        "pptx"
-      ],
-      "width": 760,
-      "height": 620,
-      "exportable": false,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5.5A1.5 1.5 0 0 1 4.5 4h15A1.5 1.5 0 0 1 21 5.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 13.5Z\" /><path d=\"M12 15v2.5\" /><path d=\"m8.5 21 3.5-3.5L15.5 21\" /><path d=\"M12 6.4s-2.4 2.5-2.4 4a2.4 2.4 0 0 0 4.8 0c0-1.5-2.4-4-2.4-4Z\" /></svg>",
-      "preview": "/catalog/previews/rebrand-deck.svg",
-      "i18n": {
-        "ar": {
-          "name": "إعادة العلامة التجارية لعرض تقديمي",
-          "description": "ارفع عرض PowerPoint وطبق ألوانه وخطوطه على علامتك التجارية - يعاد بناؤه على جهازك، دون رفع أي شيء."
-        },
-        "bg": {
-          "name": "Пребрандиране на презентация",
-          "description": "Качи PowerPoint файл и приведи цветовете и шрифтовете му към твоя бранд - пресъздадено на твоето устройство, нищо не се качва."
-        },
-        "bn": {
-          "name": "একটি ডেক রিব্র্যান্ড করুন",
-          "description": "একটি PowerPoint ডেক আপলোড করুন এবং এর রং ও ফন্ট আপনার ব্র্যান্ডে স্ন্যাপ করুন - আপনার ডিভাইসেই পুনর্নির্মিত, কিছুই আপলোড হয় না।"
-        },
-        "cs": {
-          "name": "Rebrandovat prezentaci",
-          "description": "Nahraj prezentaci PowerPoint a přizpůsob její barvy a písma své značce - znovu sestavena v tvém zařízení, nic se neodesílá."
-        },
-        "de": {
-          "name": "Ein Deck rebranden",
-          "description": "Laden Sie eine PowerPoint-Präsentation hoch und passen Sie deren Farben und Schriften an Ihre Marke an - neu erstellt auf Ihrem Gerät, nichts wird hochgeladen."
-        },
-        "es": {
-          "name": "Cambiar marca de una presentación",
-          "description": "Sube un deck de PowerPoint y ajusta sus colores y fuentes a tu marca - reconstruido en tu dispositivo, no se sube nada."
-        },
-        "fr": {
-          "name": "Rebrander un deck",
-          "description": "Importe un deck PowerPoint et aligne ses couleurs et polices sur ta marque - reconstruit sur ton appareil, rien n'est envoyé."
-        },
-        "hi": {
-          "name": "डेक रीब्रांड करें",
-          "description": "कोई PowerPoint डेक अपलोड करें और उसके रंग और फ़ॉन्ट अपने ब्रांड में बदलें - आपकी डिवाइस पर फिर से बनाया गया, कुछ भी अपलोड नहीं होता।"
-        },
-        "id": {
-          "name": "Ubah Merek Dek",
-          "description": "Unggah deck PowerPoint dan sesuaikan warna serta fontnya ke brand Anda - dibangun ulang di perangkat Anda, tidak ada yang diunggah."
-        },
-        "it": {
-          "name": "Rebrand di una presentazione",
-          "description": "Carica una presentazione PowerPoint e adatta colori e caratteri al tuo brand - ricostruita sul dispositivo, senza caricare nulla."
-        },
-        "ja": {
-          "name": "デッキをリブランド",
-          "description": "PowerPointのデッキをアップロードすると、色とフォントをブランドに合わせます - デバイス上で再構築されるため、何もアップロードされません。"
-        },
-        "ko": {
-          "name": "덱 리브랜딩",
-          "description": "PowerPoint 덱을 업로드하면 색상과 폰트를 브랜드에 맞게 바꿔요 - 기기에서 다시 만들어지며, 아무것도 업로드되지 않아요."
-        },
-        "ms": {
-          "name": "Jenamakan Semula Dek",
-          "description": "Muat naik dek PowerPoint dan sesuaikan warna serta fon dengan jenama anda - dibina semula pada peranti anda, tiada apa dimuat naik."
-        },
-        "nl": {
-          "name": "Herbrand een deck",
-          "description": "Upload een PowerPoint-deck en zet de kleuren en lettertypen om naar je merk - opnieuw opgebouwd op je apparaat, niets geüpload."
-        },
-        "no": {
-          "name": "Ombrand en presentasjon",
-          "description": "Last opp en PowerPoint-presentasjon og tilpass fargene og skriftene til merkevaren din - bygget på nytt på enheten din, ingenting lastes opp."
-        },
-        "pl": {
-          "name": "Zmień markę prezentacji",
-          "description": "Prześlij prezentację PowerPoint i dopasuj jej kolory oraz czcionki do swojej marki - przebudowane na twoim urządzeniu, nic nie jest wysyłane."
-        },
-        "pt": {
-          "name": "Rebrand de um Deck",
-          "description": "Carregue um deck do PowerPoint e ajuste suas cores e fontes à sua marca - reconstruído no seu dispositivo, nada é enviado."
-        },
-        "ro": {
-          "name": "Rebranduiește o prezentare",
-          "description": "Încarcă o prezentare PowerPoint și aliniază culorile și fonturile la brandul tău - reconstruită pe dispozitivul tău, nimic nu este încărcat."
-        },
-        "sv": {
-          "name": "Ombranda en presentation",
-          "description": "Ladda upp en PowerPoint-presentation och matcha dess färger och typsnitt mot ditt varumärke - återskapas på din enhet, inget laddas upp."
-        },
-        "tl": {
-          "name": "I-rebrand ang Deck",
-          "description": "Mag-upload ng PowerPoint deck at i-snap ang mga kulay at font nito sa iyong brand - muling itinatayo sa iyong device, walang ina-upload."
-        },
-        "tr": {
-          "name": "Sunumu Yeniden Markala",
-          "description": "Bir PowerPoint sunumu yükle, renklerini ve fontlarını markana uyarlasın - cihazında yeniden oluşturulur, hiçbir şey yüklenmez."
-        },
-        "uk": {
-          "name": "Ребрендинг презентації",
-          "description": "Завантажте презентацію PowerPoint і приведіть її кольори та шрифти до вашого бренду - усе перебудовується на вашому пристрої, нічого не надсилається на сервер."
-        },
-        "ur": {
-          "name": "ایک ڈیک کو ری برانڈ کریں",
-          "description": "PowerPoint ڈیک اپ لوڈ کریں اور اس کے رنگ اور فونٹس کو اپنے برانڈ سے ملائیں - آپ کے ڈیوائس پر دوبارہ تیار کیا جاتا ہے، کچھ بھی اپ لوڈ نہیں ہوتا۔"
-        },
-        "vi": {
-          "name": "Đổi thương hiệu cho Deck",
-          "description": "Tải lên một bộ PowerPoint và khớp màu sắc, phông chữ của nó với thương hiệu của bạn - dựng lại ngay trên thiết bị, không có gì được tải lên."
-        },
-        "zh-hant": {
-          "name": "重塑簡報品牌",
-          "description": "上傳 PowerPoint 簡報,將其色彩與字體套用為你的品牌樣式 - 在你的裝置上重建,不會上傳任何內容。"
-        },
-        "zh": {
-          "name": "为演示文稿更换品牌",
-          "description": "上传PowerPoint演示文稿，将其颜色和字体匹配到你的品牌 - 在你的设备上重建，不会上传任何内容。"
-        }
-      }
-    },
-    {
       "id": "wordmark",
       "name": "Wordmark",
       "description": "Type a word, get a pure-path vector wordmark in your brand font — recipients never need the font installed.",
@@ -11157,8 +11020,8 @@
     {
       "id": "run-web-code",
       "name": "Run Web Code",
-      "description": "Paste HTML, CSS and JavaScript and watch it run in a private, offline sandbox — perfect for previewing code from an AI assistant.",
-      "version": "1.0.0",
+      "description": "Paste HTML, CSS, JS — or a JSX/TypeScript component — and watch it run in a private, offline sandbox. Perfect for previewing code from an AI assistant.",
+      "version": "1.2.0",
       "status": "official",
       "category": "utility",
       "tags": [
@@ -11167,6 +11030,11 @@
         "css",
         "javascript",
         "js",
+        "jsx",
+        "typescript",
+        "tsx",
+        "react",
+        "component",
         "playground",
         "sandbox",
         "preview",
@@ -11186,8 +11054,8 @@
       "width": 1200,
       "height": 820,
       "exportable": false,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"4\" width=\"19\" height=\"16\" rx=\"2.5\"/><path d=\"M2.5 8.5h19\"/><path d=\"M9.8 11.4l4.4 2.6-4.4 2.6z\"/></svg>",
-      "preview": "/catalog/previews/run-web-code.webp"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.5 7 4.5 12l5 5\"/><path d=\"M14.5 7l5 5-5 5\"/><path d=\"M13.6 5.5 10.4 18.5\"/></svg>",
+      "preview": "/catalog/previews/run-web-code.svg"
     }
   ]
 }
