@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-08T11:40:01.864Z",
+  "generatedAt": "2026-08-08T16:24:30.547Z",
   "tools": [
     {
       "id": "color-block",
@@ -2159,182 +2159,6 @@
       }
     },
     {
-      "id": "street-map",
-      "name": "Street Map",
-      "description": "Clean vector street-block maps of any city. Works offline.",
-      "version": "0.4.0",
-      "status": "official",
-      "category": "designer",
-      "tags": [
-        "map",
-        "street",
-        "city",
-        "location",
-        "vector",
-        "offline",
-        "osm"
-      ],
-      "formats": [
-        "svg",
-        "emf",
-        "dxf",
-        "pdf",
-        "pdf-cmyk",
-        "png"
-      ],
-      "width": 900,
-      "height": 900,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /><path d=\"M15 5.764v15\" /><path d=\"M9 3.236v15\" /></svg>",
-      "preview": "/catalog/previews/street-map.png",
-      "examples": [
-        {
-          "label": "Paris in ink",
-          "values": {
-            "city": "paris",
-            "roadColor": "#1a1a2e",
-            "waterColor": "#93c5fd",
-            "background": "#faf7f2"
-          }
-        },
-        {
-          "label": "Tokyo neon",
-          "values": {
-            "city": "tokyo",
-            "theme": "dark",
-            "roadColor": "#22d3ee",
-            "waterColor": "#0e7490",
-            "background": "#0b1021"
-          }
-        },
-        {
-          "label": "Amsterdam canals",
-          "values": {
-            "city": "amsterdam",
-            "roadColor": "#94a3b8",
-            "waterColor": "#0ea5e9",
-            "waterWeight": 10,
-            "background": "#ffffff"
-          }
-        },
-        {
-          "label": "Brand-primary Berlin",
-          "values": {
-            "city": "berlin",
-            "roadColor": "{color.semantic.primary}",
-            "waterColor": "{color.semantic.secondary}",
-            "background": "{color.semantic.surface}"
-          }
-        }
-      ],
-      "i18n": {
-        "ar": {
-          "name": "خريطة الشوارع",
-          "description": "خرائط شوارع متجهة نظيفة لأي مدينة. تعمل دون اتصال."
-        },
-        "bg": {
-          "name": "Улична карта",
-          "description": "Чисти векторни карти на уличните блокове на всеки град. Работи офлайн."
-        },
-        "bn": {
-          "name": "স্ট্রিট ম্যাপ",
-          "description": "যেকোনো শহরের পরিচ্ছন্ন ভেক্টর স্ট্রিট-ব্লক মানচিত্র। অফলাইনে কাজ করে।"
-        },
-        "cs": {
-          "name": "Mapa ulic",
-          "description": "Čisté vektorové mapy ulic libovolného města. Funguje offline."
-        },
-        "de": {
-          "name": "Straßenkarte",
-          "description": "Übersichtliche Vektor-Straßenkarten jeder Stadt. Funktioniert offline."
-        },
-        "es": {
-          "name": "Mapa de calles",
-          "description": "Mapas vectoriales limpios de las calles de cualquier ciudad. Funciona sin conexión."
-        },
-        "fr": {
-          "name": "Carte des rues",
-          "description": "Des cartes vectorielles épurées des rues de n'importe quelle ville. Fonctionne hors ligne."
-        },
-        "hi": {
-          "name": "स्ट्रीट मैप",
-          "description": "किसी भी शहर के साफ़ वेक्टर स्ट्रीट-ब्लॉक मैप। ऑफ़लाइन काम करता है।"
-        },
-        "id": {
-          "name": "Peta Jalan",
-          "description": "Peta blok jalan vektor yang bersih untuk kota mana pun. Berfungsi secara offline."
-        },
-        "it": {
-          "name": "Mappa stradale",
-          "description": "Mappe vettoriali essenziali delle strade di qualsiasi città. Funziona offline."
-        },
-        "ja": {
-          "name": "ストリートマップ",
-          "description": "任意の都市のすっきりとしたベクター街区マップを作成します。オフラインでも動作します。"
-        },
-        "ko": {
-          "name": "스트리트 맵",
-          "description": "어떤 도시든 깔끔한 벡터 스트리트 맵으로 표현해요. 오프라인에서도 작동해요."
-        },
-        "ms": {
-          "name": "Peta Jalan",
-          "description": "Peta blok jalan vektor yang kemas untuk sebarang bandar. Berfungsi luar talian."
-        },
-        "nl": {
-          "name": "Stratenplan",
-          "description": "Strakke vector-stratenplannen van elke stad. Werkt offline."
-        },
-        "no": {
-          "name": "Gatekart",
-          "description": "Rene vektor-gatekart for enhver by. Fungerer offline."
-        },
-        "pl": {
-          "name": "Mapa ulic",
-          "description": "Czyste, wektorowe mapy siatki ulic dla każdego miasta. Działa offline."
-        },
-        "pt": {
-          "name": "Mapa de Ruas",
-          "description": "Mapas vetoriais limpos de quarteirões de qualquer cidade. Funciona offline."
-        },
-        "ro": {
-          "name": "Hartă stradală",
-          "description": "Hărți vectoriale clare, cu blocuri stradale, pentru orice oraș. Funcționează offline."
-        },
-        "sv": {
-          "name": "Gatukarta",
-          "description": "Rena vektorkartor över gatukvarter i valfri stad. Fungerar offline."
-        },
-        "tl": {
-          "name": "Mapa ng Kalye",
-          "description": "Malinis na vector na mapa ng mga kalye ng kahit anong lungsod. Gumagana kahit offline."
-        },
-        "tr": {
-          "name": "Sokak Haritası",
-          "description": "Herhangi bir şehrin temiz vektörel sokak bloğu haritaları. Çevrimdışı çalışır."
-        },
-        "uk": {
-          "name": "Карта вулиць",
-          "description": "Чисті векторні карти вуличних квартàлів будь-якого міста. Працює офлайн."
-        },
-        "ur": {
-          "name": "اسٹریٹ میپ",
-          "description": "کسی بھی شہر کے صاف ستھرے ویکٹر اسٹریٹ بلاک نقشے۔ آف لائن کام کرتا ہے۔"
-        },
-        "vi": {
-          "name": "Bản Đồ Đường Phố",
-          "description": "Bản đồ vector các ô phố gọn gàng của bất kỳ thành phố nào. Hoạt động ngoại tuyến."
-        },
-        "zh-hant": {
-          "name": "街道地圖",
-          "description": "任何城市的簡潔向量街廓地圖，離線也能使用。"
-        },
-        "zh": {
-          "name": "街道地图",
-          "description": "生成任意城市的简洁矢量街区地图，支持离线使用。"
-        }
-      }
-    },
-    {
       "id": "strip-data",
       "name": "Strip Hidden Data",
       "description": "Reveal and remove hidden metadata from images and PDFs — on your device.",
@@ -2482,7 +2306,7 @@
       "id": "text-helper",
       "name": "Text Helper",
       "description": "Format, decode, hash and de-identify text — JSON, JWT and more.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -4403,7 +4227,8 @@
         "mp4",
         "webm",
         "gif",
-        "apng"
+        "apng",
+        "pptx"
       ],
       "width": 1080,
       "height": 1080,
@@ -4627,6 +4452,169 @@
                 "weight": "700",
                 "font": "sans",
                 "lineHeight": 1.05
+              }
+            ]
+          }
+        },
+        {
+          "id": "slide-deck",
+          "name": "Slide deck",
+          "category": "Slide deck",
+          "description": "Frames as slides — export as editable PowerPoint or PDF.",
+          "values": {
+            "boxes": [
+              {
+                "id": "slide1",
+                "kind": "frame",
+                "x": 0,
+                "y": 0,
+                "w": 1080,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#0c322c",
+                "order": 0,
+                "clipChildren": true
+              },
+              {
+                "id": "s1title",
+                "kind": "text",
+                "x": 100,
+                "y": 380,
+                "w": 880,
+                "h": 240,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Your title here",
+                "fg": "#ffffff",
+                "fontSize": 96,
+                "align": "left",
+                "valign": "top",
+                "weight": "700",
+                "font": "SUSE",
+                "lineHeight": 1.05,
+                "frame": "slide1"
+              },
+              {
+                "id": "s1body",
+                "kind": "text",
+                "x": 100,
+                "y": 660,
+                "w": 880,
+                "h": 160,
+                "rot": 0,
+                "shape": "rect",
+                "text": "A supporting line for the opening slide.",
+                "fg": "#30ba78",
+                "fontSize": 40,
+                "align": "left",
+                "valign": "top",
+                "weight": "400",
+                "font": "SUSE",
+                "lineHeight": 1.3,
+                "frame": "slide1"
+              },
+              {
+                "id": "slide2",
+                "kind": "frame",
+                "x": 1160,
+                "y": 0,
+                "w": 1080,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#ffffff",
+                "order": 1,
+                "clipChildren": true
+              },
+              {
+                "id": "s2title",
+                "kind": "text",
+                "x": 1260,
+                "y": 140,
+                "w": 880,
+                "h": 200,
+                "rot": 0,
+                "shape": "rect",
+                "text": "A point worth making",
+                "fg": "#0c322c",
+                "fontSize": 72,
+                "align": "left",
+                "valign": "top",
+                "weight": "700",
+                "font": "SUSE",
+                "lineHeight": 1.1,
+                "frame": "slide2"
+              },
+              {
+                "id": "s2body",
+                "kind": "text",
+                "x": 1260,
+                "y": 400,
+                "w": 880,
+                "h": 520,
+                "rot": 0,
+                "shape": "rect",
+                "text": "- First supporting idea\n- Second supporting idea\n- Third supporting idea",
+                "fg": "#4a4a4a",
+                "fontSize": 40,
+                "align": "left",
+                "valign": "top",
+                "weight": "400",
+                "font": "SUSE",
+                "lineHeight": 1.5,
+                "frame": "slide2"
+              },
+              {
+                "id": "slide3",
+                "kind": "frame",
+                "x": 2320,
+                "y": 0,
+                "w": 1080,
+                "h": 1080,
+                "rot": 0,
+                "shape": "rect",
+                "bg": "#30ba78",
+                "order": 2,
+                "clipChildren": true
+              },
+              {
+                "id": "s3title",
+                "kind": "text",
+                "x": 2420,
+                "y": 420,
+                "w": 880,
+                "h": 240,
+                "rot": 0,
+                "shape": "rect",
+                "text": "Thank you",
+                "fg": "#ffffff",
+                "fontSize": 104,
+                "align": "left",
+                "valign": "top",
+                "weight": "700",
+                "font": "SUSE",
+                "lineHeight": 1.05,
+                "frame": "slide3"
+              },
+              {
+                "id": "s3body",
+                "kind": "text",
+                "x": 2420,
+                "y": 700,
+                "w": 880,
+                "h": 140,
+                "rot": 0,
+                "shape": "rect",
+                "text": "yourname@suse.com",
+                "fg": "#eafaf2",
+                "fontSize": 40,
+                "align": "left",
+                "valign": "top",
+                "weight": "400",
+                "font": "SUSE",
+                "lineHeight": 1.3,
+                "frame": "slide3"
               }
             ]
           }
