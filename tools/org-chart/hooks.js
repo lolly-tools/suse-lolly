@@ -4,28 +4,37 @@
  * Org Chart — cards on an open canvas, joined by connector lines that route between
  * them and stick to the boxes.
  *
- * Two flat inputs drive the render:
- *   • `boxes`       — one row per card (geometry + a `layout` that arranges its photo/
- *                     icon + text: row = headshot left, icon = icon chip left,
- *                     stacked = photo on top, plain = a bare box like Layout Studio).
- *   • `connectors`  — one row per edge {from, to, style, arrow, dash, color, width}.
+ * ONE flat input drives the render:
+ *   • `boxes` — one row per card (geometry + a `layout` that arranges its photo/icon +
+ *               text: row = headshot left, icon = icon chip left, stacked = photo on top,
+ *               plain = a bare box like Layout Studio) AND one row per connector, which
+ *               is a `kind:'path'` box with an end attached to a card (plan 96).
  *
- * The direct-manipulation overlay (drag / resize / connect / snap-to-grid / auto-layout)
- * lives in the web shell (shells/web/src/views/free-canvas.js) and only ever writes
- * these two flat arrays back through the normal input path — so the engine, the URL and
- * the CLI never see the editor, and a headless render of the same state is identical.
+ * A connector used to be a row of a SECOND `connectors` input, {from,to,style,arrow,dash,
+ * color,width}. It is now the same primitive as a hand-drawn line: an authored path whose
+ * `bindStart`/`bindEnd` name the cards its two ends are attached to. Old documents (and old
+ * share links) still carry the edge rows, so migrateEdges() converts them the moment this
+ * tool loads and writes the emptied input back — a one-time, render-identical conversion
+ * guarded by tests/org-chart-migration.test.ts.
+ *
+ * The direct-manipulation overlay (drag / resize / bind / snap-to-grid / auto-layout)
+ * lives in the web shell (shells/web/src/views/free-canvas.ts) and only ever writes that
+ * flat array back through the normal input path — so the engine, the URL and the CLI
+ * never see the editor, and a headless render of the same state is identical.
  *
  * This hook is PURE (no DOM, no async). Handlebars is logic-less, so we precompute:
  *   - per-box inline CSS (boxStyle/textStyle) + media/avatar HTML (mediaHtml),
- *   - ONE artboard-sized inline <svg> of connector paths (connectorSvg),
+ *   - each FREE path box's own inline <svg> (pathHtml), and
+ *   - ONE artboard-sized inline <svg> of every BOUND path (connectorSvg),
  * and expose them as `extras` the template applies. Running here (not in the template)
  * means the CLI produces the same output as the browser.
  *
- * The connector <svg> is drawn with EXPORT-SAFE geometry only: rounded elbows as a
- * single <path> (M/L/Q), arrowheads as filled <path> triangles (never <marker>/<polygon>),
- * and dashed/dotted runs as REAL <line> segments (never stroke-dasharray) — because the
- * PDF/EMF vector walkers drop markers, polygons and dasharrays. Colours are attribute
- * values, never CSS classes/gradients, so the whole layer survives PNG + SVG + PDF.
+ * None of that geometry is this file's any more: the routing, the arrowheads and the dash
+ * segments are the ENGINE's, reached through host.connectors (v1.106/v1.111), which is what
+ * makes the editor preview, the export and a headless CLI render byte-identical lines. The
+ * engine's contract is export-safe without exception — shafts are <path>, heads are filled
+ * <path> or plain <line>, dashes are real <line> segments, never a <marker>, a <polygon> or
+ * a stroke-dasharray — because the PDF/EMF vector walkers drop all three.
  */
 
 // Artboard coordinate space — MUST match render.width/height in tool.json. The
@@ -301,254 +310,454 @@ function mediaFor(b, layout) {
   return avatarHtml(b, layout);
 }
 
-// ── connector routing (export-safe geometry) ────────────────────────────────────────
-// Ray-cast from a box centre toward a target; clamp to the rectangle edge.
-function borderPoint(a, tx, ty) {
-  var dx = tx - a.cx, dy = ty - a.cy;
-  if (dx === 0 && dy === 0) return { x: a.cx, y: a.cy };
-  var sx = dx !== 0 ? a.hw / Math.abs(dx) : Infinity;
-  var sy = dy !== 0 ? a.hh / Math.abs(dy) : Infinity;
-  var t = Math.min(sx, sy);
-  return { x: a.cx + dx * t, y: a.cy + dy * t };
+// ── the path primitive (plan 96) ────────────────────────────────────────────────────
+//
+// A line, a spline and a connector are ONE thing here: a `kind:'path'` box carrying an
+// authored path plus its decorations. None of the geometry lives in this file any more —
+// the routing, the arrowheads and the dash segments all come from the engine through
+// host.connectors / host.geom, so the editor's live preview, the committed export and a
+// headless CLI draw the same line. Everything below feature-detects and degrades to "no
+// decoration" / "no layer", never to a throw.
+
+var FILL_RULES = { nonzero: 1, evenodd: 1 };
+var LINE_CAPS = { butt: 1, round: 1, square: 1 };
+var LINE_JOINS = { miter: 1, round: 1, bevel: 1 };
+var DASH_STYLES = { dashed: 1, dotted: 1 };
+var HEAD_KINDS = { none: 1, triangle: 1, open: 1, circle: 1, diamond: 1, bar: 1 };
+// SVG's own default. Emitted explicitly, because PDF's default is 10 and a miter spike
+// that differs between the browser and the export is a shape that moved.
+var MITER_LIMIT = 4;
+
+// host.geom (v1.64) and host.connectors (v1.106) are OPTIONAL and additive.
+function geomApi() {
+  return typeof host !== 'undefined' && host && host.geom ? host.geom : null;
 }
-function anchorOf(r) { return { cx: r.x + r.w / 2, cy: r.y + r.h / 2, hw: r.w / 2, hh: r.h / 2 }; }
-function nested(a, b) {
-  function inside(o, i) {
-    return (o.cx - o.hw <= i.cx - i.hw + 0.5) && (i.cx + i.hw <= o.cx + o.hw + 0.5)
-      && (o.cy - o.hh <= i.cy - i.hh + 0.5) && (i.cy + i.hh <= o.cy + o.hh + 0.5);
-  }
-  return inside(a, b) || inside(b, a);
+function connApi() {
+  return typeof host !== 'undefined' && host && host.connectors ? host.connectors : null;
 }
-// Where the perpendicular cross-over sits along the gap, per elbow style.
-function elbowFrac(style) {
-  if (style === 'elbow-src') return 0.18;   // bend near the source
-  if (style === 'elbow-tgt') return 0.82;   // bend near the target
-  return 0.5;                                                        // mid
+function pathWarn(msg) {
+  try {
+    if (typeof host !== 'undefined' && host && typeof host.log === 'function') host.log('warn', 'org-chart: ' + msg);
+  } catch (e) { /* logging must never be the thing that breaks a render */ }
 }
-// The ordered waypoints for an edge from rect a → rect b. An orthogonal ("elbow") route
-// leaves + meets a box FACE, so it sticks wherever cards move. `style` picks the flavour:
-//   straight · elbow (auto V/H) · elbow-v / -h (forced trunk) · elbow-src / -tgt (bend
-//   near an end) · curved (smooth S over the auto route).
-// Returns { pts:[{x,y}...], tux,tuy (unit dir INTO b, for the arrowhead), curved:bool }.
-function waypoints(a, b, style) {
-  var ca = anchorOf(a), cb = anchorOf(b);
-  if (style === 'straight') {
-    var p1 = borderPoint(ca, cb.cx, cb.cy), p2 = borderPoint(cb, ca.cx, ca.cy);
-    var len = Math.hypot(p2.x - p1.x, p2.y - p1.y) || 1;
-    return { pts: [p1, p2], tux: (p2.x - p1.x) / len, tuy: (p2.y - p1.y) / len, curved: false };
-  }
-  // Arc family: a single quadratic bow between the two facing border points. Each variant
-  // is [depth × chord, side sign, px cap] — depth sets how far the control point pushes off
-  // the chord midpoint, sign which side it bows, cap keeps long connectors sane. The
-  // arrowhead follows the curve's END tangent (control point → tip), not the straight chord.
-  // (Keep ARC_VARIANTS in sync with free-canvas-math.ts.)
-  var ARC_VARIANTS = { arc: [0.22, 1, 70], 'arc-wide': [0.42, 1, 220], 'arc-flip': [0.22, -1, 70], 'arc-flip-wide': [0.42, -1, 220] };
-  if (ARC_VARIANTS[style]) {
-    var av = ARC_VARIANTS[style];
-    var pa = borderPoint(ca, cb.cx, cb.cy), pb = borderPoint(cb, ca.cx, ca.cy);
-    var ax = pb.x - pa.x, ay = pb.y - pa.y, al = Math.hypot(ax, ay) || 1;
-    var nx = -ay / al, ny = ax / al, bow = Math.min(av[2], al * av[0]) * av[1];
-    var cpt = { x: (pa.x + pb.x) / 2 + nx * bow, y: (pa.y + pb.y) / 2 + ny * bow };
-    var ex = pb.x - cpt.x, ey = pb.y - cpt.y, el = Math.hypot(ex, ey) || 1;
-    return { pts: [pa, pb], tux: ex / el, tuy: ey / el, curved: false, arc: true, cpt: cpt };
-  }
-  var dx = cb.cx - ca.cx, dy = cb.cy - ca.cy;
-  var curved = style.slice(0, 6) === 'curved';   // curved / curved-v / curved-h
-  var frac = elbowFrac(style);
-  // Trunk orientation: forced by -v / -h (elbow OR curved), else the dominant axis.
-  var useV = (style === 'elbow-v' || style === 'curved-v') ? true
-    : (style === 'elbow-h' || style === 'curved-h') ? false
-      : (Math.abs(dy) >= Math.abs(dx));
-  if (useV) {
-    var down = dy >= 0;
-    var s = { x: ca.cx, y: down ? a.y + a.h : a.y };
-    var t = { x: cb.cx, y: down ? b.y : b.y + b.h };
-    var cy = s.y + frac * (t.y - s.y);
-    return { pts: [s, { x: s.x, y: cy }, { x: t.x, y: cy }, t], tux: 0, tuy: down ? 1 : -1, curved: curved, orient: 'v' };
-  }
-  var right = dx >= 0;
-  var s2 = { x: right ? a.x + a.w : a.x, y: ca.cy };
-  var t2 = { x: right ? b.x : b.x + b.w, y: cb.cy };
-  var cx = s2.x + frac * (t2.x - s2.x);
-  return { pts: [s2, { x: cx, y: s2.y }, { x: cx, y: t2.y }, t2], tux: right ? 1 : -1, tuy: 0, curved: curved, orient: 'h' };
+
+// The head vocabulary, whitelisted for the same reason the cap/join/dash keywords are:
+// the value reaches a bridge call and, through it, an attribute in {{{ }}} markup.
+function headKind(v) {
+  var s = String(v == null ? '' : v);
+  return HEAD_KINDS[s] ? s : 'none';
 }
-function dist(a, b) { return Math.hypot(b.x - a.x, b.y - a.y); }
-// A point `d` px from `from` toward `toward`, clamped so it never overshoots the
-// far end (a short segment can't reverse the shaft).
-function along(from, toward, d) {
-  var L = dist(from, toward);
-  if (L < 0.0001) return { x: from.x, y: from.y };
-  var t = Math.min(d, L) / L;
-  return { x: from.x + (toward.x - from.x) * t, y: from.y + (toward.y - from.y) * t };
-}
-// A polyline with rounded corners as a single M/L/Q path (PDF-safe). 2 points = a line.
-function roundedPolyPath(pts, r) {
-  if (pts.length < 2) return '';
-  if (pts.length === 2) return 'M' + f2(pts[0].x) + ' ' + f2(pts[0].y) + 'L' + f2(pts[1].x) + ' ' + f2(pts[1].y);
-  var d = 'M' + f2(pts[0].x) + ' ' + f2(pts[0].y);
-  for (var i = 1; i < pts.length - 1; i++) {
-    var prev = pts[i - 1], cur = pts[i], next = pts[i + 1];
-    var rr = Math.min(r, dist(prev, cur) / 2, dist(cur, next) / 2);
-    var pin = along(cur, prev, rr), pout = along(cur, next, rr);
-    d += 'L' + f2(pin.x) + ' ' + f2(pin.y) + 'Q' + f2(cur.x) + ' ' + f2(cur.y) + ' ' + f2(pout.x) + ' ' + f2(pout.y);
-  }
-  var last = pts[pts.length - 1];
-  return d + 'L' + f2(last.x) + ' ' + f2(last.y);
-}
-// A smooth cubic S-curve between the route's endpoints. `orient` ('v'/'h') forces the
-// bend axis (curved-v / curved-h); absent → auto from the dominant span (plain curved).
-function smoothPath(pts, orient) {
-  if (pts.length === 2) return 'M' + f2(pts[0].x) + ' ' + f2(pts[0].y) + 'L' + f2(pts[1].x) + ' ' + f2(pts[1].y);
-  var s = pts[0], t = pts[pts.length - 1];
-  var vert = orient ? orient === 'v' : (Math.abs(t.y - s.y) >= Math.abs(t.x - s.x));
-  // Control points pulled toward the shared mid-line → an S-curve.
-  if (vert) {
-    var my = (s.y + t.y) / 2;
-    return 'M' + f2(s.x) + ' ' + f2(s.y) + 'C' + f2(s.x) + ' ' + f2(my) + ' ' + f2(t.x) + ' ' + f2(my) + ' ' + f2(t.x) + ' ' + f2(t.y);
-  }
-  var mx = (s.x + t.x) / 2;
-  return 'M' + f2(s.x) + ' ' + f2(s.y) + 'C' + f2(mx) + ' ' + f2(s.y) + ' ' + f2(mx) + ' ' + f2(t.y) + ' ' + f2(t.x) + ' ' + f2(t.y);
-}
-// A single quadratic bow from s to t through control point `cpt` (arc style).
-function arcPath(s, t, cpt) {
-  return 'M' + f2(s.x) + ' ' + f2(s.y) + 'Q' + f2(cpt.x) + ' ' + f2(cpt.y) + ' ' + f2(t.x) + ' ' + f2(t.y);
-}
-// Real-segment dash/dot run between two points (NOT stroke-dasharray → PDF-safe).
-function dashRun(x1, y1, x2, y2, style, col, width) {
-  var len = Math.hypot(x2 - x1, y2 - y1);
-  if (len < 0.5) return '';
-  var ux = (x2 - x1) / len, uy = (y2 - y1) / len, out = '', pos = 0;
-  var dash = style === 'dotted' ? Math.max(width, 1.4) : 9;
-  var gap = style === 'dotted' ? width * 2 + 2 : 6;
-  var cap = style === 'dotted' ? ' stroke-linecap="round"' : '';
-  while (pos < len) {
-    var aa = pos, bb = Math.min(pos + dash, len);
-    out += '<line x1="' + f2(x1 + ux * aa) + '" y1="' + f2(y1 + uy * aa) + '" x2="' + f2(x1 + ux * bb) +
-      '" y2="' + f2(y1 + uy * bb) + '" stroke="' + esc(col) + '" stroke-width="' + f2(width) + '"' + cap + '/>';
-    pos += dash + gap;
-  }
-  return out;
-}
-// A circle as 4 cubic beziers (never <circle>/<ellipse> — a path is PDF/EMF-portable).
-function circlePath(cx, cy, r) {
-  var k = 0.5523 * r;
-  return 'M' + f2(cx + r) + ' ' + f2(cy) +
-    'C' + f2(cx + r) + ' ' + f2(cy + k) + ' ' + f2(cx + k) + ' ' + f2(cy + r) + ' ' + f2(cx) + ' ' + f2(cy + r) +
-    'C' + f2(cx - k) + ' ' + f2(cy + r) + ' ' + f2(cx - r) + ' ' + f2(cy + k) + ' ' + f2(cx - r) + ' ' + f2(cy) +
-    'C' + f2(cx - r) + ' ' + f2(cy - k) + ' ' + f2(cx - k) + ' ' + f2(cy - r) + ' ' + f2(cx) + ' ' + f2(cy - r) +
-    'C' + f2(cx + k) + ' ' + f2(cy - r) + ' ' + f2(cx + r) + ' ' + f2(cy - k) + ' ' + f2(cx + r) + ' ' + f2(cy) + 'Z';
-}
-// How far to pull the shaft back so it doesn't poke through the head (per shape).
-function headInset(kind, s) {
+// The head's SIZE from the stroke width, and how far the SHAFT is pulled back so a filled
+// head is not pierced by the line it terminates. Both mirror engine/src/connectors.ts
+// (pathHeadSize / edgeHeadInset) EXACTLY, because the head is drawn by that engine code and
+// the pull-back is computed here: two formulas that must agree, so they are written to
+// agree rather than guessed. An open chevron and a bar are strokes across the tip with
+// nothing to pierce, so they pull back by nothing.
+// The width is clamped to the SAME [0.5, 20] band `pathHeadSize` clamps it to before the
+// engine sizes the head. Without that, a 40px stroke draws an 80px head (the engine's) and
+// pulls its shaft back 144px (this one's), leaving the line visibly short of its own arrow.
+function headSizeFor(w) { return Math.max(9, clamp(num(w, 2.5), 0.5, 20) * 4); }
+function headInsetFor(kind, s) {
   if (kind === 'none' || kind === 'open' || kind === 'bar') return 0;
   if (kind === 'diamond') return 2 * s;
   if (kind === 'circle') return 2 * (0.42 * s);
-  return s * 0.9; // triangle
+  return s * 0.9;   // triangle
 }
-// An arrowhead at `tip` pointing along unit (ux,uy). Every shape is EXPORT-SAFE:
-// filled <path> (triangle/diamond/circle) or plain <line> (open/bar) — never a marker,
-// polygon, or a transform on the shape. Coordinates are baked in.
-function arrowHead(tip, ux, uy, s, fill, kind) {
-  if (kind === 'none') return '';
-  var px = -uy, py = ux, hw = s * 0.52, B = { x: tip.x - ux * s, y: tip.y - uy * s };
-  if (kind === 'open') {
-    // A simple L-shaped chevron: two arms meeting at the tip, each a true 45° off the
-    // shaft (equal step back along + out perpendicular → a right angle at the point).
-    // Round caps so the ends match the connector line (which is stroke-linecap:round).
-    var sw = Math.max(1.6, s * 0.22);
-    var a = s * 0.72;
-    var e1x = tip.x - ux * a + px * a, e1y = tip.y - uy * a + py * a;
-    var e2x = tip.x - ux * a - px * a, e2y = tip.y - uy * a - py * a;
-    return '<line x1="' + f2(e1x) + '" y1="' + f2(e1y) + '" x2="' + f2(tip.x) + '" y2="' + f2(tip.y) + '" stroke="' + esc(fill) + '" stroke-width="' + f2(sw) + '" stroke-linecap="round"/>' +
-      '<line x1="' + f2(e2x) + '" y1="' + f2(e2y) + '" x2="' + f2(tip.x) + '" y2="' + f2(tip.y) + '" stroke="' + esc(fill) + '" stroke-width="' + f2(sw) + '" stroke-linecap="round"/>';
+// One arrowhead as an SVG fragment, via the bridge. `angle` is RADIANS about the +x axis —
+// atan2 order. Absent primitive (older engine) → '' and the path simply has no head.
+function headSvgFor(tip, ux, uy, kind, color, width) {
+  var api = connApi();
+  if (kind === 'none' || !api || typeof api.pathHeadSvg !== 'function') return '';
+  try {
+    return api.pathHeadSvg({
+      tipX: tip.x, tipY: tip.y, angle: Math.atan2(uy, ux),
+      head: kind, color: color, width: width,
+    }) || '';
+  } catch (e) {
+    pathWarn('arrowhead render failed: ' + e);
+    return '';
   }
-  if (kind === 'diamond') {
-    var M = { x: tip.x - ux * s, y: tip.y - uy * s }, Bk = { x: tip.x - ux * 2 * s, y: tip.y - uy * 2 * s };
-    return '<path d="M' + f2(tip.x) + ' ' + f2(tip.y) + 'L' + f2(M.x + px * hw) + ' ' + f2(M.y + py * hw) +
-      'L' + f2(Bk.x) + ' ' + f2(Bk.y) + 'L' + f2(M.x - px * hw) + ' ' + f2(M.y - py * hw) + 'Z" fill="' + esc(fill) + '"/>';
-  }
-  if (kind === 'circle') {
-    var r = 0.42 * s, C = { x: tip.x - ux * r, y: tip.y - uy * r };
-    return '<path d="' + circlePath(C.x, C.y, r) + '" fill="' + esc(fill) + '"/>';
-  }
-  if (kind === 'bar') {
-    var bw = s * 0.62, sw2 = Math.max(1.6, s * 0.22);
-    return '<line x1="' + f2(tip.x + px * bw) + '" y1="' + f2(tip.y + py * bw) + '" x2="' + f2(tip.x - px * bw) + '" y2="' + f2(tip.y - py * bw) + '" stroke="' + esc(fill) + '" stroke-width="' + f2(sw2) + '"/>';
-  }
-  // triangle (default)
-  return '<path d="M' + f2(tip.x) + ' ' + f2(tip.y) + 'L' + f2(B.x + px * hw) + ' ' + f2(B.y + py * hw) +
-    'L' + f2(B.x - px * hw) + ' ' + f2(B.y - py * hw) + 'Z" fill="' + esc(fill) + '"/>';
 }
 
-function drawConnector(a, b, c) {
-  var ca = anchorOf(a), cb = anchorOf(b);
-  if (nested(ca, cb)) return '';
-  var style = String(c.style || 'elbow');
-  var arrow = String(c.arrow || 'end');
-  var head = String(c.head || 'open');   // arrowhead SHAPE (triangle/open/circle/diamond/bar)
-  var dash = String(c.dash || 'solid');
-  var col = safeColor(c.color, '#30ba78');
-  var width = clamp(num(c.width, 3.5), 0.5, 20);
-  var wp = waypoints(a, b, style);
-  var pts = wp.pts.map(function (p) { return { x: p.x, y: p.y }; });
-  if (pts.length < 2) return '';
-  var n = pts.length;
-  var last = pts[n - 1], first = pts[0];
-  var headSize = Math.max(9, width * 4);
-  // GAP: pull an ARROW end back off the box so the arrowhead sits in clear space, not
-  // jammed against the card edge. The arrowhead tip lands `gap` off the border; the shaft
-  // ends a further headInset behind it (so filled heads don't poke through). Capture the
-  // original neighbour points BEFORE mutating, and cap each pull at the segment length so
-  // a near-touching pair of cards can never reverse the shaft.
-  var gap = Math.max(8, headSize * 0.8);
-  var endTip = { x: last.x, y: last.y };
-  var startTip = { x: first.x, y: first.y };
-  var lastNbr = pts[n - 2], firstNbr = pts[1];
-  if (arrow === 'end' || arrow === 'both') {
-    var ge = Math.min(gap, dist(last, lastNbr) * 0.55);
-    endTip = along(last, lastNbr, ge);                                   // arrowhead sits `gap` off the box
-    pts[n - 1] = along(last, lastNbr, Math.min(ge + headInset(head, headSize), dist(last, lastNbr) * 0.9));
+// Stroke style -> an SVG dash array, in the same user units as stroke-width. A KEYWORD, not
+// an authored array: a keyword is whitelist-checkable so nothing the user types reaches the
+// attribute, the dashes keep their proportions when the width changes, and the compact
+// blocks URL cannot carry a comma at all.
+function dashArrayFor(style, w, cap) {
+  if (!DASH_STYLES[style] || !(w > 0)) return '';
+  if (style === 'dotted') {
+    // A round or square cap already paints a full w across the line, so the dot is a
+    // ZERO-length dash and the gap is the whole period. A flat (butt) cap paints nothing
+    // at zero length, so it needs a real w-long dash — which is a square dot, correctly.
+    return cap === 'butt' ? f2(w) + ' ' + f2(w) : '0 ' + f2(w * 2);
   }
-  if (arrow === 'both') {
-    var gs = Math.min(gap, dist(first, firstNbr) * 0.55);
-    startTip = along(first, firstNbr, gs);
-    pts[0] = along(first, firstNbr, Math.min(gs + headInset(head, headSize), dist(first, firstNbr) * 0.9));
-  }
-  var line = '';
-  if (dash === 'dashed' || dash === 'dotted') {
-    for (var i = 0; i < pts.length - 1; i++) line += dashRun(pts[i].x, pts[i].y, pts[i + 1].x, pts[i + 1].y, dash, col, width);
-  } else if (wp.arc) {
-    line = '<path d="' + arcPath(pts[0], pts[pts.length - 1], wp.cpt) + '" fill="none" stroke="' + esc(col) + '" stroke-width="' + f2(width) + '" stroke-linecap="round"/>';
-  } else if (wp.curved) {
-    line = '<path d="' + smoothPath(pts, wp.orient) + '" fill="none" stroke="' + esc(col) + '" stroke-width="' + f2(width) + '" stroke-linejoin="round" stroke-linecap="round"/>';
-  } else {
-    var r = Math.min(16, width * 4 + 6);
-    line = '<path d="' + roundedPolyPath(pts, r) + '" fill="none" stroke="' + esc(col) + '" stroke-width="' + f2(width) + '" stroke-linejoin="round" stroke-linecap="round"/>';
-  }
-  var heads = '';
-  if (arrow === 'end' || arrow === 'both') heads += arrowHead(endTip, wp.tux, wp.tuy, headSize, col, head);
-  if (arrow === 'both') {
-    // Direction OUT of the source = reverse of the first drawn segment.
-    var seg = pts.length >= 2 ? pts[1] : last;
-    var L = dist(startTip, seg) || 1;
-    heads += arrowHead(startTip, (startTip.x - seg.x) / L, (startTip.y - seg.y) / L, headSize, col, head);
-  }
-  return line + heads;
+  return f2(w * 3) + ' ' + f2(w * 2);
 }
 
-function buildConnectorSvg(connectors, byId) {
+// ── end tangents ────────────────────────────────────────────────────────────────────
+// A head needs a tip and a direction. On a routed connector the direction falls out of the
+// route; on an AUTHORED path there is none, so it is read off the LOWERED curve — the only
+// honest source, since the same nodes lower to different tangents under different spline
+// kinds. Both vectors point OUT of the path: the way a head at that end faces.
+// `curves` is the engine's cubic form: [x0,y0, c1x,c1y, c2x,c2y, x3,y3].
+function unitBetween(ax, ay, bx, by) {
+  var dx = bx - ax, dy = by - ay, L = Math.sqrt(dx * dx + dy * dy);
+  return L > 1e-9 ? { x: dx / L, y: dy / L } : null;
+}
+function endTangents(curves) {
+  var s = null, e = null, i, c, legs, k;
+  // A zero-length control leg is ordinary (a straight segment out of fromNodes has one), so
+  // step over it rather than normalise it; only a wholly degenerate segment moves the walk
+  // into its neighbour.
+  for (i = 0; i < curves.length && !s; i++) {
+    c = curves[i]; legs = [[2, 3], [4, 5], [6, 7]];
+    for (k = 0; k < legs.length && !s; k++) s = unitBetween(c[legs[k][0]], c[legs[k][1]], c[0], c[1]);
+  }
+  for (i = curves.length - 1; i >= 0 && !e; i--) {
+    c = curves[i]; legs = [[4, 5], [2, 3], [0, 1]];
+    for (k = 0; k < legs.length && !e; k++) e = unitBetween(c[legs[k][0]], c[legs[k][1]], c[6], c[7]);
+  }
+  return s && e ? { start: s, end: e } : null;
+}
+function endPoints(curves) {
+  var a = curves[0], z = curves[curves.length - 1];
+  return { start: { x: a[0], y: a[1] }, end: { x: z[6], y: z[7] } };
+}
+// Pull the two END POINTS back along their own tangents, so the shaft stops short of a
+// filled head instead of running out through its tip. Only the endpoint and the control
+// point beside it move, by the same delta, so the tangent direction is untouched and the
+// curve keeps its shape; the pull-back is capped at 40% of the segment's chord so a very
+// short final segment cannot be turned inside out. Returns a NEW curves array.
+function insetCurveEnds(curves, dirs, insetStart, insetEnd) {
+  var out = [], i;
+  for (i = 0; i < curves.length; i++) out.push(curves[i].slice());
+  var first = out[0], last = out[out.length - 1];
+  var capOf = function (c) {
+    var dx = c[6] - c[0], dy = c[7] - c[1];
+    return Math.sqrt(dx * dx + dy * dy) * 0.4;
+  };
+  if (insetStart > 0) {
+    var ds = Math.min(insetStart, capOf(first));
+    first[0] -= dirs.start.x * ds; first[1] -= dirs.start.y * ds;
+    first[2] -= dirs.start.x * ds; first[3] -= dirs.start.y * ds;
+  }
+  if (insetEnd > 0) {
+    var de = Math.min(insetEnd, capOf(last));
+    last[6] -= dirs.end.x * de; last[7] -= dirs.end.y * de;
+    last[4] -= dirs.end.x * de; last[5] -= dirs.end.y * de;
+  }
+  return out;
+}
+
+// The honest degrade: a dashed outline of the box frame. A path we cannot draw is still a
+// box the user placed, and an invisible element is the one answer that can't be acted on.
+// currentColor + fixed numbers, so nothing from the box can reach the markup.
+function pathPlaceholder(w, h, why) {
+  pathWarn(why);
+  var d = 'M.75 .75H' + (w - 0.75) + 'V' + (h - 0.75) + 'H.75Z';
+  return '<svg class="lolly-box-path lolly-box-path-undrawn" width="' + w + '" height="' + h +
+    '" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" aria-hidden="true">' +
+    '<path d="' + d + '" fill="none" stroke="currentColor" stroke-width="1.5"' +
+    ' stroke-dasharray="6 4" opacity="0.45"></path></svg>';
+}
+
+// A FREE path box's inline <svg>, or '' for every other kind. Pure/string-only like
+// mediaFor, so the CLI emits identical markup.
+function pathHtmlFor(b) {
+  if (String(b.kind) !== 'path') return '';
+  // A BOUND path is a connector: its shape is the route between two live rects, in CANVAS
+  // coordinates, and a box <svg> can only draw inside its own frame. lineLayerFor() draws
+  // it instead.
+  if (isBoundPath(b)) return '';
+  var w = Math.max(1, Math.round(num(b.w, 1)));
+  var h = Math.max(1, Math.round(num(b.h, 1)));
+  var raw = b.path == null ? '' : String(b.path);
+  if (!raw) return '';                       // nothing authored yet — not an error
+
+  var geom = geomApi();
+  if (!geom || !geom.decodeAuthored || !geom.fromNodes) {
+    return pathPlaceholder(w, h, 'host.geom is unavailable, so a path box cannot be drawn (needs engine >= 1.64)');
+  }
+  var dec = geom.decodeAuthored(raw);
+  if (!dec || !dec.ok) {
+    return pathPlaceholder(w, h, 'path box: ' + ((dec && dec.message) || 'unreadable path field'));
+  }
+  // A value carries a LIST of contours, always. Every contour is lowered on its own and the
+  // subpaths are concatenated into ONE `d`, which is what makes a hole a hole.
+  var srcs = dec.value, ds = [], pi, i;
+  for (pi = 0; pi < srcs.length; pi++) {
+    var src = srcs[pi], nodes = [];
+    for (i = 0; i < src.nodes.length; i++) {
+      var n = src.nodes[i], out = { x: n.x * w, y: n.y * h };
+      if (n.hInX != null) out.hInX = n.hInX * w;
+      if (n.hInY != null) out.hInY = n.hInY * h;
+      if (n.hOutX != null) out.hOutX = n.hOutX * w;
+      if (n.hOutY != null) out.hOutY = n.hOutY * h;
+      if (n.continuity) out.continuity = n.continuity;
+      nodes.push(out);
+    }
+    var res = geom.fromNodes({ kind: src.kind, nodes: nodes, closed: src.closed === true, tension: src.tension, decimals: 3 });
+    if (!res || !res.ok) {
+      return pathPlaceholder(w, h, 'path box: ' + ((res && res.code) || 'error') + ' — ' + ((res && res.message) || 'could not lower the path'));
+    }
+    // ok with no geometry is an ANSWER, not a failure (fewer than two nodes lowers to no
+    // curves), so an empty contour is skipped rather than treated as a refusal.
+    if (res.d) ds.push(res.d);
+  }
+  if (!ds.length) return '';
+  var d = ds.join(' ');
+
+  var fill = b.bg == null || String(b.bg).trim() === '' ? 'none' : safeColor(b.bg, 'none');
+  var stroke = b.stroke == null || String(b.stroke).trim() === '' ? '' : safeColor(b.stroke, '');
+  var sw = clamp(num(b.strokeW, 0), 0, 400);
+  var rule = FILL_RULES[String(b.fillRule)] ? String(b.fillRule) : 'nonzero';
+  var cap = LINE_CAPS[String(b.strokeCap)] ? String(b.strokeCap) : 'round';
+  var join = LINE_JOINS[String(b.strokeJoin)] ? String(b.strokeJoin) : 'round';
+  var dash = dashArrayFor(String(b.strokeDash == null ? '' : b.strokeDash), sw, cap);
+
+  // Arrowheads. They need the LOWERED curve (the tangent a head points along) and are
+  // meaningful only on a path with two ends, so they apply to a SINGLE OPEN contour: a
+  // closed loop has no ends, and a multi-contour result has no single pair of them.
+  var headStart = headKind(b.headStart), headEnd = headKind(b.headEnd);
+  var wantHeads = !!stroke && sw > 0 && (headStart !== 'none' || headEnd !== 'none');
+  var sole = srcs.length === 1 ? srcs[0] : null;
+  var curves = null;
+  if (wantHeads && sole && !(sole.closed === true) && typeof geom.parse === 'function') {
+    var pr = geom.parse(d);
+    if (pr && pr.ok && pr.value && pr.value.length === 1) curves = pr.value[0].curves;
+  }
+  var heads = '', headReach = 0;
+  if (curves && curves.length) {
+    var dirs = endTangents(curves);
+    if (dirs) {
+      var tips = endPoints(curves), hsz = headSizeFor(sw);
+      // Each head is BUILT FIRST and the shaft is pulled back only where one actually came
+      // back: the primitive is feature-detected, so "no head" is a real outcome on an older
+      // engine, and trimming for a head that was never drawn would leave the line visibly
+      // short of its own endpoint with nothing there to explain it.
+      var hs = headSvgFor(tips.start, dirs.start.x, dirs.start.y, headStart, stroke, sw);
+      var he = headSvgFor(tips.end, dirs.end.x, dirs.end.y, headEnd, stroke, sw);
+      heads = hs + he;
+      if (heads) {
+        var trimmed = insetCurveEnds(curves, dirs, hs ? headInsetFor(headStart, hsz) : 0, he ? headInsetFor(headEnd, hsz) : 0);
+        if (typeof geom.toPathData === 'function') {
+          var td = geom.toPathData([{ curves: trimmed, closed: false }], { decimals: 3 });
+          if (td && td.ok && td.d) d = td.d;
+        }
+        // A head sits ON the frame edge and spreads across the tangent (a bar reaches
+        // 0.62·size either side, the widest of the six), so the pad below has to cover it.
+        headReach = hsz * 0.7 + sw / 2;
+      }
+    }
+  }
+
+  // The STROKE PAD. The frame is the curve's tight bounding box, so a stroke straddles the
+  // frame edge and half of it falls outside — and an outer <svg> clips to its viewport. So
+  // the element is grown by `pad` on every side, offset by −pad, and the viewBox shifted to
+  // match, which leaves path coordinates mapping to 0..w / 0..h exactly as before. A square
+  // cap reaches sw/2·√2 and a miter spike is bounded by miterlimit·sw/2, so each sizes the
+  // pad for itself; an arrowhead is the third, via headReach.
+  var reach = Math.max(cap === 'square' ? Math.SQRT2 / 2 : 0.5, join === 'miter' ? MITER_LIMIT / 2 : 0.5);
+  var pad = Math.max(stroke && sw > 0 ? sw * reach : 0, headReach);
+  var vw = f2(w + pad * 2), vh = f2(h + pad * 2), o = f2(-pad);
+  return '<svg class="lolly-box-path" width="' + esc(vw) + '" height="' + esc(vh) +
+    '" viewBox="' + esc(o) + ' ' + esc(o) + ' ' + esc(vw) + ' ' + esc(vh) + '" preserveAspectRatio="none"' +
+    (pad ? ' style="inset:auto;left:' + esc(o) + 'px;top:' + esc(o) + 'px;width:' + esc(vw) + 'px;height:' + esc(vh) + 'px"' : '') +
+    '>' +
+    '<path d="' + esc(d) + '" fill="' + esc(fill) + '" fill-rule="' + esc(rule) + '"' +
+    (stroke && sw > 0
+      ? ' stroke="' + esc(stroke) + '" stroke-width="' + esc(f2(sw)) +
+        '" stroke-linejoin="' + esc(join) + '" stroke-linecap="' + esc(cap) + '"' +
+        (join === 'miter' ? ' stroke-miterlimit="' + esc(MITER_LIMIT) + '"' : '') +
+        (dash ? ' stroke-dasharray="' + esc(dash) + '"' : '')
+      : '') +
+    '></path>' +
+    // The heads follow the shaft so they paint over its end, and they are NOT esc()'d: they
+    // are engine-built SVG fragments, not values — the engine escapes the one thing in them
+    // that came from the box (the colour).
+    heads +
+    '</svg>';
+}
+
+// ── bound paths: connector management takes over ────────────────────────────────────
+//
+// A path box with an end ATTACHED to a card is a connector. The engine routes from the
+// card's border toward the other end (another card, or the path's own free node as an
+// `@x,y` point) and re-solves that route every render, so the line sticks to the cards
+// wherever they move. The route comes from the path's own SPLINE KIND
+// (host.connectors.routeStyleForKind), overridden by the box's `route` field for the nine
+// variants six kinds cannot name.
+//
+// CW/CH are the artboard's native coordinate space, and the <svg> is CSS-stretched to the
+// artboard (styles.css .oc-connectors), so the viewBox maps card x/y 1:1.
+// What a bound path falls back to when it carries no stroke of its own — the same pair the
+// retired `canvas.connect` block declared, so a migrated edge looks as it did.
+var CONN_COLOR = '#30ba78', CONN_WIDTH = 3.5;
+
+function bindOf(b, which) {
+  var v = which === 'start' ? b.bindStart : b.bindEnd;
+  return v == null ? '' : String(v).trim();
+}
+function isBoundPath(b) {
+  return String(b.kind) === 'path' && (bindOf(b, 'start') !== '' || bindOf(b, 'end') !== '');
+}
+function ptRef(p) { return '@' + f2(p.x) + ',' + f2(p.y); }
+
+// A path box's spline kind, node count, and its two END POINTS in CANVAS coordinates.
+// Nodes are stored NORMALISED to the frame. Rotation is deliberately ignored: a bound path
+// is drawn between two rects and the router re-solves both ends anyway.
+function pathGeomFor(b) {
+  var geom = geomApi();
+  var raw = b.path == null ? '' : String(b.path);
+  if (!geom || typeof geom.decodeAuthored !== 'function' || !raw) return null;
+  var dec = geom.decodeAuthored(raw);
+  if (!dec || !dec.ok || !dec.value || !dec.value.length) return null;
+  var src = dec.value[0], ns = src && src.nodes;
+  if (!ns || ns.length < 2) return null;
+  var x = num(b.x, 0), y = num(b.y, 0);
+  var w = Math.max(1, num(b.w, 1)), h = Math.max(1, num(b.h, 1));
+  var a = ns[0], z = ns[ns.length - 1];
+  return {
+    kind: String(src.kind == null ? '' : src.kind),
+    nodes: ns.length,
+    start: { x: x + num(a.x, 0) * w, y: y + num(a.y, 0) * h },
+    end: { x: x + num(z.x, 0) * w, y: y + num(z.y, 0) * h },
+  };
+}
+
+// One bound path as a row the engine's committed-line builder reads. null for anything that
+// is not a connector, and for a HALF-bound path whose free end cannot be read: half a
+// connector is worse than none, and guessing where the loose end goes would invent geometry.
+function boundPathRow(b) {
+  if (!isBoundPath(b)) return null;
+  var bs = bindOf(b, 'start'), be = bindOf(b, 'end');
+  var g = pathGeomFor(b);
+  if ((!bs || !be) && !g) return null;
+  var api = connApi();
+  var route = (api && typeof api.routeStyleForKind === 'function')
+    ? api.routeStyleForKind(g ? g.kind : '', b.route, g ? g.nodes : 2)
+    : 'straight';
+  var sw = clamp(num(b.strokeW, 0), 0, 400);
+  return {
+    from: bs || ptRef(g.start),
+    to: be || ptRef(g.end),
+    style: route,
+    headStart: headKind(b.headStart),
+    headEnd: headKind(b.headEnd),
+    dash: DASH_STYLES[String(b.strokeDash)] ? String(b.strokeDash) : 'solid',
+    color: safeColor(b.stroke, CONN_COLOR),
+    width: sw > 0 ? clamp(sw, 0.5, 20) : CONN_WIDTH,
+  };
+}
+
+// The committed line layer: every bound path in the chart, routed + decorated by the engine
+// (host.connectors.build) so the SAME geometry lands in the editor's live preview, the
+// export and a headless CLI. The wrapping <svg> is always emitted, even empty, because the
+// artboard's first child must not be an <svg> the exporter mistakes for the whole board —
+// which is exactly what the template's oc-conn-wrap <div> is for.
+function lineLayerFor(boxes) {
+  var api = connApi();
   var body = '';
-  (connectors || []).forEach(function (c) {
-    if (!c) return;
-    var a = byId[String(c.from)], b = byId[String(c.to)];
-    if (!a || !b || a === b) return;   // orphan / self edge → skip (prunes deleted cards)
-    var ra = { x: num(a.x, 0), y: num(a.y, 0), w: Math.max(1, num(a.w, 1)), h: Math.max(1, num(a.h, 1)) };
-    var rb = { x: num(b.x, 0), y: num(b.y, 0), w: Math.max(1, num(b.w, 1)), h: Math.max(1, num(b.h, 1)) };
-    body += drawConnector(ra, rb, c);
-  });
-  if (!body) body = '';
+  if (api && typeof api.build === 'function') {
+    var rows = [], i, row;
+    for (i = 0; i < boxes.length; i++) {
+      row = boundPathRow(boxes[i] || {});
+      if (row) rows.push(row);
+    }
+    if (rows.length) {
+      var rectById = new Map();
+      boxes.forEach(function (b, k) {
+        var id = (b && b.id != null && b.id !== '') ? String(b.id) : String(k);
+        rectById.set(id, { x: num(b && b.x, 0), y: num(b && b.y, 0), w: Math.max(1, num(b && b.w, 1)), h: Math.max(1, num(b && b.h, 1)) });
+      });
+      try {
+        return api.build(rows, rectById, {
+          fromField: 'from', toField: 'to', styleField: 'style',
+          headStartField: 'headStart', headEndField: 'headEnd',
+          colorField: 'color', dashField: 'dash', widthField: 'width',
+          defaultStyle: 'elbow', defaultColor: CONN_COLOR, defaultWidth: CONN_WIDTH,
+          width: CW, height: CH, layerClass: 'oc-connectors',
+        });
+      } catch (e) {
+        pathWarn('bound path render failed: ' + e);
+      }
+    }
+  }
   return '<svg class="oc-connectors" width="' + CW + '" height="' + CH + '" viewBox="0 0 ' + CW + ' ' + CH +
     '" preserveAspectRatio="none" aria-hidden="true">' + body + '</svg>';
+}
+
+// ── plan 96 P4: the plan-90 `connectors` edge input, migrated on load ────────────────
+//
+// An edge {from,to,style,arrow,head,dash,color,width} becomes a TWO-NODE AuthoredPath box
+// bound at both ends, carrying the same decorations. The input stays DECLARED so an old
+// share link still parses, but nothing writes it again.
+//
+// Lossless by construction. The edge's own `style` goes to the box's `route` override — six
+// spline kinds cannot name thirteen routes, so an elbow-src edge would otherwise collapse to
+// a plain elbow — and `arrow` + one shared `head` map onto the two per-end heads exactly as
+// the engine's own edge reading does (`end` → a head at the end and none at the start,
+// `both` → the same shape at each, anything else → neither). Every default here is the one
+// this hook applied before the migration existed (elbow, end, open, #30ba78, 3.5), so the
+// converted chart is the chart that was there (tests/org-chart-migration.test.ts).
+var MIGRATED_ID_PREFIX = 'ln';
+
+// The wire form of a two-node straight AuthoredPath (engine/src/geom/authored-url.ts):
+// `1` format version, the kind, `0` = open, then one `x!y` record per node, `_`-separated.
+function twoNodePathValue(n0, n1) {
+  return '1!line!0_' + f2(n0.x) + '!' + f2(n0.y) + '_' + f2(n1.x) + '!' + f2(n1.y);
+}
+
+function edgeToPathBox(e, byId, id) {
+  var a = byId[String(e.from == null ? '' : e.from)];
+  var b = byId[String(e.to == null ? '' : e.to)];
+  if (!a || !b || a === b) return null;   // orphan / self edge → skip, as the old render did
+  // The FRAME spans the two card centres. Nothing reads it while both ends are bound (the
+  // route owns the geometry), but it is what the editor selects, marqueees and node-edits.
+  var ax = num(a.x, 0) + Math.max(1, num(a.w, 1)) / 2, ay = num(a.y, 0) + Math.max(1, num(a.h, 1)) / 2;
+  var bx = num(b.x, 0) + Math.max(1, num(b.w, 1)) / 2, by = num(b.y, 0) + Math.max(1, num(b.h, 1)) / 2;
+  var x = Math.min(ax, bx), y = Math.min(ay, by);
+  var w = Math.max(1, Math.abs(bx - ax)), h = Math.max(1, Math.abs(by - ay));
+  var arrow = String(e.arrow || 'end');
+  var head = headKind(e.head || 'open');
+  var dash = String(e.dash || 'solid');
+  return {
+    id: id, kind: 'path', layout: 'plain', shape: 'rect',
+    x: x, y: y, w: w, h: h, rot: 0, bg: '',
+    path: twoNodePathValue({ x: (ax - x) / w, y: (ay - y) / h }, { x: (bx - x) / w, y: (by - y) / h }),
+    stroke: safeColor(e.color, CONN_COLOR),
+    strokeW: clamp(num(e.width, CONN_WIDTH), 0.5, 20),
+    strokeCap: 'round', strokeJoin: 'round',
+    strokeDash: DASH_STYLES[dash] ? dash : '',
+    headStart: arrow === 'both' ? head : 'none',
+    headEnd: (arrow === 'end' || arrow === 'both') ? head : 'none',
+    bindStart: String(e.from), bindEnd: String(e.to),
+    route: String(e.style || 'elbow'),
+  };
+}
+
+// The whole migration: null when there is nothing to do (which is the case for every
+// document saved after this shipped, and the thing that keeps compute() from writing inputs
+// on every render), else the new `boxes` array with one path box appended per edge.
+function migrateEdges(inp, boxes) {
+  var edges = Array.isArray(inp.connectors) ? inp.connectors : [];
+  if (!edges.length) return null;
+  var byId = {}, used = {}, i, k, id, made;
+  for (i = 0; i < boxes.length; i++) {
+    if (boxes[i] && boxes[i].id != null && boxes[i].id !== '') {
+      byId[String(boxes[i].id)] = boxes[i];
+      used[String(boxes[i].id)] = 1;
+    }
+  }
+  var out = boxes.slice();
+  for (i = 0, k = 1; i < edges.length; i++) {
+    if (!edges[i]) continue;
+    do { id = MIGRATED_ID_PREFIX + k; k++; } while (used[id]);
+    used[id] = 1;
+    made = edgeToPathBox(edges[i], byId, id);
+    if (made) out.push(made);
+  }
+  return out;
 }
 
 // Optional drop shadow (matches Layout Studio). `shadow` picks WHAT the shadow
@@ -573,10 +782,11 @@ function shadowCss(b) {
 function compute(model) {
   var inp = inputsFrom(model);
   var boxes = Array.isArray(inp.boxes) ? inp.boxes : [];
-  var connectors = Array.isArray(inp.connectors) ? inp.connectors : [];
+  // plan 96 P4 — any surviving `connectors` edge becomes a bound path box before anything
+  // else reads `boxes`, so every surface below sees ONE model with no edges in it.
+  var migrated = migrateEdges(inp, boxes);
+  if (migrated) boxes = migrated;
   var transparent = inp.transparentBg === true;
-  var byId = {};
-  boxes.forEach(function (b) { if (b && b.id != null && b.id !== '') byId[String(b.id)] = b; });
 
   var layouts = boxes.map(function (b) { return layoutOf(b || {}); });
   var shadows = boxes.map(function (b) { return shadowCss(b || {}); });
@@ -584,15 +794,26 @@ function compute(model) {
   var textStyle = boxes.map(function (b, i) { return textCss(b || {}, layouts[i]) + shadows[i].text; });
   var textHtml = boxes.map(function (b) { return richText((b && b.text) || ''); });
   var mediaHtml = boxes.map(function (b, i) { return mediaFor(b || {}, layouts[i]); });
+  var pathHtml = boxes.map(function (b) { return pathHtmlFor(b || {}); });
 
-  return {
+  var out = {
     boxStyle: boxStyle,
     textStyle: textStyle,
     textHtml: textHtml,
     mediaHtml: mediaHtml,
-    connectorSvg: buildConnectorSvg(connectors, byId),
+    pathHtml: pathHtml,
+    connectorSvg: lineLayerFor(boxes),
     bgStyle: [transparent ? 'transparent' : safeColor(inp.background, '#ffffff')],
   };
+  // The migration's INPUT patch. `boxes`/`connectors` are declared input ids, so the
+  // runtime WRITES them rather than treating them as extras — which is what makes this a
+  // one-time conversion. The keys are ASSIGNED, never set to undefined: the runtime's patch
+  // merge keys off key PRESENCE, so `{ boxes: undefined }` would blank the whole document.
+  if (migrated) {
+    out.boxes = migrated;
+    out.connectors = [];
+  }
+  return out;
 }
 
 function onInit(ctx) { return compute(ctx.model); }

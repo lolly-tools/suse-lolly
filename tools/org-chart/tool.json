@@ -70,23 +70,19 @@
         "minSize": 8,
         "fixedCanvas": true,
         "grid": { "size": 20, "default": true },
-        "connect": {
-          "input": "connectors",
-          "fromField": "from",
-          "toField": "to",
-          "styleField": "style",
-          "arrowField": "arrow",
-          "headField": "head",
-          "colorField": "color",
-          "dashField": "dash",
-          "widthField": "width",
-          "layerClass": "oc-connectors",
-          "defaultStyle": "elbow",
-          "defaultArrow": "end",
-          "defaultHead": "open",
-          "defaultColor": "#30ba78",
-          "defaultWidth": 3.5
-        },
+        "pathField": "path",
+        "strokeField": "stroke",
+        "strokeWField": "strokeW",
+        "fillRuleField": "fillRule",
+        "strokeDashField": "strokeDash",
+        "strokeCapField": "strokeCap",
+        "strokeJoinField": "strokeJoin",
+        "headStartField": "headStart",
+        "headEndField": "headEnd",
+        "bindStartField": "bindStart",
+        "bindEndField": "bindEnd",
+        "routeField": "route",
+        "pathLayerClass": "oc-connectors",
         "addKinds": [
           { "id": "card", "label": "Person", "seed": { "kind": "card", "layout": "row", "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "New person\n{w200|Job title}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 } },
           { "id": "role", "label": "Role", "seed": { "kind": "card", "layout": "icon", "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#30ba78", "text": "Team\n{w200|What they do}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 } },
@@ -107,7 +103,8 @@
             { "value": "card", "label": "Person / card", "repeatable": true },
             { "value": "text", "label": "Text", "repeatable": true },
             { "value": "box", "label": "Box", "repeatable": true },
-            { "value": "image", "label": "Image", "repeatable": true }
+            { "value": "image", "label": "Image", "repeatable": true },
+            { "value": "path", "label": "Line / path", "repeatable": true }
           ]
         },
         {
@@ -259,6 +256,120 @@
             { "value": "center bottom", "label": "Bottom" },
             { "value": "right bottom", "label": "Bottom right" }
           ]
+        },
+        {
+          "id": "path",
+          "type": "text",
+          "default": "",
+          "showFor": [],
+          "help": "A line or path box's authored path (nodes and spline kind), encoded by host.geom.encodeAuthored. Written by the line and pen tools and read by the hook; showFor:[] keeps it out of the sidebar because it is machine-written, never typed. Coordinates are fractions of the box frame."
+        },
+        { "id": "stroke", "type": "color", "label": "Line colour", "default": "{color.semantic.secondary}", "showFor": ["path", "box", "image"] },
+        { "id": "strokeW", "type": "number", "label": "Line width", "default": 3.5, "min": 0, "max": 400, "showFor": ["path", "box", "image"] },
+        {
+          "id": "fillRule",
+          "type": "select",
+          "label": "Fill rule",
+          "default": "nonzero",
+          "showFor": ["path"],
+          "options": [
+            { "value": "nonzero", "label": "Non-zero" },
+            { "value": "evenodd", "label": "Even-odd" }
+          ]
+        },
+        {
+          "id": "strokeDash",
+          "type": "select",
+          "label": "Stroke style",
+          "default": "",
+          "showFor": ["path", "box", "image"],
+          "options": [
+            { "value": "", "label": "Solid" },
+            { "value": "dashed", "label": "Dashed" },
+            { "value": "dotted", "label": "Dotted" }
+          ]
+        },
+        {
+          "id": "strokeCap",
+          "type": "select",
+          "label": "Line ends",
+          "default": "round",
+          "showFor": ["path"],
+          "options": [
+            { "value": "round", "label": "Round" },
+            { "value": "butt", "label": "Flat" },
+            { "value": "square", "label": "Square" }
+          ]
+        },
+        {
+          "id": "strokeJoin",
+          "type": "select",
+          "label": "Corners",
+          "default": "round",
+          "showFor": ["path"],
+          "options": [
+            { "value": "round", "label": "Round" },
+            { "value": "miter", "label": "Sharp" },
+            { "value": "bevel", "label": "Bevelled" }
+          ]
+        },
+        {
+          "id": "headStart",
+          "type": "select",
+          "label": "Path start",
+          "default": "none",
+          "showFor": ["path"],
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "triangle", "label": "Arrow" },
+            { "value": "open", "label": "Open arrow" },
+            { "value": "circle", "label": "Circle" },
+            { "value": "diamond", "label": "Diamond" },
+            { "value": "bar", "label": "Bar" }
+          ],
+          "help": "An arrowhead at the line's FIRST point. A spline, a line and a connector are one shape here, so they all take the same six heads."
+        },
+        {
+          "id": "headEnd",
+          "type": "select",
+          "label": "Path end",
+          "default": "none",
+          "showFor": ["path"],
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "triangle", "label": "Arrow" },
+            { "value": "open", "label": "Open arrow" },
+            { "value": "circle", "label": "Circle" },
+            { "value": "diamond", "label": "Diamond" },
+            { "value": "bar", "label": "Bar" }
+          ],
+          "help": "An arrowhead at the line's LAST point. The line tool sets this to Arrow."
+        },
+        { "id": "bindStart", "type": "text", "label": "Start attached to", "default": "", "showFor": [], "help": "The id of the card this line's first point is attached to, empty for a free point. Written by the editor, never typed: a line with an attached end is a connector, routed to that card's border and re-routed when it moves." },
+        { "id": "bindEnd", "type": "text", "label": "End attached to", "default": "", "showFor": [], "help": "The id of the card this line's last point is attached to, empty for a free point. Written by the editor, never typed." },
+        {
+          "id": "route",
+          "type": "select",
+          "label": "Route",
+          "default": "",
+          "showFor": ["path"],
+          "options": [
+            { "value": "", "label": "Auto, from the spline type" },
+            { "value": "straight", "label": "Straight" },
+            { "value": "elbow", "label": "Elbow, auto" },
+            { "value": "elbow-v", "label": "Elbow, vertical" },
+            { "value": "elbow-h", "label": "Elbow, horizontal" },
+            { "value": "elbow-src", "label": "Elbow, bend at the start" },
+            { "value": "elbow-tgt", "label": "Elbow, bend at the end" },
+            { "value": "curved", "label": "Curved, auto S" },
+            { "value": "curved-v", "label": "Curved, vertical S" },
+            { "value": "curved-h", "label": "Curved, horizontal S" },
+            { "value": "arc", "label": "Arc, bow" },
+            { "value": "arc-wide", "label": "Arc, wide bow" },
+            { "value": "arc-flip", "label": "Arc, reverse bow" },
+            { "value": "arc-flip-wide", "label": "Arc, wide reverse bow" }
+          ],
+          "help": "How a line with an attached end is routed between the cards. Auto reads it off the spline type: straight lines route straight, a polyline of three or more points routes as an elbow, spiro bows, and every other spline type routes as a smooth S. Pick one here for the bends auto cannot name. Ignored while both ends are free."
         }
       ],
       "default": [
@@ -267,13 +378,19 @@
         { "id": "coo", "kind": "card", "layout": "row", "x": 650, "y": 430, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "Sam Osei\n{w200|COO}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
         { "id": "cfo", "kind": "card", "layout": "row", "x": 940, "y": 430, "w": 300, "h": 116, "rot": 0, "shape": "rounded", "radius": 18, "bg": "#ffffff", "accent": "#30ba78", "fit": "cover", "text": "Mia Chen\n{w200|CFO}", "fg": "#0c322c", "fontSize": 30, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.15, "pad": 16 },
         { "id": "eng1", "kind": "card", "layout": "icon", "x": 210, "y": 740, "w": 280, "h": 92, "rot": 0, "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#30ba78", "text": "Platform\n{w200|Infrastructure team}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 },
-        { "id": "eng2", "kind": "card", "layout": "icon", "x": 520, "y": 740, "w": 280, "h": 92, "rot": 0, "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#fe7c3f", "text": "Product\n{w200|Application team}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 }
+        { "id": "eng2", "kind": "card", "layout": "icon", "x": 520, "y": 740, "w": 280, "h": 92, "rot": 0, "shape": "rounded", "radius": 14, "bg": "#ffffff", "accent": "#fe7c3f", "text": "Product\n{w200|Application team}", "fg": "#0c322c", "fontSize": 24, "align": "left", "valign": "middle", "weight": "500", "font": "SUSE", "lineHeight": 1.14, "pad": 14 },
+        { "id": "ln1", "kind": "path", "layout": "plain", "shape": "rect", "x": 510, "y": 148, "w": 290, "h": 340, "rot": 0, "bg": "", "path": "1!line!0_1!0_0!1", "stroke": "#30ba78", "strokeW": 3.5, "strokeCap": "round", "strokeJoin": "round", "strokeDash": "", "headStart": "none", "headEnd": "open", "bindStart": "ceo", "bindEnd": "cto", "route": "elbow" },
+        { "id": "ln2", "kind": "path", "layout": "plain", "shape": "rect", "x": 800, "y": 148, "w": 1, "h": 340, "rot": 0, "bg": "", "path": "1!line!0_0!0_0!1", "stroke": "#30ba78", "strokeW": 3.5, "strokeCap": "round", "strokeJoin": "round", "strokeDash": "", "headStart": "none", "headEnd": "open", "bindStart": "ceo", "bindEnd": "coo", "route": "elbow" },
+        { "id": "ln3", "kind": "path", "layout": "plain", "shape": "rect", "x": 800, "y": 148, "w": 290, "h": 340, "rot": 0, "bg": "", "path": "1!line!0_0!0_1!1", "stroke": "#30ba78", "strokeW": 3.5, "strokeCap": "round", "strokeJoin": "round", "strokeDash": "", "headStart": "none", "headEnd": "open", "bindStart": "ceo", "bindEnd": "cfo", "route": "elbow" },
+        { "id": "ln4", "kind": "path", "layout": "plain", "shape": "rect", "x": 350, "y": 488, "w": 160, "h": 298, "rot": 0, "bg": "", "path": "1!line!0_1!0_0!1", "stroke": "#30ba78", "strokeW": 3.5, "strokeCap": "round", "strokeJoin": "round", "strokeDash": "", "headStart": "none", "headEnd": "open", "bindStart": "cto", "bindEnd": "eng1", "route": "elbow" },
+        { "id": "ln5", "kind": "path", "layout": "plain", "shape": "rect", "x": 510, "y": 488, "w": 150, "h": 298, "rot": 0, "bg": "", "path": "1!line!0_0!0_1!1", "stroke": "#30ba78", "strokeW": 3.5, "strokeCap": "round", "strokeJoin": "round", "strokeDash": "", "headStart": "none", "headEnd": "open", "bindStart": "cto", "bindEnd": "eng2", "route": "elbow" }
       ]
     },
     {
       "id": "connectors",
       "type": "blocks",
-      "label": "Connectors",
+      "label": "Connectors (retired)",
+      "help": "Retired. Connector rows are converted to path boxes the moment this tool loads, so an older share link still opens and nothing is written here again. A connector is an ordinary line with one end attached to a card: draw one with the line tool, then drag an end onto a card.",
       "labelledFields": true,
       "fields": [
         { "id": "id", "type": "text" },
@@ -338,13 +455,7 @@
         { "id": "color", "type": "color", "label": "Line colour", "default": "{color.semantic.secondary}" },
         { "id": "width", "type": "number", "label": "Line width", "default": 3.5, "min": 0.5, "max": 20, "step": 0.5 }
       ],
-      "default": [
-        { "id": "c1", "from": "ceo", "to": "cto", "style": "elbow", "arrow": "end", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-        { "id": "c2", "from": "ceo", "to": "coo", "style": "elbow", "arrow": "end", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-        { "id": "c3", "from": "ceo", "to": "cfo", "style": "elbow", "arrow": "end", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-        { "id": "c4", "from": "cto", "to": "eng1", "style": "elbow", "arrow": "end", "dash": "solid", "color": "#30ba78", "width": 3.5 },
-        { "id": "c5", "from": "cto", "to": "eng2", "style": "elbow", "arrow": "end", "dash": "solid", "color": "#30ba78", "width": 3.5 }
-      ]
+      "default": []
     }
   ]
 }
