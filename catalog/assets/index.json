@@ -11679,6 +11679,34 @@
         }
       ],
       "license": "CC-PDDC"
+    },
+    {
+      "id": "lolly/demo/lolly-spin",
+      "name": "Lolly Spin (animated)",
+      "description": "The Lolly swirl as a self-contained animated SVG — three nested spirals counter-rotating with a slow hue drift on a brand-tinted gradient. The swirl and the background inherit the active brand's colours when placed live, and it makes a handy default subject for testing filters, grading and animation. A removable example — delete it any time.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "animation",
+        "motion",
+        "svg",
+        "lolly",
+        "swirl",
+        "demo",
+        "example",
+        "placeholder"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/lolly/demo/lolly-spin.svg",
+          "checksum": "sha256-o9XgbTVXd5UwjnRNPtjqcyY/kSbIcOTb/sNekgcSAfM=",
+          "width": 542,
+          "height": 542,
+          "size": 12668
+        }
+      ]
     }
   ]
 }
