@@ -265,6 +265,74 @@ function shaft(x1, y1, x2, y2, style, col, width) {
   return out;
 }
 
+// ── real card shapes (all export-safe: straight segments + cubic beziers, own
+// fill + own stroke, never <ellipse>/<marker>/dasharray) ─────────────────────────
+// Ellipse as 4 cubic beziers (portable everywhere, matches the circlePath discipline).
+function ellipsePath(cx, cy, rx, ry) {
+  var kx = 0.5523 * rx, ky = 0.5523 * ry;
+  return 'M' + f2(cx + rx) + ' ' + f2(cy)
+    + 'C' + f2(cx + rx) + ' ' + f2(cy + ky) + ' ' + f2(cx + kx) + ' ' + f2(cy + ry) + ' ' + f2(cx) + ' ' + f2(cy + ry)
+    + 'C' + f2(cx - kx) + ' ' + f2(cy + ry) + ' ' + f2(cx - rx) + ' ' + f2(cy + ky) + ' ' + f2(cx - rx) + ' ' + f2(cy)
+    + 'C' + f2(cx - rx) + ' ' + f2(cy - ky) + ' ' + f2(cx - kx) + ' ' + f2(cy - ry) + ' ' + f2(cx) + ' ' + f2(cy - ry)
+    + 'C' + f2(cx + kx) + ' ' + f2(cy - ry) + ' ' + f2(cx + rx) + ' ' + f2(cy - ky) + ' ' + f2(cx + rx) + ' ' + f2(cy)
+    + 'Z';
+}
+// The set of shapes the renderer understands (also the normaliseNodes allow-list).
+var SHAPES = { box: 1, rounded: 1, pill: 1, oval: 1, circle: 1, ellipse: 1, cylinder: 1, file: 1, diamond: 1, hexagon: 1, text: 1 };
+// shapeGeom(shape,x,y,w,h,S) → { outline, decor, tb } where outline is a path `d`
+// filled+stroked as the card body, decor is ready-to-emit non-filled detail lines
+// (cylinder lip, file fold) with their OWN stroke, and tb is the centred text box.
+function shapeGeom(shape, x, y, w, h, S, strokeCol, strokeW) {
+  var cx = x + w / 2, cy = y + h / 2, x2 = x + w, y2 = y + h;
+  var full = { x: x, y: y, w: w, h: h };
+  var stroke = strokeW > 0 ? strokeW : (S && S.cardBorderWidth > 0) ? S.cardBorderWidth : 1.3;
+  var scol = strokeCol || (S ? S.nodeStroke : PINE);
+  function decorPath(d) { return '<path d="' + d + '" fill="none" stroke="' + esc(scol) + '" stroke-width="' + f2(stroke) + '" stroke-linejoin="round"/>'; }
+
+  if (shape === 'text') return { outline: '', decor: '', tb: full };
+  if (shape === 'pill' || shape === 'oval') {
+    var pr = Math.min(w, h) / 2, pin = Math.min(w, h) * 0.14;
+    return { outline: roundedRectPath(x, y, w, h, pr), decor: '', tb: { x: x + pin, y: y, w: Math.max(8, w - pin * 2), h: h } };
+  }
+  if (shape === 'circle' || shape === 'ellipse') {
+    return { outline: ellipsePath(cx, cy, w / 2, h / 2), decor: '', tb: { x: cx - w * 0.355, y: cy - h * 0.355, w: w * 0.71, h: h * 0.71 } };
+  }
+  if (shape === 'cylinder') {
+    var cap = clamp(Math.min(h * 0.16, w * 0.42), 4, 16), ky = 0.5523 * cap, kx = 0.5523 * (w / 2);
+    var yb = y2 - cap;
+    var out = 'M' + f2(x) + ' ' + f2(y + cap)
+      + 'L' + f2(x) + ' ' + f2(yb)
+      + 'C' + f2(x) + ' ' + f2(yb + ky) + ' ' + f2(cx - kx) + ' ' + f2(y2) + ' ' + f2(cx) + ' ' + f2(y2)
+      + 'C' + f2(cx + kx) + ' ' + f2(y2) + ' ' + f2(x2) + ' ' + f2(yb + ky) + ' ' + f2(x2) + ' ' + f2(yb)
+      + 'L' + f2(x2) + ' ' + f2(y + cap)
+      + 'C' + f2(x2) + ' ' + f2(y + cap - ky) + ' ' + f2(cx + kx) + ' ' + f2(y) + ' ' + f2(cx) + ' ' + f2(y)
+      + 'C' + f2(cx - kx) + ' ' + f2(y) + ' ' + f2(x) + ' ' + f2(y + cap - ky) + ' ' + f2(x) + ' ' + f2(y + cap) + 'Z';
+    var lip = 'M' + f2(x) + ' ' + f2(y + cap)
+      + 'C' + f2(x) + ' ' + f2(y + cap + ky) + ' ' + f2(cx - kx) + ' ' + f2(y + 2 * cap) + ' ' + f2(cx) + ' ' + f2(y + 2 * cap)
+      + 'C' + f2(cx + kx) + ' ' + f2(y + 2 * cap) + ' ' + f2(x2) + ' ' + f2(y + cap + ky) + ' ' + f2(x2) + ' ' + f2(y + cap);
+    return { outline: out, decor: decorPath(lip), tb: { x: x, y: y + 2 * cap, w: w, h: Math.max(8, h - 3 * cap) } };
+  }
+  if (shape === 'file') {
+    var fs = clamp(Math.min(w, h) * 0.24, 8, 20);
+    var o = 'M' + f2(x) + ' ' + f2(y) + 'L' + f2(x2 - fs) + ' ' + f2(y) + 'L' + f2(x2) + ' ' + f2(y + fs)
+      + 'L' + f2(x2) + ' ' + f2(y2) + 'L' + f2(x) + ' ' + f2(y2) + 'Z';
+    var fold = 'M' + f2(x2 - fs) + ' ' + f2(y) + 'L' + f2(x2 - fs) + ' ' + f2(y + fs) + 'L' + f2(x2) + ' ' + f2(y + fs);
+    return { outline: o, decor: decorPath(fold), tb: { x: x, y: y + fs * 0.6, w: w, h: Math.max(8, h - fs * 0.6) } };
+  }
+  if (shape === 'diamond') {
+    var dm = 'M' + f2(cx) + ' ' + f2(y) + 'L' + f2(x2) + ' ' + f2(cy) + 'L' + f2(cx) + ' ' + f2(y2) + 'L' + f2(x) + ' ' + f2(cy) + 'Z';
+    return { outline: dm, decor: '', tb: { x: x + w * 0.25, y: y + h * 0.25, w: w * 0.5, h: h * 0.5 } };
+  }
+  if (shape === 'hexagon') {
+    var cut = clamp(Math.min(w * 0.2, h * 0.5), 6, 44);
+    var hx = 'M' + f2(x + cut) + ' ' + f2(y) + 'L' + f2(x2 - cut) + ' ' + f2(y) + 'L' + f2(x2) + ' ' + f2(cy)
+      + 'L' + f2(x2 - cut) + ' ' + f2(y2) + 'L' + f2(x + cut) + ' ' + f2(y2) + 'L' + f2(x) + ' ' + f2(cy) + 'Z';
+    return { outline: hx, decor: '', tb: { x: x + cut * 0.6, y: y, w: Math.max(8, w - cut * 1.2), h: h } };
+  }
+  // box / rounded — full rectangle, radius from rectRx (unchanged behaviour).
+  return { outline: roundedRectPath(x, y, w, h, rectRx(shape, w, h, S)), decor: '', tb: full };
+}
+
 // ── card images: embed as a data URL + measure aspect (browser only) ────────────
 var _imgCache = {};
 function resolveImage(url) {
@@ -315,14 +383,19 @@ function computeCardH(S, lines, hasDetail) {
 
 // Render one card <g> with a click-to-focus hook (focuses block `idx` of `nodes`).
 function renderCard(n, S) {
-  var rx = rectRx(n.shape, n.w, n.h, S);
+  var scol = n.stroke ? color(n.stroke, S.nodeStroke) : S.nodeStroke;
+  var bw = (n.strokeWidth > 0) ? n.strokeWidth : S.cardBorderWidth;
+  var geom = shapeGeom(n.shape, n.x, n.y, n.w, n.h, S, scol, bw);
   var fill = color(n.fill, S.nodeFill);
   var cx = n.x + n.w / 2;
-  var bw = S.cardBorderWidth;
+  var tb = geom.tb;
 
   var g = '<g data-canvas-input="nodes:' + n.idx + '">';
-  g += '<path d="' + roundedRectPath(n.x, n.y, n.w, n.h, rx) + '" fill="' + esc(fill) + '"'
-    + (bw > 0 ? ' stroke="' + esc(S.nodeStroke) + '" stroke-width="' + f2(bw) + '"' : '') + '/>';
+  if (geom.outline) {
+    g += '<path d="' + geom.outline + '" fill="' + esc(fill) + '"'
+      + (bw > 0 ? ' stroke="' + esc(scol) + '" stroke-width="' + f2(bw) + '" stroke-linejoin="round"' : '') + '/>';
+  }
+  if (geom.decor) g += geom.decor;
 
   // Side-by-side: image (avatar) on the left, text left-aligned in the width that
   // remains. A card with no image starts its text at the left edge, so it takes the
@@ -368,10 +441,10 @@ function renderCard(n, S) {
       + ' width="' + f2(dispW) + '" height="' + f2(dispH) + '" preserveAspectRatio="xMidYMid meet"/>';
   }
 
-  var lines = wrapLines(n.label, maxCharsFor(n.w, S.labelSize), S.labelLines);
+  var lines = wrapLines(n.label, maxCharsFor(tb.w, S.labelSize), S.labelLines);
   var detail = trim(n.detail);
   if (detail) {
-    var dl = wrapLines(detail, maxCharsFor(n.w, S.detailSize), 1);
+    var dl = wrapLines(detail, maxCharsFor(tb.w, S.detailSize), 1);
     detail = dl.length ? dl[0] : '';
   }
   var blockH = lines.length * S.labelLH + (detail ? S.detailLH + 3 : 0);
@@ -381,7 +454,7 @@ function renderCard(n, S) {
     var region = (n.y + n.h - S.cardPadV) - textTop;
     top = textTop + Math.max(0, (region - blockH) / 2);
   } else {
-    top = n.y + (n.h - blockH) / 2;
+    top = tb.y + (tb.h - blockH) / 2;
   }
   var ink = inkOn(fill, S.nodeText), dink = inkOn(fill, S.detailColor);
   for (var i = 0; i < lines.length; i++) {
@@ -407,7 +480,7 @@ function normaliseNodes(rawNodes) {
     var imgUrl = (typeof ref === 'string') ? trim(ref) : ((ref && ref.url) ? ref.url : '');
     nodes.push({
       idx: i, id: id,
-      shape: (b.shape === 'box' || b.shape === 'pill') ? b.shape : 'rounded',
+      shape: SHAPES[b.shape] ? b.shape : 'rounded',
       label: label, detail: detail,
       parentId: slug(b.parent), layerId: slug(b.layer),
       fill: trim(b.fill),
@@ -417,6 +490,7 @@ function normaliseNodes(rawNodes) {
       quadrant: slug(b.quadrant),
       score: (Array.isArray(b.score) && b.score.length === 2 && isFinite(b.score[0]) && isFinite(b.score[1])) ? b.score : null,
       _start: num(b.ganttStart, NaN), _len: num(b.ganttLen, NaN),
+      stroke: trim(b.stroke), strokeWidth: num(b.strokeWidth, NaN),
       x: 0, y: 0, w: 0, h: 0
     });
   });
@@ -876,9 +950,9 @@ function layoutGantt(nodes, S, inp, bb) {
 // ── explicit arrows ──────────────────────────────────────────────────────────────
 function anchorOf(id, nodeById, layerById) {
   var n = nodeById[id];
-  if (n) return { cx: n.x + n.w / 2, cy: n.y + n.h / 2, hw: n.w / 2, hh: n.h / 2 };
+  if (n) return { cx: n.x + n.w / 2, cy: n.y + n.h / 2, hw: n.w / 2, hh: n.h / 2, shape: n.shape };
   var L = layerById[id];
-  if (L && L.w != null) return { cx: L.x + L.w / 2, cy: L.y + L.h / 2, hw: L.w / 2, hh: L.h / 2 };
+  if (L && L.w != null) return { cx: L.x + L.w / 2, cy: L.y + L.h / 2, hw: L.w / 2, hh: L.h / 2, shape: 'box' };
   return null;
 }
 function nested(a, b) {
@@ -891,6 +965,18 @@ function nested(a, b) {
 function borderPoint(a, tx, ty) {
   var dx = tx - a.cx, dy = ty - a.cy;
   if (dx === 0 && dy === 0) return { x: a.cx, y: a.cy };
+  var sh = a.shape;
+  // Round shapes: intersect the direction with the ellipse boundary.
+  if (sh === 'circle' || sh === 'ellipse' || sh === 'pill' || sh === 'oval') {
+    var nx = dx / a.hw, ny = dy / a.hh, m = Math.hypot(nx, ny);
+    if (m === 0) return { x: a.cx, y: a.cy };
+    return { x: a.cx + dx / m, y: a.cy + dy / m };
+  }
+  // Diamond: intersect with the rhombus |x|/hw + |y|/hh = 1.
+  if (sh === 'diamond') {
+    var td = 1 / (Math.abs(dx) / a.hw + Math.abs(dy) / a.hh);
+    return { x: a.cx + dx * td, y: a.cy + dy * td };
+  }
   var sx = dx !== 0 ? a.hw / Math.abs(dx) : Infinity;
   var sy = dy !== 0 ? a.hh / Math.abs(dy) : Infinity;
   var t = Math.min(sx, sy);
@@ -990,7 +1076,7 @@ var EMPTY_HINTS = {
   matrix: 'Add items and place each in a quadrant',
   gantt: 'Add tasks with a start + length to lay bars on a time axis'
 };
-var SOURCE_HINTS = { text: 'Type a diagram — the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', table: 'Paste rows: id,label,parent  (or from,to,label)' };
+var SOURCE_HINTS = { text: 'Type a diagram — the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', pikchr: 'Paste Pikchr: box "A"; arrow; box "B"', table: 'Paste rows: id,label,parent  (or from,to,label)' };
 function placeholder(mode, source) {
   var msg = (source && SOURCE_HINTS[source]) ? SOURCE_HINTS[source] : (EMPTY_HINTS[mode] || EMPTY_HINTS.org);
   var ghost = '#cfe6dd';
@@ -1213,12 +1299,12 @@ function parseMermaid(text) {
     var m = tok.match(/^([A-Za-z0-9_]+)\s*(\(\[[\s\S]*\]\)|\[\([\s\S]*\)\]|\(\([\s\S]*\)\)|\{\{[\s\S]*\}\}|\{[\s\S]*\}|\[\[[\s\S]*\]\]|\[[\s\S]*\]|\([\s\S]*\))\s*$/);
     if (m) {
       var id = m[1], body = m[2], label = '', shape = 'rounded';
-      if (/^\(\[[\s\S]*\]\)$/.test(body)) { shape = 'pill'; label = body.slice(2, -2); }
-      else if (/^\(\([\s\S]*\)\)$/.test(body)) { shape = 'pill'; label = body.slice(2, -2); }
-      else if (/^\[\([\s\S]*\)\]$/.test(body)) { shape = 'rounded'; label = body.slice(2, -2); }
-      else if (/^\{\{[\s\S]*\}\}$/.test(body)) { shape = 'box'; label = body.slice(2, -2); }
-      else if (/^\[\[[\s\S]*\]\]$/.test(body)) { shape = 'box'; label = body.slice(2, -2); }
-      else if (/^\{[\s\S]*\}$/.test(body)) { shape = 'box'; label = body.slice(1, -1); }
+      if (/^\(\[[\s\S]*\]\)$/.test(body)) { shape = 'pill'; label = body.slice(2, -2); }        // ([text]) stadium
+      else if (/^\(\([\s\S]*\)\)$/.test(body)) { shape = 'circle'; label = body.slice(2, -2); }  // ((text)) circle
+      else if (/^\[\([\s\S]*\)\]$/.test(body)) { shape = 'cylinder'; label = body.slice(2, -2); } // [(text)] database
+      else if (/^\{\{[\s\S]*\}\}$/.test(body)) { shape = 'hexagon'; label = body.slice(2, -2); }  // {{text}} hexagon
+      else if (/^\[\[[\s\S]*\]\]$/.test(body)) { shape = 'box'; label = body.slice(2, -2); }      // [[text]] subroutine
+      else if (/^\{[\s\S]*\}$/.test(body)) { shape = 'diamond'; label = body.slice(1, -1); }      // {text} decision
       else if (/^\[[\s\S]*\]$/.test(body)) { shape = 'box'; label = body.slice(1, -1); }
       else { shape = 'rounded'; label = body.slice(1, -1); }
       return ensure(id, label.replace(/^["']|["']$/g, '').trim(), shape);
@@ -1292,21 +1378,484 @@ function gridBg(kind, vbX, vbY, vbW, vbH, col) {
   return out;
 }
 
+// ── Pikchr (PIC-style) parser + mini geometric layout engine ─────────────────────
+// A practical subset of https://pikchr.org. Objects flow in a layout direction and
+// attach by compass points; we lay everything out in inches (y-up, like PIC), map
+// closed objects → themed cards and open objects → export-safe connectors, then flip
+// to screen pixels. Unsupported constructs (macros, [blocks], expressions, splines)
+// are skipped and logged — never eval'd.
+var PIK_U = 96; // pixels per inch
+var PIK_COLORS = {
+  black: '#000000', white: '#ffffff', red: '#e5484d', green: '#1a7f4b', blue: '#2264d1',
+  cyan: '#1ea7b6', magenta: '#c026d3', yellow: '#f5c542', orange: '#e8833a', purple: '#8a4fd6',
+  pink: '#e86ea4', brown: '#9a6a3a', gray: '#8a8f8c', grey: '#8a8f8c', lightgray: '#d7dcd9',
+  lightgrey: '#d7dcd9', lightblue: '#cfe0f5', lightgreen: '#cfeddc', lightyellow: '#f6efc9',
+  lightpink: '#f6d7e4', lightcyan: '#d3eef1', darkgray: '#5b625f', darkgrey: '#5b625f',
+  gold: '#e8c34a', silver: '#c3c9c6', navy: '#1b3a6b', teal: '#1f8f86', olive: '#7c7a2e',
+  maroon: '#8a2b2b', lime: '#5bbf46', aqua: '#39c2d0', fuchsia: '#d63ac0', none: 'none'
+};
+function pikColor(tok) {
+  if (!tok) return '';
+  var t = String(tok).trim();
+  if (/^0x[0-9a-fA-F]{6}$/.test(t)) return '#' + t.slice(2);
+  if (/^0x[0-9a-fA-F]{3}$/.test(t)) return '#' + t.slice(2);
+  if (/^#[0-9a-fA-F]{3,8}$/.test(t)) return t;
+  var k = t.toLowerCase();
+  return PIK_COLORS[k] !== undefined ? PIK_COLORS[k] : '';
+}
+// Tokenise one statement: strings, numbers+unit, 0xhex, <->/->/<-, ., ( ) , + - identifiers.
+function pikTokenize(s) {
+  var toks = [], i = 0, n = s.length;
+  while (i < n) {
+    var c = s.charAt(i);
+    if (c === ' ' || c === '\t') { i++; continue; }
+    if (c === '"') {
+      var j = i + 1, str = '';
+      while (j < n) { var d = s.charAt(j); if (d === '\\' && j + 1 < n) { str += s.charAt(j + 1); j += 2; continue; } if (d === '"') break; str += d; j++; }
+      toks.push({ t: 'str', v: str }); i = j + 1; continue;
+    }
+    if (c === '<' && s.substr(i, 3) === '<->') { toks.push({ t: 'op', v: '<->' }); i += 3; continue; }
+    if (c === '-' && s.charAt(i + 1) === '>') { toks.push({ t: 'op', v: '->' }); i += 2; continue; }
+    if (c === '<' && s.charAt(i + 1) === '-') { toks.push({ t: 'op', v: '<-' }); i += 2; continue; }
+    if (c === '(' || c === ')' || c === ',' || c === '.' || c === '+' || c === '*' || c === '/' || c === ':') { toks.push({ t: 'p', v: c }); i++; continue; }
+    if (c === '-') { toks.push({ t: 'p', v: '-' }); i++; continue; }
+    if (/[0-9]/.test(c) || (c === '.' && /[0-9]/.test(s.charAt(i + 1)))) {
+      var m = /^0x[0-9a-fA-F]+|^\d*\.?\d+(?:e-?\d+)?(?:%|px|pt|in|cm|mm)?/.exec(s.slice(i));
+      if (m) { toks.push({ t: 'num', v: m[0] }); i += m[0].length; continue; }
+    }
+    var im = /^[A-Za-z_][A-Za-z0-9_]*/.exec(s.slice(i));
+    if (im) { toks.push({ t: 'id', v: im[0] }); i += im[0].length; continue; }
+    i++; // skip anything else
+  }
+  return toks;
+}
+function pikScalar(v, U, defInch) {
+  // → { inch } or { pct } (percent of a caller-supplied default)
+  var m = /^(-?\d*\.?\d+)(%|px|pt|in|cm|mm)?$/.exec(v);
+  if (!m) return null;
+  var x = parseFloat(m[1]), u = m[2];
+  if (u === '%') return { pct: x / 100 };
+  if (u === 'px') return { inch: x / U };
+  if (u === 'pt') return { inch: x / 72 };
+  if (u === 'cm') return { inch: x / 2.54 };
+  if (u === 'mm') return { inch: x / 25.4 };
+  return { inch: x };
+}
+var PIK_OBJ = { box: 1, circle: 1, ellipse: 1, oval: 1, cylinder: 1, file: 1, dot: 1, line: 1, arrow: 1, spline: 1, arc: 1, move: 1, text: 1 };
+var PIK_SHAPE = { box: 'box', circle: 'circle', ellipse: 'ellipse', oval: 'pill', cylinder: 'cylinder', file: 'file', text: 'text' };
+var PIK_DIR = { right: 1, left: 1, up: 1, down: 1 };
+function pikDirUnit(d) { return d === 'right' ? { x: 1, y: 0 } : d === 'left' ? { x: -1, y: 0 } : d === 'up' ? { x: 0, y: 1 } : { x: 0, y: -1 }; }
+
+function parsePikchr(text, labelPx) {
+  var U = PIK_U;
+  labelPx = labelPx > 0 ? labelPx : 15;
+  var objs = [], named = {}, warns = [];
+  var dir = 'right', cur = { x: 0, y: 0 };
+  var lastByType = {};
+  var vars = {
+    boxwid: 0.75, boxht: 0.5, circlerad: 0.25, ellipsewid: 0.75, ellipseht: 0.5,
+    ovalwid: 1.0, ovalht: 0.5, cylwid: 0.75, cylht: 0.5, filewid: 0.75, fileht: 0.75,
+    linewid: 0.5, lineht: 0.5, movewid: 0.5, dotrad: 0.06, textwid: 0.5, textht: 0.3
+  };
+  function warn(msg) { if (warns.length < 40) warns.push(msg); }
+
+  // Split into statements: strip comments, honour \ continuation, split on ; and \n.
+  var raw = String(text == null ? '' : text).replace(/\r\n?/g, '\n').replace(/\/\*[\s\S]*?\*\//g, ' ');
+  var lines = raw.split('\n'), joined = [];
+  for (var li = 0; li < lines.length; li++) {
+    var ln = lines[li];
+    // strip line comments (# or //) outside strings
+    ln = stripLineComment(ln);
+    while (/\\\s*$/.test(ln) && li + 1 < lines.length) { ln = ln.replace(/\\\s*$/, ' ') + stripLineComment(lines[++li]); }
+    ln.split(';').forEach(function (part) { if (trim(part)) joined.push(trim(part)); });
+  }
+
+  function bbox(o) {
+    if (o._kind === 'closed') return { x0: o.cx - o.w / 2, x1: o.cx + o.w / 2, y0: o.cy - o.h / 2, y1: o.cy + o.h / 2 };
+    var xs = o.pts.map(function (p) { return p.x; }), ys = o.pts.map(function (p) { return p.y; });
+    return { x0: Math.min.apply(0, xs), x1: Math.max.apply(0, xs), y0: Math.min.apply(0, ys), y1: Math.max.apply(0, ys) };
+  }
+  function compass(o, name) {
+    if (o._kind === 'closed') {
+      var hw = o.w / 2, hh = o.h / 2, cx = o.cx, cy = o.cy;
+      switch (name) {
+        case 'n': case 't': case 'top': return { x: cx, y: cy + hh };
+        case 's': case 'b': case 'bot': case 'bottom': return { x: cx, y: cy - hh };
+        case 'e': case 'right': return { x: cx + hw, y: cy };
+        case 'w': case 'left': return { x: cx - hw, y: cy };
+        case 'ne': return { x: cx + hw, y: cy + hh };
+        case 'nw': return { x: cx - hw, y: cy + hh };
+        case 'se': return { x: cx + hw, y: cy - hh };
+        case 'sw': return { x: cx - hw, y: cy - hh };
+      }
+      return { x: cx, y: cy };
+    }
+    var b = bbox(o), mx = (b.x0 + b.x1) / 2, my = (b.y0 + b.y1) / 2;
+    switch (name) {
+      case 'start': return o.pts[0];
+      case 'end': return o.pts[o.pts.length - 1];
+      case 'n': case 't': case 'top': return { x: mx, y: b.y1 };
+      case 's': case 'b': case 'bot': case 'bottom': return { x: mx, y: b.y0 };
+      case 'e': case 'right': return { x: b.x1, y: my };
+      case 'w': case 'left': return { x: b.x0, y: my };
+      case 'ne': return { x: b.x1, y: b.y1 };
+      case 'nw': return { x: b.x0, y: b.y1 };
+      case 'se': return { x: b.x1, y: b.y0 };
+      case 'sw': return { x: b.x0, y: b.y0 };
+    }
+    return { x: mx, y: my };
+  }
+  // Chop a segment endpoint back to an object's border, aimed at `toward`.
+  function chopBorder(o, toward) {
+    if (o._kind !== 'closed') return { x: o.cx, y: o.cy };
+    var a = { cx: o.cx, cy: o.cy, hw: o.w / 2, hh: o.h / 2, shape: o.shape };
+    // reuse the screen-space math in inch space (sign of y is irrelevant to |.|)
+    return borderPoint(a, toward.x, toward.y);
+  }
+
+  // Resolve an object reference starting at token i → { obj, next } or null.
+  function refAt(tk, i) {
+    var ord = null; // 1-based from front, or negative from back
+    function typeMatch(o, ty) { return !ty || o.type === ty; }
+    if (tk[i] && tk[i].t === 'id') {
+      var w = tk[i].v.toLowerCase();
+      if (w === 'previous' || (w === 'last' && !(tk[i + 1] && tk[i + 1].t === 'id' && PIK_OBJ[tk[i + 1].v.toLowerCase()]))) { return objs.length ? { obj: objs[objs.length - 1], next: i + 1 } : null; }
+      if (w === 'last') { ord = -1; i++; }
+      else if (w === 'first') { ord = 1; i++; }
+      else {
+        var om = /^(\d+)(st|nd|rd|th)$/.exec(w);
+        if (om) { ord = parseInt(om[1], 10); i++; if (tk[i] && tk[i].t === 'id' && tk[i].v.toLowerCase() === 'last') { ord = -ord; i++; } }
+      }
+      if (ord !== null) {
+        var ty = (tk[i] && tk[i].t === 'id' && PIK_OBJ[tk[i].v.toLowerCase()]) ? tk[i].v.toLowerCase() : null;
+        if (ty) i++;
+        var pool = objs.filter(function (o) { return typeMatch(o, ty); });
+        var pick = ord < 0 ? pool[pool.length + ord] : pool[ord - 1];
+        return pick ? { obj: pick, next: i } : null;
+      }
+      // named object (capitalised handle)
+      if (named[tk[i].v]) return { obj: named[tk[i].v], next: i + 1 };
+    }
+    return null;
+  }
+  // Parse a position expression at token i → { pos:{x,y,obj?}, next } or null.
+  function posAt(tk, i) {
+    var base = null;
+    if (tk[i] && tk[i].t === 'p' && tk[i].v === '(') {
+      var sx = scalarAt(tk, i + 1); if (!sx) return null;
+      var j = sx.next; if (!(tk[j] && tk[j].v === ',')) return null;
+      var sy = scalarAt(tk, j + 1); if (!sy) return null;
+      j = sy.next; if (tk[j] && tk[j].v === ')') j++;
+      base = { x: sx.val, y: sy.val }; i = j;
+    } else {
+      var r = refAt(tk, i);
+      if (!r) return null;
+      i = r.next;
+      if (tk[i] && tk[i].t === 'p' && tk[i].v === '.' && tk[i + 1] && tk[i + 1].t === 'id') {
+        var cp = compass(r.obj, tk[i + 1].v.toLowerCase()); base = { x: cp.x, y: cp.y }; i += 2;
+      } else { base = { x: r.obj.cx, y: r.obj.cy, obj: r.obj }; }
+    }
+    // optional ± (dx,dy) offsets
+    while (tk[i] && tk[i].t === 'p' && (tk[i].v === '+' || tk[i].v === '-') && tk[i + 1] && tk[i + 1].v === '(') {
+      var sign = tk[i].v === '-' ? -1 : 1;
+      var dx = scalarAt(tk, i + 2); if (!dx) break; var k = dx.next; if (!(tk[k] && tk[k].v === ',')) break;
+      var dy = scalarAt(tk, k + 1); if (!dy) break; k = dy.next; if (tk[k] && tk[k].v === ')') k++;
+      base.x += sign * dx.val; base.y += sign * dy.val; base.obj = null; i = k;
+    }
+    return { pos: base, next: i };
+  }
+  // A scalar (inches) — a number, or an object's .x/.y coordinate.
+  function scalarAt(tk, i) {
+    if (tk[i] && tk[i].t === 'num') { var s = pikScalar(tk[i].v, U, 0); if (s && s.inch !== undefined) return { val: s.inch, next: i + 1 }; if (s && s.pct !== undefined) return { val: s.pct, next: i + 1 }; }
+    if (tk[i] && tk[i].t === 'p' && tk[i].v === '-' && tk[i + 1] && tk[i + 1].t === 'num') { var s2 = pikScalar(tk[i + 1].v, U, 0); if (s2 && s2.inch !== undefined) return { val: -s2.inch, next: i + 2 }; }
+    var r = refAt(tk, i);
+    if (r && tk[r.next] && tk[r.next].v === '.' && tk[r.next + 1] && /^[xy]$/i.test(tk[r.next + 1].v)) {
+      var ax = tk[r.next + 1].v.toLowerCase(); return { val: ax === 'x' ? r.obj.cx : r.obj.cy, next: r.next + 2 };
+    }
+    return null;
+  }
+
+  joined.forEach(function (stmt) {
+    // Sub-blocks [ … ] and their positioned form  Name: [ … ]  aren't supported — skip
+    // the whole statement rather than mis-parsing the first object inside it.
+    if (/^\s*(?:[A-Za-z_][A-Za-z0-9_]*\s*:\s*)?\[/.test(stmt) || /^\s*\]/.test(stmt)) { warn('skipped [block]'); return; }
+    var tk = pikTokenize(stmt);
+    if (!tk.length) return;
+    var name = null, i = 0;
+    // Label prefix  Name:
+    if (tk[0].t === 'id' && tk[1] && tk[1].t === 'p' && tk[1].v === ':') { name = tk[0].v; i = 2; if (!tk[i]) return; }
+    // Assignment  var = number  (only known layout vars affect anything). '=' isn't
+    // tokenised as its own op, so detect it on the raw statement text.
+    if (/^\s*[A-Za-z_][A-Za-z0-9_]*\s*(=|\+=|\*=|-=)/.test(stmt) && !(tk[1] && tk[1].v === ':')) {
+      var am = /^\s*([A-Za-z_][A-Za-z0-9_]*)\s*(=|\+=|\*=|-=)\s*([0-9][0-9.]*(?:%|px|pt|in|cm|mm)?)/.exec(stmt);
+      if (am && vars[am[1]] !== undefined) { var sc = pikScalar(am[3], U, 0); if (sc && sc.inch !== undefined) vars[am[1]] = am[2] === '=' ? sc.inch : am[2] === '+=' ? vars[am[1]] + sc.inch : am[2] === '-=' ? vars[am[1]] - sc.inch : vars[am[1]] * sc.inch; }
+      return;
+    }
+    var head = tk[i].t === 'id' ? tk[i].v.toLowerCase() : (tk[i].t === 'str' ? 'text' : null);
+    // bare direction statement
+    if (head && PIK_DIR[head] && !PIK_OBJ[head] && (!tk[i + 1] || tk[i + 1].t === 'num')) { dir = head; return; }
+    if (head === 'define' || head === 'print' || head === 'assert') { warn('skipped: ' + head); return; }
+    if (tk[i].t === 'p' && tk[i].v === '[') { warn('skipped [block]'); return; }
+    if (!head || (!PIK_OBJ[head] && tk[i].t === 'id')) {
+      // maybe a bare direction with attributes, else unknown → skip
+      if (head && PIK_DIR[head]) { dir = head; return; }
+      warn('skipped: ' + stmt.slice(0, 40)); return;
+    }
+
+    var isStr = tk[i].t === 'str';
+    var type = isStr ? 'text' : head;
+    if (!isStr) i++;
+    var open = (type === 'line' || type === 'arrow' || type === 'spline' || type === 'arc' || type === 'move');
+
+    // shared attribute state
+    var labels = [], fill = '', stroke = '', sw = 0, dashed = false, dotted = false, invis = false;
+    var explicitW = null, explicitH = null, radv = null, sameType = false, fit = false;
+    var headStart = (type === 'line' || type === 'spline' || type === 'arc') ? false : false;
+    var headEnd = (type === 'arrow') ? true : false;
+    var ops = [], fromPos = null, atPos = null, withCmp = null, withAt = null, chop = false, refFail = false;
+
+    while (i < tk.length) {
+      var T = tk[i];
+      if (T.t === 'str') { labels.push(T.v); i++; continue; }
+      if (T.t === 'op') { if (T.v === '->') headEnd = true; else if (T.v === '<-') headStart = true; else if (T.v === '<->') { headStart = true; headEnd = true; } i++; continue; }
+      var kw = T.t === 'id' ? T.v.toLowerCase() : null;
+      if (kw && PIK_DIR[kw]) {
+        dir = kw;
+        if (open) { var seg = { dir: kw, len: null }; if (tk[i + 1] && tk[i + 1].t === 'num') { seg.raw = tk[i + 1].v; i++; } ops.push(seg); }
+        i++; continue;
+      }
+      if (kw === 'fill') { i++; if (tk[i]) { fill = pikColor(tk[i].t === 'id' ? tk[i].v : tk[i].v); i++; } continue; }
+      if (kw === 'color') { i++; if (tk[i]) { stroke = pikColor(tk[i].t === 'id' ? tk[i].v : tk[i].v); i++; } continue; }
+      if (kw === 'dashed') { dashed = true; i++; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'dotted') { dotted = true; i++; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'solid') { dashed = dotted = false; i++; continue; }
+      if (kw === 'thick') { sw = Math.max(sw, 2.6); i++; continue; }
+      if (kw === 'thin') { sw = 1; i++; continue; }
+      if (kw === 'thickness') { i++; if (tk[i] && tk[i].t === 'num') { var tv = pikScalar(tk[i].v, U, 0); if (tv && tv.inch !== undefined) sw = tv.inch * U; i++; } continue; }
+      if (kw === 'invis' || kw === 'invisible') { invis = true; i++; continue; }
+      if (kw === 'wid' || kw === 'width') { i++; var wv = tk[i] && tk[i].t === 'num' ? pikScalar(tk[i].v, U, 0) : null; if (wv && wv.inch !== undefined) explicitW = wv.inch; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'ht' || kw === 'height') { i++; var hv = tk[i] && tk[i].t === 'num' ? pikScalar(tk[i].v, U, 0) : null; if (hv && hv.inch !== undefined) explicitH = hv.inch; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'rad' || kw === 'radius') { i++; var rv = tk[i] && tk[i].t === 'num' ? pikScalar(tk[i].v, U, 0) : null; if (rv && rv.inch !== undefined) radv = rv.inch; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'diameter') { i++; var dv = tk[i] && tk[i].t === 'num' ? pikScalar(tk[i].v, U, 0) : null; if (dv && dv.inch !== undefined) { explicitW = dv.inch; explicitH = dv.inch; } if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'same') { sameType = true; i++; if (tk[i] && tk[i].t === 'id' && tk[i].v.toLowerCase() === 'as') { i++; var rr = refAt(tk, i); if (rr) { i = rr.next; explicitW = rr.obj.w; explicitH = rr.obj.h; } } continue; }
+      if (kw === 'fit') { fit = true; i++; continue; }
+      if (kw === 'chop') { chop = true; i++; if (tk[i] && tk[i].t === 'num') i++; continue; }
+      if (kw === 'from') { i++; var pf = posAt(tk, i); if (pf) { fromPos = pf.pos; i = pf.next; } else { refFail = true; warn('unresolved "from" in: ' + stmt.slice(0, 40)); } continue; }
+      if (kw === 'to') { i++; var pt = posAt(tk, i); if (pt) { ops.push({ to: pt.pos }); i = pt.next; } else { refFail = true; warn('unresolved "to" in: ' + stmt.slice(0, 40)); } continue; }
+      if (kw === 'at') { i++; var pa = posAt(tk, i); if (pa) { atPos = pa.pos; i = pa.next; } else { refFail = true; warn('unresolved "at" in: ' + stmt.slice(0, 40)); } continue; }
+      if (kw === 'then') { i++; continue; }
+      if (kw === 'go') { i++; continue; }
+      if (kw === 'with') {
+        i++; var cmp = null;
+        if (tk[i] && tk[i].t === 'p' && tk[i].v === '.') { i++; }
+        if (tk[i] && tk[i].t === 'id' && /^(n|s|e|w|ne|nw|se|sw|c|center|top|bottom|left|right)$/i.test(tk[i].v)) { cmp = tk[i].v.toLowerCase(); i++; }
+        if (tk[i] && tk[i].t === 'id' && tk[i].v.toLowerCase() === 'at') { i++; var pw = posAt(tk, i); if (pw) { withCmp = cmp || 'c'; withAt = pw.pos; i = pw.next; } }
+        continue;
+      }
+      // font/label-placement words we accept-and-ignore
+      if (kw && /^(big|small|bold|italic|aligned|above|below|ljust|rjust|cw|ccw|mono|monospace)$/.test(kw)) { i++; continue; }
+      if (kw === 'arrow') { headEnd = true; i++; continue; }
+      i++; // unknown token — skip
+    }
+
+    // ── build the object ─────────────────────────────────────────────
+    if (open) {
+      var start = fromPos ? { x: fromPos.x, y: fromPos.y, obj: fromPos.obj } : { x: cur.x, y: cur.y };
+      var pts = [{ x: start.x, y: start.y }];
+      var startObj = fromPos && fromPos.obj ? fromPos.obj : null, endObj = null;
+      var defLen = type === 'move' ? vars.movewid : vars.linewid;
+      if (!ops.length) ops.push({ dir: dir, len: null });
+      ops.forEach(function (op) {
+        if (op.to) { pts.push({ x: op.to.x, y: op.to.y }); endObj = op.to.obj || null; if (op.to.obj) endObj = op.to.obj; return; }
+        var u = pikDirUnit(op.dir), len = defLen;
+        if (op.raw != null) { var sv = pikScalar(op.raw, U, 0); if (sv) len = sv.pct !== undefined ? sv.pct * defLen : sv.inch; }
+        var last = pts[pts.length - 1];
+        pts.push({ x: last.x + u.x * len, y: last.y + u.y * len });
+        endObj = null;
+      });
+      // chop endpoints to referenced object borders
+      if (startObj && pts.length > 1) { var b0 = chopBorder(startObj, pts[1]); pts[0] = b0; }
+      if (endObj && pts.length > 1) { var bn = chopBorder(endObj, pts[pts.length - 2]); pts[pts.length - 1] = bn; }
+      var o = {
+        _kind: 'open', type: type, pts: pts, headStart: headStart, headEnd: headEnd,
+        color: stroke, sw: sw, dashed: dashed, dotted: dotted, invis: invis || type === 'move' || refFail,
+        labels: labels, isMove: type === 'move'
+      };
+      objs.push(o); if (name) named[name] = o; lastByType[type] = o;
+      cur = { x: pts[pts.length - 1].x, y: pts[pts.length - 1].y };
+      return;
+    }
+
+    // closed / text object
+    var dw, dh;
+    if (type === 'circle') { var r = radv != null ? radv : vars.circlerad; dw = dh = 2 * r; }
+    else if (type === 'dot') { var dr = radv != null ? radv : vars.dotrad; dw = dh = 2 * dr; }
+    else if (type === 'ellipse') { dw = vars.ellipsewid; dh = vars.ellipseht; }
+    else if (type === 'oval') { dw = vars.ovalwid; dh = vars.ovalht; }
+    else if (type === 'cylinder') { dw = vars.cylwid; dh = vars.cylht; }
+    else if (type === 'file') { dw = vars.filewid; dh = vars.fileht; }
+    else if (type === 'text') { dw = vars.textwid; dh = vars.textht; }
+    else { dw = vars.boxwid; dh = vars.boxht; }
+    if (sameType && lastByType[type]) { dw = lastByType[type].w; dh = lastByType[type].h; }
+    // auto-fit width/height to the label text at its real display size (grow-only;
+    // explicit wid/ht stay exact). Round shapes get extra room for their inset text box.
+    var labelText = labels.join(' '), nLines = Math.max(1, labels.length);
+    var longest = labels.reduce(function (a, b) { return b.length > a.length ? b : a; }, '');
+    var fw = type === 'circle' ? 1.42 : type === 'ellipse' ? 1.18 : type === 'oval' ? 1.12 : 1;
+    var fh = type === 'circle' ? 1.42 : type === 'cylinder' ? 1.7 : type === 'file' ? 1.12 : 1;
+    if (explicitW != null) dw = explicitW;
+    else if (labelText && type !== 'dot') {
+      var need = fw * (textWidth(longest, labelPx) + labelPx * 2.2) / U;
+      if (fit || need > dw) dw = Math.max(dw, need);
+    }
+    if (explicitH != null) dh = explicitH;
+    else if (type !== 'dot') {
+      var needH = fh * (nLines * labelPx * 1.5 + labelPx * 1.4) / U;
+      if (fit || (labelText && needH > dh)) dh = Math.max(dh, needH);
+    }
+
+    var o2 = {
+      _kind: 'closed', type: type, shape: PIK_SHAPE[type] || 'box', w: dw, h: dh,
+      labels: labels, fill: type === 'dot' ? (stroke || '#0c322c') : fill, stroke: stroke,
+      sw: sw, dashed: dashed, dotted: dotted, invis: invis, rad: radv, cx: 0, cy: 0
+    };
+    // position
+    if (atPos) { o2.cx = atPos.x; o2.cy = atPos.y; }
+    else if (withAt) { var cp2 = compass(o2, withCmp); /* o2 not placed yet; compute offset from center */ var off = compassOffset(withCmp, dw, dh); o2.cx = withAt.x - off.x; o2.cy = withAt.y - off.y; }
+    else {
+      var u2 = pikDirUnit(dir), half = (dir === 'right' || dir === 'left') ? dw / 2 : dh / 2;
+      o2.cx = cur.x + u2.x * half; o2.cy = cur.y + u2.y * half;
+    }
+    // advance cursor to the exit side
+    var u3 = pikDirUnit(dir), half2 = (dir === 'right' || dir === 'left') ? dw / 2 : dh / 2;
+    cur = { x: o2.cx + u3.x * half2, y: o2.cy + u3.y * half2 };
+    objs.push(o2); if (name) named[name] = o2; lastByType[type] = o2;
+  });
+
+  // ── finalise: inch/y-up → screen px/y-down; split into nodes + primitives ─────
+  function X(x) { return x * U; }
+  function Y(y) { return -y * U; }
+  var nodes = [], pos = [], prims = [], maxLines = 1;
+  objs.forEach(function (o) {
+    if (o._kind === 'closed') {
+      if (o.type === 'dot') { prims.push({ kind: 'dot', x: X(o.cx), y: Y(o.cy), r: Math.max(2.5, o.w / 2 * U), color: o.fill }); return; }
+      if (o.invis) return;
+      var w = o.w * U, h = o.h * U;
+      // All strings are equal-weight lines (PIC has no title/subtitle) — join them and
+      // let the card wrap; width was fit to the longest string so breaks land per-line.
+      maxLines = Math.max(maxLines, o.labels.length || 1);
+      nodes.push({ shape: o.shape, nodeId: '', label: o.labels.join(' '), detail: '', image: '', fill: o.fill && o.fill !== 'none' ? o.fill : '', parent: '', layer: '', quadrant: '', stroke: o.stroke, strokeWidth: o.sw });
+      pos.push({ x: X(o.cx) - w / 2, y: Y(o.cy) - h / 2, w: w, h: h });
+    } else {
+      if (o.isMove) return;
+      var scr = o.pts.map(function (p) { return { x: X(p.x), y: Y(p.y) }; });
+      prims.push({
+        kind: 'line', pts: scr, style: o.dotted ? 'dotted' : o.dashed ? 'dashed' : 'solid',
+        headStart: o.headStart, headEnd: o.headEnd, color: o.color, width: o.sw,
+        labels: o.labels, invis: o.invis
+      });
+    }
+  });
+  return { nodes: nodes, pos: pos, prims: prims, warns: warns, maxLines: maxLines };
+}
+// offset of a compass point from a box centre (inches, y-up)
+function compassOffset(name, w, h) {
+  var hw = w / 2, hh = h / 2;
+  switch (name) {
+    case 'n': case 'top': return { x: 0, y: hh };
+    case 's': case 'bottom': return { x: 0, y: -hh };
+    case 'e': case 'right': return { x: hw, y: 0 };
+    case 'w': case 'left': return { x: -hw, y: 0 };
+    case 'ne': return { x: hw, y: hh };
+    case 'nw': return { x: -hw, y: hh };
+    case 'se': return { x: hw, y: -hh };
+    case 'sw': return { x: -hw, y: -hh };
+  }
+  return { x: 0, y: 0 };
+}
+function stripLineComment(s) {
+  var out = '', inStr = false;
+  for (var i = 0; i < s.length; i++) {
+    var c = s.charAt(i);
+    if (c === '"' && s.charAt(i - 1) !== '\\') inStr = !inStr;
+    if (!inStr && (c === '#' || (c === '/' && s.charAt(i + 1) === '/'))) break;
+    out += c;
+  }
+  return out;
+}
+// Render Pikchr open primitives (lines/arrows/dots) as export-safe geometry.
+function renderPikchrPrims(prims, S, bg, bb) {
+  var out = '';
+  arr(prims).forEach(function (p) {
+    if (p.kind === 'dot') { out += '<path d="' + circlePath(p.x, p.y, p.r) + '" fill="' + esc(p.color || S.edgeColor) + '"/>'; bb.add(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2); return; }
+    var pts = p.pts; if (!pts || pts.length < 2) return;
+    var col = color(p.color, S.edgeColor);
+    var w = p.width > 0 ? p.width : (S.arrowWidth || 2);
+    var s = Math.max(S.arrowHeadSize || 11, w * 4);
+    var kind = S.arrowHead && S.arrowHead !== 'none' ? S.arrowHead : 'triangle';
+    if (kind === 'double') kind = 'triangle';
+    if (!p.invis) {
+      // shaft: trim the extreme ends so the heads sit cleanly
+      for (var k = 0; k < pts.length - 1; k++) {
+        var a = pts[k], b = pts[k + 1];
+        var ax = a.x, ay = a.y, bx2 = b.x, by2 = b.y;
+        var dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+        if (k === 0 && p.headStart) { var si = headInset(kind, s); ax = a.x + ux * si; ay = a.y + uy * si; }
+        if (k === pts.length - 2 && p.headEnd) { var ei = headInset(kind, s); bx2 = b.x - ux * ei; by2 = b.y - uy * ei; }
+        out += shaft(ax, ay, bx2, by2, p.style, col, w);
+      }
+      var e0 = pts[pts.length - 1], e1 = pts[pts.length - 2];
+      if (p.headEnd) { var ed = Math.hypot(e0.x - e1.x, e0.y - e1.y) || 1; out += arrowHead(e0, (e0.x - e1.x) / ed, (e0.y - e1.y) / ed, s, col, kind, w); }
+      var s0 = pts[0], s1 = pts[1];
+      if (p.headStart) { var sd = Math.hypot(s0.x - s1.x, s0.y - s1.y) || 1; out += arrowHead(s0, (s0.x - s1.x) / sd, (s0.y - s1.y) / sd, s, col, kind, w); }
+    }
+    pts.forEach(function (pt) { bb.add(pt.x, pt.y, 0, 0); });
+    // Labels: plain stacked text sitting just off the midpoint segment (Pikchr-style),
+    // NOT a boxed pill — a labelled arrow should still read as an arrow.
+    var labs = arr(p.labels).map(trim).filter(Boolean);
+    if (labs.length) {
+      var half = (pts.length - 1) / 2;
+      var m1 = pts[Math.floor(half)], m2 = pts[Math.ceil(half)];
+      var mx = (m1.x + m2.x) / 2, my = (m1.y + m2.y) / 2;
+      var sx = m2.x - m1.x, sy = m2.y - m1.y, sl = Math.hypot(sx, sy) || 1;
+      var horiz = Math.abs(sx) >= Math.abs(sy);
+      var fs = Math.max(11, S.labelSize * 0.85), lh = Math.round(fs * 1.25);
+      var block = labs.length * lh;
+      if (horiz) {
+        var ty = my - 7 - block; // above the arrow
+        labs.forEach(function (t, k) { out += textEl(mx, ty + k * lh + fs * 0.85, t, fs, 500, col, 'middle'); });
+        bb.add(mx - textWidth(labs[0], fs) / 2, ty, textWidth(labs[0], fs), block + 6);
+      } else {
+        var lx = mx + 9;
+        var ty2 = my - block / 2;
+        labs.forEach(function (t, k) { out += textEl(lx, ty2 + k * lh + fs * 0.85, t, fs, 500, col, 'start'); });
+        bb.add(lx, ty2, textWidth(labs[0], fs) + 6, block);
+      }
+    }
+  });
+  return out;
+}
+
 // ── compose the whole scene ─────────────────────────────────────────────────────
 async function buildDiagram(inp) {
   var mode = VALID_TYPES[inp.diagramType] ? inp.diagramType : 'org';
-  var source = ['text', 'ascii', 'mermaid', 'table'].indexOf(inp.source) >= 0 ? inp.source : 'visual';
+  var source = ['text', 'ascii', 'mermaid', 'pikchr', 'table'].indexOf(inp.source) >= 0 ? inp.source : 'visual';
   var bg = color(inp.background, WHITE);
 
-  var src, asciiPos = null, overrideDir = null;
+  var src, asciiPos = null, pikchrPos = null, pikchrPrims = null, overrideDir = null;
   if (source === 'text') src = parseDsl(inp.dsl, mode);
   else if (source === 'ascii') { var pa = parseAscii(inp.asciiArt); src = { nodes: pa.nodes, layers: [], arrows: pa.arrows }; asciiPos = pa.pos; }
   else if (source === 'mermaid') { var pm = parseMermaid(inp.mermaid); src = { nodes: pm.nodes, layers: pm.layers, arrows: pm.arrows }; if (VALID_TYPES[pm.diagramType]) mode = pm.diagramType; overrideDir = pm.dir; }
+  else if (source === 'pikchr') {
+    var pkLabelPx = clamp(num(inp.labelSize, 15), 10, 28) * clamp(num(inp.cardScale, 1), 0.6, 1.6);
+    var pk = parsePikchr(inp.pikchr, pkLabelPx); src = { nodes: pk.nodes, layers: [], arrows: [] }; pikchrPos = pk.pos; pikchrPrims = pk.prims;
+    if (pk.warns.length && host && host.log) host.log('info', 'diagram-builder: ' + pk.warns.length + ' Pikchr line(s) skipped (unsupported): ' + pk.warns.slice(0, 4).join(' · '));
+  }
   else if (source === 'table') src = parseTable(inp.table, mode);
   else src = { nodes: arr(inp.nodes), layers: arr(inp.layers), arrows: arr(inp.arrows) };
 
   var nodes = normaliseNodes(src.nodes);
-  if (!nodes.length) return placeholder(mode, source === 'visual' ? null : source);
+  if (!nodes.length && !(source === 'pikchr' && pikchrPrims && pikchrPrims.length)) return placeholder(mode, source === 'visual' ? null : source);
 
   // S: colours + sized constants derived from the slider/scale/theme inputs.
   var theme = THEMES[inp.theme] || null;
@@ -1370,7 +1919,15 @@ async function buildDiagram(inp) {
     S.cardH = computeCardH(S, S.labelLines, hd);
   }
 
-  if (source === 'ascii') {
+  if (source === 'pikchr') {
+    // positions + connectors come straight from the layout engine (like ascii). PIC
+    // centres its labels, so force the stacked (centred) card layout regardless of the
+    // Style › Card layout control (which is an image-avatar option for the other modes).
+    S.labelLines = Math.min(4, Math.max(2, pk.maxLines || 1));
+    S.cardLayout = 'stacked'; S.rowImgSide = 0;
+    nodes.forEach(function (n, i) { var p = pikchrPos[i]; if (!p) return; n.x = p.x; n.y = p.y; n.w = p.w; n.h = p.h; });
+    layout = { autoEdges: [], bands: [], layerById: {}, front: renderPikchrPrims(pikchrPrims, S, bg, bb) };
+  } else if (source === 'ascii') {
     S.labelLines = 3;
     setCardH(S.cardWidth);
     nodes.forEach(function (n, i) {
@@ -1459,7 +2016,7 @@ async function buildDiagram(inp) {
   // Click-to-focus: a card jumps to whichever input is the active data source;
   // the background and title jump to their own sidebar controls.
   var sourceInput = source === 'text' ? 'dsl' : source === 'ascii' ? 'asciiArt'
-                  : source === 'mermaid' ? 'mermaid' : source === 'table' ? 'table' : 'nodes';
+                  : source === 'mermaid' ? 'mermaid' : source === 'pikchr' ? 'pikchr' : source === 'table' ? 'table' : 'nodes';
   var out = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="' + f2(vbX) + ' ' + f2(vbY) + ' ' + f2(vbW) + ' ' + f2(vbH) + '"'
     + ' width="' + f2(vbW) + '" height="' + f2(vbH) + '"'
     + ' style="width:100%;height:auto;max-height:100%;display:block;" preserveAspectRatio="xMidYMid meet">';

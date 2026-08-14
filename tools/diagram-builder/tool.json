@@ -3,7 +3,7 @@
   "name": "Diagram Builder",
   "description": "Org charts, flowcharts, timelines and more — from cards, text, Mermaid or CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} diagram",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "engineVersion": "^1.0.0",
   "status": "experimental",
   "category": "everyone",
@@ -63,12 +63,13 @@
       "label": "Build from",
       "type": "select",
       "default": "visual",
-      "help": "Visual edits cards as form rows. Text renders a typed description. ASCII art traces boxes you draw. Mermaid pastes a graph TD/LR subset. Table reads a pasted CSV.",
+      "help": "Visual edits cards as form rows. Text renders a typed description. ASCII art traces boxes you draw. Mermaid pastes a graph TD/LR subset. Pikchr draws a PIC-style diagram from placed shapes. Table reads a pasted CSV.",
       "options": [
         { "value": "visual", "label": "Visual editor" },
         { "value": "text", "label": "Text (type it)" },
         { "value": "ascii", "label": "ASCII art (draw it)" },
         { "value": "mermaid", "label": "Mermaid (paste it)" },
+        { "value": "pikchr", "label": "Pikchr (paste it)" },
         { "value": "table", "label": "Table / CSV (paste it)" }
       ]
     },
@@ -264,6 +265,14 @@
       "default": "graph LR\n  A[Client] --> B(API Gateway)\n  B --> C[(Database)]\n  B -.-> D{{Cache}}"
     },
     {
+      "id": "pikchr",
+      "label": "Pikchr",
+      "type": "longtext",
+      "showIf": { "source": "pikchr" },
+      "help": "Paste a PIC-style Pikchr diagram. Objects flow in a direction: box/circle/ellipse/oval/cylinder/file/dot/line/arrow/move, each with \"labels\", fill/color, dashed/dotted/thick, wid/ht/rad. Place with from/to/at, compass points (last box.s, .n .e .w .ne …), named objects (Name: box) and ->/<-/<->. Supported subset — macros, [blocks], expressions and splines are skipped, never run.",
+      "default": "arrow right 200% \"Source\" \"input\"\nbox rad 8px \"Diagram\" \"Builder\" fill 0xe8f4f0\narrow right 200% \"SVG\" \"output\"\narrow <-> down 60% from last box.s\ncylinder \"Store\" fill 0xd0e8e0"
+    },
+    {
       "id": "table",
       "label": "Table / CSV",
       "type": "longtext",
@@ -290,7 +299,13 @@
           "options": [
             { "value": "box", "label": "Box", "repeatable": true },
             { "value": "rounded", "label": "Rounded", "repeatable": true },
-            { "value": "pill", "label": "Pill", "repeatable": true }
+            { "value": "pill", "label": "Pill", "repeatable": true },
+            { "value": "circle", "label": "Circle", "repeatable": true },
+            { "value": "ellipse", "label": "Ellipse", "repeatable": true },
+            { "value": "cylinder", "label": "Cylinder", "repeatable": true },
+            { "value": "file", "label": "File", "repeatable": true },
+            { "value": "diamond", "label": "Diamond", "repeatable": true },
+            { "value": "hexagon", "label": "Hexagon", "repeatable": true }
           ]
         },
         { "id": "label", "label": "Label", "type": "text", "placeholder": "Card text" },

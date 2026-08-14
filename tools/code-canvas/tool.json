@@ -27,6 +27,16 @@
       "placeholder": "Paste your code here…"
     },
     {
+      "id": "scale",
+      "label": "Size",
+      "type": "number",
+      "display": "slider",
+      "default": 100,
+      "min": 70,
+      "max": 200,
+      "step": 5
+    },
+    {
       "id": "filename",
       "label": "Filename",
       "type": "text",
@@ -94,16 +104,6 @@
       "help": "A terminal-style blinking caret after the code, on screen. Off keeps the exported still clean.",
       "type": "boolean",
       "default": false
-    },
-    {
-      "id": "scale",
-      "label": "Size",
-      "type": "number",
-      "display": "slider",
-      "default": 100,
-      "min": 70,
-      "max": 200,
-      "step": 5
     }
   ]
 }
