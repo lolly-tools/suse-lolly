@@ -8,6 +8,7 @@
   "inputs.city.label": "Bandar hos",
   "inputs.city.placeholder": "cth. Nuremberg",
   "inputs.city.help": "Bandar tempat mesyuarat bermula — menetapkan zon waktu untuk waktu di bawah.",
+  "inputs.city.notice": "Nama bandar dicari di open-meteo.com untuk mengetahui zon masanya. Hanya nama yang dihantar dan setiap jawapan kekal pada peranti anda untuk kegunaan luar talian.",
   "inputs.meetingTime.label": "Tarikh & masa mesyuarat",
   "inputs.meetingTime.help": "Tarikh dan masa tempatan di bandar hos. Diabaikan semasa Jam langsung dihidupkan.",
   "inputs.liveClock.label": "Jam langsung",

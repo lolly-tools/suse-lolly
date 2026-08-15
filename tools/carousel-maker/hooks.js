@@ -3,7 +3,7 @@
 /**
  * Carousel Maker — a multi-page free-form WYSIWYG canvas of positioned "boxes".
  *
- * Derived from Layout Studio. The tool is DATA: each box is one row of the `boxes`
+ * Derived from Design. The tool is DATA: each box is one row of the `boxes`
  * blocks input, carrying flat geometry (x/y/w/h/rot) + decoration. Box coordinates
  * are GLOBAL across the whole multi-page strip — there is NO per-box page field.
  * This hook derives which page a box belongs to (the frame whose centre column is
@@ -73,7 +73,7 @@ function esc(s) {
 // === /lolly:shared esc ===
 
 // Inline emphasis on an ALREADY-escaped fragment: **bold** first, then *italic* /
-// _italic_. Mirrors Layout Studio's grammar so the same rich text works here.
+// _italic_. Mirrors Design's grammar so the same rich text works here.
 function inlineMd(s) {
   s = s.replace(/\\\*/g, '').replace(/\\_/g, '');
   s = s.replace(/\{([^|{}]+)\|([^{}]*)\}/g, function (whole, attrs, inner) {
@@ -179,7 +179,7 @@ function imgCss(b) {
     (OBJPOS[pos] && pos !== 'center' ? 'object-position:' + pos + ';' : '');
 }
 
-// A box's media element (image / Lottie / video). Mirrors Layout Studio exactly.
+// A box's media element (image / Lottie / video). Mirrors Design exactly.
 function mediaHtmlFor(b) {
   var img = b && b.image;
   var url = img && img.url ? String(img.url) : '';

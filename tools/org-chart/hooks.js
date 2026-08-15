@@ -7,7 +7,7 @@
  * ONE flat input drives the render:
  *   • `boxes` — one row per card (geometry + a `layout` that arranges its photo/icon +
  *               text: row = headshot left, icon = icon chip left, stacked = photo on top,
- *               plain = a bare box like Layout Studio) AND one row per connector, which
+ *               plain = a bare box like Design) AND one row per connector, which
  *               is a `kind:'path'` box with an end attached to a card (plan 96).
  *
  * A connector used to be a row of a SECOND `connectors` input, {from,to,style,arrow,dash,
@@ -83,7 +83,7 @@ function esc(s) {
 }
 // === /lolly:shared esc ===
 
-// ── semi-rich text (same tiny markdown subset as Layout Studio) ────────────────────
+// ── semi-rich text (same tiny markdown subset as Design) ────────────────────
 function inlineMd(s) {
   s = s.replace(/\\\*/g, '\x01').replace(/\\_/g, '\x02');
   s = s.replace(/\{([^|{}]+)\|([^{}]*)\}/g, function (whole, attrs, inner) {
@@ -719,7 +719,7 @@ function twoNodePathValue(n0, n1) {
 // document saved after this shipped, and the thing that keeps compute() from writing inputs
 // on every render), else the new `boxes` array with one path box appended per edge.
 
-// Optional drop shadow (matches Layout Studio). `shadow` picks WHAT the shadow
+// Optional drop shadow (matches Design). `shadow` picks WHAT the shadow
 // follows → which CSS property: box → box-shadow, text → text-shadow, content →
 // filter:drop-shadow. Raster-faithful (PNG/JPG/WebP); flattens in the SVG/PDF vector
 // walkers, same as blend modes.

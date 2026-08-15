@@ -8,6 +8,7 @@
   "inputs.city.label": "Orașul gazdă",
   "inputs.city.placeholder": "de ex. Nürnberg",
   "inputs.city.help": "Orașul din care pornește întâlnirea — stabilește fusul orar pentru ora de mai jos.",
+  "inputs.city.notice": "Numele orașelor sunt căutate pe open-meteo.com pentru a le afla fusul orar. Se trimite doar numele, iar fiecare răspuns rămâne pe dispozitivul tău pentru utilizare offline.",
   "inputs.meetingTime.label": "Data și ora întâlnirii",
   "inputs.meetingTime.help": "Data și ora locală din orașul gazdă. Ignorată cât timp ceasul live este activat.",
   "inputs.liveClock.label": "Ceas live",

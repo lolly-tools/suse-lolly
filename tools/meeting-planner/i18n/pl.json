@@ -7,6 +7,7 @@
   "inputs.city.label": "Miasto organizatora",
   "inputs.city.help": "Miasto, z którego pochodzi spotkanie — ustawia strefę czasową dla czasu poniżej.",
   "inputs.city.placeholder": "np. Norymberga",
+  "inputs.city.notice": "Nazwy miast są wyszukiwane w open-meteo.com w celu ustalenia strefy czasowej. Wysyłana jest tylko nazwa, a każda odpowiedź zostaje na Twoim urządzeniu do użytku offline.",
   "inputs.meetingTime.label": "Data i godzina spotkania",
   "inputs.meetingTime.help": "Lokalna data i godzina w mieście organizatora. Ignorowane, gdy włączony jest zegar na żywo.",
   "inputs.liveClock.label": "Zegar na żywo",

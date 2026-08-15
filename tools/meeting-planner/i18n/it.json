@@ -8,6 +8,7 @@
   "inputs.city.label": "Città ospitante",
   "inputs.city.placeholder": "es. Norimberga",
   "inputs.city.help": "La città da cui parte la riunione — imposta il fuso orario per l'orario qui sotto.",
+  "inputs.city.notice": "I nomi delle città vengono cercati su open-meteo.com per trovarne il fuso orario. Viene inviato solo il nome e ogni risposta resta sul tuo dispositivo per l'uso offline.",
   "inputs.meetingTime.label": "Data e ora della riunione",
   "inputs.meetingTime.help": "Data e ora locali nella città ospitante. Ignorato quando l'orologio in tempo reale è attivo.",
   "inputs.liveClock.label": "Orologio in tempo reale",

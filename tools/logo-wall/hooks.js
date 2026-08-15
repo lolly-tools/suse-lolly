@@ -8,7 +8,8 @@
  * reproduces faithfully. Pixels are only sampled when balancing is on (a small
  * weight measurement), not for the visual itself.
  *
- * "Render as vector" is a PER-LOGO block setting: each logo is independently an
+ * "Render as vector" is opt-in — the wall-wide "Render all as vector" toggle, or
+ * per logo in its block: each logo is independently an
  * <img> (raster) or flattened to one ink colour. The wall is always the same CSS
  * grid of cells; a vectorised cell holds a small inline <svg> instead of an <img>,
  * sized identically (the balanced size%) so toggling a logo never reflows the wall.
@@ -23,7 +24,11 @@
  *
  * Each logo is fitted to its own CONTENT box (margins trimmed, measured at a fixed
  * sample size) so huge and tiny copies normalise alike; optical-weight balancing
- * then sizes by artwork footprint so the wall reads evenly.
+ * then sizes by artwork footprint so the wall reads evenly. Trimming covers BOTH
+ * kinds without tracing anything: a raster is canvas-cropped to its content box,
+ * an SVG keeps its own markup and gets its root viewBox rewritten to the same
+ * measured box (still fully vector, still full colour). "Trim margins" (default
+ * on) is the escape hatch for logos whose clear-space padding is deliberate.
  *
  * Efficiency: decoded images, traced paths, inlined SVGs and content boxes are each
  * cached per URL; each logo's traced grid is capped (MAX_CELLS_PER_LOGO); stale
@@ -33,9 +38,16 @@
  * there's none, so a vectorised logo falls back to its raster <img>.
  */
 
-// Upper bound on a single logo's sampling grid, so a high Detail on a big logo
-// can't blow up tracing time/output (≈ a 330×330 grid).
-var MAX_CELLS_PER_LOGO = 110000;
+// Upper bound on a single logo's sampling grid, so a big source can't blow up
+// tracing time/output (≈ an 800×800 grid; rings are Douglas–Peucker-simplified,
+// so a finer grid sharpens edge PLACEMENT without exploding the path data).
+var MAX_CELLS_PER_LOGO = 640000;
+// The trace samples on a grid LARGER than the source bitmap (up to 2× its longest
+// edge, capped below) with smoothing interpolation on — the threshold then cuts
+// through interpolated ramps, so contour edges land at sub-pixel positions of the
+// original image instead of snapping to its pixel grid.
+var TRACE_SUPERSAMPLE = 2;
+var TRACE_MAX_EDGE = 800;
 
 // Per-logo "Presence" tiers → a size multiplier applied on TOP of any auto-balance:
 // balance first equalises optical weight, then Presence deliberately biases a logo
@@ -55,6 +67,14 @@ var _boxCache = {};
 // Inlined-SVG cache: url -> Promise<{ inner, vbx, vby, vbw, vbh }> for vector
 // logos, which are inlined (and recoloured) rather than traced.
 var _svgCache = {};
+// Raw SVG markup cache: url -> Promise<string> (feeds both the inline parse and
+// the viewBox-rewrite trim below).
+var _svgTextCache = {};
+// Trimmed-SVG cache: url -> data-URL of the SVG with its root viewBox rewritten
+// to the measured content box (or the original url when already tight / on
+// failure). The SVG twin of _cropCache: same measured box, no rasterising and no
+// tracing — the markup ships unchanged apart from the root tag.
+var _svgTrimCache = {};
 // Content-trimmed raster cache: url -> data-URL of the logo cropped to its content
 // box (margins removed). A full-colour raster logo renders from this so it fits its
 // cell exactly like the vector path does (whose viewBox is already the content box) —
@@ -226,12 +246,18 @@ function measureContent(url, img) {
 // an overflow-clipped wrapper would be ignored, but a pre-cropped bitmap embeds
 // faithfully in every format. Returns the original url unchanged when there's no
 // meaningful margin to trim, when pixels can't be read (headless), or on failure.
-function getTrimmedRaster(url, img, box) {
-  if (_cropCache[url] !== undefined) return _cropCache[url];
+function getTrimmedRaster(url, img, box, knockout) {
+  var cacheKey = url + '|k' + (knockout ? 1 : 0);
+  if (_cropCache[cacheKey] !== undefined) return _cropCache[cacheKey];
   if (!box) return url;
-  // Already tight — nothing to gain, and re-encoding would only cost quality.
-  if (box.fx <= 0.012 && box.fy <= 0.012 && box.fw >= 0.976 && box.fh >= 0.976) {
-    _cropCache[url] = url; return url;
+  // Would the white-box knockout below actually run? Only on an opaque
+  // NEAR-WHITE flat background — the "logo lifted off an old slide" case. A
+  // coloured or dark tile is often part of the mark itself, so it stays.
+  var whiteBg = knockout && box.bgOpaque && box.bg
+    && box.bg[0] >= 235 && box.bg[1] >= 235 && box.bg[2] >= 235;
+  // Already tight AND nothing to knock out — re-encoding would only cost quality.
+  if (!whiteBg && box.fx <= 0.012 && box.fy <= 0.012 && box.fw >= 0.976 && box.fh >= 0.976) {
+    _cropCache[cacheKey] = url; return url;
   }
   if (typeof document === 'undefined' || !document.createElement) return url;
   var iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
@@ -242,7 +268,7 @@ function getTrimmedRaster(url, img, box) {
   var sy = clamp(Math.floor(box.fy * ih) - 1, 0, ih - 1);
   var sw = clamp(Math.ceil((box.fx + box.fw) * iw) + 1, sx + 1, iw) - sx;
   var sh = clamp(Math.ceil((box.fy + box.fh) * ih) + 1, sy + 1, ih) - sy;
-  if (sw <= 0 || sh <= 0) { _cropCache[url] = url; return url; }
+  if (sw <= 0 || sh <= 0) { _cropCache[cacheKey] = url; return url; }
   try {
     var c = document.createElement('canvas');
     c.width = sw; c.height = sh;
@@ -250,13 +276,67 @@ function getTrimmedRaster(url, img, box) {
     if (!ctx) return url;
     // Draw at native resolution (no downscale) so the crop loses no detail.
     ctx.drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh);
+    if (whiteBg) knockoutWhite(ctx, sw, sh, box.bg);
     var out = c.toDataURL('image/png');   // PNG keeps the logo's transparency
-    _cropCache[url] = out;
+    _cropCache[cacheKey] = out;
     return out;
   } catch (e) {                            // tainted canvas, or toDataURL refused
-    _cropCache[url] = url;
+    _cropCache[cacheKey] = url;
     return url;
   }
+}
+
+// Make a near-white flat background transparent, in place on the crop's canvas.
+// Border-connected flood fill, not a global colour key: only the region reachable
+// from the edges within tolerance of the background is cleared, so white INSIDE
+// the mark (letter counters enclosed by ink, a white glyph on a kept tile)
+// survives. Each cleared pixel keeps alpha in proportion to its distance from
+// the background colour, so antialiased edges fade out instead of leaving a
+// hard white fringe on a dark wall; a one-pixel feather ring softens the rest.
+function knockoutWhite(ctx, w, h, bg) {
+  var id;
+  try { id = ctx.getImageData(0, 0, w, h); } catch (e) { return; }
+  var d = id.data, n = w * h;
+  var TOL = 60, TOL2 = TOL * TOL;
+  var dist2 = function (p) {
+    var dr = d[p] - bg[0], dg = d[p + 1] - bg[1], db = d[p + 2] - bg[2];
+    return dr * dr + dg * dg + db * db;
+  };
+  var reached = new Uint8Array(n);
+  var stack = [];
+  var seed = function (i) {
+    if (reached[i]) return;
+    var p = i * 4;
+    if (d[p + 3] === 0) { reached[i] = 1; return; }   // already transparent: pass through
+    if (dist2(p) < TOL2) { reached[i] = 1; stack.push(i); }
+  };
+  for (var x = 0; x < w; x++) { seed(x); seed((h - 1) * w + x); }
+  for (var y = 0; y < h; y++) { seed(y * w); seed(y * w + w - 1); }
+  while (stack.length) {
+    var i = stack.pop(), p = i * 4;
+    // Soft clear: pure background → fully transparent; a pixel part-way to the
+    // ink keeps part of its alpha (≈ un-blending "logo over white").
+    var a = Math.round(Math.sqrt(dist2(p)) / TOL * 255);
+    d[p + 3] = Math.min(d[p + 3], a);
+    var cx = i % w, cy = (i / w) | 0;
+    if (cx > 0) seed(i - 1);
+    if (cx < w - 1) seed(i + 1);
+    if (cy > 0) seed(i - w);
+    if (cy < h - 1) seed(i + w);
+  }
+  // Feather: an opaque pixel touching the cleared region is the antialiased rim —
+  // knock its alpha back by how close to the background it still is.
+  for (var j = 0; j < n; j++) {
+    if (reached[j]) continue;
+    var jx = j % w, jy = (j / w) | 0;
+    var edge = (jx > 0 && reached[j - 1]) || (jx < w - 1 && reached[j + 1])
+      || (jy > 0 && reached[j - w]) || (jy < h - 1 && reached[j + w]);
+    if (!edge) continue;
+    var q = j * 4;
+    var f = Math.min(1, Math.sqrt(dist2(q)) / (TOL * 2));
+    d[q + 3] = Math.round(d[q + 3] * f);
+  }
+  ctx.putImageData(id, 0, 0);
 }
 
 // ── SVG logos: inline instead of trace ───────────────────────────────────────
@@ -423,15 +503,105 @@ function parseSvg(text) {
   return out;
 }
 
-function getSvg(url) {
-  if (_svgCache[url]) return _svgCache[url];
+function getSvgText(url) {
+  if (_svgTextCache[url]) return _svgTextCache[url];
   var promise = (typeof fetch === 'function'
     ? fetch(url).then(function (r) { return r.text(); })
-    : Promise.reject(new Error('no fetch'))
-  ).then(parseSvg);
+    : Promise.reject(new Error('no fetch')));
+  _svgTextCache[url] = promise;
+  promise.catch(function () { if (_svgTextCache[url] === promise) delete _svgTextCache[url]; });
+  return promise;
+}
+
+function getSvg(url) {
+  if (_svgCache[url]) return _svgCache[url];
+  var promise = getSvgText(url).then(parseSvg);
   _svgCache[url] = promise;
   promise.catch(function () { if (_svgCache[url] === promise) delete _svgCache[url]; });
   return promise;
+}
+
+// ── SVG trim: rewrite the root viewBox to the content box ────────────────────
+// The vector counterpart of getTrimmedRaster: no tracing, no rasterising — the
+// artwork's markup is untouched and keeps its full colour; only the root tag's
+// viewBox moves (and width/height drop, so the new box IS the intrinsic aspect).
+
+// The root <svg> tag's authored box: viewBox if present, else width/height as
+// `0 0 w h`. Textual on purpose (no DOMParser round-trip for a display path).
+function svgRootBox(text) {
+  var m = /<svg\b[^>]*>/i.exec(text);
+  if (!m) return null;
+  var tag = m[0];
+  var vb = /\bviewBox\s*=\s*["']([^"']*)["']/i.exec(tag);
+  if (vb) {
+    var p = vb[1].trim().split(/[\s,]+/).map(Number);
+    if (p.length === 4 && p.every(isFinite) && p[2] > 0 && p[3] > 0) {
+      return { x: p[0], y: p[1], w: p[2], h: p[3] };
+    }
+  }
+  function dim(attr) {
+    var d = new RegExp('\\b' + attr + '\\s*=\\s*["\']([^"\']*)["\']', 'i').exec(tag);
+    return d ? svgDim(d[1]) : 0;
+  }
+  var w = dim('width'), h = dim('height');
+  return (w > 0 && h > 0) ? { x: 0, y: 0, w: w, h: h } : null;
+}
+
+// Map a content box measured as FRACTIONS of the decoded bitmap back into the
+// SVG's own viewBox units. The decode renders the viewBox into the bitmap with
+// preserveAspectRatio "meet" (centred), so when the root width/height aspect
+// disagrees with the viewBox the bitmap letterboxes — undo that transform rather
+// than assuming a linear map. Returns a slightly OUTWARD-rounded box (one sample
+// cell each side, mirroring getTrimmedRaster) clamped to the viewBox.
+function svgContentBox(box, root, imgW, imgH) {
+  var scale = Math.min(imgW / root.w, imgH / root.h);
+  if (!isFinite(scale) || scale <= 0) return null;
+  var offX = (imgW - root.w * scale) / 2;
+  var offY = (imgH - root.h * scale) / 2;
+  var pad = Math.max(root.w, root.h) / 96;      // ~one measureContent sample cell
+  var x0 = root.x + (box.fx * imgW - offX) / scale - pad;
+  var y0 = root.y + (box.fy * imgH - offY) / scale - pad;
+  var x1 = root.x + ((box.fx + box.fw) * imgW - offX) / scale + pad;
+  var y1 = root.y + ((box.fy + box.fh) * imgH - offY) / scale + pad;
+  x0 = clamp(x0, root.x, root.x + root.w); y0 = clamp(y0, root.y, root.y + root.h);
+  x1 = clamp(x1, x0, root.x + root.w); y1 = clamp(y1, y0, root.y + root.h);
+  var w = x1 - x0, h = y1 - y0;
+  return (w > 0 && h > 0) ? { x: x0, y: y0, w: w, h: h } : null;
+}
+
+// An SVG logo, trimmed to its measured content box, as a data URL (or the
+// original url when already tight, unmeasurable, or on failure). `box` is the
+// measureContent result for this url; `img` the decoded bitmap it was measured
+// on. Cached per url like _cropCache.
+function getTrimmedSvg(url, img, box) {
+  if (_svgTrimCache[url] !== undefined) return Promise.resolve(_svgTrimCache[url]);
+  if (!box) return Promise.resolve(url);
+  // Already tight — same guard as the raster path: rewriting buys nothing.
+  if (box.fx <= 0.012 && box.fy <= 0.012 && box.fw >= 0.976 && box.fh >= 0.976) {
+    _svgTrimCache[url] = url; return Promise.resolve(url);
+  }
+  return getSvgText(url).then(function (text) {
+    var root = svgRootBox(text);
+    var iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
+    var content = root && iw && ih ? svgContentBox(box, root, iw, ih) : null;
+    if (!content) { _svgTrimCache[url] = url; return url; }
+    var m = /<svg\b[^>]*>/i.exec(text);
+    var tag = m[0];
+    var vbVal = f2(content.x) + ' ' + f2(content.y) + ' ' + f2(content.w) + ' ' + f2(content.h);
+    // width/height go too: left in place they would fight the new viewBox's
+    // aspect and letterbox the margins straight back in.
+    var newTag = tag
+      .replace(/\s(width|height)\s*=\s*"[^"]*"/gi, '')
+      .replace(/\s(width|height)\s*=\s*'[^']*'/gi, '');
+    newTag = /\bviewBox\s*=/i.test(newTag)
+      ? newTag.replace(/\bviewBox\s*=\s*"[^"]*"/i, 'viewBox="' + vbVal + '"')
+              .replace(/\bviewBox\s*=\s*'[^']*'/i, 'viewBox="' + vbVal + '"')
+      : newTag.replace(/<svg\b/i, '<svg viewBox="' + vbVal + '"');
+    var out = 'data:image/svg+xml;charset=utf-8,'
+      + encodeURIComponent(text.slice(0, m.index) + newTag + text.slice(m.index + tag.length));
+    _svgTrimCache[url] = out;
+    return out;
+  }).catch(function () { _svgTrimCache[url] = url; return url; });
 }
 
 // ── raster → vector tracing ──────────────────────────────────────────────────
@@ -461,7 +631,31 @@ function binarize(img, cols, rows, cutoff, invert, bgOpaque, bg) {
     var dark = lum[i] < cutoff;             // ink where darker than the cut-off
     mask[i] = (invert ? !dark : dark) ? 1 : 0;
   }
-  return mask;
+  return despeckle(mask, cols, rows);
+}
+
+// One 3×3 majority pass over the 1-bit mask: an isolated ink cell (≤1 ink
+// neighbour) is noise from JPEG artefacts / dithering and is cleared; a pinhole
+// (≥7 ink neighbours) is filled. Slide-screenshot logos arrive full of exactly
+// this salt-and-pepper, and beyond the specks themselves it starves the contour
+// tracer of the corner-touching junctions that chain into tangled rings.
+function despeckle(mask, cols, rows) {
+  var out = new Uint8Array(mask);
+  for (var y = 0; y < rows; y++) {
+    for (var x = 0; x < cols; x++) {
+      var i = y * cols + x, n = 0;
+      for (var dy = -1; dy <= 1; dy++) {
+        for (var dx = -1; dx <= 1; dx++) {
+          if (!dx && !dy) continue;
+          var xx = x + dx, yy = y + dy;
+          if (xx >= 0 && yy >= 0 && xx < cols && yy < rows && mask[yy * cols + xx]) n++;
+        }
+      }
+      if (mask[i] && n <= 1) out[i] = 0;
+      else if (!mask[i] && n >= 7) out[i] = 1;
+    }
+  }
+  return out;
 }
 
 // Follow every ink/non-ink boundary into closed loops of integer grid corners.
@@ -487,10 +681,30 @@ function traceContours(mask, cols, rows) {
       if (!ink(cx + 1, cy)) add(cx + 1, cy + 1, cx + 1, cy);    // right
     }
   }
-  function pop(fromKey) {
+  // Every edge keeps ink on its LEFT (y-down coords). At a checkerboard corner —
+  // two ink cells touching diagonally — FOUR edges meet at one point, and taking
+  // an arbitrary continuation chains the two distinct rings into a self-crossing
+  // figure-eight that fills as slivers. Preferring the sharpest LEFT turn
+  // relative to the incoming direction hugs the ink region, so each ring closes
+  // on itself and the two touching shapes come out as two clean rings.
+  function pop(fromKey, inDx, inDy) {
     var a = edges.get(fromKey);
     if (!a || !a.length) return null;
-    var to = a.pop();
+    var pick = a.length - 1;
+    if (a.length > 1 && (inDx || inDy)) {
+      var f = fromKey.split(','), fx = +f[0], fy = +f[1], best = -Infinity;
+      for (var i = 0; i < a.length; i++) {
+        var t = a[i].split(','), dx = +t[0] - fx, dy = +t[1] - fy;
+        // Score turns leftmost-first. With y-down coords and ink on the left,
+        // the left-hand side of (dx,dy) is (dy,-dx), so a LEFT turn has
+        // cross = inDx*dy - inDy*dx < 0 (single-cell walk: west→south = -1).
+        // Straight beats right; a U-turn scores worst.
+        var cross = inDx * dy - inDy * dx, dot = inDx * dx + inDy * dy;
+        var score = cross < 0 ? 2 : (cross === 0 ? (dot > 0 ? 1 : -2) : 0);
+        if (score > best) { best = score; pick = i; }
+      }
+    }
+    var to = a.splice(pick, 1)[0];
     if (!a.length) edges.delete(fromKey);
     return to;
   }
@@ -498,13 +712,16 @@ function traceContours(mask, cols, rows) {
   for (var ki = 0; ki < keys.length; ki++) {
     var startKey = keys[ki];
     while (edges.has(startKey)) {
-      var loop = [], cur = startKey, steps = 0, closed = false;
+      var loop = [], cur = startKey, steps = 0, closed = false, pdx = 0, pdy = 0;
       while (cur && steps++ < maxSteps) {
         var c = cur.split(',');
         loop.push({ x: +c[0], y: +c[1] });
-        var nxt = pop(cur);
-        if (nxt === startKey) { closed = true; break; }   // ring closed
+        var nxt = pop(cur, pdx, pdy);
         if (!nxt) break;                                  // dead-end: drop this chain
+        var nc = nxt.split(',');
+        pdx = +nc[0] - loop[loop.length - 1].x;
+        pdy = +nc[1] - loop[loop.length - 1].y;
+        if (nxt === startKey) { closed = true; break; }   // ring closed
         cur = nxt;
       }
       if (closed && loop.length >= 3) loops.push(loop);   // only keep proper rings
@@ -598,18 +815,29 @@ function ringPath(pts, cornerCos) {
 function traceLogo(url, img, detail, cutoff, invert, eps, cornerCos) {
   var iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
   if (!iw || !ih) return null;
-  // Sampling grid keeps the logo's own aspect, longest edge = detail.
+  // Sampling grid keeps the logo's own aspect. Longest edge = Detail as a FLOOR,
+  // then supersampled up towards 2× the source's own resolution (capped): the
+  // smoothing-interpolated resample puts real gradients under the threshold, so
+  // the traced boundary lands between source pixels instead of on them. Detail
+  // stays the coarseness the user asked for — see the eps rescale below.
+  var edge = Math.max(detail, Math.min(TRACE_SUPERSAMPLE * Math.max(iw, ih), TRACE_MAX_EDGE));
   var cols, rows;
-  if (iw >= ih) { cols = detail; rows = Math.max(1, Math.round(detail * ih / iw)); }
-  else { rows = detail; cols = Math.max(1, Math.round(detail * iw / ih)); }
+  if (iw >= ih) { cols = edge; rows = Math.max(1, Math.round(edge * ih / iw)); }
+  else { rows = edge; cols = Math.max(1, Math.round(edge * iw / ih)); }
   if (cols * rows > MAX_CELLS_PER_LOGO) {
     var k = Math.sqrt(MAX_CELLS_PER_LOGO / (cols * rows));
     cols = Math.max(1, Math.floor(cols * k));
     rows = Math.max(1, Math.floor(rows * k));
   }
+  // eps is authored in Detail-grid pixels; the supersampled grid is finer, so
+  // scale it up with the grid — but by the SQUARE ROOT, capped at 2×. A linear
+  // scale at a low Detail (grid 800 over detail 80 → 10×) inflates eps past the
+  // letterforms themselves and Douglas–Peucker collapses every ring to slivers;
+  // the softened scale keeps Smoothing meaningful without ever destroying shapes.
+  var epsEff = eps * Math.min(2, Math.sqrt(Math.max(cols, rows) / detail));
 
   var key = url + '|' + cols + 'x' + rows + '|' + cutoff + '|' + (invert ? 1 : 0)
-    + '|' + f2(eps) + '|' + f2(cornerCos);
+    + '|' + f2(epsEff) + '|' + f2(cornerCos);
   if (_traceCache[key]) return _traceCache[key];
 
   // Drop the background (transparent, or a flat opaque tile) so it never traces as a
@@ -623,7 +851,7 @@ function traceLogo(url, img, detail, cutoff, invert, eps, cornerCos) {
   var minArea = Math.max(0.6, cols / 200 * 1.5);
   var d = '';
   for (var li = 0; li < loops.length; li++) {
-    var simp = simplifyClosed(loops[li], eps);
+    var simp = simplifyClosed(loops[li], epsEff);
     if (simp.length < 3 || Math.abs(polyArea(simp)) < minArea) continue;
     d += ringPath(simp, cornerCos);
   }
@@ -641,7 +869,12 @@ function pruneCaches(activeUrls) {
   Object.keys(_imgCache).forEach(function (u) { if (!keep[u]) delete _imgCache[u]; });
   Object.keys(_boxCache).forEach(function (u) { if (!keep[u]) delete _boxCache[u]; });
   Object.keys(_svgCache).forEach(function (u) { if (!keep[u]) delete _svgCache[u]; });
-  Object.keys(_cropCache).forEach(function (u) { if (!keep[u]) delete _cropCache[u]; });
+  Object.keys(_svgTextCache).forEach(function (u) { if (!keep[u]) delete _svgTextCache[u]; });
+  Object.keys(_svgTrimCache).forEach(function (u) { if (!keep[u]) delete _svgTrimCache[u]; });
+  Object.keys(_cropCache).forEach(function (k) {
+    var u = k.slice(0, k.lastIndexOf('|k'));      // keys are "<url>|k0" / "<url>|k1"
+    if (!keep[u]) delete _cropCache[k];
+  });
   Object.keys(_traceCache).forEach(function (k) {
     var u = k.slice(0, k.indexOf('|'));
     if (!keep[u]) delete _traceCache[k];
@@ -660,7 +893,7 @@ function traceParams(threshold, invert, detail, smoothing) {
   return {
     cutoff: clamp(num(threshold, 55), 1, 99) / 100 * 255,
     invert: Boolean(invert),
-    detail: clamp(Math.round(num(detail, 200)), 24, 360),
+    detail: clamp(Math.round(num(detail, 200)), 24, 600),
     eps: 0.4 + sm * 1.8,
     cornerCos: 0.92 - sm * 1.25,
   };
@@ -685,12 +918,21 @@ async function buildVectorLogo(it, ink, globalTP) {
   if (it.isSvg) {
     var svg = await getSvg(it.url).catch(function () { return null; });
     if (!svg || !svg.inner) return '';
-    // Use the SVG's own viewBox — the SAME bounds its full-colour <img> presents (an
-    // SVG can't be canvas-cropped without rasterising, so its image path keeps the
-    // full viewBox). Matching it here means toggling "Render as vector" only swaps the
-    // paint, never the size. SVG viewBoxes are authored tight, so balancing still reads
-    // each mark fairly; `color` carries the ink so stroke="currentColor" line art inks.
-    return wrap(svg.vbx, svg.vby, svg.vbw, svg.vbh,
+    // Match the bounds the full-colour <img> presents so toggling "Render as
+    // vector" only swaps the paint, never the size: with trimming on that's the
+    // measured content box mapped into viewBox units (the same box the trimmed
+    // <img>'s rewritten viewBox frames), with it off the authored viewBox.
+    // `color` carries the ink so stroke="currentColor" line art inks.
+    var vb = { x: svg.vbx, y: svg.vby, w: svg.vbw, h: svg.vbh };
+    if (it.trim) {
+      var simg = await getImage(it.url).catch(function () { return null; });
+      var sbox = simg ? measureContent(it.url, simg) : null;
+      var siw = simg ? (simg.naturalWidth || simg.width) : 0;
+      var sih = simg ? (simg.naturalHeight || simg.height) : 0;
+      var tight = sbox && siw && sih ? svgContentBox(sbox, vb, siw, sih) : null;
+      if (tight) vb = tight;
+    }
+    return wrap(vb.x, vb.y, vb.w, vb.h,
       '<g fill="' + esc(ink) + '" color="' + esc(ink) + '">' + svg.inner + '</g>');
   }
 
@@ -698,14 +940,27 @@ async function buildVectorLogo(it, ink, globalTP) {
   if (!img) return '';
   var box = measureContent(it.url, img) || { fx: 0, fy: 0, fw: 1, fh: 1, contentLum: 0 };
   var tp = it.tune ? traceParams(it.oThreshold, it.oInvert, it.oDetail, it.oSmoothing) : globalTP;
-  // Auto-invert a logo whose artwork is, on average, lighter than the cut-off (a white
-  // / reversed mark) so it doesn't trace to nothing — unless it's tuned or global
-  // Invert is already on.
-  var inv = tp.invert || (!it.tune && box.contentLum != null && box.contentLum > tp.cutoff);
+  // Per-logo invert. A tuned logo obeys its own switch exactly. Everyone else is
+  // auto-detected from mean artwork brightness — a white/reversed mark inverts, a
+  // dark mark doesn't — and when that reading is CONFIDENT (well clear of the
+  // cut-off) it beats the wall-wide Invert: one global toggle must not silently
+  // hollow out every dark-on-white logo in a mixed set (each traces to just its
+  // antialiasing halo). The global switch decides only the ambiguous band.
+  var inv;
+  if (it.tune) {
+    inv = tp.invert;
+  } else {
+    var auto = box.contentLum != null && box.contentLum > tp.cutoff;
+    var confident = box.contentLum != null && Math.abs(box.contentLum - tp.cutoff) > 25;
+    inv = confident ? auto : tp.invert;
+  }
   var tr = traceLogo(it.url, img, tp.detail, tp.cutoff, inv, tp.eps, tp.cornerCos);
   if (!tr || !tr.d) return '';
-  var bx = box.fx * tr.cols, by = box.fy * tr.rows;
-  var bw = Math.max(1e-3, box.fw * tr.cols), bh = Math.max(1e-3, box.fh * tr.rows);
+  // Frame the content box when trimming (matching the cropped <img>), the whole
+  // grid when not (matching the untrimmed <img>).
+  var bx = it.trim ? box.fx * tr.cols : 0, by = it.trim ? box.fy * tr.rows : 0;
+  var bw = Math.max(1e-3, (it.trim ? box.fw : 1) * tr.cols);
+  var bh = Math.max(1e-3, (it.trim ? box.fh : 1) * tr.rows);
   // Ink on the path itself so the PDF path-walker (which reads the fill attribute) inks
   // it too rather than falling back to black.
   return wrap(bx, by, bw, bh, '<path fill="' + esc(ink) + '" fill-rule="evenodd" d="' + tr.d + '"/>');
@@ -716,7 +971,7 @@ async function buildVectorLogo(it, ink, globalTP) {
 // optical-weight factor — heavier logos shrink, lighter ones grow — normalised
 // around the set's geometric-mean weight, so the wall reads as evenly weighted.
 // The block's own Size % rides on top as a manual nudge.
-async function buildItems(inputs, balance) {
+async function buildItems(inputs, balance, trim, vectorizeAll) {
   var logos = Array.isArray(inputs.logos) ? inputs.logos : [];
   var items = logos.map(function (b, i) {
     var ref = b && b.logo;
@@ -728,7 +983,9 @@ async function buildItems(inputs, balance) {
       displayUrl: url,                          // full-colour <img> src; content-trimmed below
       name: ref && ref.meta && ref.meta.name ? ref.meta.name : '',
       isSvg: !!(ref && (ref.type === 'vector' || ref.format === 'svg')),
-      vectorize: !!(b && b.vectorize),          // per-logo "Render as vector"
+      // "Render as vector": the wall-wide toggle, or this logo's own.
+      vectorize: vectorizeAll || !!(b && b.vectorize),
+      trim: trim,                               // margins trimmed (wall-wide toggle)
       opacity: clamp(num(b && b.opacity, 1), 0, 1),
       filter: (b && b.filter) || 'none',
       scale: s,
@@ -743,19 +1000,22 @@ async function buildItems(inputs, balance) {
     };
   });
 
-  // Trim each full-colour raster logo to its content box (margins removed) so an <img>
-  // fills its cell exactly like the vector path does — toggling "Render as vector" no
-  // longer changes the apparent size. Needs a browser canvas; headless keeps the
-  // original src. SVG logos can't be canvas-cropped without rasterising, so they keep
-  // their viewBox in BOTH modes (so toggling an SVG is also jump-free). Trade-off: an
-  // SVG authored with generous clear-space padding reads a touch smaller than a trimmed
-  // raster beside it — fine for the usual tight viewBoxes; nudge its Size % if needed.
-  if (canRaster()) {
+  // Trim every logo to its content box (margins removed) so each <img> fills its
+  // cell by its ARTWORK, not by however generously the file was cropped — and so
+  // toggling "Render as vector" never changes the apparent size. A raster is
+  // canvas-cropped; an SVG gets its root viewBox rewritten to the same measured
+  // box (no rasterising, no tracing — still vector, still full colour). Both need
+  // a browser canvas for the measurement; headless keeps the original src.
+  if (trim && canRaster()) {
+    var knockout = inputs.knockout !== false;   // white-box removal, default on
     await Promise.all(items.map(async function (it) {
-      if (!it.url || it.isSvg) return;
+      if (!it.url) return;
       var img = await getImage(it.url).catch(function () { return null; });
       if (!img) return;
-      it.displayUrl = getTrimmedRaster(it.url, img, measureContent(it.url, img));
+      var box = measureContent(it.url, img);
+      it.displayUrl = it.isSvg
+        ? await getTrimmedSvg(it.url, img, box)
+        : getTrimmedRaster(it.url, img, box, knockout);
     }));
   }
 
@@ -785,8 +1045,13 @@ async function buildItems(inputs, balance) {
         dens.sort(function (a, b) { return a - b; });
         var mid = dens.length >> 1;
         var refDen = dens.length % 2 ? dens[mid] : (dens[mid - 1] + dens[mid]) / 2;
+        // Exponent 0.35, not 0.5: 0.5 equalises ink AREA exactly, which blows a
+        // sparse wordmark up until it spills its cell (the eye already reads text
+        // bigger than its ink). 0.35 sits between equal-area and equal-box —
+        // sparse marks still grow, dense tiles still shrink, nobody dominates.
+        // The clamp keeps a pathological measurement inside the cell + gap.
         withUrl.forEach(function (it) {
-          factors[it.index] = it._den ? clamp(Math.sqrt(refDen / it._den), 0.55, 1.7) : 1;
+          factors[it.index] = it._den ? clamp(Math.pow(refDen / it._den, 0.35), 0.6, 1.5) : 1;
         });
       }
       withUrl.forEach(function (it) { delete it._den; });
@@ -802,6 +1067,32 @@ async function buildItems(inputs, balance) {
   return items;
 }
 
+// ── step & repeat: tile the set into a backdrop ──────────────────────────────
+// The press-wall treatment: the whole logo set cycles to fill rows × columns.
+// 'grid' stacks rows squarely; 'brick' offsets alternate rows by half a cell
+// (offset rows carry one extra cell so both cropped edges stay filled); 'checker'
+// leaves alternating cells empty so the logos stagger diagonally with air between
+// them. Cells reference the SAME item objects buildItems produced, so balance,
+// presence, trims and any per-logo vector ink all apply to every copy for free.
+// The template renders rows with real flex layout and margin offsets — never CSS
+// transforms, which the SVG/PDF export walker doesn't honour — so a wall printed
+// on a bus or dropped behind a press photo exports exactly as previewed.
+function buildRepeatRows(items, cols, rows, mode) {
+  var out = [], k = 0;
+  for (var r = 0; r < rows; r++) {
+    var offset = mode === 'brick' && (r % 2) === 1;
+    var count = cols + (offset ? 1 : 0);
+    var cells = [];
+    for (var c = 0; c < count; c++) {
+      if (mode === 'checker' && ((r + c) % 2) === 1) { cells.push({ spacer: true }); continue; }
+      cells.push(items[k % items.length]);
+      k++;
+    }
+    out.push({ offset: offset, cells: cells });
+  }
+  return out;
+}
+
 // ── lifecycle ────────────────────────────────────────────────────────────────
 
 async function compute(model) {
@@ -809,10 +1100,13 @@ async function compute(model) {
   _transparent = Boolean(inputs.transparentBg);
   _bg = color(inputs.background, '#ffffff');
   var balance = inputs.balance !== false;         // optical-weight balancing, default on
+  var trim = inputs.trim !== false;               // content-box margin trim, default on
+  var vectorizeAll = inputs.vectorizeAll === true; // wall-wide "Render all as vector"
 
   // One render list for both modes — the template lays them out in a single CSS grid,
-  // each cell an <img> (raster) or a one-ink inline <svg> (per-logo "Render as vector").
-  var items = await buildItems(inputs, balance);
+  // each cell an <img> (raster) or a one-ink inline <svg> ("Render as vector",
+  // wall-wide or per logo).
+  var items = await buildItems(inputs, balance, trim, vectorizeAll);
 
   // Build the inline SVG for each vectorised logo. Pixel tracing needs a real browser
   // canvas; in a headless shell (or on failure) the logo keeps its <img>.
@@ -830,7 +1124,20 @@ async function compute(model) {
   // Only blocks with an image occupy a cell (each keeps its original index for
   // canvas click-to-focus), so an imageless block never leaves a gap and both modes
   // lay out the same.
-  return { wallItems: items.filter(function (it) { return it.url; }) };
+  var visible = items.filter(function (it) { return it.url; });
+
+  // Step & repeat: with a mode selected and at least one logo, hand the template
+  // rows instead of the single grid. wallRows must be explicitly null when off —
+  // extras persist between runs, so leaving it undefined would strand a stale
+  // backdrop after the user switches Repeat back off.
+  var mode = typeof inputs.repeat === 'string' ? inputs.repeat : 'off';
+  var doRepeat = (mode === 'grid' || mode === 'brick' || mode === 'checker') && visible.length > 0;
+  var cols = clamp(Math.round(num(inputs.columns, 4)), 1, 10);
+  var rows = clamp(Math.round(num(inputs.repeatRows, 6)), 2, 16);
+  return {
+    wallItems: visible,
+    wallRows: doRepeat ? buildRepeatRows(visible, cols, rows, mode) : null,
+  };
 }
 
 function onInit(ctx) { return compute(ctx.model); }

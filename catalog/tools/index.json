@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-14T19:51:14.582Z",
+  "generatedAt": "2026-08-15T13:28:27.030Z",
   "tools": [
     {
       "id": "color-block",
@@ -454,7 +454,7 @@
       "id": "meeting-planner",
       "name": "Meeting Planner",
       "description": "Plan a global meeting and see the time for every teammate's timezone.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "official",
       "category": "event",
       "tags": [
@@ -924,138 +924,6 @@
           "name": "二维码生成器",
           "description": "为任意网址生成二维码，颜色和样式完全可控。",
           "blurb": "任意品牌色都能生成二维码"
-        }
-      }
-    },
-    {
-      "id": "daily-card",
-      "name": "Day Brief",
-      "description": "Quote of the day with live weather, time and a map for any city.",
-      "version": "1.0.0",
-      "status": "official",
-      "category": "everyone",
-      "tags": [
-        "quote",
-        "weather",
-        "daily",
-        "inspiration"
-      ],
-      "formats": [
-        "png",
-        "jpeg",
-        "svg",
-        "pdf",
-        "pptx"
-      ],
-      "width": 1080,
-      "height": 1080,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v2\" /><path d=\"m4.93 4.93 1.41 1.41\" /><path d=\"M20 12h2\" /><path d=\"m19.07 4.93-1.41 1.41\" /><path d=\"M15.947 12.65a4 4 0 0 0-5.925-4.128\" /><path d=\"M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z\" /></svg>",
-      "preview": "/catalog/previews/daily-card.svg",
-      "i18n": {
-        "ar": {
-          "name": "الموجز اليومي",
-          "description": "اقتباس اليوم مع الطقس المباشر والوقت وخريطة لأي مدينة."
-        },
-        "bg": {
-          "name": "Дневен обзор",
-          "description": "Цитат на деня с времето на живо, часа и карта за всеки град."
-        },
-        "bn": {
-          "name": "ডে ব্রিফ",
-          "description": "দিনের উক্তি, সঙ্গে যেকোনো শহরের লাইভ আবহাওয়া, সময় ও মানচিত্র।"
-        },
-        "cs": {
-          "name": "Denní přehled",
-          "description": "Citát dne s aktuálním počasím, časem a mapou libovolného města."
-        },
-        "de": {
-          "name": "Tagesüberblick",
-          "description": "Tageszitat mit aktuellem Wetter, Uhrzeit und einer Karte für jede Stadt."
-        },
-        "es": {
-          "name": "Resumen del día",
-          "description": "Cita del día con clima, hora y mapa en vivo de cualquier ciudad."
-        },
-        "fr": {
-          "name": "Résumé du jour",
-          "description": "Citation du jour avec météo, heure et carte en direct pour n'importe quelle ville."
-        },
-        "hi": {
-          "name": "डे ब्रीफ़",
-          "description": "आज का उद्धरण, साथ में किसी भी शहर का लाइव मौसम, समय और नक्शा।"
-        },
-        "id": {
-          "name": "Ringkasan Harian",
-          "description": "Kutipan hari ini lengkap dengan cuaca langsung, waktu, dan peta untuk kota mana pun."
-        },
-        "it": {
-          "name": "Riepilogo del giorno",
-          "description": "Citazione del giorno con meteo in tempo reale, orario e una mappa per qualsiasi città."
-        },
-        "ja": {
-          "name": "デイリーブリーフ",
-          "description": "今日の名言と、任意の都市のリアルタイムの天気・時刻・地図です。"
-        },
-        "ko": {
-          "name": "데일리 브리핑",
-          "description": "오늘의 명언과 도시별 실시간 날씨, 시각, 지도를 함께 보여줘요."
-        },
-        "ms": {
-          "name": "Ringkasan Harian",
-          "description": "Petikan harian dengan cuaca, masa dan peta langsung bagi mana-mana bandar."
-        },
-        "nl": {
-          "name": "Dagoverzicht",
-          "description": "Citaat van de dag met actueel weer, tijd en een kaart van elke stad."
-        },
-        "no": {
-          "name": "Dagsoversikt",
-          "description": "Dagens sitat med aktuelt vær, klokkeslett og et kart for valgfri by."
-        },
-        "pl": {
-          "name": "Podsumowanie dnia",
-          "description": "Cytat dnia z aktualną pogodą, czasem i mapą dla każdego miasta."
-        },
-        "pt": {
-          "name": "Resumo do Dia",
-          "description": "Frase do dia com clima, hora e mapa em tempo real de qualquer cidade."
-        },
-        "ro": {
-          "name": "Rezumatul zilei",
-          "description": "Citatul zilei, cu vreme live, ora și o hartă pentru orice oraș."
-        },
-        "sv": {
-          "name": "Dagsöversikt",
-          "description": "Dagens citat med aktuellt väder, tid och en karta för valfri stad."
-        },
-        "tl": {
-          "name": "Buod ng Araw",
-          "description": "Quote ng araw kasama ang live na weather, oras, at mapa ng kahit anong city."
-        },
-        "tr": {
-          "name": "Günlük Özet",
-          "description": "Herhangi bir şehir için canlı hava durumu, saat ve haritayla günün sözü."
-        },
-        "uk": {
-          "name": "Огляд дня",
-          "description": "Цитата дня з поточною погодою, часом і картою для будь-якого міста."
-        },
-        "ur": {
-          "name": "روزانہ خلاصہ",
-          "description": "کسی بھی شہر کے لیے لائیو موسم، وقت اور نقشے کے ساتھ روز کا اقتباس۔"
-        },
-        "vi": {
-          "name": "Bản tin trong ngày",
-          "description": "Câu trích dẫn trong ngày cùng thời tiết, giờ và bản đồ trực tiếp cho bất kỳ thành phố nào."
-        },
-        "zh-hant": {
-          "name": "每日簡報",
-          "description": "每日金句,附任何城市的即時天氣、時間與地圖。"
-        },
-        "zh": {
-          "name": "每日简报",
-          "description": "每日金句,附任意城市的实时天气、时间和地图。"
         }
       }
     },
@@ -1630,141 +1498,6 @@
       }
     },
     {
-      "id": "bag-video",
-      "name": "Bag Video",
-      "description": "An animated, on-brand video for bag visuals.",
-      "version": "0.5.0",
-      "status": "official",
-      "category": "designer",
-      "tags": [
-        "video",
-        "bag",
-        "animation"
-      ],
-      "formats": [
-        "webm",
-        "mp4",
-        "gif",
-        "apng",
-        "png",
-        "svg",
-        "svg-anim",
-        "html",
-        "pdf"
-      ],
-      "width": 800,
-      "height": 800,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /><path d=\"M7 3v18\" /><path d=\"M3 7.5h4\" /><path d=\"M3 12h18\" /><path d=\"M3 16.5h4\" /><path d=\"M17 3v18\" /><path d=\"M17 7.5h4\" /><path d=\"M17 16.5h4\" /></svg>",
-      "preview": "/tools/bag-video/card.svg",
-      "i18n": {
-        "ar": {
-          "name": "فيديو الحقيبة",
-          "description": "فيديو متحرك متوافق مع الهوية لتصاميم الحقائب."
-        },
-        "bg": {
-          "name": "Видео за чанта",
-          "description": "Анимирано видео в стила на бранда за визии върху чанти."
-        },
-        "bn": {
-          "name": "ব্যাগ ভিডিও",
-          "description": "ব্যাগ ভিজ্যুয়ালের জন্য একটি অ্যানিমেটেড, অন-ব্র্যান্ড ভিডিও।"
-        },
-        "cs": {
-          "name": "Video tašky",
-          "description": "Animované, značkové video pro vizuály tašky."
-        },
-        "de": {
-          "name": "Taschenvideo",
-          "description": "Ein animiertes, markenkonformes Video für Taschenmotive."
-        },
-        "es": {
-          "name": "Video de bolsa",
-          "description": "Un video animado, acorde a tu marca, para imágenes de bolsas."
-        },
-        "fr": {
-          "name": "Vidéo de sac",
-          "description": "Une vidéo animée à l'image de ta marque pour des visuels de sac."
-        },
-        "hi": {
-          "name": "बैग वीडियो",
-          "description": "बैग विज़ुअल के लिए एक ऐनिमेटेड, ऑन-ब्रांड वीडियो।"
-        },
-        "id": {
-          "name": "Video Tas",
-          "description": "Video animasi yang sesuai brand untuk visual tas."
-        },
-        "it": {
-          "name": "Video Borsa",
-          "description": "Un video animato e coerente con il brand per i visual delle borse."
-        },
-        "ja": {
-          "name": "バッグ動画",
-          "description": "バッグのビジュアル向けにブランドに合わせたアニメーション動画です。"
-        },
-        "ko": {
-          "name": "가방 비디오",
-          "description": "가방 비주얼을 위한 브랜드에 맞춘 애니메이션 동영상입니다."
-        },
-        "ms": {
-          "name": "Video Beg",
-          "description": "Video animasi bersesuaian jenama untuk visual beg."
-        },
-        "nl": {
-          "name": "Tas-video",
-          "description": "Een geanimeerde video in jouw huisstijl voor tasvisuals."
-        },
-        "no": {
-          "name": "Veskevideo",
-          "description": "En animert, merkevaretilpasset video for veskemotiver."
-        },
-        "pl": {
-          "name": "Wideo z torbą",
-          "description": "Animowane, zgodne z marką wideo do wizualizacji na torbach."
-        },
-        "pt": {
-          "name": "Vídeo de Bolsa",
-          "description": "Um vídeo animado e alinhado à marca para visuais de bolsa."
-        },
-        "ro": {
-          "name": "Video geantă",
-          "description": "Un videoclip animat, aliniat brandului, pentru vizualuri de geantă."
-        },
-        "sv": {
-          "name": "Väskvideo",
-          "description": "En animerad video i varumärkets stil för väskbilder."
-        },
-        "tl": {
-          "name": "Video ng Bag",
-          "description": "Animated na video, naaayon sa brand, para sa visual ng bag."
-        },
-        "tr": {
-          "name": "Çanta Videosu",
-          "description": "Çanta görselleri için markaya uygun, animasyonlu bir video."
-        },
-        "uk": {
-          "name": "Bag Video",
-          "description": "Анімоване, фірмове відео для візуалів на сумках."
-        },
-        "ur": {
-          "name": "بیگ ویڈیو",
-          "description": "بیگ ویژولز کے لیے ایک متحرک، برانڈ کے مطابق ویڈیو۔"
-        },
-        "vi": {
-          "name": "Video túi xách",
-          "description": "Video hoạt họa theo đúng thương hiệu cho hình ảnh túi xách."
-        },
-        "zh-hant": {
-          "name": "包包影片",
-          "description": "為包包視覺打造的動畫品牌影片。"
-        },
-        "zh": {
-          "name": "包袋视频",
-          "description": "为包袋视觉打造的动画品牌视频。"
-        }
-      }
-    },
-    {
       "id": "color-palette",
       "name": "Color Picker",
       "description": "A handy color picker for the SUSE brand palette — click any swatch to copy it.",
@@ -2023,7 +1756,7 @@
       "name": "URL Screenshot",
       "description": "Any web page, at any scroll-depth, with custom CSS",
       "version": "0.1.0",
-      "status": "experimental",
+      "status": "official",
       "category": "utility",
       "capabilities": [
         "capture"
@@ -3596,7 +3329,7 @@
       "id": "logo-wall",
       "name": "Logo Lockup: Grid (NASCAR)",
       "description": "Arrange a pile of logos into a clean, even sponsor grid — the “NASCAR” wall.",
-      "version": "1.1.0",
+      "version": "1.3.0",
       "status": "experimental",
       "category": "designer",
       "tags": [

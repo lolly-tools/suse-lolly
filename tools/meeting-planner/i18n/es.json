@@ -8,6 +8,7 @@
   "inputs.city.label": "Ciudad anfitriona",
   "inputs.city.placeholder": "p. ej. Núremberg",
   "inputs.city.help": "La ciudad donde se origina la reunión: define la zona horaria de la hora que aparece abajo.",
+  "inputs.city.notice": "Los nombres de ciudades se consultan en open-meteo.com para encontrar su zona horaria. Solo se envía el nombre y cada respuesta se guarda en tu dispositivo para usarla sin conexión.",
   "inputs.meetingTime.label": "Fecha y hora de la reunión",
   "inputs.meetingTime.help": "Fecha y hora local en la ciudad anfitriona. Se ignora mientras el reloj en vivo está activado.",
   "inputs.liveClock.label": "Reloj en vivo",

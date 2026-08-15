@@ -8,6 +8,7 @@
   "inputs.city.label": "Ville hôte",
   "inputs.city.placeholder": "ex. Nuremberg",
   "inputs.city.help": "La ville d'où part la réunion — définit le fuseau horaire de l'heure ci-dessous.",
+  "inputs.city.notice": "Les noms de villes sont recherchés sur open-meteo.com pour trouver leur fuseau horaire. Seul le nom est envoyé et chaque réponse reste sur votre appareil pour un usage hors ligne.",
   "inputs.meetingTime.label": "Date et heure de la réunion",
   "inputs.meetingTime.help": "Date et heure locales dans la ville hôte. Ignoré tant que l'horloge en direct est activée.",
   "inputs.liveClock.label": "Horloge en direct",

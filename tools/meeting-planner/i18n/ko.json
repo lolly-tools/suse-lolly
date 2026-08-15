@@ -8,6 +8,7 @@
   "inputs.city.label": "개최 도시",
   "inputs.city.placeholder": "예: 뉘른베르크",
   "inputs.city.help": "회의가 열리는 도시예요 — 아래에 표시되는 시각의 시간대를 정해요.",
+  "inputs.city.notice": "도시 이름은 시간대를 확인하기 위해 open-meteo.com에서 조회됩니다. 이름만 전송되며 각 결과는 오프라인 사용을 위해 기기에 저장됩니다.",
   "inputs.meetingTime.label": "회의 날짜 및 시각",
   "inputs.meetingTime.help": "개최 도시의 현지 날짜와 시각이에요. 실시간 시계가 켜져 있으면 무시돼요.",
   "inputs.liveClock.label": "실시간 시계",

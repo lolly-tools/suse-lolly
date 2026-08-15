@@ -29,6 +29,9 @@ function compute(model) {
     : '/tools/3d/assets/' + (inp.model || 'sample-1') + '.glb';
 
   var cam = (inp.camera && typeof inp.camera === 'object') ? inp.camera : {};
+  var rot = (inp.modelRotate && typeof inp.modelRotate === 'object') ? inp.modelRotate : {};
+  var mov = (inp.modelTranslate && typeof inp.modelTranslate === 'object') ? inp.modelTranslate : {};
+  var scl = (inp.modelScale && typeof inp.modelScale === 'object') ? inp.modelScale : {};
 
   var cfg = {
     modelUrl: modelUrl,
@@ -48,6 +51,17 @@ function compute(model) {
       tilt: num(cam.tilt, 12),
       zoom: num(cam.zoom, 1),
       pan: num(cam.pan, 0),
+    },
+    // Free-form model pose, applied about the model's visual centre. All-identity
+    // (0/0/0, 0/0/0, 1) reproduces the auto-framed render byte-for-byte.
+    transform: {
+      pitch: num(rot.pitch, 0),
+      yaw: num(rot.yaw, 0),
+      tilt: num(rot.tilt, 0),
+      tx: num(mov.x, 0),
+      ty: num(mov.y, 0),
+      tz: num(mov.z, 0),
+      scale: Math.max(0.01, num(scl.scale, 1)),
     },
     cameraMove: inp.cameraMove || 'orbit',
     duration: Math.max(0.5, num(inp.duration, 5)),

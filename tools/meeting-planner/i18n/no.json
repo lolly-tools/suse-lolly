@@ -8,6 +8,7 @@
   "inputs.city.label": "Vertsby",
   "inputs.city.placeholder": "f.eks. Nürnberg",
   "inputs.city.help": "Byen møtet holdes i — bestemmer tidssonen for klokkeslettet nedenfor.",
+  "inputs.city.notice": "Stedsnavn slås opp hos open-meteo.com for å finne tidssonen deres. Bare navnet sendes og hvert svar lagres på enheten din for frakoblet bruk.",
   "inputs.meetingTime.label": "Dato og klokkeslett for møtet",
   "inputs.meetingTime.help": "Lokal dato og klokkeslett i vertsbyen. Ignoreres når Sanntidsklokke er på.",
   "inputs.liveClock.label": "Sanntidsklokke",

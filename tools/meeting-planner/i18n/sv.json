@@ -8,6 +8,7 @@
   "inputs.city.label": "Värdstad",
   "inputs.city.placeholder": "t.ex. Nürnberg",
   "inputs.city.help": "Staden där mötet utgår från – bestämmer tidszonen för tiden nedan.",
+  "inputs.city.notice": "Ortnamn slås upp hos open-meteo.com för att hitta deras tidszon. Bara namnet skickas och varje svar sparas på din enhet för offlinebruk.",
   "inputs.meetingTime.label": "Mötesdatum och -tid",
   "inputs.meetingTime.help": "Lokalt datum och tid i värdstaden. Ignoreras när Live-klocka är på.",
   "inputs.liveClock.label": "Live-klocka",

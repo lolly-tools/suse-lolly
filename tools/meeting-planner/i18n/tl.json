@@ -8,6 +8,7 @@
   "inputs.city.label": "Lungsod ng host",
   "inputs.city.placeholder": "hal. Nuremberg",
   "inputs.city.help": "Ang lungsod kung saan nagmula ang meeting — nagtatakda ito ng time zone para sa oras sa ibaba.",
+  "inputs.city.notice": "Hinahanap ang mga pangalan ng lungsod sa open-meteo.com para malaman ang kanilang time zone. Pangalan lang ang ipinapadala at bawat sagot ay nananatili sa iyong device para magamit offline.",
   "inputs.meetingTime.label": "Petsa at oras ng meeting",
   "inputs.meetingTime.help": "Lokal na petsa at oras sa lungsod ng host. Hindi ito pinapansin habang naka-on ang Live na Orasan.",
   "inputs.liveClock.label": "Live na Orasan",

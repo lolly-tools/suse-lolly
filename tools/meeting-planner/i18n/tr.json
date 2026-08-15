@@ -8,6 +8,7 @@
   "inputs.city.label": "Ev sahibi şehir",
   "inputs.city.placeholder": "örn. Nürnberg",
   "inputs.city.help": "Toplantının başladığı şehir — aşağıdaki saat için saat dilimini belirler.",
+  "inputs.city.notice": "Şehir adları saat dilimini bulmak için open-meteo.com'da aranır. Yalnızca ad gönderilir ve her yanıt çevrimdışı kullanım için cihazınızda saklanır.",
   "inputs.meetingTime.label": "Toplantı tarihi ve saati",
   "inputs.meetingTime.help": "Ev sahibi şehirdeki yerel tarih ve saat. Canlı saat açıkken yok sayılır.",
   "inputs.liveClock.label": "Canlı saat",

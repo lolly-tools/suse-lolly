@@ -85,6 +85,41 @@
     },
 
     {
+      "id": "modelRotate",
+      "label": "Rotate model",
+      "section": "Transform",
+      "type": "vector",
+      "help": "Drag the canvas to orbit the model (⌘/Ctrl-drag rolls). Or set the angle here — degrees, about the model's centre, independent of the camera.",
+      "fields": [
+        { "id": "pitch", "label": "Pitch", "symbol": "°", "min": -180, "max": 180, "step": 1, "default": 0 },
+        { "id": "yaw", "label": "Yaw", "symbol": "°", "min": -180, "max": 180, "step": 1, "default": 0 },
+        { "id": "tilt", "label": "Tilt", "symbol": "°", "min": -180, "max": 180, "step": 1, "default": 0 }
+      ]
+    },
+    {
+      "id": "modelTranslate",
+      "label": "Move model",
+      "section": "Transform",
+      "type": "vector",
+      "help": "Shift-drag the canvas to move the model. Offset from centre in model widths (positive Y lifts it off the ground).",
+      "fields": [
+        { "id": "x", "label": "X", "symbol": "", "min": -2, "max": 2, "step": 0.05, "default": 0 },
+        { "id": "y", "label": "Y", "symbol": "", "min": -2, "max": 2, "step": 0.05, "default": 0 },
+        { "id": "z", "label": "Z", "symbol": "", "min": -2, "max": 2, "step": 0.05, "default": 0 }
+      ]
+    },
+    {
+      "id": "modelScale",
+      "label": "Scale model",
+      "section": "Transform",
+      "type": "vector",
+      "help": "Alt-drag the canvas to scale. Uniform size multiplier about the model's centre.",
+      "fields": [
+        { "id": "scale", "label": "Scale", "symbol": "×", "min": 0.1, "max": 4, "step": 0.05, "default": 1 }
+      ]
+    },
+
+    {
       "id": "cameraMove",
       "label": "Camera move",
       "section": "Animation",

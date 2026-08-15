@@ -1,5 +1,5 @@
 /* Org Chart — cards on an open canvas with connector lines that route between them.
-   Like Layout Studio, almost all per-box styling is computed in hooks.js and applied
+   Like Design, almost all per-box styling is computed in hooks.js and applied
    inline (so the same output renders headless in CLI/URL mode). These classes carry
    only the structural layout the inline styles build on. Auto-scoped to #tool-canvas. */
 

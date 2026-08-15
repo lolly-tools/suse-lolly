@@ -8,6 +8,7 @@
   "inputs.city.label": "Kota tuan rumah",
   "inputs.city.placeholder": "mis. Nuremberg",
   "inputs.city.help": "Kota tempat rapat berasal — menetapkan zona waktu untuk waktu di bawah.",
+  "inputs.city.notice": "Nama kota dicari di open-meteo.com untuk menemukan zona waktunya. Hanya nama yang dikirim dan setiap jawaban tersimpan di perangkat Anda untuk penggunaan offline.",
   "inputs.meetingTime.label": "Tanggal & waktu rapat",
   "inputs.meetingTime.help": "Tanggal dan waktu lokal di kota tuan rumah. Diabaikan saat Jam langsung aktif.",
   "inputs.liveClock.label": "Jam langsung",

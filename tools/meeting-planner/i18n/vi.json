@@ -7,6 +7,7 @@
   "inputs.city.label": "Thành phố tổ chức",
   "inputs.city.placeholder": "vd. Nuremberg",
   "inputs.city.help": "Thành phố nơi diễn ra cuộc họp — xác định múi giờ cho thời gian bên dưới.",
+  "inputs.city.notice": "Tên thành phố được tra cứu tại open-meteo.com để tìm múi giờ. Chỉ tên được gửi đi và mỗi kết quả được lưu trên thiết bị của bạn để dùng ngoại tuyến.",
   "inputs.meetingTime.label": "Ngày và giờ họp",
   "inputs.meetingTime.help": "Ngày giờ địa phương tại thành phố tổ chức. Bị bỏ qua khi bật Đồng hồ trực tiếp.",
   "inputs.liveClock.label": "Đồng hồ trực tiếp",

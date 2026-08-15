@@ -7,12 +7,12 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: var(--lw-pad, 48px);
+  padding: var(--lw-pad-y, 48px) var(--lw-pad-x, 48px);
   background: var(--lw-bg, #ffffff);
   display: grid;
   grid-template-columns: repeat(var(--lw-cols, 4), minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: var(--lw-gap, 32px);
+  gap: var(--lw-gap-y, 32px) var(--lw-gap-x, 32px);
   align-content: stretch;
 }
 
@@ -71,4 +71,42 @@
 .lw-vec {
   display: block;
   object-fit: contain;
+}
+
+/* Step & repeat (press-wall backdrop). Rows are real flex layout and the brick
+   offset is a real (negative) margin — never a CSS transform, which the SVG/PDF
+   export walker doesn't honour — so print/export matches the preview exactly.
+   The rows container clips at the content box: brick's half-cells crop cleanly
+   at the wall edge instead of bleeding into the padding. */
+.lw-wall--repeat {
+  display: block;
+}
+
+.lw-rows {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lw-gap-y, 32px);
+  overflow: hidden;
+}
+
+.lw-row {
+  /* One cell's width from the row's own box, so brick's half-cell offset stays
+     exact at any column count or spacing. */
+  --lw-cellw: calc((100% - (var(--lw-cols, 4) - 1) * var(--lw-gap-x, 32px)) / var(--lw-cols, 4));
+  display: flex;
+  gap: var(--lw-gap-x, 32px);
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.lw-row .lw-cell {
+  flex: 0 0 var(--lw-cellw);
+}
+
+/* Brick rows shift left half a module and carry one extra cell, so BOTH edges
+   show the classic cropped half-logo instead of a ragged gap. */
+.lw-row--offset {
+  margin-left: calc((var(--lw-cellw) + var(--lw-gap-x, 32px)) / -2);
 }

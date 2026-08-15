@@ -8,6 +8,7 @@
   "inputs.city.label": "開催都市",
   "inputs.city.placeholder": "例: Nuremberg",
   "inputs.city.help": "ミーティングの開催地となる都市です — 下記の時刻のタイムゾーンを設定します。",
+  "inputs.city.notice": "都市名はタイムゾーンを調べるために open-meteo.com で検索されます。送信されるのは名前だけで、結果はオフライン利用のために端末に保存されます。",
   "inputs.meetingTime.label": "ミーティングの日時",
   "inputs.meetingTime.help": "開催都市のローカルな日付と時刻です。ライブクロックがオンのときは無視されます。",
   "inputs.liveClock.label": "ライブクロック",
