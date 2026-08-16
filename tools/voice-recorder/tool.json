@@ -3,11 +3,15 @@
   "name": "Voice Recorder",
   "description": "Record a voice note with a live level meter and gentle coaching, then save it as MP3.",
   "a11yLabel": "Voice recorder - level {{default dbText \"idle\"}}",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.17.0",
   "status": "experimental",
   "category": "everyone",
   "tags": ["audio", "voice", "record", "recording", "microphone", "voiceover", "podcast", "mp3", "meter", "levels"],
+  "featured": {
+    "order": 2,
+    "blurb": "Record a clean voice note with live level coaching"
+  },
   "capabilities": ["microphone"],
   "render": {
     "width": 1080,
@@ -34,11 +38,10 @@
       "id": "theme", "label": "Card style", "type": "select", "default": "dark",
       "options": [
         { "value": "dark", "label": "Dark" },
-        { "value": "light", "label": "Light" },
-        { "value": "green", "label": "SUSE green" }
+        { "value": "light", "label": "Light" }
       ]
     },
-    { "id": "accent", "label": "Accent", "type": "color", "default": "{color.semantic.secondary}" }
+    { "id": "accent", "label": "Accent", "type": "color", "default": "", "help": "Leave unset to follow your brand's primary colour." }
   ],
   "hooks": { "onInit": true, "onLevel": true }
 }

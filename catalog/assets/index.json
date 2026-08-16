@@ -4,9 +4,20 @@
   "defaultFavourites": [
     "suse/headshots/frank-feldmann",
     "suse/headshots/andy-fitzsimon",
-    "suse/headshots/andreas-prins",
-    "suse/credentials/icon-ai-ember",
-    "suse/credentials/illustration-ai-enterprise-waterhole"
+    "suse/headshots/andreas-prins"
+  ],
+  "defaultHiddenTools": [
+    "3d",
+    "booth-studio",
+    "wordmark",
+    "web-icon",
+    "lottie-digi-ad",
+    "doc-studio",
+    "multi-page-pdf",
+    "org-chart",
+    "carousel-maker",
+    "digi-ad",
+    "layer-stack"
   ],
   "assets": [
     {
@@ -10750,213 +10761,6 @@
           "height": 400,
           "checksum": "sha256-ZEkN5JlWIiA9USzl1QJLmMgmRUxo4RvPULipkdSDMrQ=",
           "size": 289
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/icon-ai-ember",
-      "name": "AI Icon — Ember",
-      "description": "SUSE icon themed in Ember, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "icon",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/icon-ai-ember.svg",
-          "checksum": "sha256-Why2VgIf2v8rgn43273fi/C/Pm787tyOyqwN4fYaj2w=",
-          "size": 4076
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/icon-security-waterhole",
-      "name": "Security Icon — Waterhole",
-      "description": "SUSE icon themed in Waterhole, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "icon",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/icon-security-waterhole.svg",
-          "checksum": "sha256-Nf637x8muPDDpmpiff5t5nmBpPi7Ag5X2uuSbO9lXBo=",
-          "size": 3177
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/icon-network-mint",
-      "name": "Network Icon — Mint",
-      "description": "SUSE icon themed in Mint, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "icon",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/icon-network-mint.svg",
-          "checksum": "sha256-/SitvzsjSdHRl9iKfm3X3SyrNAzxQTC03y5nYrHSgUs=",
-          "size": 4411
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/illustration-ai-enterprise-waterhole",
-      "name": "AI for Enterprise — Waterhole",
-      "description": "SUSE illustration re-hued in the Waterhole brand tone, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "illustration",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/illustration-ai-enterprise-waterhole.svg",
-          "checksum": "sha256-q/6w5W5wRh9sHlRppYyQ3eoYS4NFTPujnqJvadGPif0=",
-          "size": 20018
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/illustration-cloud-native-jungle",
-      "name": "Cloud Native — Jungle",
-      "description": "SUSE illustration re-hued in the Jungle brand tone, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "illustration",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/illustration-cloud-native-jungle.svg",
-          "checksum": "sha256-a8T0B4suKx7vsAK+amLHKneyJ8QJSSTEkn1tvVlpItc=",
-          "size": 22951
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/illustration-cybersecurity-pine",
-      "name": "Cybersecurity — Pine",
-      "description": "SUSE illustration re-hued in the Pine brand tone, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "illustration",
-        "themed"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/illustration-cybersecurity-pine.svg",
-          "checksum": "sha256-TMxfDB2co5zMl2YSel2r4gtZU9rFGXGr+s1Q7GXT5bI=",
-          "size": 15770
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/photo-adobestock-160945126-greyscale",
-      "name": "Adobe Stock Photo 1 — Greyscale",
-      "description": "SUSE photo with the Greyscale greyscale treatment, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "photo",
-        "treated"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/photo-adobestock-160945126-greyscale.svg",
-          "checksum": "sha256-0P63JBifqV9TMLXkUUWamuoZe+QHbLpvRcxbqF1UkMI=",
-          "size": 341956
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/photo-adobestock-250694886-pine",
-      "name": "Adobe Stock Photo 2 — Pine",
-      "description": "SUSE photo with the Pine duotone treatment, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "photo",
-        "treated"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/photo-adobestock-250694886-pine.svg",
-          "checksum": "sha256-Ko7cLvZpSLS6vK6EgDNP4cYhO1ggZQyhxzxTF1ClosI=",
-          "size": 569104
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary"
-    },
-    {
-      "id": "suse/credentials/photo-awareness-aws-1-midnight",
-      "name": "Awareness — AWS 1 — Midnight",
-      "description": "SUSE photo with the Midnight duotone treatment, exported with a “Made with Lolly” Content Credential. Download it and drop it into Verify to check the credential.",
-      "type": "vector",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "content-credentials",
-        "made-with-lolly",
-        "photo",
-        "treated"
-      ],
-      "formats": [
-        {
-          "format": "svg",
-          "url": "/catalog/assets/suse/credentials/photo-awareness-aws-1-midnight.svg",
-          "checksum": "sha256-b1nl2mLU7oKL2cmv49vyOi+VHGC3rdUGFOJnZeiX2C0=",
-          "size": 618736
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"

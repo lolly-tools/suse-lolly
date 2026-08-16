@@ -2,6 +2,7 @@
   "name": "Nagrywanie głosu",
   "description": "Nagraj notatkę głosową z licznikiem poziomu na żywo i delikatnymi wskazówkami, a następnie zapisz jako MP3.",
   "a11yLabel": "Nagrywanie głosu — poziom {{default dbText \"idle\"}}",
+  "featured.blurb": "Nagraj czystą notatkę głosową z pomocą wskaźnika poziomu na żywo",
   "inputs.title.label": "Etykieta",
   "inputs.title.help": "Nazywa kartę nagrania i zapisany plik.",
   "inputs.targetLevel.label": "Poziom docelowy",
@@ -14,6 +15,6 @@
   "inputs.theme.label": "Styl karty",
   "inputs.theme.options.dark": "Ciemny",
   "inputs.theme.options.light": "Jasny",
-  "inputs.theme.options.green": "Zieleń SUSE",
-  "inputs.accent.label": "Akcent"
+  "inputs.accent.label": "Akcent",
+  "inputs.accent.help": "Zostaw nieustawione, aby użyć głównego koloru Twojej marki."
 }

@@ -10,27 +10,23 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
-  background: #0b1512;
-  color: #f4f7f5;
-  --vr-ok: var(--vr-accent, #30ba78);
-  --vr-low: #f5b544;
-  --vr-hot: #ef5b5b;
+  font-family: var(--font-brand, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  background: #11141f;
+  color: #fafbfe;
+  /* The healthy-level colour: the accent input wins (only set when the user picks
+     one), then the brand's semantic --brand-primary (set on the canvas root when
+     tokens resolve), then a neutral hex. */
+  --vr-ok: var(--vr-accent, var(--brand-primary, #5283d5));
+  --vr-low: #db9640;
+  --vr-hot: #ec8786;
   --vr-track: rgba(255, 255, 255, 0.10);
-  --vr-muted: rgba(244, 247, 245, 0.55);
+  --vr-muted: rgba(250, 251, 254, 0.55);
 }
 .vr[data-theme="light"] {
-  background: #f6f8f7;
-  color: #0b1512;
+  background: #fafbfe;
+  color: #11141f;
   --vr-track: rgba(0, 0, 0, 0.09);
-  --vr-muted: rgba(11, 21, 18, 0.55);
-}
-.vr[data-theme="green"] {
-  background: linear-gradient(160deg, #30ba78, #1c8b58);
-  color: #06251a;
-  --vr-track: rgba(6, 37, 26, 0.18);
-  --vr-muted: rgba(6, 37, 26, 0.62);
-  --vr-ok: #06251a;
+  --vr-muted: rgba(14, 18, 23, 0.55);
 }
 
 /* ── Top row ─────────────────────────────────────────────── */
