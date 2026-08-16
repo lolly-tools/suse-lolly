@@ -49,23 +49,23 @@
       "section": "Booth",
       "type": "select",
       "default": "inline",
-      "help": "The stand shape. Your panel artwork carries across designs — a back wall stays a back wall.",
+      "help": "The stand shape. Your panel artwork carries across designs - a back wall stays a back wall.",
       "options": [
         {
           "value": "inline",
-          "label": "Inline 3×3 — back wall + counter"
+          "label": "Inline 3×3 - back wall + counter"
         },
         {
           "value": "corner",
-          "label": "Corner L — two open sides"
+          "label": "Corner L - two open sides"
         },
         {
           "value": "island",
-          "label": "Island — three walls, overhead header + tower"
+          "label": "Island - three walls, overhead header + tower"
         },
         {
           "value": "kiosk",
-          "label": "Kiosk — totem + counter"
+          "label": "Kiosk - totem + counter"
         }
       ]
     },
@@ -429,7 +429,7 @@
       "type": "asset",
       "assetType": "any",
       "allowUpload": true,
-      "help": "An image, a video, or a Lolly tool link (paste one in the picker) behind the stand — a hall photo, a stage shot, a keynote loop. Blend and blur it below so it sets a scene without competing with the artwork."
+      "help": "An image, a video, or a Lolly tool link (paste one in the picker) behind the stand - a hall photo, a stage shot, a keynote loop. Blend and blur it below so it sets a scene without competing with the artwork."
     },
     {
       "id": "bgImageFit",
@@ -530,7 +530,7 @@
       "label": "Position",
       "section": "Background",
       "type": "vector",
-      "help": "Which part of the content stays in frame when it is cropped — like CSS object-position. 50/50 is centred.",
+      "help": "Which part of the content stays in frame when it is cropped - like CSS object-position. 50/50 is centred.",
       "fields": [
         {
           "id": "x",
@@ -572,7 +572,7 @@
       "section": "Background",
       "type": "color",
       "default": "#0d1014",
-      "help": "The bottom of the backdrop. Deliberately neutral — the brand colour belongs on the panels, and a brand-coloured hall behind brand-coloured panels reads as mud."
+      "help": "The bottom of the backdrop. Deliberately neutral - the brand colour belongs on the panels, and a brand-coloured hall behind brand-coloured panels reads as mud."
     },
     {
       "id": "transparentBg",
@@ -631,7 +631,7 @@
       "section": "Look",
       "type": "boolean",
       "default": true,
-      "help": "A 1.76 m silhouette beside the stand — it sells how big the stand actually is."
+      "help": "A 1.76 m silhouette beside the stand - it sells how big the stand actually is."
     },
     {
       "id": "camera",

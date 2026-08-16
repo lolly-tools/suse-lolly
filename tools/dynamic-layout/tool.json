@@ -2,7 +2,7 @@
   "id": "dynamic-layout",
   "name": "Dynamic Layout",
   "description": "A do-anything layout that recomposes around whatever you add, at any size.",
-  "a11yLabel": "{{default heading cta}} — Dynamic Layout preview",
+  "a11yLabel": "{{default heading cta}} - Dynamic Layout preview",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
   "status": "experimental",
@@ -132,7 +132,7 @@
       "max": 2,
       "step": 0.05,
       "default": 1.15,
-      "help": "Relative size — the layout still auto-fits to the canvas."
+      "help": "Relative size - the layout still auto-fits to the canvas."
     },
     {
       "id": "headingFontWeight",
@@ -162,7 +162,7 @@
       "max": 2,
       "step": 0.05,
       "default": 1,
-      "help": "Relative size — the layout still auto-fits to the canvas."
+      "help": "Relative size - the layout still auto-fits to the canvas."
     },
     {
       "id": "subheadingFontWeight",
@@ -193,7 +193,7 @@
       "max": 2,
       "step": 0.05,
       "default": 0.9,
-      "help": "Relative size — the layout still auto-fits to the canvas."
+      "help": "Relative size - the layout still auto-fits to the canvas."
     },
     {
       "id": "bodyFontWeight",
@@ -212,7 +212,7 @@
       "type": "text",
       "default": "> cta",
       "maxLength": 20,
-      "help": "A short button label — up to 20 characters."
+      "help": "A short button label - up to 20 characters."
     },
     {
       "id": "ctaTypography",
@@ -236,7 +236,7 @@
       "max": 2,
       "step": 0.05,
       "default": 0.65,
-      "help": "Relative size — the layout still auto-fits to the canvas."
+      "help": "Relative size - the layout still auto-fits to the canvas."
     },
     {
       "id": "ctaFontWeight",

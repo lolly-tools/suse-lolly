@@ -1,8 +1,8 @@
 {
   "id": "diagram-builder",
   "name": "Diagram Builder",
-  "description": "Org charts, flowcharts, timelines and more — from cards, text, Mermaid or CSV.",
-  "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} diagram",
+  "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid or CSV.",
+  "a11yLabel": "{{default title \"Untitled\"}} - {{diagramType}} diagram",
   "version": "1.5.0",
   "engineVersion": "^1.0.0",
   "status": "experimental",
@@ -29,12 +29,12 @@
       "label": "Preset",
       "type": "select",
       "default": "custom",
-      "help": "A one-click starting point that seeds the type, theme and spacing. Pick one, then fine-tune anything — your later edits are kept.",
+      "help": "A one-click starting point that seeds the type, theme and spacing. Pick one, then fine-tune anything - your later edits are kept.",
       "options": [
         { "value": "custom", "label": "Custom" },
-        { "value": "org-classic", "label": "Org — classic" },
-        { "value": "layercake-mint", "label": "Layercake — SUSE mint" },
-        { "value": "process-lr", "label": "Process — left to right" },
+        { "value": "org-classic", "label": "Org - classic" },
+        { "value": "layercake-mint", "label": "Layercake - SUSE mint" },
+        { "value": "process-lr", "label": "Process - left to right" },
         { "value": "blueprint", "label": "Blueprint" },
         { "value": "mono", "label": "Minimal mono" }
       ]
@@ -75,7 +75,7 @@
     },
 
     { "id": "theme", "label": "Theme", "type": "select", "default": "custom", "section": "Style", "help": "Seeds the colours below. Pick one, then override any individual colour.", "options": [ { "value": "custom", "label": "Custom" }, { "value": "brand-light", "label": "Brand (light)" }, { "value": "brand-dark", "label": "Brand (dark)" }, { "value": "blueprint", "label": "Blueprint" }, { "value": "mono", "label": "Mono" }, { "value": "mint", "label": "Mint" } ] },
-    { "id": "cardLayout", "label": "Card layout", "type": "select", "default": "row", "section": "Style", "help": "How each card arranges its image and text. Side by side puts the image on the left with left-aligned text — a card with no image uses the full width. Image on top stacks a centred image above centred text.", "options": [ { "value": "row", "label": "Side by side (image left)" }, { "value": "stacked", "label": "Image on top" } ] },
+    { "id": "cardLayout", "label": "Card layout", "type": "select", "default": "row", "section": "Style", "help": "How each card arranges its image and text. Side by side puts the image on the left with left-aligned text - a card with no image uses the full width. Image on top stacks a centred image above centred text.", "options": [ { "value": "row", "label": "Side by side (image left)" }, { "value": "stacked", "label": "Image on top" } ] },
     { "id": "nodeFill", "label": "Card fill", "type": "color", "default": "{color.semantic.surface}", "section": "Style" },
     { "id": "nodeStroke", "label": "Card border", "type": "color", "default": "{color.semantic.primary}", "section": "Style" },
     { "id": "cardBorderWidth", "label": "Card border width", "type": "number", "display": "slider", "min": 0, "max": 6, "step": 0.5, "default": 2, "section": "Style", "help": "0 = borderless cards." },
@@ -194,7 +194,7 @@
     },
     {
       "id": "matrixXHigh",
-      "label": "X axis — high",
+      "label": "X axis - high",
       "type": "text",
       "default": "",
       "placeholder": "e.g. High impact",
@@ -202,7 +202,7 @@
     },
     {
       "id": "matrixXLow",
-      "label": "X axis — low",
+      "label": "X axis - low",
       "type": "text",
       "default": "",
       "placeholder": "e.g. Low impact",
@@ -210,7 +210,7 @@
     },
     {
       "id": "matrixYHigh",
-      "label": "Y axis — high",
+      "label": "Y axis - high",
       "type": "text",
       "default": "",
       "placeholder": "e.g. High effort",
@@ -218,7 +218,7 @@
     },
     {
       "id": "matrixYLow",
-      "label": "Y axis — low",
+      "label": "Y axis - low",
       "type": "text",
       "default": "",
       "placeholder": "e.g. Low effort",
@@ -253,7 +253,7 @@
       "label": "ASCII art",
       "type": "longtext",
       "showIf": { "source": "ascii" },
-      "help": "Draw boxes with + - | and connect them with - | and arrowheads > < ^ v. Keep each box's | sides lined up with its +---+ borders. The first line inside a box is its title, the rest its subtitle, and a line of “@ https://…/logo.png” adds an image. Your layout is preserved — we just render it as clean cards.",
+      "help": "Draw boxes with + - | and connect them with - | and arrowheads > < ^ v. Keep each box's | sides lined up with its +---+ borders. The first line inside a box is its title, the rest its subtitle, and a line of “@ https://…/logo.png” adds an image. Your layout is preserved - we just render it as clean cards.",
       "default": "+--------+          +-------+\n| Client |--------->|  API  |\n+--------+          +-------+\n                        |\n                        v\n                  +----------+\n                  | Database |\n                  +----------+"
     },
     {
@@ -269,7 +269,7 @@
       "label": "Pikchr",
       "type": "longtext",
       "showIf": { "source": "pikchr" },
-      "help": "Paste a PIC-style Pikchr diagram. Objects flow in a direction: box/circle/ellipse/oval/cylinder/file/dot/line/arrow/move, each with \"labels\", fill/color, dashed/dotted/thick, wid/ht/rad. Place with from/to/at, compass points (last box.s, .n .e .w .ne …), named objects (Name: box) and ->/<-/<->. Supported subset — macros, [blocks], expressions and splines are skipped, never run.",
+      "help": "Paste a PIC-style Pikchr diagram. Objects flow in a direction: box/circle/ellipse/oval/cylinder/file/dot/line/arrow/move, each with \"labels\", fill/color, dashed/dotted/thick, wid/ht/rad. Place with from/to/at, compass points (last box.s, .n .e .w .ne …), named objects (Name: box) and ->/<-/<->. Supported subset - macros, [blocks], expressions and splines are skipped, never run.",
       "default": "arrow right 200% \"Source\" \"input\"\nbox rad 8px \"Diagram\" \"Builder\" fill 0xe8f4f0\narrow right 200% \"SVG\" \"output\"\narrow <-> down 60% from last box.s\ncylinder \"Store\" fill 0xd0e8e0"
     },
     {
@@ -277,7 +277,7 @@
       "label": "Table / CSV",
       "type": "longtext",
       "showIf": { "source": "table" },
-      "help": "Paste comma- or tab-separated rows. Org/Mind map: id,label,detail,parent. Process: from,to,label (an edge list — ids are created automatically). Timeline/Cycle/Pyramid: label,detail. A header row (id/label/from/…) is detected and skipped.",
+      "help": "Paste comma- or tab-separated rows. Org/Mind map: id,label,detail,parent. Process: from,to,label (an edge list - ids are created automatically). Timeline/Cycle/Pyramid: label,detail. A header row (id/label/from/…) is detected and skipped.",
       "default": "id,label,parent\nceo,CEO,\ncto,CTO,ceo\ncfo,CFO,ceo\neng,Eng Lead,cto\nqa,QA Lead,cto"
     },
 
@@ -287,7 +287,7 @@
       "type": "blocks",
       "labelledFields": true,
       "showIf": { "source": "visual" },
-      "help": "One card per row. In org / mind map, drag a card onto another to nest it — drop above or below to make it a sibling, or onto the middle to make it a child. Elsewhere, drag to reorder (order sets sibling order, layer/column order, and the sequence for timeline/cycle/pyramid/gantt). The ID is an optional short handle.",
+      "help": "One card per row. In org / mind map, drag a card onto another to nest it - drop above or below to make it a sibling, or onto the middle to make it a child. Elsewhere, drag to reorder (order sets sibling order, layer/column order, and the sequence for timeline/cycle/pyramid/gantt). The ID is an optional short handle.",
       "addMenu": { "field": "shape", "label": "Add card" },
       "nesting": { "parentField": "parent", "keyField": "nodeId", "labelField": "label", "activeWhen": { "diagramType": ["org", "mindmap"] } },
       "fields": [
@@ -313,8 +313,8 @@
         { "id": "image", "label": "Image", "type": "asset", "assetType": "any", "allowUpload": true, "help": "Optional headshot, icon, or product logo shown on the card." },
         { "id": "nodeId", "label": "ID", "type": "text", "placeholder": "e.g. ceo", "help": "Short unique handle. Auto-derived from the label if left blank." },
         { "id": "detail", "label": "Detail", "type": "text", "placeholder": "Subtitle (optional)" },
-        { "id": "parent", "label": "Reports to", "default": "", "optionsFrom": { "input": "nodes", "value": "nodeId", "label": "label", "excludeSelf": true, "excludeDescendants": true, "emptyLabel": "— Top level —" }, "help": "Org / mind map: the card this one reports to / branches from. Pick a card, or just drag this row onto another in the list." },
-        { "id": "layer", "label": "Group", "default": "", "optionsFrom": { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-", "freeText": true, "emptyLabel": "— none —" }, "help": "Layercake: which band. Kanban: which column — pick one, or type a new name to create a column. Cards in the same group sit together." },
+        { "id": "parent", "label": "Reports to", "default": "", "optionsFrom": { "input": "nodes", "value": "nodeId", "label": "label", "excludeSelf": true, "excludeDescendants": true, "emptyLabel": " - Top level - " }, "help": "Org / mind map: the card this one reports to / branches from. Pick a card, or just drag this row onto another in the list." },
+        { "id": "layer", "label": "Group", "default": "", "optionsFrom": { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-", "freeText": true, "emptyLabel": " - none - " }, "help": "Layercake: which band. Kanban: which column - pick one, or type a new name to create a column. Cards in the same group sit together." },
         { "id": "quadrant", "label": "Quadrant", "type": "select", "default": "tr", "showIf": { "diagramType": "matrix" }, "options": [ { "value": "tr", "label": "Top-right" }, { "value": "tl", "label": "Top-left" }, { "value": "br", "label": "Bottom-right" }, { "value": "bl", "label": "Bottom-left" } ] },
         { "id": "ganttStart", "label": "Start", "type": "number", "min": 0, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar start on the time axis." },
         { "id": "ganttLen", "label": "Length", "type": "number", "min": 0.5, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar length in the same units." }
@@ -357,8 +357,8 @@
       "showIf": { "source": "visual" },
       "help": "In process/gantt these arrows ARE the flow / dependencies. In org/layercake/etc they're extra arrows on top of the automatic connectors. Pick the cards (or layers) each arrow runs between.",
       "fields": [
-        { "id": "from", "label": "From", "default": "", "optionsFrom": { "sources": [ { "input": "nodes", "value": "nodeId", "label": "label" }, { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-" } ], "emptyLabel": "— choose —" } },
-        { "id": "to", "label": "To", "default": "", "optionsFrom": { "sources": [ { "input": "nodes", "value": "nodeId", "label": "label" }, { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-" } ], "emptyLabel": "— choose —" } },
+        { "id": "from", "label": "From", "default": "", "optionsFrom": { "sources": [ { "input": "nodes", "value": "nodeId", "label": "label" }, { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-" } ], "emptyLabel": " - choose - " } },
+        { "id": "to", "label": "To", "default": "", "optionsFrom": { "sources": [ { "input": "nodes", "value": "nodeId", "label": "label" }, { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-" } ], "emptyLabel": " - choose - " } },
         { "id": "label", "label": "Label", "type": "text", "placeholder": "optional" },
         { "id": "style", "label": "Line", "type": "select", "default": "solid", "options": [ { "value": "solid", "label": "Solid" }, { "value": "dashed", "label": "Dashed" }, { "value": "dotted", "label": "Dotted" } ] },
         { "id": "head", "label": "Arrowhead", "type": "select", "default": "", "options": [ { "value": "", "label": "Default" }, { "value": "triangle", "label": "Triangle" }, { "value": "open", "label": "Open" }, { "value": "diamond", "label": "Diamond" }, { "value": "circle", "label": "Circle" }, { "value": "bar", "label": "Bar" }, { "value": "double", "label": "Double-ended" }, { "value": "none", "label": "None" } ] },

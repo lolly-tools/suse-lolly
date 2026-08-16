@@ -80,7 +80,7 @@
       "label": "Role colour override",
       "type": "color",
       "default": "",
-      "help": "Optional — replaces the status colour. Leave empty to use the colour for the chosen status."
+      "help": "Optional - replaces the status colour. Leave empty to use the colour for the chosen status."
     },
     {
       "id": "background",
@@ -137,7 +137,7 @@
       "type": "text",
       "default": "",
       "maxLength": 24,
-      "help": "Optional — shown next to the name."
+      "help": "Optional - shown next to the name."
     },
     {
       "id": "nameWeight",

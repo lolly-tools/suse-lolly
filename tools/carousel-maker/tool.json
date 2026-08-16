@@ -1,7 +1,7 @@
 {
   "id": "carousel-maker",
   "name": "Carousel Maker",
-  "description": "Design a multi-page carousel on one canvas — set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
+  "description": "Design a multi-page carousel on one canvas - set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
   "version": "1.0.0",
   "engineVersion": "^1.12.0",
   "status": "community",
@@ -198,7 +198,7 @@
           "type": "select",
           "label": "Weight",
           "default": "500",
-          "help": "Black (900) is SUSE Sans only — SUSE Mono tops out at Extrabold (800).",
+          "help": "Black (900) is SUSE Sans only - SUSE Mono tops out at Extrabold (800).",
           "options": [
             { "value": "100", "label": "Thin" },
             { "value": "200", "label": "Extra light" },
@@ -233,7 +233,7 @@
           "type": "select",
           "label": "Shadow",
           "default": "none",
-          "help": "What the drop shadow applies to: the box outline, the text, or the visible content (image alpha). Raster export only — SVG/PDF flatten it.",
+          "help": "What the drop shadow applies to: the box outline, the text, or the visible content (image alpha). Raster export only - SVG/PDF flatten it.",
           "options": [
             { "value": "none", "label": "None" },
             { "value": "box", "label": "Box" },
@@ -250,7 +250,7 @@
           "type": "select",
           "label": "Image position",
           "default": "center",
-          "help": "Which edge or corner the image is anchored to — where a contained image sits inside the box, or which part of a cover-cropped image stays in frame. Honoured on screen and in PNG/SVG/PDF export.",
+          "help": "Which edge or corner the image is anchored to - where a contained image sits inside the box, or which part of a cover-cropped image stays in frame. Honoured on screen and in PNG/SVG/PDF export.",
           "options": [
             { "value": "left top", "label": "Top left" },
             { "value": "center top", "label": "Top" },

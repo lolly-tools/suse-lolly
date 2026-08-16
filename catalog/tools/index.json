@@ -1,11 +1,11 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-15T13:28:27.030Z",
+  "generatedAt": "2026-08-16T09:46:12.532Z",
   "tools": [
     {
       "id": "color-block",
       "name": "Color Block",
-      "description": "Colour blocks — text, image, logo — auto-arranged into a grid.",
+      "description": "Colour blocks - text, image, logo - auto-arranged into a grid.",
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
@@ -36,7 +36,7 @@
       "preview": "/catalog/previews/color-block.svg",
       "featured": {
         "order": 4,
-        "blurb": "Colour blocks — text, image, logo in a grid"
+        "blurb": "Colour blocks - text, image, logo in a grid"
       },
       "i18n": {
         "ar": {
@@ -930,7 +930,7 @@
     {
       "id": "tool-logo",
       "name": "Logo",
-      "description": "Place the SUSE logo — it auto-picks the right variant and exports vector.",
+      "description": "Place the SUSE logo - it auto-picks the right variant and exports vector.",
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
@@ -1200,7 +1200,7 @@
     {
       "id": "chart-creator",
       "name": "Chart Creator",
-      "description": "On-brand charts from your data — bar, donut, pie or stacked.",
+      "description": "On-brand charts from your data - bar, donut, pie or stacked.",
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
@@ -1500,7 +1500,7 @@
     {
       "id": "color-palette",
       "name": "Color Picker",
-      "description": "A handy color picker for the SUSE brand palette — click any swatch to copy it.",
+      "description": "A handy color picker for the SUSE brand palette - click any swatch to copy it.",
       "version": "1.1.0",
       "status": "official",
       "category": "utility",
@@ -1894,7 +1894,7 @@
     {
       "id": "strip-data",
       "name": "Strip Hidden Data",
-      "description": "Reveal and remove hidden metadata from images and PDFs — on your device.",
+      "description": "Reveal and remove hidden metadata from images and PDFs - on your device.",
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
@@ -2038,7 +2038,7 @@
     {
       "id": "text-helper",
       "name": "Text Helper",
-      "description": "Format, decode, hash and de-identify text — JSON, JWT and more.",
+      "description": "Format, decode, hash and de-identify text - JSON, JWT and more.",
       "version": "1.2.0",
       "status": "official",
       "category": "utility",
@@ -2354,7 +2354,7 @@
     {
       "id": "wayfinding-signage",
       "name": "Wayfinding Signage",
-      "description": "Directional event signs — destinations, each with an arrow. Print-ready.",
+      "description": "Directional event signs - destinations, each with an arrow. Print-ready.",
       "version": "1.2.0",
       "status": "official",
       "category": "event",
@@ -2524,7 +2524,7 @@
     {
       "id": "brand-lockup",
       "name": "Brand Lockup",
-      "description": "Official SUSE logo lockups — chameleon, wordmark and a name.",
+      "description": "Official SUSE logo lockups - chameleon, wordmark and a name.",
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
@@ -3026,7 +3026,7 @@
     {
       "id": "compress-pdf",
       "name": "Compress PDF",
-      "description": "Shrink a PDF by recompressing its images — on your device.",
+      "description": "Shrink a PDF by recompressing its images - on your device.",
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
@@ -3162,7 +3162,7 @@
     {
       "id": "multi-page-pdf",
       "name": "Multi-Page PDF",
-      "description": "Build a multi-page PDF — a cover, flowing content blocks, and a back page.",
+      "description": "Build a multi-page PDF - a cover, flowing content blocks, and a back page.",
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
@@ -3189,7 +3189,7 @@
       "personalized": true,
       "featured": {
         "order": 3,
-        "blurb": "Multi-page PDFs — cover, content, back"
+        "blurb": "Multi-page PDFs - cover, content, back"
       },
       "paged": true,
       "i18n": {
@@ -3328,7 +3328,7 @@
     {
       "id": "logo-wall",
       "name": "Logo Lockup: Grid (NASCAR)",
-      "description": "Arrange a pile of logos into a clean, even sponsor grid — the “NASCAR” wall.",
+      "description": "Arrange a pile of logos into a clean, even sponsor grid - the “NASCAR” wall.",
       "version": "1.3.0",
       "status": "experimental",
       "category": "designer",
@@ -3473,7 +3473,7 @@
     {
       "id": "diagram-builder",
       "name": "Diagram Builder",
-      "description": "Org charts, flowcharts, timelines and more — from cards, text, Mermaid or CSV.",
+      "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid or CSV.",
       "version": "1.5.0",
       "status": "experimental",
       "category": "everyone",
@@ -3655,7 +3655,7 @@
     {
       "id": "logo-lockup-partner",
       "name": "Logo Lockup: Partner",
-      "description": "The SUSE logo beside a partner's, with a divider between — light or dark.",
+      "description": "The SUSE logo beside a partner's, with a divider between - light or dark.",
       "version": "1.0.0",
       "status": "official",
       "category": "designer",
@@ -3794,7 +3794,7 @@
     {
       "id": "web-icon",
       "name": "Web Icon Maker",
-      "description": "Favicon and app-icon maker — a multi-size .ico, plus PNG and SVG.",
+      "description": "Favicon and app-icon maker - a multi-size .ico, plus PNG and SVG.",
       "version": "1.0.0",
       "status": "community",
       "category": "everyone",
@@ -4067,7 +4067,7 @@
     {
       "id": "pose-geeko",
       "name": "Pose Geeko",
-      "description": "Pose the SUSE Geeko with sliders — eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
+      "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
       "version": "0.1.0",
       "status": "official",
       "category": "designer",
@@ -4096,7 +4096,7 @@
       "preview": "/tools/pose-geeko/card.svg",
       "featured": {
         "order": 2,
-        "blurb": "Pose the SUSE Geeko — print-ready stills",
+        "blurb": "Pose the SUSE Geeko - print-ready stills",
         "variants": [
           {
             "label": "Curious climb · transparent",
@@ -4607,7 +4607,7 @@
     {
       "id": "asset-export",
       "name": "Asset Export",
-      "description": "Render any catalog asset — or a Lolly tool link — out to any format and size.",
+      "description": "Render any catalog asset - or a Lolly tool link - out to any format and size.",
       "version": "1.0.0",
       "status": "official",
       "category": "everyone",
@@ -4749,7 +4749,7 @@
     {
       "id": "doc-studio",
       "name": "Doc Studio",
-      "description": "Write a multi-page document on the canvas — rich text, headings, tables and inserted Lolly renders that flow onto pages and export as a PDF.",
+      "description": "Write a multi-page document on the canvas - rich text, headings, tables and inserted Lolly renders that flow onto pages and export as a PDF.",
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
@@ -4892,7 +4892,7 @@
     {
       "id": "carousel-maker",
       "name": "Carousel Maker",
-      "description": "Design a multi-page carousel on one canvas — set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
+      "description": "Design a multi-page carousel on one canvas - set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
@@ -5066,7 +5066,7 @@
     {
       "id": "org-chart",
       "name": "Flow Chart",
-      "description": "Build flow charts on an open canvas — drag cards, connect them, and the lines route and stick to the boxes.",
+      "description": "Build flow charts on an open canvas - drag cards, connect them, and the lines route and stick to the boxes.",
       "version": "1.0.0",
       "status": "community",
       "category": "everyone",
@@ -6135,7 +6135,7 @@
     {
       "id": "prompt-to-image",
       "name": "Prompt to Image",
-      "description": "Typeset a long prompt into one compact, legible image for a multimodal model — image input is often cheaper than the same words as text tokens.",
+      "description": "Typeset a long prompt into one compact, legible image for a multimodal model - image input is often cheaper than the same words as text tokens.",
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
@@ -6305,7 +6305,7 @@
     {
       "id": "screencap",
       "name": "Screen Capture",
-      "description": "Screenshot or record your whole screen, a window, or a browser tab. Drag on the canvas to crop — the export stays the exact pixels you captured.",
+      "description": "Screenshot or record your whole screen, a window, or a browser tab. Drag on the canvas to crop - the export stays the exact pixels you captured.",
       "version": "1.0.1",
       "status": "community",
       "category": "utility",
@@ -6442,7 +6442,7 @@
     {
       "id": "slides",
       "name": "Slides",
-      "description": "Build a deck where every slide arranges other Lolly tools in a chosen layout, with its own title, background and speaker notes — then export to PowerPoint, PDF, GIF or MP4.",
+      "description": "Build a deck where every slide arranges other Lolly tools in a chosen layout, with its own title, background and speaker notes - then export to PowerPoint, PDF, GIF or MP4.",
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
@@ -6578,7 +6578,7 @@
     {
       "id": "deck-studio",
       "name": "Markdown Slides",
-      "description": "Turn Markdown or a JSON spec into a native, editable PowerPoint deck — real text, bullets, tables and brand theme — in seconds. The fast text-first path to a deck; reach for the Design canvas when you want to lay slides out by hand or animate them. Charts and diagrams come from your other Lolly tools. Exports .pptx (editable), plus PDF and PNG.",
+      "description": "Turn Markdown or a JSON spec into a native, editable PowerPoint deck - real text, bullets, tables and brand theme - in seconds. The fast text-first path to a deck; reach for the Design canvas when you want to lay slides out by hand or animate them. Charts and diagrams come from your other Lolly tools. Exports .pptx (editable), plus PDF and PNG.",
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
@@ -6755,7 +6755,7 @@
     {
       "id": "deck-builder",
       "name": "Deck Builder",
-      "description": "Build a slide deck with a live on-canvas editor — edit text, colours and images directly on each slide.",
+      "description": "Build a slide deck with a live on-canvas editor - edit text, colours and images directly on each slide.",
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
@@ -6889,7 +6889,7 @@
     {
       "id": "wordmark",
       "name": "Wordmark",
-      "description": "Type a word, get a pure-path vector wordmark in your brand font — recipients never need the font installed.",
+      "description": "Type a word, get a pure-path vector wordmark in your brand font - recipients never need the font installed.",
       "version": "1.0.1",
       "status": "community",
       "category": "everyone",
@@ -7076,7 +7076,7 @@
     {
       "id": "convert-image",
       "name": "Convert Image",
-      "description": "Turn HEIC, TIFF or any photo into WebP, JPEG or PNG — on your device.",
+      "description": "Turn HEIC, TIFF or any photo into WebP, JPEG or PNG - on your device.",
       "version": "1.0.0",
       "status": "community",
       "category": "utility",
@@ -7217,7 +7217,7 @@
     {
       "id": "audiogram",
       "name": "Audiogram",
-      "description": "Turn a voice clip or song into a branded video that actually moves with the sound — bars, spectrum, ring, ridgeline or scope, ready for social.",
+      "description": "Turn a voice clip or song into a branded video that actually moves with the sound - bars, spectrum, ring, ridgeline or scope, ready for social.",
       "version": "2.5.0",
       "status": "community",
       "category": "everyone",
@@ -7253,7 +7253,7 @@
       "preview": "/catalog/previews/audiogram.svg",
       "examples": [
         {
-          "label": "Podcast quote — bars",
+          "label": "Podcast quote - bars",
           "values": {
             "title": "Slow is smooth, smooth is fast",
             "subtitle": "The Build Notes podcast · Ep. 41",
@@ -7261,7 +7261,7 @@
           }
         },
         {
-          "label": "Broadcast — wave",
+          "label": "Broadcast - wave",
           "values": {
             "title": "Morning briefing",
             "subtitle": "Live weekdays · 06:00",
@@ -7269,7 +7269,7 @@
           }
         },
         {
-          "label": "Release — ring",
+          "label": "Release - ring",
           "values": {
             "title": "New episode out now",
             "subtitle": "Listen anywhere",
@@ -7277,7 +7277,7 @@
           }
         },
         {
-          "label": "Music — spectrum",
+          "label": "Music - spectrum",
           "values": {
             "title": "Tide Pool",
             "subtitle": "Out now everywhere",
@@ -7415,7 +7415,7 @@
     {
       "id": "embed-track-image",
       "name": "Embed, Imprint & Track",
-      "description": "Claim your name on any media you've already made — image, PDF, video or audio. Stamp your author, copyright and licence as Content Credentials (a durable raster Imprint too), preserving any credential already inside the file — all on your device, before you upload it anywhere.",
+      "description": "Claim your name on any media you've already made - image, PDF, video or audio. Stamp your author, copyright and licence as Content Credentials (a durable raster Imprint too), preserving any credential already inside the file - all on your device, before you upload it anywhere.",
       "version": "2.0.0",
       "status": "official",
       "category": "utility",
@@ -7572,7 +7572,7 @@
     {
       "id": "battlecards",
       "name": "Battlecards",
-      "description": "Turn any table into a deck of cards — one card per row, ready as a multi-page PDF. Paste straight from your spreadsheet, doc, or chat.",
+      "description": "Turn any table into a deck of cards - one card per row, ready as a multi-page PDF. Paste straight from your spreadsheet, doc, or chat.",
       "version": "1.2.0",
       "status": "community",
       "category": "everyone",
@@ -7858,7 +7858,7 @@
     {
       "id": "finish-preview",
       "name": "Finish Preview",
-      "description": "Preview foil, spot UV, emboss and soft-touch finishes on your artwork — then export the printer-ready spot plate. The on-screen sheen is presentation only; the plate is the real deliverable your print house needs.",
+      "description": "Preview foil, spot UV, emboss and soft-touch finishes on your artwork - then export the printer-ready spot plate. The on-screen sheen is presentation only; the plate is the real deliverable your print house needs.",
       "version": "1.1.0",
       "status": "official",
       "category": "designer",
@@ -7901,7 +7901,7 @@
       "preview": "/catalog/previews/finish-preview.svg",
       "featured": {
         "order": 6,
-        "blurb": "Foil, spot UV and emboss — with the plate your printer needs"
+        "blurb": "Foil, spot UV and emboss - with the plate your printer needs"
       },
       "examples": [
         {
@@ -8075,7 +8075,7 @@
     {
       "id": "bitmap-studio",
       "name": "Bitmap Studio",
-      "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+      "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture - then bake your look as a LUT any editor can use.",
       "version": "1.3.0",
       "status": "community",
       "category": "designer",
@@ -8302,7 +8302,7 @@
     {
       "id": "layer-stack",
       "name": "Layers",
-      "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD.",
+      "description": "Open a Photoshop or GIMP file as individual layers - lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD.",
       "version": "1.0.0",
       "status": "community",
       "category": "designer",
@@ -8441,7 +8441,7 @@
     {
       "id": "font-convert",
       "name": "Convert Font",
-      "description": "Convert a font between TrueType, OpenType and WOFF — on your device.",
+      "description": "Convert a font between TrueType, OpenType and WOFF - on your device.",
       "version": "1.0.0",
       "status": "official",
       "category": "utility",
@@ -8578,7 +8578,7 @@
     {
       "id": "run-web-code",
       "name": "Run Web Code",
-      "description": "Paste HTML, CSS, JS — or a JSX/TypeScript component — and watch it run in a private, offline sandbox. Perfect for previewing code from an AI assistant.",
+      "description": "Paste HTML, CSS, JS - or a JSX/TypeScript component - and watch it run in a private, offline sandbox. Perfect for previewing code from an AI assistant.",
       "version": "1.5.0",
       "status": "official",
       "category": "utility",
@@ -8943,7 +8943,7 @@
     {
       "id": "flythrough",
       "name": "Flythrough",
-      "description": "Fly a real 3D camera through a screenshot. The picture lifts into layers at real depth; big shapes extrude into solid objects; a timeline of poses animates the whole move — depth, opacity, perspective, extrusion, tilt, rotate, scale and the camera flight — then loops it home. Add, drag and reorder poses. Export as video.",
+      "description": "Fly a real 3D camera through a screenshot. The picture lifts into layers at real depth; big shapes extrude into solid objects; a timeline of poses animates the whole move - depth, opacity, perspective, extrusion, tilt, rotate, scale and the camera flight - then loops it home. Add, drag and reorder poses. Export as video.",
       "version": "0.2.0",
       "status": "experimental",
       "category": "designer",
@@ -8974,7 +8974,7 @@
     {
       "id": "design",
       "name": "Design",
-      "description": "An open canvas for free arrangement — text, images, shapes and live renders from your other Lolly tools, all held to your brand.",
+      "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your brand.",
       "version": "1.13.0",
       "status": "community",
       "category": "designer",
@@ -9050,7 +9050,7 @@
                 "h": 160,
                 "rot": 0,
                 "shape": "rect",
-                "text": "1 — Pick a template",
+                "text": "1 - Pick a template",
                 "fg": "var(--brand-text, #0f172a)",
                 "fontSize": 72,
                 "align": "left",
@@ -9068,7 +9068,7 @@
                 "h": 160,
                 "rot": 0,
                 "shape": "rect",
-                "text": "2 — Make it yours",
+                "text": "2 - Make it yours",
                 "fg": "var(--brand-text, #0f172a)",
                 "fontSize": 72,
                 "align": "left",
@@ -9086,7 +9086,7 @@
                 "h": 160,
                 "rot": 0,
                 "shape": "rect",
-                "text": "3 — Export on brand",
+                "text": "3 - Export on brand",
                 "fg": "var(--brand-text, #0f172a)",
                 "fontSize": 72,
                 "align": "left",
@@ -9141,7 +9141,7 @@
                 "h": 120,
                 "rot": 0,
                 "shape": "rect",
-                "text": "— Your team",
+                "text": " - Your team",
                 "fg": "var(--brand-on-primary, #ffffff)",
                 "fontSize": 52,
                 "align": "left",

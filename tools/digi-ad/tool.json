@@ -262,13 +262,13 @@
       "max": 12,
       "step": 1,
       "default": 0,
-      "help": "0 = play. Set to a scene number to freeze the preview there so you can edit it — exports still play (the still poster uses this scene, or the last one)."
+      "help": "0 = play. Set to a scene number to freeze the preview there so you can edit it - exports still play (the still poster uses this scene, or the last one)."
     },
     {
       "id": "scenes",
       "label": "Scenes",
       "type": "blocks",
-      "help": "Each scene is one segment of the sequence — it animates in over the previous one. Reorder by dragging. The last scene is the resting end card.",
+      "help": "Each scene is one segment of the sequence - it animates in over the previous one. Reorder by dragging. The last scene is the resting end card.",
       "addMenu": {
         "field": "kind",
         "label": "Add scene"
@@ -432,7 +432,7 @@
           "options": [
             {
               "value": "mono",
-              "label": "Mono — black / white"
+              "label": "Mono - black / white"
             },
             {
               "value": "green",

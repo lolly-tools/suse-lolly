@@ -1,7 +1,7 @@
 {
   "id": "tool-logo",
   "name": "Logo",
-  "description": "Place the SUSE logo — it auto-picks the right variant and exports vector.",
+  "description": "Place the SUSE logo - it auto-picks the right variant and exports vector.",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
   "status": "official",

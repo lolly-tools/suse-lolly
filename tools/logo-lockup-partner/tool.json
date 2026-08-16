@@ -1,7 +1,7 @@
 {
   "id": "logo-lockup-partner",
   "name": "Logo Lockup: Partner",
-  "description": "The SUSE logo beside a partner's, with a divider between — light or dark.",
+  "description": "The SUSE logo beside a partner's, with a divider between - light or dark.",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
   "status": "official",

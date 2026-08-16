@@ -122,7 +122,7 @@
       "section": "Links",
       "labelledFields": true,
       "default": [],
-      "help": "Named links shown on one line under your contact details — a booking page, your team portal, LinkedIn. Rows with no title or no address are skipped.",
+      "help": "Named links shown on one line under your contact details - a booking page, your team portal, LinkedIn. Rows with no title or no address are skipped.",
       "fields": [
         {
           "id": "title",
@@ -206,7 +206,7 @@
           "In Gmail, open **Settings** (the cog, top right) and choose **See all settings**.",
           "On the **General** tab, scroll to **Signature** and create one, or select the one you already have.",
           "Click into the signature box and paste (**Ctrl+V**, or **Cmd+V** on a Mac).",
-          "Scroll to the bottom and press **Save Changes** — Gmail discards the signature if you leave without it."
+          "Scroll to the bottom and press **Save Changes** - Gmail discards the signature if you leave without it."
         ],
         "note": "Outlook, Apple Mail and Thunderbird take the same paste: copy as HTML, then paste into their signature editor."
       },
@@ -215,7 +215,7 @@
         "label": "On a phone",
         "steps": [
           "Tap **Export**, set the format to **HTML**, and tap **Copy**.",
-          "Open Gmail in your phone's **browser** (not the Gmail app) and switch it to the desktop site — **aA → Request Desktop Website** on iPhone, **⋮ → Desktop site** on Android.",
+          "Open Gmail in your phone's **browser** (not the Gmail app) and switch it to the desktop site - **aA → Request Desktop Website** on iPhone, **⋮ → Desktop site** on Android.",
           "Go to **Settings → See all settings → General → Signature**, paste into the box, and press **Save Changes**."
         ],
         "note": "The Gmail app's own signature setting is plain text only, so a signature with a logo has to be set this way once. It then applies to mail you send from the app too."

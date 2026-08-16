@@ -1,7 +1,7 @@
 {
   "id": "brand-lockup",
   "name": "Brand Lockup",
-  "description": "Official SUSE logo lockups — chameleon, wordmark and a name.",
+  "description": "Official SUSE logo lockups - chameleon, wordmark and a name.",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -31,7 +31,7 @@
       "type": "text",
       "required": false,
       "default": "",
-      "help": "The text that follows SUSE — e.g. \"Storage\", \"AI Factory\", or \"Data Team\". Leave blank for the SUSE master logo alone."
+      "help": "The text that follows SUSE - e.g. \"Storage\", \"AI Factory\", or \"Data Team\". Leave blank for the SUSE master logo alone."
     },
     {
       "id": "category",
@@ -52,7 +52,7 @@
       "type": "text",
       "required": false,
       "default": "",
-      "help": "City or place — sits on its own line (e.g. \"Madrid\"). Shown for events and teams."
+      "help": "City or place - sits on its own line (e.g. \"Madrid\"). Shown for events and teams."
     },
     {
       "id": "orientation",
@@ -103,13 +103,13 @@
       "label": "Export size",
       "type": "select",
       "default": "fit",
-      "help": "Fit hugs the lockup tightly. The fixed sizes centre it inside that canvas — the preview shows the box change.",
+      "help": "Fit hugs the lockup tightly. The fixed sizes centre it inside that canvas - the preview shows the box change.",
       "options": [
         { "value": "fit", "label": "Fit to lockup" },
-        { "value": "square", "label": "Square — 1080×1080", "width": 1080, "height": 1080, "unit": "px" },
-        { "value": "wide", "label": "Landscape — 1920×1080", "width": 1920, "height": 1080, "unit": "px" },
-        { "value": "portrait", "label": "Portrait — 1080×1350", "width": 1080, "height": 1350, "unit": "px" },
-        { "value": "story", "label": "Story — 1080×1920", "width": 1080, "height": 1920, "unit": "px" }
+        { "value": "square", "label": "Square - 1080×1080", "width": 1080, "height": 1080, "unit": "px" },
+        { "value": "wide", "label": "Landscape - 1920×1080", "width": 1920, "height": 1080, "unit": "px" },
+        { "value": "portrait", "label": "Portrait - 1080×1350", "width": 1080, "height": 1350, "unit": "px" },
+        { "value": "story", "label": "Story - 1080×1920", "width": 1080, "height": 1920, "unit": "px" }
       ]
     },
     {

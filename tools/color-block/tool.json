@@ -1,7 +1,7 @@
 {
   "id": "color-block",
   "name": "Color Block",
-  "description": "Colour blocks — text, image, logo — auto-arranged into a grid.",
+  "description": "Colour blocks - text, image, logo - auto-arranged into a grid.",
   "a11yLabel": "Colour-block composition",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
@@ -10,7 +10,7 @@
   "tags": ["layout", "blocks", "grid", "responsive", "poster", "social", "composition"],
   "featured": {
     "order": 4,
-    "blurb": "Colour blocks — text, image, logo in a grid"
+    "blurb": "Colour blocks - text, image, logo in a grid"
   },
   "render": {
     "width": 1350,
@@ -27,7 +27,7 @@
       "id": "blocks",
       "label": "Blocks",
       "type": "blocks",
-      "help": "Add blocks in any order — the layout repacks into a grid that fills the frame. Each type can be added once; blanks are unlimited.",
+      "help": "Add blocks in any order - the layout repacks into a grid that fills the frame. Each type can be added once; blanks are unlimited.",
       "addMenu": { "field": "kind", "label": "Add block" },
       "fields": [
         {
@@ -90,7 +90,7 @@
           "default": "none",
           "showFor": ["cta"],
           "options": [
-            { "value": "none",  "label": "None — plain text" },
+            { "value": "none",  "label": "None - plain text" },
             { "value": "arrow", "label": "Arrow →" },
             { "value": "pill",  "label": "Pill" },
             { "value": "caret", "label": "Caret _" }
@@ -114,7 +114,7 @@
           "default": "green",
           "showFor": ["logo"],
           "options": [
-            { "value": "mono",  "label": "Mono — black / white" },
+            { "value": "mono",  "label": "Mono - black / white" },
             { "value": "green", "label": "Green" }
           ]
         },
@@ -123,7 +123,7 @@
           "label": "Logo size",
           "type": "number",
           "display": "slider",
-          "help": "Share of the cell the mark fills — the rest is even clearspace.",
+          "help": "Share of the cell the mark fills - the rest is even clearspace.",
           "min": 0.4, "max": 0.95, "step": 0.05, "default": 0.9,
           "showFor": ["logo"]
         },
@@ -167,7 +167,7 @@
         { "kind": "subheading", "text": "", "bgColor": "#90ebcd", "scale": 1, "weight": 400 }
       ]
     },
-    { "id": "width",  "label": "Width",  "type": "number", "default": 1350, "min": 100, "max": 8000, "group": "export", "help": "Canvas width. The blocks repack to fill any size — tall, wide, square or banner." },
+    { "id": "width",  "label": "Width",  "type": "number", "default": 1350, "min": 100, "max": 8000, "group": "export", "help": "Canvas width. The blocks repack to fill any size - tall, wide, square or banner." },
     { "id": "height", "label": "Height", "type": "number", "default": 1350, "min": 100, "max": 8000, "group": "export" }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "asset-export",
   "name": "Asset Export",
-  "description": "Render any catalog asset — or a Lolly tool link — out to any format and size.",
+  "description": "Render any catalog asset - or a Lolly tool link - out to any format and size.",
   "a11yLabel": "Exported asset",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
@@ -22,7 +22,7 @@
       "label": "Asset",
       "type": "asset",
       "default": "suse/logo/hor-pos-green",
-      "help": "The asset to render — a catalog id (see `lolly assets`) or a pasted lolly.tools tool link. Vector assets stay vector through SVG/PDF; raster assets embed as images."
+      "help": "The asset to render - a catalog id (see `lolly assets`) or a pasted lolly.tools tool link. Vector assets stay vector through SVG/PDF; raster assets embed as images."
     },
     {
       "id": "fit",

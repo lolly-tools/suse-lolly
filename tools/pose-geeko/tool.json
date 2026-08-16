@@ -1,7 +1,7 @@
 {
   "id": "pose-geeko",
   "name": "Pose Geeko",
-  "description": "Pose the SUSE Geeko with sliders — eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
+  "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
   "version": "0.1.0",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -17,7 +17,7 @@
   },
   "featured": {
     "order": 2,
-    "blurb": "Pose the SUSE Geeko — print-ready stills",
+    "blurb": "Pose the SUSE Geeko - print-ready stills",
     "variants": [
       {
         "label": "Curious climb · transparent",

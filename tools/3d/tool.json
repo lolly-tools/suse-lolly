@@ -29,7 +29,7 @@
       "default": "sample-1",
       "help": "A bundled sample model. Upload your own below to override.",
       "options": [
-        { "value": "sample-1", "label": "Sample 1 — animated" },
+        { "value": "sample-1", "label": "Sample 1 - animated" },
         { "value": "sample-2", "label": "Sample 2" },
         { "value": "sample-3", "label": "Sample 3" }
       ]
@@ -41,7 +41,7 @@
       "type": "file",
       "accept": [".glb", ".gltf", "model/gltf-binary", "model/gltf+json"],
       "maxSize": 33554432,
-      "help": "Your own .glb (recommended) — replaces the sample. Never uploaded; read on-device."
+      "help": "Your own .glb (recommended) - replaces the sample. Never uploaded; read on-device."
     },
 
     {
@@ -89,7 +89,7 @@
       "label": "Rotate model",
       "section": "Transform",
       "type": "vector",
-      "help": "Drag the canvas to orbit the model (⌘/Ctrl-drag rolls). Or set the angle here — degrees, about the model's centre, independent of the camera.",
+      "help": "Drag the canvas to orbit the model (⌘/Ctrl-drag rolls). Or set the angle here - degrees, about the model's centre, independent of the camera.",
       "fields": [
         { "id": "pitch", "label": "Pitch", "symbol": "°", "min": -180, "max": 180, "step": 1, "default": 0 },
         { "id": "yaw", "label": "Yaw", "symbol": "°", "min": -180, "max": 180, "step": 1, "default": 0 },

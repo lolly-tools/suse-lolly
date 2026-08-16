@@ -116,7 +116,7 @@
       "id": "scenes",
       "label": "Scenes",
       "type": "blocks",
-      "help": "Each scene is one segment of the sequence — it animates in over the previous one, with its own Lottie animation looping on top. The last scene is the resting end card.",
+      "help": "Each scene is one segment of the sequence - it animates in over the previous one, with its own Lottie animation looping on top. The last scene is the resting end card.",
       "addMenu": { "field": "animSize", "label": "Add scene" },
       "fields": [
         {

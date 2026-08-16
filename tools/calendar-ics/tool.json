@@ -53,7 +53,7 @@
       "type": "text",
       "default": "",
       "placeholder": "e.g. Nuremberg, or a meeting link",
-      "help": "Where it happens — a place or a URL. Shared id with Meeting Planner (city)."
+      "help": "Where it happens - a place or a URL. Shared id with Meeting Planner (city)."
     },
     {
       "id": "description",

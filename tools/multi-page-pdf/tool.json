@@ -1,8 +1,8 @@
 {
   "id": "multi-page-pdf",
   "name": "Multi-Page PDF",
-  "description": "Build a multi-page PDF — a cover, flowing content blocks, and a back page.",
-  "a11yLabel": "{{default coverTitle \"Untitled\"}} — multi-page PDF document",
+  "description": "Build a multi-page PDF - a cover, flowing content blocks, and a back page.",
+  "a11yLabel": "{{default coverTitle \"Untitled\"}} - multi-page PDF document",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -10,7 +10,7 @@
   "tags": ["pdf", "document", "report", "multi-page", "brochure", "layout", "print"],
   "featured": {
     "order": 3,
-    "blurb": "Multi-page PDFs — cover, content, back"
+    "blurb": "Multi-page PDFs - cover, content, back"
   },
   "render": {
     "width": 794,
@@ -21,7 +21,7 @@
     "c2pa": true,
     "aspectWarning": {
       "max": 1,
-      "message": "This document is built for portrait pages. A landscape or wider size breaks the two-column layout — keep height the longer side."
+      "message": "This document is built for portrait pages. A landscape or wider size breaks the two-column layout - keep height the longer side."
     }
   },
   "hooks": {
@@ -104,7 +104,7 @@
       "id": "coverText",
       "label": "Cover text",
       "type": "longtext",
-      "default": "Prepared for internal review.\n\n**Confidential** — not for distribution.",
+      "default": "Prepared for internal review.\n\n**Confidential** - not for distribution.",
       "rows": 3,
       "help": "Supports # headings, **bold**, *italic*, - bullet lists and 1. numbered lists.",
       "section": "Cover"
@@ -173,7 +173,7 @@
         {
           "id": "body", "label": "Body", "type": "text", "showFor": ["text"],
           "multilineFor": ["text"], "rows": 6,
-          "placeholder": "Body text — supports # headings, **bold**, *italic*, - bullets and 1. numbered lists"
+          "placeholder": "Body text - supports # headings, **bold**, *italic*, - bullets and 1. numbered lists"
         },
         { "id": "image", "label": "Image", "type": "asset", "assetType": "image", "allowUpload": true, "showFor": ["image"] },
         {
@@ -206,9 +206,9 @@
         }
       ],
       "default": [
-        { "kind": "text", "heading": "Introduction", "body": "Welcome. This document was generated from a handful of simple inputs — a title, some text blocks, and a couple of images.\n\nEach block flows onto the pages automatically. There is no page-by-page layout to manage: add blocks and the pages appear as they fill.", "width": "wide", "size": "auto", "break": "auto" },
+        { "kind": "text", "heading": "Introduction", "body": "Welcome. This document was generated from a handful of simple inputs - a title, some text blocks, and a couple of images.\n\nEach block flows onto the pages automatically. There is no page-by-page layout to manage: add blocks and the pages appear as they fill.", "width": "wide", "size": "auto", "break": "auto" },
         { "kind": "text", "heading": "On brand by default", "body": "Headings, rules and the cover band all use your **accent colour**. Body text supports *italic*, **bold** and bullet lists:\n\n- One source of truth\n- Consistent typography\n- Export-ready PDF", "width": "column", "size": "auto", "break": "auto" },
-        { "kind": "text", "heading": "Column or wide", "body": "A block sits in a single column by default. Switch any block to *Wide* and it spans both columns — useful for an opening paragraph, a pull quote, or a full-width image.", "width": "column", "size": "auto", "break": "auto" },
+        { "kind": "text", "heading": "Column or wide", "body": "A block sits in a single column by default. Switch any block to *Wide* and it spans both columns - useful for an opening paragraph, a pull quote, or a full-width image.", "width": "column", "size": "auto", "break": "auto" },
         { "kind": "text", "heading": "Set the height", "body": "Leave a block on **Auto** to size it to its content, or pin it to Short / Medium / Tall / Full so the grid stays tidy.", "width": "column", "size": "auto", "break": "auto" },
         { "kind": "text", "heading": "Add as much as you like", "body": "When the blocks outgrow a page, the next page is created for you. The back page always comes last.", "width": "column", "size": "auto", "break": "auto" }
       ]
@@ -281,7 +281,7 @@
       "id": "aboutText",
       "label": "About text",
       "type": "longtext",
-      "default": "SUSE is a global leader of enterprise open source software. By transforming community innovations into secure, sovereign and AI-ready solutions, SUSE empowers customers to escape vendor lock-in and regain control of their IT destiny. Through industry-leading Linux, Kubernetes, Edge and AI infrastructure solutions, SUSE delivers the flexibility to innovate everywhere—from the data center to multi-cloud and out to the edge. Only SUSE also manages many Linux and Kubernetes distributions. At SUSE, Choice Happens because we prioritize community, interoperability and relentless innovation. Discover how we power mission-critical resilience at www.suse.com",
+      "default": "SUSE is a global leader of enterprise open source software. By transforming community innovations into secure, sovereign and AI-ready solutions, SUSE empowers customers to escape vendor lock-in and regain control of their IT destiny. Through industry-leading Linux, Kubernetes, Edge and AI infrastructure solutions, SUSE delivers the flexibility to innovate everywhere - from the data center to multi-cloud and out to the edge. Only SUSE also manages many Linux and Kubernetes distributions. At SUSE, Choice Happens because we prioritize community, interoperability and relentless innovation. Discover how we power mission-critical resilience at www.suse.com",
       "rows": 6,
       "help": "Shown beneath the contact details on the back page. Supports # headings, **bold**, *italic*, - bullet lists and 1. numbered lists.",
       "section": "Back page"

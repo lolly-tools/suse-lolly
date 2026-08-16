@@ -43,7 +43,7 @@
       "type": "text",
       "default": "Nuremberg",
       "placeholder": "e.g. Nuremberg",
-      "help": "The city where the meeting originates — sets the timezone for the time below.",
+      "help": "The city where the meeting originates - sets the timezone for the time below.",
       "notice": "City names are looked up at open-meteo.com to find their time zone. Only the name is sent, and each answer stays on your device for offline reuse."
     },
     {
@@ -58,7 +58,7 @@
       "label": "Live clock",
       "type": "boolean",
       "default": false,
-      "help": "Show the current time everywhere and keep ticking — leave it open as a world-clock widget."
+      "help": "Show the current time everywhere and keep ticking - leave it open as a world-clock widget."
     },
     {
       "id": "theme",

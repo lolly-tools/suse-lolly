@@ -1,8 +1,8 @@
 {
   "id": "wayfinding-signage",
   "name": "Wayfinding Signage",
-  "description": "Directional event signs — destinations, each with an arrow. Print-ready.",
-  "a11yLabel": "Wayfinding sign for {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
+  "description": "Directional event signs - destinations, each with an arrow. Print-ready.",
+  "a11yLabel": "Wayfinding sign for {{default eventName \"the event\"}}{{#if heading}} - {{heading}}{{/if}}",
   "version": "1.2.0",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -56,7 +56,7 @@
       "type": "asset",
       "assetType": "any",
       "allowUpload": true,
-      "help": "Your event's logo. Optional — leave empty for no logo."
+      "help": "Your event's logo. Optional - leave empty for no logo."
     },
     {
       "id": "eventName",
@@ -72,7 +72,7 @@
       "type": "text",
       "default": "",
       "maxLength": 48,
-      "help": "Big title above the directions — e.g. a level, hall or 'Welcome'. Clear to hide."
+      "help": "Big title above the directions - e.g. a level, hall or 'Welcome'. Clear to hide."
     },
     {
       "id": "directions",
@@ -81,7 +81,7 @@
       "help": "Each row is a destination with an arrow. Pick the arrow direction and whether it sits to the left or right of the label.",
       "fields": [
         { "id": "label", "label": "Destination", "type": "text", "placeholder": "e.g. Registration" },
-        { "id": "image", "label": "Image (instead of text)", "type": "asset", "assetType": "any", "allowUpload": true, "help": "Optional — show a logo or sponsor branding in place of the destination text. The text above is used as the image's alt text and as the fallback when no image is set." },
+        { "id": "image", "label": "Image (instead of text)", "type": "asset", "assetType": "any", "allowUpload": true, "help": "Optional - show a logo or sponsor branding in place of the destination text. The text above is used as the image's alt text and as the fallback when no image is set." },
         {
           "id": "arrow",
           "label": "Arrow",

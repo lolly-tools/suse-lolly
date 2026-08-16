@@ -1,7 +1,7 @@
 {
   "id": "logo-wall",
   "name": "Logo Lockup: Grid (NASCAR)",
-  "description": "Arrange a pile of logos into a clean, even sponsor grid — the “NASCAR” wall.",
+  "description": "Arrange a pile of logos into a clean, even sponsor grid - the “NASCAR” wall.",
   "version": "1.3.0",
   "engineVersion": "^1.0.0",
   "status": "experimental",
@@ -89,21 +89,21 @@
       "label": "Balance sizes",
       "type": "boolean",
       "default": true,
-      "help": "Auto-size each logo by its optical weight — heavier logos shrink, lighter ones grow — so the wall reads as evenly weighted. Each logo's own Size % still applies on top. Turn off for uniform sizing."
+      "help": "Auto-size each logo by its optical weight - heavier logos shrink, lighter ones grow - so the wall reads as evenly weighted. Each logo's own Size % still applies on top. Turn off for uniform sizing."
     },
     {
       "id": "trim",
       "label": "Trim margins",
       "type": "boolean",
       "default": true,
-      "help": "Crop each logo to its artwork — transparent or flat-colour margins are measured away (SVGs included, still fully vector) so every logo fits its cell by its real content. Turn off if a logo's clear-space padding is deliberate."
+      "help": "Crop each logo to its artwork - transparent or flat-colour margins are measured away (SVGs included, still fully vector) so every logo fits its cell by its real content. Turn off if a logo's clear-space padding is deliberate."
     },
     {
       "id": "knockout",
       "label": "Remove white backgrounds",
       "type": "boolean",
       "default": true,
-      "help": "A logo lifted from an old slide or screenshot usually arrives in a solid white box. This makes that near-white backing transparent so the logo sits directly on your wall — coloured tiles and white inside the mark itself are kept. Needs Trim margins on."
+      "help": "A logo lifted from an old slide or screenshot usually arrives in a solid white box. This makes that near-white backing transparent so the logo sits directly on your wall - coloured tiles and white inside the mark itself are kept. Needs Trim margins on."
     },
     {
       "id": "vectorizeAll",
@@ -173,7 +173,7 @@
       "default": "off",
       "display": "segmented",
       "section": "Step & repeat",
-      "help": "Tile the whole logo set to fill a backdrop — the press-wall treatment behind interviews and event photos. Grid stacks rows squarely, Brick offsets alternate rows by half a cell, Checker staggers logos diagonally with space between.",
+      "help": "Tile the whole logo set to fill a backdrop - the press-wall treatment behind interviews and event photos. Grid stacks rows squarely, Brick offsets alternate rows by half a cell, Checker staggers logos diagonally with space between.",
       "options": [
         { "value": "off", "label": "Off" },
         { "value": "grid", "label": "Grid" },
@@ -203,7 +203,7 @@
       "fields": [
         { "id": "logo", "label": "Image", "type": "asset", "assetType": "any", "allowUpload": true },
         { "id": "presence", "label": "Presence", "type": "select", "default": "normal",
-          "help": "How prominent this logo is. Balancing equalises everyone first; Presence then deliberately weights this one up or down — sponsor-tier sizing.",
+          "help": "How prominent this logo is. Balancing equalises everyone first; Presence then deliberately weights this one up or down - sponsor-tier sizing.",
           "options": [
             { "value": "hero", "label": "Hero" },
             { "value": "large", "label": "Large" },
@@ -219,7 +219,7 @@
         { "id": "vectorize", "label": "Render as vector", "type": "boolean", "default": false,
           "help": "Flatten this logo to the single ink colour (crisp vector). Off keeps it as its original image." },
         { "id": "tune", "label": "Tune this logo", "type": "boolean", "default": false, "showIf": { "vectorize": true },
-          "help": "Give this logo its own vector settings — for finnicky marks that need a different threshold or inverting." },
+          "help": "Give this logo its own vector settings - for finnicky marks that need a different threshold or inverting." },
         { "id": "threshold", "label": "Threshold", "type": "number", "display": "slider", "min": 1, "max": 99, "step": 1, "default": 55, "showIf": { "vectorize": true, "tune": true },
           "help": "Brightness cut-off for this logo. Higher keeps more of it." },
         { "id": "invert", "label": "Invert", "type": "boolean", "default": false, "showIf": { "vectorize": true, "tune": true },

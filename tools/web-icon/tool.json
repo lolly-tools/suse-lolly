@@ -1,7 +1,7 @@
 {
   "id": "web-icon",
   "name": "Web Icon Maker",
-  "description": "Favicon and app-icon maker — a multi-size .ico, plus PNG and SVG.",
+  "description": "Favicon and app-icon maker - a multi-size .ico, plus PNG and SVG.",
   "a11yLabel": "Web icon labelled {{default text \"untitled\"}}",
   "version": "1.0.0",
   "engineVersion": "^1.0.0",
@@ -110,7 +110,7 @@
       "min": -4,
       "max": 14,
       "step": 1,
-      "help": "Negative values tuck the letters together — essential for fitting 3–4 monospace caps into a 16 px tile. Mono is wide, so push it well into the negatives."
+      "help": "Negative values tuck the letters together - essential for fitting 3–4 monospace caps into a 16 px tile. Mono is wide, so push it well into the negatives."
     },
     {
       "id": "labelScale",
@@ -129,7 +129,7 @@
       "type": "boolean",
       "default": true,
       "group": "export",
-      "help": "Show the icon at its real 16 and 32 px favicon sizes on the canvas so you can judge legibility. An editor aid only — never included in exports."
+      "help": "Show the icon at its real 16 and 32 px favicon sizes on the canvas so you can judge legibility. An editor aid only - never included in exports."
     }
   ],
   "hooks": {

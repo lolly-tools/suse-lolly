@@ -2,7 +2,7 @@
   "id": "record",
   "name": "Record",
   "description": "Design your own top and tail cards, then record a clip and Lolly wraps them around it automatically.",
-  "a11yLabel": "Record — an editable intro and outro around a camera clip",
+  "a11yLabel": "Record - an editable intro and outro around a camera clip",
   "version": "1.0.0",
   "engineVersion": "^1.17.0",
   "status": "experimental",
@@ -38,14 +38,14 @@
     { "id": "pageH", "type": "number", "label": "Frame height", "default": 1920, "min": 100, "max": 8000, "group": "size" },
     { "id": "brandColor", "label": "Bookend colour", "type": "color", "default": "{color.semantic.primary}", "help": "Fills the intro and outro cards and tints the fade at the very ends of the clip." },
     { "id": "accent", "label": "Accent", "type": "color", "default": "{color.semantic.secondary}" },
-    { "id": "clip", "type": "asset", "label": "Camera clip", "assetType": "video", "allowUpload": true, "help": "Your recorded take — tap ● on the middle frame to film it, or drop in a video. The intro and outro wrap around it on export." },
+    { "id": "clip", "type": "asset", "label": "Camera clip", "assetType": "video", "allowUpload": true, "help": "Your recorded take - tap ● on the middle frame to film it, or drop in a video. The intro and outro wrap around it on export." },
     {
       "id": "clipFit", "type": "select", "label": "Video fit", "default": "cover",
       "options": [
         { "value": "cover", "label": "Fill frame (crop)" },
         { "value": "contain", "label": "Fit whole video" }
       ],
-      "help": "How your clip sits in the frame. Fill crops it to cover the frame edge-to-edge; Fit shows the whole video with bars — handy when you upload a landscape or square recording into a portrait frame."
+      "help": "How your clip sits in the frame. Fill crops it to cover the frame edge-to-edge; Fit shows the whole video with bars - handy when you upload a landscape or square recording into a portrait frame."
     },
     {
       "id": "introMs", "label": "Intro length", "type": "number", "display": "slider", "min": 800, "max": 5000, "step": 100, "default": 2200, "group": "Timing",
@@ -133,7 +133,7 @@
           "label": "Enter with",
           "default": "fade",
           "group": "Motion",
-          "help": "How this object animates in on export — during the intro/outro hold, or (for objects over the camera) as the clip starts and ends.",
+          "help": "How this object animates in on export - during the intro/outro hold, or (for objects over the camera) as the clip starts and ends.",
           "options": [
             { "value": "fade", "label": "Fade" },
             { "value": "pop", "label": "Pop" },
@@ -153,7 +153,7 @@
             { "value": "none", "label": "Cut (no animation)" }
           ]
         },
-        { "id": "delay", "type": "number", "label": "Start delay", "default": 0, "min": 0, "max": 4000, "step": 50, "display": "slider", "group": "Motion", "help": "Milliseconds to wait before this object enters — stagger objects for a cascade." },
+        { "id": "delay", "type": "number", "label": "Start delay", "default": 0, "min": 0, "max": 4000, "step": 50, "display": "slider", "group": "Motion", "help": "Milliseconds to wait before this object enters - stagger objects for a cascade." },
         {
           "id": "shape",
           "type": "select",
@@ -235,7 +235,7 @@
           "type": "select",
           "label": "Weight",
           "default": "500",
-          "help": "Black (900) is SUSE Sans only — SUSE Mono tops out at Extrabold (800).",
+          "help": "Black (900) is SUSE Sans only - SUSE Mono tops out at Extrabold (800).",
           "options": [
             { "value": "100", "label": "Thin" },
             { "value": "200", "label": "Extra light" },

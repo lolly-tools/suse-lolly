@@ -1,8 +1,8 @@
 {
   "id": "doc-studio",
   "name": "Doc Studio",
-  "description": "Write a multi-page document on the canvas — rich text, headings, tables and inserted Lolly renders that flow onto pages and export as a PDF.",
-  "a11yLabel": "{{default docTitle \"Untitled\"}} — multi-page document",
+  "description": "Write a multi-page document on the canvas - rich text, headings, tables and inserted Lolly renders that flow onto pages and export as a PDF.",
+  "a11yLabel": "{{default docTitle \"Untitled\"}} - multi-page document",
   "version": "1.1.0",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -18,7 +18,7 @@
     "c2pa": true,
     "aspectWarning": {
       "max": 1,
-      "message": "A document flows in portrait pages. A landscape or wider size breaks the page flow — keep height the longer side."
+      "message": "A document flows in portrait pages. A landscape or wider size breaks the page flow - keep height the longer side."
     }
   },
   "hooks": {
@@ -101,7 +101,7 @@
       "label": "Document",
       "type": "longtext",
       "default": "",
-      "help": "The document itself — stored as portable rich-text (ProseMirror) JSON. Written on the canvas with the Doc Studio editor; the engine renders this JSON into pages for export. Empty falls back to a starter document."
+      "help": "The document itself - stored as portable rich-text (ProseMirror) JSON. Written on the canvas with the Doc Studio editor; the engine renders this JSON into pages for export. Empty falls back to a starter document."
     },
 
     { "id": "width", "label": "Page width", "type": "number", "default": 794, "min": 100, "max": 8000, "group": "export" },

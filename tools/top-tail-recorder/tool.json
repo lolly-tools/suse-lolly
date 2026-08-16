@@ -2,7 +2,7 @@
   "id": "top-tail-recorder",
   "name": "Top & Tail Video",
   "description": "Record a clip in any orientation, then auto-wrap it with branded intro and outro bookends, a lower-third, and a music bed.",
-  "a11yLabel": "Top and tail video — {{default introTitle \"intro\"}} to {{default outroTitle \"outro\"}}",
+  "a11yLabel": "Top and tail video - {{default introTitle \"intro\"}} to {{default outroTitle \"outro\"}}",
   "version": "1.0.0",
   "engineVersion": "^1.17.0",
   "status": "experimental",
@@ -30,7 +30,7 @@
     },
     {
       "id": "clip", "label": "Your clip", "type": "asset", "assetType": "video", "allowUpload": true,
-      "help": "Tap ● Record on the canvas to film a clip — or upload a video. The bookends wrap around it, filling the frame in any orientation."
+      "help": "Tap ● Record on the canvas to film a clip - or upload a video. The bookends wrap around it, filling the frame in any orientation."
     },
     {
       "id": "clipFit", "label": "Video fit", "type": "select", "default": "cover",
@@ -38,7 +38,7 @@
         { "value": "cover", "label": "Fill frame (crop)" },
         { "value": "contain", "label": "Fit whole video" }
       ],
-      "help": "How your clip sits in the frame. Fill crops it to cover the frame; Fit shows the whole video with bars — handy when you upload a landscape or square clip into a portrait frame."
+      "help": "How your clip sits in the frame. Fill crops it to cover the frame; Fit shows the whole video with bars - handy when you upload a landscape or square clip into a portrait frame."
     },
     { "id": "brandColor", "label": "Bookend colour", "type": "color", "default": "{color.semantic.primary}" },
     { "id": "accent", "label": "Accent", "type": "color", "default": "{color.semantic.secondary}" },
