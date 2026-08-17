@@ -1,11 +1,7 @@
 {
   "version": "1",
-  "generatedAt": "2026-06-16T00:00:00Z",
-  "defaultFavourites": [
-    "suse/headshots/frank-feldmann",
-    "suse/headshots/andy-fitzsimon",
-    "suse/headshots/andreas-prins"
-  ],
+  "generatedAt": "2026-08-17T00:00:00Z",
+  "defaultFavourites": [],
   "defaultHiddenTools": [
     "3d",
     "booth-studio",

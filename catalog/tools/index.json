@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-16T21:54:16.882Z",
+  "generatedAt": "2026-08-17T15:54:10.906Z",
   "tools": [
     {
       "id": "color-block",
@@ -1527,7 +1527,7 @@
       "height": 1000,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\" /><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\" /><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" /></svg>",
-      "preview": "/catalog/previews/color-palette.png",
+      "preview": "/catalog/previews/color-palette.svg",
       "examples": [
         {
           "label": "Ocean triad",
@@ -8850,7 +8850,7 @@
     {
       "id": "filter",
       "name": "Filter",
-      "description": "One tool for photo effects: pick halftone, scanline, posterize or voronoi (vector) or duotone, pixel-stretch or print imperfections (raster). Brand overlays, live camera, and exports to as many formats as each effect supports.",
+      "description": "One tool for photo effects: pick halftone, scanline, posterize, voronoi, dither or ASCII art (vector) or duotone, pixel-stretch, imperfections or glitch (raster). Brand overlays, live camera, and exports to as many formats as each effect supports.",
       "version": "1.3.0",
       "status": "official",
       "category": "designer",
@@ -8886,7 +8886,9 @@
         "apng",
         "webp-anim",
         "webm",
-        "mp4"
+        "mp4",
+        "txt",
+        "md"
       ],
       "width": 1080,
       "height": 1080,
@@ -8895,7 +8897,7 @@
       "preview": "/catalog/previews/filter.png",
       "featured": {
         "order": 7,
-        "blurb": "Seven photo effects, vector or raster, in one tool"
+        "blurb": "Ten photo effects, vector or raster, in one tool"
       },
       "examples": [
         {
@@ -8928,6 +8930,27 @@
           "label": "Print imperfections",
           "values": {
             "effect": "imperfections"
+          }
+        },
+        {
+          "label": "Dither",
+          "values": {
+            "effect": "dither",
+            "di_palette": "handheld4"
+          }
+        },
+        {
+          "label": "ASCII art",
+          "values": {
+            "effect": "ascii"
+          }
+        },
+        {
+          "label": "Glitch",
+          "values": {
+            "effect": "glitch",
+            "gl_sortThreshold": 55,
+            "gl_blockAmount": 30
           }
         }
       ],
