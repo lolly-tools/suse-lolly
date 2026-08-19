@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-18T17:07:42.324Z",
+  "generatedAt": "2026-08-19T13:17:25.541Z",
   "tools": [
     {
       "id": "color-block",
@@ -5014,184 +5014,10 @@
       }
     },
     {
-      "id": "carousel-maker",
-      "name": "Carousel Maker",
-      "description": "Design a multi-page carousel on one canvas - set 1–6 same-size pages, drop objects onto each page, export an image sequence or a multi-page PDF.",
-      "version": "1.0.0",
-      "status": "community",
-      "category": "designer",
-      "tags": [
-        "carousel",
-        "pages",
-        "multi-page",
-        "social",
-        "instagram",
-        "linkedin",
-        "slides",
-        "swipe",
-        "deck",
-        "layout",
-        "wysiwyg",
-        "editor",
-        "pdf",
-        "sequence"
-      ],
-      "formats": [
-        "png",
-        "jpg",
-        "webp",
-        "svg",
-        "pdf",
-        "pptx"
-      ],
-      "width": 1080,
-      "height": 1350,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"8\" y=\"4\" width=\"8\" height=\"16\" rx=\"2\" /><path d=\"M4.5 7v10\" /><path d=\"M19.5 7v10\" /></svg>",
-      "preview": "/catalog/previews/carousel-maker.png",
-      "featured": {
-        "order": 2,
-        "blurb": "Swipeable carousels & multi-page layouts"
-      },
-      "paged": true,
-      "i18n": {
-        "ar": {
-          "name": "صانع الكاروسيل",
-          "description": "صمم كاروسيل متعدد الصفحات على لوحة واحدة — حدد من 1 إلى 6 صفحات متساوية الحجم، وأسقط العناصر على كل صفحة، وصدر سلسلة صور أو PDF متعدد الصفحات.",
-          "blurb": "كاروسيلات قابلة للتمرير وتخطيطات متعددة الصفحات"
-        },
-        "bg": {
-          "name": "Създател на карусели",
-          "description": "Проектирай многостраничен карусел на едно платно — задай 1–6 страници с еднакъв размер, пусни обекти на всяка страница и експортирай поредица от изображения или многостраничен PDF.",
-          "blurb": "Плъзгащи се карусели и многостранични оформления"
-        },
-        "bn": {
-          "name": "ক্যারোসেল মেকার",
-          "description": "এক ক্যানভাসে একটি বহু-পৃষ্ঠার ক্যারোসেল ডিজাইন করুন — 1–6টি সমান আকারের পৃষ্ঠা ঠিক করুন, প্রতিটি পৃষ্ঠায় অবজেক্ট বসান, একটি ছবির সিকোয়েন্স বা বহু-পৃষ্ঠার PDF এক্সপোর্ট করুন।",
-          "blurb": "সোয়াইপযোগ্য ক্যারোসেল ও বহু-পৃষ্ঠার লেআউট"
-        },
-        "cs": {
-          "name": "Tvůrce karuselu",
-          "description": "Navrhni vícestránkový karusel na jednom plátně — nastav 1–6 stejně velkých stránek, přidej objekty na každou stránku a exportuj sekvenci obrázků nebo vícestránkové PDF.",
-          "blurb": "Prolistovatelné karusely a vícestránkové layouty"
-        },
-        "de": {
-          "name": "Karussell-Ersteller",
-          "description": "Gestalten Sie ein mehrseitiges Karussell auf einer Leinwand — legen Sie 1–6 gleich große Seiten fest, platzieren Sie Objekte auf jeder Seite und exportieren Sie eine Bildsequenz oder ein mehrseitiges PDF.",
-          "blurb": "Wischbare Karussells und mehrseitige Layouts"
-        },
-        "es": {
-          "name": "Creador de Carruseles",
-          "description": "Diseña un carrusel de varias páginas en un mismo lienzo — define 1–6 páginas del mismo tamaño, coloca objetos en cada página y exporta una secuencia de imágenes o un PDF de varias páginas.",
-          "blurb": "Carruseles deslizables y diseños de varias páginas"
-        },
-        "fr": {
-          "name": "Créateur de carrousel",
-          "description": "Conçois un carrousel multi-pages sur un seul canevas — définis 1 à 6 pages de même taille, dépose des objets sur chaque page, exporte une séquence d'images ou un PDF multi-pages.",
-          "blurb": "Carrousels à glisser et mises en page multi-pages"
-        },
-        "hi": {
-          "name": "कैरोसेल मेकर",
-          "description": "एक ही कैनवास पर मल्टी-पेज कैरोसेल डिज़ाइन करें — 1–6 समान आकार के पेज सेट करें, हर पेज पर ऑब्जेक्ट रखें, इमेज सीक्वेंस या मल्टी-पेज PDF एक्सपोर्ट करें।",
-          "blurb": "स्वाइप होने वाले कैरोसेल और मल्टी-पेज लेआउट"
-        },
-        "id": {
-          "name": "Pembuat Carousel",
-          "description": "Desain carousel multi-halaman dalam satu kanvas — atur 1–6 halaman berukuran sama, letakkan objek ke tiap halaman, ekspor rangkaian gambar atau PDF multi-halaman.",
-          "blurb": "Carousel yang bisa digeser & tata letak multi-halaman"
-        },
-        "it": {
-          "name": "Creatore di caroselli",
-          "description": "Progetta un carosello multipagina su un'unica tela — imposta da 1 a 6 pagine delle stesse dimensioni, trascina gli oggetti su ogni pagina ed esporta una sequenza di immagini o un PDF multipagina.",
-          "blurb": "Caroselli scorrevoli e layout multipagina"
-        },
-        "ja": {
-          "name": "カルーセルメーカー",
-          "description": "1つのキャンバスでマルチページカルーセルをデザインします。1〜6ページの同サイズページを設定し、各ページにオブジェクトを配置して、画像シーケンスまたは複数ページPDFとして書き出せます。",
-          "blurb": "スワイプ可能なカルーセルとマルチページレイアウト"
-        },
-        "ko": {
-          "name": "캐러셀 메이커",
-          "description": "하나의 캔버스에서 멀티 페이지 캐러셀을 디자인하세요 — 1~6개의 동일한 크기 페이지를 설정하고 각 페이지에 객체를 배치한 다음, 이미지 시퀀스 또는 멀티 페이지 PDF로 내보낼 수 있습니다.",
-          "blurb": "스와이프 가능한 캐러셀 & 멀티 페이지 레이아웃"
-        },
-        "ms": {
-          "name": "Pembuat Karusel",
-          "description": "Reka bentuk karusel berbilang halaman pada satu kanvas — tetapkan 1–6 halaman bersaiz sama, seret objek ke setiap halaman, dan eksport jujukan imej atau PDF berbilang halaman.",
-          "blurb": "Karusel boleh leret & reka letak berbilang halaman"
-        },
-        "nl": {
-          "name": "Carrousel Maker",
-          "description": "Ontwerp een meerpagina-carrousel op één canvas — stel 1–6 even grote pagina's in, sleep objecten op elke pagina en exporteer een afbeeldingenreeks of een meerpagina-PDF.",
-          "blurb": "Swipebare carrousels & lay-outs met meerdere pagina's"
-        },
-        "no": {
-          "name": "Karusellskaper",
-          "description": "Design en karusell med flere sider på ett lerret — sett 1–6 like store sider, dra objekter inn på hver side, og eksporter en bildesekvens eller en flersidig PDF.",
-          "blurb": "Sveipbare karuseller og flersidige layouter"
-        },
-        "pl": {
-          "name": "Carousel Maker",
-          "description": "Zaprojektuj wielostronicową karuzelę na jednym płótnie — ustaw 1–6 stron tego samego rozmiaru, umieszczaj obiekty na każdej stronie, eksportuj sekwencję obrazów lub wielostronicowy plik PDF.",
-          "blurb": "Przewijane karuzele i wielostronicowe układy"
-        },
-        "pt": {
-          "name": "Criador de Carrossel",
-          "description": "Crie um carrossel de várias páginas em uma única tela — defina de 1 a 6 páginas do mesmo tamanho, adicione objetos em cada página e exporte uma sequência de imagens ou um PDF com várias páginas.",
-          "blurb": "Carrosséis deslizáveis e layouts com várias páginas"
-        },
-        "ro": {
-          "name": "Creator de carusele",
-          "description": "Creează un carusel cu mai multe pagini pe un singur canvas — setează 1–6 pagini de aceeași dimensiune, adaugă obiecte pe fiecare pagină și exportă o secvență de imagini sau un PDF cu mai multe pagini.",
-          "blurb": "Carusele cu swipe și layouturi cu mai multe pagini"
-        },
-        "sv": {
-          "name": "Karusellskapare",
-          "description": "Designa en flersidig karusell på en enda canvas — ställ in 1–6 lika stora sidor, placera objekt på varje sida och exportera en bildsekvens eller en flersidig PDF.",
-          "blurb": "Swipebara karuseller och flersidiga layouter"
-        },
-        "tl": {
-          "name": "Carousel Maker",
-          "description": "Mag-design ng multi-page na carousel sa isang canvas — mag-set ng 1–6 pages na parehong laki, mag-drag ng mga object sa bawat page, at mag-export ng image sequence o multi-page PDF.",
-          "blurb": "Mga swipeable na carousel at multi-page na layout"
-        },
-        "tr": {
-          "name": "Karusel Oluşturucu",
-          "description": "Tek bir kanvasta çok sayfalı bir karusel tasarla — 1–6 arasında aynı boyutta sayfa ayarla, her sayfaya nesneler bırak, görüntü dizisi ya da çok sayfalı PDF olarak dışa aktar.",
-          "blurb": "Kaydırmalı karuseller & çok sayfalı düzenler"
-        },
-        "uk": {
-          "name": "Карусель",
-          "description": "Створюйте багатосторінкову карусель на одному канвасі — задайте 1–6 сторінок однакового розміру, розмістіть об'єкти на кожній сторінці, експортуйте послідовність зображень або багатосторінковий PDF.",
-          "blurb": "Гортабельні каруселі та багатосторінкові макети"
-        },
-        "ur": {
-          "name": "کیروسل میکر",
-          "description": "ایک کینوس پر ملٹی پیج کیروسل ڈیزائن کریں — 1–6 ایک ہی سائز کے صفحات سیٹ کریں، ہر صفحے پر آبجیکٹس ڈراپ کریں، امیج سیکوئنس یا ملٹی پیج PDF ایکسپورٹ کریں۔",
-          "blurb": "سوائپ ایبل کیروسلز & ملٹی پیج لے آؤٹس"
-        },
-        "vi": {
-          "name": "Công cụ tạo Carousel",
-          "description": "Thiết kế carousel nhiều trang trên một canvas — đặt 1–6 trang cùng kích thước, kéo thả đối tượng vào từng trang, xuất chuỗi ảnh hoặc PDF nhiều trang.",
-          "blurb": "Carousel vuốt được & bố cục nhiều trang"
-        },
-        "zh-hant": {
-          "name": "輪播圖製作工具",
-          "description": "在同一個畫布上設計多頁輪播圖——設定 1 至 6 個大小相同的頁面,在每個頁面加入物件,匯出圖片序列或多頁 PDF。",
-          "blurb": "可滑動輪播與多頁版面配置"
-        },
-        "zh": {
-          "name": "轮播图制作器",
-          "description": "在同一画布上设计多页轮播图——设置 1–6 个尺寸相同的页面,在每个页面添加对象,导出图片序列或多页 PDF。",
-          "blurb": "可滑动轮播图与多页版式"
-        }
-      }
-    },
-    {
       "id": "org-chart",
       "name": "Flow Chart",
       "description": "Build flow charts on an open canvas - drag cards, connect them, and the lines route and stick to the boxes.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -5634,7 +5460,7 @@
       "id": "record",
       "name": "Record",
       "description": "Design your own top and tail cards, then record a clip and Lolly wraps them around it automatically.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "experimental",
       "category": "everyone",
       "capabilities": [
@@ -7697,7 +7523,7 @@
       "id": "battlecards",
       "name": "Battlecards",
       "description": "Turn any table into a deck of cards - one card per row, ready as a multi-page PDF. Paste straight from your spreadsheet, doc, or chat.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -8193,372 +8019,6 @@
           "name": "Finish Preview",
           "description": "Preview foil, spot UV, emboss and soft-touch finishes on your artwork — then export the printer-ready spot plate. The on-screen sheen is presentation only; the plate is the real deliverable your print house needs.",
           "blurb": "Foil, spot UV and emboss — with the plate your printer needs"
-        }
-      }
-    },
-    {
-      "id": "bitmap-studio",
-      "name": "Bitmap Studio",
-      "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture - then bake your look as a LUT any editor can use.",
-      "version": "1.3.0",
-      "status": "community",
-      "category": "designer",
-      "tags": [
-        "photo",
-        "image",
-        "bitmap",
-        "grade",
-        "grading",
-        "color",
-        "colour",
-        "lut",
-        "cube",
-        "3dl",
-        "film",
-        "preset",
-        "duotone",
-        "gradient-map",
-        "split-tone",
-        "grain",
-        "vignette",
-        "halation",
-        "bloom",
-        "sharpen",
-        "filter",
-        "effect",
-        "darkroom",
-        "cinematic",
-        "brand"
-      ],
-      "formats": [
-        "png",
-        "jpg",
-        "webp",
-        "svg",
-        "webm",
-        "mp4",
-        "exr",
-        "hdr"
-      ],
-      "width": 1080,
-      "height": 1080,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M3 15.5 8 10l4.5 4.5L16 11l5 5\"/><circle cx=\"9\" cy=\"7.5\" r=\"1.4\"/><path d=\"M14.5 5.5h4M16.5 3.5v4\"/></svg>",
-      "preview": "/catalog/previews/bitmap-studio.svg",
-      "featured": {
-        "order": 3,
-        "blurb": "Grade photos with film looks, LUTs and your brand colours"
-      },
-      "examples": [
-        {
-          "label": "Teal & orange cinema",
-          "values": {
-            "preset": "teal-orange",
-            "vignette": 22,
-            "halation": 18
-          }
-        },
-        {
-          "label": "Faded matte + grain",
-          "values": {
-            "preset": "matte",
-            "grain": 45,
-            "vignette": 28
-          }
-        },
-        {
-          "label": "Brand duotone",
-          "values": {
-            "treatment": "duotone",
-            "treatmentAmount": 85
-          }
-        },
-        {
-          "label": "Classic black & white",
-          "values": {
-            "preset": "bw",
-            "grain": 35,
-            "vignette": 24,
-            "contrast": 12
-          }
-        },
-        {
-          "label": "Vivid slide LUT",
-          "values": {
-            "lutSource": "preset",
-            "lutPreset": "slide-vivid"
-          }
-        }
-      ],
-      "i18n": {
-        "ar": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "bg": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "bn": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "cs": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "de": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "es": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "fr": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "hi": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "id": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "it": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "ja": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "ko": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "ms": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "nl": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "no": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "pl": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "pt": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "ro": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "sv": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "tl": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "tr": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "uk": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "ur": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "vi": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "zh-hant": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        },
-        "zh": {
-          "name": "Bitmap Studio",
-          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
-          "blurb": "Grade photos with film looks, LUTs and your brand colours"
-        }
-      }
-    },
-    {
-      "id": "layer-stack",
-      "name": "Layers",
-      "description": "Open a Photoshop or GIMP file as individual layers - lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD.",
-      "version": "1.0.0",
-      "status": "community",
-      "category": "designer",
-      "tags": [
-        "layers",
-        "psd",
-        "photoshop",
-        "xcf",
-        "gimp",
-        "import",
-        "composite",
-        "stack",
-        "blend",
-        "position",
-        "on-device"
-      ],
-      "formats": [
-        "png",
-        "webp",
-        "jpg",
-        "tiff",
-        "pdf"
-      ],
-      "width": 1080,
-      "height": 1080,
-      "exportable": true,
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 2 9 5-9 5-9-5Z\"/><path d=\"m3 12 9 5 9-5\"/><path d=\"m3 17 9 5 9-5\"/></svg>",
-      "preview": "/catalog/previews/layer-stack.svg",
-      "i18n": {
-        "ar": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "bg": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "bn": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "cs": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "de": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "es": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "fr": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "hi": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "id": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "it": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "ja": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "ko": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "ms": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "nl": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "no": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "pl": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "pt": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "ro": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "sv": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "tl": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "tr": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "uk": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "ur": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "vi": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "zh-hant": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
-        },
-        "zh": {
-          "name": "Layers",
-          "description": "Open a Photoshop or GIMP file as individual layers — lock each one down with exact X/Y coordinates, visibility, opacity and blend mode, then export flat images or a layered PSD."
         }
       }
     },
@@ -9122,7 +8582,7 @@
       "id": "design",
       "name": "Design",
       "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your brand.",
-      "version": "1.13.0",
+      "version": "1.14.0",
       "status": "community",
       "category": "designer",
       "tags": [
@@ -9303,6 +8763,12 @@
       ],
       "templates": [
         {
+          "id": "carousel",
+          "name": "Carousel",
+          "category": "Social",
+          "description": "Three portrait frames as a swipe-through carousel: cover, point, closing. Exports one image per page."
+        },
+        {
           "id": "feature-tour",
           "name": "Feature tour",
           "category": "Video",
@@ -9475,6 +8941,246 @@
           "name": "Design",
           "description": "An open canvas for free arrangement — text, images, shapes and live renders from your other Lolly tools, all held to your brand.",
           "blurb": "在开放画布上自由排版"
+        }
+      }
+    },
+    {
+      "id": "darkroom",
+      "name": "Darkroom",
+      "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture - then bake your look as a LUT any editor can use. Opens a Photoshop or GIMP file as layers too: position, blend and hide each one, grade the composite, and export flat images or a layered PSD.",
+      "version": "2.0.0",
+      "status": "community",
+      "category": "designer",
+      "tags": [
+        "photo",
+        "image",
+        "bitmap",
+        "grade",
+        "grading",
+        "color",
+        "colour",
+        "lut",
+        "cube",
+        "3dl",
+        "film",
+        "preset",
+        "duotone",
+        "gradient-map",
+        "split-tone",
+        "grain",
+        "vignette",
+        "halation",
+        "bloom",
+        "sharpen",
+        "filter",
+        "effect",
+        "darkroom",
+        "cinematic",
+        "brand",
+        "layers",
+        "psd",
+        "photoshop",
+        "xcf",
+        "gimp",
+        "import",
+        "composite",
+        "stack",
+        "position",
+        "on-device",
+        "blend"
+      ],
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "svg",
+        "webm",
+        "mp4",
+        "exr",
+        "hdr",
+        "tiff",
+        "pdf"
+      ],
+      "width": 1080,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M3 15.5 8 10l4.5 4.5L16 11l5 5\"/><circle cx=\"9\" cy=\"7.5\" r=\"1.4\"/><path d=\"M14.5 5.5h4M16.5 3.5v4\"/></svg>",
+      "preview": "/catalog/previews/darkroom.svg",
+      "featured": {
+        "order": 3,
+        "blurb": "Grade photos with film looks, LUTs and your brand colours"
+      },
+      "examples": [
+        {
+          "label": "Teal & orange cinema",
+          "values": {
+            "preset": "teal-orange",
+            "vignette": 22,
+            "halation": 18
+          }
+        },
+        {
+          "label": "Faded matte + grain",
+          "values": {
+            "preset": "matte",
+            "grain": 45,
+            "vignette": 28
+          }
+        },
+        {
+          "label": "Brand duotone",
+          "values": {
+            "treatment": "duotone",
+            "treatmentAmount": 85
+          }
+        },
+        {
+          "label": "Classic black & white",
+          "values": {
+            "preset": "bw",
+            "grain": 35,
+            "vignette": 24,
+            "contrast": 12
+          }
+        },
+        {
+          "label": "Vivid slide LUT",
+          "values": {
+            "lutSource": "preset",
+            "lutPreset": "slide-vivid"
+          }
+        }
+      ],
+      "i18n": {
+        "ar": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "bg": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "bn": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "cs": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "de": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "es": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "fr": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "hi": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "id": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "it": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "ja": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "ko": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "ms": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "nl": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "no": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "pl": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "pt": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "ro": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "sv": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "tl": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "tr": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "uk": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "ur": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "vi": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "zh-hant": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
+        },
+        "zh": {
+          "name": "Darkroom",
+          "description": "A pro photo-grading darkroom: film looks, third-party .cube LUTs, brand-seeded colour treatments and finishing texture — then bake your look as a LUT any editor can use.",
+          "blurb": "Grade photos with film looks, LUTs and your brand colours"
         }
       }
     }
