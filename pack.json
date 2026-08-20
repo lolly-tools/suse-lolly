@@ -1,0 +1,40 @@
+{
+  "$comment": "Instance-pack recipe (plans/131 WP-D) — what leaves the building when scripts/build-instance-pack.ts cuts the distributable suse-brand .lolly file. The BRAND owns this list. Families are asset-id prefixes, not path globs, so a future asset in an excluded family stays excluded. Every asset id in catalog/assets/index.json must match exactly one of the two lists — the build fails on an unclassified family rather than guessing. The excluded media (photos, campaign, headshots, PremiumBeat music) stays on Brandfolder / the future id.suse.com instance; the build script additionally hard-refuses audio in any included family (the PremiumBeat rule is load-bearing, see the licence NOTICE).",
+  "name": "SUSE Brand",
+  "publisher": "SUSE",
+  "version": "1.0.0",
+  "instance": "https://lolly.tools",
+  "tokensAsset": "suse/tokens/brand",
+  "fonts": {
+    "dir": "catalog/fonts/webfonts",
+    "families": ["SUSE", "SUSE Mono"],
+    "license": "catalog/fonts/OFL.txt"
+  },
+  "logos": {
+    "horizontal-primary": "catalog/assets/suse/logo/SUSE_logo-hor-pos-green.svg",
+    "horizontal-primary-reverse": "catalog/assets/suse/logo/SUSE_logo-hor-neg-green.svg",
+    "horizontal-mono": "catalog/assets/suse/logo/SUSE_logo-hor-pos-black.svg",
+    "horizontal-mono-reverse": "catalog/assets/suse/logo/SUSE_logo-hor-neg-white.svg",
+    "vertical-primary": "catalog/assets/suse/logo/SUSE_logo-vert-pos-green.svg",
+    "vertical-primary-reverse": "catalog/assets/suse/logo/SUSE_logo-vert-neg-green.svg",
+    "vertical-mono": "catalog/assets/suse/logo/SUSE_logo-vert-pos-black.svg",
+    "vertical-mono-reverse": "catalog/assets/suse/logo/SUSE_logo-vert-neg-white.svg"
+  },
+  "includeAssetFamilies": [
+    "suse/tokens/",
+    "suse/palette/",
+    "suse/logo/",
+    "suse/icons/",
+    "suse/lottie/",
+    "suse/backgrounds/",
+    "suse/illustrations/",
+    "suse/demo/"
+  ],
+  "excludeAssetFamilies": [
+    "suse/photos/",
+    "suse/campaign/",
+    "suse/headshots/",
+    "suse/music/",
+    "lolly/"
+  ]
+}
