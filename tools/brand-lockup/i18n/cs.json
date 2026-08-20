@@ -1,6 +1,6 @@
 {
   "name": "Lockup značky",
-  "description": "Oficiální lockupy loga SUSE — chameleon, slovní značka a název.",
+  "description": "Oficiální loga SUSE - chameleon, wordmark a jméno.",
   "featured.blurb": "Oficiální lockupy loga SUSE, mnoho stylů",
   "inputs.name.label": "Název",
   "inputs.name.help": "Text, který následuje po SUSE — např. „Storage“, „AI Factory“ nebo „Data Team“. Nech pole prázdné pro samotné hlavní logo SUSE.",

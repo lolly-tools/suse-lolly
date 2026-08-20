@@ -1,6 +1,6 @@
 {
   "name": "تركيبة الشعار: شبكة (NASCAR)",
-  "description": "رتب مجموعة من الشعارات في شبكة رعاة أنيقة ومنتظمة — جدار «NASCAR».",
+  "description": "رتّب كومة من الشعارات في شبكة رعاة نظيفة ومتساوية - جدار \"NASCAR\".",
   "a11yLabel": "شبكة من {{logos.length}} شعارًا",
   "inputs.columns.label": "الأعمدة",
   "inputs.columns.help": "عدد الشعارات في كل صف.",

@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "اضبط وضعية Geeko الخاص بـ SUSE بأشرطة التمرير — العينان والرمش والأطراف. بلا حركة، مجرد صورة ثابتة تضبطها وتصدرها جاهزة للطباعة.",
-  "featured.blurb": "اضبط وضعية SUSE Geeko — صور ثابتة جاهزة للطباعة",
+  "description": "شكّل وضعية Geeko الخاص بـSUSE بواسطة أشرطة تمرير - العينان، الرمش والأطراف. بلا حركة، مجرد ثبات تضبطه وتصدّره جاهزاً للطباعة.",
+  "featured.blurb": "شكّل وضعية Geeko الخاص بـSUSE - ثوابت جاهزة للطباعة",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "فضولي",
   "inputs.pose.options.sitting": "جالس",

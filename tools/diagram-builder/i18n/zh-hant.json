@@ -1,6 +1,6 @@
 {
   "name": "圖表產生器",
-  "description": "組織圖、流程圖、時間軸等——透過卡片、文字、Mermaid 或 CSV 建立。",
+  "description": "組織圖、流程圖、時間軸等 - 可由卡片、文字、Mermaid 或 CSV 產生。",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} 圖表",
   "featured.blurb": "將卡片或文字轉換為符合品牌風格的圖表",
   "inputs.preset.label": "預設樣式",

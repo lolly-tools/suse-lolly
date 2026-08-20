@@ -1,6 +1,6 @@
 {
   "name": "Logo-combinatie: Partner",
-  "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen — licht of donker.",
+  "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen - licht of donker.",
   "a11yLabel": "SUSE-partnercombinatie met {{partners.length}} partnerlogo's",
   "inputs.theme.label": "Thema",
   "inputs.theme.help": "Licht plaatst donkere logo's op een lichte achtergrond; donker draait dit om. Het SUSE-logo schakelt automatisch naar de bijbehorende on-light- / on-dark-variant.",

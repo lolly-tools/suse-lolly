@@ -1,7 +1,7 @@
 {
   "name": "Bloque de color",
-  "description": "Bloques de color — texto, imagen, logo — organizados automáticamente en una cuadrícula.",
-  "featured.blurb": "Bloques de color — texto, imagen, logo en una cuadrícula",
+  "description": "Bloques de color - texto, imagen, logotipo - organizados automáticamente en una cuadrícula.",
+  "featured.blurb": "Bloques de color - texto, imagen, logotipo en cuadrícula",
   "a11yLabel": "Composición de bloques de color",
   "inputs.blocks.label": "Bloques",
   "inputs.blocks.help": "Añade bloques en cualquier orden — el diseño se reorganiza en una cuadrícula que llena el marco. Cada tipo se puede añadir una vez; los bloques en blanco son ilimitados.",

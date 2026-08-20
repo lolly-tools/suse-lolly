@@ -1,6 +1,6 @@
 {
   "name": "تركيبة شعار العلامة",
-  "description": "تركيبات شعار SUSE الرسمية — الحرباء والعلامة النصية والاسم.",
+  "description": "تركيبات شعار SUSE الرسمية - الحرباء، الشعار النصي واسم.",
   "featured.blurb": "تركيبات شعار SUSE الرسمية بأشكال متعددة",
   "inputs.name.label": "الاسم",
   "inputs.name.help": "النص الذي يأتي بعد SUSE — مثل «Storage» أو «AI Factory» أو «Data Team». اتركه فارغًا لعرض شعار SUSE الرئيسي فقط.",

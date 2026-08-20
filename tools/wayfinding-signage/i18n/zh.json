@@ -1,6 +1,6 @@
 {
   "name": "导向标识牌",
-  "description": "活动方向标识——每个目的地配一支箭头,可直接打印。",
+  "description": "方向指示牌 - 目的地及对应箭头。印刷级质量。",
   "a11yLabel": "{{default eventName \"活动\"}}的导向标识牌{{#if heading}}——{{heading}}{{/if}}",
   "featured.blurb": "活动方向标识,可直接打印",
   "inputs.textWeight.label": "文字字重",

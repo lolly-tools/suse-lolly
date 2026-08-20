@@ -1,6 +1,6 @@
 {
   "name": "플로우 차트",
-  "description": "열린 캔버스에서 플로우 차트를 만들어요 — 카드를 드래그해서 연결하면 선이 자동으로 경로를 그리고 박스에 붙어요.",
+  "description": "열린 캔버스에서 순서도를 만드세요 - 카드를 드래그하고 연결하면 선이 알아서 경로를 잡고 박스에 붙습니다.",
   "featured.blurb": "박스에 붙는 카드와 연결선",
   "inputs.background.label": "캔버스 배경",
   "inputs.boxes.label": "카드",

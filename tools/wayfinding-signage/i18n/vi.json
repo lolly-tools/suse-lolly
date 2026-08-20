@@ -1,6 +1,6 @@
 {
   "name": "Biển chỉ dẫn sự kiện",
-  "description": "Biển chỉ dẫn sự kiện — các điểm đến, mỗi điểm có một mũi tên. Sẵn sàng để in.",
+  "description": "Biển báo sự kiện chỉ hướng - các điểm đến, mỗi cái kèm một mũi tên. Sẵn sàng in.",
   "featured.blurb": "Biển chỉ dẫn sự kiện, sẵn sàng để in",
   "a11yLabel": "Biển chỉ dẫn dành cho {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Độ đậm chữ",

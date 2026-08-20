@@ -1,6 +1,6 @@
 {
   "name": "Veivisningsskilt",
-  "description": "Retningsskilt for arrangementer — reisemål, hver med en pil. Trykkeklart.",
+  "description": "Retningsbestemte hendelsesskilt - destinasjoner, hver med en pil. Trykkeklare.",
   "featured.blurb": "Retningsskilt for arrangementer, trykkeklart",
   "a11yLabel": "Veivisningsskilt for {{default eventName \"arrangementet\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Tekstvekt",

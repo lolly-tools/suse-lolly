@@ -1,6 +1,6 @@
 {
   "name": "Spojení log: Partner",
-  "description": "Logo SUSE vedle loga partnera, mezi nimi oddělovač — světlé nebo tmavé.",
+  "description": "Logo SUSE vedle partnerova, s oddělovačem mezi nimi - světlé nebo tmavé.",
   "a11yLabel": "Spojení loga SUSE a partnerů s {{partners.length}} partnerskými logy",
   "inputs.theme.label": "Motiv",
   "inputs.theme.help": "Světlý motiv umístí tmavá loga na světlé pozadí, tmavý to obrátí. Logo SUSE se automaticky přepne na odpovídající verzi pro světlé či tmavé pozadí.",

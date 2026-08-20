@@ -1,6 +1,6 @@
 {
   "name": "Schemat blokowy",
-  "description": "Twórz schematy blokowe na otwartym płótnie — przeciągaj karty, łącz je, a linie same się prowadzą i przylegają do pól.",
+  "description": "Buduj diagramy przepływu na otwartym płótnie - przeciągaj karty, łącz je, a linie same się prowadzą i trzymają boksów.",
   "featured.blurb": "Karty i łączniki przylegające do pól",
   "inputs.background.label": "Tło płótna",
   "inputs.boxes.label": "Karty",

@@ -1,6 +1,6 @@
 {
   "name": "Flow Chart",
-  "description": "Gumawa ng flow chart sa open canvas — i-drag ang mga card, ikonekta sila, at awtomatikong mag-a-adjust ang mga linya at didikit sa mga box.",
+  "description": "Bumuo ng flow charts sa isang bukas na canvas - i-drag ang mga card, ikonekta ang mga ito, at kusang ruruta at didikit ang mga linya sa mga box.",
   "featured.blurb": "Mga card + connector na dumidikit sa mga box",
   "inputs.background.label": "Background ng canvas",
   "inputs.boxes.label": "Mga Card",

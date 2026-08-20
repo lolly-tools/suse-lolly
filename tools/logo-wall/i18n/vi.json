@@ -1,6 +1,6 @@
 {
   "name": "Logo Lockup: Lưới (NASCAR)",
-  "description": "Sắp xếp một loạt logo thành lưới tài trợ gọn gàng, đều nhau — bức tường “NASCAR”.",
+  "description": "Sắp xếp một loạt logo thành lưới nhà tài trợ gọn gàng, đều đặn - bức tường “NASCAR”.",
   "a11yLabel": "Lưới gồm {{logos.length}} logo",
   "inputs.columns.label": "Số cột",
   "inputs.columns.help": "Số lượng logo trên mỗi hàng.",

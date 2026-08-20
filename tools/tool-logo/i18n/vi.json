@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Đặt logo SUSE — hệ thống tự động chọn phiên bản phù hợp và xuất dưới dạng vector.",
+  "description": "Đặt logo SUSE - tự động chọn đúng biến thể và xuất dạng vector.",
   "inputs.background.label": "Nền",
   "inputs.background.help": "Màu nền mà logo được đặt lên. Phiên bản logo phù hợp (đảo ngược cho nền tối, bình thường cho nền sáng) sẽ được tự động chọn. Bật \"No BG\" trong phần xuất để bỏ nền.",
   "inputs.orientation.label": "Hướng",

@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "স্লাইডার দিয়ে SUSE Geeko-কে পোজ দিন — চোখ, চোখের পলক আর অঙ্গ। কোনো অ্যানিমেশন নেই, শুধু এমন একটা স্টিল যা আপনি টিউন করে প্রিন্ট-রেডি এক্সপোর্ট করতে পারেন।",
-  "featured.blurb": "SUSE Geeko-কে পোজ দিন — প্রিন্ট-রেডি স্টিল",
+  "description": "স্লাইডার দিয়ে SUSE Geeko-কে পোজ দিন - চোখ, পলক ও অঙ্গ। কোনো অ্যানিমেশন নয়, শুধু একটি স্থির চিত্র যা আপনি ডায়াল করে প্রিন্ট-রেডি এক্সপোর্ট করতে পারেন।",
+  "featured.blurb": "SUSE Geeko-কে পোজ দিন - প্রিন্ট-রেডি স্থির চিত্র",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "কৌতূহলী",
   "inputs.pose.options.sitting": "বসা",

@@ -1,6 +1,6 @@
 {
   "name": "Logo Blok: Partner",
-  "description": "SUSE logosu, aralarında bir ayırıcı ile partner logosunun yanında yer alır — açık ya da koyu.",
+  "description": "SUSE logosu bir ortağınkinin yanında, aralarında bir ayırıcıyla - açık veya koyu.",
   "a11yLabel": "{{partners.length}} partner logosuyla SUSE partner bloğu",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Açık, koyu logoları açık renkli bir arka plana yerleştirir; koyu bunu tersine çevirir. SUSE logosu otomatik olarak eşleşen açık-üzerine / koyu-üzerine tasarıma geçer.",

@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "SUSE logosunu yerleştir — doğru varyantı otomatik seçer ve vektör olarak dışa aktarır.",
+  "description": "SUSE logosunu yerleştirin - doğru varyantı otomatik seçer ve vektör olarak dışa aktarır.",
   "inputs.background.label": "Arka plan",
   "inputs.background.help": "Logonun üzerinde durduğu renk. Eşleşen logo (koyu için ters çevrilmiş, açık için normal) senin için seçilir. Kaldırmak için dışa aktarımda \"Arka Plan Yok\"u aç.",
   "inputs.orientation.label": "Yönlendirme",

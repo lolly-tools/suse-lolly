@@ -1,6 +1,6 @@
 {
   "name": "Logo Blok: Izgara (NASCAR)",
-  "description": "Bir logo yığınını temiz, düzenli bir sponsor ızgarasına diz — “NASCAR” duvarı.",
+  "description": "Bir logo yığınını düzenli, eşit bir sponsor ızgarasına yerleştirin - “NASCAR” duvarı.",
   "a11yLabel": "{{logos.length}} logodan oluşan bir ızgara",
   "inputs.columns.label": "Sütunlar",
   "inputs.columns.help": "Her satırda kaç logo olacağı.",

@@ -1,6 +1,6 @@
 {
   "name": "Diagramskapare",
-  "description": "Org-scheman, flödesscheman, tidslinjer med mera — från kort, text, Mermaid eller CSV.",
+  "description": "Organisationsscheman, flödesscheman, tidslinjer med mera - från kort, text, Mermaid eller CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}}-diagram",
   "featured.blurb": "Gör om kort eller text till diagram i din varumärkesstil",
   "inputs.preset.label": "Förinställning",

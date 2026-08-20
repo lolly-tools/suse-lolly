@@ -1,6 +1,6 @@
 {
   "name": "Lockup de marca",
-  "description": "Lockups oficiales del logo de SUSE: camaleón, logotipo y un nombre.",
+  "description": "Lockups oficiales del logotipo de SUSE - camaleón, wordmark y un nombre.",
   "featured.blurb": "Lockups oficiales del logo de SUSE, muchos estilos",
   "inputs.name.label": "Nombre",
   "inputs.name.help": "El texto que sigue a SUSE, p. ej. \"Storage\", \"AI Factory\" o \"Data Team\". Déjalo en blanco para el logo maestro de SUSE solo.",

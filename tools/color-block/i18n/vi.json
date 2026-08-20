@@ -1,8 +1,8 @@
 {
   "name": "Khối màu",
-  "description": "Khối màu — văn bản, hình ảnh, logo — tự động sắp xếp thành lưới.",
+  "description": "Khối màu - văn bản, hình ảnh, logo - tự động sắp xếp thành lưới.",
   "a11yLabel": "Bố cục khối màu",
-  "featured.blurb": "Khối màu — văn bản, hình ảnh, logo trong lưới",
+  "featured.blurb": "Khối màu - văn bản, hình ảnh, logo trong lưới",
   "inputs.blocks.label": "Khối",
   "inputs.blocks.help": "Thêm khối theo bất kỳ thứ tự nào — bố cục sẽ tự sắp xếp lại thành lưới lấp đầy khung hình. Mỗi loại chỉ thêm được một lần; khối trống thì không giới hạn.",
   "inputs.blocks.addMenu.label": "Thêm khối",

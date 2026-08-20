@@ -1,6 +1,6 @@
 {
   "name": "Układ logo: Siatka (NASCAR)",
-  "description": "Ułóż zestaw logo w czystą, równą siatkę sponsorów — mur „NASCAR”.",
+  "description": "Ułóż stos logo w czystą, równą siatkę sponsorów - ścianę „NASCAR”.",
   "a11yLabel": "Siatka {{logos.length}} logo",
   "inputs.columns.label": "Kolumny",
   "inputs.columns.help": "Ile logo znajduje się w każdym rzędzie.",

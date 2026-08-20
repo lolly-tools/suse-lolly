@@ -1,6 +1,6 @@
 {
   "name": "Diagrammersteller",
-  "description": "Organigramme, Flussdiagramme, Zeitleisten und mehr — aus Karten, Text, Mermaid oder CSV.",
+  "description": "Organigramme, Flussdiagramme, Zeitleisten und mehr - aus Karten, Text, Mermaid oder CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}}-Diagramm",
   "inputs.preset.label": "Voreinstellung",
   "inputs.preset.help": "Ein Ausgangspunkt mit einem Klick, der Typ, Thema und Abstände vorgibt. Wählen Sie eine Option und passen Sie danach alles im Detail an — Ihre späteren Änderungen bleiben erhalten.",

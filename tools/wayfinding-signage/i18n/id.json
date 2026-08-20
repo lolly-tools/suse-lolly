@@ -1,6 +1,6 @@
 {
   "name": "Papan Penunjuk Arah",
-  "description": "Papan penunjuk arah acara — daftar tujuan, masing-masing dengan panah. Siap cetak.",
+  "description": "Papan penunjuk arah acara - tujuan, masing-masing dengan panah. Siap cetak.",
   "featured.blurb": "Papan penunjuk arah acara, siap cetak",
   "a11yLabel": "Papan penunjuk arah untuk {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Ketebalan teks",

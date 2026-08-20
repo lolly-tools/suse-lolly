@@ -1,6 +1,6 @@
 {
   "name": "Logo-Lockup: Raster (NASCAR)",
-  "description": "Ordnen Sie viele Logos zu einem sauberen, gleichmäßigen Sponsoren-Raster – der „NASCAR“-Wand.",
+  "description": "Ordnet einen Haufen Logos zu einem sauberen, gleichmäßigen Sponsorenraster an - die „NASCAR“-Wand.",
   "a11yLabel": "Ein Raster aus {{logos.length}} Logos",
   "inputs.columns.label": "Spalten",
   "inputs.columns.help": "Wie viele Logos in jeder Zeile stehen.",

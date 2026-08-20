@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "स्लाइडर से SUSE Geeko को पोज़ दें — आंखें, पलक और अंग। कोई एनिमेशन नहीं, बस एक स्थिर छवि जिसे आप मनचाहा सेट करके प्रिंट-रेडी एक्सपोर्ट कर सकते हैं।",
-  "featured.blurb": "SUSE Geeko को पोज़ दें — प्रिंट-रेडी स्थिर छवियां",
+  "description": "स्लाइडर्स से SUSE Geeko को पोज़ दें - आँखें, पलक और अंग। कोई एनिमेशन नहीं, बस एक स्थिर छवि जिसे आप सेट कर प्रिंट-रेडी एक्सपोर्ट कर सकते हैं।",
+  "featured.blurb": "SUSE Geeko को पोज़ दें - प्रिंट-रेडी स्थिर छवियाँ",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "जिज्ञासु",
   "inputs.pose.options.sitting": "बैठा हुआ",

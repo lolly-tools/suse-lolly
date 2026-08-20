@@ -1,6 +1,6 @@
 {
   "name": "Susunan Logo: Grid (NASCAR)",
-  "description": "Susun tumpukan logo menjadi grid sponsor yang rapi dan merata — dinding “NASCAR”.",
+  "description": "Susun setumpuk logo menjadi grid sponsor yang rapi dan merata - dinding “NASCAR”.",
   "a11yLabel": "Grid berisi {{logos.length}} logo",
   "inputs.columns.label": "Kolom",
   "inputs.columns.help": "Berapa banyak logo di setiap baris.",

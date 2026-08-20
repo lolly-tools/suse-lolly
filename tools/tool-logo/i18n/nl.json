@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Plaats het SUSE-logo — de juiste variant wordt automatisch gekozen en als vector geëxporteerd.",
+  "description": "Plaats het SUSE-logo - het kiest automatisch de juiste variant en exporteert als vector.",
   "inputs.background.label": "Achtergrond",
   "inputs.background.help": "De kleur waarop het logo staat. Het bijpassende logo (omgekeerd voor donker, normaal voor licht) wordt automatisch voor je gekozen. Zet \"Geen achtergrond\" aan bij exporteren om deze te verwijderen.",
   "inputs.orientation.label": "Oriëntatie",

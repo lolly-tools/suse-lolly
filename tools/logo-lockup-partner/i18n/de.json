@@ -1,6 +1,6 @@
 {
   "name": "Logo-Kombination: Partner",
-  "description": "Das SUSE-Logo neben dem eines Partners, mit einer Trennlinie dazwischen — hell oder dunkel.",
+  "description": "Das SUSE-Logo neben dem eines Partners, mit einer Trennlinie dazwischen - hell oder dunkel.",
   "a11yLabel": "SUSE-Partner-Kombination mit {{partners.length}} Partnerlogos",
   "inputs.theme.label": "Thema",
   "inputs.theme.help": "Hell platziert dunkle Logos auf hellem Hintergrund; Dunkel kehrt dies um. Das SUSE-Logo wechselt automatisch zur passenden Variante für Hell bzw. Dunkel.",

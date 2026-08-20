@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "用滑桿擺出 SUSE Geeko 的姿勢——眼睛、眨眼和四肢。沒有動畫，只是一張可以調整並匯出為印刷就緒格式的靜態圖。",
-  "featured.blurb": "擺出 SUSE Geeko 的姿勢——印刷就緒靜態圖",
+  "description": "以滑桿擺出 SUSE Geeko 的姿勢 - 眼睛、眨眼與四肢。沒有動畫，只是一張可微調並匯出印刷用檔案的靜態圖。",
+  "featured.blurb": "擺出 SUSE Geeko 姿勢 - 印刷用靜態圖",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "好奇",
   "inputs.pose.options.sitting": "坐姿",

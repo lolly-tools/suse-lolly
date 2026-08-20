@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Ilagay ang SUSE logo — awtomatikong pipiliin ang tamang variant at i-e-export bilang vector.",
+  "description": "Ilagay ang SUSE logo - kusa nitong pipiliin ang tamang variant at mag-e-export ng vector.",
   "inputs.background.label": "Background",
   "inputs.background.help": "Ang kulay kung saan nakapatong ang logo. Awtomatikong pipiliin ang tugmang logo (reversed para sa dark, normal para sa light). I-on ang \"No BG\" sa export para tanggalin ito.",
   "inputs.orientation.label": "Orientation",

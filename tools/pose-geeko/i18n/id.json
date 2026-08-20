@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Atur pose Geeko SUSE dengan slider — mata, kedipan, dan anggota tubuh. Tanpa animasi, hanya gambar diam yang dapat Anda atur dan ekspor siap cetak.",
-  "featured.blurb": "Atur pose Geeko SUSE — gambar diam siap cetak",
+  "description": "Posekan Geeko SUSE dengan slider - mata, kedipan dan anggota tubuh. Bukan animasi, hanya gambar diam yang bisa Anda atur dan ekspor siap cetak.",
+  "featured.blurb": "Posekan Geeko SUSE - gambar diam siap cetak",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Penasaran",
   "inputs.pose.options.sitting": "Duduk",

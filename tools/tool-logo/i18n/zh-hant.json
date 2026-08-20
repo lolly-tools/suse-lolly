@@ -1,6 +1,6 @@
 {
   "name": "標誌",
-  "description": "放置 SUSE 標誌——自動選擇合適的版本並匯出為向量圖。",
+  "description": "放置 SUSE 標誌 - 自動選取正確版本並匯出向量檔。",
   "inputs.background.label": "背景",
   "inputs.background.help": "標誌所在的背景顏色。系統會自動選擇對應的標誌版本(深色背景用反白版,淺色背景用一般版)。匯出時開啟「無背景」可移除背景。",
   "inputs.orientation.label": "版面配置",

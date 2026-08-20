@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Letakkan logo SUSE — varian yang betul dipilih secara automatik dan dieksport sebagai vektor.",
+  "description": "Letakkan logo SUSE - ia memilih varian yang betul secara automatik dan eksport vektor.",
   "inputs.background.label": "Latar Belakang",
   "inputs.background.help": "Warna latar tempat logo diletakkan. Logo yang sepadan (versi terbalik untuk latar gelap, versi biasa untuk latar cerah) dipilih secara automatik untuk anda. Hidupkan \"Tanpa Latar Belakang\" dalam eksport untuk membuangnya.",
   "inputs.orientation.label": "Orientasi",

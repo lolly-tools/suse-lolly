@@ -1,6 +1,6 @@
 {
   "name": "Cụm logo thương hiệu",
-  "description": "Cụm logo chính thức của SUSE — tắc kè hoa, chữ logo và tên.",
+  "description": "Bố cục logo SUSE chính thức - chameleon, chữ logo và một tên.",
   "featured.blurb": "Cụm logo chính thức của SUSE, nhiều kiểu",
   "inputs.name.label": "Tên",
   "inputs.name.help": "Phần văn bản theo sau SUSE — ví dụ: \"Storage\", \"AI Factory\" hoặc \"Data Team\". Để trống nếu chỉ muốn dùng logo gốc của SUSE.",

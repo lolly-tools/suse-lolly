@@ -1,6 +1,6 @@
 {
   "name": "Tvůrce diagramů",
-  "description": "Organizační diagramy, vývojové diagramy, časové osy a další — z karet, textu, Mermaid nebo CSV.",
+  "description": "Organizační schémata, vývojové diagramy, časové osy a další - z karet, textu, Mermaid nebo CSV.",
   "featured.blurb": "Změň karty nebo text na diagramy podle značky",
   "a11yLabel": "{{default title \"Bez názvu\"}} — diagram {{diagramType}}",
   "inputs.preset.label": "Předvolba",

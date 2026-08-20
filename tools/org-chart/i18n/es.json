@@ -1,6 +1,6 @@
 {
   "name": "Diagrama de flujo",
-  "description": "Crea diagramas de flujo en un lienzo abierto — arrastra tarjetas, conéctalas, y las líneas se trazan solas y se pegan a los recuadros.",
+  "description": "Crea diagramas de flujo en un lienzo abierto - arrastra tarjetas, conéctalas, y las líneas se enrutan y se pegan a las cajas.",
   "featured.blurb": "Tarjetas y conectores que se pegan a los recuadros",
   "inputs.background.label": "Fondo del lienzo",
   "inputs.boxes.label": "Tarjetas",

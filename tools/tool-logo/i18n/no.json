@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Plasser SUSE-logoen — den velger automatisk riktig variant og eksporterer som vektor.",
+  "description": "Plasser SUSE-logoen - den velger automatisk riktig variant og eksporterer vektor.",
   "inputs.background.label": "Bakgrunn",
   "inputs.background.help": "Fargen logoen plasseres på. Riktig logo (omvendt for mørk bakgrunn, normal for lys) velges automatisk for deg. Slå på «Ingen bakgrunn» i eksporten for å fjerne den.",
   "inputs.orientation.label": "Retning",

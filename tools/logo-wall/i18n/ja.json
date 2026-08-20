@@ -1,6 +1,6 @@
 {
   "name": "ロゴロックアップ:グリッド(NASCAR)",
-  "description": "大量のロゴを、きれいで均等なスポンサーグリッド——「NASCAR」ウォールに整列します。",
+  "description": "大量のロゴをきれいに揃ったスポンサーグリッドに配置 - いわゆる「NASCAR」ウォール。",
   "a11yLabel": "{{logos.length}}個のロゴのグリッド",
   "inputs.columns.label": "列数",
   "inputs.columns.help": "各行に並ぶロゴの数です。",

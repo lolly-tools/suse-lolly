@@ -1,8 +1,8 @@
 {
   "name": "色块",
-  "description": "色块——文字、图片、标志——自动排列成网格。",
+  "description": "色块 - 文字、图片、徽标 - 自动排列成网格。",
   "a11yLabel": "色块构图",
-  "featured.blurb": "色块——文字、图片、标志排列成网格",
+  "featured.blurb": "色块 - 文字、图片、徽标排成网格",
   "inputs.blocks.label": "区块",
   "inputs.blocks.help": "以任意顺序添加区块——布局会自动重新编排为填满画面的网格。每种类型只能添加一次；空白区块数量不限。",
   "inputs.blocks.addMenu.label": "添加区块",

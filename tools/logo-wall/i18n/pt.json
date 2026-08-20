@@ -1,6 +1,6 @@
 {
   "name": "Lockup de logos: grade (NASCAR)",
-  "description": "Organize um monte de logos em uma grade de patrocinadores limpa e uniforme — o mural “NASCAR”.",
+  "description": "Organize uma pilha de logotipos numa grade de patrocinadores limpa e uniforme - o mural “NASCAR”.",
   "a11yLabel": "Uma grade de {{logos.length}} logos",
   "inputs.columns.label": "Colunas",
   "inputs.columns.help": "Quantos logos ficam em cada linha.",

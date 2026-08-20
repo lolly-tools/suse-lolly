@@ -1,6 +1,6 @@
 {
   "name": "标志组合:网格 (NASCAR)",
-  "description": "将一堆标志排成整齐均匀的赞助商网格——也就是“NASCAR”墙。",
+  "description": "将一堆徽标排布成整齐均匀的赞助商墙 - 即“NASCAR”式墙面。",
   "a11yLabel": "{{logos.length}} 个标志组成的网格",
   "inputs.columns.label": "列数",
   "inputs.columns.help": "每行显示多少个标志。",

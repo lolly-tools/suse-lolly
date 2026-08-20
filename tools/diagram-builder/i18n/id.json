@@ -1,6 +1,6 @@
 {
   "name": "Pembuat Diagram",
-  "description": "Bagan organisasi, diagram alur, garis waktu, dan lainnya — dari kartu, teks, Mermaid, atau CSV.",
+  "description": "Bagan organisasi, flowchart, garis waktu dan lainnya - dari kartu, teks, Mermaid atau CSV.",
   "featured.blurb": "Ubah kartu atau teks menjadi diagram yang sesuai brand",
   "a11yLabel": "{{default title \"Untitled\"}} — diagram {{diagramType}}",
   "inputs.preset.label": "Preset",

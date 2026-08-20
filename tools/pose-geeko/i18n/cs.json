@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Nastav pózu SUSE Geeka pomocí posuvníků — oči, mrkání a končetiny. Žádná animace, jen statický obrázek, který doladíš a exportuješ připravený k tisku.",
-  "featured.blurb": "Nastav pózu SUSE Geeka — statické obrázky připravené k tisku",
+  "description": "Pózuj SUSE Geeka pomocí posuvníků - oči, mrkání a končetiny. Žádná animace, jen statický snímek, který doladíš a exportuješ připravený k tisku.",
+  "featured.blurb": "Pózuj SUSE Geeka - tiskové statické snímky",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Zvědavý",
   "inputs.pose.options.sitting": "Sedící",

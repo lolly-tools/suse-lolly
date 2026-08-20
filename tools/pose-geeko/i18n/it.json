@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Metti in posa il Geeko SUSE con dei cursori — occhi, battito di ciglia e arti. Nessuna animazione, solo un fermo immagine da regolare ed esportare pronto per la stampa.",
-  "featured.blurb": "Posa il Geeko SUSE — fermi immagine pronti per la stampa",
+  "description": "Posa il Geeko SUSE con gli slider - occhi, battito di ciglia e arti. Nessuna animazione, solo un fermo immagine da regolare ed esportare pronto per la stampa.",
+  "featured.blurb": "Posa il Geeko SUSE - fermi immagine pronti per la stampa",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Curioso",
   "inputs.pose.options.sitting": "Seduto",

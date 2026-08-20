@@ -1,7 +1,7 @@
 {
   "name": "Blok Warna",
-  "description": "Blok warna — teks, imej, logo — disusun secara automatik dalam grid.",
-  "featured.blurb": "Blok warna — teks, imej, logo dalam grid",
+  "description": "Blok warna - teks, imej, logo - disusun automatik dalam grid.",
+  "featured.blurb": "Blok warna - teks, imej, logo dalam grid",
   "a11yLabel": "Komposisi blok warna",
   "inputs.blocks.label": "Blok",
   "inputs.blocks.help": "Tambah blok dalam sebarang susunan — reka letak akan disusun semula secara automatik menjadi grid yang memenuhi bingkai. Setiap jenis boleh ditambah sekali sahaja; blok kosong tidak terhad.",

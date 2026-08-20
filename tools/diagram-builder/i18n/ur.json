@@ -1,6 +1,6 @@
 {
   "name": "ڈایاگرام بلڈر",
-  "description": "آرگ چارٹس، فلو چارٹس، ٹائم لائنز اور مزید — کارڈز، متن، Mermaid یا CSV سے۔",
+  "description": "آرگ چارٹس، فلو چارٹس، ٹائم لائنز اور مزید - کارڈز، متن، Mermaid یا CSV سے۔",
   "featured.blurb": "کارڈز یا متن کو آن-برانڈ ڈایاگرامز میں بدلیں",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} ڈایاگرام",
   "inputs.preset.label": "پری سیٹ",

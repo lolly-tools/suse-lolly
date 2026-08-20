@@ -1,7 +1,7 @@
 {
   "name": "Color Block",
-  "description": "Mga color block — text, larawan, logo — awtomatikong inaayos sa grid.",
-  "featured.blurb": "Mga color block — text, larawan, logo sa grid",
+  "description": "Mga colour block - text, larawan, logo - kusang inaayos sa isang grid.",
+  "featured.blurb": "Mga colour block - text, larawan, logo sa isang grid",
   "a11yLabel": "Komposisyon ng mga color block",
   "inputs.blocks.label": "Mga Block",
   "inputs.blocks.help": "Magdagdag ng mga block sa kahit anong pagkakasunod — awtomatikong nire-repack ang layout papuno sa grid na sasakop sa buong frame. Isang beses lang puwedeng idagdag ang bawat type; walang limit ang mga blangko.",

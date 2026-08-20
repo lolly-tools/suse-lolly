@@ -1,7 +1,7 @@
 {
   "name": "Bloc de couleur",
-  "description": "Blocs de couleur — texte, image, logo — organisés automatiquement en grille.",
-  "featured.blurb": "Blocs de couleur — texte, image, logo en grille",
+  "description": "Blocs de couleur - texte, image, logo - agencés automatiquement en grille.",
+  "featured.blurb": "Blocs de couleur - texte, image, logo en grille",
   "a11yLabel": "Composition en blocs de couleur",
   "inputs.blocks.label": "Blocs",
   "inputs.blocks.help": "Ajoute des blocs dans l'ordre de ton choix — la mise en page se réorganise automatiquement en grille pour remplir le cadre. Chaque type peut être ajouté une seule fois ; les blocs vides sont illimités.",

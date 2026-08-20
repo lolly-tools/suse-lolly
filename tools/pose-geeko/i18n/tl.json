@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "I-pose ang SUSE Geeko gamit ang mga slider — mata, kurap, at mga paa't kamay. Walang animation, isang still image lang na puwede mong i-adjust at i-export na print-ready.",
-  "featured.blurb": "I-pose ang SUSE Geeko — print-ready na still images",
+  "description": "I-pose ang SUSE Geeko gamit ang mga slider - mata, kurap at mga paa't kamay. Walang animation, still lang na puwede mong i-dial in at i-export nang print-ready.",
+  "featured.blurb": "I-pose ang SUSE Geeko - print-ready na mga still",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Mausisa",
   "inputs.pose.options.sitting": "Nakaupo",

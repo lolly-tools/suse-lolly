@@ -1,6 +1,6 @@
 {
   "name": "Lockup de brand",
-  "description": "Lockup-uri oficiale ale siglei SUSE — cameleon, wordmark și un nume.",
+  "description": "Combinații oficiale ale logo-ului SUSE - cameleon, wordmark și un nume.",
   "featured.blurb": "Lockup-uri oficiale ale siglei SUSE, mai multe variante",
   "inputs.name.label": "Nume",
   "inputs.name.help": "Textul care urmează după SUSE — de ex. „Storage”, „AI Factory” sau „Data Team”. Lasă necompletat pentru a folosi doar sigla principală SUSE.",

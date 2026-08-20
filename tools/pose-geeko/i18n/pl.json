@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Ustaw pozę SUSE Geeko za pomocą suwaków — oczy, mrugnięcie i kończyny. Bez animacji, tylko nieruchomy obraz, który dopracujesz i wyeksportujesz w jakości do druku.",
-  "featured.blurb": "Ustaw pozę SUSE Geeko — nieruchome obrazy w jakości do druku",
+  "description": "Ustaw pozę SUSE Geeko za pomocą suwaków - oczy, mrugnięcie i kończyny. Bez animacji, tylko klatka, którą możesz dopracować i wyeksportować gotową do druku.",
+  "featured.blurb": "Ustaw pozę SUSE Geeko - klatki gotowe do druku",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Ciekawski",
   "inputs.pose.options.sitting": "Siedzący",

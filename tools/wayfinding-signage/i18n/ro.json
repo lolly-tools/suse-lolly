@@ -1,6 +1,6 @@
 {
   "name": "Semnalistică de orientare",
-  "description": "Panouri direcționale pentru evenimente — destinații, fiecare cu o săgeată. Gata de print.",
+  "description": "Indicatoare direcționale pentru evenimente - destinații, fiecare cu o săgeată. Gata de tipar.",
   "featured.blurb": "Panouri direcționale pentru evenimente, gata de print",
   "a11yLabel": "Semn de orientare pentru {{default eventName \"evenimentul\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Grosimea textului",

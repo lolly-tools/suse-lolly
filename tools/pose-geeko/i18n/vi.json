@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Tạo dáng cho SUSE Geeko bằng thanh trượt — mắt, nháy mắt và tay chân. Không có hoạt ảnh, chỉ là ảnh tĩnh bạn chỉnh và xuất sẵn sàng để in.",
-  "featured.blurb": "Tạo dáng cho SUSE Geeko — ảnh tĩnh sẵn sàng để in",
+  "description": "Tạo dáng cho Geeko của SUSE bằng thanh trượt - mắt, chớp mắt và các chi. Không phải hoạt hình, chỉ là một hình tĩnh bạn có thể tinh chỉnh và xuất sẵn sàng in.",
+  "featured.blurb": "Tạo dáng cho Geeko của SUSE - hình tĩnh sẵn sàng in",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Tò mò",
   "inputs.pose.options.sitting": "Ngồi",

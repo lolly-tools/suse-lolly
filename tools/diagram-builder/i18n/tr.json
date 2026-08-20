@@ -1,6 +1,6 @@
 {
   "name": "Diyagram Oluşturucu",
-  "description": "Org şemaları, akış şemaları, zaman çizelgeleri ve daha fazlası — kartlardan, metinden, Mermaid'den veya CSV'den.",
+  "description": "Kartlardan, metinden, Mermaid'den veya CSV'den - organizasyon şemaları, akış şemaları, zaman çizelgeleri ve daha fazlası.",
   "featured.blurb": "Kartları veya metni markana uygun diyagramlara dönüştür",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} diyagram",
   "inputs.preset.label": "Ön ayar",

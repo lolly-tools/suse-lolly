@@ -1,6 +1,6 @@
 {
   "name": "流程图",
-  "description": "在开放画布上制作流程图——拖动卡片,连接它们,线条会自动排布并固定在方框上。",
+  "description": "在开放画布上制作流程图 - 拖动卡片、连接它们,连线会自动路由并吸附到方框上。",
   "featured.blurb": "卡片 + 连接线,紧贴方框",
   "inputs.background.label": "画布背景",
   "inputs.boxes.label": "卡片",

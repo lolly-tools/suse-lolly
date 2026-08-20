@@ -1,8 +1,8 @@
 {
   "name": "Blok Warna",
-  "description": "Blok warna — teks, gambar, logo — otomatis disusun ke dalam grid.",
+  "description": "Blok warna - teks, gambar, logo - otomatis tersusun ke dalam grid.",
   "a11yLabel": "Komposisi blok warna",
-  "featured.blurb": "Blok warna — teks, gambar, logo dalam grid",
+  "featured.blurb": "Blok warna - teks, gambar, logo dalam grid",
   "inputs.blocks.label": "Blok",
   "inputs.blocks.help": "Tambahkan blok dengan urutan apa pun — tata letak akan menyusun ulang ke dalam grid yang mengisi bingkai. Setiap jenis hanya bisa ditambahkan sekali; blok kosong tidak dibatasi.",
   "inputs.blocks.addMenu.label": "Tambah blok",

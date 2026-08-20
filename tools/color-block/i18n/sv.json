@@ -1,8 +1,8 @@
 {
   "name": "Färgblock",
-  "description": "Färgblock — text, bild, logotyp — arrangeras automatiskt i ett rutnät.",
+  "description": "Färgblock - text, bild, logotyp - automatiskt arrangerade i ett rutnät.",
   "a11yLabel": "Färgblockskomposition",
-  "featured.blurb": "Färgblock — text, bild, logotyp i ett rutnät",
+  "featured.blurb": "Färgblock - text, bild, logotyp i ett rutnät",
   "inputs.blocks.label": "Block",
   "inputs.blocks.help": "Lägg till block i valfri ordning — layouten packas om till ett rutnät som fyller ramen. Varje typ kan läggas till en gång; tomma block är obegränsade.",
   "inputs.blocks.addMenu.label": "Lägg till block",

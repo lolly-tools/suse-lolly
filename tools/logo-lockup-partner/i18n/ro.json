@@ -1,6 +1,6 @@
 {
   "name": "Logo Lockup: Partener",
-  "description": "Logo-ul SUSE alături de cel al unui partener, cu un separator între ele — variantă deschisă sau întunecată.",
+  "description": "Logo-ul SUSE alături de cel al unui partener, cu un separator între ele - deschis sau întunecat.",
   "a11yLabel": "Lockup de parteneri SUSE cu {{partners.length}} logo-uri de parteneri",
   "inputs.theme.label": "Temă",
   "inputs.theme.help": "Deschis pune logo-urile închise la culoare pe un fundal deschis; întunecat inversează asta. Logo-ul SUSE trece automat la varianta corespunzătoare — pe fundal deschis / pe fundal întunecat.",

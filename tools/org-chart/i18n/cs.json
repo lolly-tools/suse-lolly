@@ -1,6 +1,6 @@
 {
   "name": "Vývojový diagram",
-  "description": "Vytvářej vývojové diagramy na volném plátně — přetahuj karty, propojuj je, čáry se vedou samy a drží se na krabicích.",
+  "description": "Sestav vývojové diagramy na otevřeném plátně - přetáhni karty, propoj je a čáry se samy vedou a drží na krabicích.",
   "featured.blurb": "Karty a spojnice, které drží na krabicích",
   "inputs.background.label": "Pozadí plátna",
   "inputs.boxes.label": "Karty",

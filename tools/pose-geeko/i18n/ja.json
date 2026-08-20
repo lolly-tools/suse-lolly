@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "スライダーで SUSE Geeko のポーズを調整します — 目、まばたき、手足。アニメーションではなく、調整して印刷用に書き出せる静止画です。",
-  "featured.blurb": "SUSE Geeko のポーズ調整 — 印刷対応の静止画",
+  "description": "スライダーでSUSE Geekoをポーズ - 目、まばたき、手足。アニメーションではなく、細かく調整して印刷用に書き出せる静止画です。",
+  "featured.blurb": "SUSE Geekoをポーズ - 印刷用の静止画",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "興味津々",
   "inputs.pose.options.sitting": "座り",

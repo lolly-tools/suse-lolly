@@ -1,6 +1,6 @@
 {
   "name": "Sestava log: mřížka (NASCAR)",
-  "description": "Uspořádej hromadu log do čisté, rovnoměrné sponzorské mřížky – zeď „NASCAR“.",
+  "description": "Uspořádej hromadu log do čisté, rovnoměrné mřížky sponzorů - „NASCAR“ stěna.",
   "a11yLabel": "Mřížka {{logos.length}} log",
   "inputs.columns.label": "Sloupce",
   "inputs.columns.help": "Kolik log je v každé řadě.",

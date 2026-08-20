@@ -1,6 +1,6 @@
 {
   "name": "Stroomdiagram",
-  "description": "Maak stroomdiagrammen op een open canvas — sleep kaarten, verbind ze, en de lijnen lopen vanzelf en blijven aan de vakken vastzitten.",
+  "description": "Bouw stroomdiagrammen op een open canvas - sleep kaarten, verbind ze, en de lijnen routeren zich en blijven vastzitten aan de vakken.",
   "featured.blurb": "Kaarten + verbindingslijnen die vastzitten aan de vakken",
   "inputs.background.label": "Canvas-achtergrond",
   "inputs.boxes.label": "Kaarten",

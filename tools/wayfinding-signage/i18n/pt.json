@@ -1,6 +1,6 @@
 {
   "name": "Sinalização direcional",
-  "description": "Placas direcionais para eventos — destinos, cada um com uma seta. Prontas para impressão.",
+  "description": "Placas direcionais de eventos - destinos, cada um com uma seta. Prontas para impressão.",
   "featured.blurb": "Placas direcionais para eventos, prontas para impressão",
   "a11yLabel": "Placa de sinalização para {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Espessura do texto",

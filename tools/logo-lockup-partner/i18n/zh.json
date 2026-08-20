@@ -1,6 +1,6 @@
 {
   "name": "标志组合：合作伙伴",
-  "description": "SUSE 标志与合作伙伴标志并排显示，中间有分隔线——浅色或深色。",
+  "description": "SUSE 徽标与合作伙伴徽标并排,中间以分隔线相隔 - 浅色或深色。",
   "a11yLabel": "SUSE 合作伙伴标志组合，包含 {{partners.length}} 个合作伙伴标志",
   "inputs.theme.label": "主题",
   "inputs.theme.help": "浅色主题会将深色标志放在浅色背景上；深色主题则相反。SUSE 标志会自动切换到与主题匹配的浅色版/深色版图稿。",

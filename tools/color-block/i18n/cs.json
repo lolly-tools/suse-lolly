@@ -1,7 +1,7 @@
 {
   "name": "Barevný blok",
-  "description": "Barevné bloky — text, obrázek, logo — automaticky uspořádané do mřížky.",
-  "featured.blurb": "Barevné bloky — text, obrázek, logo v mřížce",
+  "description": "Barevné bloky - text, obrázek, logo - automaticky uspořádané do mřížky.",
+  "featured.blurb": "Barevné bloky - text, obrázek, logo v mřížce",
   "a11yLabel": "Kompozice z barevných bloků",
   "inputs.blocks.label": "Bloky",
   "inputs.blocks.help": "Přidávej bloky v libovolném pořadí — rozložení se přeskládá do mřížky, která vyplní celý rámec. Každý typ lze přidat jen jednou; prázdné bloky lze přidat neomezeně.",

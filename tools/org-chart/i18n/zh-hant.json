@@ -1,6 +1,6 @@
 {
   "name": "流程圖",
-  "description": "在開放畫布上製作流程圖——拖曳卡片,將它們連接起來,線條會自動繞線並固定在方框上。",
+  "description": "在開放式畫布上建立流程圖 - 拖曳卡片、連接彼此，線條會自動繞行並貼齊方塊。",
   "featured.blurb": "卡片 + 連接線,緊貼方框",
   "inputs.background.label": "畫布背景",
   "inputs.boxes.label": "卡片",

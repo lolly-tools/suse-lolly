@@ -1,6 +1,6 @@
 {
   "name": "ダイアグラムビルダー",
-  "description": "組織図、フローチャート、タイムラインなどを、カード、テキスト、Mermaid、CSVから作成できます。",
+  "description": "組織図、フローチャート、タイムラインなど - カード、テキスト、Mermaid、CSVから作成。",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}}図表",
   "featured.blurb": "カードやテキストをブランドに合わせた図表に変換します",
   "inputs.preset.label": "プリセット",

@@ -1,6 +1,6 @@
 {
   "name": "Logo Lockup: Grid (NASCAR)",
-  "description": "Ayusin ang tambak na logos sa malinis at pantay na sponsor grid — ang “NASCAR” wall.",
+  "description": "Ayusin ang tambak ng mga logo sa isang malinis, pantay na sponsor grid - ang “NASCAR” wall.",
   "a11yLabel": "Grid na may {{logos.length}} logo",
   "inputs.columns.label": "Mga Column",
   "inputs.columns.help": "Ilang logo ang nasa bawat row.",

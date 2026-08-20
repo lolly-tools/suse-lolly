@@ -1,6 +1,6 @@
 {
   "name": "Créateur de diagrammes",
-  "description": "Organigrammes, diagrammes de flux, frises chronologiques et plus — à partir de cartes, de texte, Mermaid ou CSV.",
+  "description": "Organigrammes, logigrammes, chronologies et plus - à partir de cartes, texte, Mermaid ou CSV.",
   "a11yLabel": "{{default title \"Sans titre\"}} — diagramme {{diagramType}}",
   "featured.blurb": "Transforme cartes ou texte en diagrammes à ta marque",
   "inputs.preset.label": "Préréglage",

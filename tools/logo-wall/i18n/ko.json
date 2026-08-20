@@ -1,6 +1,6 @@
 {
   "name": "로고 락업: 그리드 (NASCAR)",
-  "description": "수많은 로고를 깔끔하고 균일한 스폰서 그리드, 일명 “NASCAR” 월로 정렬해요.",
+  "description": "여러 로고를 깔끔하고 균일한 스폰서 그리드로 배치하세요 - “나스카” 월.",
   "a11yLabel": "로고 {{logos.length}}개로 이루어진 그리드",
   "inputs.columns.label": "열",
   "inputs.columns.help": "각 행에 몇 개의 로고를 배치할지예요.",

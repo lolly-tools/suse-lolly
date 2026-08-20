@@ -1,6 +1,6 @@
 {
   "name": "Diagramma di flusso",
-  "description": "Crea diagrammi di flusso su una tela aperta — trascina le schede, collegale, e le linee si tracciano e restano ancorate ai riquadri.",
+  "description": "Crea diagrammi di flusso su un canvas aperto - trascina le schede, collegale, e le linee si instradano e si agganciano ai riquadri.",
   "featured.blurb": "Schede e linee di collegamento ancorate ai riquadri",
   "inputs.background.label": "Sfondo della tela",
   "inputs.boxes.label": "Schede",

@@ -1,6 +1,6 @@
 {
   "name": "Diagrammaker",
-  "description": "Organigrammen, stroomdiagrammen, tijdlijnen en meer — van kaarten, tekst, Mermaid of CSV.",
+  "description": "Organigrammen, stroomdiagrammen, tijdlijnen en meer - vanuit kaarten, tekst, Mermaid of CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}}-diagram",
   "inputs.preset.label": "Voorinstelling",
   "inputs.preset.help": "Een startpunt met één klik dat het type, thema en de tussenruimte instelt. Kies er een en verfijn daarna alles verder — je latere aanpassingen blijven behouden.",

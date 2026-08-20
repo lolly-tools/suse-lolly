@@ -1,6 +1,6 @@
 {
   "name": "品牌标志组合",
-  "description": "SUSE 官方标志组合——变色龙图标、文字标志和名称。",
+  "description": "官方 SUSE 徽标组合 - 变色龙图标、文字标和名称。",
   "featured.blurb": "SUSE 官方标志组合，多种样式",
   "inputs.name.label": "名称",
   "inputs.name.help": "紧跟在 SUSE 后面的文字——例如“Storage”“AI Factory”或“Data Team”。留空则仅显示 SUSE 主标志。",

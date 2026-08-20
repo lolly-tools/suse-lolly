@@ -1,6 +1,6 @@
 {
   "name": "Logolockup: Rutenett (NASCAR)",
-  "description": "Ordne en haug med logoer i et ryddig, jevnt sponsor-rutenett — «NASCAR»-veggen.",
+  "description": "Ordne en haug med logoer i et ryddig, jevnt sponsorrutenett - \"NASCAR\"-veggen.",
   "a11yLabel": "Et rutenett med {{logos.length}} logoer",
   "inputs.columns.label": "Kolonner",
   "inputs.columns.help": "Hvor mange logoer som står i hver rad.",

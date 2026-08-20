@@ -1,6 +1,6 @@
 {
   "name": "Diagram Alur",
-  "description": "Buat diagram alur di kanvas terbuka — seret kartu, hubungkan, dan garis akan mengarahkan diri serta menempel pada kotak.",
+  "description": "Buat flow chart di kanvas terbuka - seret kartu, hubungkan, dan garis otomatis mengarah dan menempel ke kotak.",
   "featured.blurb": "Kartu + konektor yang menempel pada kotak",
   "inputs.background.label": "Latar kanvas",
   "inputs.boxes.label": "Kartu",

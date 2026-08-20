@@ -1,6 +1,6 @@
 {
   "name": "Varumärkeslockup",
-  "description": "Officiella SUSE-logotyplockupar — kameleont, ordmärke och ett namn.",
+  "description": "Officiella SUSE-logotypkombinationer - kameleont, ordmärke och ett namn.",
   "featured.blurb": "Officiella SUSE-logotyplockupar, många stilar",
   "inputs.name.label": "Namn",
   "inputs.name.help": "Texten som följer efter SUSE – t.ex. \"Storage\", \"AI Factory\" eller \"Data Team\". Lämna tomt för att bara visa SUSE-huvudlogotypen.",

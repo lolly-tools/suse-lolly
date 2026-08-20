@@ -1,6 +1,6 @@
 {
   "name": "ブランドロックアップ",
-  "description": "SUSE公式のロゴロックアップ——カメレオン、ワードマーク、名前で構成されます。",
+  "description": "SUSE公式ロゴロックアップ - カメレオン、ワードマーク、ネーム。",
   "featured.blurb": "SUSE公式のロゴロックアップ、多彩なスタイルです。",
   "inputs.name.label": "名前",
   "inputs.name.help": "SUSEの後に続くテキストです。例:「Storage」、「AI Factory」、「Data Team」など。空欄の場合はSUSEのマスターロゴのみが表示されます。",

@@ -1,7 +1,7 @@
 {
   "name": "Bloc de culoare",
-  "description": "Blocuri de culoare — text, imagine, siglă — aranjate automat într-o grilă.",
-  "featured.blurb": "Blocuri de culoare — text, imagine, siglă, într-o grilă",
+  "description": "Blocuri de culoare - text, imagine, logo - aranjate automat într-o grilă.",
+  "featured.blurb": "Blocuri de culoare - text, imagine, logo într-o grilă",
   "a11yLabel": "Compoziție din blocuri de culoare",
   "inputs.blocks.label": "Blocuri",
   "inputs.blocks.help": "Adaugă blocuri în orice ordine — aranjamentul se reface automat într-o grilă care umple cadrul. Fiecare tip poate fi adăugat o singură dată; blocurile goale sunt nelimitate.",

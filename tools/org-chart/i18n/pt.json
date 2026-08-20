@@ -1,6 +1,6 @@
 {
   "name": "Fluxograma",
-  "description": "Crie fluxogramas em uma tela aberta — arraste os cartões, conecte-os, e as linhas se traçam sozinhas e ficam presas às caixas.",
+  "description": "Construa fluxogramas num canvas aberto - arraste cartões, conecte-os, e as linhas se traçam e ficam fixas às caixas.",
   "featured.blurb": "Cartões + conectores que ficam presos às caixas",
   "inputs.background.label": "Fundo da tela",
   "inputs.boxes.label": "Cartões",

@@ -1,6 +1,6 @@
 {
   "name": "Orientační značení",
-  "description": "Směrové cedule pro akce — cíle, každý se šipkou. Připraveno k tisku.",
+  "description": "Směrové značky událostí - cíle, každý se šipkou. Připravené k tisku.",
   "featured.blurb": "Směrové cedule pro akce, připravené k tisku",
   "a11yLabel": "Orientační cedule pro {{default eventName \"akci\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Tloušťka textu",

@@ -1,6 +1,6 @@
 {
   "name": "Logotyp marki",
-  "description": "Oficjalne układy logo SUSE — kameleon, logotyp i nazwa.",
+  "description": "Oficjalne układy logo SUSE - kameleon, znak słowny i nazwa.",
   "featured.blurb": "Oficjalne układy logo SUSE w wielu wariantach",
   "inputs.name.label": "Nazwa",
   "inputs.name.help": "Tekst, który następuje po SUSE — np. „Storage”, „AI Factory” lub „Data Team”. Pozostaw puste, aby użyć samego głównego logo SUSE.",

@@ -1,7 +1,7 @@
 {
   "name": "色塊",
-  "description": "色塊——文字、圖片、標誌——自動排列成網格。",
-  "featured.blurb": "色塊——文字、圖片、標誌排列成網格",
+  "description": "色塊 - 文字、圖片、標誌 - 自動排列成網格。",
+  "featured.blurb": "色塊 - 文字、圖片、標誌排成網格",
   "a11yLabel": "色塊構圖",
   "inputs.blocks.label": "區塊",
   "inputs.blocks.help": "依任意順序新增區塊——版面會自動重新排列成填滿畫面的網格。每種類型只能新增一次；空白區塊則不限數量。",

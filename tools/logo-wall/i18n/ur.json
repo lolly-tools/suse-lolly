@@ -1,6 +1,6 @@
 {
   "name": "لوگو لاک اپ: گرڈ (NASCAR)",
-  "description": "لوگوز کے ڈھیر کو ایک صاف اور یکساں سپانسر گرڈ میں ترتیب دیں — “NASCAR” وال۔",
+  "description": "لوگوز کے ڈھیر کو ایک صاف، ہموار اسپانسر گرڈ میں ترتیب دیں - “NASCAR” وال۔",
   "a11yLabel": "{{logos.length}} لوگوز کا ایک گرڈ",
   "inputs.columns.label": "کالمز",
   "inputs.columns.help": "ہر قطار میں کتنے لوگو ہوں گے۔",

@@ -1,6 +1,6 @@
 {
   "name": "Creatore di diagrammi",
-  "description": "Organigrammi, diagrammi di flusso, timeline e altro — da schede, testo, Mermaid o CSV.",
+  "description": "Organigrammi, diagrammi di flusso, timeline e altro - da schede, testo, Mermaid o CSV.",
   "featured.blurb": "Trasforma schede o testo in diagrammi in linea con il brand",
   "a11yLabel": "{{default title \"Untitled\"}} — diagramma {{diagramType}}",
   "inputs.preset.label": "Preset",

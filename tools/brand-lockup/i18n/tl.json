@@ -1,6 +1,6 @@
 {
   "name": "Brand Lockup",
-  "description": "Opisyal na SUSE logo lockups — chameleon, wordmark, at isang pangalan.",
+  "description": "Opisyal na SUSE logo lockups - chameleon, wordmark at pangalan.",
   "featured.blurb": "Opisyal na SUSE logo lockups, maraming style",
   "inputs.name.label": "Pangalan",
   "inputs.name.help": "Ang text na sumusunod sa SUSE — hal. \"Storage\", \"AI Factory\", o \"Data Team\". Iwanang blangko para sa SUSE master logo lang.",

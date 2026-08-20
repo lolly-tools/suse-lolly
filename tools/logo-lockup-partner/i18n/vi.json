@@ -1,6 +1,6 @@
 {
   "name": "Kết hợp logo: Đối tác",
-  "description": "Logo SUSE đặt cạnh logo đối tác, có đường phân cách ở giữa — sáng hoặc tối.",
+  "description": "Logo SUSE bên cạnh logo đối tác, với đường phân cách ở giữa - sáng hoặc tối.",
   "a11yLabel": "Kết hợp logo đối tác SUSE với {{partners.length}} logo đối tác",
   "inputs.theme.label": "Chủ đề",
   "inputs.theme.help": "Sáng đặt logo màu tối lên nền sáng; tối thì ngược lại. Logo SUSE tự động chuyển sang bản thiết kế tương ứng dành cho nền sáng hoặc nền tối.",

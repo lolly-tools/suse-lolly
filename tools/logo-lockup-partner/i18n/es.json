@@ -1,6 +1,6 @@
 {
   "name": "Lockup de logo: Socio",
-  "description": "El logotipo de SUSE junto al de un socio, con un separador entre ambos — claro u oscuro.",
+  "description": "El logotipo de SUSE junto al de un partner, con un divisor entre ambos - claro u oscuro.",
   "a11yLabel": "Lockup de socios de SUSE con {{partners.length}} logos de socios",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Claro pone los logos oscuros sobre un fondo claro; oscuro lo invierte. El logo de SUSE cambia automáticamente al arte correspondiente sobre-claro / sobre-oscuro.",

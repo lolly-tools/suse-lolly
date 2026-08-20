@@ -1,6 +1,6 @@
 {
   "name": "Logo-lockup: raster (NASCAR)",
-  "description": "Zet een stapel logo's om in een strak, gelijkmatig sponsorraster — de “NASCAR”-muur.",
+  "description": "Rangschik een stapel logo's tot een nette, gelijkmatige sponsorgrid - de \"NASCAR\"-muur.",
   "a11yLabel": "Een raster van {{logos.length}} logo's",
   "inputs.columns.label": "Kolommen",
   "inputs.columns.help": "Hoeveel logo's er in elke rij staan.",

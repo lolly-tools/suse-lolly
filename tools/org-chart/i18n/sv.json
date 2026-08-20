@@ -1,6 +1,6 @@
 {
   "name": "Flödesschema",
-  "description": "Skapa flödesscheman på en öppen yta — dra kort, koppla ihop dem, och linjerna dras automatiskt och fastnar på rutorna.",
+  "description": "Bygg flödesscheman på en öppen canvas - dra kort, koppla samman dem, så dras linjerna och fäster vid rutorna.",
   "featured.blurb": "Kort och kopplingslinjer som fastnar på rutorna",
   "inputs.background.label": "Bakgrund",
   "inputs.boxes.label": "Kort",

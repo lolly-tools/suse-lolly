@@ -1,8 +1,8 @@
 {
   "name": "Blocco colore",
-  "description": "Blocchi di colore — testo, immagine, logo — disposti automaticamente in una griglia.",
+  "description": "Blocchi colore - testo, immagine, logo - disposti automaticamente in una griglia.",
   "a11yLabel": "Composizione a blocchi di colore",
-  "featured.blurb": "Blocchi di colore — testo, immagine, logo in una griglia",
+  "featured.blurb": "Blocchi colore - testo, immagine, logo in griglia",
   "inputs.blocks.label": "Blocchi",
   "inputs.blocks.help": "Aggiungi blocchi in qualsiasi ordine — il layout si ricompone in una griglia che riempie l'inquadratura. Ogni tipo può essere aggiunto una sola volta; i blocchi vuoti sono illimitati.",
   "inputs.blocks.addMenu.label": "Aggiungi blocco",

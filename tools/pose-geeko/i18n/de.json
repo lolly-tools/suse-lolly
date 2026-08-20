@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Positionieren Sie den SUSE Geeko per Regler — Augen, Blinzeln und Gliedmaßen. Keine Animation, nur ein Standbild, das Sie anpassen und druckfertig exportieren.",
-  "featured.blurb": "SUSE Geeko posieren — druckfertige Standbilder",
+  "description": "Posiert den SUSE-Geeko mit Reglern - Augen, Blinzeln und Gliedmaßen. Keine Animation, nur ein Standbild, das Sie einstellen und druckfertig exportieren können.",
+  "featured.blurb": "Posiert den SUSE-Geeko - druckfertige Standbilder",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Neugierig",
   "inputs.pose.options.sitting": "Sitzend",

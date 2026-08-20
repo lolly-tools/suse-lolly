@@ -1,6 +1,6 @@
 {
   "name": "Akış Şeması",
-  "description": "Açık bir kanvasta akış şemaları oluştur — kartları sürükle, birbirine bağla; çizgiler otomatik yönlenir ve kutulara yapışık kalır.",
+  "description": "Açık bir tuvalde akış şemaları oluşturun - kartları sürükleyin, bağlayın; çizgiler yönlenir ve kutulara yapışır.",
   "featured.blurb": "Kutulara yapışan kartlar + bağlayıcılar",
   "inputs.background.label": "Kanvas arka planı",
   "inputs.boxes.label": "Kartlar",

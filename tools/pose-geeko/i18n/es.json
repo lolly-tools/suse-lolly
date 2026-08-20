@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Posa al Geeko de SUSE con controles deslizantes: ojos, parpadeo y extremidades. Sin animación, solo una imagen fija que ajustas y exportas lista para imprenta.",
-  "featured.blurb": "Posa al Geeko de SUSE — imágenes fijas listas para imprenta",
+  "description": "Posiciona al Geeko de SUSE con controles deslizantes - ojos, parpadeo y extremidades. Sin animación, solo una imagen fija que puedes ajustar y exportar lista para imprenta.",
+  "featured.blurb": "Posiciona al Geeko de SUSE - imágenes fijas listas para imprenta",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Curioso",
   "inputs.pose.options.sitting": "Sentado",

@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "SUSE Geeko'ya kaydırıcılarla poz verdir — gözler, göz kırpma ve uzuvlar. Animasyon yok, sadece ayarlayabileceğin ve baskıya hazır dışa aktarabileceğin durağan bir görüntü.",
-  "featured.blurb": "SUSE Geeko'ya poz verdir — baskıya hazır durağan görüntüler",
+  "description": "SUSE Geeko'yu kaydırıcılarla pozlandırın - gözler, göz kırpma ve uzuvlar. Animasyon yok, yalnızca ayarlayıp baskıya hazır dışa aktarabileceğiniz bir durağan görüntü.",
+  "featured.blurb": "SUSE Geeko'yu pozlandırın - baskıya hazır durağan görüntüler",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Meraklı",
   "inputs.pose.options.sitting": "Oturan",

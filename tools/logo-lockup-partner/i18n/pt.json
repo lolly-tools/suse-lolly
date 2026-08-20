@@ -1,6 +1,6 @@
 {
   "name": "Combinação de logotipos: Parceiro",
-  "description": "O logotipo da SUSE ao lado do de um parceiro, com um divisor entre eles — claro ou escuro.",
+  "description": "O logotipo SUSE ao lado do de um parceiro, com um divisor entre eles - claro ou escuro.",
   "a11yLabel": "Combinação de logotipos de parceiro da SUSE com {{partners.length}} logotipos de parceiros",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Claro coloca logotipos escuros sobre um fundo claro; escuro inverte isso. O logotipo da SUSE alterna automaticamente para a arte correspondente em fundo claro/escuro.",

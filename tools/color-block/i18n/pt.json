@@ -1,7 +1,7 @@
 {
   "name": "Bloco de cor",
-  "description": "Blocos de cor — texto, imagem, logo — organizados automaticamente em grade.",
-  "featured.blurb": "Blocos de cor — texto, imagem, logo em grade",
+  "description": "Blocos de cor - texto, imagem, logotipo - organizados automaticamente numa grade.",
+  "featured.blurb": "Blocos de cor - texto, imagem, logotipo numa grade",
   "a11yLabel": "Composição de blocos de cor",
   "inputs.blocks.label": "Blocos",
   "inputs.blocks.help": "Adicione blocos em qualquer ordem — o layout se reorganiza automaticamente em uma grade que preenche o quadro. Cada tipo pode ser adicionado uma vez; os blocos em branco são ilimitados.",

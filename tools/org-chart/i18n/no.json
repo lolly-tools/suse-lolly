@@ -1,6 +1,6 @@
 {
   "name": "Flytskjema",
-  "description": "Bygg flytskjemaer på en åpen flate — dra kort, koble dem sammen, og linjene trekkes automatisk og fester seg til boksene.",
+  "description": "Bygg flytskjemaer på et åpent lerret - dra kort, koble dem sammen, og linjene ruter seg og holder seg festet til boksene.",
   "featured.blurb": "Kort og forbindelseslinjer som fester seg til boksene",
   "inputs.background.label": "Lerretsbakgrunn",
   "inputs.boxes.label": "Kort",

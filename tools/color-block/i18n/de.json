@@ -1,7 +1,7 @@
 {
   "name": "Farbblock",
-  "description": "Farbblöcke — Text, Bild, Logo — automatisch zu einem Raster angeordnet.",
-  "featured.blurb": "Farbblöcke — Text, Bild, Logo in einem Raster",
+  "description": "Farbblöcke - Text, Bild, Logo - automatisch in ein Raster angeordnet.",
+  "featured.blurb": "Farbblöcke - Text, Bild, Logo im Raster",
   "a11yLabel": "Farbblock-Komposition",
   "inputs.blocks.label": "Blöcke",
   "inputs.blocks.help": "Fügen Sie Blöcke in beliebiger Reihenfolge hinzu — das Layout wird automatisch zu einem Raster neu angeordnet, das den Rahmen ausfüllt. Jeder Typ kann einmal hinzugefügt werden; Leerblöcke sind unbegrenzt.",

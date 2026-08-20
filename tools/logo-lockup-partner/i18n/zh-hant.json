@@ -1,6 +1,6 @@
 {
   "name": "標誌組合:合作夥伴",
-  "description": "SUSE 標誌與合作夥伴標誌並排顯示,中間有分隔線——淺色或深色。",
+  "description": "SUSE 標誌與合作夥伴標誌並列，中間以分隔線區隔 - 淺色或深色版本。",
   "a11yLabel": "包含 {{partners.length}} 個合作夥伴標誌的 SUSE 合作夥伴標誌組合",
   "inputs.theme.label": "主題",
   "inputs.theme.help": "淺色會將深色標誌放在淺色背景上；深色則相反。SUSE 標誌會自動切換為與主題相符的淺色版／深色版圖稿。",

@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Stel de pose van de SUSE Geeko in met schuifregelaars — ogen, knipperen en ledematen. Geen animatie, gewoon een still die je kunt aanpassen en drukklaar exporteren.",
-  "featured.blurb": "Stel de pose van de SUSE Geeko in — drukklare stills",
+  "description": "Zet de SUSE Geeko in een pose met schuifregelaars - ogen, knipperen en ledematen. Geen animatie, gewoon een stilstaand beeld dat je kunt afstellen en drukklaar exporteren.",
+  "featured.blurb": "Zet de SUSE Geeko in een pose - drukklare stills",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Nieuwsgierig",
   "inputs.pose.options.sitting": "Zittend",

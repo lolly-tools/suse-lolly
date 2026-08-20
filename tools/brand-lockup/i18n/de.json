@@ -1,6 +1,6 @@
 {
   "name": "Marken-Lockup",
-  "description": "Offizielle SUSE-Logo-Lockups – Chamäleon, Wortmarke und ein Name.",
+  "description": "Offizielle SUSE-Logo-Kombinationen - Chamäleon, Wortmarke und ein Name.",
   "featured.blurb": "Offizielle SUSE-Logo-Lockups, viele Varianten",
   "inputs.name.label": "Name",
   "inputs.name.help": "Der Text, der auf SUSE folgt – z. B. „Storage“, „AI Factory“ oder „Data Team“. Leer lassen, um nur das SUSE-Hauptlogo zu verwenden.",

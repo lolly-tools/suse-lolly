@@ -1,6 +1,6 @@
 {
   "name": "Pembina Rajah",
-  "description": "Carta organisasi, carta alir, garis masa dan banyak lagi — daripada kad, teks, Mermaid atau CSV.",
+  "description": "Carta organisasi, carta alir, garis masa dan banyak lagi - daripada kad, teks, Mermaid atau CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — rajah {{diagramType}}",
   "inputs.preset.label": "Praset",
   "inputs.preset.help": "Titik permulaan sekali klik yang menetapkan jenis, tema dan jarak. Pilih satu, kemudian perhalusi apa-apa sahaja — perubahan yang anda buat kemudian akan dikekalkan.",

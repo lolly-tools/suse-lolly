@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Poziționează Geeko-ul SUSE cu ajutorul sliderelor — ochi, clipit și membre. Fără animație, doar o imagine statică pe care o reglezi și o exporți gata de print.",
-  "featured.blurb": "Poziționează Geeko-ul SUSE — imagini statice gata de print",
+  "description": "Pozează Geeko-ul SUSE cu glisoare - ochi, clipire și membre. Fără animație, doar o imagine statică pe care o poți regla și exporta gata de tipar.",
+  "featured.blurb": "Pozează Geeko-ul SUSE - imagini statice gata de tipar",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Curios",
   "inputs.pose.options.sitting": "Așezat",

@@ -1,6 +1,6 @@
 {
   "name": "Sơ đồ luồng",
-  "description": "Tạo sơ đồ luồng trên canvas mở — kéo thẻ, nối chúng lại, và các đường nối tự động chạy và dính vào các khung.",
+  "description": "Xây dựng lưu đồ trên canvas mở - kéo thẻ, nối chúng lại, và các đường sẽ tự định tuyến và bám theo các ô.",
   "featured.blurb": "Thẻ + đường nối dính chặt vào khung",
   "inputs.background.label": "Nền canvas",
   "inputs.boxes.label": "Thẻ",

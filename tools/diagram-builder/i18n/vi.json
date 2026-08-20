@@ -1,6 +1,6 @@
 {
   "name": "Trình tạo sơ đồ",
-  "description": "Sơ đồ tổ chức, lưu đồ, dòng thời gian và hơn thế nữa — từ thẻ, văn bản, Mermaid hoặc CSV.",
+  "description": "Sơ đồ tổ chức, lưu đồ, dòng thời gian và hơn thế nữa - từ thẻ, văn bản, Mermaid hoặc CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} — sơ đồ {{diagramType}}",
   "inputs.preset.label": "Mẫu có sẵn",
   "inputs.preset.help": "Điểm khởi đầu chỉ với một cú nhấp, thiết lập sẵn loại sơ đồ, giao diện và khoảng cách. Chọn một mẫu rồi tinh chỉnh bất kỳ phần nào — các thay đổi bạn thực hiện sau đó vẫn được giữ nguyên.",

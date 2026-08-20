@@ -1,6 +1,6 @@
 {
   "name": "Criador de diagramas",
-  "description": "Organogramas, fluxogramas, linhas do tempo e muito mais — a partir de cartões, texto, Mermaid ou CSV.",
+  "description": "Organogramas, fluxogramas, linhas do tempo e mais - a partir de cartões, texto, Mermaid ou CSV.",
   "featured.blurb": "Transforme cartões ou texto em diagramas com a cara da sua marca",
   "a11yLabel": "{{default title \"Sem título\"}} — diagrama {{diagramType}}",
   "inputs.preset.label": "Predefinição",

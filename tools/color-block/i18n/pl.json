@@ -1,8 +1,8 @@
 {
   "name": "Blok koloru",
-  "description": "Kolorowe bloki — tekst, obraz, logo — automatycznie ułożone w siatkę.",
+  "description": "Bloki kolorów - tekst, obraz, logo - automatycznie ułożone w siatkę.",
   "a11yLabel": "Kompozycja z kolorowych bloków",
-  "featured.blurb": "Kolorowe bloki — tekst, obraz, logo w siatce",
+  "featured.blurb": "Bloki kolorów - tekst, obraz, logo w siatce",
   "inputs.blocks.label": "Bloki",
   "inputs.blocks.help": "Dodawaj bloki w dowolnej kolejności — układ przepakowuje się w siatkę wypełniającą ramkę. Każdy typ można dodać raz; pustych bloków można dodać bez ograniczeń.",
   "inputs.blocks.addMenu.label": "Dodaj blok",

@@ -1,8 +1,8 @@
 {
   "name": "Renk Bloğu",
-  "description": "Renk blokları — metin, görüntü, logo — otomatik olarak bir ızgaraya yerleştirilir.",
+  "description": "Renk blokları - metin, görsel, logo - otomatik olarak bir ızgaraya yerleştirilir.",
   "a11yLabel": "Renk bloğu kompozisyonu",
-  "featured.blurb": "Renk blokları — ızgarada metin, görüntü, logo",
+  "featured.blurb": "Renk blokları - ızgarada metin, görsel, logo",
   "inputs.blocks.label": "Bloklar",
   "inputs.blocks.help": "Blokları istediğin sırayla ekle — düzen, çerçeveyi dolduran bir ızgaraya yeniden dizilir. Her tür bir kez eklenebilir; boşluklar sınırsızdır.",
   "inputs.blocks.addMenu.label": "Blok ekle",

@@ -1,6 +1,6 @@
 {
   "name": "Bewegwijzering",
-  "description": "Richtingaanwijzende evenementborden — bestemmingen, elk met een pijl. Printklaar.",
+  "description": "Richtingaanduidende evenementenborden - bestemmingen, elk met een pijl. Drukklaar.",
   "featured.blurb": "Richtingaanwijzende evenementborden, printklaar",
   "a11yLabel": "Bewegwijzeringsbord voor {{default eventName \"het evenement\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Tekstdikte",

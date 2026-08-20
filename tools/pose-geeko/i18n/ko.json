@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "슬라이더로 SUSE Geeko의 포즈를 조정해요 — 눈, 깜빡임, 팔다리. 애니메이션이 아니라 정지 이미지로, 원하는 대로 조정해서 인쇄용으로 내보낼 수 있어요.",
-  "featured.blurb": "SUSE Geeko 포즈 조정 — 인쇄용 정지 이미지",
+  "description": "슬라이더로 SUSE Geeko의 포즈를 잡으세요 - 눈, 깜빡임과 팔다리까지. 애니메이션이 아닌, 원하는 대로 다듬어 인쇄용으로 내보낼 수 있는 스틸 컷입니다.",
+  "featured.blurb": "SUSE Geeko 포즈 잡기 - 인쇄용 스틸 컷",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "호기심",
   "inputs.pose.options.sitting": "앉기",

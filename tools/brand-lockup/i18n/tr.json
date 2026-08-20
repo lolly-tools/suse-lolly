@@ -1,6 +1,6 @@
 {
   "name": "Marka Yerleşimi",
-  "description": "Resmi SUSE logo yerleşimleri — bukalemun, yazı logosu ve bir isim.",
+  "description": "Resmi SUSE logo düzenleri - bukalemun, logotype ve bir isim.",
   "featured.blurb": "Resmi SUSE logo yerleşimleri, birçok görünüm",
   "inputs.name.label": "Ad",
   "inputs.name.help": "SUSE'den sonra gelen metin — örn. \"Storage\", \"AI Factory\" ya da \"Data Team\". Yalnızca SUSE ana logosu için boş bırak.",

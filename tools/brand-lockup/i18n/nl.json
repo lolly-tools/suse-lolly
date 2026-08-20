@@ -1,6 +1,6 @@
 {
   "name": "Merklockup",
-  "description": "Officiële SUSE-logolockups — kameleon, woordmerk en een naam.",
+  "description": "Officiële SUSE-logolockups - chameleon, wordmark en een naam.",
   "featured.blurb": "Officiële SUSE-logolockups, veel stijlen",
   "inputs.name.label": "Naam",
   "inputs.name.help": "De tekst die op SUSE volgt — bijv. \"Storage\", \"AI Factory\" of \"Data Team\". Laat leeg voor alleen het SUSE-hoofdlogo.",

@@ -1,6 +1,6 @@
 {
   "name": "Merkevarelockup",
-  "description": "Offisielle SUSE-logolockuper — kameleon, ordmerke og et navn.",
+  "description": "Offisielle SUSE-logooppsett - kameleon, ordmerke og et navn.",
   "featured.blurb": "Offisielle SUSE-logolockuper, mange stiler",
   "inputs.name.label": "Navn",
   "inputs.name.help": "Teksten som følger etter SUSE – f.eks. «Storage», «AI Factory» eller «Data Team». La stå tomt for å bare vise SUSE-hovedlogoen.",

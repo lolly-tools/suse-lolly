@@ -1,6 +1,6 @@
 {
   "name": "Konstruktor diagramów",
-  "description": "Schematy organizacyjne, schematy blokowe, harmonogramy i więcej — z kart, tekstu, Mermaid lub CSV.",
+  "description": "Schematy organizacyjne, diagramy przepływu, osie czasu i więcej - z kart, tekstu, Mermaid lub CSV.",
   "a11yLabel": "{{default title \"Bez tytułu\"}} — diagram {{diagramType}}",
   "featured.blurb": "Zamień karty lub tekst w diagramy zgodne z marką",
   "inputs.preset.label": "Szablon",

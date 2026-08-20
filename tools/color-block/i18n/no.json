@@ -1,7 +1,7 @@
 {
   "name": "Fargeblokk",
-  "description": "Fargeblokker — tekst, bilde, logo — automatisk arrangert i et rutenett.",
-  "featured.blurb": "Fargeblokker — tekst, bilde, logo i et rutenett",
+  "description": "Fargeblokker - tekst, bilde, logo - automatisk ordnet i et rutenett.",
+  "featured.blurb": "Fargeblokker - tekst, bilde, logo i et rutenett",
   "a11yLabel": "Fargeblokk-komposisjon",
   "inputs.blocks.label": "Blokker",
   "inputs.blocks.help": "Legg til blokker i valgfri rekkefølge — layouten pakkes om til et rutenett som fyller rammen. Hver type kan legges til én gang; tomme blokker er ubegrenset.",

@@ -1,6 +1,6 @@
 {
   "name": "Creator de diagrame",
-  "description": "Organigrame, diagrame de flux, cronologii și altele — din carduri, text, Mermaid sau CSV.",
+  "description": "Organigrame, diagrame de flux, cronologii și altele - din carduri, text, Mermaid sau CSV.",
   "a11yLabel": "{{default title \"Fără titlu\"}} — diagramă {{diagramType}}",
   "featured.blurb": "Transformă carduri sau text în diagrame aliniate brandului",
   "inputs.preset.label": "Presetare",

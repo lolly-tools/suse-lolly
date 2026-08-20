@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Posisjoner SUSE Geeko med glidebrytere — øyne, blunking og lemmer. Ingen animasjon, bare et stillbilde du kan finjustere og eksportere trykkeklart.",
-  "featured.blurb": "Poser SUSE Geeko — trykkeklare stillbilder",
+  "description": "Poser SUSE-Geekoen med glidebrytere - øyne, blunk og lemmer. Ingen animasjon, bare et stillbilde du kan finjustere og eksportere trykkeklart.",
+  "featured.blurb": "Poser SUSE-Geekoen - trykkeklare stillbilder",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Nysgjerrig",
   "inputs.pose.options.sitting": "Sittende",

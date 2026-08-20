@@ -1,6 +1,6 @@
 {
   "name": "Signalétique directionnelle",
-  "description": "Panneaux directionnels d'événement — destinations, chacune avec une flèche. Prêts à imprimer.",
+  "description": "Panneaux d'événement directionnels - des destinations, chacune avec une flèche. Prêts pour l'impression.",
   "featured.blurb": "Panneaux directionnels d'événement, prêts à imprimer",
   "a11yLabel": "Panneau directionnel pour {{default eventName \"l'événement\"}}{{#if heading}} — {{heading}}{{/if}}",
   "inputs.textWeight.label": "Épaisseur du texte",

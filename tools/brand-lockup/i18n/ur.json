@@ -1,6 +1,6 @@
 {
   "name": "برانڈ لاک اپ",
-  "description": "سرکاری SUSE لوگو لاک اپس — گرگٹ، ورڈ مارک اور ایک نام۔",
+  "description": "سرکاری SUSE لوگو لاک اپس - چیمیلیون، ورڈ مارک اور ایک نام۔",
   "featured.blurb": "سرکاری SUSE لوگو لاک اپس، کئی انداز",
   "inputs.name.label": "نام",
   "inputs.name.help": "وہ متن جو SUSE کے بعد آتا ہے — مثلاً \"Storage\"، \"AI Factory\"، یا \"Data Team\"۔ صرف SUSE ماسٹر لوگو کے لیے خالی چھوڑ دیں۔",

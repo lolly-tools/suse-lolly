@@ -1,7 +1,7 @@
 {
   "name": "Pose Geeko",
-  "description": "Pose le Geeko SUSE avec des curseurs — yeux, clignement et membres. Pas d'animation, juste une image fixe à régler et exporter prête à imprimer.",
-  "featured.blurb": "Pose le Geeko SUSE — images fixes prêtes à imprimer",
+  "description": "Posez le Geeko de SUSE avec des curseurs - yeux, clignement et membres. Pas d'animation, juste un cliché que vous ajustez et exportez prêt pour l'impression.",
+  "featured.blurb": "Posez le Geeko de SUSE - clichés prêts pour l'impression",
   "inputs.pose.label": "Geeko",
   "inputs.pose.options.curious": "Curieux",
   "inputs.pose.options.sitting": "Assis",

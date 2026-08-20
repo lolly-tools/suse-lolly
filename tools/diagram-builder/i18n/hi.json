@@ -1,6 +1,6 @@
 {
   "name": "डायग्राम बिल्डर",
-  "description": "ऑर्ग चार्ट, फ़्लोचार्ट, टाइमलाइन और बहुत कुछ — कार्ड, टेक्स्ट, Mermaid या CSV से।",
+  "description": "ऑर्ग चार्ट्स, फ़्लोचार्ट्स, टाइमलाइन और अधिक - कार्ड्स, टेक्स्ट, Mermaid या CSV से।",
   "featured.blurb": "कार्ड या टेक्स्ट को ऑन-ब्रांड डायग्राम में बदलें",
   "a11yLabel": "{{default title \"Untitled\"}} — {{diagramType}} डायग्राम",
   "inputs.preset.label": "प्रीसेट",
