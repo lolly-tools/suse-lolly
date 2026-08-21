@@ -1,5 +1,5 @@
 /**
- * Logo Wall — vector hook.
+ * Logo Wall - vector hook.
  *
  * Raster mode (the default) renders a grid of <img> tiles. The hook builds the
  * per-logo list (buildItems): url, opacity, grayscale and an effective size that
@@ -8,13 +8,13 @@
  * reproduces faithfully. Pixels are only sampled when balancing is on (a small
  * weight measurement), not for the visual itself.
  *
- * "Render as vector" is opt-in — the wall-wide "Render all as vector" toggle, or
+ * "Render as vector" is opt-in - the wall-wide "Render all as vector" toggle, or
  * per logo in its block: each logo is independently an
  * <img> (raster) or flattened to one ink colour. The wall is always the same CSS
  * grid of cells; a vectorised cell holds a small inline <svg> instead of an <img>,
  * sized identically (the balanced size%) so toggling a logo never reflows the wall.
  *   - a raster logo is decoded on an offscreen <canvas>, thresholded to 1-bit (the
- *     background dropped first so a solid tile never traces as a square), and traced —
+ *     background dropped first so a solid tile never traces as a square), and traced -
  *     marching-squares boundary → Douglas–Peucker simplify → corner-aware cubic
  *     Béziers (smooth real paths, holes via even-odd fill);
  *   - an SVG logo is inlined verbatim and recoloured (no trace), so it stays
@@ -43,7 +43,7 @@
 // so a finer grid sharpens edge PLACEMENT without exploding the path data).
 var MAX_CELLS_PER_LOGO = 640000;
 // The trace samples on a grid LARGER than the source bitmap (up to 2× its longest
-// edge, capped below) with smoothing interpolation on — the threshold then cuts
+// edge, capped below) with smoothing interpolation on - the threshold then cuts
 // through interpolated ramps, so contour edges land at sub-pixel positions of the
 // original image instead of snapping to its pixel grid.
 var TRACE_SUPERSAMPLE = 2;
@@ -60,7 +60,7 @@ function presenceMul(v) { return PRESENCE[v] != null ? PRESENCE[v] : 1; }
 var _imgCache = {};
 // Traced-path cache: key -> { d, cols, rows } in grid-unit coords.
 var _traceCache = {};
-// Content-box cache: url -> { fx, fy, fw, fh, weight } — the artwork's bounding box
+// Content-box cache: url -> { fx, fy, fw, fh, weight } - the artwork's bounding box
 // as fractions of the image (margins trimmed) plus its ink coverage, both measured
 // at a fixed sample size so source resolution doesn't matter. Drives layout + balance.
 var _boxCache = {};
@@ -73,11 +73,11 @@ var _svgTextCache = {};
 // Trimmed-SVG cache: url -> data-URL of the SVG with its root viewBox rewritten
 // to the measured content box (or the original url when already tight / on
 // failure). The SVG twin of _cropCache: same measured box, no rasterising and no
-// tracing — the markup ships unchanged apart from the root tag.
+// tracing - the markup ships unchanged apart from the root tag.
 var _svgTrimCache = {};
 // Content-trimmed raster cache: url -> data-URL of the logo cropped to its content
 // box (margins removed). A full-colour raster logo renders from this so it fits its
-// cell exactly like the vector path does (whose viewBox is already the content box) —
+// cell exactly like the vector path does (whose viewBox is already the content box) -
 // toggling "Render as vector" no longer changes the apparent size. Cached per url.
 var _cropCache = {};
 // Remembered for beforeExport (which only sees format/opts).
@@ -87,11 +87,11 @@ var _transparent = false, _bg = '#ffffff';
 
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
-// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
+// === lolly:shared esc - generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -101,13 +101,13 @@ function esc(s) {
 function color(v, fallback) { var s = (typeof v === 'string' ? v : '').trim(); return s ? s : fallback; }
 
 // Whether this shell can decode pixels (a real browser canvas with a 2D context).
-// === lolly:shared canRaster — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
+// === lolly:shared canRaster - generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function canRaster() {
   return !!(host.raster && host.raster.canRaster());
 }
 // === /lolly:shared canRaster ===
 
-// === lolly:shared loadImage — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
+// === lolly:shared loadImage - generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function loadImage(url) {
   if (!host.raster) return Promise.reject(new Error('no raster'));
   return host.raster.decode(url);
@@ -154,7 +154,7 @@ function sampleRGBA(img, cols, rows) {
 // Resolution-independent CONTENT box + optical weight of a logo.
 //
 // Samples the image at a fixed longest edge S (so a 4000px and an 80px copy of the
-// same logo measure identically), then finds the artwork's bounding box — trimming
+// same logo measure identically), then finds the artwork's bounding box - trimming
 // transparent margins, or, when the logo sits on a flat colour, margins matching
 // that background. Returns the box as fractions of the image plus the ink coverage
 // over that box (mean opacity×darkness), so layout fits each logo by its real
@@ -223,7 +223,7 @@ function measureContent(url, img) {
     box = {
       fx: minX / cols, fy: minY / rows, fw: bw / cols, fh: bh / rows,
       // Optical weight = how much of the bounding SQUARE the artwork covers, by ANY
-      // colour (not just darkness) — so a thin/tall mark reads light and a white or
+      // colour (not just darkness) - so a thin/tall mark reads light and a white or
       // reverse (light-on-dark) mark is weighed by its real footprint, fair under
       // invert and on dark backgrounds.
       weight: Math.max(0.01, presence / (sq * sq)),
@@ -238,11 +238,11 @@ function measureContent(url, img) {
 // A full-colour raster logo, cropped to its content box (margins removed), as a
 // data URL. The vector path already fits each logo to its trimmed content box (the
 // inline <svg> viewBox), but a plain <img> with object-fit:contain fits the WHOLE
-// image — transparent / flat-colour margins included — so the same logo looked
+// image - transparent / flat-colour margins included - so the same logo looked
 // smaller as an image than as vector, and toggling "Render as vector" jumped its
 // size. Cropping the bitmap to the same content box makes both paths letterbox the
 // SAME artwork into the SAME size% box. We keep it a real <img> src (not a wrapper
-// crop) because the SVG/PDF export walker reads only the element's own geometry —
+// crop) because the SVG/PDF export walker reads only the element's own geometry -
 // an overflow-clipped wrapper would be ignored, but a pre-cropped bitmap embeds
 // faithfully in every format. Returns the original url unchanged when there's no
 // meaningful margin to trim, when pixels can't be read (headless), or on failure.
@@ -251,11 +251,11 @@ function getTrimmedRaster(url, img, box, knockout) {
   if (_cropCache[cacheKey] !== undefined) return _cropCache[cacheKey];
   if (!box) return url;
   // Would the white-box knockout below actually run? Only on an opaque
-  // NEAR-WHITE flat background — the "logo lifted off an old slide" case. A
+  // NEAR-WHITE flat background - the "logo lifted off an old slide" case. A
   // coloured or dark tile is often part of the mark itself, so it stays.
   var whiteBg = knockout && box.bgOpaque && box.bg
     && box.bg[0] >= 235 && box.bg[1] >= 235 && box.bg[2] >= 235;
-  // Already tight AND nothing to knock out — re-encoding would only cost quality.
+  // Already tight AND nothing to knock out - re-encoding would only cost quality.
   if (!whiteBg && box.fx <= 0.012 && box.fy <= 0.012 && box.fw >= 0.976 && box.fh >= 0.976) {
     _cropCache[cacheKey] = url; return url;
   }
@@ -324,7 +324,7 @@ function knockoutWhite(ctx, w, h, bg) {
     if (cy > 0) seed(i - w);
     if (cy < h - 1) seed(i + w);
   }
-  // Feather: an opaque pixel touching the cleared region is the antialiased rim —
+  // Feather: an opaque pixel touching the cleared region is the antialiased rim -
   // knock its alpha back by how close to the background it still is.
   for (var j = 0; j < n; j++) {
     if (reached[j]) continue;
@@ -341,7 +341,7 @@ function knockoutWhite(ctx, w, h, bg) {
 
 // ── SVG logos: inline instead of trace ───────────────────────────────────────
 // A logo that's already a vector (SVG) is inlined verbatim and recoloured to the
-// ink colour — no rasterise-and-trace round-trip, so it stays pixel-perfect. The
+// ink colour - no rasterise-and-trace round-trip, so it stays pixel-perfect. The
 // uploaded SVG was sanitised at ingest (DOMPurify, scripts stripped), so the
 // markup is safe to inline.
 
@@ -385,7 +385,7 @@ function svgLen(v, fallback, pctOf) {
 
 // Drop a full-bleed backing <rect>. Recolouring everything to one ink colour
 // would otherwise turn a logo's background rectangle (often white or transparent
-// originally) into a solid ink block over the artwork — the user only wants the
+// originally) into a solid ink block over the artwork - the user only wants the
 // logo's own shapes filled. We remove any <rect> that covers ~the whole viewBox
 // (untransformed top-level case, which is how backing rects are nearly always
 // authored). A rect using width/height="100%" is caught via svgLen.
@@ -405,7 +405,7 @@ function removeBackgroundRects(svg, vbx, vby, vbw, vbh) {
   }
 }
 
-// A width/height attribute as a plain number ONLY when unitless or px — %/em/etc.
+// A width/height attribute as a plain number ONLY when unitless or px - %/em/etc.
 // carry context we don't have, so reject them (→ 0, caller falls back to the
 // viewBox guess) rather than mis-scale (parseFloat('1em') would yield 1).
 function svgDim(v) {
@@ -422,7 +422,7 @@ function svgDim(v) {
 function hardenSvg(svg) {
   // <style> is dropped too: a class-based fill (the common Illustrator/Inkscape
   // "CSS"/"Style Elements" export, e.g. .st0{fill:#e2231a}) would otherwise beat the
-  // wrapping group's ink and leak the source colour — breaking the one-ink wall — and
+  // wrapping group's ink and leak the source colour - breaking the one-ink wall - and
   // an @import / url() inside it would fetch off-device. Removing <style> + every
   // class attribute leaves the group ink the only paint source.
   var bad = svg.querySelectorAll('script, foreignObject, animate, animateTransform, animateMotion, set, style');
@@ -522,7 +522,7 @@ function getSvg(url) {
 }
 
 // ── SVG trim: rewrite the root viewBox to the content box ────────────────────
-// The vector counterpart of getTrimmedRaster: no tracing, no rasterising — the
+// The vector counterpart of getTrimmedRaster: no tracing, no rasterising - the
 // artwork's markup is untouched and keeps its full colour; only the root tag's
 // viewBox moves (and width/height drop, so the new box IS the intrinsic aspect).
 
@@ -550,7 +550,7 @@ function svgRootBox(text) {
 // Map a content box measured as FRACTIONS of the decoded bitmap back into the
 // SVG's own viewBox units. The decode renders the viewBox into the bitmap with
 // preserveAspectRatio "meet" (centred), so when the root width/height aspect
-// disagrees with the viewBox the bitmap letterboxes — undo that transform rather
+// disagrees with the viewBox the bitmap letterboxes - undo that transform rather
 // than assuming a linear map. Returns a slightly OUTWARD-rounded box (one sample
 // cell each side, mirroring getTrimmedRaster) clamped to the viewBox.
 function svgContentBox(box, root, imgW, imgH) {
@@ -576,7 +576,7 @@ function svgContentBox(box, root, imgW, imgH) {
 function getTrimmedSvg(url, img, box) {
   if (_svgTrimCache[url] !== undefined) return Promise.resolve(_svgTrimCache[url]);
   if (!box) return Promise.resolve(url);
-  // Already tight — same guard as the raster path: rewriting buys nothing.
+  // Already tight - same guard as the raster path: rewriting buys nothing.
   if (box.fx <= 0.012 && box.fy <= 0.012 && box.fw >= 0.976 && box.fh >= 0.976) {
     _svgTrimCache[url] = url; return Promise.resolve(url);
   }
@@ -609,11 +609,11 @@ function getTrimmedSvg(url, img, box) {
 // rectangles (which scales up looking pixelated): marching-squares boundary
 // extraction → Douglas–Peucker simplification → corner-aware cubic-Bézier
 // fitting. Output is real M / L / C / Z path data, with holes handled by
-// even-odd fill — so it stays crisp at any size.
+// even-odd fill - so it stays crisp at any size.
 
 // Threshold the sampled image into a 1-bit ink mask (1 = ink). Only the artwork can
 // become ink: transparent pixels never do, and on an opaque flat background, pixels
-// matching that background colour never do either — so a logo delivered on a solid
+// matching that background colour never do either - so a logo delivered on a solid
 // tile (white, black or a brand colour) traces to its mark, never a filled square.
 function binarize(img, cols, rows, cutoff, invert, bgOpaque, bg) {
   var g = sampleRGBA(img, cols, rows);
@@ -660,7 +660,7 @@ function despeckle(mask, cols, rows) {
 
 // Follow every ink/non-ink boundary into closed loops of integer grid corners.
 // One directed unit edge per ink-cell side that faces a non-ink cell (or the
-// image edge); edges chain head-to-tail into closed rings — outer outlines and
+// image edge); edges chain head-to-tail into closed rings - outer outlines and
 // holes alike (even-odd fill sorts out which is which).
 function traceContours(mask, cols, rows) {
   function ink(cx, cy) {
@@ -681,8 +681,8 @@ function traceContours(mask, cols, rows) {
       if (!ink(cx + 1, cy)) add(cx + 1, cy + 1, cx + 1, cy);    // right
     }
   }
-  // Every edge keeps ink on its LEFT (y-down coords). At a checkerboard corner —
-  // two ink cells touching diagonally — FOUR edges meet at one point, and taking
+  // Every edge keeps ink on its LEFT (y-down coords). At a checkerboard corner -
+  // two ink cells touching diagonally - FOUR edges meet at one point, and taking
   // an arbitrary continuation chains the two distinct rings into a self-crossing
   // figure-eight that fills as slivers. Preferring the sharpest LEFT turn
   // relative to the incoming direction hugs the ink region, so each ring closes
@@ -819,7 +819,7 @@ function traceLogo(url, img, detail, cutoff, invert, eps, cornerCos) {
   // then supersampled up towards 2× the source's own resolution (capped): the
   // smoothing-interpolated resample puts real gradients under the threshold, so
   // the traced boundary lands between source pixels instead of on them. Detail
-  // stays the coarseness the user asked for — see the eps rescale below.
+  // stays the coarseness the user asked for - see the eps rescale below.
   var edge = Math.max(detail, Math.min(TRACE_SUPERSAMPLE * Math.max(iw, ih), TRACE_MAX_EDGE));
   var cols, rows;
   if (iw >= ih) { cols = edge; rows = Math.max(1, Math.round(edge * ih / iw)); }
@@ -830,7 +830,7 @@ function traceLogo(url, img, detail, cutoff, invert, eps, cornerCos) {
     rows = Math.max(1, Math.floor(rows * k));
   }
   // eps is authored in Detail-grid pixels; the supersampled grid is finer, so
-  // scale it up with the grid — but by the SQUARE ROOT, capped at 2×. A linear
+  // scale it up with the grid - but by the SQUARE ROOT, capped at 2×. A linear
   // scale at a low Detail (grid 800 over detail 80 → 10×) inflates eps past the
   // letterforms themselves and Douglas–Peucker collapses every ring to slivers;
   // the softened scale keeps Smoothing meaningful without ever destroying shapes.
@@ -941,8 +941,8 @@ async function buildVectorLogo(it, ink, globalTP) {
   var box = measureContent(it.url, img) || { fx: 0, fy: 0, fw: 1, fh: 1, contentLum: 0 };
   var tp = it.tune ? traceParams(it.oThreshold, it.oInvert, it.oDetail, it.oSmoothing) : globalTP;
   // Per-logo invert. A tuned logo obeys its own switch exactly. Everyone else is
-  // auto-detected from mean artwork brightness — a white/reversed mark inverts, a
-  // dark mark doesn't — and when that reading is CONFIDENT (well clear of the
+  // auto-detected from mean artwork brightness - a white/reversed mark inverts, a
+  // dark mark doesn't - and when that reading is CONFIDENT (well clear of the
   // cut-off) it beats the wall-wide Invert: one global toggle must not silently
   // hollow out every dark-on-white logo in a mixed set (each traces to just its
   // antialiasing halo). The global switch decides only the ambiguous band.
@@ -968,7 +968,7 @@ async function buildVectorLogo(it, ink, globalTP) {
 
 // Build the per-logo render list: url, name, opacity, filter, vector-ness, and an
 // effective size%. With "Balance sizes" on (the default), each size folds in an
-// optical-weight factor — heavier logos shrink, lighter ones grow — normalised
+// optical-weight factor - heavier logos shrink, lighter ones grow - normalised
 // around the set's geometric-mean weight, so the wall reads as evenly weighted.
 // The block's own Size % rides on top as a manual nudge.
 async function buildItems(inputs, balance, trim, vectorizeAll) {
@@ -1001,10 +1001,10 @@ async function buildItems(inputs, balance, trim, vectorizeAll) {
   });
 
   // Trim every logo to its content box (margins removed) so each <img> fills its
-  // cell by its ARTWORK, not by however generously the file was cropped — and so
+  // cell by its ARTWORK, not by however generously the file was cropped - and so
   // toggling "Render as vector" never changes the apparent size. A raster is
   // canvas-cropped; an SVG gets its root viewBox rewritten to the same measured
-  // box (no rasterising, no tracing — still vector, still full colour). Both need
+  // box (no rasterising, no tracing - still vector, still full colour). Both need
   // a browser canvas for the measurement; headless keeps the original src.
   if (trim && canRaster()) {
     var knockout = inputs.knockout !== false;   // white-box removal, default on
@@ -1047,7 +1047,7 @@ async function buildItems(inputs, balance, trim, vectorizeAll) {
         var refDen = dens.length % 2 ? dens[mid] : (dens[mid - 1] + dens[mid]) / 2;
         // Exponent 0.35, not 0.5: 0.5 equalises ink AREA exactly, which blows a
         // sparse wordmark up until it spills its cell (the eye already reads text
-        // bigger than its ink). 0.35 sits between equal-area and equal-box —
+        // bigger than its ink). 0.35 sits between equal-area and equal-box -
         // sparse marks still grow, dense tiles still shrink, nobody dominates.
         // The clamp keeps a pathological measurement inside the cell + gap.
         withUrl.forEach(function (it) {
@@ -1074,8 +1074,8 @@ async function buildItems(inputs, balance, trim, vectorizeAll) {
 // leaves alternating cells empty so the logos stagger diagonally with air between
 // them. Cells reference the SAME item objects buildItems produced, so balance,
 // presence, trims and any per-logo vector ink all apply to every copy for free.
-// The template renders rows with real flex layout and margin offsets — never CSS
-// transforms, which the SVG/PDF export walker doesn't honour — so a wall printed
+// The template renders rows with real flex layout and margin offsets - never CSS
+// transforms, which the SVG/PDF export walker doesn't honour - so a wall printed
 // on a bus or dropped behind a press photo exports exactly as previewed.
 function buildRepeatRows(items, cols, rows, mode) {
   var out = [], k = 0;
@@ -1103,7 +1103,7 @@ async function compute(model) {
   var trim = inputs.trim !== false;               // content-box margin trim, default on
   var vectorizeAll = inputs.vectorizeAll === true; // wall-wide "Render all as vector"
 
-  // One render list for both modes — the template lays them out in a single CSS grid,
+  // One render list for both modes - the template lays them out in a single CSS grid,
   // each cell an <img> (raster) or a one-ink inline <svg> ("Render as vector",
   // wall-wide or per logo).
   var items = await buildItems(inputs, balance, trim, vectorizeAll);
@@ -1127,7 +1127,7 @@ async function compute(model) {
   var visible = items.filter(function (it) { return it.url; });
 
   // Step & repeat: with a mode selected and at least one logo, hand the template
-  // rows instead of the single grid. wallRows must be explicitly null when off —
+  // rows instead of the single grid. wallRows must be explicitly null when off -
   // extras persist between runs, so leaving it undefined would strand a stale
   // backdrop after the user switches Repeat back off.
   var mode = typeof inputs.repeat === 'string' ? inputs.repeat : 'off';
@@ -1152,7 +1152,7 @@ function beforeExport(ctx) {
   if (alpha.indexOf(ctx.format) !== -1) {
     ctx.opts.background = _transparent ? 'transparent' : _bg;
   } else if (ctx.format === 'jpg' || ctx.format === 'jpeg') {
-    // JPEG has no alpha — a "No background" wall would otherwise fall back to the
+    // JPEG has no alpha - a "No background" wall would otherwise fall back to the
     // exporter's default (white). Give it an explicit colour instead.
     ctx.opts.background = _bg;
   }

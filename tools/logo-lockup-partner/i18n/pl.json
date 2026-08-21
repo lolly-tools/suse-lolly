@@ -1,7 +1,7 @@
 {
   "name": "Zestawienie logo: Partner",
   "description": "Logo SUSE obok logo partnera, z separatorem pomiędzy - w jasnej lub ciemnej wersji.",
-  "a11yLabel": "Zestawienie logo SUSE i partnerów — {{partners.length}} logo partnerów",
+  "a11yLabel": "Zestawienie logo SUSE i partnerów - {{partners.length}} logo partnerów",
   "inputs.theme.label": "Motyw",
   "inputs.theme.help": "Jasny umieszcza ciemne logo na jasnym tle; ciemny odwraca to. Logo SUSE automatycznie przełącza się na odpowiednią wersję na jasne/na ciemne tło.",
   "inputs.theme.options.light": "Jasny",

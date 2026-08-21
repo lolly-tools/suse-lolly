@@ -1,4 +1,4 @@
-/* Org Chart — cards on an open canvas with connector lines that route between them.
+/* Org Chart - cards on an open canvas with connector lines that route between them.
    Like Design, almost all per-box styling is computed in hooks.js and applied
    inline (so the same output renders headless in CLI/URL mode). These classes carry
    only the structural layout the inline styles build on. Auto-scoped to #tool-canvas. */
@@ -12,7 +12,7 @@
 /* The connector layer: one artboard-sized inline <svg> whose paths are computed from
    the current card geometry in hooks.js. It sits BEHIND the cards (first child) and
    never steals the editor's drag/select pointer events. The <svg> is wrapped in a
-   plain <div> so the artboard's first child is NOT an <svg> — otherwise the SVG/PDF
+   plain <div> so the artboard's first child is NOT an <svg> - otherwise the SVG/PDF
    exporter would treat the whole artboard as a single SVG and drop the HTML cards. */
 .oc-conn-wrap {
   position: absolute;
@@ -35,7 +35,7 @@
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
-  /* transform-origin centre so hooks.js rotate() spins about the box middle —
+  /* transform-origin centre so hooks.js rotate() spins about the box middle -
      this must match the free-canvas overlay's rotation model. */
   transform-origin: 50% 50%;
 }

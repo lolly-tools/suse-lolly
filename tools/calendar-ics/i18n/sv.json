@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Bortse från klockslaget och boka hela dagen.",
   "inputs.city.label": "Plats",
   "inputs.city.placeholder": "t.ex. Nürnberg, eller en möteslänk",
-  "inputs.city.help": "Var det äger rum – en plats eller en URL. Delar id med Meeting Planner (city).",
+  "inputs.city.help": "Var det äger rum - en plats eller en URL. Delar id med Meeting Planner (city).",
   "inputs.description.label": "Beskrivning",
   "inputs.description.placeholder": "Agenda, anteckningar, uppringningsuppgifter…",
   "inputs.description.help": "Anteckningar som följer med i kalenderposten.",

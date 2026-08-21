@@ -1,11 +1,11 @@
 /* global onInit, onInput, host */
 
 /**
- * Org Chart — cards on an open canvas, joined by connector lines that route between
+ * Org Chart - cards on an open canvas, joined by connector lines that route between
  * them and stick to the boxes.
  *
  * ONE flat input drives the render:
- *   • `boxes` — one row per card (geometry + a `layout` that arranges its photo/icon +
+ *   • `boxes` - one row per card (geometry + a `layout` that arranges its photo/icon +
  *               text: row = headshot left, icon = icon chip left, stacked = photo on top,
  *               plain = a bare box like Design) AND one row per connector, which
  *               is a `kind:'path'` box with an end attached to a card (plan 96).
@@ -14,12 +14,12 @@
  * color,width}. It is now the same primitive as a hand-drawn line: an authored path whose
  * `bindStart`/`bindEnd` name the cards its two ends are attached to. Old documents (and old
  * share links) still carry the edge rows, so migrateEdges() converts them the moment this
- * tool loads and writes the emptied input back — a one-time, render-identical conversion
+ * tool loads and writes the emptied input back - a one-time, render-identical conversion
  * guarded by tests/org-chart-migration.test.ts.
  *
  * The direct-manipulation overlay (drag / resize / bind / snap-to-grid / auto-layout)
  * lives in the web shell (shells/web/src/views/free-canvas.ts) and only ever writes that
- * flat array back through the normal input path — so the engine, the URL and the CLI
+ * flat array back through the normal input path - so the engine, the URL and the CLI
  * never see the editor, and a headless render of the same state is identical.
  *
  * This hook is PURE (no DOM, no async). Handlebars is logic-less, so we precompute:
@@ -32,12 +32,12 @@
  * None of that geometry is this file's any more: the routing, the arrowheads and the dash
  * segments are the ENGINE's, reached through host.connectors (v1.106/v1.111), which is what
  * makes the editor preview, the export and a headless CLI render byte-identical lines. The
- * engine's contract is export-safe without exception — shafts are <path>, heads are filled
+ * engine's contract is export-safe without exception - shafts are <path>, heads are filled
  * <path> or plain <line>, dashes are real <line> segments, never a <marker>, a <polygon> or
- * a stroke-dasharray — because the PDF/EMF vector walkers drop all three.
+ * a stroke-dasharray - because the PDF/EMF vector walkers drop all three.
  */
 
-// Artboard coordinate space — MUST match render.width/height in tool.json. The
+// Artboard coordinate space - MUST match render.width/height in tool.json. The
 // connector <svg> uses this as its viewBox so path coords equal card x/y/w/h 1:1.
 var CW = 1600, CH = 1000;
 
@@ -47,19 +47,19 @@ function inputsFrom(model) {
   return o;
 }
 function num(v, d) { var x = typeof v === 'number' ? v : parseFloat(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
 
-// === lolly:shared safeColor — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared safeColor - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function safeColor(v, fallback) {
   var s = String(v == null ? '' : v).trim();
   if (!s) return fallback;
   if (/^#[0-9a-fA-F]{3,8}$/.test(s)) return s;
   if (/^(rgb|rgba|hsl|hsla)\([0-9.,%\s/]+\)$/i.test(s)) return s;
   if (/^[a-zA-Z]+$/.test(s)) return s; // named colour (e.g. "transparent", "tomato")
-  // A brand-token CSS var with an OPTIONAL literal-colour fallback — the documented
+  // A brand-token CSS var with an OPTIONAL literal-colour fallback - the documented
   // brand-inheritance path (brand-vars.ts injects --brand-primary/… onto the canvas root,
   // so a template can carry var(--brand-primary, #hex)). Strict on purpose: a var name and
   // at most one hex / named / rgb / hsl fallback, so nothing (no ; " ' < > { } or a nested
@@ -76,7 +76,7 @@ function boolVal(v, dflt) {
   if (s === 'false' || s === '0' || s === 'no' || s === 'off') return false;
   return dflt;
 }
-// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
+// === lolly:shared esc - generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -114,7 +114,7 @@ function richText(raw) {
     return inlineMd(ln);
   }).join('\n');
 }
-// Plain text of the FIRST line (markdown stripped) — used to derive avatar initials.
+// Plain text of the FIRST line (markdown stripped) - used to derive avatar initials.
 function firstLinePlain(text) {
   var first = String(text == null ? '' : text).split('\n')[0] || '';
   return first
@@ -319,7 +319,7 @@ function mediaFor(b, layout) {
 // ── the path primitive (plan 96) ────────────────────────────────────────────────────
 //
 // A line, a spline and a connector are ONE thing here: a `kind:'path'` box carrying an
-// authored path plus its decorations. None of the geometry lives in this file any more —
+// authored path plus its decorations. None of the geometry lives in this file any more -
 // the routing, the arrowheads and the dash segments all come from the engine through
 // host.connectors / host.geom, so the editor's live preview, the committed export and a
 // headless CLI draw the same line. Everything below feature-detects and degrades to "no
@@ -369,7 +369,7 @@ function headInsetFor(kind, s) {
   if (kind === 'circle') return 2 * (0.42 * s);
   return s * 0.9;   // triangle
 }
-// One arrowhead as an SVG fragment, via the bridge. `angle` is RADIANS about the +x axis —
+// One arrowhead as an SVG fragment, via the bridge. `angle` is RADIANS about the +x axis -
 // atan2 order. Absent primitive (older engine) → '' and the path simply has no head.
 function headSvgFor(tip, ux, uy, kind, color, width) {
   var api = connApi();
@@ -394,7 +394,7 @@ function dashArrayFor(style, w, cap) {
   if (style === 'dotted') {
     // A round or square cap already paints a full w across the line, so the dot is a
     // ZERO-length dash and the gap is the whole period. A flat (butt) cap paints nothing
-    // at zero length, so it needs a real w-long dash — which is a square dot, correctly.
+    // at zero length, so it needs a real w-long dash - which is a square dot, correctly.
     return cap === 'butt' ? f2(w) + ' ' + f2(w) : '0 ' + f2(w * 2);
   }
   return f2(w * 3) + ' ' + f2(w * 2);
@@ -402,7 +402,7 @@ function dashArrayFor(style, w, cap) {
 
 // ── end tangents ────────────────────────────────────────────────────────────────────
 // A head needs a tip and a direction. On a routed connector the direction falls out of the
-// route; on an AUTHORED path there is none, so it is read off the LOWERED curve — the only
+// route; on an AUTHORED path there is none, so it is read off the LOWERED curve - the only
 // honest source, since the same nodes lower to different tangents under different spline
 // kinds. Both vectors point OUT of the path: the way a head at that end faces.
 // `curves` is the engine's cubic form: [x0,y0, c1x,c1y, c2x,c2y, x3,y3].
@@ -478,7 +478,7 @@ function pathHtmlFor(b) {
   var w = Math.max(1, Math.round(num(b.w, 1)));
   var h = Math.max(1, Math.round(num(b.h, 1)));
   var raw = b.path == null ? '' : String(b.path);
-  if (!raw) return '';                       // nothing authored yet — not an error
+  if (!raw) return '';                       // nothing authored yet - not an error
 
   var geom = geomApi();
   if (!geom || !geom.decodeAuthored || !geom.fromNodes) {
@@ -504,7 +504,7 @@ function pathHtmlFor(b) {
     }
     var res = geom.fromNodes({ kind: src.kind, nodes: nodes, closed: src.closed === true, tension: src.tension, decimals: 3 });
     if (!res || !res.ok) {
-      return pathPlaceholder(w, h, 'path box: ' + ((res && res.code) || 'error') + ' — ' + ((res && res.message) || 'could not lower the path'));
+      return pathPlaceholder(w, h, 'path box: ' + ((res && res.code) || 'error') + ' - ' + ((res && res.message) || 'could not lower the path'));
     }
     // ok with no geometry is an ANSWER, not a failure (fewer than two nodes lowers to no
     // curves), so an empty contour is skipped rather than treated as a refusal.
@@ -558,7 +558,7 @@ function pathHtmlFor(b) {
   }
 
   // The STROKE PAD. The frame is the curve's tight bounding box, so a stroke straddles the
-  // frame edge and half of it falls outside — and an outer <svg> clips to its viewport. So
+  // frame edge and half of it falls outside - and an outer <svg> clips to its viewport. So
   // the element is grown by `pad` on every side, offset by −pad, and the viewBox shifted to
   // match, which leaves path coordinates mapping to 0..w / 0..h exactly as before. A square
   // cap reaches sw/2·√2 and a miter spike is bounded by miterlimit·sw/2, so each sizes the
@@ -579,7 +579,7 @@ function pathHtmlFor(b) {
       : '') +
     '></path>' +
     // The heads follow the shaft so they paint over its end, and they are NOT esc()'d: they
-    // are engine-built SVG fragments, not values — the engine escapes the one thing in them
+    // are engine-built SVG fragments, not values - the engine escapes the one thing in them
     // that came from the box (the colour).
     heads +
     '</svg>';
@@ -596,7 +596,7 @@ function pathHtmlFor(b) {
 //
 // CW/CH are the artboard's native coordinate space, and the <svg> is CSS-stretched to the
 // artboard (styles.css .oc-connectors), so the viewBox maps card x/y 1:1.
-// What a bound path falls back to when it carries no stroke of its own — the same pair the
+// What a bound path falls back to when it carries no stroke of its own - the same pair the
 // retired `canvas.connect` block declared, so a migrated edge looks as it did.
 var CONN_COLOR = '#30ba78', CONN_WIDTH = 3.5;
 
@@ -659,7 +659,7 @@ function boundPathRow(b) {
 // The committed line layer: every bound path in the chart, routed + decorated by the engine
 // (host.connectors.build) so the SAME geometry lands in the editor's live preview, the
 // export and a headless CLI. The wrapping <svg> is always emitted, even empty, because the
-// artboard's first child must not be an <svg> the exporter mistakes for the whole board —
+// artboard's first child must not be an <svg> the exporter mistakes for the whole board -
 // which is exactly what the template's oc-conn-wrap <div> is for.
 function lineLayerFor(boxes) {
   var api = connApi();
@@ -699,9 +699,9 @@ function lineLayerFor(boxes) {
 // bound at both ends, carrying the same decorations. The input stays DECLARED so an old
 // share link still parses, but nothing writes it again.
 //
-// Lossless by construction. The edge's own `style` goes to the box's `route` override — six
+// Lossless by construction. The edge's own `style` goes to the box's `route` override - six
 // spline kinds cannot name thirteen routes, so an elbow-src edge would otherwise collapse to
-// a plain elbow — and `arrow` + one shared `head` map onto the two per-end heads exactly as
+// a plain elbow - and `arrow` + one shared `head` map onto the two per-end heads exactly as
 // the engine's own edge reading does (`end` → a head at the end and none at the start,
 // `both` → the same shape at each, anything else → neither). Every default here is the one
 // this hook applied before the migration existed (elbow, end, open, #30ba78, 3.5), so the
@@ -741,7 +741,7 @@ function shadowCss(b) {
 function compute(model) {
   var inp = inputsFrom(model);
   var boxes = Array.isArray(inp.boxes) ? inp.boxes : [];
-  // plan 96 P4 — any surviving `connectors` edge becomes a bound path box before anything
+  // plan 96 P4 - any surviving `connectors` edge becomes a bound path box before anything
   // else reads `boxes`, so every surface below sees ONE model with no edges in it.
   var transparent = inp.transparentBg === true;
 
@@ -763,7 +763,7 @@ function compute(model) {
     bgStyle: [transparent ? 'transparent' : safeColor(inp.background, '#ffffff')],
   };
   // The migration's INPUT patch. `boxes`/`connectors` are declared input ids, so the
-  // runtime WRITES them rather than treating them as extras — which is what makes this a
+  // runtime WRITES them rather than treating them as extras - which is what makes this a
   // one-time conversion. The keys are ASSIGNED, never set to undefined: the runtime's patch
   // merge keys off key PRESENCE, so `{ boxes: undefined }` would blank the whole document.
   return out;

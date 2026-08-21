@@ -12,7 +12,7 @@
   "inputs.allDay.help": "دن کے وقت کو نظر انداز کریں اور پوری تاریخ بک کریں۔",
   "inputs.city.label": "مقام",
   "inputs.city.placeholder": "مثلاً نیورمبرگ، یا میٹنگ لنک",
-  "inputs.city.help": "یہ کہاں ہوتا ہے — ایک جگہ یا URL۔ میٹنگ پلانر (city) کے ساتھ مشترک id۔",
+  "inputs.city.help": "یہ کہاں ہوتا ہے - ایک جگہ یا URL۔ میٹنگ پلانر (city) کے ساتھ مشترک id۔",
   "inputs.description.label": "تفصیل",
   "inputs.description.placeholder": "ایجنڈا، نوٹس، ڈائل ان تفصیلات…",
   "inputs.description.help": "نوٹس جو کیلنڈر اندراج کے ساتھ شامل ہوتے ہیں۔",

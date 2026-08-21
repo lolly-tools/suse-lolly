@@ -4,7 +4,7 @@
   "inputs.background.label": "Фон",
   "inputs.background.help": "Колір, на якому розташований логотип. Відповідний логотип (інвертований для темного, звичайний для світлого) обирається автоматично. Увімкніть \"No BG\" в експорті, щоб прибрати його.",
   "inputs.orientation.label": "Орієнтація",
-  "inputs.orientation.help": "Horizontal — широке компонування; Stacked — квадратне для вузьких або квадратних місць.",
+  "inputs.orientation.help": "Horizontal - широке компонування; Stacked - квадратне для вузьких або квадратних місць.",
   "inputs.orientation.options.horizontal": "Горизонтальний",
   "inputs.orientation.options.vertical": "Стовпчиками одна на одну",
   "inputs.ink.label": "Стиль",

@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ignore l'heure et bloque la journée entière.",
   "inputs.city.label": "Lieu",
   "inputs.city.placeholder": "ex. Nuremberg, ou un lien de réunion",
-  "inputs.city.help": "Où ça se passe — un lieu ou une URL. Id partagé avec Planificateur de réunions (city).",
+  "inputs.city.help": "Où ça se passe - un lieu ou une URL. Id partagé avec Planificateur de réunions (city).",
   "inputs.description.label": "Description",
   "inputs.description.placeholder": "Ordre du jour, notes, détails de connexion…",
   "inputs.description.help": "Notes qui accompagnent l'entrée du calendrier.",

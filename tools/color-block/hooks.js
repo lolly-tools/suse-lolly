@@ -3,21 +3,21 @@
 /**
  * color-block hook.
  *
- * One job — compute per-block render data, all data-only (no DOM; the template's
+ * One job - compute per-block render data, all data-only (no DOM; the template's
  * controller owns layout). For each block it derives parallel arrays the
  * template applies by index:
  *
  *   - blockBg:   the block's own background colour, or the next SUSE palette
  *                colour if it set none (so a freshly-added block looks intentional).
- *   - blockFg:   the user's text-colour override, else black or white — whichever
+ *   - blockFg:   the user's text-colour override, else black or white - whichever
  *                has the higher contrast on that background (white over a photo,
  *                since the image content is unknown).
- *   - blockLogo: for `logo` blocks only, the URL of the exact SUSE mark — picked
+ *   - blockLogo: for `logo` blocks only, the URL of the exact SUSE mark - picked
  *                from orientation (horizontal/stacked) × mono/green, flipping
  *                positive⇄negative so the mark always contrasts with the cell
  *                background. The logo is its own grid cell, never an overlay, so
  *                it can't break or sit on top of the grid.
- *   - blockScale: the block's effective --scale — logo blocks read "Logo size"
+ *   - blockScale: the block's effective --scale - logo blocks read "Logo size"
  *                (the share of the cell the mark fills); other kinds read the
  *                text "Text scale". One source so the template stays logic-less.
  *
@@ -47,7 +47,7 @@ function contrast(l1, l2) {
   return (hi + 0.05) / (lo + 0.05);
 }
 
-// Black or white — whichever reads better on this background.
+// Black or white - whichever reads better on this background.
 function inkFor(bgHex) {
   const l = relLuminance(bgHex);
   if (l === null) return INK_LIGHT;
@@ -130,7 +130,7 @@ async function patch({ model }) {
 
 function onInit(ctx) { return patch(ctx); }
 
-// Recompute only when the blocks themselves change — typing in another control
+// Recompute only when the blocks themselves change - typing in another control
 // leaves the colour / logo arrays intact.
 function onInput(ctx) {
   if (ctx.id === 'blocks') return patch(ctx);

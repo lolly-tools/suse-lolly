@@ -1,9 +1,9 @@
 /**
- * Animated Ad (digi-ad) — hooks.
+ * Animated Ad (digi-ad) - hooks.
  *
  * Each scene (a Lolly "blocks" item) is one absolutely-positioned, full-frame
  * layer. The scenes share ONE timeline: a later scene animates IN over the one
- * before it (a cover transition — no blank gaps), and the last scene rests as the
+ * before it (a cover transition - no blank gaps), and the last scene rests as the
  * end card. The hook generates the per-scene @keyframes + the animation bindings
  * as a <style> string ({{{animCss}}}) that lives INSIDE the template (so the
  * self-contained HTML export captures it and the exported banner animates).
@@ -21,18 +21,18 @@
  *  - Assets are inlined as data URLs so logos/images survive the HTML export
  *    (blob: URLs are session-scoped and would break in a standalone file).
  *
- * No client-side JS ships in the canvas — the animation is pure CSS, so it is
+ * No client-side JS ships in the canvas - the animation is pure CSS, so it is
  * identical across the live preview, frame-by-frame video/gif capture, and the
  * script-stripped static-HTML export.
  */
 
-var DEFAULT_TRANS = 0.6; // default scene entrance length (seconds, at speed 1) — user-tunable
+var DEFAULT_TRANS = 0.6; // default scene entrance length (seconds, at speed 1) - user-tunable
 // Opacity fades in over AT MOST this many seconds, independently of the (possibly much
 // longer) transform. Kept short ON PURPOSE: a long opacity ramp leaves many muddy semi-
 // transparent frames in gif/video exports (dither + fatter files); translate/scale can take
 // their time because they don't blend pixels. See the split keyframes in compute().
 var OPACITY_SEC = 0.13;
-var MAX_SCENES = 12;    // soft cap — each scene is a layer + a keyframe block
+var MAX_SCENES = 12;    // soft cap - each scene is a layer + a keyframe block
 var GIF_CAP = 16;       // seconds; renderGif/renderApng have no frame ceiling, so bound it
 var VIDEO_CAP = 24;     // seconds; renderVideo caps at 600 frames (~25s @24fps)
 
@@ -55,13 +55,13 @@ function toInputs(model) {
   return o;
 }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function str(v) { return (typeof v === 'string') ? v : (v == null ? '' : String(v)); }
 
 // Colour is the ONE user value that lands in the raw {{{style}}} attribute (and
-// in the distributable HTML export), so it must be sanitised here — a crafted
+// in the distributable HTML export), so it must be sanitised here - a crafted
 // shared URL could otherwise set a "colour" that breaks out of the attribute or
 // injects CSS. Only hex / rgb(a) / hsl(a) / a few keywords are let through.
 var COLOUR_RE = /^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$|^(?:rgb|rgba|hsl|hsla)\([0-9.,%\s/]+\)$/;
@@ -126,7 +126,7 @@ async function resolveLogo(scene, bg) {
 
 var FOCUS_POS = { center: 'center', top: 'center top', bottom: 'center bottom', left: 'left center', right: 'right center' };
 
-// Entrance TRANSFORMS (opacity is decoupled — always a brief fade). Each value is the
+// Entrance TRANSFORMS (opacity is decoupled - always a brief fade). Each value is the
 // starting transform that eases to none over the full transition. Because opacity no longer
 // rides the transform, these can be bold, longer moves without muddying the render.
 var DEFAULT_EASE = 'cubic-bezier(.22,.61,.36,1)'; // smooth decelerate for slides/zooms
@@ -178,7 +178,7 @@ async function compute(model) {
     return { scenesOut: [], animCss: '', rootClass: 'digiad', durSec: 1, sceneCount: 0 };
   }
 
-  // Timeline: scene i enters at startS[i] over inS[i], then holds. Cover model —
+  // Timeline: scene i enters at startS[i] over inS[i], then holds. Cover model -
   // it stays visible (covered by later scenes) so there are no blank gaps.
   var inS = [], holdS = [], startS = [], acc = 0;
   for (var i = 0; i < n; i++) {
@@ -253,7 +253,7 @@ async function compute(model) {
     var pStart = f4(startS[k] / R * 100);
     var pIn = f4((startS[k] + inS[k]) / R * 100);
     // Two decoupled tracks so opacity never lingers: OPACITY ramps 0→1 over a short window
-    // (opSec, ≤ OPACITY_SEC — or a near-instant flash for a hard cut), while the TRANSFORM
+    // (opSec, ≤ OPACITY_SEC - or a near-instant flash for a hard cut), while the TRANSFORM
     // eases from → none over the whole entrance (pStart → pIn). Both run the shared timeline.
     var opSec = e.cut ? Math.min(inS[k], 0.04) : Math.min(inS[k], OPACITY_SEC);
     var pOp = f4((startS[k] + opSec) / R * 100);
@@ -269,16 +269,16 @@ async function compute(model) {
     bindings.push('.digiad .dg-scene--' + k + '{animation:dgO' + k + ' ' + T + 's ' + iter + ' both linear,dgT' + k + ' ' + T + 's ' + iter + ' both linear}');
   }
 
-  // Freeze (edit a scene / hold the still) — overrides the animation entirely.
+  // Freeze (edit a scene / hold the still) - overrides the animation entirely.
   var freeze =
     '.digiad.dg-frozen .dg-scene{animation:none!important;opacity:0!important;transform:none!important}' +
     '.digiad.dg-frozen .dg-scene--' + focusIdx + '{opacity:1!important}';
 
-  // Exported ads are shown to people who didn't choose motion — make the
+  // Exported ads are shown to people who didn't choose motion - make the
   // self-contained HTML reduced-motion-safe (rests on the end card). This is kept
   // OUT of the live DOM (injected into the HTML export only by beforeExport) so the
   // preview and the gif/video capture always animate regardless of the author's own
-  // motion preference — matching the platform's canvas exemption from the global reset.
+  // motion preference - matching the platform's canvas exemption from the global reset.
   _reducedCss =
     '@media (prefers-reduced-motion:reduce){' +
       '.digiad .dg-scene{animation:none!important;opacity:0!important;transform:none!important}' +
@@ -306,7 +306,7 @@ async function beforeExport(ctx) {
   if (!root) return;
   _savedClass = root.className;
   var fmt = ctx.format;
-  // Play only for animated formats AND when "Animate" is on — otherwise every
+  // Play only for animated formats AND when "Animate" is on - otherwise every
   // format (incl. gif/webm/mp4/html) exports the held still, honouring the toggle.
   var play = !!ANIMATED_FORMATS[fmt] && _animated;
 
@@ -316,7 +316,7 @@ async function beforeExport(ctx) {
     root.classList.add('dg-frozen'); void root.offsetWidth;
     root.classList.remove('dg-frozen'); void root.offsetWidth;
     ctx.opts.wait = 0;
-    // The timeline IS the clip length — but keep frames under the bridge's 600-frame
+    // The timeline IS the clip length - but keep frames under the bridge's 600-frame
     // ceiling, which is fps-aware (the export bar's 60fps option flows in via opts.fps).
     var fps = (ctx.opts.fps > 0) ? ctx.opts.fps : 24;
     var cap = (fmt === 'gif' || fmt === 'apng') ? GIF_CAP : Math.min(VIDEO_CAP, Math.floor(595 / fps));
@@ -326,7 +326,7 @@ async function beforeExport(ctx) {
     // honoured in the exported clip, not just the HTML.
     if (fmt === 'gif' || fmt === 'apng') ctx.opts.repeat = _loop === 'loop' ? 0 : (_loop === 'once' ? -1 : 3);
   } else {
-    // Static poster / "Animate" off — hold the focus (or end-card) scene.
+    // Static poster / "Animate" off - hold the focus (or end-card) scene.
     root.classList.add('dg-frozen');
   }
 

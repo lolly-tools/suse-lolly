@@ -1,7 +1,7 @@
 {
   "name": "イントロ&アウトロ動画",
   "description": "任意の向きでクリップを録画すると、ブランドのイントロとアウトロ、テロップ、BGMが自動で追加されます。",
-  "a11yLabel": "イントロ&アウトロ動画 — {{default introTitle \"intro\"}}から{{default outroTitle \"outro\"}}まで",
+  "a11yLabel": "イントロ&アウトロ動画 - {{default introTitle \"intro\"}}から{{default outroTitle \"outro\"}}まで",
   "inputs.orientation.label": "向き",
   "inputs.orientation.options.portrait": "縦向き · 1080 × 1920",
   "inputs.orientation.options.landscape": "横向き · 1920 × 1080",

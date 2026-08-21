@@ -31,10 +31,10 @@
   "inputs.size.label": "書き出しサイズ",
   "inputs.size.help": "「フィット」はロックアップに合わせて余白なく収めます。固定サイズはそのキャンバスの中央に配置され、プレビューでボックスの変化を確認できます。",
   "inputs.size.options.fit": "ロックアップに合わせる",
-  "inputs.size.options.square": "正方形 — 1080×1080",
-  "inputs.size.options.wide": "横長 — 1920×1080",
-  "inputs.size.options.portrait": "縦長 — 1080×1350",
-  "inputs.size.options.story": "ストーリー — 1080×1920",
+  "inputs.size.options.square": "正方形 - 1080×1080",
+  "inputs.size.options.wide": "横長 - 1920×1080",
+  "inputs.size.options.portrait": "縦長 - 1080×1350",
+  "inputs.size.options.story": "ストーリー - 1080×1920",
   "inputs.background.label": "背景",
   "inputs.background.help": "透明はブランドの元データと一致します。色を設定すると、背景パネルが書き出しに焼き込まれます。"
 }

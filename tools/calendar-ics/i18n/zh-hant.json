@@ -12,7 +12,7 @@
   "inputs.allDay.help": "忽略時間，將整天訂為活動時段。",
   "inputs.city.label": "地點",
   "inputs.city.placeholder": "例如：紐倫堡，或會議連結",
-  "inputs.city.help": "活動舉行的地方——可以是地點或網址。與「會議規劃工具」共用 id（city）。",
+  "inputs.city.help": "活動舉行的地方--可以是地點或網址。與「會議規劃工具」共用 id（city）。",
   "inputs.description.label": "說明",
   "inputs.description.placeholder": "議程、備註、撥入方式……",
   "inputs.description.help": "隨行事曆項目一併顯示的備註。",

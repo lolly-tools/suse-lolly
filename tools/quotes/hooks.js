@@ -1,4 +1,4 @@
-// The `md` export (template.md) — the quote as a blockquote + an attribution line.
+// The `md` export (template.md) - the quote as a blockquote + an attribution line.
 // Computed in BOTH onInit and onInput: a one-shot (CLI / headless) export only runs
 // onInit, so an export-facing extra must be produced there, not only on input change.
 function quoteMd(model) {
@@ -6,7 +6,7 @@ function quoteMd(model) {
   const quote = v('quote'), attribution = [v('name'), v('company')].filter(Boolean).join(', ');
   let md = '';
   if (quote) md += quote.split('\n').map(l => (l.trim() ? '> ' + l : '>')).join('\n');
-  if (attribution) md += (md ? '\n\n' : '') + '— ' + attribution;
+  if (attribution) md += (md ? '\n\n' : '') + '- ' + attribution;
   return md + '\n';
 }
 

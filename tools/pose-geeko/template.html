@@ -37,10 +37,10 @@
   }
 
   /* ── Idle motion ──────────────────────────────────────────────────────
-     A gentle whole-body breath — the ONLY safe idle here, since every
+     A gentle whole-body breath - the ONLY safe idle here, since every
      articulated part (pupil, eyelid, head, legs, tail) is a MANUAL pose
      slider; animating those would fight the user. Applied to the pose's
-     top-level art <g> (NOT the root <svg> — a CSS transform on the root svg
+     top-level art <g> (NOT the root <svg> - a CSS transform on the root svg
      is ignored in a standalone <img> SVG). Uses the individual `scale`
      property so the breath COMPOSES with the flip <g>'s own `transform`
      attribute (translate+scaleX(-1)) instead of clobbering it; transform-box
@@ -61,12 +61,12 @@
      (rare; the still is unaffected either way). The default card is never flipped.
 
      `animation: none` is NOT sufficient on its own: transform-box/transform-origin
-     above are static, so they keep applying to a <g> whose breath is switched off —
+     above are static, so they keep applying to a <g> whose breath is switched off -
      and they retarget the flip transform ATTRIBUTE too, not just the CSS animation.
      That attribute (`translate(2*minX+width 0) scale(-1 1)`) is written against SVG
      user space, so under fill-box + centre origin the scale(-1) mirrors about the
      art's own bbox centre (already in place) and the translate then shoves it a full
-     width off-canvas — the Geeko vanished for every flipped pose. Restore the SVG
+     width off-canvas - the Geeko vanished for every flipped pose. Restore the SVG
      defaults so the attribute means what it says. */
   .scene[data-idle="off"] .spot-illustration > g,
   .scene[data-flip="on"] .spot-illustration > g {

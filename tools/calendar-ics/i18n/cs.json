@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ignoruje čas a rezervuje celý den.",
   "inputs.city.label": "Místo konání",
   "inputs.city.placeholder": "např. Norimberk nebo odkaz na schůzku",
-  "inputs.city.help": "Kde se akce koná — místo nebo URL adresa. Sdílené id s nástrojem Meeting Planner (city).",
+  "inputs.city.help": "Kde se akce koná - místo nebo URL adresa. Sdílené id s nástrojem Meeting Planner (city).",
   "inputs.description.label": "Popis",
   "inputs.description.placeholder": "Program, poznámky, údaje pro připojení…",
   "inputs.description.help": "Poznámky, které se přidají k položce v kalendáři.",

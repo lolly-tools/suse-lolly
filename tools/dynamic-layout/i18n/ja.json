@@ -1,7 +1,7 @@
 {
   "name": "ダイナミックレイアウト",
   "description": "何を追加しても自動で再構成される、あらゆるサイズに対応する万能レイアウトです。",
-  "a11yLabel": "{{default heading cta}} — ダイナミックレイアウト プレビュー",
+  "a11yLabel": "{{default heading cta}} - ダイナミックレイアウト プレビュー",
   "inputs.logo.label": "ロゴ",
   "inputs.logo.section": "ロゴ",
   "inputs.logo.help": "SUSE のロゴを角に配置します。テーマに合わせて適切なバリエーションが自動的に選ばれます。",

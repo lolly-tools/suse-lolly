@@ -1,7 +1,7 @@
 {
   "name": "Vídeo con intro y outro",
   "description": "Graba un clip en cualquier orientación y añádele automáticamente una intro y un outro de marca, un rótulo inferior y música de fondo.",
-  "a11yLabel": "Vídeo con intro y outro — {{default introTitle \"intro\"}} a {{default outroTitle \"outro\"}}",
+  "a11yLabel": "Vídeo con intro y outro - {{default introTitle \"intro\"}} a {{default outroTitle \"outro\"}}",
   "inputs.orientation.label": "Orientación",
   "inputs.orientation.options.portrait": "Vertical · 1080 × 1920",
   "inputs.orientation.options.landscape": "Horizontal · 1920 × 1080",
@@ -11,7 +11,7 @@
   "inputs.clipFit.label": "Ajuste de vídeo",
   "inputs.clipFit.options.cover": "Llenar encuadre (recortar)",
   "inputs.clipFit.options.contain": "Ajustar vídeo completo",
-  "inputs.clipFit.help": "Cómo se ajusta tu clip al encuadre. Llenar lo recorta para cubrir el encuadre; Ajustar muestra el vídeo completo con barras — útil cuando subes un clip horizontal o cuadrado a un encuadre vertical.",
+  "inputs.clipFit.help": "Cómo se ajusta tu clip al encuadre. Llenar lo recorta para cubrir el encuadre; Ajustar muestra el vídeo completo con barras - útil cuando subes un clip horizontal o cuadrado a un encuadre vertical.",
   "inputs.brandColor.label": "Color de los extremos",
   "inputs.accent.label": "Acento",
   "inputs.logo.label": "Logo",

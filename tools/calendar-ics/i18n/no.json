@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ser bort fra klokkeslettet og booker hele dagen.",
   "inputs.city.label": "Sted",
   "inputs.city.placeholder": "f.eks. Nürnberg, eller en møtelenke",
-  "inputs.city.help": "Hvor det skjer — et sted eller en URL. Delt id med Meeting Planner (city).",
+  "inputs.city.help": "Hvor det skjer - et sted eller en URL. Delt id med Meeting Planner (city).",
   "inputs.description.label": "Beskrivelse",
   "inputs.description.placeholder": "Agenda, notater, detaljer for innringing …",
   "inputs.description.help": "Notater som følger med kalenderoppføringen.",

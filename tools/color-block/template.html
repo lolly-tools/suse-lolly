@@ -1,5 +1,5 @@
 <style>
-/* SUSE variable font — same source the lockup / dynamic-layout tools use. */
+/* SUSE variable font - same source the lockup / dynamic-layout tools use. */
 @font-face {
   font-family: 'SUSE';
   src: url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');
@@ -12,7 +12,7 @@
   font-weight: 900;
   font-display: swap;
 }
-/* SUSE Mono — used by the 'caret' call-to-action style. */
+/* SUSE Mono - used by the 'caret' call-to-action style. */
 @font-face {
   font-family: 'SUSE Mono';
   src: url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');
@@ -101,22 +101,22 @@
 .body-block       .cb-text { font-weight: var(--weight, 400); line-height: 1.4; }
 
 .cta-block .cb-content { align-items: flex-start; }
-/* Base CTA is plain text — no box. The style sub-field opts into the rest. */
+/* Base CTA is plain text - no box. The style sub-field opts into the rest. */
 .cb-cta {
   display: inline-flex; align-items: center;
   font-weight: var(--weight, 600);
   line-height: 1; white-space: nowrap;
 }
-/* arrow — append a trailing arrow, otherwise plain text. */
+/* arrow - append a trailing arrow, otherwise plain text. */
 .cb-cta.cta-arrow::after { content: ' \2192'; }
-/* pill — outlined rounded button (the former default). */
+/* pill - outlined rounded button (the former default). */
 .cb-cta.cta-pill {
   border: solid currentColor;
   border-width: calc(var(--weight, 600) / 100 * 0.45px + 1px);
   border-radius: 999px;
   padding: 0.5em 1.1em;
 }
-/* caret — terminal prompt: near-black box, white SUSE Mono, brand-green cursor. */
+/* caret - terminal prompt: near-black box, white SUSE Mono, brand-green cursor. */
 .cb-cta.cta-caret {
   font-family: 'SUSE Mono', ui-monospace, SFMono-Regular, monospace;
   background: #0c322c;
@@ -127,7 +127,7 @@
 .cb-cta.cta-caret::after { content: ' _'; color: #30ba78; font-weight: 700; }
 
 /* Image: the block's own image or icon, centred and CONTAINED (not cropped) so a
-   whole photo — or a two-colour icon — shows in full, sized by scale on the cell
+   whole photo - or a two-colour icon - shows in full, sized by scale on the cell
    background. (Was a circular headshot; generalised so icons aren't clipped.) A
    photo that should bleed to the cell edges can instead go on a blank block, whose
    image is a full-cover background. */
@@ -144,14 +144,14 @@
 /* ── Logo block ──
    The SUSE mark lives in its own grid cell (never an overlay), so it can never
    break the grid or sit on top of another block. The mark is centred and fits
-   inside the cell preserving its aspect — a horizontal lockup stays wide, a
-   stacked one stays tall — with the cell's background colour showing behind it.
+   inside the cell preserving its aspect - a horizontal lockup stays wide, a
+   stacked one stays tall - with the cell's background colour showing behind it.
    The hook picks the exact asset (orientation × mono/green × pos/neg for the
    background tone).
 
    `--scale` is the block's "Logo size": the share of the cell the mark may fill,
-   so the surrounding clearspace is one predictable knob — even on every cell
-   shape — rather than something that falls out of the cell's aspect ratio. The
+   so the surrounding clearspace is one predictable knob - even on every cell
+   shape - rather than something that falls out of the cell's aspect ratio. The
    layout controller skips its generic text padding on logo cells (see below) so
    this is the only clearspace, and the mark never double-shrinks. */
 .logo-block { align-items: center; justify-content: center; }
@@ -203,7 +203,7 @@
     var g = grid(n, (W && H) ? W / H : 16 / 9);
     root.style.gridTemplateColumns = 'repeat(' + g.cols + ',1fr)';
     root.style.gridTemplateRows = 'repeat(' + g.rows + ',1fr)';
-    // Stretch the final (short) row so it spans the full width — no empty cells.
+    // Stretch the final (short) row so it spans the full width - no empty cells.
     blocks.forEach(function (b) { b.style.gridColumn = ''; });
     var lastCount = n - (g.rows - 1) * g.cols;
     if (lastCount > 0 && lastCount < g.cols) {
@@ -225,7 +225,7 @@
   // .cb-text is `1em * var(--scale)`, the fill measurement already includes the
   // scale, so the search would silently cancel it out (the text always fills
   // regardless of the knob). So we neutralise --scale while measuring the
-  // natural fill size, then re-apply it — the text renders at fill × scale
+  // natural fill size, then re-apply it - the text renders at fill × scale
   // (under 1 = shrinks with whitespace; over 1 overflows and is clipped by the
   // cell, matching the no-JS `8cqmin * var(--scale)` path).
   function fit(b) {
@@ -249,7 +249,7 @@
     var W = root.clientWidth, H = root.clientHeight;
     applyGrid(W, H);
     // Logo cells carry their clearspace in --scale (see .cb-logo-mark), so skip
-    // the generic text padding there — otherwise the two stack and the mark
+    // the generic text padding there - otherwise the two stack and the mark
     // shrinks unpredictably with the cell's shape.
     blocks.forEach(function (b) {
       b.style.padding = (b.classList.contains('logo-block') ? 0 : pad(b)) + 'px';

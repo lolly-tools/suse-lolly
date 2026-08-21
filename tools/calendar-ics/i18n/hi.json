@@ -12,7 +12,7 @@
   "inputs.allDay.help": "दिन के समय को छोड़कर पूरी तारीख़ बुक करें।",
   "inputs.city.label": "स्थान",
   "inputs.city.placeholder": "जैसे न्यूरेमबर्ग, या कोई मीटिंग लिंक",
-  "inputs.city.help": "जहाँ यह होगा — कोई स्थान या URL। मीटिंग प्लानर के साथ साझा id (city)।",
+  "inputs.city.help": "जहाँ यह होगा - कोई स्थान या URL। मीटिंग प्लानर के साथ साझा id (city)।",
   "inputs.description.label": "विवरण",
   "inputs.description.placeholder": "एजेंडा, नोट्स, डायल-इन विवरण…",
   "inputs.description.help": "नोट्स जो कैलेंडर प्रविष्टि के साथ जाते हैं।",

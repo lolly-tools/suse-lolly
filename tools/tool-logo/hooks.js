@@ -1,7 +1,7 @@
 /* global onInit, onInput */
 
 /**
- * tool-logo — reference implementation of an auto-switching brand logo.
+ * tool-logo - reference implementation of an auto-switching brand logo.
  *
  * It picks one of the catalog logo SVGs by background darkness + orientation +
  * ink, resolves it to an AssetRef via host.assets.get(), and hands the template
@@ -13,7 +13,7 @@
  * variant matrix). The naming convention: neg = for dark backgrounds.
  */
 
-const VIEWBOX = 1200; // square canvas units — keep in sync with template viewBox
+const VIEWBOX = 1200; // square canvas units - keep in sync with template viewBox
 
 // WCAG relative luminance of a #hex colour (0 = black, 1 = white).
 function relLuminance(hex) {

@@ -31,10 +31,10 @@
   "inputs.size.label": "Tamaño de exportación",
   "inputs.size.help": "Ajustar ciñe el lockup con precisión. Los tamaños fijos lo centran dentro de ese lienzo; la vista previa muestra el cambio del recuadro.",
   "inputs.size.options.fit": "Ajustar al lockup",
-  "inputs.size.options.square": "Cuadrado — 1080×1080",
-  "inputs.size.options.wide": "Panorámico — 1920×1080",
-  "inputs.size.options.portrait": "Vertical — 1080×1350",
-  "inputs.size.options.story": "Historia — 1080×1920",
+  "inputs.size.options.square": "Cuadrado - 1080×1080",
+  "inputs.size.options.wide": "Panorámico - 1920×1080",
+  "inputs.size.options.portrait": "Vertical - 1080×1350",
+  "inputs.size.options.story": "Historia - 1080×1920",
   "inputs.background.label": "Fondo",
   "inputs.background.help": "Transparente coincide con los archivos fuente de la marca. Define un color para incluir un panel de fondo en la exportación."
 }

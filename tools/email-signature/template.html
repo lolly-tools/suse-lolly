@@ -22,7 +22,7 @@
 .es-contact a { color: #30ba78; text-decoration: none; }
 
 /* Custom links share the contact block's type scale so they read as one group,
-   but stay underlined and in the body colour — the green is the email address's
+   but stay underlined and in the body colour - the green is the email address's
    own signal, and re-using it would make every link look like a mailto. */
 .es-links { font-size: 12px; color: #0c322c; line-height: 1.6; }
 .es-links a { color: #0c322c; text-decoration: underline; }
@@ -90,7 +90,7 @@
        The wordmark is sized three ways on purpose. A pasted signature gets
        re-saved by whatever client it lands in, and they don't agree on what to
        keep: some honour the width/height ATTRIBUTES and drop inline CSS, some do
-       the reverse, and a few strip both — which is what left the logo at its full
+       the reverse, and a few strip both - which is what left the logo at its full
        intrinsic size in a customer's mail, shoving "| suse.com" onto its own line.
        So: attributes AND matching inline CSS AND a max-width ceiling, over an
        asset that is exactly 2x the display box (hooks.js) so the strip-everything
@@ -137,7 +137,7 @@
    where the render already returns at its natural size). */
 (function () {
   // Act ONLY on this render's live canvas host. In the off-screen batch/compose
-  // renderer the script's parent is a `.pro-export-canvas` div (no id), so bail —
+  // renderer the script's parent is a `.pro-export-canvas` div (no id), so bail -
   // that path controls its own output size.
   var script = document.currentScript;
   var host = script ? script.parentElement : document.getElementById('tool-canvas');
@@ -148,7 +148,7 @@
   var hIn = document.querySelector('[data-action="export-height"]');
 
   function sync() {
-    // offsetHeight is the layout height — immune to fitCanvas's preview-scale
+    // offsetHeight is the layout height - immune to fitCanvas's preview-scale
     // transform (unlike getBoundingClientRect). height:auto on .es-root makes it
     // track content exactly, so the frame grows AND shrinks with no ratchet.
     var h = Math.ceil(root.offsetHeight);

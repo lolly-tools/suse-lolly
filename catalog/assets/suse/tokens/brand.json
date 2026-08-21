@@ -1,5 +1,5 @@
 {
-  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) — NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained — they mirror the SUSE chrome colors already hardcoded in shells/web/src/styles/tokens.css exactly, so activating them changes nothing visually.",
+  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained - they mirror the SUSE chrome colors already hardcoded in shells/web/src/styles/tokens.css exactly, so activating them changes nothing visually.",
   "$metadata": {
     "tokenSetOrder": [
       "base",
@@ -383,11 +383,11 @@
       "$type": "fontFamily",
       "brand": {
         "$value": "SUSE",
-        "$description": "UI & body — the SUSE brand face (catalog-served variable font). The shell reads this as font.brand and applies it to the app chrome."
+        "$description": "UI & body - the SUSE brand face (catalog-served variable font). The shell reads this as font.brand and applies it to the app chrome."
       },
       "mono": {
         "$value": "SUSE Mono",
-        "$description": "Code, readouts & data — SUSE Mono (also the platform default mono)."
+        "$description": "Code, readouts & data - SUSE Mono (also the platform default mono)."
       }
     }
   },
@@ -399,11 +399,11 @@
         "$description": "The seven semantic slots for the light look. Primary/on-primary alias the exact colors already hardcoded for SUSE’s light chrome theme.",
         "primary": {
           "$value": "{color.brand.pine}",
-          "$description": "The brand color — matches tokens.css light --primary (#0c322c) exactly"
+          "$description": "The brand color - matches tokens.css light --primary (#0c322c) exactly"
         },
         "on-primary": {
           "$value": "{color.brand.white}",
-          "$description": "Text/icons on primary — matches light --primary-foreground exactly"
+          "$description": "Text/icons on primary - matches light --primary-foreground exactly"
         },
         "secondary": {
           "$value": "{color.brand.jungle}",
@@ -436,7 +436,7 @@
         "$description": "The seven semantic slots for the dark look. Primary/on-primary alias the exact colors already hardcoded for SUSE’s dark chrome theme.",
         "primary": {
           "$value": "{color.brand.jungle}",
-          "$description": "The brand color lifted for dark surfaces — matches tokens.css dark --primary (#30ba78) exactly"
+          "$description": "The brand color lifted for dark surfaces - matches tokens.css dark --primary (#30ba78) exactly"
         },
         "on-primary": {
           "$value": "{color.brand.black}",
@@ -448,7 +448,7 @@
         },
         "surface": {
           "$value": "{color.brand.pine}",
-          "$description": "Canvas/page background — matches the dark brand theme’s background exactly"
+          "$description": "Canvas/page background - matches the dark brand theme’s background exactly"
         },
         "text": {
           "$value": "{color.brand.white}",

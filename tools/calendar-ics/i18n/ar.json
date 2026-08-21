@@ -12,7 +12,7 @@
   "inputs.allDay.help": "تجاهل وقت اليوم واحجز التاريخ بأكمله.",
   "inputs.city.label": "الموقع",
   "inputs.city.placeholder": "مثال: نورمبرغ، أو رابط اجتماع",
-  "inputs.city.help": "أين تُقام الفعالية — مكان أو رابط. يشترك في المعرّف نفسه (city) مع أداة مخطط الاجتماعات.",
+  "inputs.city.help": "أين تُقام الفعالية - مكان أو رابط. يشترك في المعرّف نفسه (city) مع أداة مخطط الاجتماعات.",
   "inputs.description.label": "الوصف",
   "inputs.description.placeholder": "جدول الأعمال، ملاحظات، تفاصيل الاتصال…",
   "inputs.description.help": "ملاحظات تُرفق مع عنصر التقويم.",

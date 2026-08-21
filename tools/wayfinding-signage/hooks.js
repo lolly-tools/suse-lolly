@@ -1,5 +1,5 @@
 /**
- * Wayfinding Signage — hooks.
+ * Wayfinding Signage - hooks.
  *
  * Computes what the logic-less template can't:
  *   • sign proportions + orientation from the chosen standard size,
@@ -21,7 +21,7 @@ function relLuminance(hex) {
   return 0.2126 * lin(0) + 0.7152 * lin(2) + 0.0722 * lin(4);
 }
 function isDark(hex) { return relLuminance(hex) < 0.5; }
-// High-contrast ink for a given background — brand ink on light, white on dark.
+// High-contrast ink for a given background - brand ink on light, white on dark.
 function idealInk(hex) { return isDark(hex) ? '#ffffff' : '#0c322c'; }
 
 // Standard large-format sign trim sizes (mm). Drives the aspect-ratio +
@@ -103,7 +103,7 @@ async function compute(model) {
 
   // Header (logo + event name) collapses entirely when both are empty, so the
   // default state isn't left with a gap where the logo would be. No logo is shown
-  // unless the user supplies one — there is no SUSE-logo fallback.
+  // unless the user supplies one - there is no SUSE-logo fallback.
   var hasEventName = typeof inputs.eventName === 'string' && inputs.eventName.trim();
   out.hasHeader = Boolean(inputs.eventLogo) || Boolean(hasEventName);
 

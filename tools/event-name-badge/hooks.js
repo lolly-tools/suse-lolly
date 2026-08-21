@@ -1,5 +1,5 @@
 /**
- * Event Name Badge — hooks.
+ * Event Name Badge - hooks.
  *
  * Computes what the logic-less template can't:
  *   • badge proportions + orientation from the chosen standard size,
@@ -10,7 +10,7 @@
  * The optional QR is no longer drawn here: it's COMPOSED from the qr-code tool
  * (see tool.json `composes`), and the template embeds it via {{asset badgeQr}}.
  * That replaced a verbatim copy of the qrcode-svg library that used to live in
- * this file — the win that motivated tool composition.
+ * this file - the win that motivated tool composition.
  */
 
 // ─── Badge logic ─────────────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ function relLuminance(hex) {
   return 0.2126 * lin(0) + 0.7152 * lin(2) + 0.0722 * lin(4);
 }
 function isDark(hex) { return relLuminance(hex) < 0.5; }
-// High-contrast ink for a given background — brand ink on light, white on dark.
+// High-contrast ink for a given background - brand ink on light, white on dark.
 function idealInk(hex) { return isDark(hex) ? '#ffffff' : '#0c322c'; }
 
 // Status → role label + colour. Distinct, print-legible hues; a roleColor input

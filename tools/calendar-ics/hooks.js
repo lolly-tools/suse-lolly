@@ -1,5 +1,5 @@
 /**
- * Calendar ICS — build a downloadable .ics (iCalendar / RFC 5545) from a few
+ * Calendar ICS - build a downloadable .ics (iCalendar / RFC 5545) from a few
  * event fields, with a friendly card preview that can itself be exported (PNG/SVG).
  *
  * The .ics text is assembled HERE (not in the logic-less template) so it can be
@@ -39,7 +39,7 @@ function parseLocal(s) {
 const basicDateTime = d => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
 const basicDate = d => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
 
-// DTSTAMP — the UTC moment the file was generated.
+// DTSTAMP - the UTC moment the file was generated.
 function utcStamp() {
   const d = new Date();
   return `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}${pad(d.getUTCSeconds())}Z`;
@@ -153,12 +153,12 @@ function build(model) {
   const cardWhen = !multiDay
     ? `${WEEKDAYS[start.getDay()]}, ${start.getDate()} ${MONTHS[start.getMonth()]} ${start.getFullYear()}`
     : (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()
-      ? `${wk3(start.getDay())} ${start.getDate()} – ${wk3(end.getDay())} ${end.getDate()} ${MONTHS[end.getMonth()]} ${end.getFullYear()}`
+      ? `${wk3(start.getDay())} ${start.getDate()} - ${wk3(end.getDay())} ${end.getDate()} ${MONTHS[end.getMonth()]} ${end.getFullYear()}`
       : `${wk3(start.getDay())} ${start.getDate()} ${mon3(start.getMonth())} → ${wk3(end.getDay())} ${end.getDate()} ${mon3(end.getMonth())} ${end.getFullYear()}`);
 
   const cardTimeRange = allDay
     ? (multiDay ? `All day · ${dayCount} days` : 'All day')
-    : (multiDay ? `${time12(start)} → ${time12(end)}` : `${time12(start)} – ${time12(end)}`);
+    : (multiDay ? `${time12(start)} → ${time12(end)}` : `${time12(start)} - ${time12(end)}`);
 
   return {
     ics, // consumed by template.ics ({{{ics}}})

@@ -12,7 +12,7 @@
   "inputs.allDay.help": "忽略具体时间，预订整天。",
   "inputs.city.label": "地点",
   "inputs.city.placeholder": "例如：纽伦堡，或会议链接",
-  "inputs.city.help": "活动发生的地方——地点或网址。与会议规划器共用 id（city）。",
+  "inputs.city.help": "活动发生的地方--地点或网址。与会议规划器共用 id（city）。",
   "inputs.description.label": "描述",
   "inputs.description.placeholder": "议程、备注、拨入信息……",
   "inputs.description.help": "随日历条目一起显示的备注。",

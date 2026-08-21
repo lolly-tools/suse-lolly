@@ -1,7 +1,7 @@
 {
   "name": "片頭片尾影片",
   "description": "以任意方向錄製片段,自動為其加上品牌片頭片尾、下方字幕條和背景音樂。",
-  "a11yLabel": "片頭片尾影片 — {{default introTitle \"intro\"}} 至 {{default outroTitle \"outro\"}}",
+  "a11yLabel": "片頭片尾影片 - {{default introTitle \"intro\"}} 至 {{default outroTitle \"outro\"}}",
   "inputs.orientation.label": "方向",
   "inputs.orientation.options.portrait": "直式 · 1080 × 1920",
   "inputs.orientation.options.landscape": "橫式 · 1920 × 1080",
@@ -11,7 +11,7 @@
   "inputs.clipFit.label": "影片縮放方式",
   "inputs.clipFit.options.cover": "填滿畫面(裁切)",
   "inputs.clipFit.options.contain": "顯示完整影片",
-  "inputs.clipFit.help": "決定你的片段如何置入畫面。「填滿畫面」會將其裁切至符合畫面;「顯示完整影片」會保留邊框顯示整段影片 — 適合將橫向或方形片段上傳到直向畫面時使用。",
+  "inputs.clipFit.help": "決定你的片段如何置入畫面。「填滿畫面」會將其裁切至符合畫面;「顯示完整影片」會保留邊框顯示整段影片 - 適合將橫向或方形片段上傳到直向畫面時使用。",
   "inputs.brandColor.label": "首尾色",
   "inputs.accent.label": "強調色",
   "inputs.logo.label": "標誌",

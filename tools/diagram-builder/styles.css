@@ -7,5 +7,5 @@ svg {
 }
 
 /* Click-to-focus: annotated parts (card→data source, background, title) jump to
-   their sidebar control on click — hint that they're interactive. */
+   their sidebar control on click - hint that they're interactive. */
 [data-canvas-input] { cursor: pointer; }

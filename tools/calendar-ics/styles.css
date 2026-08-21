@@ -113,7 +113,7 @@
 }
 
 /* Icon paint (fill/stroke) lives as inline presentation attributes on each
-   <svg> in template.html, not here — so it survives the SVG export's verbatim
+   <svg> in template.html, not here - so it survives the SVG export's verbatim
    inline-<svg> clone (CSS rules don't travel into a standalone .svg file). This
    keeps the SVG export identical to the PNG. Only layout/sizing stays in CSS. */
 .cal-meta svg {

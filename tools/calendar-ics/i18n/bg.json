@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Пренебрегва часа и заема цялата дата.",
   "inputs.city.label": "Локация",
   "inputs.city.placeholder": "напр. Нюрнберг или линк към среща",
-  "inputs.city.help": "Къде се случва — място или URL. Споделен id с „Планер за срещи“ (city).",
+  "inputs.city.help": "Къде се случва - място или URL. Споделен id с „Планер за срещи“ (city).",
   "inputs.description.label": "Описание",
   "inputs.description.placeholder": "Дневен ред, бележки, данни за включване…",
   "inputs.description.help": "Бележки, които пътуват със записа в календара.",

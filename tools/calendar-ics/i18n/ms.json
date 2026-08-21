@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Abaikan waktu hari dan tempah keseluruhan tarikh.",
   "inputs.city.label": "Lokasi",
   "inputs.city.placeholder": "cth. Nuremberg, atau pautan mesyuarat",
-  "inputs.city.help": "Tempat ia berlangsung — sesuatu tempat atau URL. Id dikongsi dengan Meeting Planner (city).",
+  "inputs.city.help": "Tempat ia berlangsung - sesuatu tempat atau URL. Id dikongsi dengan Meeting Planner (city).",
   "inputs.description.label": "Penerangan",
   "inputs.description.placeholder": "Agenda, nota, butiran dail masuk…",
   "inputs.description.help": "Nota yang disertakan bersama dalam entri kalendar.",

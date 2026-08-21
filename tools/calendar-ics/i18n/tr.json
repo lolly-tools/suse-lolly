@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Günün saatini dikkate alma, tüm günü ayır.",
   "inputs.city.label": "Konum",
   "inputs.city.placeholder": "örn. Nürnberg ya da bir toplantı bağlantısı",
-  "inputs.city.help": "Nerede gerçekleştiği — bir yer ya da URL. Toplantı Planlayıcı ile paylaşılan id (city).",
+  "inputs.city.help": "Nerede gerçekleştiği - bir yer ya da URL. Toplantı Planlayıcı ile paylaşılan id (city).",
   "inputs.description.label": "Açıklama",
   "inputs.description.placeholder": "Gündem, notlar, katılım bilgileri…",
   "inputs.description.help": "Takvim etkinliğiyle birlikte giden notlar.",

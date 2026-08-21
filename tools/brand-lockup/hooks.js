@@ -1,24 +1,24 @@
 /**
- * Brand Lockup — official SUSE logo lockups as crisp outlined vectors.
+ * Brand Lockup - official SUSE logo lockups as crisp outlined vectors.
  *
  * The lockup is the SUSE chameleon mark + the "SUSE" wordmark + a descriptor
  * (the product / program / team name). Everything is emitted as outlined SVG
- * paths so the result is WYSIWYG — the live preview *is* the export, with no
+ * paths so the result is WYSIWYG - the live preview *is* the export, with no
  * <text> nodes to mis-render on another machine.
  *
- *   • chameleon  — a compound path; positive and negative are SEPARATE artworks
+ *   • chameleon  - a compound path; positive and negative are SEPARATE artworks
  *                  (negative redraws the interior for dark backgrounds, never a recolour)
- *   • SUSE       — SUSE SemiBold, outlined via host.text (HarfBuzz WASM)
- *   • descriptor — SUSE Regular,  outlined via host.text
- *   • location   — SUSE Light at ~70% size (event/team city, on its own line)
+ *   • SUSE       - SUSE SemiBold, outlined via host.text (HarfBuzz WASM)
+ *   • descriptor - SUSE Regular,  outlined via host.text
+ *   • location   - SUSE Light at ~70% size (event/team city, on its own line)
  *
  * Three layouts, flush to the bounding box like the brand source. Orientation +
- * type pick the layout: horizontal is always one line; stacked depends on type —
- *   horizontal — chameleon inline-left, SUSE + name on one baseline
- *   ontop      — (product/team stacked) chameleon on top (width = SUSE wordmark),
+ * type pick the layout: horizontal is always one line; stacked depends on type -
+ *   horizontal - chameleon inline-left, SUSE + name on one baseline
+ *   ontop      - (product/team stacked) chameleon on top (width = SUSE wordmark),
  *                SUSE + name flow below and wrap at a width chosen by `wrapMode`
- *   hybrid     — (program/service stacked) chameleon inline-left, SUSE + name
- *                wrap below it — the layout SUSE uses for programs and services
+ *   hybrid     - (program/service stacked) chameleon inline-left, SUSE + name
+ *                wrap below it - the layout SUSE uses for programs and services
  *
  * Four colour variants (the only combinations the brand ships):
  *   positive+colour → green chameleon, midnight text   (pos-green)
@@ -30,10 +30,10 @@
  * size of 40 (cap-height 28); everything scales by k = BASE_FONT / 40.
  */
 
-// ── Canonical SUSE chameleon — two artworks, NOT a recolour of one ────────────
+// ── Canonical SUSE chameleon - two artworks, NOT a recolour of one ────────────
 // The mark's interior (eye, jaw, scales) is shaped by holes in the compound path.
 // Positive: those holes let a LIGHT background show through. On a DARK background
-// the same holes read dark and the interior would vanish — so the brand ships a
+// the same holes read dark and the interior would vanish - so the brand ships a
 // separate negative/knockout path with the interior redrawn (the eye becomes a
 // filled pupil, not a hole). Both share the same outer silhouette and native box
 // (0 0 70.83 35.68), so switching polarity recolours + swaps interior cutouts but
@@ -46,7 +46,7 @@ const chameleonFor = v => (v && v.startsWith('neg')) ? CHAMELEON_NEG_D : CHAMELE
 // ── Fonts ─────────────────────────────────────────────────────────────────────
 // Weights measured from the brand source via stem-thickness analysis (resolution-
 // independent): SUSE wordmark = SemiBold; the descriptor (product/program/team/
-// event name) = Regular — NOT Medium, which reads a touch too bold; the event/team
+// event name) = Regular - NOT Medium, which reads a touch too bold; the event/team
 // location (a city on its own line) = Light at a reduced size. See LOC_* below.
 const FONT_SUSE = '/tools/brand-lockup/fonts/SUSE-SemiBold.otf'; // wordmark   (600)
 const FONT_DESC = '/tools/brand-lockup/fonts/SUSE-Regular.otf';  // descriptor (400)
@@ -128,7 +128,7 @@ async function descLine(host, words, fontSize, fill, x, Yb, fontUrl = FONT_DESC)
 // A name can carry a SUB-DESCRIPTOR the brand sets smaller + lighter on its own
 // line (same treatment as a location): the "for …" qualifier ("SUSE Rancher" /
 // "for SAP applications") and, for programs, the trailing "… Program" phrase
-// ("SUSE One" / "Partner Program"). Returns [mainWords, qualifierWords] — the
+// ("SUSE One" / "Partner Program"). Returns [mainWords, qualifierWords] - the
 // qualifier is [] when neither pattern applies, so ordinary names are untouched.
 function splitQualifier(words, category) {
   const forIdx = words.findIndex((w, i) => i > 0 && w.toLowerCase() === 'for');
@@ -141,7 +141,7 @@ function splitQualifier(words, category) {
 
 // ── Build the lockup SVG inner markup + dimensions ────────────────────────────
 // layout: 'horizontal' (one line) | 'ontop' (chameleon over SUSE+name) |
-//         'hybrid' (chameleon inline-left, SUSE+name wrap below — programs/services)
+//         'hybrid' (chameleon inline-left, SUSE+name wrap below - programs/services)
 async function buildLockup({ host, name, location, layout, variant, wrapMode, background, category }) {
   const fs = BASE_FONT, k = fs / F;
   const col = COLORS[variant] || COLORS['pos-green'];
@@ -202,8 +202,8 @@ async function buildLockup({ host, name, location, layout, variant, wrapMode, ba
     if (locWords.length) subLines.push(locWords);
     // A forced break below the name PINS it whole to the SUSE line so a narrow
     // wrap can't push it off. A location/qualifier sub-line always pins ("SUSE
-    // Exchange" / city, "SUSE Rancher" / "for AWS"). The Team suffix pins too —
-    // teams read "SUSE Content Strategy" / "Team" by default — EXCEPT under
+    // Exchange" / city, "SUSE Rancher" / "for AWS"). The Team suffix pins too -
+    // teams read "SUSE Content Strategy" / "Team" by default - EXCEPT under
     // `compact`, where the name wraps like any long name ("SUSE Sovereign" /
     // "Solutions" / "Team") so the wrap control actually does something on teams.
     const pinnedBySub = subLines.length > 0;
@@ -220,7 +220,7 @@ async function buildLockup({ host, name, location, layout, variant, wrapMode, ba
     } else if (mainWords.length === 2) {
       // Brand wraps two-word stacked names "SUSE word1" / "word2" (measured 10/11
       // sources: Cloud Observability, Linux Micro, Rancher Prime, …), regardless of
-      // wrapMode — so a wide default never keeps them on one line.
+      // wrapMode - so a wide default never keeps them on one line.
       lines = [{ suse: true, words: [mainWords[0]] }, { suse: false, words: [mainWords[1]] }];
     } else {
       lines = wrapWords(mainWords, advs, spaceAdv, suseInk + gap2, maxW); // 3+ words: greedy wrap
@@ -253,8 +253,8 @@ async function buildLockup({ host, name, location, layout, variant, wrapMode, ba
     W = maxRight; H = Math.max(hybrid ? chH : 0, bottom);
   }
 
-  // Reserve descender space below the last line — even when its glyphs have no
-  // descender — so the bottom edge is consistent and g/y/p never clip.
+  // Reserve descender space below the last line - even when its glyphs have no
+  // descender - so the bottom edge is consistent and g/y/p never clip.
   H = Math.max(H, lastBaseline + DESC_RESERVE * lastScale * k);
   W = Math.ceil(W * 100) / 100;
   H = Math.ceil(H * 100) / 100;
@@ -269,21 +269,21 @@ async function buildLockup({ host, name, location, layout, variant, wrapMode, ba
 
 // ── Export-dimension sync ─────────────────────────────────────────────────────
 // The export bar should default to the lockup's natural size, but the user (or a
-// URL width/height param) may override it — and that override must stick and
+// URL width/height param) may override it - and that override must stick and
 // reframe the canvas. The shell sizes the canvas from these fields and the SVG
 // fills it with preserveAspectRatio, so any aspect stays centred (no reframing
 // needed here). We only write a field when it's empty, still holds our last
-// value, or — on first sync — only holds the manifest placeholder; a real
+// value, or - on first sync - only holds the manifest placeholder; a real
 // user/URL value is left alone. RENDER_DEFAULT must match tool.json render.w/h.
 const RENDER_DEFAULT_W = 1200, RENDER_DEFAULT_H = 1200;
 let _initDone = false, _lastW = null, _lastH = null;
 
 // `force` (used when switching back to Fit) overwrites whatever a size preset left
 // behind; otherwise we only touch a field that's empty, holds our last value, or
-// still shows the manifest placeholder — so manual/URL dims and presets stick.
+// still shows the manifest placeholder - so manual/URL dims and presets stick.
 function syncExportDims(w, h, force) {
   // Shell-private DOM (export fields, #tool-canvas, canvas-resize) only exists on
-  // web. Off-web (CLI/Tauri) there's nothing to sync — the render already returns
+  // web. Off-web (CLI/Tauri) there's nothing to sync - the render already returns
   // the lockup's natural w/h as a sensible default, so just no-op gracefully.
   if (typeof document === 'undefined' || !document.querySelector) return;
   const wIn = document.querySelector('[data-action="export-width"]');
@@ -310,7 +310,7 @@ function syncExportDims(w, h, force) {
   }
 }
 
-// Team lockups always read "… Team" — append it when the Team type is chosen and
+// Team lockups always read "… Team" - append it when the Team type is chosen and
 // the name doesn't already end in "Team" (so "Data" → "Data Team", "Data Team" stays).
 function applyCategory(name, category) {
   const n = (name || '').trim();

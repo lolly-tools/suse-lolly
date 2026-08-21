@@ -23,7 +23,7 @@
   "inputs.mobile.label": "Мобилен",
   "inputs.fax.label": "Факс",
   "inputs.address.label": "Адрес",
-  "inputs.address2.label": "Адрес — ред 2",
+  "inputs.address2.label": "Адрес - ред 2",
   "inputs.im.label": "IM псевдоним",
   "inputs.im.placeholder": "@псевдоним в Slack",
   "inputs.append.label": "Добавка",

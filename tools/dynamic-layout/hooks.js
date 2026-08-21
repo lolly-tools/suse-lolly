@@ -2,8 +2,8 @@
 
 /**
  * Resolve the corner brand logo (see tools/tool-logo for the standalone
- * reference). The right SVG variant is chosen from the THEME's darkness — neg
- * for dark themes, pos for light — and the logo style (mono vs brand green).
+ * reference). The right SVG variant is chosen from the THEME's darkness - neg
+ * for dark themes, pos for light - and the logo style (mono vs brand green).
  * Horizontal lockup, since it sits in a corner. The resolved AssetRef lands in
  * `extras.brandLogo`; the template places it when `logo` (the corner) is set.
  */
@@ -44,7 +44,7 @@ async function patch({ model }) {
 
 function onInit(ctx) { return patch(ctx); }
 
-// Only re-resolve when something that affects the logo changed — typing in the
+// Only re-resolve when something that affects the logo changed - typing in the
 // heading shouldn't re-fetch it. Returning nothing leaves the prior extra intact.
 function onInput(ctx) {
   if (ctx.id === 'logo' || ctx.id === 'logoStyle' || ctx.id === 'theme') return patch(ctx);

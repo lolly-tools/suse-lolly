@@ -1,7 +1,7 @@
 {
   "name": "Diseño dinámico",
   "description": "Un diseño todoterreno que se recompone según lo que añadas, a cualquier tamaño.",
-  "a11yLabel": "{{default heading cta}} — vista previa de Diseño dinámico",
+  "a11yLabel": "{{default heading cta}} - vista previa de Diseño dinámico",
   "inputs.logo.label": "Logotipo",
   "inputs.logo.section": "Logotipo",
   "inputs.logo.help": "Coloca el logotipo de SUSE en una esquina. La variante adecuada para el tema se elige automáticamente.",

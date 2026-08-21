@@ -20,7 +20,7 @@ function compute(inputs) {
     meetingTime = `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T10:00`;
   }
   return {
-    // Declared input values — used in HTML markup (attribute values are NOT annotated
+    // Declared input values - used in HTML markup (attribute values are NOT annotated
     // by the shell so {{theme}} and {{layout}} in class="..." are safe)
     eventName:     (inputs.eventName || '').trim() || 'Team Meeting',
     city:          (inputs.city || '').trim(),
@@ -41,7 +41,7 @@ function compute(inputs) {
     labelSize,
     showNameInPin,
     fontSize,
-    // Extras for JS use in <script> — keys don't match any input ID so the
+    // Extras for JS use in <script> - keys don't match any input ID so the
     // shell's annotateTemplate won't wrap them in <!-- ci:id --> markers.
     _mapZoom:       (inputs.mapZoom || '').trim(),
     _hostCity:      (inputs.city || '').trim(),

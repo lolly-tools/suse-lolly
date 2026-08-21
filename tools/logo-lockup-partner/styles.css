@@ -1,7 +1,7 @@
-/* Logo Lockup: Partner — a horizontal co-branding lockup.
+/* Logo Lockup: Partner - a horizontal co-branding lockup.
    Every logo is a plain <img> sized by an inline pixel height (computed in the hook:
    base height × optical balance × presence). width:auto keeps each logo's own aspect,
-   so the SVG/PDF export walker — which reads each element's rendered box — reproduces
+   so the SVG/PDF export walker - which reads each element's rendered box - reproduces
    the layout faithfully. Connectors are a coloured rule / glyph / text, all of which
    survive vector export (background-colour rect, outlined text). */
 
@@ -40,7 +40,7 @@
 .ll-f-brighten { filter: brightness(1.5) contrast(1.4); }
 .ll-f-darken { filter: brightness(0.62) contrast(1.18); }
 .ll-f-invert { filter: invert(1); }
-/* "Convert to ink" — knock the logo back to a solid one-colour silhouette in the
+/* "Convert to ink" - knock the logo back to a solid one-colour silhouette in the
    theme's ink. brightness(0) crushes every opaque pixel to black (alpha kept); the
    dark-theme variant then inverts that black to white. The hook picks the class by
    theme; the export walker bakes it into raster logos like any other treatment. */
@@ -71,7 +71,7 @@
   line-height: 1;
 }
 
-/* Connector colour/background is set inline by the hook — a solid colour pre-blended
+/* Connector colour/background is set inline by the hook - a solid colour pre-blended
    toward the theme background, NOT CSS opacity (the PDF vector walker drops opacity, so
    a 0.32 hairline would export as a solid ink bar). These rules carry only structure. */
 .ll-conn-bar {

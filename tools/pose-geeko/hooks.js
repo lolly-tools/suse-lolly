@@ -1,5 +1,5 @@
 /**
- * Pose Geeko — static articulation hook.
+ * Pose Geeko - static articulation hook.
  *
  * There is NO animation. Every moving part of the Geeko (pupil, eyelid, head,
  * legs, tail) is posed by a single baked SVG ATTRIBUTE computed here:
@@ -8,7 +8,7 @@
  *   • head / legs / tail / body → transform="rotate(deg cx cy)"
  *
  * Baking as attributes (never CSS) is deliberate: the same value renders
- * identically down every export path — verbatim in SVG, read by the PDF DOM
+ * identically down every export path - verbatim in SVG, read by the PDF DOM
  * walker, and rasterised for CMYK-TIFF / JPG. The rotate pivots below are the
  * artwork's own user-space joints, measured with getBBox on each pose.
  *
@@ -22,27 +22,27 @@
 // pupil.eye:   [cx, cy, R] the eyeball centre + the radius the pupil centre is
 //              CLAMPED within, so the pupil never escapes the eye. Rests sit
 //              up-left of centre, so there's naturally more room to look right/down.
-// pupil.flipX: pose art is internally mirrored (scale(-1)) — flip look direction
+// pupil.flipX: pose art is internally mirrored (scale(-1)) - flip look direction
 // eyelidMax:   stroke-width that fully shuts the eye at blink 100
 // *.pivot:     rotate centre in the group's own user space (from getBBox)
 // *.mirror:    group sits under a scale(-1); negate so +slider reads the same way
 // Per-pose slider ranges (headRange / blinkRange, and each articulated group's
-// own `range`) are the source of truth for CLURL correctness — the engine does
+// own `range`) are the source of truth for CLURL correctness - the engine does
 // NOT clamp initial URL/CLI values to a slider's min/max, so the hook must. They
 // mirror the manifest's min/max + rangeWhen, which only drive the web slider UI;
 // keep the two in sync. `noBlink` disables blink for a pose whose eyelid can't
-// animate cleanly (dangling) — the manifest also hides the slider there.
+// animate cleanly (dangling) - the manifest also hides the slider there.
 var POSES = {
-  curious: {                                    // gc-* — climbing; eye, blink, head, leaves+branch
+  curious: {                                    // gc-* - climbing; eye, blink, head, leaves+branch
     pupil: { rest: [184, 123], eye: [200, 137, 31], flipX: false },
     eyelidMax: 40,
     head:    { pivot: [335, 215] },   // headTilt rotates the head (snout + eye)
-    // "Leaves & branch" slider — tilts the WHOLE curious illustration (branch + leaves + geeko)
+    // "Leaves & branch" slider - tilts the WHOLE curious illustration (branch + leaves + geeko)
     // as one group about its bbox centre, so it reads as tipping the whole scene. Applied to the
     // content <g> in the template; pivot = the group's measured centre.
     foliage: { pivot: [539, 301], range: [-40, 40] },
   },
-  dangling: {                                   // dg-* — full body: eye, head, 2 legs (blink disabled)
+  dangling: {                                   // dg-* - full body: eye, head, 2 legs (blink disabled)
     pupil: { rest: [901.9, 2282.6], eye: [956.7, 2295.8, 76], flipX: true },
     eyelidMax: 150,
     noBlink: true,
@@ -51,13 +51,13 @@ var POSES = {
     legBack:  { pivot: [1210, 1517], mirror: true, range: [-45, 45] },
     legFront: { pivot: [1226, 1722], mirror: true, range: [-30, 80] },
   },
-  sitting: {                                    // gp-* — tail + head + eye
+  sitting: {                                    // gp-* - tail + head + eye
     pupil: { rest: [339, 69], eye: [352, 80, 24], flipX: false },
     eyelidMax: 26,
     head: { pivot: [227, 198] },
     tail: { pivot: [300, 235], range: [-22, 10] },
   },
-  laying: {                                     // gl-* — head + eye
+  laying: {                                     // gl-* - head + eye
     pupil: { rest: [800, 154], eye: [816, 175, 33], flipX: false },
     eyelidMax: 42,
     headRange: [-14, 18],
@@ -66,7 +66,7 @@ var POSES = {
   },
 };
 
-// Scene backgrounds (mirror the CSS themes) — remembered for beforeExport.
+// Scene backgrounds (mirror the CSS themes) - remembered for beforeExport.
 // `transparent` keeps SVG/PDF alpha; the alpha-less JPG / CMYK-TIFF path falls
 // back to white so those exports get a clean sheet rather than black margins.
 var THEME_BG = { transparent: '#ffffff', dark: '#0c322c', light: '#f0f7f4', pine: '#165c3c' };
@@ -74,7 +74,7 @@ var _bg = THEME_BG.transparent;
 
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function clampRange(v, r) { return r ? clamp(v, r[0], r[1]) : v; }
@@ -89,7 +89,7 @@ function compute(model) {
 
   var out = { pupilT: '', eyelidW: 0, headT: '', foliageT: '', legFrontT: '', legBackT: '', tailT: '' };
 
-  // Eyes — pupil translate. The slider (-100..200) scales by the eyeball's clamp
+  // Eyes - pupil translate. The slider (-100..200) scales by the eyeball's clamp
   // radius, then the pupil centre is CLAMPED inside the eyeball so it can never
   // escape on any pose or slider combo. Rests sit up-left of centre, so there's
   // more travel to look right / down. flipX mirrors a scale(-1) pose.
@@ -104,10 +104,10 @@ function compute(model) {
 
   // Each articulated slider below is clamped to its per-pose range and the
   // clamped value is echoed back under its own input id (snap-back), so a value
-  // carried over from another pose — or an out-of-range URL/CLI param — is pulled
+  // carried over from another pose - or an out-of-range URL/CLI param - is pulled
   // into range instead of driving the art past its safe limit.
 
-  // Blink — eyelid stroke-width (0 open → shut). 100 units == one eyelidMax;
+  // Blink - eyelid stroke-width (0 open → shut). 100 units == one eyelidMax;
   // laying's wider range lets the eye over-close. Disabled on poses with no
   // working eyelid (dangling).
   if (!cfg.noBlink) {
@@ -117,20 +117,20 @@ function compute(model) {
     out.eyelidW = round((bl / 100) * cfg.eyelidMax);
   }
 
-  // Head tilt — rotates the head group on every pose.
+  // Head tilt - rotates the head group on every pose.
   var hr = cfg.headRange || [-30, 30];
   var ht = clamp(num(v.headTilt, 0), hr[0], hr[1]);
   out.headTilt = ht;
   if (cfg.head) out.headT = rot(ht * (cfg.head.mirror ? -1 : 1), cfg.head.pivot);
 
-  // Leaves & branch (curious only) — tilts the whole illustration group about its centre.
+  // Leaves & branch (curious only) - tilts the whole illustration group about its centre.
   if (cfg.foliage) {
     var fo = clampRange(num(v.foliage, 0), cfg.foliage.range);
     out.foliage = fo;
     out.foliageT = rot(fo, cfg.foliage.pivot);
   }
 
-  // Legs (dangling only — hidden elsewhere by showIf)
+  // Legs (dangling only - hidden elsewhere by showIf)
   if (cfg.legFront) {
     var lf = clampRange(num(v.legFront, 0), cfg.legFront.range);
     out.legFront = lf;

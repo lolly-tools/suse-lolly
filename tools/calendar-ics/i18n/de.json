@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ignoriert die Uhrzeit und blockiert den ganzen Tag.",
   "inputs.city.label": "Ort",
   "inputs.city.placeholder": "z. B. Nürnberg oder ein Besprechungslink",
-  "inputs.city.help": "Wo es stattfindet – ein Ort oder eine URL. Gemeinsame ID mit dem Besprechungsplaner (city).",
+  "inputs.city.help": "Wo es stattfindet - ein Ort oder eine URL. Gemeinsame ID mit dem Besprechungsplaner (city).",
   "inputs.description.label": "Beschreibung",
   "inputs.description.placeholder": "Agenda, Notizen, Einwahldaten …",
   "inputs.description.help": "Notizen, die im Kalendereintrag mitgeliefert werden.",

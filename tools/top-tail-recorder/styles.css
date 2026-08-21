@@ -2,7 +2,7 @@
    they read identically in portrait, landscape or square, and so the export
    compositor (export.renderTopTail) can rasterise each card at the target size and
    draw the footage object-fit:cover into whatever aspect the frame is. No @keyframes
-   here — the intro/outro/lower-third motion is driven by the compositor at export;
+   here - the intro/outro/lower-third motion is driven by the compositor at export;
    the live canvas is a still preview. */
 
 .tt {

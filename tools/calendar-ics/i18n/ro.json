@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ignoră ora și rezervă întreaga dată.",
   "inputs.city.label": "Locație",
   "inputs.city.placeholder": "ex. Nürnberg, sau un link de întâlnire",
-  "inputs.city.help": "Unde are loc — un loc sau un URL. Id partajat cu Planificatorul de întâlniri (city).",
+  "inputs.city.help": "Unde are loc - un loc sau un URL. Id partajat cu Planificatorul de întâlniri (city).",
   "inputs.description.label": "Descriere",
   "inputs.description.placeholder": "Agendă, note, detalii de conectare…",
   "inputs.description.help": "Note care însoțesc intrarea din calendar.",

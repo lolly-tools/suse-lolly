@@ -1,7 +1,7 @@
 {
   "name": "Señalización direccional",
   "description": "Carteles direccionales para eventos - destinos, cada uno con una flecha. Listos para imprenta.",
-  "a11yLabel": "Cartel de señalización para {{default eventName \"the event\"}}{{#if heading}} — {{heading}}{{/if}}",
+  "a11yLabel": "Cartel de señalización para {{default eventName \"the event\"}}{{#if heading}} - {{heading}}{{/if}}",
   "featured.blurb": "Carteles direccionales para eventos, listos para imprimir",
   "inputs.textWeight.label": "Grosor del texto",
   "inputs.textWeight.help": "Grosor de trazo del título, las etiquetas y las flechas (fuente variable de SUSE).",

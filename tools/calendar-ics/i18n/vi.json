@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Bỏ qua giờ trong ngày và đặt lịch cho cả ngày.",
   "inputs.city.label": "Địa điểm",
   "inputs.city.placeholder": "vd. Nuremberg, hoặc một liên kết họp",
-  "inputs.city.help": "Nơi diễn ra — một địa điểm hoặc một URL. Dùng chung id với Meeting Planner (city).",
+  "inputs.city.help": "Nơi diễn ra - một địa điểm hoặc một URL. Dùng chung id với Meeting Planner (city).",
   "inputs.description.label": "Mô tả",
   "inputs.description.placeholder": "Chương trình họp, ghi chú, thông tin quay số…",
   "inputs.description.help": "Ghi chú đi kèm trong mục lịch.",

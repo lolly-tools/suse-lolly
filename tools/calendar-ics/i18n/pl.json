@@ -11,7 +11,7 @@
   "inputs.allDay.label": "Wydarzenie całodniowe",
   "inputs.allDay.help": "Zignoruj godzinę i zarezerwuj całą datę.",
   "inputs.city.label": "Lokalizacja",
-  "inputs.city.help": "Gdzie się odbywa — miejsce lub adres URL. Wspólny identyfikator z Meeting Planner (miasto).",
+  "inputs.city.help": "Gdzie się odbywa - miejsce lub adres URL. Wspólny identyfikator z Meeting Planner (miasto).",
   "inputs.city.placeholder": "np. Norymberga lub link do spotkania",
   "inputs.description.label": "Opis",
   "inputs.description.help": "Notatki dołączone do wpisu w kalendarzu.",

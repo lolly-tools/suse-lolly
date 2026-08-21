@@ -1,7 +1,7 @@
 {
   "name": "Vidéo avec intro et outro",
   "description": "Enregistre un clip dans n'importe quelle orientation, puis habille-le automatiquement d'une intro et d'un outro à ton image, d'un bandeau et d'une musique de fond.",
-  "a11yLabel": "Vidéo avec intro et outro — {{default introTitle \"intro\"}} à {{default outroTitle \"outro\"}}",
+  "a11yLabel": "Vidéo avec intro et outro - {{default introTitle \"intro\"}} à {{default outroTitle \"outro\"}}",
   "inputs.orientation.label": "Orientation",
   "inputs.orientation.options.portrait": "Portrait · 1080 × 1920",
   "inputs.orientation.options.landscape": "Paysage · 1920 × 1080",
@@ -11,7 +11,7 @@
   "inputs.clipFit.label": "Cadrage de la vidéo",
   "inputs.clipFit.options.cover": "Remplir le cadre (rogner)",
   "inputs.clipFit.options.contain": "Ajuster toute la vidéo",
-  "inputs.clipFit.help": "La façon dont ton clip s'inscrit dans le cadre. Remplir rogne l'image pour couvrir tout le cadre ; Ajuster affiche la vidéo entière avec des bandes — pratique si tu importes un clip au format paysage ou carré dans un cadre portrait.",
+  "inputs.clipFit.help": "La façon dont ton clip s'inscrit dans le cadre. Remplir rogne l'image pour couvrir tout le cadre ; Ajuster affiche la vidéo entière avec des bandes - pratique si tu importes un clip au format paysage ou carré dans un cadre portrait.",
   "inputs.brandColor.label": "Couleur des habillages",
   "inputs.accent.label": "Accent",
   "inputs.logo.label": "Logo",

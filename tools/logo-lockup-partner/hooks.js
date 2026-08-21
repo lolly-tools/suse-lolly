@@ -1,5 +1,5 @@
 /**
- * Logo Lockup: Partner — co-branding lockup hook.
+ * Logo Lockup: Partner - co-branding lockup hook.
  *
  * Lays out a lead logo (the SUSE logo by default) beside one or more partner logos,
  * with a connector (vertical bar / symbol / text) between them. Light or dark theme.
@@ -15,7 +15,7 @@
  * their content box as a real <img> src so they fit exactly and survive every export
  * format; SVG logos keep their (tight) viewBox. Partner treatments (grayscale/invert)
  * are CSS filters on the <img>: PNG honours them on any logo, and the SVG/PDF walker
- * bakes them into raster logos — but an SVG-source logo keeps its colour in SVG/PDF
+ * bakes them into raster logos - but an SVG-source logo keeps its colour in SVG/PDF
  * (the SUSE mono lead avoids this by swapping to real one-colour artwork).
  *
  * Pixel work (content trim, weight) needs a browser canvas; a headless shell keeps the
@@ -54,13 +54,13 @@ var AVAIL_H = CANVAS_H - 2 * PAD_Y;   // usable height (280)
 // ── small helpers ────────────────────────────────────────────────────────────
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function color(v, fallback) { var s = (typeof v === 'string' ? v : '').trim(); return s ? s : fallback; }
 
 // Hex → [r,g,b]. Used to pre-blend connector colours so they don't rely on CSS
-// opacity (which the SVG/PDF export walker drops — a 0.32 hairline would otherwise
+// opacity (which the SVG/PDF export walker drops - a 0.32 hairline would otherwise
 // export as a solid ink bar). Blending toward the theme background here makes the
 // muted look identical on screen, in PNG, and in vector export.
 function hexToRgb(h) {
@@ -75,13 +75,13 @@ function mix(fg, bg, a) {
   return 'rgb(' + ch(0) + ',' + ch(1) + ',' + ch(2) + ')';
 }
 
-// === lolly:shared canRaster — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
+// === lolly:shared canRaster - generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function canRaster() {
   return !!(host.raster && host.raster.canRaster());
 }
 // === /lolly:shared canRaster ===
 
-// === lolly:shared loadImage — generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
+// === lolly:shared loadImage - generated from community/_shared/raster.js; edit there and run npm run sync:shared ===
 function loadImage(url) {
   if (!host.raster) return Promise.reject(new Error('no raster'));
   return host.raster.decode(url);
@@ -160,7 +160,7 @@ function measureContent(url, img) {
   return box;
 }
 
-// A raster logo cropped to its content box (margins removed) as a data URL — so a plain
+// A raster logo cropped to its content box (margins removed) as a data URL - so a plain
 // <img> fits its slot tightly and consistently, and embeds faithfully in every export
 // format. Returns the original url when there's nothing to trim or pixels can't be read.
 function getTrimmedRaster(url, img, box) {
@@ -212,7 +212,7 @@ function isSuseLogo(ref) {
 }
 
 // Resolve the lead to the artwork actually used. A SUSE logo is swapped to the variant
-// matching its orientation + the theme/treatment (no desaturation needed — there's real
+// matching its orientation + the theme/treatment (no desaturation needed - there's real
 // on-dark and mono artwork). A user's own lead is used as-is, desaturated when mono.
 async function resolveLead(ref, theme, mono) {
   if (!ref || !ref.url) return null;
@@ -258,7 +258,7 @@ function makeItem(ref, opts) {
     filterClass: opts.mono ? 'll-f-grayscale' : filterClass(opts.filter, opts.theme),
     isLead: !!opts.isLead,
     canvasId: opts.canvasId,
-    aspect: 1,    // content width / height — measured below, drives fit-to-width
+    aspect: 1,    // content width / height - measured below, drives fit-to-width
     box: null,    // content box + optical weight
     h: 0,
   };
@@ -345,15 +345,15 @@ async function compute(model) {
   var connKind = inputs.connector || 'bar';
   var connectorOn = connKind !== 'none' && items.length >= 2 && items.some(function (it) { return it.isLead; });
 
-  // A vertical bar between EACH partner logo (opt-in) — only meaningful with 2+ partners.
+  // A vertical bar between EACH partner logo (opt-in) - only meaningful with 2+ partners.
   var nPartners = items.filter(function (it) { return !it.isLead; }).length;
   var partnerDividerOn = inputs.partnerDivider === 'bar' && nPartners >= 2;
   var dividerCount = partnerDividerOn ? (nPartners - 1) : 0;   // one bar between each pair
 
   // Fit the whole lockup to the artboard: the row of logos (each width = height × aspect),
   // the connector, the partner dividers and the gaps between elements must all fit AVAIL_W,
-  // and nothing may exceed AVAIL_H. Everything scales by ONE factor — logos, gaps, and the
-  // connector (which keys off the fitted height below) — so a wide wordmark, many partners,
+  // and nothing may exceed AVAIL_H. Everything scales by ONE factor - logos, gaps, and the
+  // connector (which keys off the fitted height below) - so a wide wordmark, many partners,
   // OR a large gap can never spill off the canvas (which would clip on export). Scaling the
   // gaps too is what makes the dense / big-spacing cases stay inside the artboard. Each
   // partner divider adds its ~2px bar plus another gap on each side (it's an extra flex
@@ -393,7 +393,7 @@ async function compute(model) {
 
   // Partner divider bars, keyed to the fitted partner heights (a shade shorter than the
   // logos so they read as dividers, not columns). Colour is pre-blended toward the
-  // background — matching the connector bar — so the muted tone survives PDF export,
+  // background - matching the connector bar - so the muted tone survives PDF export,
   // where the vector walker drops element opacity.
   var partnerDividerStyle = '';
   if (partnerDividerOn) {
@@ -411,7 +411,7 @@ async function compute(model) {
     layoutClass: 'll-layout-' + layout,
     stageBg: _transparent ? 'transparent' : _bg,
     ink: ink,
-    // NB: key must NOT be 'gap' — that's a declared input id, and a returned key matching
+    // NB: key must NOT be 'gap' - that's a declared input id, and a returned key matching
     // an input id overwrites that input (clobbering the user's slider in a feedback loop).
     rowGap: gapPx,
     leadCell: leadCell,

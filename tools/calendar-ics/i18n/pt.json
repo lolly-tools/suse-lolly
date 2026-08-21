@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Ignora o horário do dia e reserva a data inteira.",
   "inputs.city.label": "Local",
   "inputs.city.placeholder": "ex.: Nuremberg, ou um link de reunião",
-  "inputs.city.help": "Onde acontece — um lugar ou uma URL. Compartilha o id com o Planejador de reuniões (city).",
+  "inputs.city.help": "Onde acontece - um lugar ou uma URL. Compartilha o id com o Planejador de reuniões (city).",
   "inputs.description.label": "Descrição",
   "inputs.description.placeholder": "Pauta, notas, dados de acesso…",
   "inputs.description.help": "Notas que acompanham o evento no calendário.",

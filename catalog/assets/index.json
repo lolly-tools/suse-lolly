@@ -31,8 +31,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/tokens/brand.json",
-          "checksum": "sha256-wcSVzbB0m867mBmRD6P8oNqRiYkUQCFLjdpld/+m/oY=",
-          "size": 12179
+          "checksum": "sha256-HCtdrn6QK3SMTlcHJPmwuOc34VGnLVKT75XKZcbHr1g=",
+          "size": 12163
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -61,7 +61,7 @@
     },
     {
       "id": "suse/logo/hor-neg-green",
-      "name": "SUSE Logo — Horizontal Green (on dark)",
+      "name": "SUSE Logo - Horizontal Green (on dark)",
       "description": "Green SUSE logo, horizontal (wide) lockup, for placement on dark backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -86,7 +86,7 @@
     },
     {
       "id": "suse/logo/hor-neg-white",
-      "name": "SUSE Logo — Horizontal White (on dark)",
+      "name": "SUSE Logo - Horizontal White (on dark)",
       "description": "White SUSE logo, horizontal (wide) lockup, for placement on dark backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -112,7 +112,7 @@
     },
     {
       "id": "suse/logo/hor-pos-green",
-      "name": "SUSE Logo — Horizontal Green (on light)",
+      "name": "SUSE Logo - Horizontal Green (on light)",
       "description": "Green SUSE logo, horizontal (wide) lockup, for placement on light backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -137,7 +137,7 @@
     },
     {
       "id": "suse/logo/hor-pos-black",
-      "name": "SUSE Logo — Horizontal Black (on light)",
+      "name": "SUSE Logo - Horizontal Black (on light)",
       "description": "Black SUSE logo, horizontal (wide) lockup, for placement on light backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -163,7 +163,7 @@
     },
     {
       "id": "suse/logo/vert-neg-green",
-      "name": "SUSE Logo — Vertical Green (on dark)",
+      "name": "SUSE Logo - Vertical Green (on dark)",
       "description": "Green SUSE logo, vertical (stacked, near-square) lockup, for placement on dark backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -188,7 +188,7 @@
     },
     {
       "id": "suse/logo/vert-neg-white",
-      "name": "SUSE Logo — Vertical White (on dark)",
+      "name": "SUSE Logo - Vertical White (on dark)",
       "description": "White SUSE logo, vertical (stacked, near-square) lockup, for placement on dark backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -214,7 +214,7 @@
     },
     {
       "id": "suse/logo/vert-pos-green",
-      "name": "SUSE Logo — Vertical Green (on light)",
+      "name": "SUSE Logo - Vertical Green (on light)",
       "description": "Green SUSE logo, vertical (stacked, near-square) lockup, for placement on light backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -239,7 +239,7 @@
     },
     {
       "id": "suse/logo/vert-pos-black",
-      "name": "SUSE Logo — Vertical Black (on light)",
+      "name": "SUSE Logo - Vertical Black (on light)",
       "description": "Black SUSE logo, vertical (stacked, near-square) lockup, for placement on light backgrounds.",
       "type": "vector",
       "version": "1.1.0",
@@ -300,7 +300,7 @@
     {
       "id": "suse/lottie/loader-dots",
       "name": "Loader Dots",
-      "description": "Three dots — green, pine, green — bouncing in a staggered wave. 3.2s loop, transparent background.",
+      "description": "Three dots - green, pine, green - bouncing in a staggered wave. 3.2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -334,7 +334,7 @@
     {
       "id": "suse/lottie/bar-sweep",
       "name": "Bar Sweep",
-      "description": "A rounded SUSE-green bar easing back and forth along a faint pine track — a progress motif. 3.2s loop, transparent background.",
+      "description": "A rounded SUSE-green bar easing back and forth along a faint pine track - a progress motif. 3.2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -3173,7 +3173,7 @@
     {
       "id": "suse/music/a-beautiful-dream",
       "name": "A Beautiful Dream",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Cruen.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Cruen.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3194,7 +3194,7 @@
     {
       "id": "suse/music/all-charged-up",
       "name": "All Charged Up",
-      "description": "Music bed for video exports — ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Reaktor Productions.",
+      "description": "Music bed for video exports - ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Reaktor Productions.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3215,7 +3215,7 @@
     {
       "id": "suse/music/beauty-inside",
       "name": "Beauty Inside",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Colorfilm Music.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Colorfilm Music.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3236,7 +3236,7 @@
     {
       "id": "suse/music/business-casual",
       "name": "Business Casual",
-      "description": "Music bed for video exports — ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Zac Nelson.",
+      "description": "Music bed for video exports - ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Zac Nelson.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3257,7 +3257,7 @@
     {
       "id": "suse/music/clean-success",
       "name": "Clean Success",
-      "description": "Music bed for video exports — ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Boomer.",
+      "description": "Music bed for video exports - ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Boomer.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3278,7 +3278,7 @@
     {
       "id": "suse/music/elevated-by-piano",
       "name": "Elevated by Piano",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Immersive Music.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Immersive Music.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3299,7 +3299,7 @@
     {
       "id": "suse/music/fame",
       "name": "Fame",
-      "description": "Music bed for video exports — ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Oakvale Of Albion.",
+      "description": "Music bed for video exports - ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Oakvale Of Albion.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3320,7 +3320,7 @@
     {
       "id": "suse/music/give-me-that",
       "name": "Give Me That",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: DeKibo.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: DeKibo.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3341,7 +3341,7 @@
     {
       "id": "suse/music/happy-every-day",
       "name": "Happy Every Day",
-      "description": "Music bed for video exports — ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Mark July.",
+      "description": "Music bed for video exports - ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Mark July.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3362,7 +3362,7 @@
     {
       "id": "suse/music/i-m-all-about-it",
       "name": "I'm All About It",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Grace Mesa.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Grace Mesa.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3383,7 +3383,7 @@
     {
       "id": "suse/music/in-the-sun",
       "name": "In the Sun",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Marc Walloch.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Marc Walloch.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3404,7 +3404,7 @@
     {
       "id": "suse/music/innovation-for-comfort",
       "name": "Innovation for Comfort",
-      "description": "Music bed for video exports — ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Ulas Pakkan.",
+      "description": "Music bed for video exports - ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Ulas Pakkan.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3425,7 +3425,7 @@
     {
       "id": "suse/music/jacky-cool",
       "name": "Jacky Cool",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Dominik Schwarzer.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Dominik Schwarzer.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3446,7 +3446,7 @@
     {
       "id": "suse/music/morning-warmth",
       "name": "Morning Warmth",
-      "description": "Music bed for video exports — ~19 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Elizabells.",
+      "description": "Music bed for video exports - ~19 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Elizabells.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3467,7 +3467,7 @@
     {
       "id": "suse/music/one-night-in-las-vegas",
       "name": "One Night in Las Vegas",
-      "description": "Music bed for video exports — ~19 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Arthur Basov.",
+      "description": "Music bed for video exports - ~19 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Arthur Basov.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3488,7 +3488,7 @@
     {
       "id": "suse/music/only-winners",
       "name": "Only Winners",
-      "description": "Music bed for video exports — ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Rex Chroma.",
+      "description": "Music bed for video exports - ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Rex Chroma.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3509,7 +3509,7 @@
     {
       "id": "suse/music/open-electronic-logo",
       "name": "Open Electronic Logo",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Lost Harmonies.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Lost Harmonies.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3530,7 +3530,7 @@
     {
       "id": "suse/music/orange-sunset",
       "name": "Orange Sunset",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: One Wave.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: One Wave.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3551,7 +3551,7 @@
     {
       "id": "suse/music/pages-turned",
       "name": "Pages Turned",
-      "description": "Music bed for video exports — ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Quality Quest.",
+      "description": "Music bed for video exports - ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Quality Quest.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3572,7 +3572,7 @@
     {
       "id": "suse/music/patience",
       "name": "Patience",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Eternity Bro.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Eternity Bro.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3593,7 +3593,7 @@
     {
       "id": "suse/music/peanut-butter-jelly",
       "name": "Peanut Butter Jelly",
-      "description": "Music bed for video exports — ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Harrison Amer.",
+      "description": "Music bed for video exports - ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Harrison Amer.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3614,7 +3614,7 @@
     {
       "id": "suse/music/progress-and-innovation",
       "name": "Progress and Innovation",
-      "description": "Music bed for video exports — ~26 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Trending Music.",
+      "description": "Music bed for video exports - ~26 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Trending Music.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3635,7 +3635,7 @@
     {
       "id": "suse/music/rambo",
       "name": "Rambo",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: JAM Studio.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: JAM Studio.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3656,7 +3656,7 @@
     {
       "id": "suse/music/rhythm-and-attitude",
       "name": "Rhythm and Attitude",
-      "description": "Music bed for video exports — ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Rex Chroma.",
+      "description": "Music bed for video exports - ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Rex Chroma.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3677,7 +3677,7 @@
     {
       "id": "suse/music/ringing-success",
       "name": "Ringing Success",
-      "description": "Music bed for video exports — ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Graceful Movement.",
+      "description": "Music bed for video exports - ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Graceful Movement.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3698,7 +3698,7 @@
     {
       "id": "suse/music/rocking-forward",
       "name": "Rocking Forward",
-      "description": "Music bed for video exports — ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Nick Petrov.",
+      "description": "Music bed for video exports - ~16 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Nick Petrov.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3719,7 +3719,7 @@
     {
       "id": "suse/music/shake-things-up",
       "name": "Shake Things Up",
-      "description": "Music bed for video exports — ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Nick Petrov.",
+      "description": "Music bed for video exports - ~14 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Nick Petrov.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3740,7 +3740,7 @@
     {
       "id": "suse/music/soundscapes",
       "name": "Soundscapes",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Boomer.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Boomer.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3761,7 +3761,7 @@
     {
       "id": "suse/music/the-floor-is-lava",
       "name": "The Floor Is Lava",
-      "description": "Music bed for video exports — ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Yan Perchuk.",
+      "description": "Music bed for video exports - ~17 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Yan Perchuk.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3782,7 +3782,7 @@
     {
       "id": "suse/music/until-the-sun",
       "name": "Until the Sun",
-      "description": "Music bed for video exports — ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Nick Petrov.",
+      "description": "Music bed for video exports - ~18 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Nick Petrov.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3803,7 +3803,7 @@
     {
       "id": "suse/music/unwavering",
       "name": "Unwavering",
-      "description": "Music bed for video exports — ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Vesper Tapes.",
+      "description": "Music bed for video exports - ~15 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Vesper Tapes.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -3824,7 +3824,7 @@
     {
       "id": "suse/music/victorious-vibe",
       "name": "Victorious Vibe",
-      "description": "Music bed for video exports — ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) — artist: Graceful Movement.",
+      "description": "Music bed for video exports - ~21 s, loops to fill the clip. Licensed stock music (PremiumBeat/Shutterstock) - artist: Graceful Movement.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -5801,7 +5801,7 @@
     },
     {
       "id": "suse/photos/awareness-aws-1",
-      "name": "Awareness — AWS 1",
+      "name": "Awareness - AWS 1",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -5836,7 +5836,7 @@
     },
     {
       "id": "suse/photos/awareness-aws-2",
-      "name": "Awareness — AWS 2",
+      "name": "Awareness - AWS 2",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -5871,7 +5871,7 @@
     },
     {
       "id": "suse/photos/awareness-aws-3",
-      "name": "Awareness — AWS 3",
+      "name": "Awareness - AWS 3",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -5906,7 +5906,7 @@
     },
     {
       "id": "suse/photos/awareness-brussels",
-      "name": "Awareness — Brussels",
+      "name": "Awareness - Brussels",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -5941,7 +5941,7 @@
     },
     {
       "id": "suse/photos/awareness-kubecon-1",
-      "name": "Awareness — KubeCon 1",
+      "name": "Awareness - KubeCon 1",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -5976,7 +5976,7 @@
     },
     {
       "id": "suse/photos/awareness-kubecon-3",
-      "name": "Awareness — KubeCon 3",
+      "name": "Awareness - KubeCon 3",
       "description": "SUSE brand awareness photograph.",
       "type": "raster",
       "version": "1.1.0",
@@ -8256,7 +8256,7 @@
     {
       "id": "suse/photos/susecon26-branding-mon-18",
       "name": "SUSECON 26 Branding Mon 18",
-      "description": "SUSECON 26 — Branding.",
+      "description": "SUSECON 26 - Branding.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8292,7 +8292,7 @@
     {
       "id": "suse/photos/susecon26-demopalooza-mon-4",
       "name": "SUSECON 26 Demopalooza Mon 4",
-      "description": "SUSECON 26 — Demopalooza.",
+      "description": "SUSECON 26 - Demopalooza.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8328,7 +8328,7 @@
     {
       "id": "suse/photos/susecon26-demopalooza-mon-44",
       "name": "SUSECON 26 Demopalooza Mon 44",
-      "description": "SUSECON 26 — Demopalooza.",
+      "description": "SUSECON 26 - Demopalooza.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8364,7 +8364,7 @@
     {
       "id": "suse/photos/susecon26-demopalooza-mon-49",
       "name": "SUSECON 26 Demopalooza Mon 49",
-      "description": "SUSECON 26 — Demopalooza.",
+      "description": "SUSECON 26 - Demopalooza.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8400,7 +8400,7 @@
     {
       "id": "suse/photos/susecon26-demopalooza-mon-7",
       "name": "SUSECON 26 Demopalooza Mon 7",
-      "description": "SUSECON 26 — Demopalooza.",
+      "description": "SUSECON 26 - Demopalooza.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8436,7 +8436,7 @@
     {
       "id": "suse/photos/susecon26-keynote-tues-19",
       "name": "SUSECON 26 Keynote Tues 19",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8472,7 +8472,7 @@
     {
       "id": "suse/photos/susecon26-keynote-tues-46",
       "name": "SUSECON 26 Keynote Tues 46",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8508,7 +8508,7 @@
     {
       "id": "suse/photos/susecon26-keynote-tues-53",
       "name": "SUSECON 26 Keynote Tues 53",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8544,7 +8544,7 @@
     {
       "id": "suse/photos/susecon26-keynote-tues-59",
       "name": "SUSECON 26 Keynote Tues 59",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8580,7 +8580,7 @@
     {
       "id": "suse/photos/susecon26-keynote-tues-95",
       "name": "SUSECON 26 Keynote Tues 95",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8616,7 +8616,7 @@
     {
       "id": "suse/photos/susecon26-keynote-wed-11",
       "name": "SUSECON 26 Keynote Wed 11",
-      "description": "SUSECON 26 — Keynote.",
+      "description": "SUSECON 26 - Keynote.",
       "type": "raster",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8652,7 +8652,7 @@
     {
       "id": "suse/illustrations/ai-enterprise",
       "name": "AI for Enterprise",
-      "description": "SUSE brand illustration — AI for Enterprise.",
+      "description": "SUSE brand illustration - AI for Enterprise.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8674,7 +8674,7 @@
     {
       "id": "suse/illustrations/ai-human",
       "name": "AI & Human",
-      "description": "SUSE brand illustration — AI & Human.",
+      "description": "SUSE brand illustration - AI & Human.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8696,7 +8696,7 @@
     {
       "id": "suse/illustrations/availability",
       "name": "Availability",
-      "description": "SUSE brand illustration — Availability.",
+      "description": "SUSE brand illustration - Availability.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8718,7 +8718,7 @@
     {
       "id": "suse/illustrations/choice",
       "name": "Choice",
-      "description": "SUSE brand illustration — Choice.",
+      "description": "SUSE brand illustration - Choice.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8740,7 +8740,7 @@
     {
       "id": "suse/illustrations/cloud-hyperconvergence",
       "name": "Cloud Hyperconvergence",
-      "description": "SUSE brand illustration — Cloud Hyperconvergence.",
+      "description": "SUSE brand illustration - Cloud Hyperconvergence.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8762,7 +8762,7 @@
     {
       "id": "suse/illustrations/cloud-migration",
       "name": "Cloud Migration",
-      "description": "SUSE brand illustration — Cloud Migration.",
+      "description": "SUSE brand illustration - Cloud Migration.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8784,7 +8784,7 @@
     {
       "id": "suse/illustrations/cloud-native",
       "name": "Cloud Native",
-      "description": "SUSE brand illustration — Cloud Native.",
+      "description": "SUSE brand illustration - Cloud Native.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8807,7 +8807,7 @@
     {
       "id": "suse/illustrations/collaboration",
       "name": "Collaboration",
-      "description": "SUSE brand illustration — Collaboration.",
+      "description": "SUSE brand illustration - Collaboration.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8829,7 +8829,7 @@
     {
       "id": "suse/illustrations/confidential-computing",
       "name": "Confidential Computing",
-      "description": "SUSE brand illustration — Confidential Computing.",
+      "description": "SUSE brand illustration - Confidential Computing.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8852,7 +8852,7 @@
     {
       "id": "suse/illustrations/cybersecurity",
       "name": "Cybersecurity",
-      "description": "SUSE brand illustration — Cybersecurity.",
+      "description": "SUSE brand illustration - Cybersecurity.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8874,7 +8874,7 @@
     {
       "id": "suse/illustrations/edge",
       "name": "Edge",
-      "description": "SUSE brand illustration — Edge.",
+      "description": "SUSE brand illustration - Edge.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8895,7 +8895,7 @@
     {
       "id": "suse/illustrations/edge-computing",
       "name": "Edge Computing",
-      "description": "SUSE brand illustration — Edge Computing.",
+      "description": "SUSE brand illustration - Edge Computing.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8917,7 +8917,7 @@
     {
       "id": "suse/illustrations/efficiency",
       "name": "Efficiency",
-      "description": "SUSE brand illustration — Efficiency.",
+      "description": "SUSE brand illustration - Efficiency.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8938,7 +8938,7 @@
     {
       "id": "suse/illustrations/flexibility-and-scalability",
       "name": "Flexibility & Scalability",
-      "description": "SUSE brand illustration — Flexibility & Scalability.",
+      "description": "SUSE brand illustration - Flexibility & Scalability.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8960,7 +8960,7 @@
     {
       "id": "suse/illustrations/freedom",
       "name": "Freedom",
-      "description": "SUSE brand illustration — Freedom.",
+      "description": "SUSE brand illustration - Freedom.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -8982,7 +8982,7 @@
     {
       "id": "suse/illustrations/growth",
       "name": "Growth",
-      "description": "SUSE brand illustration — Growth.",
+      "description": "SUSE brand illustration - Growth.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9003,7 +9003,7 @@
     {
       "id": "suse/illustrations/hybrid-cloud",
       "name": "Hybrid Cloud",
-      "description": "SUSE brand illustration — Hybrid Cloud.",
+      "description": "SUSE brand illustration - Hybrid Cloud.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9025,7 +9025,7 @@
     {
       "id": "suse/illustrations/increase-the-time",
       "name": "Increase the Time",
-      "description": "SUSE brand illustration — Increase the Time.",
+      "description": "SUSE brand illustration - Increase the Time.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9047,7 +9047,7 @@
     {
       "id": "suse/illustrations/interoperability",
       "name": "Interoperability",
-      "description": "SUSE brand illustration — Interoperability.",
+      "description": "SUSE brand illustration - Interoperability.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9068,7 +9068,7 @@
     {
       "id": "suse/illustrations/linux",
       "name": "Linux",
-      "description": "SUSE brand illustration — Linux.",
+      "description": "SUSE brand illustration - Linux.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9090,7 +9090,7 @@
     {
       "id": "suse/illustrations/migration",
       "name": "Migration",
-      "description": "SUSE brand illustration — Migration.",
+      "description": "SUSE brand illustration - Migration.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9111,7 +9111,7 @@
     {
       "id": "suse/illustrations/open-source-dna",
       "name": "Open Source DNA",
-      "description": "SUSE brand illustration — Open Source DNA.",
+      "description": "SUSE brand illustration - Open Source DNA.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9133,7 +9133,7 @@
     {
       "id": "suse/illustrations/rancher",
       "name": "Rancher",
-      "description": "SUSE brand illustration — Rancher.",
+      "description": "SUSE brand illustration - Rancher.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9155,7 +9155,7 @@
     {
       "id": "suse/illustrations/security-and-trust",
       "name": "Security & Trust",
-      "description": "SUSE brand illustration — Security & Trust.",
+      "description": "SUSE brand illustration - Security & Trust.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9177,7 +9177,7 @@
     {
       "id": "suse/illustrations/train",
       "name": "Train",
-      "description": "SUSE brand illustration — Train.",
+      "description": "SUSE brand illustration - Train.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9199,7 +9199,7 @@
     {
       "id": "suse/illustrations/working-together",
       "name": "Working Together",
-      "description": "SUSE brand illustration — Working Together.",
+      "description": "SUSE brand illustration - Working Together.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "on-demand",
@@ -9350,7 +9350,7 @@
     {
       "id": "suse/backgrounds/diag-hatch-fog",
       "name": "Hatch · Fog",
-      "description": "A quiet diagonal hatch on soft grey — a calm backdrop for text.",
+      "description": "A quiet diagonal hatch on soft grey - a calm backdrop for text.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -9376,7 +9376,7 @@
     {
       "id": "suse/backgrounds/mesh-dawn",
       "name": "Mesh · Dawn",
-      "description": "Warm mesh-gradient wash — amber and orange over pine.",
+      "description": "Warm mesh-gradient wash - amber and orange over pine.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -9529,7 +9529,7 @@
     {
       "id": "suse/lottie/spinner-ring",
       "name": "Spinner Ring",
-      "description": "A jade arc spinning around a faint mint track — a loading spinner. 2s loop, transparent background.",
+      "description": "A jade arc spinning around a faint mint track - a loading spinner. 2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9563,7 +9563,7 @@
     {
       "id": "suse/lottie/wave-equalizer",
       "name": "Wave Equalizer",
-      "description": "Five jade and mint bars rising and falling in a wave — an audio / activity motif. 2s loop, transparent background.",
+      "description": "Five jade and mint bars rising and falling in a wave - an audio / activity motif. 2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9598,7 +9598,7 @@
     {
       "id": "suse/lottie/pulse-dot",
       "name": "Pulse Dot",
-      "description": "A jade dot pulsing with an expanding halo ring — an attention / live motif. 2s loop, transparent background.",
+      "description": "A jade dot pulsing with an expanding halo ring - an attention / live motif. 2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9633,7 +9633,7 @@
     {
       "id": "suse/lottie/orbit-dot",
       "name": "Orbit Dot",
-      "description": "An orange dot orbiting a faint mint ring — a processing / motion motif. 3s loop, transparent background.",
+      "description": "An orange dot orbiting a faint mint ring - a processing / motion motif. 3s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9667,7 +9667,7 @@
     {
       "id": "suse/lottie/check-success",
       "name": "Check Success",
-      "description": "A jade checkmark drawing itself in over a soft ring — a success / complete motif. 2.5s loop, transparent background.",
+      "description": "A jade checkmark drawing itself in over a soft ring - a success / complete motif. 2.5s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9856,7 +9856,7 @@
     {
       "id": "suse/backgrounds/scatter-confetti",
       "name": "Scatter · Confetti",
-      "description": "Brand-coloured confetti scattered on a light ground — celebratory.",
+      "description": "Brand-coloured confetti scattered on a light ground - celebratory.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -9908,7 +9908,7 @@
     {
       "id": "suse/lottie/progress-ring",
       "name": "Progress Ring",
-      "description": "A jade ring that fills and drains around a faint track — a determinate progress motif. 2.5s loop, transparent background.",
+      "description": "A jade ring that fills and drains around a faint track - a determinate progress motif. 2.5s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9942,7 +9942,7 @@
     {
       "id": "suse/lottie/cross-error",
       "name": "Cross Error",
-      "description": "An orange cross drawing itself in over a soft ring — an error / failed motif. 2.5s loop, transparent background.",
+      "description": "An orange cross drawing itself in over a soft ring - an error / failed motif. 2.5s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -9977,7 +9977,7 @@
     {
       "id": "suse/lottie/radar-sweep",
       "name": "Radar Sweep",
-      "description": "A jade wedge sweeping around faint rings — a scanning / searching motif. 2.5s loop, transparent background.",
+      "description": "A jade wedge sweeping around faint rings - a scanning / searching motif. 2.5s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10012,7 +10012,7 @@
     {
       "id": "suse/lottie/sparkle",
       "name": "Sparkle",
-      "description": "Four-point stars twinkling in the brand palette — a celebrate / AI motif. 2s loop, transparent background.",
+      "description": "Four-point stars twinkling in the brand palette - a celebrate / AI motif. 2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10048,7 +10048,7 @@
     {
       "id": "suse/lottie/heartbeat-line",
       "name": "Heartbeat Line",
-      "description": "A jade ECG trace sweeping across a faint baseline — a live / health motif. 2s loop, transparent background.",
+      "description": "A jade ECG trace sweeping across a faint baseline - a live / health motif. 2s loop, transparent background.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10306,7 +10306,7 @@
     {
       "id": "suse/backgrounds/graph-paper-jade",
       "name": "Graph Paper",
-      "description": "Engineering graph paper — fine minor and major grid.",
+      "description": "Engineering graph paper - fine minor and major grid.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -10416,7 +10416,7 @@
     {
       "id": "suse/lottie/draw-square",
       "name": "Draw Square",
-      "description": "A rounded square outline drawing itself in — a clean build/loading motif. 2.5s loop.",
+      "description": "A rounded square outline drawing itself in - a clean build/loading motif. 2.5s loop.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10453,7 +10453,7 @@
     {
       "id": "suse/lottie/rotating-squares",
       "name": "Rotating Squares",
-      "description": "Three nested square outlines counter-rotating — kinetic geometry. 3s loop.",
+      "description": "Three nested square outlines counter-rotating - kinetic geometry. 3s loop.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10527,7 +10527,7 @@
     {
       "id": "suse/lottie/contour-breathe",
       "name": "Contour Breathe",
-      "description": "Concentric thin rings gently breathing — a calm contour motif. 3s loop.",
+      "description": "Concentric thin rings gently breathing - a calm contour motif. 3s loop.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10564,7 +10564,7 @@
     {
       "id": "suse/lottie/line-sweep",
       "name": "Line Sweep",
-      "description": "A bright line sweeping across faint guide columns — a scan motif. 2.5s loop.",
+      "description": "A bright line sweeping across faint guide columns - a scan motif. 2.5s loop.",
       "type": "lottie",
       "version": "1.0.0",
       "tier": "core",
@@ -10638,7 +10638,7 @@
     {
       "id": "suse/backgrounds/iso-cubes-light",
       "name": "Iso Cubes",
-      "description": "A tessellated field of isometric cubes — tumbling blocks in fine line.",
+      "description": "A tessellated field of isometric cubes - tumbling blocks in fine line.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -10762,7 +10762,7 @@
     {
       "id": "lolly/loops/pixel-quest-save-point",
       "name": "Pixel Quest Save Point",
-      "description": "Looping lo-fi beat (focus) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (focus) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10788,7 +10788,7 @@
     {
       "id": "lolly/loops/breezy-afternoon-terrace",
       "name": "Breezy Afternoon Terrace",
-      "description": "Looping lo-fi beat (jazz-lounge) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (jazz-lounge) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10814,7 +10814,7 @@
     {
       "id": "lolly/loops/rain-on-the-boulevard",
       "name": "Rain on the Boulevard",
-      "description": "Looping lo-fi beat (jazz-lounge) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (jazz-lounge) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10840,7 +10840,7 @@
     {
       "id": "lolly/loops/fireplace-loop",
       "name": "Fireplace Loop",
-      "description": "Looping lo-fi beat (rainy-day) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (rainy-day) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10866,7 +10866,7 @@
     {
       "id": "lolly/loops/first-coffee-thoughts",
       "name": "First Coffee Thoughts",
-      "description": "Looping lo-fi beat (focus) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (focus) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10892,7 +10892,7 @@
     {
       "id": "lolly/loops/continue-screen-dreams",
       "name": "Continue Screen Dreams",
-      "description": "Looping lo-fi beat (focus) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (focus) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10918,7 +10918,7 @@
     {
       "id": "lolly/loops/slow-dance-in-the-living-room",
       "name": "Slow Dance in the Living Room",
-      "description": "Looping lo-fi beat (soul & slow-jam) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (soul & slow-jam) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10944,7 +10944,7 @@
     {
       "id": "lolly/loops/3-am-echoes",
       "name": "3 AM Echoes",
-      "description": "Looping lo-fi beat (late-night) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (late-night) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10970,7 +10970,7 @@
     {
       "id": "lolly/loops/after-school-rain",
       "name": "After School Rain",
-      "description": "Looping lo-fi beat (rainy-day) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (rainy-day) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -10996,7 +10996,7 @@
     {
       "id": "lolly/loops/3am-sink-light",
       "name": "3AM Sink Light",
-      "description": "Looping lo-fi beat (soul & slow-jam) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (soul & slow-jam) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11022,7 +11022,7 @@
     {
       "id": "lolly/loops/saxophone-in-the-rain",
       "name": "Saxophone in the Rain",
-      "description": "Looping lo-fi beat (jazz-lounge) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (jazz-lounge) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11048,7 +11048,7 @@
     {
       "id": "lolly/loops/empty-street-static",
       "name": "Empty Street Static",
-      "description": "Looping lo-fi beat (late-night) — a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
+      "description": "Looping lo-fi beat (late-night) - a focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0). Donated to the public domain by Bilal Tahir (next-beats).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11099,7 +11099,7 @@
     {
       "id": "lolly/songs/amber-glow",
       "name": "Amber Glow",
-      "description": "Sparse glass notes drifting over soothing pad swells — no drums. Generated on device from a few KB of ZzFXM data (~53s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
+      "description": "Sparse glass notes drifting over soothing pad swells - no drums. Generated on device from a few KB of ZzFXM data (~53s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11125,7 +11125,7 @@
     {
       "id": "lolly/songs/tide-pool",
       "name": "Tide Pool",
-      "description": "Very slow, open, suspended chords with long swells — drift-away focus. Generated on device from a few KB of ZzFXM data (~58s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
+      "description": "Very slow, open, suspended chords with long swells - drift-away focus. Generated on device from a few KB of ZzFXM data (~58s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11177,7 +11177,7 @@
     {
       "id": "lolly/songs/meadow",
       "name": "Meadow",
-      "description": "Bright, unhurried bell phrases over an easy pad — open and sunny. Generated on device from a few KB of ZzFXM data (~52s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
+      "description": "Bright, unhurried bell phrases over an easy pad - open and sunny. Generated on device from a few KB of ZzFXM data (~52s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11202,7 +11202,7 @@
     {
       "id": "lolly/songs/bn-copacabana-breeze",
       "name": "Copacabana Breeze",
-      "description": "Warm nylon guitar comping bounces over a soft brushed snare and a gentle shaker pulse — a sunny, unhurried bossa sway. Generated on device from a few KB of ZzFXM data (~47s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
+      "description": "Warm nylon guitar comping bounces over a soft brushed snare and a gentle shaker pulse - a sunny, unhurried bossa sway. Generated on device from a few KB of ZzFXM data (~47s loop). A focus track for Neurospicy Mode, also selectable as a video music bed. Public domain (CC0).",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11282,7 +11282,7 @@
     {
       "id": "lolly/modules/aleja-deszczu",
       "name": "Aleja Deszczu",
-      "description": "Aleja Deszczu — a tracker module by JAM. Electronic - Breakbeat. Public Domain via The Mod Archive.",
+      "description": "Aleja Deszczu - a tracker module by JAM. Electronic - Breakbeat. Public Domain via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11310,7 +11310,7 @@
     {
       "id": "lolly/modules/blue-intermission",
       "name": "Blue Intermission",
-      "description": "Blue Intermission — a tracker module by congusbongus. Jazz (general). CC0 via The Mod Archive.",
+      "description": "Blue Intermission - a tracker module by congusbongus. Jazz (general). CC0 via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11339,7 +11339,7 @@
     {
       "id": "lolly/modules/headspin",
       "name": "Headspin",
-      "description": "Headspin — a tracker module by congusbongus. Hip-Hop. CC0 via The Mod Archive.",
+      "description": "Headspin - a tracker module by congusbongus. Hip-Hop. CC0 via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11368,7 +11368,7 @@
     {
       "id": "lolly/modules/jazzical-interpolation",
       "name": "Jazzical Interpolation",
-      "description": "Jazzical Interpolation — a tracker module by christofori. Jazz - Modern. Public Domain via The Mod Archive.",
+      "description": "Jazzical Interpolation - a tracker module by christofori. Jazz - Modern. Public Domain via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11397,7 +11397,7 @@
     {
       "id": "lolly/modules/wild-perspective",
       "name": "Wild Perspective",
-      "description": "wild perspective — a tracker module by m0d. Trance - Dream. Public Domain via The Mod Archive.",
+      "description": "wild perspective - a tracker module by m0d. Trance - Dream. Public Domain via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11425,7 +11425,7 @@
     {
       "id": "lolly/modules/take-a-walk",
       "name": "Take A Walk",
-      "description": "Take a Walk — a tracker module by JAM. Easy Listening. Public Domain via The Mod Archive.",
+      "description": "Take a Walk - a tracker module by JAM. Easy Listening. Public Domain via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11453,7 +11453,7 @@
     {
       "id": "lolly/modules/jazznocn",
       "name": "Jazznocn",
-      "description": "Jazznocn — a tracker module by JAM. Chillout. Public Domain via The Mod Archive.",
+      "description": "Jazznocn - a tracker module by JAM. Chillout. Public Domain via The Mod Archive.",
       "type": "audio",
       "version": "1.0.0",
       "tier": "on-demand",
@@ -11481,7 +11481,7 @@
     {
       "id": "lolly/demo/lolly-spin",
       "name": "Lolly Spin (animated)",
-      "description": "The Lolly swirl as a self-contained animated SVG — three nested spirals rotating at a calm 9/18/27s cadence (the mark's own motion, slowed for comfort) with a slow hue drift on a brand-tinted gradient, calmed under prefers-reduced-motion. The swirl and the background inherit the active brand's colours when placed live, and it makes a handy default subject for testing filters, grading and animation. A removable example — delete it any time.",
+      "description": "The Lolly swirl as a self-contained animated SVG - three nested spirals rotating at a calm 9/18/27s cadence (the mark's own motion, slowed for comfort) with a slow hue drift on a brand-tinted gradient, calmed under prefers-reduced-motion. The swirl and the background inherit the active brand's colours when placed live, and it makes a handy default subject for testing filters, grading and animation. A removable example - delete it any time.",
       "type": "vector",
       "version": "1.2.0",
       "tier": "core",
@@ -11509,7 +11509,7 @@
     {
       "id": "suse/demo/app-screenshot",
       "name": "App screenshot (demo)",
-      "description": "A real Lolly screenshot — the brand studio's Colours tab, captured as vector by the app's own DOM-to-SVG walker. A demo subject for flythroughs, filters and layered animation. A removable example — delete it any time.",
+      "description": "A real Lolly screenshot - the brand studio's Colours tab, captured as vector by the app's own DOM-to-SVG walker. A demo subject for flythroughs, filters and layered animation. A removable example - delete it any time.",
       "type": "vector",
       "version": "1.0.0",
       "tier": "core",

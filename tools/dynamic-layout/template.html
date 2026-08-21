@@ -1,5 +1,5 @@
 <style>
-/* SUSE variable font — same source the lockup/chart tools use. */
+/* SUSE variable font - same source the lockup/chart tools use. */
 @font-face {
   font-family: 'SUSE';
   src: url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');
@@ -13,7 +13,7 @@
   font-weight: 900;
   font-display: swap;
 }
-/* SUSE Mono — used by the call-to-action when its font is set to Mono. */
+/* SUSE Mono - used by the call-to-action when its font is set to Mono. */
 @font-face {
   font-family: 'SUSE Mono';
   src: url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');
@@ -48,7 +48,7 @@
 .dl-pine      { background: #0c322c; color: #ffffff; --accent: #30ba78; --accent-fg: #0c322c; --muted: #90ebcd; --scrim: #0c322c; }
 .dl-jungle    { background: #30ba78; color: #0c322c; --accent: #0c322c; --accent-fg: #ffffff; --muted: #01564a; --scrim: #30ba78; }
 .dl-white     { background: #ffffff; color: #0c322c; --accent: #30ba78; --accent-fg: #0c322c; --muted: #4b7a70; --scrim: #ffffff; }
-/* Dark, saturated brand grounds — both panels stay deep so a bright ink (SUSE
+/* Dark, saturated brand grounds - both panels stay deep so a bright ink (SUSE
    Waterhole blue, a warm amber) reads as the whole design. Midnight is the exact
    brand blue; Persimmon is a dark-mid take on the brand orange. The accent panel
    sits a shade darker so the two blocks still separate. */
@@ -91,7 +91,7 @@
 /* Single block: the surviving panel fills the whole canvas. */
 .dl-root[data-mode="single"] .dl-feature:not(.is-empty) { flex: 1 1 0; }
 /* Photo: panels stay translucent (not invisible) so the split grid reads over the
-   image — the feature block a touch lighter, the content a touch darker, so the two
+   image - the feature block a touch lighter, the content a touch darker, so the two
    blocks stay distinguishable on any photo. The theme scrim still tints the whole
    image for text legibility (see .dl-overlay above). */
 .dl-root[data-mode="photo"] .dl-feature { background: rgba(255, 255, 255, 0.03); color: inherit; }
@@ -99,7 +99,7 @@
 /* Click-to-focus: over a photo the panels proxy the background-image input, so
    clicking the image area focuses it (the nested heading/body/cta/headshot still
    win, since the click handler picks the closest tagged ancestor). Suppress the
-   panel's own hover outline — a dashed box around a whole half-canvas panel reads
+   panel's own hover outline - a dashed box around a whole half-canvas panel reads
    as a glitch; the inner targets still highlight on hover. */
 .dl-root[data-mode="photo"] .dl-feature:hover,
 .dl-root[data-mode="photo"] .dl-content:hover { outline: none; }
@@ -176,7 +176,7 @@
   width: 0.4em; height: 0.4em; border-radius: 50%; background: var(--accent);
 }
 /* Arrow bullets: lines the author started with a direction marker (see the
-   markdown helper) — ">" →, "<" ←, "^" ↑, "v" ↓. The arrow takes the list item's
+   markdown helper) - ">" →, "<" ←, "^" ↑, "v" ↓. The arrow takes the list item's
    own colour and weight (inherited), so it reads as part of the line rather than
    an accent marker. */
 .dl-text li.md-arrow::before,
@@ -195,7 +195,7 @@
 .dl-cta {
   /* Shrink-wrapped BLOCK, not inline-flex, so the vector exporters (SVG/PDF) draw
      the pill. The DOM→vector walker only renders box decoration (this ghost
-     outline) for block-level nodes, and an inline-flex blockifies its text child —
+     outline) for block-level nodes, and an inline-flex blockifies its text child -
      which the inline-text walker then skips, dropping the label. A fit-content
      block draws outline + label and is visually identical (one centred line). */
   display: block; width: fit-content;
@@ -275,8 +275,8 @@
   }
 
   // Which panel owns the logo's corner, and which edges it sits on. A corner of
-  // the canvas always belongs to whichever panel touches that edge — feature is
-  // left (wide) or top (tall); content is the opposite — so pinning the logo into
+  // the canvas always belongs to whichever panel touches that edge - feature is
+  // left (wide) or top (tall); content is the opposite - so pinning the logo into
   // that panel reproduces a true canvas-corner position while letting that panel's
   // own content reflow to clear it. Returns null when there's nothing to reflow.
   function logoOwner() {
@@ -286,7 +286,7 @@
     var left = corner.indexOf('left') >= 0;
     var fEmpty = feature.classList.contains('is-empty');
     var cEmpty = content.classList.contains('is-empty');
-    if (fEmpty && cEmpty) return null;            // bare photo/colour field — leave on root
+    if (fEmpty && cEmpty) return null;            // bare photo/colour field - leave on root
     var panel;
     if (fEmpty)      panel = content;             // single block: the surviving panel owns it
     else if (cEmpty) panel = feature;
@@ -297,7 +297,7 @@
   }
 
   // Binary-search the font-size so the block's stack fills the space it's GIVEN
-  // without overflowing — short copy goes large, long copy shrinks. One size
+  // without overflowing - short copy goes large, long copy shrinks. One size
   // scales the whole stack, so the per-element em ratios (and the size knobs)
   // hold. availW/availH let the caller carve the logo's band out of the box.
   function fitText(fit, availW, availH) {
@@ -365,11 +365,11 @@
     root.dataset.mode = mode;
     // A colour split follows the long edge; over a photo we always stack.
     root.dataset.orient = (mode === 'photo') ? 'tall' : (ar >= 1 ? 'wide' : 'tall');
-    // Past ~3:1 it reads as a banner — lay the CTA out to the right of the copy.
+    // Past ~3:1 it reads as a banner - lay the CTA out to the right of the copy.
     root.dataset.banner = ar > 3 ? '1' : '';
 
     if (fHas && cHas) {
-      // Feature block's share of the long edge — generous by default, eased toward
+      // Feature block's share of the long edge - generous by default, eased toward
       // a slimmer band as the canvas gets extreme, trimmed when the message is long.
       var extreme = ar >= 1 ? ar : 1 / ar;
       var split = 42 - Math.min(15, (extreme - 1) * 8);

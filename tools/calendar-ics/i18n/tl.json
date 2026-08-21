@@ -12,7 +12,7 @@
   "inputs.allDay.help": "Huwag pansinin ang oras at i-book ang buong araw.",
   "inputs.city.label": "Lokasyon",
   "inputs.city.placeholder": "hal. Nuremberg, o isang meeting link",
-  "inputs.city.help": "Kung saan ito mangyayari — isang lugar o isang URL. Shared id sa Meeting Planner (city).",
+  "inputs.city.help": "Kung saan ito mangyayari - isang lugar o isang URL. Shared id sa Meeting Planner (city).",
   "inputs.description.label": "Deskripsyon",
   "inputs.description.placeholder": "Agenda, mga tala, dial-in details…",
   "inputs.description.help": "Mga tala na kasama sa calendar entry.",

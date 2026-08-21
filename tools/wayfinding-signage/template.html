@@ -1,5 +1,5 @@
 <style>
-/* SUSE variable font — same source the badge / lockup / color-block tools use.
+/* SUSE variable font - same source the badge / lockup / color-block tools use.
    The directional glyphs (← ↑ → ↓ ↖ ↗ ↘ ↙) are all present in this font. */
 @font-face {
   font-family: 'SUSE';
@@ -58,7 +58,7 @@
 
 /* ── Directions: a stack of arrow + label rows ──
    Rows share the list height equally (flex: 1), so however many destinations
-   you add they fill the sign — no empty gap below, no overflow. Each row is its
+   you add they fill the sign - no empty gap below, no overflow. Each row is its
    own size container, so the arrow + label size to the row's height (cqh): more
    rows → shorter rows → smaller type; fewer rows → bigger type. */
 .way-list {
@@ -149,12 +149,12 @@
 <script>
 (function () {
   // Auto-fit the direction labels: shrink EVERY label by one uniform factor so
-  // the longest fits on a single line — no ellipsis truncation, and all rows keep
+  // the longest fits on a single line - no ellipsis truncation, and all rows keep
   // the same text size. The template is logic-less, so the measuring lives here.
   //
   // The factor is resolution-independent: a label's text width and the box it
   // sits in both scale with the sign, so the ratio (and therefore the needed
-  // shrink) is the same at A4 or A1, portrait or landscape — one measurement holds
+  // shrink) is the same at A4 or A1, portrait or landscape - one measurement holds
   // for every export size. We measure at the currently-applied scale and back-
   // solve, so it's exact in a single pass with no reset-to-full-size flash.
   function fit() {

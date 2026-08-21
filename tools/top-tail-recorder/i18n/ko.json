@@ -1,7 +1,7 @@
 {
   "name": "인트로 & 아웃트로 영상",
   "description": "어떤 방향으로든 클립을 녹화하면 브랜드 인트로·아웃트로와 하단 자막, 배경 음악을 자동으로 둘러줘요.",
-  "a11yLabel": "인트로 & 아웃트로 영상 — {{default introTitle \"intro\"}}부터 {{default outroTitle \"outro\"}}까지",
+  "a11yLabel": "인트로 & 아웃트로 영상 - {{default introTitle \"intro\"}}부터 {{default outroTitle \"outro\"}}까지",
   "inputs.orientation.label": "방향",
   "inputs.orientation.options.portrait": "세로 · 1080 × 1920",
   "inputs.orientation.options.landscape": "가로 · 1920 × 1080",

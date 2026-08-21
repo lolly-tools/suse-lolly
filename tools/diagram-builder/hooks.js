@@ -1,7 +1,7 @@
 /* global onInit, onInput, host */
 
 /**
- * Diagram Builder — org / tree / mindmap / layercake / process / timeline /
+ * Diagram Builder - org / tree / mindmap / layercake / process / timeline /
  * cycle / pyramid / funnel / kanban / matrix / gantt, from visual cards, a typed
  * text DSL, ASCII art, a Mermaid subset, or a pasted CSV/table.
  *
@@ -38,7 +38,7 @@ var BAND_PALETTE = ['#90ebcd', '#bff1ea', '#d8f3ec', '#efefef'];
 // Theme / density / preset tables (seed inputs via the hook-patch mechanism).
 // 'brand-light'/'brand-dark' start out as SUSE's own colours (today's exact
 // look) and are overwritten in place by ensureBrandThemes() below with the
-// active brand's own color.semantic.* tokens — so under SUSE nothing changes
+// active brand's own color.semantic.* tokens - so under SUSE nothing changes
 // (the tokens resolve to these same hexes), and under any other installed
 // brand the preset follows it instead of staying SUSE-green forever.
 var THEMES = {
@@ -65,7 +65,7 @@ var PRESETS = {
 // ── dynamic brand theme (color.semantic.* → THEMES['brand-light'/'brand-dark']) ──
 // host.tokens.colors() (unlike host.tokens.resolve()) always comes back hex-
 // normalised regardless of the brand doc's native colour format (hex, oklch,
-// rgb, …) — see engine/src/tokens.ts toSwatch() — so this needs no colour-math
+// rgb, …) - see engine/src/tokens.ts toSwatch() - so this needs no colour-math
 // of its own; tools never import the engine. Runs once per mount; a brand with
 // no resolvable semantic slots (or a shell with no tokens support) leaves the
 // SUSE defaults above untouched.
@@ -125,14 +125,14 @@ var VALID_TYPES = { org: 1, layercake: 1, process: 1, timeline: 1, cycle: 1, pyr
 // ── small helpers ─────────────────────────────────────────────────────────────
 function inputsFrom(model) { var o = {}; model.forEach(function (i) { o[i.id] = i.value; }); return o; }
 function num(v, d) { var x = Number(v); return isFinite(x) ? x : d; }
-// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+// === lolly:shared clamp - generated from community/_shared/math.js; edit there and run npm run sync:shared ===
 function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
 // === /lolly:shared clamp ===
 function f2(v) { return Math.round(v * 100) / 100; }
 function arr(v) { return Array.isArray(v) ? v : []; }
 function trim(v) { return String(v == null ? '' : v).trim(); }
 function lerp(a, b, t) { return a + (b - a) * t; }
-// === lolly:shared esc — generated from community/_shared/text.js; edit there and run npm run sync:shared ===
+// === lolly:shared esc - generated from community/_shared/text.js; edit there and run npm run sync:shared ===
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -227,7 +227,7 @@ function roundedRectPath(x, y, w, h, r) {
     + 'C' + f2(x) + ' ' + f2(y + r - k) + ' ' + f2(x + r - k) + ' ' + f2(y) + ' ' + f2(x + r) + ' ' + f2(y)
     + 'Z';
 }
-// Trapezoid (4 straight segments) — funnel/pyramid tiers; fill + own stroke = PDF/EMF safe.
+// Trapezoid (4 straight segments) - funnel/pyramid tiers; fill + own stroke = PDF/EMF safe.
 function trapezoidPath(xTL, xTR, xBL, xBR, yT, yB) {
   return 'M' + f2(xTL) + ' ' + f2(yT) + 'L' + f2(xTR) + ' ' + f2(yT)
     + 'L' + f2(xBR) + ' ' + f2(yB) + 'L' + f2(xBL) + ' ' + f2(yB) + 'Z';
@@ -329,7 +329,7 @@ function shapeGeom(shape, x, y, w, h, S, strokeCol, strokeW) {
       + 'L' + f2(x2 - cut) + ' ' + f2(y2) + 'L' + f2(x + cut) + ' ' + f2(y2) + 'L' + f2(x) + ' ' + f2(cy) + 'Z';
     return { outline: hx, decor: '', tb: { x: x + cut * 0.6, y: y, w: Math.max(8, w - cut * 1.2), h: h } };
   }
-  // box / rounded — full rectangle, radius from rectRx (unchanged behaviour).
+  // box / rounded - full rectangle, radius from rectRx (unchanged behaviour).
   return { outline: roundedRectPath(x, y, w, h, rectRx(shape, w, h, S)), decor: '', tb: full };
 }
 
@@ -399,7 +399,7 @@ function renderCard(n, S) {
 
   // Side-by-side: image (avatar) on the left, text left-aligned in the width that
   // remains. A card with no image starts its text at the left edge, so it takes the
-  // whole card — a missing headshot simply gives the text more room.
+  // whole card - a missing headshot simply gives the text more room.
   if (S.cardLayout === 'row') {
     var rink = inkOn(fill, S.nodeText), rdink = inkOn(fill, S.detailColor);
     var rpad = S.cardPadV, rside = S.rowImgSide, rHasImg = n.image && rside > 0;
@@ -623,7 +623,7 @@ function layoutLayercake(nodes, rawLayers, S) {
   var layers = [], layerById = {};
   rawLayers.forEach(function (b, i) {
     if (!b) return;
-    // slug(layerId) || slug(label) || ordinal — mirrors the shell reference picker
+    // slug(layerId) || slug(label) || ordinal - mirrors the shell reference picker
     // (deriveBlockKeys) so a band's id matches whatever a card's Group dropdown stored.
     var id = slug(b.layerId) || slug(b.label) || ('layer-' + (i + 1));
     if (layerById[id] !== undefined) return;
@@ -647,7 +647,7 @@ function layoutLayercake(nodes, rawLayers, S) {
   });
 
   // Bands fit their CONTENT: cards keep a uniform width and the inner area is sized
-  // to the busiest band — so a sparse layercake isn't stretched to a fixed width.
+  // to the busiest band - so a sparse layercake isn't stretched to a fixed width.
   // Cards only shrink if the busiest band would exceed capW.
   var padX = 20, padY = 18, bandGap = Math.round(S.rowGap * 0.29), cardGap = Math.round(S.siblingGap * 0.53);
   var maxLabelW = 0;
@@ -691,7 +691,7 @@ function layoutKanban(nodes, rawColumns, S, inp) {
   var cols = [], byId = {};
   arr(rawColumns).forEach(function (b, i) {
     if (!b) return;
-    // slug(layerId) || slug(label) || ordinal — mirror the shell picker (deriveBlockKeys).
+    // slug(layerId) || slug(label) || ordinal - mirror the shell picker (deriveBlockKeys).
     var id = slug(b.layerId) || slug(b.label) || ('col-' + (i + 1));
     if (byId[id]) return;
     byId[id] = { idx: i, id: id, label: trim(b.label) || titleize(id), bandFill: color(b.bandFill, S.bandPalette[cols.length % S.bandPalette.length]), _cards: [] };
@@ -814,7 +814,7 @@ function layoutCycle(nodes, S, inp, bb) {
         var mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2, bow = R * 0.18;
         // Bow outward along the radius from the ring centre. For a 2-stage ring the
         // chord midpoint IS the centre (radius ≈ 0), so the two opposing edges would
-        // collapse onto the same arc — fall back to a per-edge horizontal offset.
+        // collapse onto the same arc - fall back to a per-edge horizontal offset.
         var radial = Math.hypot(mx, my), bx, by;
         if (radial > 1e-6) { bx = (mx / radial) * bow; by = (my / radial) * bow; }
         else { bx = (i % 2 === 0 ? bow : -bow); by = 0; }
@@ -1065,18 +1065,18 @@ function bounds() {
 
 // ── empty-state placeholder (type + source aware, faint sample sketch) ────────────
 var EMPTY_HINTS = {
-  org: 'Add cards — set each card\'s “Reports to” to build the tree',
-  mindmap: 'Add cards — set “Parent” to branch out from the centre',
+  org: 'Add cards - set each card\'s “Reports to” to build the tree',
+  mindmap: 'Add cards - set “Parent” to branch out from the centre',
   layercake: 'Add cards and layers to stack your layercake',
   process: 'Add cards and flow arrows to lay out your process',
-  timeline: 'Add cards in order — each one is a milestone on the spine',
-  cycle: 'Add stages in order — they loop around a ring',
+  timeline: 'Add cards in order - each one is a milestone on the spine',
+  cycle: 'Add stages in order - they loop around a ring',
   pyramid: 'Add tiers top→bottom to stack a pyramid / funnel',
   kanban: 'Add cards and set each card\'s “Group” to a column',
   matrix: 'Add items and place each in a quadrant',
   gantt: 'Add tasks with a start + length to lay bars on a time axis'
 };
-var SOURCE_HINTS = { text: 'Type a diagram — the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', pikchr: 'Paste Pikchr: box "A"; arrow; box "B"', table: 'Paste rows: id,label,parent  (or from,to,label)' };
+var SOURCE_HINTS = { text: 'Type a diagram - the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', pikchr: 'Paste Pikchr: box "A"; arrow; box "B"', table: 'Paste rows: id,label,parent  (or from,to,label)' };
 function placeholder(mode, source) {
   var msg = (source && SOURCE_HINTS[source]) ? SOURCE_HINTS[source] : (EMPTY_HINTS[mode] || EMPTY_HINTS.org);
   var ghost = '#cfe6dd';
@@ -1120,7 +1120,7 @@ function splitToken(s) {
   var fill = '', fm = s.match(/\s(#[0-9a-fA-F]{3,8})\s*$/);
   if (fm) {
     // Only treat a trailing #hex as a card fill if it's a real colour length (6/8) or
-    // a 3/4 shorthand containing a hex letter — so "Issue #1234" / "Room #500" stay as
+    // a 3/4 shorthand containing a hex letter - so "Issue #1234" / "Room #500" stay as
     // labels instead of being eaten as a colour.
     var hx = fm[1].slice(1), hl = hx.length, hasLetter = /[a-f]/i.test(hx);
     if (hl === 6 || hl === 8 || ((hl === 3 || hl === 4) && hasLetter)) { fill = fm[1]; s = s.slice(0, fm.index); }
@@ -1319,7 +1319,7 @@ function parseMermaid(text) {
     var sg = t.match(/^subgraph\s+(.+)$/i);
     if (sg) {
       diagramType = 'layercake';
-      // Mermaid "subgraph id[Title]" — id is referenced by edges, the bracket is the
+      // Mermaid "subgraph id[Title]" - id is referenced by edges, the bracket is the
       // display title. Bare "subgraph Title" uses the whole token as the label.
       var sgRaw = sg[1].replace(/^["']|["']$/g, '').trim();
       var mb = sgRaw.match(/^([A-Za-z0-9_]+)\s*\[([\s\S]*)\]$/);
@@ -1383,7 +1383,7 @@ function gridBg(kind, vbX, vbY, vbW, vbH, col) {
 // attach by compass points; we lay everything out in inches (y-up, like PIC), map
 // closed objects → themed cards and open objects → export-safe connectors, then flip
 // to screen pixels. Unsupported constructs (macros, [blocks], expressions, splines)
-// are skipped and logged — never eval'd.
+// are skipped and logged - never eval'd.
 var PIK_U = 96; // pixels per inch
 var PIK_COLORS = {
   black: '#000000', white: '#ffffff', red: '#e5484d', green: '#1a7f4b', blue: '#2264d1',
@@ -1564,7 +1564,7 @@ function parsePikchr(text, labelPx) {
     }
     return { pos: base, next: i };
   }
-  // A scalar (inches) — a number, or an object's .x/.y coordinate.
+  // A scalar (inches) - a number, or an object's .x/.y coordinate.
   function scalarAt(tk, i) {
     if (tk[i] && tk[i].t === 'num') { var s = pikScalar(tk[i].v, U, 0); if (s && s.inch !== undefined) return { val: s.inch, next: i + 1 }; if (s && s.pct !== undefined) return { val: s.pct, next: i + 1 }; }
     if (tk[i] && tk[i].t === 'p' && tk[i].v === '-' && tk[i + 1] && tk[i + 1].t === 'num') { var s2 = pikScalar(tk[i + 1].v, U, 0); if (s2 && s2.inch !== undefined) return { val: -s2.inch, next: i + 2 }; }
@@ -1576,7 +1576,7 @@ function parsePikchr(text, labelPx) {
   }
 
   joined.forEach(function (stmt) {
-    // Sub-blocks [ … ] and their positioned form  Name: [ … ]  aren't supported — skip
+    // Sub-blocks [ … ] and their positioned form  Name: [ … ]  aren't supported - skip
     // the whole statement rather than mis-parsing the first object inside it.
     if (/^\s*(?:[A-Za-z_][A-Za-z0-9_]*\s*:\s*)?\[/.test(stmt) || /^\s*\]/.test(stmt)) { warn('skipped [block]'); return; }
     var tk = pikTokenize(stmt);
@@ -1655,7 +1655,7 @@ function parsePikchr(text, labelPx) {
       // font/label-placement words we accept-and-ignore
       if (kw && /^(big|small|bold|italic|aligned|above|below|ljust|rjust|cw|ccw|mono|monospace)$/.test(kw)) { i++; continue; }
       if (kw === 'arrow') { headEnd = true; i++; continue; }
-      i++; // unknown token — skip
+      i++; // unknown token - skip
     }
 
     // ── build the object ─────────────────────────────────────────────
@@ -1741,7 +1741,7 @@ function parsePikchr(text, labelPx) {
       if (o.type === 'dot') { prims.push({ kind: 'dot', x: X(o.cx), y: Y(o.cy), r: Math.max(2.5, o.w / 2 * U), color: o.fill }); return; }
       if (o.invis) return;
       var w = o.w * U, h = o.h * U;
-      // All strings are equal-weight lines (PIC has no title/subtitle) — join them and
+      // All strings are equal-weight lines (PIC has no title/subtitle) - join them and
       // let the card wrap; width was fit to the longest string so breaks land per-line.
       maxLines = Math.max(maxLines, o.labels.length || 1);
       nodes.push({ shape: o.shape, nodeId: '', label: o.labels.join(' '), detail: '', image: '', fill: o.fill && o.fill !== 'none' ? o.fill : '', parent: '', layer: '', quadrant: '', stroke: o.stroke, strokeWidth: o.sw });
@@ -1811,7 +1811,7 @@ function renderPikchrPrims(prims, S, bg, bb) {
     }
     pts.forEach(function (pt) { bb.add(pt.x, pt.y, 0, 0); });
     // Labels: plain stacked text sitting just off the midpoint segment (Pikchr-style),
-    // NOT a boxed pill — a labelled arrow should still read as an arrow.
+    // NOT a boxed pill - a labelled arrow should still read as an arrow.
     var labs = arr(p.labels).map(trim).filter(Boolean);
     if (labs.length) {
       var half = (pts.length - 1) / 2;
@@ -1905,7 +1905,7 @@ async function buildDiagram(inp) {
   var bb = bounds();
   var layout;
 
-  // cardH (uniform) — computed up front from the active reference width; layercake
+  // cardH (uniform) - computed up front from the active reference width; layercake
   // sets its own (per-band widths vary) and ascii preserves the drawn boxes.
   function setCardH(refW) {
     // In row mode an image card's text is only as wide as what's left beside the
@@ -1999,8 +1999,8 @@ async function buildDiagram(inp) {
 
   var arrows = renderArrows(src.arrows, nodeById, layout.layerById, bg, bb, S);
   if (host && host.log) {
-    if (arrows.unresolved) host.log('warn', 'diagram-builder: ' + arrows.unresolved + ' arrow(s) skipped — unresolved From/To ID');
-    if (arrows.degenerate) host.log('warn', 'diagram-builder: ' + arrows.degenerate + ' arrow(s) skipped — endpoints coincide or one contains the other');
+    if (arrows.unresolved) host.log('warn', 'diagram-builder: ' + arrows.unresolved + ' arrow(s) skipped - unresolved From/To ID');
+    if (arrows.degenerate) host.log('warn', 'diagram-builder: ' + arrows.degenerate + ' arrow(s) skipped - endpoints coincide or one contains the other');
   }
 
   if (bb.empty()) bb.add(0, 0, 1200, 760);
@@ -2125,7 +2125,7 @@ function parseAscii(text) {
 
 // ── preset / theme / density seeding ─────────────────────────────────────────────
 // Seeds run ONLY in reaction to the user changing the preset/theme/density select
-// (compute is told the changed input id) — never on reload/onInit. So a seed never
+// (compute is told the changed input id) - never on reload/onInit. So a seed never
 // clobbers a manual edit the user made afterwards: re-opening a saved/shared diagram
 // renders the persisted values as-is. The preset→theme→density cascade still resolves
 // in a single change because each step reads `patch.X || inp.X`.

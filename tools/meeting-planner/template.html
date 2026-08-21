@@ -14,7 +14,7 @@
 .mp-light { background: #f0f5f2; color: #0c322c; --accent: #0a6e43; --muted: rgba(12,50,44,.58);   --land: #9fbfaa; --ocean: #cde4d5; }
 .mp-green { background: #30ba78; color: #0c322c; --accent: #ffffff; --muted: rgba(12,50,44,1);   --land: #1a7a48; --ocean: #0d5c35; }
 
-/* ── Layout: portrait — map left, sidebar right ──────────────────────────── */
+/* ── Layout: portrait - map left, sidebar right ──────────────────────────── */
 .mp-root.mp-layout-portrait {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -44,7 +44,7 @@
   flex: none;
 }
 
-/* ── Layout: square — pillarbox to 1080×1080 content area ───────────────── */
+/* ── Layout: square - pillarbox to 1080×1080 content area ───────────────── */
 .mp-root.mp-layout-square {
   padding: 0 420px;
 }
@@ -158,7 +158,7 @@
 
 <script>
 (function () {
-  /* ── Epoch guard — prevents stale async callbacks from drawing ───────── */
+  /* ── Epoch guard - prevents stale async callbacks from drawing ───────── */
   if (window.__mpIv) { window.__mpIv.forEach(clearInterval); }
   window.__mpIv    = [];
   window.__mpEpoch = (window.__mpEpoch || 0) + 1;
@@ -168,7 +168,7 @@
 
   /* ── Template inputs ─────────────────────────────────────────────────── */
   // Use _-prefixed extras (not declared input IDs) so annotateTemplate does not
-  // wrap these in <!-- ci:id --> markers inside the script — JS treats <!-- as
+  // wrap these in <!-- ci:id --> markers inside the script - JS treats <!-- as
   // a single-line comment when it appears at statement level (ECMAScript Annex B).
   var hostCity      = '{{_hostCity}}';
   var meetingTime   = '{{_meetingTime}}';
@@ -310,7 +310,7 @@
 
   function geocode(city) {
     if (_gc[city]) return Promise.resolve(_gc[city]);
-    /* Check localStorage cache — populated on previous online sessions so the
+    /* Check localStorage cache - populated on previous online sessions so the
        tool works fully offline once a city has been looked up at least once. */
     var lsStore = _gcLsLoad();
     if (lsStore[city]) { _gc[city] = lsStore[city]; return Promise.resolve(lsStore[city]); }
@@ -340,7 +340,7 @@
     return [lon, dec];
   }
 
-  /* ── Script loader — deduplicates concurrent loads across re-renders ──── */
+  /* ── Script loader - deduplicates concurrent loads across re-renders ──── */
   function loadScript(src, present) {
     if (present()) return Promise.resolve();
     window.__mpLoading = window.__mpLoading || {};
@@ -363,7 +363,7 @@
     mapEl.innerHTML = '';
     teamEl.innerHTML = '';
 
-    /* Collectors for live-clock ticking — populated as we draw, then replayed by
+    /* Collectors for live-clock ticking - populated as we draw, then replayed by
        update() on each tick so only the time-dependent bits change (no full
        redraw → no flicker, zoom/pan preserved). */
     var nightSel     = null;
@@ -601,7 +601,7 @@
     });
 
     /* Paint the initial frame from refDate. update() replays the same updaters
-       on each live-clock tick — only the time-dependent attrs/text change. */
+       on each live-clock tick - only the time-dependent attrs/text change. */
     function update(rd) {
       if (!alive()) return;
       if (nightSel) { try { nightSel.attr('d', nightPathD(rd)); } catch(e) {} }
@@ -641,7 +641,7 @@
        - Prefer window.__mpZoom (live state from earlier in this session) if set,
          so projection/theme changes don't reset the user's pan/zoom position.
        - Fall back to mapZoomIn (from URL / saved slot) on first load.
-       - If mapZoomIn is empty the user cleared it — also clear the live state. */
+       - If mapZoomIn is empty the user cleared it - also clear the live state. */
     if (!mapZoomIn) window.__mpZoom = null;
     var restoreT = window.__mpZoom || (function() {
       if (!mapZoomIn) return null;

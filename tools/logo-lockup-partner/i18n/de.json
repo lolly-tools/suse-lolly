@@ -13,7 +13,7 @@
   "inputs.leadTreatment.options.colour": "Vollfarbig",
   "inputs.leadTreatment.options.mono": "Einfarbig",
   "inputs.leadPresence.label": "Präsenz des Hauptlogos",
-  "inputs.leadPresence.help": "Wie präsent das Hauptlogo ist, zusätzlich zu einem etwaigen Ausgleich. Verwenden Sie Groß/Hero (oder die extremeren Stufen) für eine klare Host-Hierarchie im Sinne von „bereitgestellt von“. Die gesamte Kombination skaliert weiterhin, um in die Zeichenfläche zu passen — diese Einstellungen legen also die relative Präsenz fest.",
+  "inputs.leadPresence.help": "Wie präsent das Hauptlogo ist, zusätzlich zu einem etwaigen Ausgleich. Verwenden Sie Groß/Hero (oder die extremeren Stufen) für eine klare Host-Hierarchie im Sinne von „bereitgestellt von“. Die gesamte Kombination skaliert weiterhin, um in die Zeichenfläche zu passen - diese Einstellungen legen also die relative Präsenz fest.",
   "inputs.leadPresence.options.xxlarge": "Riesig",
   "inputs.leadPresence.options.xlarge": "Extragroß",
   "inputs.leadPresence.options.hero": "Hero",
