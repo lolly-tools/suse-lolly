@@ -1,6 +1,6 @@
 {
   "name": "Dynamisches Layout",
-  "description": "Ein Alleskönner-Layout, das sich an alles anpasst, was Sie hinzufügen - in jeder Größe.",
+  "description": "Ein Alleskönner-Layout, das sich an alles anpasst, was Sie hinzufügen – in jeder Größe.",
   "a11yLabel": "{{default heading cta}} - Dynamisches-Layout-Vorschau",
   "inputs.logo.label": "Logo",
   "inputs.logo.section": "Logo",

@@ -1,6 +1,6 @@
 {
   "name": "Video s úvodem a závěrem",
-  "description": "Nahraj klip v libovolné orientaci - automaticky ho obalíme značkovým úvodem a závěrem, spodním titulkem a hudebním podkresem.",
+  "description": "Nahraj klip v libovolné orientaci – automaticky ho obalíme značkovým úvodem a závěrem, spodním titulkem a hudebním podkresem.",
   "a11yLabel": "Video s úvodem a závěrem - {{default introTitle \"intro\"}} až {{default outroTitle \"outro\"}}",
   "inputs.orientation.label": "Orientace",
   "inputs.orientation.options.portrait": "Na výšku · 1080 × 1920",
