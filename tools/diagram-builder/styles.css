@@ -9,3 +9,10 @@ svg {
 /* Click-to-focus: annotated parts (card→data source, background, title) jump to
    their sidebar control on click - hint that they're interactive. */
 [data-canvas-input] { cursor: pointer; }
+
+/* Dated roadmap axis: tick dates and the today marker in the brand mono face.
+   The rule (not an attribute) is what the vector export reads, since it resolves a
+   run's COMPUTED font-family before outlining it. */
+svg text.db-axis {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+}

@@ -146,6 +146,12 @@ function color(v, fallback) {
 function slug(s) { return trim(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
 function titleize(s) { s = String(s == null ? '' : s).replace(/[-_]+/g, ' ').trim(); return s.replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
 
+// Non-fatal notes about the data (a date we could not read, rows we had to mix on
+// one axis). They travel out as the `ganttWarning` extra and the console, never as
+// ink: an exported roadmap must not carry our diagnostics. Reset per build.
+var _notes = [];
+function note(msg) { if (_notes.length < 6 && _notes.indexOf(msg) < 0) _notes.push(msg); }
+
 // ── auto-contrast text (house pattern: shells/web/src/palette.js + sibling tools) ──
 // WCAG relative luminance of a #hex; null for transparent/rgb()/invalid (unmeasurable).
 function relLuminance(hex) {
@@ -202,8 +208,8 @@ function textWidth(str, fontSize) { return String(str).length * fontSize * 0.62;
 
 // ── SVG primitives (baseline computed; export-safe subset only) ──────────────────
 var FONT = "SUSE, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
-function textEl(x, y, str, size, weight, fill, anchor) {
-  return '<text x="' + f2(x) + '" y="' + f2(y) + '" font-family="' + FONT + '"'
+function textEl(x, y, str, size, weight, fill, anchor, cls) {
+  return '<text ' + (cls ? 'class="' + cls + '" ' : '') + 'x="' + f2(x) + '" y="' + f2(y) + '" font-family="' + FONT + '"'
     + ' font-size="' + f2(size) + '" font-weight="' + weight + '" fill="' + esc(fill) + '"'
     + ' text-anchor="' + (anchor || 'middle') + '">' + esc(str) + '</text>';
 }
@@ -478,6 +484,7 @@ function normaliseNodes(rawNodes) {
     used[id] = 1;
     var ref = b.image;
     var imgUrl = (typeof ref === 'string') ? trim(ref) : ((ref && ref.url) ? ref.url : '');
+    var startDay = parseDay(b.startDate), endDay = parseDay(b.endDate);
     nodes.push({
       idx: i, id: id,
       shape: SHAPES[b.shape] ? b.shape : 'rounded',
@@ -490,6 +497,9 @@ function normaliseNodes(rawNodes) {
       quadrant: slug(b.quadrant),
       score: (Array.isArray(b.score) && b.score.length === 2 && isFinite(b.score[0]) && isFinite(b.score[1])) ? b.score : null,
       _start: num(b.ganttStart, NaN), _len: num(b.ganttLen, NaN),
+      _sd: startDay ? startDay.day : NaN, _ed: endDay ? endDay.day : NaN,
+      _milestone: b.milestone === true,
+      _dateNotes: dateNotes(startDay, endDay, label || id),
       stroke: trim(b.stroke), strokeWidth: num(b.strokeWidth, NaN),
       x: 0, y: 0, w: 0, h: 0
     });
@@ -912,8 +922,94 @@ function layoutMatrix(nodes, S, inp, bb) {
   return { autoEdges: [], bands: [], layerById: {}, behind: behind, front: front };
 }
 
+// ── dates (gantt / roadmap) ──────────────────────────────────────────────────────
+// A date is a whole-day number counted from 1970-01-01 in UTC, so bar maths never
+// touches local time or DST and the browser and the CLI agree to the pixel.
+var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var SCALE_DAYS = { days: 1, weeks: 7, months: 30.44, quarters: 91.31 };
+function dayFromYMD(y, m, d) { return Math.round(Date.UTC(y, m - 1, d) / 86400000); }
+function ymdFromDay(day) { var t = new Date(Math.round(day) * 86400000); return { y: t.getUTCFullYear(), m: t.getUTCMonth() + 1, d: t.getUTCDate() }; }
+// 'yyyy-mm-dd' (what a date input stores), tolerating 'd/m/yyyy' and 'd.m.yyyy'.
+// → null for empty, else { day, text, loose }; day is NaN when it is not a date.
+// Blocks have no date sub-field type, so a card's dates arrive here as free text.
+function parseDay(v) {
+  var s = trim(v);
+  if (!s) return null;
+  var iso = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[T ].*)?$/);
+  var loose = iso ? null : s.match(/^(\d{1,2})[./](\d{1,2})[./](\d{4})$/);
+  var y, m, d;
+  if (iso) { y = +iso[1]; m = +iso[2]; d = +iso[3]; }
+  else if (loose) { d = +loose[1]; m = +loose[2]; y = +loose[3]; }
+  else return { day: NaN, text: s, loose: false };
+  var day = dayFromYMD(y, m, d), back = ymdFromDay(day);
+  // Round-trip check, so 2026-02-31 is refused rather than rolled into March.
+  if (back.y !== y || back.m !== m || back.d !== d) return { day: NaN, text: s, loose: false };
+  return { day: day, text: s, loose: !!loose };
+}
+function fmtDay(day) { var t = ymdFromDay(day); return t.d + ' ' + MONTHS[t.m - 1] + ' ' + t.y; }
+function dateNotes(sd, ed, who) {
+  var out = [];
+  [sd, ed].forEach(function (p) {
+    if (!p) return;
+    if (!isFinite(p.day)) out.push('“' + p.text + '” on ' + who + ' is not a date - use yyyy-mm-dd');
+    else if (p.loose) out.push('read “' + p.text + '” on ' + who + ' as ' + fmtDay(p.day) + ' (day/month/year)');
+  });
+  if (sd && ed && isFinite(sd.day) && isFinite(ed.day) && ed.day < sd.day) out.push(who + ' ends before it starts - drawn as one day');
+  // A bar is placed by its start, so an end date on its own cannot be drawn. Say it,
+  // rather than let a typed date vanish with no sign.
+  if (!(sd && isFinite(sd.day)) && ed && isFinite(ed.day)) out.push(who + ' has an end date but no start date - the end date is ignored');
+  return out;
+}
+// Which tick spacing suits a span, when the user leaves the scale on Auto.
+function pickScale(spanDays) {
+  if (spanDays <= 21) return 'days';
+  if (spanDays <= 120) return 'weeks';
+  if (spanDays <= 800) return 'months';
+  return 'quarters';
+}
+// Tick days at NATURAL boundaries inside [from,to]: each day, each Monday, each 1st
+// of the month, each quarter start. 1970-01-05 was a Monday, hence day % 7 === 4.
+// A span too long for one tick per unit takes every Nth unit instead, so the axis
+// still reaches its own end; a stopping-short axis mislabels the whole chart. Under
+// CAP units the multiplier is 1 and the ticks are exactly one per unit as before.
+var TICK_CAP = 4000;
+function axisTicks(from, to, scale) {
+  var out = [], i, span = to - from;
+  if (scale === 'days') {
+    var ds = Math.max(1, Math.ceil(span / TICK_CAP));
+    for (i = Math.ceil(from); i <= to; i += ds) out.push(i);
+    return out;
+  }
+  if (scale === 'weeks') {
+    var ws = 7 * Math.max(1, Math.ceil(span / (7 * TICK_CAP)));
+    for (i = Math.ceil((from - 4) / 7) * 7 + 4; i <= to; i += ws) out.push(i);
+    return out;
+  }
+  var a = ymdFromDay(Math.ceil(from)), y = a.y, m = a.m;
+  var step = (scale === 'quarters' ? 3 : 1) * Math.max(1, Math.ceil(span / 30.44 / TICK_CAP));
+  if (a.d > 1) { m++; if (m > 12) { m = 1; y++; } }
+  if (scale === 'quarters') { while ((m - 1) % 3 !== 0) { m++; if (m > 12) { m = 1; y++; } } }
+  for (i = 0; i <= TICK_CAP; i++) {
+    var dd = dayFromYMD(y, m, 1);
+    if (dd > to) break;
+    if (dd >= from) out.push(dd);
+    m += step; while (m > 12) { m -= 12; y++; }
+  }
+  return out;
+}
+function tickLabel(day, scale) {
+  var t = ymdFromDay(day), yy = String(t.y).slice(2);
+  if (scale === 'quarters') return 'Q' + (Math.floor((t.m - 1) / 3) + 1) + ' ' + yy;
+  if (scale === 'months') return MONTHS[t.m - 1] + (t.m === 1 ? ' ' + yy : '');
+  return t.d + ' ' + MONTHS[t.m - 1];
+}
+
 // ── gantt / roadmap layout: time-axis bars ───────────────────────────────────────
-function layoutGantt(nodes, S, inp, bb) {
+function layoutGantt(nodes, rawLayers, S, inp, bb) {
+  nodes.forEach(function (n) { arr(n._dateNotes).forEach(note); });
+  // One readable start date anywhere switches the whole chart to a date axis;
+  // with none, the unitless bars below are exactly what they always were.
+  if (nodes.some(function (n) { return isFinite(n._sd); })) return layoutGanttDates(nodes, rawLayers, S, inp, bb);
   var seq = 0;
   nodes.forEach(function (n) { if (!isFinite(n._start)) n._start = seq; if (!isFinite(n._len) || n._len <= 0) n._len = 1; seq = Math.max(seq, n._start + n._len); });
   var minT = Infinity, maxT = -Infinity;
@@ -945,6 +1041,149 @@ function layoutGantt(nodes, S, inp, bb) {
   });
   bb.add(0, 0, gutter, totalH);
   return { autoEdges: [], bands: [], layerById: {}, behind: behind, skipCards: true };
+}
+
+// ── dated roadmap: real dates on the axis, swimlanes, milestones, today-line ─────
+// Additive to the unitless bars above and reached only from there. Cards group into
+// swimlanes by the SAME “Group” field the layercake bands use (there is no second
+// lane field), and the bands render through the shared band pass in buildDiagram.
+function layoutGanttDates(nodes, rawLayers, S, inp, bb) {
+  var minT = Infinity, maxT = -Infinity, dated = [], undated = [];
+  nodes.forEach(function (n) {
+    if (!isFinite(n._sd)) { undated.push(n); return; }
+    var s = n._sd;
+    // An end date is INCLUSIVE, so the bar runs to the end of that day; a task with
+    // only a start is one day; a milestone is a point, not a span.
+    n._t0 = s;
+    n._t1 = n._milestone ? s : ((isFinite(n._ed) && n._ed >= s) ? n._ed + 1 : s + 1);
+    minT = Math.min(minT, n._t0); maxT = Math.max(maxT, n._t1);
+    dated.push(n);
+  });
+  if (maxT <= minT) maxT = minT + 1;
+  var scale = SCALE_DAYS[inp.ganttScale] ? inp.ganttScale : pickScale(maxT - minT);
+
+  // Mixed rows: cards with no date keep their unitless start/length, one unit read
+  // as one step of the chosen scale from the chart start. The two are not the same
+  // measurement, so it is said out loud rather than quietly drawn as fact.
+  if (undated.length) {
+    var step = SCALE_DAYS[scale], seq = 0;
+    undated.forEach(function (n) {
+      var s0 = isFinite(n._start) ? n._start : seq, len = (isFinite(n._len) && n._len > 0) ? n._len : 1;
+      seq = Math.max(seq, s0 + len);
+      n._t0 = minT + s0 * step; n._t1 = n._t0 + len * step;
+      maxT = Math.max(maxT, n._t1);
+    });
+    note(undated.length + ' card(s) have no start date - kept on the unitless scale at the bottom');
+  }
+
+  // Lanes, in first-use order, taking their label + fill from the Layers list when
+  // that card's group is declared there. A lane is only created once a card uses it.
+  // Both maps are keyed by a user-typed group name, so they have no prototype: a
+  // lane called "constructor" must be a lane, not Object.prototype.constructor.
+  var declared = Object.create(null), lanes = [], laneById = Object.create(null);
+  arr(rawLayers).forEach(function (b, i) {
+    if (!b) return;
+    var did = slug(b.layerId) || slug(b.label) || ('layer-' + (i + 1));
+    if (!declared[did]) declared[did] = { label: trim(b.label) || titleize(did), bandFill: trim(b.bandFill) };
+  });
+  var useLanes = nodes.some(function (n) { return !!n.layerId; });
+  function lane(id, forcedLabel) {
+    if (!laneById[id]) {
+      var d = declared[id];
+      laneById[id] = {
+        id: id, label: forcedLabel || (d && d.label) || titleize(id),
+        bandFill: color(d ? d.bandFill : '', S.bandPalette[lanes.length % S.bandPalette.length]),
+        _cards: [], _rows: []
+      };
+      lanes.push(laneById[id]);
+    }
+    return laneById[id];
+  }
+  var rows = [];
+  if (useLanes) {
+    dated.forEach(function (n) { (n.layerId ? lane(n.layerId, '') : lane('__ungrouped__', 'Ungrouped'))._rows.push(n); });
+    undated.forEach(function (n) { lane('__undated__', 'Undated')._rows.push(n); });
+    lanes.forEach(function (L) { L._rows.forEach(function (n) { rows.push(n); }); });
+  } else {
+    dated.forEach(function (n) { rows.push(n); });
+    undated.forEach(function (n) { rows.push(n); });
+  }
+
+  var span = maxT - minT;
+  var ticks = axisTicks(minT, maxT, scale);
+  if (ticks.length > 40) {
+    var stride = Math.ceil(ticks.length / 40);
+    ticks = ticks.filter(function (t, i) { return i % stride === 0; });
+  }
+  var maxLaneW = 0;
+  lanes.forEach(function (L) { maxLaneW = Math.max(maxLaneW, textWidth(L.label, 15)); });
+  var laneW = useLanes ? clamp(maxLaneW + 44, 96, 220) : 0;
+  var taskW = Math.max(140, S.cardWidth * 0.9), gutter = laneW + taskW;
+  var chartW = clamp(Math.max(4, ticks.length) * 78, 360, 2600), pxU = chartW / span;
+  function xOf(t) { return gutter + (t - minT) * pxU; }
+  var rowH = S.cardH + Math.round(12 * S.scale), pad = Math.round(5 * S.scale);
+  var laneGap = useLanes ? Math.round(S.rowGap * 0.2) : 0, behind = '', y = 0;
+
+  lanes.forEach(function (L) {
+    L.x = 0; L.y = y; L.w = gutter + chartW; L.h = L._rows.length * rowH;
+    L._rows.forEach(function (n, i) { n._rowY = y + i * rowH; });
+    y += L.h + laneGap;
+  });
+  if (!useLanes) rows.forEach(function (n, i) { n._rowY = i * rowH; });
+  var totalH = useLanes ? Math.max(0, y - laneGap) : rows.length * rowH;
+
+  if (inp.ganttGrid !== false) {
+    ticks.forEach(function (t) {
+      var tx = xOf(t);
+      behind += shaft(tx, -6, tx, totalH, 'solid', S.edgeColor, 0.4);
+      behind += textEl(tx, -12, tickLabel(t, scale), 10, 400, S.detailColor, 'middle', 'db-axis');
+    });
+    bb.add(gutter, -28, chartW, 0);
+  }
+
+  rows.forEach(function (n, i) {
+    var rowY = n._rowY, lab = wrapLines(n.label, maxCharsFor(taskW - 14, S.labelSize), 2);
+    var ly = rowY + (rowH - lab.length * S.labelLH) / 2 + S.labelSize * 0.8;
+    lab.forEach(function (line, li) { behind += textEl(gutter - 10, ly + li * S.labelLH, line, S.labelSize, S.labelWeight, S.nodeText, 'end'); });
+    var stroke = S.cardBorderWidth > 0 ? ' stroke="' + esc(S.nodeStroke) + '" stroke-width="' + f2(S.cardBorderWidth) + '"' : '';
+    if (n._milestone) {
+      // Zero-length: a diamond centred on the start date. Its box is the node box, so
+      // dependency arrows meet it on the rhombus like any other diamond card.
+      var r = Math.min(rowH, S.cardH) * 0.34, mx = xOf(n._t0), my = rowY + rowH / 2;
+      n.shape = 'diamond'; n.x = mx - r; n.y = my - r; n.w = r * 2; n.h = r * 2;
+      behind += '<path d="M' + f2(mx) + ' ' + f2(my - r) + 'L' + f2(mx + r) + ' ' + f2(my)
+        + 'L' + f2(mx) + ' ' + f2(my + r) + 'L' + f2(mx - r) + ' ' + f2(my) + 'Z" fill="'
+        + esc(color(n.fill, S.nodeStroke)) + '"' + stroke + '/>';
+      if (trim(n.detail)) {
+        behind += textEl(mx + r + 6, my + S.detailSize * 0.34, n.detail, S.detailSize, 400, S.detailColor, 'start');
+        bb.add(mx + r + 6, my, textWidth(n.detail, S.detailSize), 0);
+      }
+      return;
+    }
+    // With lanes the band carries the colour and a bar is a card on it, as in the
+    // layercake; with no lanes the bar keeps the palette rotation it always had.
+    var fill = color(n.fill, useLanes ? S.nodeFill : S.bandPalette[i % S.bandPalette.length]);
+    n.x = xOf(n._t0); n.y = rowY + pad; n.w = Math.max(8, (n._t1 - n._t0) * pxU); n.h = S.cardH - pad * 2;
+    behind += '<path d="' + roundedRectPath(n.x, n.y, n.w, n.h, Math.min(6, S.cornerRadius)) + '" fill="' + esc(fill) + '"' + stroke + '/>';
+    if (trim(n.detail) && n.w > textWidth(n.detail, S.detailSize) + 12) {
+      behind += textEl(n.x + n.w / 2, rowY + rowH / 2 + S.detailSize * 0.3, n.detail, S.detailSize, 400, inkOn(fill, S.nodeText), 'middle');
+    }
+  });
+
+  var today = parseDay(inp.ganttToday);
+  if (today && !isFinite(today.day)) note('“' + today.text + '” is not a date - the today-line is off');
+  if (today && isFinite(today.day) && today.day >= minT && today.day <= maxT) {
+    var tx2 = xOf(today.day);
+    behind += shaft(tx2, -6, tx2, totalH, 'solid', S.nodeText, Math.max(1.4, S.connectorWidth * 0.7));
+    behind += textEl(tx2, totalH + 16, 'Today', 10, 500, S.nodeText, 'middle', 'db-axis');
+    bb.add(tx2 - 22, totalH + 22, 44, 0);
+  }
+
+  bb.add(0, 0, gutter + chartW, totalH);
+  return {
+    autoEdges: [], bands: useLanes ? lanes : [], layerById: useLanes ? laneById : {},
+    behind: behind, skipCards: true, gutter: laneW
+  };
 }
 
 // ── explicit arrows ──────────────────────────────────────────────────────────────
@@ -1074,9 +1313,9 @@ var EMPTY_HINTS = {
   pyramid: 'Add tiers top→bottom to stack a pyramid / funnel',
   kanban: 'Add cards and set each card\'s “Group” to a column',
   matrix: 'Add items and place each in a quadrant',
-  gantt: 'Add tasks with a start + length to lay bars on a time axis'
+  gantt: 'Add tasks with real dates (or a start + length) to lay bars on a time axis'
 };
-var SOURCE_HINTS = { text: 'Type a diagram - the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', pikchr: 'Paste Pikchr: box "A"; arrow; box "B"', table: 'Paste rows: id,label,parent  (or from,to,label)' };
+var SOURCE_HINTS = { text: 'Type a diagram - the field shows the syntax', ascii: 'Draw boxes with +  -  | and arrows with ->  ^  v', mermaid: 'Paste Mermaid: graph LR  /  A[Client] --> B(API)', dot: 'Paste DOT: digraph { a -> b -> c }', pikchr: 'Paste Pikchr: box "A"; arrow; box "B"', table: 'Paste rows: id,label,parent  (or from,to,label)' };
 function placeholder(mode, source) {
   var msg = (source && SOURCE_HINTS[source]) ? SOURCE_HINTS[source] : (EMPTY_HINTS[mode] || EMPTY_HINTS.org);
   var ghost = '#cfe6dd';
@@ -1146,9 +1385,34 @@ function edgeOp(op) {
   else if (op.indexOf('>') < 0 && !o.double) o.head = 'none'; // --- or -.-
   return o;
 }
+// Split on a top-level delimiter: brackets, braces, quotes and a mermaid |edge
+// label| protect a delimiter that belongs to a label.
+function splitTop(s, ch) {
+  var out = [], depth = 0, q = '', pipe = false, cur = '';
+  for (var i = 0; i < s.length; i++) {
+    var c = s.charAt(i);
+    if (q) { cur += c; if (c === q) q = ''; continue; }
+    if (c === '"' || c === "'") { q = c; cur += c; continue; }
+    if (c === '|') { pipe = !pipe; cur += c; continue; }
+    if (c === '[' || c === '(' || c === '{') depth++;
+    else if (c === ']' || c === ')' || c === '}') depth--;
+    else if (c === ch && depth <= 0 && !pipe) { out.push(cur); cur = ''; continue; }
+    cur += c;
+  }
+  out.push(cur);
+  var kept = out.filter(function (p) { return p.trim(); });
+  return kept.length ? kept : [''];
+}
+// Split a mermaid fan-out group `A & B` into its members, so an ampersand inside a
+// node label (`A[R & D]`) stays part of the label.
+function splitAmp(s) { return splitTop(s, '&'); }
+// Mermaid wraps any label that carries punctuation in quotes; they are syntax.
+function unquote(s) { return String(s == null ? '' : s).replace(/^["']|["']$/g, '').trim(); }
 // Parse a chain like `A --> B -.-> C : label` (or mermaid `A -->|x| B`) into arrows.
 // resolve(token) → node id (process/mermaid create nodes); null = resolve by slug.
-function parseEdges(content, resolve, arrows) {
+// `amp` opts into mermaid fan-out (`A --> B & C`): off for the text DSL, where an
+// ampersand in a bare line is part of the label ("Sales & Marketing").
+function parseEdges(content, resolve, arrows, amp) {
   var al = splitArrowLabel(content), body = al.body, chainLabel = al.label;
   // mermaid `-- text -->` / `-. text .->` → normalise to `-->|text|`
   body = body.replace(/--\s+([^|>][^>]*?)\s+-->/g, '-->|$1|').replace(/-\.\s+([^|>][^>]*?)\s+\.->/g, '-.->|$1|');
@@ -1156,17 +1420,30 @@ function parseEdges(content, resolve, arrows) {
   var parts = [], ops = [], last = 0, m;
   while ((m = OPRE.exec(body))) { parts.push(body.slice(last, m.index)); ops.push(m[1]); last = m.index + m[1].length; }
   parts.push(body.slice(last));
-  if (ops.length === 0) { var only = parts[0].trim(); if (only && resolve) resolve(only); return; }
+  if (ops.length === 0) {
+    var only = parts[0].trim();
+    if (only && resolve) (amp ? splitAmp(only) : [only]).forEach(function (p) { if (p.trim()) resolve(p.trim()); });
+    return;
+  }
   var labels = [];
   for (var i = 1; i < parts.length; i++) {
     var pm = parts[i].match(/^\s*\|([^|]*)\|/);
-    if (pm) { labels[i - 1] = pm[1].trim(); parts[i] = parts[i].replace(/^\s*\|[^|]*\|/, ''); }
+    if (pm) { labels[i - 1] = amp ? unquote(pm[1]) : pm[1].trim(); parts[i] = parts[i].replace(/^\s*\|[^|]*\|/, ''); }
   }
-  var ids = parts.map(function (p) { return resolve ? resolve(p.trim()) : slug(splitToken(p.trim()).label); });
+  var groups = parts.map(function (p) {
+    return (amp ? splitAmp(p) : [p]).map(function (tk) {
+      return resolve ? resolve(tk.trim()) : slug(splitToken(tk.trim()).label);
+    });
+  });
   for (var j = 0; j < ops.length; j++) {
     var o = edgeOp(ops[j]);
     var lbl = labels[j] || (j === ops.length - 1 ? chainLabel : '');
-    arrows.push({ from: ids[j], to: ids[j + 1], label: lbl, style: o.style, head: o.head, width: o.width, double: o.double, color: '' });
+    var from = groups[j], to = groups[j + 1];
+    for (var a = 0; a < from.length; a++) {
+      for (var b = 0; b < to.length; b++) {
+        arrows.push({ from: from[a], to: to[b], label: lbl, style: o.style, head: o.head, width: o.width, double: o.double, color: '' });
+      }
+    }
   }
 }
 function collectArrows(content, arrows, addNode) { parseEdges(content, addNode, arrows); }
@@ -1284,10 +1561,70 @@ function parseDsl(text, mode) {
   return parseOrg(lines); // org + mindmap
 }
 
+// ── Mermaid sequenceDiagram → participants as cards, messages as arrows ──────────
+// Lifelines are APPROXIMATED, not drawn: the diagram has no time axis, so each
+// participant becomes one card laid out left to right and each message a numbered
+// arrow between two cards. Repeated messages in the same direction merge into one
+// arrow so the labels stay readable.
+// ponytail: a message pair in both directions still draws two arrows over the same
+// line; give sequence its own layout (lifeline columns + stacked rows) if people
+// paste long conversations.
+function parseSequence(lines) {
+  var nodes = [], byId = {}, arrows = [], byPair = {}, warns = [], seq = 0;
+  function warn(msg) { if (warns.length < 40) warns.push(msg); }
+  function ensure(rawName, rawLabel) {
+    var name = unquote(rawName);
+    var id = slug(name) || ('p-' + (nodes.length + 1));
+    if (!byId[id]) { byId[id] = { shape: 'rounded', nodeId: id, label: rawLabel || name || titleize(id), detail: '', image: '', fill: '', parent: '', layer: '' }; nodes.push(byId[id]); }
+    else if (rawLabel) byId[id].label = rawLabel;
+    return id;
+  }
+  lines.forEach(function (raw) {
+    var t = raw.trim();
+    if (!t || t.indexOf('%%') === 0 || /^sequenceDiagram\b/i.test(t)) return;
+    var p = t.match(/^(?:participant|actor)\s+(.+)$/i);
+    if (p) {
+      var as = p[1].split(/\s+as\s+/i);
+      ensure(as[0], as.length > 1 ? unquote(as.slice(1).join(' as ')) : '');
+      return;
+    }
+    var ci = t.indexOf(':');
+    var head = ci >= 0 ? t.slice(0, ci) : t;
+    var body = ci >= 0 ? t.slice(ci + 1).trim() : '';
+    var om = head.match(/(-->>|->>|-->|->|--x|-x|--\)|-\))/);
+    if (om && !/^(note|loop|alt|else|opt|par|and|critical|break|rect|box)\b/i.test(t)) {
+      var from = ensure(head.slice(0, om.index), '');
+      // `A->>+B` / `B-->>-A`: the + and - are Mermaid's activation shorthand, not part
+      // of the participant's name.
+      var to = ensure(head.slice(om.index + om[0].length).replace(/^\s*[+-]/, ''), '');
+      var op = om[1];
+      var style = op.indexOf('--') === 0 ? 'dashed' : 'solid';
+      var headKind = (op.indexOf('x') >= 0) ? 'none' : (op.indexOf(')') >= 0 ? 'open' : '');
+      seq++;
+      var label = body ? (seq + '. ' + body) : String(seq);
+      var key = from + '>' + to;
+      if (byPair[key]) { byPair[key].label += ' · ' + label; return; }
+      byPair[key] = { from: from, to: to, label: label, style: style, head: headKind, width: 0, double: false, color: '' };
+      arrows.push(byPair[key]);
+      return;
+    }
+    if (/^(note|loop|alt|else|opt|par|and|critical|break|rect|box|end|activate|deactivate|autonumber|title|link|links|create|destroy)\b/i.test(t)) { warn(t.slice(0, 48)); return; }
+    warn(t.slice(0, 48));
+  });
+  return { nodes: nodes, layers: [], arrows: arrows, diagramType: 'process', dir: 'right', warns: warns };
+}
+
 // ── Mermaid subset → {nodes, layers, arrows, diagramType, dir} ────────────────────
 function parseMermaid(text) {
   var lines = dslLines(text), nodes = [], byId = {}, layers = [], arrows = [], usedL = {}, order = 0;
-  var diagramType = 'process', dir = 'down', sub = null;
+  var diagramType = 'process', dir = 'down', sub = null, subStack = [], warns = [];
+  for (var li = 0; li < lines.length; li++) {
+    var first = lines[li].trim();
+    if (!first || first.indexOf('%%') === 0) continue;
+    if (/^sequenceDiagram\b/i.test(first)) return parseSequence(lines);
+    break;
+  }
+  function warn(msg) { if (warns.length < 40) warns.push(msg); }
   function ensure(id, label, shape) {
     id = slug(id) || ('n-' + (++order));
     if (!byId[id]) { byId[id] = { shape: shape || 'rounded', nodeId: id, label: label || titleize(id), detail: '', image: '', fill: '', parent: '', layer: sub || '' }; nodes.push(byId[id]); }
@@ -1296,6 +1633,11 @@ function parseMermaid(text) {
   }
   function defOf(tok) {
     tok = tok.trim();
+    // `A:::className` assigns a CSS class. The class is not supported, but the node
+    // reference in front of it is real - drop the suffix instead of inventing a node
+    // called "A Big" out of it.
+    var cls = tok.match(/^([\s\S]*?):::[A-Za-z0-9_-]+$/);
+    if (cls && cls[1].trim()) tok = cls[1].trim();
     var m = tok.match(/^([A-Za-z0-9_]+)\s*(\(\[[\s\S]*\]\)|\[\([\s\S]*\)\]|\(\([\s\S]*\)\)|\{\{[\s\S]*\}\}|\{[\s\S]*\}|\[\[[\s\S]*\]\]|\[[\s\S]*\]|\([\s\S]*\))\s*$/);
     if (m) {
       var id = m[1], body = m[2], label = '', shape = 'rounded';
@@ -1307,33 +1649,305 @@ function parseMermaid(text) {
       else if (/^\{[\s\S]*\}$/.test(body)) { shape = 'diamond'; label = body.slice(1, -1); }      // {text} decision
       else if (/^\[[\s\S]*\]$/.test(body)) { shape = 'box'; label = body.slice(1, -1); }
       else { shape = 'rounded'; label = body.slice(1, -1); }
-      return ensure(id, label.replace(/^["']|["']$/g, '').trim(), shape);
+      return ensure(id, unquote(label), shape);
     }
     return ensure(tok, null, null);
   }
+  // A semicolon separates statements, so `graph TD;A-->B;B-->C` is one line and three
+  // statements (the form every Mermaid doc opens with). A `%%` comment owns its whole
+  // line, so it is dropped before the split.
+  var stmts = [];
   lines.forEach(function (raw) {
+    if (raw.trim().indexOf('%%') === 0) return;
+    splitTop(raw, ';').forEach(function (s) { stmts.push(s); });
+  });
+  stmts.forEach(function (raw) {
     var t = raw.trim();
-    if (!t || t.indexOf('%%') === 0) return;
+    if (!t) return;
     var h = t.match(/^(graph|flowchart)\s+(TB|TD|BT|RL|LR)\b/i);
     if (h) { var d = h[2].toUpperCase(); dir = (d === 'LR' || d === 'RL') ? 'right' : 'down'; return; }
-    var sg = t.match(/^subgraph\s+(.+)$/i);
+    var sg = t.match(/^subgraph\b\s*(.*)$/i);
     if (sg) {
-      diagramType = 'layercake';
       // Mermaid "subgraph id[Title]" - id is referenced by edges, the bracket is the
       // display title. Bare "subgraph Title" uses the whole token as the label.
-      var sgRaw = sg[1].replace(/^["']|["']$/g, '').trim();
+      var sgRaw = unquote(sg[1]);
       var mb = sgRaw.match(/^([A-Za-z0-9_]+)\s*\[([\s\S]*)\]$/);
-      var lab = mb ? mb[2].replace(/^["']|["']$/g, '').trim() : sgRaw.replace(/\[[\s\S]*\]$/, '').trim();
+      var lab = mb ? unquote(mb[2]) : sgRaw.replace(/\[[\s\S]*\]$/, '').trim();
       var lid = slug(mb ? mb[1] : lab) || ('layer-' + (layers.length + 1));
+      // A nested subgraph folds into the band already open - one band per outermost
+      // group, since layercake stacks bands and cannot nest them.
+      if (subStack.length) { warn('nested subgraph folded into the outer band: ' + t.slice(0, 40)); subStack.push(lid); return; }
+      diagramType = 'layercake';
       if (!usedL[lid]) { usedL[lid] = 1; layers.push({ kind: 'layer', layerId: lid, label: lab || titleize(lid), bandFill: BAND_PALETTE[layers.length % BAND_PALETTE.length] }); }
-      sub = lid; return;
+      subStack.push(lid); sub = lid; return;
     }
-    if (/^end$/i.test(t)) { sub = null; return; }
-    if (/^(classDef|class|click|style|linkStyle|direction)\b/i.test(t)) { if (host && host.log) host.log('info', 'diagram-builder: mermaid line skipped: ' + t); return; }
-    if (/(-->|---|-\.->|==>|<-->|<->|-\.-|\bo--|--o|x--|--x)/.test(t)) { parseEdges(t, defOf, arrows); return; }
+    if (/^end$/i.test(t)) { subStack.pop(); sub = subStack.length ? subStack[0] : null; return; }
+    if (/^(classDef|class|click|style|linkStyle|direction)\b/i.test(t)) { warn(t.slice(0, 48)); return; }
+    if (/(-->|---|-\.->|==>|<-->|<->|-\.-|\bo--|--o|x--|--x)/.test(t)) { parseEdges(t, defOf, arrows, true); return; }
     defOf(t);
   });
-  return { nodes: nodes, layers: layers, arrows: arrows, diagramType: diagramType, dir: dir };
+  return { nodes: nodes, layers: layers, arrows: arrows, diagramType: diagramType, dir: dir, warns: warns };
+}
+
+// ── DOT / Graphviz subset → {nodes, layers, arrows, diagramType, dir} ────────────
+var DOT_SHAPES = {
+  box: 'box', rect: 'box', rectangle: 'box', square: 'box', box3d: 'box', record: 'box', mrecord: 'box',
+  ellipse: 'ellipse', oval: 'ellipse', egg: 'ellipse',
+  circle: 'circle', doublecircle: 'circle',
+  diamond: 'diamond', mdiamond: 'diamond',
+  cylinder: 'cylinder', hexagon: 'hexagon',
+  note: 'file', folder: 'file', tab: 'file', component: 'file',
+  plaintext: 'text', plain: 'text', none: 'text'
+};
+var DOT_HEADS = { none: 'none', normal: 'triangle', empty: 'triangle', vee: 'open', open: 'open', diamond: 'diamond', odiamond: 'diamond', dot: 'circle', odot: 'circle', tee: 'bar' };
+
+// Split DOT source into statements. Quotes, [attribute lists] and <HTML labels> are
+// opaque; // # and /* */ comments are dropped; a `{` that opens a graph or subgraph
+// body becomes its own statement, while one inside a statement (`a -> {b c}`) stays
+// part of it.
+function dotStatements(text) {
+  var s = String(text == null ? '' : text).replace(/\r\n?/g, '\n');
+  var out = [], cur = '', i = 0, n = s.length, q = false, brk = 0, html = 0, brace = 0;
+  function flush() { if (cur.trim()) out.push(cur.trim()); cur = ''; }
+  while (i < n) {
+    var c = s.charAt(i);
+    if (q) { cur += c; if (c === '\\' && i + 1 < n) { cur += s.charAt(i + 1); i += 2; continue; } if (c === '"') q = false; i++; continue; }
+    if (c === '"') { q = true; cur += c; i++; continue; }
+    if (html > 0) { if (c === '<') html++; else if (c === '>') html--; cur += c; i++; continue; }
+    if (c === '<' && brk > 0) { html++; cur += c; i++; continue; }
+    if (c === '/' && s.charAt(i + 1) === '/') { while (i < n && s.charAt(i) !== '\n') i++; continue; }
+    if (c === '#' && !cur.trim()) { while (i < n && s.charAt(i) !== '\n') i++; continue; }
+    if (c === '/' && s.charAt(i + 1) === '*') { i += 2; while (i < n && !(s.charAt(i) === '*' && s.charAt(i + 1) === '/')) i++; i += 2; continue; }
+    if (c === '[') { brk++; cur += c; i++; continue; }
+    if (c === ']') { brk--; cur += c; i++; continue; }
+    if (brk <= 0) {
+      if (c === '{' && brace === 0 && (!cur.trim() || /^(strict\s+)?(di)?graph\b/i.test(cur.trim()) || /^subgraph\b/i.test(cur.trim()))) { flush(); out.push('{'); i++; continue; }
+      if (c === '{') { brace++; cur += c; i++; continue; }
+      if (c === '}' && brace > 0) { brace--; cur += c; i++; continue; }
+      if (c === '}') { flush(); out.push('}'); i++; continue; }
+      if (c === ';' || c === '\n') { flush(); i++; continue; }
+    }
+    cur += c; i++;
+  }
+  flush();
+  return out;
+}
+// One [k=v, k=v] list. Values may be quoted, <HTML>, or bare.
+function dotAttrs(s) {
+  var out = {}, i = 0, n = s.length;
+  while (i < n) {
+    while (i < n && /[\s,;]/.test(s.charAt(i))) i++;
+    var km = /^([A-Za-z_][A-Za-z0-9_]*)\s*=/.exec(s.slice(i));
+    if (!km) { var nx = s.indexOf(',', i); if (nx < 0) break; i = nx + 1; continue; }
+    var key = km[1].toLowerCase();
+    i += km[0].length;
+    while (i < n && /\s/.test(s.charAt(i))) i++;
+    var c = s.charAt(i), val = '';
+    if (c === '"') {
+      i++;
+      while (i < n) { var ch = s.charAt(i); if (ch === '\\' && i + 1 < n) { val += ch + s.charAt(i + 1); i += 2; continue; } if (ch === '"') { i++; break; } val += ch; i++; }
+    } else if (c === '<') {
+      var d = 0;
+      while (i < n) { var h = s.charAt(i); val += h; i++; if (h === '<') d++; else if (h === '>') { d--; if (d <= 0) break; } }
+    } else {
+      while (i < n && !/[\s,;\]]/.test(s.charAt(i))) { val += s.charAt(i); i++; }
+    }
+    out[key] = val;
+  }
+  return out;
+}
+function dotText(s) {
+  return String(s == null ? '' : s).replace(/\\"/g, '"')
+    .replace(/&nbsp;/gi, ' ').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ').trim();
+}
+// A DOT label into the card's label + detail: \n \l \r (or <br> in an HTML label)
+// break the lines, the first is the title and the rest the subtitle.
+function dotSplitLabel(v) {
+  var s = String(v == null ? '' : v);
+  if (s.charAt(0) === '<') {
+    if (s.charAt(s.length - 1) === '>') s = s.slice(1, -1);
+    s = s.replace(/<br\s*\/?>/gi, '\\n').replace(/<[^>]*>/g, '');
+  }
+  var parts = s.split(/\\[nlr]/).map(dotText).filter(function (p) { return p; });
+  return { label: parts.length ? parts[0] : '', detail: parts.slice(1).join(' ') };
+}
+function dotName(tok) {
+  var s = String(tok == null ? '' : tok).trim();
+  if (s.charAt(0) === '"' && s.charAt(s.length - 1) === '"' && s.length > 1) s = s.slice(1, -1).replace(/\\"/g, '"');
+  return s.trim();
+}
+// Split `a, b` (and, inside a { } group, `a b`) into endpoint tokens.
+function dotSplitList(s, ws) {
+  var out = [], cur = '', q = false;
+  for (var i = 0; i < s.length; i++) {
+    var c = s.charAt(i);
+    if (q) { cur += c; if (c === '"') q = false; continue; }
+    if (c === '"') { q = true; cur += c; continue; }
+    if (c === ',' || c === ';' || (ws && /\s/.test(c))) { if (cur.trim()) out.push(cur.trim()); cur = ''; continue; }
+    cur += c;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+// Split an edge statement body on -> / -- , leaving quoted ids alone.
+function dotEdgeSplit(s) {
+  var segs = [], ops = [], cur = '', q = false, i = 0;
+  while (i < s.length) {
+    var c = s.charAt(i);
+    if (q) { cur += c; if (c === '\\') { cur += (s.charAt(i + 1) || ''); i += 2; continue; } if (c === '"') q = false; i++; continue; }
+    if (c === '"') { q = true; cur += c; i++; continue; }
+    if (c === '-' && (s.charAt(i + 1) === '>' || s.charAt(i + 1) === '-')) { segs.push(cur); ops.push(s.substr(i, 2)); cur = ''; i += 2; continue; }
+    cur += c; i++;
+  }
+  segs.push(cur);
+  return { segs: segs, ops: ops };
+}
+function parseDot(text) {
+  var nodes = [], byId = {}, layers = [], arrows = [], usedL = {}, warns = [];
+  var dir = 'down', nodeDefaults = {}, edgeDefaults = {}, scopes = [], bands = [];
+  function warn(m) { if (warns.length < 40) warns.push(m); }
+  function band() { return bands.length ? bands[0] : ''; }
+  function merged(a) { var o = {}; Object.keys(edgeDefaults).forEach(function (k) { o[k] = edgeDefaults[k]; }); Object.keys(a).forEach(function (k) { o[k] = a[k]; }); return o; }
+  function shapeOf(a) {
+    var st = String(a.style || '').toLowerCase();
+    var sh = DOT_SHAPES[String(a.shape || '').toLowerCase()];
+    if (!sh) return st.indexOf('rounded') >= 0 ? 'rounded' : '';
+    if (sh === 'box' && st.indexOf('rounded') >= 0) return 'rounded';
+    return sh;
+  }
+  function paintOf(a) {
+    var st = String(a.style || '').toLowerCase();
+    var fc = pikColor(a.fillcolor || ''), cl = pikColor(a.color || '');
+    var fill = fc || (st.indexOf('filled') >= 0 ? cl : '');
+    return { fill: fill === 'none' ? '' : fill, stroke: cl === 'none' ? '' : cl };
+  }
+  function ensureNode(tok, attrs) {
+    var name = dotName(tok);
+    // `a:port` / `a:port:compass` addresses a field of node `a`. An unquoted DOT id
+    // cannot contain a colon, so everything from the first one is the port.
+    if (String(tok).trim().charAt(0) !== '"' && name.indexOf(':') > 0) name = name.split(':')[0].trim();
+    if (!name) return '';
+    var id = slug(name) || ('n-' + (nodes.length + 1));
+    var a = {};
+    Object.keys(nodeDefaults).forEach(function (k) { a[k] = nodeDefaults[k]; });
+    Object.keys(attrs || {}).forEach(function (k) { a[k] = attrs[k]; });
+    var lab = a.label !== undefined ? dotSplitLabel(a.label) : { label: name, detail: '' };
+    if (!byId[id]) {
+      var shape = shapeOf(a), paint = paintOf(a);
+      byId[id] = { shape: shape || 'rounded', nodeId: id, label: lab.label || name, detail: lab.detail, image: '', fill: paint.fill, parent: '', layer: band(), stroke: paint.stroke };
+      nodes.push(byId[id]);
+    } else {
+      // Only THIS statement's own attributes update a node that already exists - a
+      // later `a -> b` carries the graph defaults, which must not overwrite the
+      // shape or colour the node was declared with.
+      var own = attrs || {}, nd = byId[id], oshape = shapeOf(own), opaint = paintOf(own);
+      if (own.label !== undefined && lab.label) { nd.label = lab.label; nd.detail = lab.detail; }
+      if (oshape) nd.shape = oshape;
+      if (opaint.fill) nd.fill = opaint.fill;
+      if (opaint.stroke) nd.stroke = opaint.stroke;
+      if (!nd.layer) nd.layer = band();
+    }
+    return id;
+  }
+  function endpointIds(seg) {
+    var s = String(seg == null ? '' : seg).trim();
+    var braced = /^\{[\s\S]*\}$/.test(s);
+    if (braced) s = s.slice(1, -1);
+    var out = [];
+    dotSplitList(s, braced).forEach(function (t) {
+      // Same rule the node statements use: a bare run of unquoted words is not a DOT
+      // id, so it is prose around the graph, not an endpoint. Skip it, never invent a
+      // node from it.
+      if (t.charAt(0) !== '"' && /\s/.test(t)) { warn('skipped: ' + t.slice(0, 40)); return; }
+      var id = ensureNode(t, {});
+      if (id) out.push(id);
+    });
+    return out;
+  }
+  function openScope(headTxt) {
+    var sgm = String(headTxt || '').trim().match(/^subgraph\b\s*(.*)$/i);
+    var sc = { layer: null };
+    if (sgm) {
+      var nm = dotName(sgm[1]);
+      if (/^cluster/i.test(nm)) {
+        // Clusters become layercake bands. Bands stack and cannot nest, so a cluster
+        // inside a cluster folds into the one already open.
+        if (bands.length) warn('nested cluster folded into the outer band: ' + nm);
+        else {
+          var lid = slug(nm) || ('layer-' + (layers.length + 1));
+          if (!usedL[lid]) {
+            usedL[lid] = 1;
+            var entry = { kind: 'layer', layerId: lid, label: titleize(nm.replace(/^cluster[_-]?/i, '')) || titleize(lid), bandFill: BAND_PALETTE[layers.length % BAND_PALETTE.length] };
+            layers.push(entry); sc.layer = entry;
+          } else sc.layer = layers.filter(function (l) { return l.layerId === lid; })[0] || null;
+          bands.push(lid);
+        }
+      }
+    }
+    scopes.push(sc);
+  }
+  var pending = null;
+  dotStatements(text).forEach(function (st) {
+    if (st === '{') { openScope(pending); pending = null; return; }
+    if (st === '}') { var sc = scopes.pop(); if (sc && sc.layer) bands.pop(); return; }
+    if (/^(strict\s+)?(di)?graph\b/i.test(st) && st.indexOf('[') < 0) { pending = st; return; }
+    if (/^subgraph\b/i.test(st)) { pending = st; return; }
+    var defm = st.match(/^(node|edge|graph)\s*\[([\s\S]*)\]\s*$/i);
+    if (defm) {
+      var target = defm[1].toLowerCase(), da = dotAttrs(defm[2]);
+      if (target === 'node') Object.keys(da).forEach(function (k) { nodeDefaults[k] = da[k]; });
+      else if (target === 'edge') Object.keys(da).forEach(function (k) { edgeDefaults[k] = da[k]; });
+      else if (da.rankdir) { var gd = String(dotName(da.rankdir)).toUpperCase(); dir = (gd === 'LR' || gd === 'RL') ? 'right' : 'down'; }
+      else warn('skipped: ' + st.slice(0, 40));
+      return;
+    }
+    var asg = st.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*([\s\S]+)$/);
+    if (asg && st.indexOf('[') < 0 && !/->|--/.test(st)) {
+      var k = asg[1].toLowerCase(), v = dotName(asg[2]);
+      if (k === 'rankdir') { var rd = v.toUpperCase(); dir = (rd === 'LR' || rd === 'RL') ? 'right' : 'down'; return; }
+      if (k === 'label') {
+        for (var z = scopes.length - 1; z >= 0; z--) {
+          if (scopes[z].layer) { scopes[z].layer.label = dotSplitLabel(v).label || scopes[z].layer.label; return; }
+        }
+      }
+      warn('skipped: ' + st.slice(0, 40)); return;
+    }
+    var am = st.match(/^([\s\S]*?)\[([\s\S]*)\]\s*$/);
+    var bodyTxt = (am ? am[1] : st).trim(), attrs = am ? dotAttrs(am[2]) : {};
+    var es = dotEdgeSplit(bodyTxt);
+    if (es.ops.length) {
+      var ea = merged(attrs);
+      var stl = String(ea.style || '').toLowerCase();
+      if (stl.indexOf('invis') >= 0) { warn('skipped invisible edge: ' + st.slice(0, 40)); return; }
+      var style = stl.indexOf('dashed') >= 0 ? 'dashed' : (stl.indexOf('dotted') >= 0 ? 'dotted' : 'solid');
+      var width = stl.indexOf('bold') >= 0 ? 3.5 : num(ea.penwidth, 0);
+      var d = String(ea.dir || '').toLowerCase();
+      var lab = ea.label !== undefined ? dotSplitLabel(ea.label) : (ea.xlabel !== undefined ? dotSplitLabel(ea.xlabel) : { label: '', detail: '' });
+      var text2 = [lab.label, lab.detail].filter(Boolean).join(' ');
+      var col = pikColor(ea.color || '');
+      for (var j = 0; j < es.ops.length; j++) {
+        var L = endpointIds(es.segs[j]), R = endpointIds(es.segs[j + 1]);
+        if (!L.length || !R.length) { warn('skipped: ' + st.slice(0, 40)); continue; }
+        var hd = DOT_HEADS[String(ea.arrowhead || '').toLowerCase()] || '';
+        if (!hd && (es.ops[j] === '--' || d === 'none')) hd = 'none';
+        for (var x = 0; x < L.length; x++) {
+          for (var y = 0; y < R.length; y++) {
+            var a1 = d === 'back' ? R[y] : L[x], b1 = d === 'back' ? L[x] : R[y];
+            arrows.push({ from: a1, to: b1, label: text2, style: style, head: hd, width: width, double: d === 'both', color: col === 'none' ? '' : col });
+          }
+        }
+      }
+      return;
+    }
+    // A node statement is one id, or a comma list of them. A bare run of words is
+    // not a DOT id, so it is prose or syntax outside the subset: skip and log it.
+    var toks = dotSplitList(bodyTxt, false);
+    var ok = toks.length > 0 && toks.every(function (tk) { return tk.charAt(0) === '"' || !/\s/.test(tk); });
+    if (!ok) { warn('skipped: ' + st.slice(0, 40)); return; }
+    toks.forEach(function (tk) { ensureNode(tk, attrs); });
+  });
+  return { nodes: nodes, layers: layers, arrows: arrows, diagramType: layers.length ? 'layercake' : 'process', dir: dir, warns: warns };
 }
 
 // ── CSV / table → {nodes, layers, arrows} ────────────────────────────────────────
@@ -1838,14 +2452,21 @@ function renderPikchrPrims(prims, S, bg, bb) {
 
 // ── compose the whole scene ─────────────────────────────────────────────────────
 async function buildDiagram(inp) {
+  _notes = [];
   var mode = VALID_TYPES[inp.diagramType] ? inp.diagramType : 'org';
-  var source = ['text', 'ascii', 'mermaid', 'pikchr', 'table'].indexOf(inp.source) >= 0 ? inp.source : 'visual';
+  var source = ['text', 'ascii', 'mermaid', 'dot', 'pikchr', 'table'].indexOf(inp.source) >= 0 ? inp.source : 'visual';
   var bg = color(inp.background, WHITE);
 
   var src, asciiPos = null, pikchrPos = null, pikchrPrims = null, overrideDir = null;
   if (source === 'text') src = parseDsl(inp.dsl, mode);
   else if (source === 'ascii') { var pa = parseAscii(inp.asciiArt); src = { nodes: pa.nodes, layers: [], arrows: pa.arrows }; asciiPos = pa.pos; }
-  else if (source === 'mermaid') { var pm = parseMermaid(inp.mermaid); src = { nodes: pm.nodes, layers: pm.layers, arrows: pm.arrows }; if (VALID_TYPES[pm.diagramType]) mode = pm.diagramType; overrideDir = pm.dir; }
+  else if (source === 'mermaid' || source === 'dot') {
+    var pm = source === 'dot' ? parseDot(inp.dot) : parseMermaid(inp.mermaid);
+    src = { nodes: pm.nodes, layers: pm.layers, arrows: pm.arrows };
+    if (VALID_TYPES[pm.diagramType]) mode = pm.diagramType;
+    overrideDir = pm.dir;
+    if (pm.warns.length && host && host.log) host.log('info', 'diagram-builder: ' + pm.warns.length + ' ' + source + ' line(s) skipped (unsupported): ' + pm.warns.slice(0, 4).join(' · '));
+  }
   else if (source === 'pikchr') {
     var pkLabelPx = clamp(num(inp.labelSize, 15), 10, 28) * clamp(num(inp.cardScale, 1), 0.6, 1.6);
     var pk = parsePikchr(inp.pikchr, pkLabelPx); src = { nodes: pk.nodes, layers: [], arrows: [] }; pikchrPos = pk.pos; pikchrPrims = pk.prims;
@@ -1961,7 +2582,7 @@ async function buildDiagram(inp) {
     layout = layoutMatrix(nodes, S, inp, bb);
   } else if (mode === 'gantt') {
     setCardH(S.cardWidth);
-    layout = layoutGantt(nodes, S, inp, bb);
+    layout = layoutGantt(nodes, src.layers, S, inp, bb);
   } else {
     setCardH(S.cardWidth);
     layout = layoutOrg(nodes, S, (overrideDir || inp.orgDir) === 'right' ? 'right' : 'down');
@@ -2016,7 +2637,8 @@ async function buildDiagram(inp) {
   // Click-to-focus: a card jumps to whichever input is the active data source;
   // the background and title jump to their own sidebar controls.
   var sourceInput = source === 'text' ? 'dsl' : source === 'ascii' ? 'asciiArt'
-                  : source === 'mermaid' ? 'mermaid' : source === 'pikchr' ? 'pikchr' : source === 'table' ? 'table' : 'nodes';
+                  : source === 'mermaid' ? 'mermaid' : source === 'dot' ? 'dot'
+                  : source === 'pikchr' ? 'pikchr' : source === 'table' ? 'table' : 'nodes';
   var out = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="' + f2(vbX) + ' ' + f2(vbY) + ' ' + f2(vbW) + ' ' + f2(vbH) + '"'
     + ' width="' + f2(vbW) + '" height="' + f2(vbH) + '"'
     + ' style="width:100%;height:auto;max-height:100%;display:block;" preserveAspectRatio="xMidYMid meet">';
@@ -2164,7 +2786,10 @@ async function compute(model, changedId) {
     if (host && host.log) host.log('warn', 'diagram-builder: build failed', { error: String(e) });
     svg = errPlaceholder('Could not build this diagram.');
   }
-  return Object.assign({ diagramSvg: svg }, patch);
+  // Always present, so a cleared warning clears the extra instead of going stale.
+  var warning = _notes.join(' · ');
+  if (warning && host && host.log) host.log('warn', 'diagram-builder: ' + warning);
+  return Object.assign({ diagramSvg: svg, ganttWarning: warning }, patch);
 }
 
 function onInit(ctx) { return compute(ctx.model, null); }

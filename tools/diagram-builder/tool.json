@@ -1,13 +1,13 @@
 {
   "id": "diagram-builder",
   "name": "Diagram Builder",
-  "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid or CSV.",
+  "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid, DOT or CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} - {{diagramType}} diagram",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "engineVersion": "^1.0.0",
   "status": "experimental",
   "category": "everyone",
-  "tags": ["diagram", "org-chart", "org chart", "architecture", "layercake", "flowchart", "process", "hierarchy", "mind map", "mindmap", "timeline", "roadmap", "cycle", "pyramid", "funnel", "kanban", "matrix", "quadrant", "gantt", "cards", "arrows", "ascii", "text", "mermaid", "csv"],
+  "tags": ["diagram", "org-chart", "org chart", "architecture", "layercake", "flowchart", "process", "hierarchy", "mind map", "mindmap", "timeline", "roadmap", "cycle", "pyramid", "funnel", "kanban", "matrix", "quadrant", "gantt", "milestone", "swimlane", "cards", "arrows", "ascii", "text", "mermaid", "sequence", "dot", "graphviz", "csv"],
   "featured": {
     "order": 6,
     "blurb": "Turn cards or text into on-brand diagrams"
@@ -63,12 +63,13 @@
       "label": "Build from",
       "type": "select",
       "default": "visual",
-      "help": "Visual edits cards as form rows. Text renders a typed description. ASCII art traces boxes you draw. Mermaid pastes a graph TD/LR subset. Pikchr draws a PIC-style diagram from placed shapes. Table reads a pasted CSV.",
+      "help": "Visual edits cards as form rows. Text renders a typed description. ASCII art traces boxes you draw. Mermaid reads a flowchart or sequenceDiagram subset. DOT reads a Graphviz digraph. Pikchr draws a PIC-style diagram from placed shapes. Table reads a pasted CSV. Every text mode also takes a dropped file.",
       "options": [
         { "value": "visual", "label": "Visual editor" },
         { "value": "text", "label": "Text (type it)" },
         { "value": "ascii", "label": "ASCII art (draw it)" },
         { "value": "mermaid", "label": "Mermaid (paste it)" },
+        { "value": "dot", "label": "DOT / Graphviz (paste it)" },
         { "value": "pikchr", "label": "Pikchr (paste it)" },
         { "value": "table", "label": "Table / CSV (paste it)" }
       ]
@@ -237,7 +238,31 @@
       "type": "text",
       "default": "",
       "placeholder": "e.g. wk",
-      "showIf": { "diagramType": "gantt" }
+      "showIf": { "diagramType": "gantt" },
+      "help": "Unitless bars only. Give any card real dates and the axis labels itself."
+    },
+    {
+      "id": "ganttScale",
+      "label": "Time scale",
+      "type": "select",
+      "default": "auto",
+      "showIf": { "diagramType": "gantt" },
+      "help": "Tick spacing on a dated roadmap. Auto picks it from the span.",
+      "options": [
+        { "value": "auto", "label": "Auto" },
+        { "value": "days", "label": "Days" },
+        { "value": "weeks", "label": "Weeks" },
+        { "value": "months", "label": "Months" },
+        { "value": "quarters", "label": "Quarters" }
+      ]
+    },
+    {
+      "id": "ganttToday",
+      "label": "Today line",
+      "type": "date",
+      "default": "",
+      "showIf": { "diagramType": "gantt" },
+      "help": "Draws a marker line at this date when it falls inside the roadmap. Empty = off."
     },
 
     {
@@ -245,6 +270,7 @@
       "label": "Diagram text",
       "type": "longtext",
       "showIf": { "source": "text" },
+      "dataSource": { "accept": ".txt" },
       "help": "Org/Mind map: indent for hierarchy. Layercake/Kanban: “# Group” headings with cards below. Process/Gantt: “A -> B” (Gantt adds “ : 0..3”). Timeline/Cycle/Pyramid: one item per line, in order. Matrix: “# top-right” sections or “Item @ (0.8,0.3)”. Shared: “:: subtitle”, “#hex” fill, “(Rounded)”/“[Box]”/“([Pill])” shape, “@ https://…/logo.png” image, edge styles --> -.-> ==> <->, “// comment”.",
       "default": "CEO\n  CTO :: Technology\n    Eng Lead\n    QA Lead\n  CFO :: Finance\n  COO :: Operations"
     },
@@ -253,6 +279,7 @@
       "label": "ASCII art",
       "type": "longtext",
       "showIf": { "source": "ascii" },
+      "dataSource": { "accept": ".txt" },
       "help": "Draw boxes with + - | and connect them with - | and arrowheads > < ^ v. Keep each box's | sides lined up with its +---+ borders. The first line inside a box is its title, the rest its subtitle, and a line of “@ https://…/logo.png” adds an image. Your layout is preserved - we just render it as clean cards.",
       "default": "+--------+          +-------+\n| Client |--------->|  API  |\n+--------+          +-------+\n                        |\n                        v\n                  +----------+\n                  | Database |\n                  +----------+"
     },
@@ -261,14 +288,25 @@
       "label": "Mermaid",
       "type": "longtext",
       "showIf": { "source": "mermaid" },
-      "help": "Paste a Mermaid flowchart subset. “graph TD/LR” sets direction; A[Box], A(Rounded), A([Pill]), A{Diamond} define nodes; A-->B, A---B, A-.->B, A==>B, A-->|label|B are edges; subgraph Name … end becomes layer bands. Unsupported lines (classDef, click, style…) are skipped, never run.",
+      "dataSource": { "accept": ".mmd,.mermaid,.txt,text/plain" },
+      "help": "Paste a Mermaid flowchart or sequenceDiagram subset, or drop a .mmd file. Flowchart: “graph/flowchart TD/LR/BT/RL” sets direction; A[Box], A(Rounded), A([Pill]), A{Diamond} define nodes; A-->B, A---B, A-.->B, A==>B, A-->|label|B, A -- label --> B are edges; chains A-->B-->C and fan-outs A --> B & C work; subgraph Name … end becomes layer bands (nested ones fold into the outermost). Sequence: participants become cards left to right and each message an arrow, so lifelines and timing are approximated, not drawn. Unsupported lines (classDef, click, style, notes, loop/alt…) are skipped, never run.",
       "default": "graph LR\n  A[Client] --> B(API Gateway)\n  B --> C[(Database)]\n  B -.-> D{{Cache}}"
+    },
+    {
+      "id": "dot",
+      "label": "DOT / Graphviz",
+      "type": "longtext",
+      "showIf": { "source": "dot" },
+      "dataSource": { "accept": ".dot,.gv,.txt" },
+      "help": "Paste a Graphviz digraph, or drop a .dot file. “digraph { a -> b }” for directed, “graph { a -- b }” for plain lines; rankdir=LR/TB/RL/BT sets direction; node attributes [label=\"…\", shape=box|ellipse|circle|diamond|cylinder|hexagon|note|plaintext, fillcolor=\"#hex\"] and edge attributes [label=\"…\", style=dashed|dotted|bold, dir=both|none, arrowhead=…] are read; “subgraph cluster_x { label=\"…\" }” becomes a layer band; “node [shape=…]” sets defaults. Node lists (a, b -> c) and chains (a -> b -> c) expand. Anything else is skipped, never run.",
+      "default": "digraph pipeline {\n  rankdir=LR\n  node [shape=box]\n  build [label=\"Build\"]\n  test [label=\"Test\", fillcolor=\"#e8f4f0\"]\n  ship [label=\"Ship\", shape=cylinder]\n  build -> test -> ship\n  test -> build [label=\"fix\", style=dashed]\n}"
     },
     {
       "id": "pikchr",
       "label": "Pikchr",
       "type": "longtext",
       "showIf": { "source": "pikchr" },
+      "dataSource": { "accept": ".pikchr,.txt" },
       "help": "Paste a PIC-style Pikchr diagram. Objects flow in a direction: box/circle/ellipse/oval/cylinder/file/dot/line/arrow/move, each with \"labels\", fill/color, dashed/dotted/thick, wid/ht/rad. Place with from/to/at, compass points (last box.s, .n .e .w .ne …), named objects (Name: box) and ->/<-/<->. Supported subset - macros, [blocks], expressions and splines are skipped, never run.",
       "default": "arrow right 200% \"Source\" \"input\"\nbox rad 8px \"Diagram\" \"Builder\" fill 0xe8f4f0\narrow right 200% \"SVG\" \"output\"\narrow <-> down 60% from last box.s\ncylinder \"Store\" fill 0xd0e8e0"
     },
@@ -277,7 +315,8 @@
       "label": "Table / CSV",
       "type": "longtext",
       "showIf": { "source": "table" },
-      "help": "Paste comma- or tab-separated rows. Org/Mind map: id,label,detail,parent. Process: from,to,label (an edge list - ids are created automatically). Timeline/Cycle/Pyramid: label,detail. A header row (id/label/from/…) is detected and skipped.",
+      "dataSource": { "accept": ".csv,.tsv,.txt,.xlsx" },
+      "help": "Paste comma- or tab-separated rows, or drop a CSV. Org/Mind map: id,label,detail,parent. Process: from,to,label (an edge list - ids are created automatically). Timeline/Cycle/Pyramid: label,detail. A header row (id/label/from/…) is detected and skipped.",
       "default": "id,label,parent\nceo,CEO,\ncto,CTO,ceo\ncfo,CFO,ceo\neng,Eng Lead,cto\nqa,QA Lead,cto"
     },
 
@@ -314,10 +353,13 @@
         { "id": "nodeId", "label": "ID", "type": "text", "placeholder": "e.g. ceo", "help": "Short unique handle. Auto-derived from the label if left blank." },
         { "id": "detail", "label": "Detail", "type": "text", "placeholder": "Subtitle (optional)" },
         { "id": "parent", "label": "Reports to", "default": "", "optionsFrom": { "input": "nodes", "value": "nodeId", "label": "label", "excludeSelf": true, "excludeDescendants": true, "emptyLabel": " - Top level - " }, "help": "Org / mind map: the card this one reports to / branches from. Pick a card, or just drag this row onto another in the list." },
-        { "id": "layer", "label": "Group", "default": "", "optionsFrom": { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-", "freeText": true, "emptyLabel": " - none - " }, "help": "Layercake: which band. Kanban: which column - pick one, or type a new name to create a column. Cards in the same group sit together." },
+        { "id": "layer", "label": "Group", "default": "", "optionsFrom": { "input": "layers", "value": "layerId", "label": "label", "prefix": "layer-", "freeText": true, "emptyLabel": " - none - " }, "help": "Layercake: which band. Kanban: which column - pick one, or type a new name to create a column. Dated Gantt: which swimlane. Cards in the same group sit together." },
         { "id": "quadrant", "label": "Quadrant", "type": "select", "default": "tr", "showIf": { "diagramType": "matrix" }, "options": [ { "value": "tr", "label": "Top-right" }, { "value": "tl", "label": "Top-left" }, { "value": "br", "label": "Bottom-right" }, { "value": "bl", "label": "Bottom-left" } ] },
-        { "id": "ganttStart", "label": "Start", "type": "number", "min": 0, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar start on the time axis." },
-        { "id": "ganttLen", "label": "Length", "type": "number", "min": 0.5, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar length in the same units." }
+        { "id": "ganttStart", "label": "Start", "type": "number", "min": 0, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar start on the time axis. Ignored once this card has a start date." },
+        { "id": "ganttLen", "label": "Length", "type": "number", "min": 0.5, "max": 1000, "step": 0.5, "showIf": { "diagramType": "gantt" }, "help": "Bar length in the same units." },
+        { "id": "startDate", "label": "Start date", "type": "text", "placeholder": "2026-01-15", "showIf": { "diagramType": "gantt" }, "help": "yyyy-mm-dd. One dated card turns the whole chart into a dated roadmap: real ticks, swimlanes by Group, and the today line." },
+        { "id": "endDate", "label": "End date", "type": "text", "placeholder": "2026-03-31", "showIf": { "diagramType": "gantt" }, "help": "yyyy-mm-dd, inclusive. Blank = a one-day task." },
+        { "id": "milestone", "label": "Milestone", "type": "boolean", "default": false, "showIf": { "diagramType": "gantt" }, "help": "Draw a diamond on the start date instead of a bar." }
       ],
       "default": [
         { "shape": "rounded", "nodeId": "ceo",   "label": "CEO",                   "detail": "DP Van Leeuwen", "parent": "",      "layer": "experience", "fill": "" },

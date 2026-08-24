@@ -149,3 +149,146 @@
   .cal-ext { background: #11362a; color: #6fe0aa; }
   .cal-desc { color: #a9c2bb; border-top-color: #1d362f; }
 }
+
+/* ── Month grid (view=month) ─────────────────────────────────────────────────
+   The printable side of the same data: a wall sheet, not a card. Type and
+   colour follow the active brand through the chrome vars, with light print
+   fallbacks, and there is deliberately NO dark-scheme block here - this view is
+   paper. The canvas is 760 x 460 while the export is A4 landscape (the `view`
+   option carries 297 x 210 mm), so the sheet fills the canvas and the page's
+   extra height stays as paper at the foot rather than cropping the grid. */
+
+.cm-sheet {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 24px 20px;
+  background: var(--brand-surface, #ffffff);
+  color: var(--brand-text, #0c322c);
+  font-family: var(--font-brand, 'SUSE', ui-sans-serif, system-ui, sans-serif);
+}
+
+.cm-sheet *,
+.cm-sheet *::before,
+.cm-sheet *::after { box-sizing: border-box; }
+
+.cm-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.cm-hint {
+  margin: auto;
+  max-width: 26em;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--brand-muted, #6b7c77);
+}
+
+.cm-grid {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid var(--brand-edge, #e7ecea);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cm-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.cm-has-wk .cm-row { grid-template-columns: 30px repeat(7, 1fr); }
+
+.cm-row + .cm-row { border-top: 1px solid var(--brand-edge, #e7ecea); }
+
+.cm-dows {
+  flex: 0 0 auto;
+  background: var(--brand-primary, #30ba78);
+  color: var(--brand-on-primary, #ffffff);
+}
+
+.cm-dow,
+.cm-dows .cm-wk {
+  padding: 5px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.cm-wk {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px 2px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--brand-muted, #6b7c77);
+  background: color-mix(in srgb, var(--brand-edge, #e7ecea) 45%, transparent);
+}
+
+.cm-day {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 4px 5px 5px;
+  overflow: hidden;
+}
+
+.cm-day + .cm-day,
+.cm-wk + .cm-day { border-left: 1px solid var(--brand-edge, #e7ecea); }
+
+.cm-num {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.cm-dim { background: color-mix(in srgb, var(--brand-edge, #e7ecea) 30%, transparent); }
+.cm-dim .cm-num { color: var(--brand-muted, #6b7c77); font-weight: 500; }
+
+.cm-chip {
+  display: block;
+  min-width: 0;
+  padding: 1px 4px;
+  border-radius: 3px;
+  /* Tinted fill only. A coloured edge on one side of a rounded chip is the
+     house rule's "AI tell"; the tint carries the accent instead. */
+  background: color-mix(in srgb, var(--brand-primary, #30ba78) 18%, transparent);
+  font-size: 9.5px;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cm-chip-t {
+  font-weight: 600;
+  margin-right: 3px;
+}
+
+.cm-more,
+.cm-note {
+  font-size: 9.5px;
+  color: var(--brand-muted, #6b7c77);
+}
+
+.cm-more { padding-left: 4px; }
+
+.cm-note {
+  margin: 0;
+  font-size: 11px;
+}
