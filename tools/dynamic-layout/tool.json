@@ -3,7 +3,7 @@
   "name": "Dynamic Layout",
   "description": "A do-anything layout that recomposes around whatever you add, at any size.",
   "a11yLabel": "{{default heading cta}} - Dynamic Layout preview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "experimental",
   "category": "everyone",

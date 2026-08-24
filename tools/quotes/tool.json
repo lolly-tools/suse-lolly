@@ -2,7 +2,7 @@
   "id": "quotes",
   "name": "Quote Card",
   "description": "On-brand quote cards for social posts and slides.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",

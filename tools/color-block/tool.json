@@ -3,7 +3,7 @@
   "name": "Color Block",
   "description": "Colour blocks - text, image, logo - auto-arranged into a grid.",
   "a11yLabel": "Colour-block composition",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",

@@ -31,8 +31,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/tokens/brand.json",
-          "checksum": "sha256-HCtdrn6QK3SMTlcHJPmwuOc34VGnLVKT75XKZcbHr1g=",
-          "size": 12163
+          "checksum": "sha256-B63831oE17jQkKJ+Rd43ZyfYqSwdmP7DwPjtbvKdzSg=",
+          "size": 13881
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -53,8 +53,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/palette/brand-core.json",
-          "checksum": "sha256-1EpJIF4V1u4nz1lFWRuIm8bAOJcsRdvsnwKgwVITPjc=",
-          "size": 901
+          "checksum": "sha256-gc04CSinsNaDf6Yjm2LIyRr9o9Ff1dpb6fdggRCGndg=",
+          "size": 909
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary"

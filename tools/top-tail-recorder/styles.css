@@ -57,7 +57,7 @@
 .tt-logo { width: 56%; height: auto; object-fit: contain; }
 .tt-card-title {
   font-size: 84px;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.02em;
 }
@@ -117,14 +117,15 @@
   margin: 0 0 12% 8%;
   padding: 22px 34px;
   background: rgba(0, 0, 0, 0.55);
+  /* Square corners on purpose: an accent stripe may never sit on a rounded box
+     (house rule), and the broadcast lower-third idiom is square-edged anyway. */
   border-left: 8px solid var(--tt-accent, #30ba78);
-  border-radius: 4px 12px 12px 4px;
   backdrop-filter: blur(2px);
   color: #fff;
   text-align: left;
   max-width: 84%;
 }
-.tt-lower-name { font-size: 56px; font-weight: 800; line-height: 1.05; }
+.tt-lower-name { font-size: 56px; font-weight: 500; line-height: 1.05; }
 .tt-lower-role { font-size: 34px; font-weight: 500; opacity: 0.85; margin-top: 6px; }
 
 /* ── Orientation tweaks ──────────────────────────────────── */

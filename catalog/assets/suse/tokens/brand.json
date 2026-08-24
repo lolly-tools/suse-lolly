@@ -1,5 +1,5 @@
 {
-  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained - they mirror the SUSE chrome colors already hardcoded in shells/web/src/styles/tokens.css exactly, so activating them changes nothing visually.",
+  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained - they mirror the SUSE chrome colors already hardcoded in shells/web/src/styles/tokens.css exactly, so activating them changes nothing visually. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
   "$metadata": {
     "tokenSetOrder": [
       "base",
@@ -41,7 +41,12 @@
                 0,
                 35,
                 85
-              ]
+              ],
+              "pantone": "627 C",
+              "combinations": {
+                "text": ["mint", "persimmon", "jungle", "fog", "white"],
+                "graphic": ["mint", "persimmon", "jungle", "fog", "white"]
+              }
             }
           }
         },
@@ -55,7 +60,12 @@
                 0,
                 65,
                 0
-              ]
+              ],
+              "pantone": "7479 C",
+              "combinations": {
+                "text": ["pine", "midnight"],
+                "graphic": ["pine", "midnight", "fog", "white"]
+              }
             }
           }
         },
@@ -69,7 +79,8 @@
                 0,
                 30,
                 0
-              ]
+              ],
+              "pantone": "565 C"
             }
           }
         },
@@ -83,7 +94,8 @@
                 60,
                 80,
                 0
-              ]
+              ],
+              "pantone": "1575 C"
             }
           }
         },
@@ -97,7 +109,8 @@
                 85,
                 0,
                 30
-              ]
+              ],
+              "pantone": "2756 C"
             }
           }
         },
@@ -111,7 +124,8 @@
                 50,
                 0,
                 0
-              ]
+              ],
+              "pantone": "285 C"
             }
           }
         },
@@ -125,7 +139,12 @@
                 0,
                 0,
                 7
-              ]
+              ],
+              "pantone": "Cool Gray 1",
+              "combinations": {
+                "text": ["pine", "waterhole", "midnight"],
+                "graphic": ["pine", "waterhole", "midnight", "jungle"]
+              }
             }
           }
         },
@@ -139,7 +158,11 @@
                 0,
                 0,
                 0
-              ]
+              ],
+              "combinations": {
+                "text": ["pine", "waterhole", "midnight"],
+                "graphic": ["pine", "waterhole", "midnight", "jungle"]
+              }
             }
           }
         },
@@ -347,35 +370,35 @@
       "spectrum": {
         "teal": {
           "$value": "#00bda7",
-          "$description": "Teal"
+          "$description": "Teal - infographics palette, charts and data viz only"
         },
         "lime": {
           "$value": "#a1ef8b",
-          "$description": "Lime"
+          "$description": "Lime - infographics palette, charts and data viz only"
         },
         "sky": {
           "$value": "#7dc6e2",
-          "$description": "Sky"
+          "$description": "Sky - infographics palette, charts and data viz only"
         },
         "lilac": {
           "$value": "#e8c1f7",
-          "$description": "Lilac"
+          "$description": "Lilac - infographics palette, charts and data viz only"
         },
         "amethyst": {
           "$value": "#5d4f99",
-          "$description": "Amethyst"
+          "$description": "Amethyst - infographics palette, charts and data viz only"
         },
         "peach": {
           "$value": "#f9cabf",
-          "$description": "Peach"
+          "$description": "Peach - infographics palette, charts and data viz only"
         },
         "marigold": {
           "$value": "#fcb244",
-          "$description": "Marigold"
+          "$description": "Marigold - infographics palette, charts and data viz only"
         },
         "rust": {
           "$value": "#bd3314",
-          "$description": "Rust"
+          "$description": "Rust - infographics palette, charts and data viz only"
         }
       }
     },
