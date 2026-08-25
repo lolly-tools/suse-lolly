@@ -3,7 +3,7 @@
   "name": "Color Block",
   "description": "Colour blocks - text, image, logo - auto-arranged into a grid.",
   "a11yLabel": "Colour-block composition",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -16,7 +16,8 @@
     "width": 1350,
     "height": 1350,
     "formats": ["png", "jpg", "webp", "pdf", "pdf-cmyk", "cmyk-tiff", "svg", "pptx", "html"],
-    "actions": ["copy", "download", "save"]
+    "actions": ["copy", "download", "save"],
+    "transparentBg": false
   },
   "hooks": {
     "onInit": true,
@@ -133,7 +134,8 @@
           "type": "asset",
           "assetType": "any",
           "allowUpload": true,
-          "help": "Pick a photo, or an icon (its colours can be themed in the picker).",
+          "framingFor": "bg",
+          "help": "Pick a photo, or an icon (its colours can be themed in the picker). Drag it on the canvas to move it, scroll to zoom, Alt-drag to correct perspective.",
           "showFor": ["heading", "subheading", "body", "cta", "image", "blank"]
         },
         {
@@ -158,6 +160,30 @@
           "type": "number",
           "display": "slider",
           "min": 100, "max": 400, "step": 1, "default": 100,
+          "showFor": ["heading", "subheading", "body", "cta", "image", "blank"]
+        },
+        {
+          "id": "bgRotate",
+          "label": "Image rotate",
+          "type": "number",
+          "display": "slider",
+          "min": -180, "max": 180, "step": 0.5, "default": 0,
+          "showFor": ["heading", "subheading", "body", "cta", "image", "blank"]
+        },
+        {
+          "id": "bgPitch",
+          "label": "Image vertical",
+          "type": "number",
+          "display": "slider",
+          "min": -45, "max": 45, "step": 0.5, "default": 0,
+          "showFor": ["heading", "subheading", "body", "cta", "image", "blank"]
+        },
+        {
+          "id": "bgYaw",
+          "label": "Image horizontal",
+          "type": "number",
+          "display": "slider",
+          "min": -45, "max": 45, "step": 0.5, "default": 0,
           "showFor": ["heading", "subheading", "body", "cta", "image", "blank"]
         }
       ],

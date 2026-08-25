@@ -55,39 +55,58 @@ function inkFor(bgHex) {
   return contrast(l, dl) >= contrast(l, ll) ? INK_DARK : INK_LIGHT;
 }
 
-// Every SUSE mark this tool can place: orientation × tone. `neg` is the dark-
-// background (light) variant, `pos` the light-background (dark) one.
-const LOGO_ASSET_IDS = [
-  'suse/logo/hor-neg-white',  'suse/logo/hor-pos-black',
-  'suse/logo/hor-neg-green',  'suse/logo/hor-pos-green',
-  'suse/logo/vert-neg-white', 'suse/logo/vert-pos-black',
-  'suse/logo/vert-neg-green', 'suse/logo/vert-pos-green',
+// Every brand mark this tool can place: orientation × treatment, as CANONICAL variant keys,
+// resolved from the brand's asset.logo.<variant> tokens so it re-skins for any brand.
+const LOGO_VARIANTS = [
+  'horizontal-mono-reverse', 'horizontal-mono', 'horizontal-primary-reverse', 'horizontal-primary',
+  'vertical-mono-reverse',   'vertical-mono',   'vertical-primary-reverse',   'vertical-primary',
 ];
 
-// Module-scoped cache so the logo assets resolve once, not on every keystroke.
+// SUSE catalog id for a variant - the fallback when a brand declares no asset.logo token.
+// neg = reverse (dark bg), white/black = mono ink, green = full-colour (primary).
+function suseIdForVariant(variant) {
+  const dash = variant.indexOf('-');
+  const orient = variant.slice(0, dash) === 'vertical' ? 'vert' : 'hor';
+  const treatment = variant.slice(dash + 1);
+  const pol = treatment.indexOf('reverse') >= 0 ? 'neg' : 'pos';
+  const ink = treatment.indexOf('mono') === 0 ? (pol === 'neg' ? 'white' : 'black') : 'green';
+  return 'suse/logo/' + orient + '-' + pol + '-' + ink;
+}
+
+// Resolve a variant to a catalog id via the brand's tokens, else the SUSE default.
+async function resolveVariantId(variant) {
+  try {
+    if (host.tokens && host.tokens.resolve) {
+      const id = await host.tokens.resolve('{asset.logo.' + variant + '}');
+      if (typeof id === 'string' && id && id.indexOf('{') !== 0) return id;
+    }
+  } catch (e) { /* fall through to the SUSE default */ }
+  return suseIdForVariant(variant);
+}
+
+// Module-scoped cache so the logo assets resolve once, not on every keystroke. Keyed by VARIANT.
 let logoCache;
 async function resolveLogos() {
   if (logoCache) return logoCache;
   logoCache = {};
   try {
-    const refs = await Promise.all(LOGO_ASSET_IDS.map(id => host.assets.get(id)));
-    LOGO_ASSET_IDS.forEach((id, i) => { logoCache[id] = refs[i]; });
+    const ids = await Promise.all(LOGO_VARIANTS.map(resolveVariantId));
+    const refs = await Promise.all(ids.map(id => host.assets.get(id).catch(() => null)));
+    LOGO_VARIANTS.forEach((v, i) => { if (refs[i]) logoCache[v] = refs[i]; });
   } catch (e) {
     host.log('warn', 'color-block: logo assets unavailable', { error: String(e) });
   }
   return logoCache;
 }
 
-// The asset id for a logo block: orientation × tone. Mono → white on a dark
-// background, black on a light one; green stays green but still flips
-// positive⇄negative so it reads against the cell. An image background (should
-// one ever be set) is treated as dark, since the photo's tone is unknown.
-function logoIdFor(block, bg) {
-  const orient = block.logoOrient === 'stacked' ? 'vert' : 'hor';
+// The VARIANT for a logo block: orientation × treatment. Mono → white on dark / black on
+// light; green (primary) stays full-colour but flips reverse⇄normal so it reads against the
+// cell. An image background is treated as dark, since the photo's tone is unknown.
+function logoVariantFor(block, bg) {
+  const orient = block.logoOrient === 'stacked' ? 'vertical' : 'horizontal';
   const onDark = !!block.bgImage || inkFor(bg) === INK_LIGHT;
-  const polarity = onDark ? 'neg' : 'pos';
-  if (block.logoColor === 'green') return `suse/logo/${orient}-${polarity}-green`;
-  return `suse/logo/${orient}-${polarity}-${onDark ? 'white' : 'black'}`;
+  if (block.logoColor === 'green') return orient + (onDark ? '-primary-reverse' : '-primary');
+  return orient + (onDark ? '-mono-reverse' : '-mono');
 }
 
 // The block's effective `--scale`. Logo blocks read their own "Logo size"
@@ -112,7 +131,7 @@ function compute(blocks, logos) {
     blockFg.push(fg);
     blockScale.push(scaleFor(b));
     if (b && b.kind === 'logo') {
-      const ref = logos[logoIdFor(b, bg)];
+      const ref = logos[logoVariantFor(b, bg)];
       blockLogo.push(ref ? (ref.url || '') : '');
     } else {
       blockLogo.push('');

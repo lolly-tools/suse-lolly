@@ -24,7 +24,7 @@
       "label": "Background",
       "type": "color",
       "default": "{color.semantic.primary}",
-      "help": "The colour the logo sits on. The matching logo (reversed for dark, normal for light) is chosen for you. Turn on \"No BG\" in export to drop it."
+      "help": "The colour the logo sits on. The matching logo (reversed for dark, normal for light) is chosen for you. Turn on \"Transparent background\" to drop it."
     },
     {
       "id": "orientation",

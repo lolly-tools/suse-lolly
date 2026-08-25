@@ -66,6 +66,9 @@ async function compute(model) {
   out.ink = idealInk(bg);
   out.muted = isDark(bg) ? 'rgba(255,255,255,0.66)' : 'rgba(12,50,44,0.60)';
   out.hairline = isDark(bg) ? 'rgba(255,255,255,0.16)' : 'rgba(12,50,44,0.12)';
+  // Ink/muted/hairline stay keyed to the chosen background colour (for contrast)
+  // even when transparentBg wins the actual paint below.
+  out.bgStyle = (inputs.transparentBg === true) ? 'transparent' : bg;
 
   // Directions → rows. Keep a row if it has a label OR an image (a sponsor logo
   // can stand in for the text). Resolve glyph, side, per-row accent, the optional

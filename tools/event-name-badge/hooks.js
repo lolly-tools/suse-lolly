@@ -83,6 +83,10 @@ async function compute(model) {
   out.ink = idealInk(bg);
   out.muted = isDark(bg) ? 'rgba(255,255,255,0.66)' : 'rgba(12,50,44,0.60)';
   out.hairline = isDark(bg) ? 'rgba(255,255,255,0.16)' : 'rgba(12,50,44,0.12)';
+  // The card's actual paint: contrast (ink/muted/hairline above) still derives from
+  // the chosen background even when it's not painted, so text stays legible once the
+  // card is composited onto whatever the transparent export lands on.
+  out.cardBg = inputs.transparentBg ? 'transparent' : bg;
 
   // Tracks → chips. A chip with its own colour is filled (contrast ink); one
   // without is outlined in the accent.
@@ -102,7 +106,16 @@ async function compute(model) {
   // Default logo: when no event logo is chosen, use the SUSE horizontal logo,
   // reversed for dark cards. A user-selected eventLogo is resolved in-template.
   if (!inputs.eventLogo) {
+    // Resolve the brand's horizontal logo (mono-reverse on dark cards, primary on light)
+    // from its asset.logo tokens, falling back to the SUSE catalog id.
     var id = 'suse/logo/hor-' + (isDark(bg) ? 'neg-white' : 'pos-green');
+    try {
+      if (host.tokens && host.tokens.resolve) {
+        var treat = isDark(bg) ? 'mono-reverse' : 'primary';
+        var rid = await host.tokens.resolve('{asset.logo.horizontal-' + treat + '}');
+        if (typeof rid === 'string' && rid && rid.indexOf('{') !== 0) id = rid;
+      }
+    } catch (e) { /* fall through to the SUSE id */ }
     try { out.defaultLogo = await host.assets.get(id); }
     catch (e) { if (host.log) host.log('warn', 'event-name-badge: logo not found', { id: id }); }
   }

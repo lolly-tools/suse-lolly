@@ -45,9 +45,12 @@
 
       {{#if photoSrc}}
       <td style="vertical-align:top; padding-right:18px;">
+        <!-- An email signature is inline-styled HTML by necessity (mail clients
+             drop <style>), so the framing helper's style attribute carries the
+             box rules too - it appends them after its own geometry. -->
         <img src="{{photoSrc}}" width="72" height="72"
-             style="display:block; width:72px; height:72px; border-radius:50%; object-fit:cover; border:0;"
-             alt="" data-lolly-anno="{{asset headshot}}">
+             alt="" data-lolly-anno="{{asset headshot}}"
+             {{framing "headshotFraming" style="display:block; width:72px; height:72px; border-radius:50%; overflow:hidden; border:0"}}>
       </td>
       {{/if}}
 

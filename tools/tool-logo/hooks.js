@@ -26,14 +26,37 @@ function relLuminance(hex) {
   return 0.2126 * lin(0) + 0.7152 * lin(2) + 0.0722 * lin(4);
 }
 
-// Controls → catalog logo id. neg = reversed (dark bg); pos = for light bg;
-// mono = white on dark / black on light; brand = green on either.
-function logoId(inputs) {
+// Controls → canonical brand-logo VARIANT (orientation × treatment). treatment:
+// primary = full-colour, mono = one-colour; the `-reverse` forms are for dark backgrounds.
+function logoVariant(inputs) {
+  const dark   = relLuminance(inputs.background) < 0.5;
+  const orient = inputs.orientation === 'vertical' ? 'vertical' : 'horizontal';
+  const treat  = inputs.ink === 'mono' ? (dark ? 'mono-reverse' : 'mono') : (dark ? 'primary-reverse' : 'primary');
+  return `${orient}-${treat}`;
+}
+
+// SUSE catalog id for a variant - the fallback when a brand declares no asset.logo token.
+// neg = dark bg, white/black = mono ink, green = full-colour.
+function suseFallbackId(inputs) {
   const dark   = relLuminance(inputs.background) < 0.5;
   const orient = inputs.orientation === 'vertical' ? 'vert' : 'hor';
   const treat  = dark ? 'neg' : 'pos';
   const ink    = inputs.ink === 'mono' ? (dark ? 'white' : 'black') : 'green';
   return `suse/logo/${orient}-${treat}-${ink}`;
+}
+
+// Resolve the variant to a catalog asset id via the BRAND'S asset.logo.<variant> tokens,
+// so this re-skins for any brand - not just SUSE. Falls back to the SUSE catalog id when the
+// brand declares no such token (or host.tokens is absent), so nothing regresses.
+async function logoId(inputs) {
+  const variant = logoVariant(inputs);
+  try {
+    if (host.tokens && host.tokens.resolve) {
+      const id = await host.tokens.resolve('{asset.logo.' + variant + '}');
+      if (typeof id === 'string' && id && id.indexOf('{') !== 0) return id;
+    }
+  } catch (e) { /* fall through to the SUSE default */ }
+  return suseFallbackId(inputs);
 }
 
 async function patch({ model }) {
@@ -43,7 +66,7 @@ async function patch({ model }) {
   const m = Math.round(VIEWBOX * 0.12);
   const out = { logoX: m, logoY: m, logoSize: VIEWBOX - 2 * m };
 
-  const id = logoId(inputs);
+  const id = await logoId(inputs);
   try {
     out.logo = await host.assets.get(id);
   } catch (e) {

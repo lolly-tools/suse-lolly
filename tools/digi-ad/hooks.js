@@ -46,6 +46,7 @@ var _savedClass = null;
 var _reducedCss = ''; // reduced-motion fallback, injected into the HTML export only
 var _animated = true; // last-known "Animate" state, for beforeExport
 var _loop = 'loop';   // last-known loop mode, for the GIF loop-count
+var _transparentBg = false; // last-known "Transparent background" state, for beforeExport
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -106,15 +107,33 @@ async function inlineAsset(url) {
   }
 }
 
-// The SUSE mark for a scene: orientation × tone, polarity flipped for the bg.
+// The SUSE mark for a scene: orientation × tone, polarity flipped for the bg. Used as the
+// fallback when the brand declares no asset.logo token.
 function logoIdFor(scene, bg) {
   var orient = scene.logo === 'stacked' ? 'vert' : 'hor';
   var polarity = isDark(bg) ? 'neg' : 'pos';
   if (scene.logoColor === 'green') return 'suse/logo/' + orient + '-' + polarity + '-green';
   return 'suse/logo/' + orient + '-' + polarity + '-' + (isDark(bg) ? 'white' : 'black');
 }
+// The canonical VARIANT for a scene, so the mark re-skins for any brand via its
+// asset.logo.<variant> tokens.
+function logoVariantFor(scene, bg) {
+  var orient = scene.logo === 'stacked' ? 'vertical' : 'horizontal';
+  var dark = isDark(bg);
+  var treat = scene.logoColor === 'green' ? (dark ? 'primary-reverse' : 'primary') : (dark ? 'mono-reverse' : 'mono');
+  return orient + '-' + treat;
+}
+async function resolveLogoId(scene, bg) {
+  try {
+    if (host.tokens && host.tokens.resolve) {
+      var id = await host.tokens.resolve('{asset.logo.' + logoVariantFor(scene, bg) + '}');
+      if (typeof id === 'string' && id && id.indexOf('{') !== 0) return id;
+    }
+  } catch (e) { /* fall through to the SUSE default */ }
+  return logoIdFor(scene, bg);
+}
 async function resolveLogo(scene, bg) {
-  var id = logoIdFor(scene, bg);
+  var id = await resolveLogoId(scene, bg);
   try {
     if (!_logoRefs[id]) _logoRefs[id] = await host.assets.get(id);
     return await inlineAsset(_logoRefs[id] && _logoRefs[id].url);
@@ -164,8 +183,10 @@ async function compute(model) {
   var transDur = clamp(num(inputs.transDur, DEFAULT_TRANS), 0.15, 1.5);
   var loop = str(inputs.loop) || 'loop';
   var focusScene = Math.round(num(inputs.focusScene, 0));
+  var transparentBg = inputs.transparentBg === true;
   _animated = animated;
   _loop = loop;
+  _transparentBg = transparentBg;
 
   var all = Array.isArray(inputs.scenes) ? inputs.scenes : [];
   var scenes = all.slice(0, MAX_SCENES);
@@ -175,7 +196,7 @@ async function compute(model) {
   var n = scenes.length;
   if (!n) {
     _totalDuration = 1;
-    return { scenesOut: [], animCss: '', rootClass: 'digiad', durSec: 1, sceneCount: 0 };
+    return { scenesOut: [], animCss: '', rootClass: transparentBg ? 'digiad dg-transparent' : 'digiad', durSec: 1, sceneCount: 0 };
   }
 
   // Timeline: scene i enters at startS[i] over inS[i], then holds. Cover model -
@@ -222,7 +243,7 @@ async function compute(model) {
     var ctaStyle = str(sc.ctaStyle) || 'pill';
     var hasText = !!(headline || subheadline || body || cta);
 
-    var styleParts = ['--bg:' + bg, '--fg:' + fg, 'background-color:' + bg, 'color:' + fg];
+    var styleParts = ['--bg:' + bg, '--fg:' + fg, 'background-color:' + (transparentBg ? 'transparent' : bg), 'color:' + fg];
     if (imgUrl) {
       styleParts.push('background-image:url(' + imgUrl + ')');
       styleParts.push('background-position:' + (FOCUS_POS[sc.imageFocus] || 'center'));
@@ -285,11 +306,12 @@ async function compute(model) {
       '.digiad .dg-scene--' + lastIdx + '{opacity:1!important}}';
 
   var animCss = keyframes.join('') + bindings.join('') + freeze;
+  var rootClass = 'digiad' + (frozen ? ' dg-frozen' : '') + (transparentBg ? ' dg-transparent' : '');
 
   return {
     scenesOut: scenesOut,
     animCss: animCss,
-    rootClass: frozen ? 'digiad dg-frozen' : 'digiad',
+    rootClass: rootClass,
     durSec: T,
     sceneCount: n,
   };
@@ -306,6 +328,10 @@ async function beforeExport(ctx) {
   if (!root) return;
   _savedClass = root.className;
   var fmt = ctx.format;
+  // Clear the export's outer backdrop for alpha-capable formats so a
+  // transparent scene isn't composited onto an opaque canvas.
+  var ALPHA_FORMATS = { png: 1, webp: 1, avif: 1, svg: 1, apng: 1, 'webp-anim': 1 };
+  if (_transparentBg && ALPHA_FORMATS[fmt]) ctx.opts.background = 'transparent';
   // Play only for animated formats AND when "Animate" is on - otherwise every
   // format (incl. gif/webm/mp4/html) exports the held still, honouring the toggle.
   var play = !!ANIMATED_FORMATS[fmt] && _animated;

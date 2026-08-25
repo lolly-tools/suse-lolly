@@ -52,13 +52,16 @@
 }
 
 /* Full-bleed background image (object-fit cover + pan/zoom from the block's
-   bgX / bgY / bgZoom). Sits under the content. */
+   bgX / bgY / bgZoom / bgRotate / bgPitch / bgYaw, written by the {{framing}}
+   helper's block mode - plans/148). Sits under the content. */
 .cb-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 0;
-  pointer-events: none;
+  /* Deliberately NOT pointer-events:none: the shell's framing overlay arms on a
+     pointerdown that lands on the framed element itself (plans/148), and a
+     transparent image would hand the tap to the block behind it instead. */
 }
 
 .cb-content {
@@ -137,7 +140,10 @@
   width: calc(88cqmin * var(--scale, 1));
   height: calc(88cqmin * var(--scale, 1));
   max-width: 100%; max-height: 100%;
-  object-fit: contain;
+  /* !important because the {{framing}} helper writes object-fit inline and an
+     image block is BY DEFINITION a contained icon, not a bleed photo. Its pan /
+     zoom / perspective still apply; only the fit is fixed. */
+  object-fit: contain !important;
   flex: none;
 }
 
@@ -164,14 +170,14 @@
 }
 </style>
 
-<div class="cb-root" id="cb-root">
+<div class="cb-root" id="cb-root"{{#if transparentBg}} style="background:transparent"{{/if}}>
   {{#each blocks}}
   <div class="cb-block {{kind}}-block{{#if this.bgImage}} has-img{{/if}}"
        data-kind="{{kind}}"
        data-canvas-input="blocks:{{@index}}"
        style="background-color:{{lookup ../blockBg @index}}; color:{{lookup ../blockFg @index}}; --scale:{{lookup ../blockScale @index}}; --weight:{{default this.weight 400}};">
     {{#if this.bgImage}}<img class="cb-img" src="{{asset this.bgImage}}" alt=""
-       style="object-position:{{default this.bgX 50}}% {{default this.bgY 50}}%; transform-origin:{{default this.bgX 50}}% {{default this.bgY 50}}%; transform:scale(calc({{default this.bgZoom 100}} / 100));">{{/if}}
+       {{framing "bg" block="blocks" index=@index}}>{{/if}}
     {{#if (eq kind "heading")}}<div class="cb-content"><span class="cb-text">{{arrow this.text}}</span></div>{{/if}}
     {{#if (eq kind "subheading")}}<div class="cb-content"><div class="cb-text">{{{markdown (arrow this.text)}}}</div></div>{{/if}}
     {{#if (eq kind "body")}}<div class="cb-content"><div class="cb-text">{{{markdown this.text}}}</div></div>{{/if}}

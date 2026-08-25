@@ -2753,18 +2753,18 @@ function parseAscii(text) {
 // in a single change because each step reads `patch.X || inp.X`.
 function resolvePatches(inp, changedId) {
   var patch = {};
-  if (changedId === 'preset' && inp.preset && inp.preset !== 'custom') {
-    var p = PRESETS[inp.preset];
+  if (changedId === 'diagramPreset' && inp.diagramPreset && inp.diagramPreset !== 'custom') {
+    var p = PRESETS[inp.diagramPreset];
     if (p) Object.keys(p).forEach(function (k) { patch[k] = p[k]; });
   }
-  if (changedId === 'preset' || changedId === 'theme') {
+  if (changedId === 'diagramPreset' || changedId === 'theme') {
     var theme = patch.theme || inp.theme;
     if (theme && theme !== 'custom') {
       var t = THEMES[theme];
       if (t) { patch.nodeFill = t.nodeFill; patch.nodeStroke = t.nodeStroke; patch.nodeText = t.nodeText; patch.edgeColor = t.edgeColor; patch.background = t.background; }
     }
   }
-  if (changedId === 'preset' || changedId === 'density') {
+  if (changedId === 'diagramPreset' || changedId === 'density') {
     var density = patch.density || inp.density;
     if (density && density !== 'custom') {
       var d = DENSITY[density];
@@ -2778,7 +2778,7 @@ function resolvePatches(inp, changedId) {
 async function compute(model, changedId) {
   await ensureBrandThemes();
   var inp = inputsFrom(model);
-  var patch = (changedId === 'preset' || changedId === 'theme' || changedId === 'density') ? resolvePatches(inp, changedId) : {};
+  var patch = (changedId === 'diagramPreset' || changedId === 'theme' || changedId === 'density') ? resolvePatches(inp, changedId) : {};
   Object.keys(patch).forEach(function (k) { inp[k] = patch[k]; });
   var svg;
   try { svg = await buildDiagram(inp); }

@@ -42,6 +42,16 @@
 }
 @media (prefers-reduced-motion: reduce) { .qc-root[data-ambient="on"]::before { animation: none; } }
 
+/* ── Transparent background (render.transparentBg toggle) ───────────────
+   Overrides the theme's solid background so alpha-capable exports (PNG/SVG/
+   WebP/AVIF) keep the card see-through; the theme class's color/--accent/
+   --muted/--border stay untouched. Two classes outweigh the single-class
+   .qc-light/.qc-dark/.qc-main selectors regardless of source order. Also
+   drops the ambient glow, which is a wash meant for a solid card and reads
+   wrong floating over transparency. */
+.qc-root.qc-transparent { background: transparent; }
+.qc-root.qc-transparent[data-ambient="on"]::before { content: none; }
+
 /* ── Frame ── */
 .qc-frame {
   position: absolute;
@@ -98,6 +108,24 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  /* The framing helper writes object-fit / object-position / transform inline;
+     a zoomed or straightened portrait must be clipped by the circle, not spill
+     past it, so the round mask has to hold. */
+  overflow: hidden;
+}
+
+/* Background image wrapper: carries the opacity + the clip, so the <img> itself
+   holds nothing but the framing helper's geometry (plans/148). */
+.qc-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.qc-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .qc-attribution {
@@ -232,9 +260,16 @@ display: flex;
 }
 </style>
 
-<div class="qc-root qc-{{theme}} qc-style-{{quoteStyle}} qc-layout-{{layout}}{{#if separator}} qc-has-sep{{/if}}" data-ambient="{{#if ambientMotion}}on{{else}}off{{/if}}">
+<div class="qc-root qc-{{theme}} qc-style-{{quoteStyle}} qc-layout-{{layout}}{{#if separator}} qc-has-sep{{/if}}{{#if transparentBg}} qc-transparent{{/if}}" data-ambient="{{#if ambientMotion}}on{{else}}off{{/if}}">
   {{#if bgImage}}
-  <img src="{{asset bgImage}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{imageFraming.x}}% {{imageFraming.y}}%;transform:scale(calc({{imageFraming.zoom}} / 100));transform-origin:{{imageFraming.x}}% {{imageFraming.y}}%;opacity:{{bgOpacity}};pointer-events:none;">
+  <!-- The framing helper owns the whole placement recipe (object-fit /
+       object-position / transform / transform-origin) and stamps the marker the
+       shell's framing overlay binds to - see plans/148. Opacity rides on the
+       wrapper so the helper's style attribute stays the single source of the
+       geometry. -->
+  <div class="qc-bg" style="opacity:{{bgOpacity}}">
+    <img src="{{asset bgImage}}" alt="" {{framing "imageFraming"}}>
+  </div>
   {{/if}}
 
   <div class="qc-frame" id="qc-frame" style="inset:{{frameInset}}px">
@@ -245,7 +280,7 @@ display: flex;
     </div>
 
     <div class="qc-speaker">
-      {{#if headshot}}<img class="qc-headshot" src="{{asset headshot}}" alt="">{{/if}}
+      {{#if headshot}}<img class="qc-headshot" src="{{asset headshot}}" alt="" {{framing "headshotFraming"}}>{{/if}}
       {{#if name}}
       <div class="qc-attribution">
         <span class="qc-name">{{name}}</span>

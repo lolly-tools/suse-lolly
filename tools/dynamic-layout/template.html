@@ -57,13 +57,10 @@
 
 /* ── Background image (photo mode) ── */
 .dl-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-.dl-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: var(--bgx, 50%) var(--bgy, 50%);
-  transform: scale(calc(var(--bgzoom, 100) / 100));
-  transform-origin: var(--bgx, 50%) var(--bgy, 50%);
-}
+/* Geometry comes from the {{framing}} helper inline (plans/148) - one recipe
+   shared with every other framed image, and the marker the framing overlay binds
+   to. Only the box size lives here. */
+.dl-bg img { width: 100%; height: 100%; }
 .dl-bg.flt-mono  img { filter: grayscale(1); }
 .dl-bg.flt-punch img { filter: contrast(1.15) saturate(1.25); }
 .dl-bg.flt-warm  img { filter: saturate(1.35) sepia(0.35) hue-rotate(-18deg); }
@@ -231,17 +228,17 @@
 </style>
 
 <div class="dl-root dl-{{theme}} dl-ctafont-{{ctaTypography}}" id="dl-root"
-     style="--bgx:{{imageFraming.x}}%; --bgy:{{imageFraming.y}}%; --bgzoom:{{imageFraming.zoom}}; --bgoverlay:{{bgOpacity}}; --head-scale:{{headingFontSize}}; --head-weight:{{headingFontWeight}}; --sub-scale:{{subheadingFontSize}}; --sub-weight:{{subheadingFontWeight}}; --text-scale:{{bodyFontSize}}; --text-weight:{{bodyFontWeight}}; --cta-scale:{{ctaFontSize}}; --cta-weight:{{ctaFontWeight}};{{#if fgColor}} color:{{fgColor}}; --accent-fg:{{fgColor}};{{/if}}" data-lolly-anno="{{logoStyle}}">
+     style="--bgoverlay:{{bgOpacity}}; --head-scale:{{headingFontSize}}; --head-weight:{{headingFontWeight}}; --sub-scale:{{subheadingFontSize}}; --sub-weight:{{subheadingFontWeight}}; --text-scale:{{bodyFontSize}}; --text-weight:{{bodyFontWeight}}; --cta-scale:{{ctaFontSize}}; --cta-weight:{{ctaFontWeight}};{{#if fgColor}} color:{{fgColor}}; --accent-fg:{{fgColor}};{{/if}}" data-lolly-anno="{{logoStyle}}">
 
   {{#if bgImage}}
-  <div class="dl-bg flt-{{imageFilter}}"><img src="{{asset bgImage}}" alt=""></div>
+  <div class="dl-bg flt-{{imageFilter}}"><img src="{{asset bgImage}}" alt="" {{framing "imageFraming"}}></div>
   <div class="dl-overlay"></div>
   {{/if}}
 
   <!-- Feature block: the headshot, or (with no headshot) the heading. -->
   <div class="dl-feature" id="dl-feature"{{#if bgImage}} data-canvas-input="bgImage"{{/if}}>
     <div class="dl-box"><div class="dl-fit">
-      {{#if headshot}}<img class="dl-headshot" src="{{asset headshot}}" alt="" data-canvas-input="headshot">{{else}}{{#if heading}}<h1 class="dl-heading">{{arrow heading}}</h1>{{/if}}{{/if}}
+      {{#if headshot}}<img class="dl-headshot" src="{{asset headshot}}" alt="" data-canvas-input="headshot" {{framing "headshotFraming"}}>{{else}}{{#if heading}}<h1 class="dl-heading">{{arrow heading}}</h1>{{/if}}{{/if}}
     </div></div>
   </div>
 

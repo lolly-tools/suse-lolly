@@ -17,7 +17,8 @@
     "height": 1754,
     "formats": ["pdf", "pdf-cmyk", "svg", "dxf", "png", "jpg", "webp"],
     "actions": ["copy", "download", "save"],
-    "convertPaths": false
+    "convertPaths": false,
+    "transparentBg": false
   },
   "hooks": {
     "onInit": true,

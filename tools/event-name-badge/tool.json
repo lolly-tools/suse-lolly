@@ -18,7 +18,8 @@
     "formats": ["pdf", "pdf-cmyk", "svg", "png", "jpg", "webp"],
     "actions": ["copy", "download", "save"],
     "filenameFrom": ["firstname", "lastname"],
-    "convertPaths": false
+    "convertPaths": false,
+    "transparentBg": false
   },
   "hooks": {
     "onInit": true,

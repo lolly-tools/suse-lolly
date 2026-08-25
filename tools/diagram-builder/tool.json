@@ -25,7 +25,7 @@
   },
   "inputs": [
     {
-      "id": "preset",
+      "id": "diagramPreset",
       "label": "Preset",
       "type": "select",
       "default": "custom",

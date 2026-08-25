@@ -31,8 +31,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/tokens/brand.json",
-          "checksum": "sha256-B63831oE17jQkKJ+Rd43ZyfYqSwdmP7DwPjtbvKdzSg=",
-          "size": 13881
+          "checksum": "sha256-hh/gtAIRMvjOzQjLFBpqC2HDAlF1GnyjHYslKbkckys=",
+          "size": 14975
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",

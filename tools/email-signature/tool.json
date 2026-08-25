@@ -2,7 +2,7 @@
   "id": "email-signature",
   "name": "Email Signature",
   "description": "An on-brand SUSE email signature, ready to paste into any client.",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -63,6 +63,19 @@
       "allowUpload": true,
       "filter": { "namespace": "suse/headshots" },
       "help": "Optional headshot. Displayed as a circle."
+    },
+    {
+      "id": "headshotFraming",
+      "label": "Headshot framing",
+      "framingFor": "headshot",
+      "help": "Move and zoom the portrait inside its circle - drag it on the canvas, or set the numbers here.",
+      "type": "vector",
+      "fields": [
+        { "id": "zoom",   "label": "Zoom",   "min": 100,  "max": 400, "step": 1,   "default": 100 },
+        { "id": "x",      "label": "X",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "y",      "label": "Y",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "rotate", "label": "Rotate", "min": -180, "max": 180, "step": 0.5, "default": 0   }
+      ]
     },
     {
       "id": "email",

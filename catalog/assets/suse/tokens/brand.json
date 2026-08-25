@@ -412,6 +412,19 @@
         "$value": "SUSE Mono",
         "$description": "Code, readouts & data - SUSE Mono (also the platform default mono)."
       }
+    },
+    "asset": {
+      "$description": "Brand logo variants (orientation x treatment) mapped to the SUSE catalog logo assets, so the canonical logo system + brand-inheriting templates resolve the right mark. SUSE naming: neg = reverse (dark backgrounds), pos = for light; green = full-colour (primary), white/black = one-colour (mono).",
+      "logo": {
+        "horizontal-primary": { "$type": "asset", "$value": "suse/logo/hor-pos-green" },
+        "horizontal-primary-reverse": { "$type": "asset", "$value": "suse/logo/hor-neg-green" },
+        "horizontal-mono": { "$type": "asset", "$value": "suse/logo/hor-pos-black" },
+        "horizontal-mono-reverse": { "$type": "asset", "$value": "suse/logo/hor-neg-white" },
+        "vertical-primary": { "$type": "asset", "$value": "suse/logo/vert-pos-green" },
+        "vertical-primary-reverse": { "$type": "asset", "$value": "suse/logo/vert-neg-green" },
+        "vertical-mono": { "$type": "asset", "$value": "suse/logo/vert-pos-black" },
+        "vertical-mono-reverse": { "$type": "asset", "$value": "suse/logo/vert-neg-white" }
+      }
     }
   },
   "light": {

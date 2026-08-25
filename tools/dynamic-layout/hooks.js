@@ -24,16 +24,27 @@ function relLuminance(hex) {
   return 0.2126 * lin(0) + 0.7152 * lin(2) + 0.0722 * lin(4);
 }
 
-function logoId(inputs) {
-  const dark = relLuminance(THEME_BG[inputs.theme] || THEME_BG.pine) < 0.5;
-  const ink  = inputs.logoStyle === 'brand' ? 'green' : (dark ? 'white' : 'black');
+// The brand-logo VARIANT (always horizontal here) → resolved from the brand's
+// asset.logo.<variant> tokens so it re-skins for any brand, falling back to the SUSE
+// catalog id. treatment: brand = full-colour (primary), else one-colour (mono); -reverse
+// for dark themes.
+async function logoId(inputs) {
+  const dark  = relLuminance(THEME_BG[inputs.theme] || THEME_BG.pine) < 0.5;
+  const treat = inputs.logoStyle === 'brand' ? (dark ? 'primary-reverse' : 'primary') : (dark ? 'mono-reverse' : 'mono');
+  try {
+    if (host.tokens && host.tokens.resolve) {
+      const id = await host.tokens.resolve('{asset.logo.horizontal-' + treat + '}');
+      if (typeof id === 'string' && id && id.indexOf('{') !== 0) return id;
+    }
+  } catch (e) { /* fall through to the SUSE default */ }
+  const ink = inputs.logoStyle === 'brand' ? 'green' : (dark ? 'white' : 'black');
   return `suse/logo/hor-${dark ? 'neg' : 'pos'}-${ink}`;
 }
 
 async function patch({ model }) {
   const inputs = Object.fromEntries(model.map(i => [i.id, i.value]));
   if (!inputs.logo || inputs.logo === 'none') return { brandLogo: null };
-  const id = logoId(inputs);
+  const id = await logoId(inputs);
   try {
     return { brandLogo: await host.assets.get(id) };
   } catch (e) {

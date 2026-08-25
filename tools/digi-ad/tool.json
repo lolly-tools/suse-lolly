@@ -41,7 +41,8 @@
     "video": {
       "wait": 0,
       "duration": 6
-    }
+    },
+    "transparentBg": false
   },
   "hooks": {
     "onInit": true,

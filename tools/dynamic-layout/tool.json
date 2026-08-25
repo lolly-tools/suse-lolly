@@ -74,12 +74,29 @@
       "id": "imageFraming",
       "label": "Position",
       "section": "Background",
-      "help": "Zoom scales the background image up to crop in; X / Y pan it. Drag a label or type a value.",
+      "framingFor": "bgImage",
+      "help": "Drag the image on the canvas to move it, scroll to zoom, and hold Alt while dragging to straighten converging verticals. Or drag a label / type a value here.",
       "type": "vector",
       "fields": [
-        { "id": "zoom", "label": "Zoom", "symbol": "+", "min": 100, "max": 400, "step": 1, "default": 100 },
-        { "id": "x",    "label": "X",    "min": 0,   "max": 100, "step": 1, "default": 50  },
-        { "id": "y",    "label": "Y",    "min": 0,   "max": 100, "step": 1, "default": 50  }
+        { "id": "zoom",   "label": "Zoom",       "symbol": "+", "min": 100,  "max": 400, "step": 1,   "default": 100 },
+        { "id": "x",      "label": "X",          "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "y",      "label": "Y",          "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "rotate", "label": "Rotate",     "min": -180, "max": 180, "step": 0.5, "default": 0   },
+        { "id": "pitch",  "label": "Vertical",   "min": -45,  "max": 45,  "step": 0.5, "default": 0   },
+        { "id": "yaw",    "label": "Horizontal", "min": -45,  "max": 45,  "step": 0.5, "default": 0   }
+      ]
+    },
+    {
+      "id": "imageFit",
+      "label": "Fit",
+      "section": "Background",
+      "type": "select",
+      "attachTo": "bgImage",
+      "display": "icon-toggle",
+      "default": "cover",
+      "options": [
+        { "value": "cover",   "label": "Fill", "icon": "fitCover" },
+        { "value": "contain", "label": "Fit",  "icon": "fitContain" }
       ]
     },
     {
@@ -257,6 +274,19 @@
       "allowUpload": true,
       "filter": { "namespace": "suse/headshots" },
       "help": "Optional portrait. When set, it anchors its own colour block beside the text."
+    },
+    {
+      "id": "headshotFraming",
+      "label": "Headshot framing",
+      "framingFor": "headshot",
+      "help": "Move and zoom the portrait inside its circle - drag it on the canvas, or set the numbers here.",
+      "type": "vector",
+      "fields": [
+        { "id": "zoom",   "label": "Zoom",   "min": 100,  "max": 400, "step": 1,   "default": 100 },
+        { "id": "x",      "label": "X",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "y",      "label": "Y",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "rotate", "label": "Rotate", "min": -180, "max": 180, "step": 0.5, "default": 0   }
+      ]
     }
   ]
 }
