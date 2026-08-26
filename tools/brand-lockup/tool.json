@@ -8,7 +8,7 @@
   "category": "designer",
   "tags": ["lockup", "logo", "brand", "chameleon", "wordmark", "product", "program", "team"],
   "featured": {
-    "order": 7,
+    "order": 14,
     "blurb": "Official SUSE logo lockups, many looks",
     "variants": [
       { "label": "Horizontal green", "theme": "light", "values": { "name": "Storage", "category": "product", "orientation": "horizontal", "polarity": "positive", "treatment": "colour" } },

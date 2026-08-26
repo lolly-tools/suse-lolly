@@ -1,6 +1,6 @@
 {
   "name": "ডায়াগ্রাম বিল্ডার",
-  "description": "অর্গ চার্ট, ফ্লোচার্ট, টাইমলাইন এবং আরও - কার্ড, টেক্সট, Mermaid বা CSV থেকে।",
+  "description": "অর্গ চার্ট, ফ্লোচার্ট, টাইমলাইন ও আরও অনেক কিছু - কার্ড, টেক্সট, Mermaid, DOT বা CSV থেকে।",
   "featured.blurb": "কার্ড বা টেক্সটকে অন-ব্র্যান্ড ডায়াগ্রামে বদলে দিন",
   "a11yLabel": "{{default title \"Untitled\"}} - {{diagramType}} ডায়াগ্রাম",
   "inputs.diagramPreset.label": "প্রিসেট",

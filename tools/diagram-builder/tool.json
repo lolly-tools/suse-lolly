@@ -9,7 +9,7 @@
   "category": "everyone",
   "tags": ["diagram", "org-chart", "org chart", "architecture", "layercake", "flowchart", "process", "hierarchy", "mind map", "mindmap", "timeline", "roadmap", "cycle", "pyramid", "funnel", "kanban", "matrix", "quadrant", "gantt", "milestone", "swimlane", "cards", "arrows", "ascii", "text", "mermaid", "sequence", "dot", "graphviz", "csv"],
   "featured": {
-    "order": 6,
+    "order": 12,
     "blurb": "Turn cards or text into on-brand diagrams"
   },
   "render": {

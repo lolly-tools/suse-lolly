@@ -1,6 +1,6 @@
 {
   "name": "Конструктор діаграм",
-  "description": "Організаційні схеми, блок-схеми, часові шкали та інше - з карток, тексту, Mermaid чи CSV.",
+  "description": "Організаційні схеми, блок-схеми, часові шкали та інше - із карток, тексту, Mermaid, DOT або CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} - діаграма {{diagramType}}",
   "featured.blurb": "Перетворюйте картки або текст на фірмові діаграми",
   "inputs.diagramPreset.label": "Пресет",

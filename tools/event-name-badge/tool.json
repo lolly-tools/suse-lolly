@@ -9,7 +9,7 @@
   "category": "event",
   "tags": ["badge", "name tag", "event", "conference", "lanyard", "qr", "tracks", "speaker", "sponsor"],
   "featured": {
-    "order": 8,
+    "order": 15,
     "blurb": "Conference name badges, colour-coded by role"
   },
   "render": {

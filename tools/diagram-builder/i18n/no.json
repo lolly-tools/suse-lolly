@@ -1,6 +1,6 @@
 {
   "name": "Diagrambygger",
-  "description": "Organisasjonskart, flytskjemaer, tidslinjer og mer - fra kort, tekst, Mermaid eller CSV.",
+  "description": "Organisasjonskart, flytskjemaer, tidslinjer og mer - fra kort, tekst, Mermaid, DOT eller CSV.",
   "a11yLabel": "{{default title \"Uten tittel\"}} - {{diagramType}}-diagram",
   "featured.blurb": "Gjør kort eller tekst om til diagrammer i din merkevarestil",
   "inputs.diagramPreset.label": "Forhåndsinnstilling",

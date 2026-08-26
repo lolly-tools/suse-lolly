@@ -1,0 +1,1361 @@
+{
+  "rule": "A tool earns an animated preview only if its content is still changing past 700 ms and still changing at the end of the probe window. A settle-in transition that ends on a still frame is not animated content: it gets the static SVG.",
+  "probedAt": "2026-08-26T13:15:48.934Z",
+  "probe": {
+    "settleMs": 900,
+    "plans": [
+      {
+        "name": "short",
+        "frameMs": [
+          0,
+          700,
+          1700,
+          2700,
+          3700
+        ],
+        "tailGaps": 2
+      },
+      {
+        "name": "long",
+        "frameMs": [
+          0,
+          700,
+          1700,
+          2700,
+          3700,
+          4700,
+          5700,
+          6700,
+          7700
+        ],
+        "tailGaps": 5
+      }
+    ],
+    "probeDim": 256,
+    "diffFrac": 0.01,
+    "pixelTol": 12
+  },
+  "curation": "Proposal only. An `animates` row is a CANDIDATE; a job in build-animated-previews.ts needs a human and a written reason.",
+  "rows": [
+    {
+      "id": "color-block",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 76.739,
+        "inkRatio": 0.51172,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "dynamic-layout",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 99.327,
+        "inkRatio": 0.40302,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "quotes",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 46.669,
+        "inkRatio": 0.14458,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "meeting-planner",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 34.662,
+        "inkRatio": 0.28068,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "code-canvas",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 15.604,
+        "inkRatio": 0.53762,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "qr-code",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 107.285,
+        "inkRatio": 0.31955,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "tool-logo",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 62.874,
+        "inkRatio": 0.26602,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "email-signature",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 55.062,
+        "inkRatio": 0.48109,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "color-palette",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 86.323,
+        "inkRatio": 0.72595,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "countdown-timer",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0.001708984375,
+        0
+      ],
+      "content": {
+        "stddev": 9.775,
+        "inkRatio": 0.01207,
+        "ground": "white",
+        "blank": false,
+        "sparse": true
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short",
+      "note": "canvas is near-empty at defaults"
+    },
+    {
+      "id": "url-shot",
+      "verdict": "skipped",
+      "diffs": [],
+      "content": null,
+      "hasCard": false,
+      "status": "official",
+      "window": "short",
+      "note": "capture-gated: nothing renders headlessly"
+    },
+    {
+      "id": "strip-data",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 13.256,
+        "inkRatio": 0.03073,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "text-helper",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 14.615,
+        "inkRatio": 0.03418,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "event-name-badge",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 48.535,
+        "inkRatio": 0.25304,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "wayfinding-signage",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 53.152,
+        "inkRatio": 0.09653,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "brand-lockup",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 105.049,
+        "inkRatio": 0.43004,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "digi-ad",
+      "verdict": "animates",
+      "diffs": [
+        0.997283935546875,
+        0,
+        0.9973297119140625,
+        0
+      ],
+      "content": {
+        "stddev": 51.069,
+        "inkRatio": 0.09286,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": true,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "calendar-ics",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 52.361,
+        "inkRatio": 0.23296,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "compress-pdf",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 18.395,
+        "inkRatio": 0.0236,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "multi-page-pdf",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 30.503,
+        "inkRatio": 0.02169,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "logo-wall",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 4.342,
+        "inkRatio": 0.01147,
+        "ground": "white",
+        "blank": false,
+        "sparse": true
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short",
+      "note": "canvas is near-empty at defaults"
+    },
+    {
+      "id": "diagram-builder",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 24.33,
+        "inkRatio": 0.07668,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    },
+    {
+      "id": "logo-lockup-partner",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 54.046,
+        "inkRatio": 0.08279,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "web-icon",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 97.524,
+        "inkRatio": 0.26633,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "lottie-digi-ad",
+      "verdict": "animates",
+      "diffs": [
+        0,
+        0.99139404296875,
+        0,
+        0,
+        0.9912109375,
+        0,
+        0,
+        0.03289794921875
+      ],
+      "content": {
+        "stddev": 30.496,
+        "inkRatio": 0.04553,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "long",
+      "note": "cycles slower than the 3700 ms window"
+    },
+    {
+      "id": "pose-geeko",
+      "verdict": "animates",
+      "diffs": [
+        0.048126220703125,
+        0.013031005859375,
+        0.0536346435546875,
+        0.0351409912109375
+      ],
+      "content": {
+        "stddev": 81.903,
+        "inkRatio": 0.23917,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": true,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "voice-recorder",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 26.342,
+        "inkRatio": 0.11357,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    },
+    {
+      "id": "top-tail-recorder",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 39.642,
+        "inkRatio": 0.14266,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    },
+    {
+      "id": "asset-export",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 0.864,
+        "inkRatio": 0.0005,
+        "ground": "white",
+        "blank": true,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short",
+      "note": "canvas renders nothing at defaults"
+    },
+    {
+      "id": "doc-studio",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 30.402,
+        "inkRatio": 0.16896,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "org-chart",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 36.647,
+        "inkRatio": 0.7124,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "d3",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 89.556,
+        "inkRatio": 0.28733,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "record",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 53.781,
+        "inkRatio": 0.41845,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "3d",
+      "verdict": "error",
+      "diffs": [],
+      "content": null,
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short",
+      "note": "page.$: Unable to adopt element handle from a different document"
+    },
+    {
+      "id": "mesh-gradient",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 62.645,
+        "inkRatio": 0.96221,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "booth-studio",
+      "verdict": "error",
+      "diffs": [],
+      "content": null,
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short",
+      "note": "page.$: Protocol error (DOM.describeNode): Cannot find context with specified id"
+    },
+    {
+      "id": "prompt-to-image",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 35.882,
+        "inkRatio": 0.19278,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "screencap",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 20.391,
+        "inkRatio": 0.47708,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "deck-studio",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 109.918,
+        "inkRatio": 0.73559,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "deck-builder",
+      "verdict": "error",
+      "diffs": [],
+      "content": null,
+      "hasCard": false,
+      "status": "community",
+      "window": "short",
+      "note": "page reloaded mid-probe (dev server reload) - frames not comparable"
+    },
+    {
+      "id": "wordmark",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 84.124,
+        "inkRatio": 0.18493,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "convert-image",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 19.805,
+        "inkRatio": 0.0274,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "audiogram",
+      "verdict": "animates",
+      "diffs": [
+        0.0492401123046875,
+        0.0995330810546875,
+        0.0591278076171875,
+        0.02923583984375
+      ],
+      "content": {
+        "stddev": 42.183,
+        "inkRatio": 0.14978,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "embed-track-image",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 29.472,
+        "inkRatio": 0.06452,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "battlecards",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 35.53,
+        "inkRatio": 0.04169,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "redact",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 19.578,
+        "inkRatio": 0.04487,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "finish-preview",
+      "verdict": "animates",
+      "diffs": [
+        0.46588134765625,
+        0.595123291015625,
+        0.578765869140625,
+        0.564208984375
+      ],
+      "content": {
+        "stddev": 96.102,
+        "inkRatio": 0.90385,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "font-convert",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 16.929,
+        "inkRatio": 0.03201,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "run-web-code",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 17.717,
+        "inkRatio": 0.04419,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "filter",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 97.63,
+        "inkRatio": 0.47173,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "official",
+      "window": "short"
+    },
+    {
+      "id": "flythrough",
+      "verdict": "error",
+      "diffs": [],
+      "content": null,
+      "hasCard": true,
+      "status": "experimental",
+      "window": "short",
+      "note": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+    },
+    {
+      "id": "design",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 2.726,
+        "inkRatio": 0.00258,
+        "ground": "white",
+        "blank": false,
+        "sparse": true
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short",
+      "note": "canvas is near-empty at defaults"
+    },
+    {
+      "id": "darkroom",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 99.171,
+        "inkRatio": 0.8374,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "contrast-check",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 36.925,
+        "inkRatio": 0.09429,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "pricing-table",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 28.259,
+        "inkRatio": 0.18833,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "screenshot-frame",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 98.678,
+        "inkRatio": 0.61736,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "captions",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 91.153,
+        "inkRatio": 0.21674,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "certificate",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 50.451,
+        "inkRatio": 0.35765,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "print-sheet",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 4.474,
+        "inkRatio": 0.00911,
+        "ground": "white",
+        "blank": false,
+        "sparse": true
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short",
+      "note": "canvas is near-empty at defaults"
+    },
+    {
+      "id": "stationery",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 64.522,
+        "inkRatio": 0.12533,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "jump",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 107.601,
+        "inkRatio": 0.74728,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "annotate",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 34.657,
+        "inkRatio": 0.20789,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "link-card",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 117.858,
+        "inkRatio": 0.45697,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "signature",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 40.018,
+        "inkRatio": 0.05106,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "growth",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 32.815,
+        "inkRatio": 0.32091,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "community",
+      "window": "short"
+    },
+    {
+      "id": "spatial-photo",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 8.013,
+        "inkRatio": 0.04085,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    },
+    {
+      "id": "synth",
+      "verdict": "animates",
+      "diffs": [
+        0.9043511284722222,
+        0.8672417534722222,
+        0.9298231336805556,
+        0.9339735243055556
+      ],
+      "content": {
+        "stddev": 71.22,
+        "inkRatio": 0.94537,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    },
+    {
+      "id": "scan-code",
+      "verdict": "still",
+      "diffs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "content": {
+        "stddev": 109.348,
+        "inkRatio": 0.40824,
+        "ground": "white",
+        "blank": false,
+        "sparse": false
+      },
+      "hasCard": false,
+      "status": "experimental",
+      "window": "short"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
   "category": "everyone",
   "tags": ["layout", "blocks", "grid", "responsive", "poster", "social", "composition"],
   "featured": {
-    "order": 4,
+    "order": 10,
     "blurb": "Colour blocks - text, image, logo in a grid"
   },
   "render": {

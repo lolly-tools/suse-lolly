@@ -9,7 +9,7 @@
   "category": "event",
   "tags": ["signage", "wayfinding", "directional", "arrow", "event", "conference", "venue", "directory", "poster", "navigation"],
   "featured": {
-    "order": 9,
+    "order": 16,
     "blurb": "Directional event signs, print-ready"
   },
   "render": {

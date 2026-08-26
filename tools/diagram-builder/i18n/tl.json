@@ -1,6 +1,6 @@
 {
   "name": "Diagram Builder",
-  "description": "Org charts, flowcharts, timelines at higit pa - mula sa mga card, text, Mermaid o CSV.",
+  "description": "Mga org chart, flowchart, timeline at higit pa - mula sa card, text, Mermaid, DOT o CSV.",
   "featured.blurb": "I-convert ang cards o text sa diagrams na naaayon sa brand mo",
   "a11yLabel": "{{default title \"Walang Pamagat\"}} - {{diagramType}} na diagram",
   "inputs.diagramPreset.label": "Preset",
