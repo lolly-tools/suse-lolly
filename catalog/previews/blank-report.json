@@ -2356,7 +2356,7 @@
     {
       "file": "mesh-gradient.look0.svg",
       "bytes": 4991,
-      "sha": "2134977916b9827d",
+      "sha": "bfae9aa1bd982e22",
       "stddev": 34.823,
       "inkRatio": 0.75374,
       "ground": "black",
@@ -2376,7 +2376,7 @@
     {
       "file": "mesh-gradient.look1.svg",
       "bytes": 5503,
-      "sha": "516c6cdb98375b4c",
+      "sha": "5c6337d703d2c2e4",
       "stddev": 36.727,
       "inkRatio": 0.84836,
       "ground": "black",
@@ -2395,19 +2395,19 @@
     },
     {
       "file": "mesh-gradient.look2.svg",
-      "bytes": 4880,
-      "sha": "b0304e6612f9b57b",
-      "stddev": 41.326,
-      "inkRatio": 0.70844,
+      "bytes": 14550,
+      "sha": "650c8b30d4899744",
+      "stddev": 74.705,
+      "inkRatio": 0.79324,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 41.326,
-          "inkRatio": 0.70844
+          "stddev": 74.705,
+          "inkRatio": 0.79324
         },
         "black": {
-          "stddev": 49.957,
-          "inkRatio": 0.69515
+          "stddev": 74.705,
+          "inkRatio": 0.79324
         }
       },
       "blank": false,
@@ -2415,8 +2415,68 @@
     },
     {
       "file": "mesh-gradient.look3.svg",
+      "bytes": 7208,
+      "sha": "9171b2da114d39c8",
+      "stddev": 49.23,
+      "inkRatio": 0.89437,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 52.315,
+          "inkRatio": 0.88935
+        },
+        "black": {
+          "stddev": 49.23,
+          "inkRatio": 0.89437
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "mesh-gradient.look4.svg",
+      "bytes": 10037,
+      "sha": "14d83bee076377bb",
+      "stddev": 37.856,
+      "inkRatio": 0.96099,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 37.856,
+          "inkRatio": 0.96099
+        },
+        "black": {
+          "stddev": 37.856,
+          "inkRatio": 0.96099
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "mesh-gradient.look5.svg",
+      "bytes": 10071,
+      "sha": "95b45f1b0f202ae4",
+      "stddev": 67.984,
+      "inkRatio": 0.90883,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 67.984,
+          "inkRatio": 0.90883
+        },
+        "black": {
+          "stddev": 67.984,
+          "inkRatio": 0.90883
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "mesh-gradient.look6.svg",
       "bytes": 4403,
-      "sha": "22a640c86549a863",
+      "sha": "7c35e233bc743c5f",
       "stddev": 39.512,
       "inkRatio": 0.67961,
       "ground": "black",
@@ -2434,29 +2494,9 @@
       "sparse": false
     },
     {
-      "file": "mesh-gradient.look4.svg",
-      "bytes": 5706,
-      "sha": "abf0a6e6f065d8bc",
-      "stddev": 44.05,
-      "inkRatio": 0.92169,
-      "ground": "black",
-      "grounds": {
-        "white": {
-          "stddev": 44.256,
-          "inkRatio": 0.92125
-        },
-        "black": {
-          "stddev": 44.05,
-          "inkRatio": 0.92169
-        }
-      },
-      "blank": false,
-      "sparse": false
-    },
-    {
-      "file": "mesh-gradient.look5.svg",
+      "file": "mesh-gradient.look7.svg",
       "bytes": 7075,
-      "sha": "4912a5063dbc2d3e",
+      "sha": "c279970ab2e645b4",
       "stddev": 40.651,
       "inkRatio": 0.81595,
       "ground": "black",
@@ -2476,7 +2516,7 @@
     {
       "file": "mesh-gradient.svg",
       "bytes": 6016,
-      "sha": "f3c9d3b64e299a0b",
+      "sha": "49a031da1b52efa2",
       "stddev": 62.943,
       "inkRatio": 0.97203,
       "ground": "white",
