@@ -1,8 +1,8 @@
 {
   "id": "logo-lockup-partner",
-  "name": "Logo Lockup: Partner",
+  "name": "Partner Lockup",
   "description": "The SUSE logo beside a partner's, with a divider between - light or dark.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
@@ -11,7 +11,7 @@
   "render": {
     "width": 1200,
     "height": 360,
-    "formats": ["svg", "png", "pdf", "dxf", "jpg", "webp"],
+    "formats": ["svg", "png", "pdf", "dxf", "jpg", "webp", "avif", "tiff", "emf", "eps", "pdf-cmyk"],
     "actions": ["copy", "download", "save"],
     "layout": "sidebar",
     "transparentBg": false,

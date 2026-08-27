@@ -118,7 +118,7 @@
       "window": "short"
     },
     {
-      "id": "code-canvas",
+      "id": "snippet",
       "verdict": "still",
       "diffs": [
         0,
@@ -490,7 +490,7 @@
       "window": "short"
     },
     {
-      "id": "web-icon",
+      "id": "icon",
       "verdict": "still",
       "diffs": [
         0,
@@ -706,7 +706,7 @@
       "note": "page.$: Unable to adopt element handle from a different document"
     },
     {
-      "id": "mesh-gradient",
+      "id": "gradient",
       "verdict": "still",
       "diffs": [
         0,
@@ -736,7 +736,7 @@
       "note": "page.$: Protocol error (DOM.describeNode): Cannot find context with specified id"
     },
     {
-      "id": "prompt-to-image",
+      "id": "prompt-card",
       "verdict": "still",
       "diffs": [
         0,
@@ -866,7 +866,7 @@
       "window": "short"
     },
     {
-      "id": "embed-track-image",
+      "id": "claim",
       "verdict": "still",
       "diffs": [
         0,
@@ -966,7 +966,7 @@
       "window": "short"
     },
     {
-      "id": "run-web-code",
+      "id": "sandbox",
       "verdict": "still",
       "diffs": [
         0,
@@ -1097,7 +1097,7 @@
       "window": "short"
     },
     {
-      "id": "screenshot-frame",
+      "id": "frame",
       "verdict": "still",
       "diffs": [
         0,

@@ -1,5 +1,5 @@
 {
-  "name": "Tarjeta de cita",
+  "name": "Citas",
   "description": "Tarjetas de cita con tu marca para publicaciones y diapositivas.",
   "inputs.theme.label": "Tema",
   "inputs.theme.options.light": "Claro",

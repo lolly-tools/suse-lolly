@@ -1,5 +1,5 @@
 {
-  "name": "Картка з цитатою",
+  "name": "Цитати",
   "description": "Фірмові картки з цитатами для постів у соцмережах та слайдів.",
   "inputs.theme.label": "Тема",
   "inputs.theme.options.light": "Світлий",

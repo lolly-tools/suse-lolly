@@ -1,5 +1,5 @@
 {
-  "name": "Jmenovka pro akce",
+  "name": "Jmenovky",
   "description": "Konferenční jmenovky s barevně odlišenou rolí a volitelným QR kódem.",
   "featured.blurb": "Konferenční jmenovky barevně odlišené podle role",
   "a11yLabel": "Jmenovka na akci pro {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

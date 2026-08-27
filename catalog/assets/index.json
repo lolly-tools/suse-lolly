@@ -6,7 +6,7 @@
     "3d",
     "booth-studio",
     "wordmark",
-    "web-icon",
+    "icon",
     "lottie-digi-ad",
     "doc-studio",
     "multi-page-pdf",
@@ -9221,7 +9221,7 @@
     {
       "id": "suse/backgrounds/mesh-forest",
       "name": "Mesh · Forest",
-      "description": "Soft mesh-gradient wash in SUSE greens.",
+      "description": "Soft gradient wash in SUSE greens.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -9247,7 +9247,7 @@
     {
       "id": "suse/backgrounds/mesh-tide",
       "name": "Mesh · Tide",
-      "description": "Cool mesh-gradient wash, midnight to mint.",
+      "description": "Cool gradient wash, midnight to mint.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",
@@ -9376,7 +9376,7 @@
     {
       "id": "suse/backgrounds/mesh-dawn",
       "name": "Mesh · Dawn",
-      "description": "Warm mesh-gradient wash - amber and orange over pine.",
+      "description": "Warm gradient wash - amber and orange over pine.",
       "type": "vector",
       "version": "1.1.0",
       "tier": "catalog",

@@ -1,5 +1,5 @@
 {
-  "name": "Namnbricka för evenemang",
+  "name": "Namnbrickor",
   "description": "Konferensnamnbrickor med färgkodad roll och valfri QR-kod.",
   "featured.blurb": "Konferensnamnbrickor, färgkodade efter roll",
   "a11yLabel": "Namnbricka för evenemang för {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

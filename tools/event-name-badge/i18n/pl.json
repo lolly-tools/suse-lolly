@@ -1,5 +1,5 @@
 {
-  "name": "Identyfikator na wydarzenie",
+  "name": "Identyfikatory",
   "description": "Identyfikatory konferencyjne z kolorowym oznaczeniem roli i opcjonalnym kodem QR.",
   "a11yLabel": "Identyfikator na wydarzenie dla {{default firstname \"uczestnik\"}} {{default lastname \"\"}}, {{default status \"uczestnik\"}}",
   "featured.blurb": "Identyfikatory konferencyjne z kolorowym oznaczeniem roli",

@@ -1,8 +1,8 @@
 {
   "id": "logo-wall",
-  "name": "Logo Lockup: Grid (NASCAR)",
+  "name": "Logo Wall",
   "description": "Arrange a pile of logos into a clean, even sponsor grid - the “NASCAR” wall.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
@@ -11,7 +11,7 @@
   "render": {
     "width": 1280,
     "height": 720,
-    "formats": ["png", "svg", "pdf", "dxf", "jpg", "webp"],
+    "formats": ["png", "svg", "pdf", "dxf", "jpg", "webp", "avif", "tiff", "emf", "eps", "pdf-cmyk"],
     "actions": ["copy", "download", "save"],
     "layout": "sidebar",
     "transparentBg": true,

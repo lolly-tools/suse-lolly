@@ -1,9 +1,9 @@
 {
   "id": "wayfinding-signage",
-  "name": "Wayfinding Signage",
+  "name": "Wayfinding",
   "description": "Directional event signs - destinations, each with an arrow. Print-ready.",
   "a11yLabel": "Wayfinding sign for {{default eventName \"the event\"}}{{#if heading}} - {{heading}}{{/if}}",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "event",
@@ -15,7 +15,7 @@
   "render": {
     "width": 1240,
     "height": 1754,
-    "formats": ["pdf", "pdf-cmyk", "svg", "dxf", "png", "jpg", "webp"],
+    "formats": ["pdf", "pdf-cmyk", "svg", "dxf", "png", "jpg", "webp", "avif", "tiff", "cmyk-tiff", "emf"],
     "actions": ["copy", "download", "save"],
     "convertPaths": false,
     "transparentBg": false

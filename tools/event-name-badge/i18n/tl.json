@@ -1,5 +1,5 @@
 {
-  "name": "Name Badge para sa Event",
+  "name": "Mga Badge",
   "description": "Mga name badge para sa conference na may color-coded na role at opsyonal na QR.",
   "featured.blurb": "Mga name badge para sa conference, color-coded ayon sa role",
   "a11yLabel": "Badge ng pangalan sa event para kay {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

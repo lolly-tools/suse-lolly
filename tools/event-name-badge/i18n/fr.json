@@ -1,5 +1,5 @@
 {
-  "name": "Badge nominatif d'événement",
+  "name": "Badges",
   "description": "Badges de conférence avec rôle codé par couleur et QR code optionnel.",
   "featured.blurb": "Badges de conférence, codés par couleur selon le rôle",
   "a11yLabel": "Badge nominatif d'événement pour {{default firstname \"participant\"}} {{default lastname \"\"}}, {{default status \"participant\"}}",

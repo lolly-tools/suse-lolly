@@ -1,5 +1,5 @@
 {
-  "name": "Logo-combinatie: Partner",
+  "name": "Partnerlockup",
   "description": "Het SUSE-logo naast dat van een partner, met een scheidingslijn ertussen - licht of donker.",
   "a11yLabel": "SUSE-partnercombinatie met {{partners.length}} partnerlogo's",
   "inputs.theme.label": "Thema",

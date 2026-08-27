@@ -1,5 +1,5 @@
 {
-  "name": "Association de logos : Partenaire",
+  "name": "Lockup Partenaire",
   "description": "Le logo SUSE à côté de celui d'un partenaire, avec un séparateur entre les deux - clair ou sombre.",
   "a11yLabel": "Association de logos partenaire SUSE avec {{partners.length}} logos de partenaires",
   "inputs.theme.label": "Thème",

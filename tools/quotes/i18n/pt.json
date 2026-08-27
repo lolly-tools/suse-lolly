@@ -1,5 +1,5 @@
 {
-  "name": "Cartão de citação",
+  "name": "Citações",
   "description": "Cartões de citação com a sua marca para posts e slides.",
   "inputs.theme.label": "Tema",
   "inputs.theme.options.light": "Claro",

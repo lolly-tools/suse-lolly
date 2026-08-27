@@ -1,5 +1,5 @@
 {
-  "name": "Kalendar ICS",
+  "name": "Kalendar",
   "description": "Tukar butiran acara kepada fail kalendar (.ics) untuk mana-mana aplikasi kalendar.",
   "inputs.eventName.label": "Nama acara",
   "inputs.eventName.placeholder": "cth. Semakan suku tahunan",

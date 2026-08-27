@@ -1,5 +1,5 @@
 {
-  "name": "인용구 카드",
+  "name": "인용구",
   "description": "소셜 게시물과 슬라이드에 어울리는 브랜드 인용구 카드예요.",
   "inputs.theme.label": "테마",
   "inputs.theme.options.light": "라이트",

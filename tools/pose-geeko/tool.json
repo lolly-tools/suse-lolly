@@ -2,7 +2,7 @@
   "id": "pose-geeko",
   "name": "Pose Geeko",
   "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
@@ -12,7 +12,7 @@
   "render": {
     "width": 800,
     "height": 800,
-    "formats": ["svg", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg"],
+    "formats": ["svg", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg", "tiff", "emf", "eps", "pdf-cmyk"],
     "actions": ["download", "copy", "save"]
   },
   "featured": {

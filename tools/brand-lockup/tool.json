@@ -1,8 +1,8 @@
 {
   "id": "brand-lockup",
-  "name": "Brand Lockup",
+  "name": "Lockup",
   "description": "Official SUSE logo lockups - chameleon, wordmark and a name.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
@@ -21,7 +21,7 @@
   "render": {
     "width": 1200,
     "height": 1200,
-    "formats": ["svg", "png", "emf", "eps", "eps-cmyk", "dxf"],
+    "formats": ["svg", "png", "emf", "eps", "eps-cmyk", "dxf", "pdf", "pdf-cmyk", "jpg", "webp", "avif", "tiff"],
     "actions": ["copy", "download", "save"]
   },
   "inputs": [

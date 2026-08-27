@@ -1,5 +1,5 @@
 {
-  "name": "Zestawienie logo: Partner",
+  "name": "Lockup partnera",
   "description": "Logo SUSE obok logo partnera, z separatorem pomiędzy - w jasnej lub ciemnej wersji.",
   "a11yLabel": "Zestawienie logo SUSE i partnerów - {{partners.length}} logo partnerów",
   "inputs.theme.label": "Motyw",

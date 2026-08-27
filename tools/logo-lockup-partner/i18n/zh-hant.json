@@ -1,5 +1,5 @@
 {
-  "name": "標誌組合:合作夥伴",
+  "name": "夥伴標誌組合",
   "description": "SUSE 標誌與合作夥伴標誌並列，中間以分隔線區隔 - 淺色或深色版本。",
   "a11yLabel": "包含 {{partners.length}} 個合作夥伴標誌的 SUSE 合作夥伴標誌組合",
   "inputs.theme.label": "主題",

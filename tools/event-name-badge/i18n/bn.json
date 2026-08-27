@@ -1,5 +1,5 @@
 {
-  "name": "ইভেন্ট নেম ব্যাজ",
+  "name": "ব্যাজ",
   "description": "রং-কোডেড ভূমিকা ও ঐচ্ছিক QR-সহ কনফারেন্স নেম ব্যাজ।",
   "featured.blurb": "কনফারেন্স নেম ব্যাজ, ভূমিকা অনুযায়ী রং-কোডেড",
   "a11yLabel": "ইভেন্ট নেম ব্যাজ: {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

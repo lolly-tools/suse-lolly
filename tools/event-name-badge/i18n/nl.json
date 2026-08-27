@@ -1,5 +1,5 @@
 {
-  "name": "Naambadge voor evenementen",
+  "name": "Badges",
   "description": "Congresbadges met kleurgecodeerde rol en optionele QR-code.",
   "featured.blurb": "Congresbadges, kleurgecodeerd per rol",
   "a11yLabel": "Naambadge voor {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

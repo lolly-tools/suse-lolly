@@ -1,5 +1,5 @@
 {
-  "name": "Kết hợp logo: Đối tác",
+  "name": "Cụm Logo Đối Tác",
   "description": "Logo SUSE bên cạnh logo đối tác, với đường phân cách ở giữa - sáng hoặc tối.",
   "a11yLabel": "Kết hợp logo đối tác SUSE với {{partners.length}} logo đối tác",
   "inputs.theme.label": "Chủ đề",

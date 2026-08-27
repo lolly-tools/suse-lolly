@@ -1,5 +1,5 @@
 {
-  "name": "Direksyonal na Signage",
+  "name": "Wayfinding",
   "description": "Directional event signs - mga destinasyon, may arrow ang bawat isa. Print-ready.",
   "featured.blurb": "Mga signage ng direksyon para sa event, ready for print",
   "a11yLabel": "Signage ng direksyon para sa {{default eventName \"the event\"}}{{#if heading}} - {{heading}}{{/if}}",

@@ -3,7 +3,7 @@
   "name": "Top & Tail Video",
   "description": "Record a clip in any orientation, then auto-wrap it with branded intro and outro bookends, a lower-third, and a music bed.",
   "a11yLabel": "Top and tail video - {{default introTitle \"intro\"}} to {{default outroTitle \"outro\"}}",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "engineVersion": ">=1.150.0 <2.0.0",
   "status": "experimental",
   "category": "everyone",
@@ -33,15 +33,7 @@
   "render": {
     "width": 1080,
     "height": 1920,
-    "formats": [
-      "mp4",
-      "webm",
-      "gif",
-      "apng",
-      "png",
-      "srt",
-      "vtt"
-    ],
+    "formats": ["mp4", "webm", "gif", "apng", "png", "srt", "vtt", "webp-anim"],
     "capture": "av",
     "actions": [
       "download",

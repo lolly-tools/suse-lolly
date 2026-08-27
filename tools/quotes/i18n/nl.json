@@ -1,5 +1,5 @@
 {
-  "name": "Citaatkaart",
+  "name": "Citaten",
   "description": "Merkgetrouwe citaatkaarten voor sociale posts en presentaties.",
   "inputs.theme.label": "Thema",
   "inputs.theme.options.light": "Licht",

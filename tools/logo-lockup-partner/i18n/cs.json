@@ -1,5 +1,5 @@
 {
-  "name": "Spojení log: Partner",
+  "name": "Partnerská sestava",
   "description": "Logo SUSE vedle partnerova, s oddělovačem mezi nimi - světlé nebo tmavé.",
   "a11yLabel": "Spojení loga SUSE a partnerů s {{partners.length}} partnerskými logy",
   "inputs.theme.label": "Motiv",

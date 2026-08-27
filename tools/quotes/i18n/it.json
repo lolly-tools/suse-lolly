@@ -1,5 +1,5 @@
 {
-  "name": "Scheda citazione",
+  "name": "Citazioni",
   "description": "Schede citazione in linea con il brand per post social e slide.",
   "inputs.theme.label": "Tema",
   "inputs.theme.options.light": "Chiaro",

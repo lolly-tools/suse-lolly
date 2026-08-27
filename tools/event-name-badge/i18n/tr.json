@@ -1,5 +1,5 @@
 {
-  "name": "Etkinlik İsim Rozeti",
+  "name": "Rozetler",
   "description": "Renk kodlu role sahip ve isteğe bağlı QR içeren konferans isim rozetleri.",
   "featured.blurb": "Role göre renk kodlanmış konferans isim rozetleri",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}} için etkinlik isim rozeti, {{default status \"attendee\"}}",

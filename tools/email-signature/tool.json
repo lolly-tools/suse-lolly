@@ -2,7 +2,7 @@
   "id": "email-signature",
   "name": "Email Signature",
   "description": "An on-brand SUSE email signature, ready to paste into any client.",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -10,7 +10,7 @@
   "render": {
     "width": 600,
     "height": 300,
-    "formats": ["html", "txt", "png", "svg", "vcf", "json"],
+    "formats": ["html", "txt", "png", "svg", "vcf", "json", "jpg", "webp"],
     "actions": ["copy", "download", "save"],
     "filenameFrom": ["firstname", "lastname"]
   },

@@ -1,5 +1,5 @@
 {
-  "name": "Card cu citat",
+  "name": "Card cu citate",
   "description": "Carduri cu citate aliniate brandului, pentru postări sociale și slide-uri.",
   "inputs.theme.label": "Temă",
   "inputs.theme.options.light": "Luminos",

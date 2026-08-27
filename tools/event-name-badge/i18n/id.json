@@ -1,5 +1,5 @@
 {
-  "name": "Badge Nama Acara",
+  "name": "Badge",
   "description": "Badge nama konferensi dengan kode warna peran dan QR opsional.",
   "featured.blurb": "Badge nama konferensi, dengan kode warna berdasarkan peran",
   "a11yLabel": "Badge nama acara untuk {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

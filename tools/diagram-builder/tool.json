@@ -1,9 +1,9 @@
 {
   "id": "diagram-builder",
-  "name": "Diagram Builder",
+  "name": "Diagrams",
   "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid, DOT or CSV.",
   "a11yLabel": "{{default title \"Untitled\"}} - {{diagramType}} diagram",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "engineVersion": "^1.0.0",
   "status": "experimental",
   "category": "everyone",
@@ -15,7 +15,7 @@
   "render": {
     "width": 1600,
     "height": 1000,
-    "formats": ["svg", "pdf", "dxf", "png"],
+    "formats": ["svg", "pdf", "dxf", "png", "jpg", "webp", "avif", "emf", "pdf-cmyk", "pptx"],
     "actions": ["copy", "download", "save"],
     "transparentBg": true
   },

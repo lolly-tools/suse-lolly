@@ -1,5 +1,5 @@
 {
-  "name": "شارة اسم الفعالية",
+  "name": "الشارات",
   "description": "شارات أسماء للمؤتمرات مع دور مرمز بالألوان ورمز QR اختياري.",
   "featured.blurb": "شارات أسماء للمؤتمرات مرمزة بالألوان حسب الدور",
   "a11yLabel": "شارة اسم الفعالية لـ {{default firstname \"attendee\"}} {{default lastname \"\"}}، {{default status \"attendee\"}}",

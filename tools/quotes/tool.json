@@ -1,8 +1,8 @@
 {
   "id": "quotes",
-  "name": "Quote Card",
+  "name": "Quotes",
   "description": "On-brand quote cards for social posts and slides.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -10,7 +10,7 @@
   "render": {
     "width": 1080,
     "height": 1080,
-    "formats": ["png", "svg", "html", "md", "txt", "pdf", "pdf-cmyk", "cmyk-tiff", "pptx", "webp", "avif", "jpeg"],
+    "formats": ["png", "svg", "html", "md", "txt", "pdf", "pdf-cmyk", "cmyk-tiff", "pptx", "webp", "avif", "jpeg", "tiff"],
     "actions": ["copy", "download", "save"],
     "transparentBg": false
   },

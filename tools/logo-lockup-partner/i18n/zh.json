@@ -1,5 +1,5 @@
 {
-  "name": "标志组合：合作伙伴",
+  "name": "合作伙伴组合",
   "description": "SUSE 徽标与合作伙伴徽标并排,中间以分隔线相隔 - 浅色或深色。",
   "a11yLabel": "SUSE 合作伙伴标志组合，包含 {{partners.length}} 个合作伙伴标志",
   "inputs.theme.label": "主题",

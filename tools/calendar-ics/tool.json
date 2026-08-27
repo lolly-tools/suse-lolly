@@ -1,8 +1,8 @@
 {
   "id": "calendar-ics",
-  "name": "Calendar ICS",
+  "name": "Calendar",
   "description": "Turn event details into a calendar (.ics) file for any calendar app.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "event",
@@ -10,7 +10,7 @@
   "render": {
     "width": 760,
     "height": 460,
-    "formats": ["ics", "png", "svg", "pdf"],
+    "formats": ["ics", "png", "svg", "pdf", "jpg", "webp"],
     "actions": ["download", "copy", "save"]
   },
   "hooks": {

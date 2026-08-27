@@ -1,5 +1,5 @@
 {
-  "name": "कोट कार्ड",
+  "name": "कोट्स",
   "description": "सोशल पोस्ट और स्लाइड के लिए ब्रांड के अनुरूप कोट कार्ड।",
   "inputs.theme.label": "थीम",
   "inputs.theme.options.light": "लाइट",
