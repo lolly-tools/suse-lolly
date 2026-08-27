@@ -1693,20 +1693,20 @@
       "sparse": false
     },
     {
-      "file": "diagram-builder.webp",
-      "bytes": 22766,
-      "sha": "7c8e19452b6b44eb",
-      "stddev": 111.952,
-      "inkRatio": 0.35676,
+      "file": "diagram-builder.svg",
+      "bytes": 60392,
+      "sha": "9caa3ef34e9933c7",
+      "stddev": 28.25,
+      "inkRatio": 0.09548,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 23.333,
-          "inkRatio": 0.07058
+          "stddev": 26.741,
+          "inkRatio": 0.08766
         },
         "black": {
-          "stddev": 111.952,
-          "inkRatio": 0.35676
+          "stddev": 28.25,
+          "inkRatio": 0.09548
         }
       },
       "blank": false,

@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-27T20:12:16.297Z",
+  "generatedAt": "2026-08-27T23:05:58.659Z",
   "tools": [
     {
       "id": "color-block",
@@ -2313,7 +2313,7 @@
       "id": "wayfinding-signage",
       "name": "Wayfinding",
       "description": "Directional event signs - destinations, each with an arrow. Print-ready.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "status": "official",
       "category": "event",
       "tags": [
@@ -2864,7 +2864,7 @@
       "id": "calendar-ics",
       "name": "Calendar",
       "description": "Turn event details into a calendar (.ics) file for any calendar app.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "status": "official",
       "category": "event",
       "tags": [
@@ -3324,7 +3324,7 @@
       "id": "logo-wall",
       "name": "Logo Wall",
       "description": "Arrange a pile of logos into a clean, even sponsor grid - the “NASCAR” wall.",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -3474,7 +3474,7 @@
       "id": "diagram-builder",
       "name": "Diagrams",
       "description": "Org charts, flowcharts, timelines and more - from cards, text, Mermaid, DOT or CSV.",
-      "version": "1.7.1",
+      "version": "1.7.2",
       "status": "experimental",
       "category": "everyone",
       "tags": [
@@ -3525,7 +3525,7 @@
       "height": 1000,
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"5\" rx=\"1\" /><rect x=\"2\" y=\"17\" width=\"6\" height=\"5\" rx=\"1\" /><rect x=\"16\" y=\"17\" width=\"6\" height=\"5\" rx=\"1\" /><path d=\"M12 7v3\" /><path d=\"M5 17v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2\" /></svg>",
-      "preview": "/catalog/previews/diagram-builder.webp",
+      "preview": "/catalog/previews/diagram-builder.svg",
       "featured": {
         "order": 12,
         "blurb": "Turn cards or text into on-brand diagrams"
@@ -5159,8 +5159,8 @@
       "id": "3d",
       "name": "3D",
       "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
-      "version": "1.2.3",
-      "status": "experimental",
+      "version": "1.2.4",
+      "status": "official",
       "category": "designer",
       "tags": [
         "3d",
@@ -6430,7 +6430,7 @@
       "id": "battlecards",
       "name": "Battlecards",
       "description": "Turn any table into a deck of cards - one card per row, ready as a multi-page PDF. Paste straight from your spreadsheet, doc, or chat.",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -6458,6 +6458,7 @@
       "width": 1200,
       "height": 900,
       "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"14.5 17.5 3 6 3 3 6 3 17.5 14.5\"/><line x1=\"13\" y1=\"19\" x2=\"19\" y2=\"13\"/><line x1=\"16\" y1=\"16\" x2=\"20\" y2=\"20\"/><line x1=\"19\" y1=\"21\" x2=\"21\" y2=\"19\"/></svg>",
       "preview": "/catalog/previews/battlecards.svg",
       "paged": true,
       "i18n": {
@@ -7310,8 +7311,8 @@
       "id": "flythrough",
       "name": "Flythrough",
       "description": "Fly a real 3D camera through a screenshot. The picture lifts into layers at real depth; big shapes extrude into solid objects; a timeline of poses animates the whole move - depth, opacity, perspective, extrusion, tilt, rotate, scale and the camera flight - then loops it home. Add, drag and reorder poses. Export as video.",
-      "version": "0.2.1",
-      "status": "experimental",
+      "version": "0.2.2",
+      "status": "official",
       "category": "designer",
       "tags": [
         "3d",
@@ -7451,7 +7452,7 @@
       "id": "design",
       "name": "Design",
       "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your brand.",
-      "version": "1.14.2",
+      "version": "1.14.4",
       "status": "community",
       "category": "designer",
       "tags": [
@@ -8969,7 +8970,7 @@
       "id": "certificate",
       "name": "Certificate",
       "description": "Completion and award certificates from the active brand - one name at a time, or a whole roster from a CSV in Bulk from rows.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -9008,10 +9009,7 @@
             "awarddate": "2026-06-18",
             "presenter": "Maya Lindqvist",
             "presenterTitle": "Programme Director",
-            "company": "Northwind Institute",
-            "color": "#1f2933",
-            "background": "#faf8f4",
-            "accent": "#8a6a2b"
+            "company": "Northwind Institute"
           }
         },
         {
@@ -9025,10 +9023,7 @@
             "presenter": "Ingrid Sorensen",
             "presenterTitle": "Chair of the Jury",
             "company": "Northwind Institute",
-            "serial": "No. 2026-0413",
-            "color": "#1c2733",
-            "background": "#f7f7f4",
-            "accent": "#1f5d63"
+            "serial": "No. 2026-0413"
           }
         },
         {
@@ -9041,10 +9036,7 @@
             "awarddate": "2026-03-02",
             "presenter": "Jonas Weber",
             "presenterTitle": "Community Lead",
-            "company": "Riverside Library",
-            "color": "#232a24",
-            "background": "#f8f7f1",
-            "accent": "#5c6b3c"
+            "company": "Riverside Library"
           }
         },
         {
@@ -9058,10 +9050,7 @@
             "awarddate": "2026-07-24",
             "presenter": "Maya Lindqvist",
             "presenterTitle": "Programme Director",
-            "company": "Northwind Institute",
-            "color": "#1f2933",
-            "background": "#f6f7f9",
-            "accent": "#3f5b8c"
+            "company": "Northwind Institute"
           }
         }
       ],
@@ -12904,7 +12893,7 @@
       "id": "backdrop",
       "name": "Backdrop",
       "description": "Living backdrops from your design system's colours: fifteen GPU effects - metaballs, god rays, neuro noise, warped fields, orbiting dots and more. Tune, freeze the exact moment you want, and export stills or motion loops for heroes, walls and meeting backgrounds.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -12938,11 +12927,6 @@
           "values": {
             "effect": "metaballs",
             "count": 4,
-            "color1": "#ffc800",
-            "color2": "#ff5500",
-            "color3": "#f585ff",
-            "color4": "#6e33cc",
-            "background": "#0b0713",
             "intensity": 55,
             "density": 45
           }
@@ -12952,11 +12936,6 @@
           "values": {
             "effect": "god-rays",
             "count": 4,
-            "color1": "#a600ff",
-            "color2": "#6200ff",
-            "color3": "#ffffff",
-            "color4": "#33fff5",
-            "background": "#02010a",
             "intensity": 60,
             "density": 45
           }
@@ -12965,9 +12944,6 @@
           "label": "Neural drift",
           "values": {
             "effect": "neuro-noise",
-            "color1": "#ffffff",
-            "color2": "#47a6ff",
-            "background": "#000000",
             "intensity": 50,
             "density": 40,
             "speed": 80
@@ -12978,9 +12954,6 @@
           "values": {
             "effect": "smoke-ring",
             "count": 2,
-            "color1": "#ffffff",
-            "color2": "#8fd8c9",
-            "background": "#04110d",
             "intensity": 55,
             "density": 40,
             "speed": 80
@@ -12991,11 +12964,6 @@
           "values": {
             "effect": "warp",
             "count": 4,
-            "color1": "#121212",
-            "color2": "#9470ff",
-            "color3": "#121212",
-            "color4": "#8838ff",
-            "background": "#121212",
             "intensity": 45,
             "density": 65
           }
@@ -13005,12 +12973,6 @@
           "values": {
             "effect": "dot-orbit",
             "count": 5,
-            "color1": "#ffc96b",
-            "color2": "#ff6200",
-            "color3": "#ff2f00",
-            "color4": "#421100",
-            "color5": "#1a0000",
-            "background": "#000000",
             "intensity": 50,
             "density": 50
           }
@@ -13020,10 +12982,6 @@
           "values": {
             "effect": "voronoi",
             "count": 3,
-            "color1": "#ff8247",
-            "color2": "#ffe53d",
-            "color3": "#2fb6a3",
-            "background": "#2e0000",
             "intensity": 50,
             "density": 40
           }
@@ -13033,13 +12991,6 @@
           "values": {
             "effect": "color-panels",
             "count": 6,
-            "color1": "#ff9d00",
-            "color2": "#fd4f30",
-            "color3": "#809bff",
-            "color4": "#6d2eff",
-            "color5": "#f15cff",
-            "color6": "#ffd557",
-            "background": "#000000",
             "intensity": 50,
             "density": 45,
             "speed": 70
