@@ -1,5 +1,5 @@
 {
-  "name": "Lockup ng Partner",
+  "name": "Partner Lockup",
   "description": "Ang SUSE logo sa tabi ng logo ng partner, may divider sa pagitan - light o dark.",
   "a11yLabel": "SUSE partner lockup na may {{partners.length}} partner logo",
   "inputs.theme.label": "Tema",

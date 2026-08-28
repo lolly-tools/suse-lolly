@@ -1,5 +1,5 @@
 {
-  "name": "Partnerlockup",
+  "name": "Partner Lockup",
   "description": "SUSE-logotypen bredvid en partners, med en avdelare mellan - ljus eller mörk.",
   "a11yLabel": "SUSE-partnerkombination med {{partners.length}} partnerlogotyper",
   "inputs.theme.label": "Tema",

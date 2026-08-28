@@ -1,5 +1,5 @@
 {
-  "name": "बैज",
+  "name": "Badges",
   "description": "कॉन्फ़्रेंस नाम बैज, रंग-कोडित भूमिका और वैकल्पिक QR के साथ।",
   "featured.blurb": "कॉन्फ़्रेंस नाम बैज, भूमिका के अनुसार रंग-कोडित",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}} के लिए इवेंट नाम बैज",

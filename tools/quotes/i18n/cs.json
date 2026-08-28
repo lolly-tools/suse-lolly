@@ -1,5 +1,5 @@
 {
-  "name": "Citáty",
+  "name": "Quotes",
   "description": "Citátové karty v souladu se značkou pro příspěvky na sociálních sítích a prezentace.",
   "inputs.theme.label": "Motiv",
   "inputs.theme.options.light": "Světlý",

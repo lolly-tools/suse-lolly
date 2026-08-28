@@ -1,5 +1,5 @@
 {
-  "name": "Credenciales",
+  "name": "Badges",
   "description": "Credenciales de conferencia con rol codificado por color y QR opcional.",
   "featured.blurb": "Credenciales de conferencia, codificadas por color según el rol",
   "a11yLabel": "Credencial de nombre del evento para {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

@@ -1,5 +1,5 @@
 {
-  "name": "Susunan Rakan Kongsi",
+  "name": "Partner Lockup",
   "description": "Logo SUSE bersebelahan logo rakan kongsi, dengan pemisah di antaranya - terang atau gelap.",
   "a11yLabel": "Gabungan rakan kongsi SUSE dengan {{partners.length}} logo rakan kongsi",
   "inputs.theme.label": "Tema",

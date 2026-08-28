@@ -3,7 +3,7 @@
   "name": "Pricing",
   "description": "Plans as columns, features as rows, ticks and crosses, and one plan picked out as the recommended one.",
   "a11yLabel": "Pricing table: {{default heading \"Pricing\"}}",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engineVersion": "^1.82.0",
   "status": "community",
   "category": "everyone",
@@ -14,10 +14,23 @@
       "values": {
         "heading": "Simple, transparent pricing",
         "subheading": "Every plan includes the whole toolkit. Pay for the seats and support you need.",
-        "accent": "#2563eb",
-        "background": "#f6f8fc",
-        "color": "#16202b",
-        "highlight": 2
+        "highlight": 2,
+        "background": "{color.semantic.surface}",
+        "accent": "{color.semantic.primary}",
+        "data": {
+          "columns": ["Feature", "Starter", "Team", "Enterprise"],
+          "rows": [
+            ["Price", "$9 / month", "$29 / month", "Talk to us"],
+            ["Tagline", "For solo work", "For growing teams", "For the whole org"],
+            ["Button", "Start Starter", "Start Team", "Contact sales"],
+            ["Link", "https://example.com/starter", "https://example.com/team", "mailto:sales@example.com"],
+            ["Projects", "3", "Unlimited", "Unlimited"],
+            ["Team members", "1", "Up to 20", "Unlimited"],
+            ["Shared brand kit", "no", "yes", "yes"],
+            ["Single sign-on", "no", "no", "yes"],
+            ["Support", "Community", "Email, next day", "> Named contact"]
+          ]
+        }
       }
     },
     {
@@ -28,10 +41,9 @@
         "cta": "Switch today",
         "highlight": 1,
         "highlightLabel": "Our pick",
-        "accent": "#0d7a5f",
-        "background": "#f5f7f4",
-        "color": "#132019",
         "layout": "cards",
+        "background": "{color.semantic.surface}",
+        "accent": "{color.semantic.primary}",
         "data": {
           "columns": ["Feature", "Lolly", "The usual tool"],
           "rows": [
@@ -54,9 +66,8 @@
         "layout": "grid",
         "highlight": 0,
         "cta": "",
-        "accent": "#7c3aed",
-        "background": "#faf9fd",
-        "color": "#1c1730",
+        "background": "{color.semantic.surface}",
+        "accent": "{color.semantic.primary}",
         "data": {
           "columns": ["Feature", "Solo", "Duo", "Squad", "Studio", "Agency"],
           "rows": [
@@ -71,16 +82,15 @@
       }
     },
     {
-      "label": "Ink accent on warm paper",
+      "label": "Membership",
       "values": {
         "heading": "Membership",
         "subheading": "One workshop a month, or all of them.",
         "cta": "Join",
         "highlight": 3,
         "highlightLabel": "Best value",
-        "accent": "#1f2933",
-        "background": "#f7f4ee",
-        "color": "#1f2933",
+        "background": "{color.semantic.surface}",
+        "accent": "{color.semantic.primary}",
         "data": {
           "columns": ["Feature", "Visitor", "Member", "Patron"],
           "rows": [
@@ -109,7 +119,7 @@
       "label": "Plans and features",
       "type": "table",
       "urlKey": "t",
-      "help": "The first column holds feature names, every other column is a plan. The FIRST row is the price line for each plan. An optional SECOND row whose first cell reads Tagline or Subtitle gives each plan a one-line subtitle. Every row after that is a feature. In a cell: yes, y, true, check, tick or a check mark draws a tick; no, n, false, x, cross, - or a cross mark draws a cross; a leading >, <, ^ or v becomes an arrow; anything else prints as text. Paste a table straight from your spreadsheet to replace the whole grid.",
+      "help": "The first column holds feature names, every other column is a plan. The FIRST row is the price line for each plan. Name a row Tagline (a one-line subtitle per plan), Button (each plan's own button text - put a price there for a buy button like $9/mo, or leave a cell empty for no button under that plan), or Link (each plan's destination, so its button becomes a real link) and it drops out of the feature list. Every other row is a feature. In a cell: yes, y, true, check, tick or a check mark draws a tick; no, n, false, x, cross, - or a cross mark draws a cross; a leading >, <, ^ or v becomes an arrow; anything else prints as text. Paste a table straight from your spreadsheet to replace the whole grid.",
       "default": {
         "columns": ["Feature", "Starter", "Team", "Enterprise"],
         "rows": [
@@ -144,7 +154,7 @@
       "type": "text",
       "default": "Get started",
       "maxLength": 40,
-      "help": "Printed under every plan. Leave it empty to drop the button row."
+      "help": "The button under every plan. A Button row in the table overrides it per plan; a Link row turns the buttons into real links. Leave this empty (and add no Button row) to drop the button row."
     },
     {
       "id": "highlight",
@@ -165,16 +175,11 @@
       "maxLength": 32
     },
     {
-      "id": "color",
-      "label": "Text",
-      "type": "color",
-      "default": "{color.semantic.text}"
-    },
-    {
       "id": "background",
       "label": "Background",
       "type": "color",
-      "default": "{color.semantic.surface}"
+      "default": "{color.semantic.surface}",
+      "help": "The text colour follows this automatically: dark ink on a light sheet, light ink on a dark one."
     },
     {
       "id": "accent",

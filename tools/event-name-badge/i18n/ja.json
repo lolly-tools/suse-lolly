@@ -1,5 +1,5 @@
 {
-  "name": "名札",
+  "name": "Badges",
   "description": "役割別に色分けされ、QRコードをオプションで追加できるカンファレンス名札です。",
   "featured.blurb": "役割別に色分けされたカンファレンス名札",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}}（{{default status \"attendee\"}}）のイベント名札",

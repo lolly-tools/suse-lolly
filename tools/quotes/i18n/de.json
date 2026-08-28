@@ -1,5 +1,5 @@
 {
-  "name": "Zitate",
+  "name": "Quotes",
   "description": "Markenkonforme Zitatkarten für Social-Media-Beiträge und Folien.",
   "inputs.theme.label": "Design",
   "inputs.theme.options.light": "Hell",

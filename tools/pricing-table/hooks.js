@@ -12,9 +12,12 @@
  *   column 0        feature names
  *   columns 1..n    one plan each
  *   row 0           the price line
- *   row 1           optional subtitle row, when its first cell reads
- *                   "Tagline" or "Subtitle"
- *   rows after that one feature each
+ *   named rows      anywhere after the price row, a row whose first cell reads
+ *                   "Tagline"/"Subtitle" (a subtitle per plan), "Button"/"CTA"
+ *                   (each plan's own button text - a price makes a buy button),
+ *                   or "Link"/"URL" (each plan's destination - the button turns
+ *                   into a real link). The first of each kind wins.
+ *   every other row one feature each
  *
  * Cell grammar: yes / y / true / check / tick (or a check mark) draws a tick;
  * no / n / false / x / cross / - (or a cross mark) draws a cross; anything else
@@ -33,9 +36,16 @@ var VARIATION_SELECTORS = /[\uFE0E\uFE0F]/g;
 
 // Fallbacks for every colour input. A colour default is a token alias that
 // resolves to '' on a brand with no tokens, so each one needs a literal here.
-var INK_FALLBACK = '#17232b';
+// There is no ink fallback: the text colour is derived from the paper, never
+// taken as an input (see _ink).
 var PAPER_FALLBACK = '#f7f8fa';
 var ACCENT_FALLBACK = '#2563eb';
+
+// The two inks the text can settle on, picked by the paper's own lightness.
+// Not pure black/white: a soft slate on light paper and a soft white on dark
+// read as considered rather than stark.
+var INK_ON_LIGHT = '#17232b';
+var INK_ON_DARK = '#f3f6f8';
 
 function _str(v) {
   return String(v == null ? '' : v).trim();
@@ -88,12 +98,37 @@ var ON_DARK = '#111417';
 var ON_LIGHT = '#ffffff';
 var APCA_POLARITY_Y = 0.3441;
 
-function _onColor(hex) {
+function _apcaY(hex) {
   var c = _rgb(hex);
-  var y = 0.2126729 * Math.pow(c[0] / 255, 2.4)
+  return 0.2126729 * Math.pow(c[0] / 255, 2.4)
     + 0.7151522 * Math.pow(c[1] / 255, 2.4)
     + 0.0721750 * Math.pow(c[2] / 255, 2.4);
-  return y > APCA_POLARITY_Y ? ON_DARK : ON_LIGHT;
+}
+
+function _onColor(hex) {
+  return _apcaY(hex) > APCA_POLARITY_Y ? ON_DARK : ON_LIGHT;
+}
+
+// The text colour, derived from the paper rather than taken as an input: dark
+// ink on a light sheet, light ink on a dark one, on the same APCA crossover the
+// badge ink uses.
+function _ink(paper) {
+  return _apcaY(paper) > APCA_POLARITY_Y ? INK_ON_LIGHT : INK_ON_DARK;
+}
+
+// Only web-safe schemes reach a button's href, so an exported sheet can never
+// carry a live handler. A bare domain ("suse.com") is promoted to https; a
+// relative path or an in-page anchor passes through; javascript:, data: and
+// file: drop the link and leave a plain-text button.
+function _safeHref(v) {
+  var s = _str(v);
+  if (s === '') return '';
+  if (/^(#|\/|\.\.?\/|\?)/.test(s)) return s;
+  var m = /^([a-z][a-z0-9+.-]*):/i.exec(s);
+  if (!m) return 'https://' + s;
+  var scheme = m[1].toLowerCase();
+  if (scheme === 'http' || scheme === 'https' || scheme === 'mailto' || scheme === 'tel') return s;
+  return '';
 }
 
 function _kindOf(raw) {
@@ -106,9 +141,9 @@ function _kindOf(raw) {
 }
 
 function _palette(args) {
-  var ink = _hex(args.color, INK_FALLBACK);
   var paper = _hex(args.background, PAPER_FALLBACK);
   var accent = _hex(args.accent, ACCENT_FALLBACK);
+  var ink = _ink(paper);
   // transparentBg only clears the outer sheet; card/edge/tint mixes below still
   // derive from the chosen paper colour so the plan panels keep their design.
   var transparent = args.transparentBg === true || args.transparentBg === 'true';
@@ -120,7 +155,7 @@ function _palette(args) {
     cardColor: _mix(paper, ink, 0.05),
     edgeColor: _mix(paper, ink, 0.18),
     mutedColor: _mix(ink, paper, 0.42),
-    tintColor: _mix(paper, accent, 0.1),
+    tintColor: _mix(paper, accent, 0.14),
   };
 }
 
@@ -128,6 +163,7 @@ function _blank(args, note) {
   var out = _palette(args);
   out.error = note;
   out.ctaText = _str(args.cta);
+  out.hasButtons = false;
   out.tiers = [];
   out.rows = [];
   out.tierCount = 0;
@@ -135,6 +171,11 @@ function _blank(args, note) {
   out.gridCols = '1fr';
   return out;
 }
+
+// The first cell of a row, matched against the named-row heads.
+var TAGLINE_HEAD = /^(tagline|subtitle)$/i;
+var BUTTON_HEAD = /^(button|cta|action)$/i;
+var LINK_HEAD = /^(link|links|url|href)$/i;
 
 function _build(args) {
   var table = args.data && typeof args.data === 'object' && !Array.isArray(args.data) ? args.data : null;
@@ -157,17 +198,29 @@ function _build(args) {
     return cells;
   });
 
+  // Pull the named rows (tagline / button / link) out of the grid, first of
+  // each wins; everything else after the price row is a feature. Named rows can
+  // sit in any order, so a pasted sheet is not held to a fixed layout.
   var priceRow = rows[0];
-  var second = rows[1];
-  var hasTagline = !!second && /^(tagline|subtitle)$/i.test(second[0]);
-  var featureRows = rows.slice(hasTagline ? 2 : 1);
+  var taglineRow = null;
+  var buttonRow = null;
+  var linkRow = null;
+  var featureRows = [];
+  for (var i = 1; i < rows.length; i++) {
+    var head = rows[i][0];
+    if (!taglineRow && TAGLINE_HEAD.test(head)) { taglineRow = rows[i]; continue; }
+    if (!buttonRow && BUTTON_HEAD.test(head)) { buttonRow = rows[i]; continue; }
+    if (!linkRow && LINK_HEAD.test(head)) { linkRow = rows[i]; continue; }
+    featureRows.push(rows[i]);
+  }
 
   var pal = _palette(args);
   var highlight = _int(args.highlight, 0);
   var label = _str(args.highlightLabel);
-  var ctaText = _str(args.cta);
+  var globalCta = _str(args.cta);
   var lastIndex = featureRows.length - 1;
 
+  var anyButton = false;
   var tiers = [];
   for (var col = 1; col < columns.length; col++) {
     var featured = highlight >= 1 && highlight === col;
@@ -186,13 +239,20 @@ function _build(args) {
         last: k === lastIndex,
       };
     });
+    // The Button row, when present, is authoritative per plan: an empty cell
+    // means no button, an empty gap under that plan - NOT a fall-back to the
+    // global label. With no Button row at all, the global label sits under every
+    // plan. A per-plan link turns that plan's button into an <a>.
+    var ctaLabel = buttonRow ? _str(buttonRow[col]) : globalCta;
+    if (ctaLabel) anyButton = true;
     tiers.push({
       name: columns[col],
       price: priceRow[col],
-      tagline: hasTagline ? second[col] : '',
+      tagline: taglineRow ? taglineRow[col] : '',
       highlighted: featured,
       badge: featured ? label : '',
-      ctaText: ctaText,
+      ctaLabel: ctaLabel,
+      href: linkRow ? _safeHref(linkRow[col]) : '',
       cells: cells,
     });
   }
@@ -209,7 +269,8 @@ function _build(args) {
 
   var out = pal;
   out.error = '';
-  out.ctaText = ctaText;
+  out.ctaText = globalCta;
+  out.hasButtons = anyButton;
   out.tiers = tiers;
   out.rows = featureLines;
   out.tierCount = tiers.length;

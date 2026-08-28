@@ -1,5 +1,5 @@
 {
-  "name": "名牌",
+  "name": "Badges",
   "description": "會議名牌，依角色以顏色區分，QR code為選用項目。",
   "featured.blurb": "會議名牌，依角色以顏色區分",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}} 的活動名牌，身份：{{default status \"attendee\"}}",

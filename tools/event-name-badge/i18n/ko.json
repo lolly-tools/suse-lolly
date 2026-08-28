@@ -1,5 +1,5 @@
 {
-  "name": "배지",
+  "name": "Badges",
   "description": "역할별로 색상이 구분되고 QR 코드를 선택적으로 추가할 수 있는 컨퍼런스 이름표예요.",
   "featured.blurb": "역할별로 색상이 구분된 컨퍼런스 이름표",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}}님({{default status \"attendee\"}})의 이벤트 이름표",

@@ -1,5 +1,5 @@
 {
-  "name": "Trích Dẫn",
+  "name": "Quotes",
   "description": "Thẻ trích dẫn đúng thương hiệu cho bài đăng mạng xã hội và slide.",
   "inputs.theme.label": "Chủ đề",
   "inputs.theme.options.light": "Sáng",

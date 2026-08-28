@@ -1,5 +1,5 @@
 {
-  "name": "파트너 락업",
+  "name": "Partner Lockup",
   "description": "구분선을 사이에 둔 SUSE 로고와 파트너 로고 - 라이트 또는 다크.",
   "a11yLabel": "파트너 로고 {{partners.length}}개가 포함된 SUSE 파트너 로고 락업",
   "inputs.theme.label": "테마",

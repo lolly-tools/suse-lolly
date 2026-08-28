@@ -1,5 +1,5 @@
 {
-  "name": "الاقتباسات",
+  "name": "Quotes",
   "description": "بطاقات اقتباس بهوية العلامة لمنشورات التواصل والشرائح.",
   "inputs.theme.label": "السمة",
   "inputs.theme.options.light": "فاتح",

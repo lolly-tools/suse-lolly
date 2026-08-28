@@ -1,5 +1,5 @@
 {
-  "name": "Lockup de socio",
+  "name": "Partner Lockup",
   "description": "El logotipo de SUSE junto al de un partner, con un divisor entre ambos - claro u oscuro.",
   "a11yLabel": "Lockup de socios de SUSE con {{partners.length}} logos de socios",
   "inputs.theme.label": "Tema",

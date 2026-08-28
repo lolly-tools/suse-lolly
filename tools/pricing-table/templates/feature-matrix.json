@@ -10,7 +10,6 @@
     "highlight": 0,
     "highlightLabel": "",
     "layout": "grid",
-    "color": "{color.semantic.text}",
     "background": "{color.semantic.surface}",
     "accent": "{color.semantic.primary}",
     "data": {

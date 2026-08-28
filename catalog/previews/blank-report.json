@@ -11,19 +11,19 @@
   "rows": [
     {
       "file": "3d.svg",
-      "bytes": 29463,
-      "sha": "4bbb1bc0f99751f1",
-      "stddev": 90.123,
-      "inkRatio": 0.39304,
+      "bytes": 97291,
+      "sha": "70a82c8504ecde2e",
+      "stddev": 49.768,
+      "inkRatio": 0.14149,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 90.123,
-          "inkRatio": 0.39304
+          "stddev": 49.768,
+          "inkRatio": 0.14149
         },
         "black": {
-          "stddev": 90.123,
-          "inkRatio": 0.39304
+          "stddev": 61.295,
+          "inkRatio": 0.11937
         }
       },
       "blank": false,
@@ -32,7 +32,7 @@
     {
       "file": "annotate.look0.svg",
       "bytes": 8263,
-      "sha": "03c0257d6ade8a32",
+      "sha": "85930f060fec5331",
       "stddev": 17.839,
       "inkRatio": 0.15911,
       "ground": "white",
@@ -52,7 +52,7 @@
     {
       "file": "annotate.look1.svg",
       "bytes": 6706,
-      "sha": "6a7fc872258e26b0",
+      "sha": "64bb0997a3c605d0",
       "stddev": 42.918,
       "inkRatio": 0.19521,
       "ground": "white",
@@ -71,8 +71,8 @@
     },
     {
       "file": "annotate.look2.svg",
-      "bytes": 6123,
-      "sha": "e17ccde7dbed3a02",
+      "bytes": 6127,
+      "sha": "5976b265619fb944",
       "stddev": 68.585,
       "inkRatio": 0.50991,
       "ground": "white",
@@ -92,7 +92,7 @@
     {
       "file": "annotate.look3.svg",
       "bytes": 6180,
-      "sha": "dec888f54b97a106",
+      "sha": "3f155c3a6c01eda0",
       "stddev": 19.473,
       "inkRatio": 0.1759,
       "ground": "white",
@@ -112,7 +112,7 @@
     {
       "file": "annotate.svg",
       "bytes": 6944,
-      "sha": "7baa43afe8605b75",
+      "sha": "0473dbaf053142cf",
       "stddev": 26.306,
       "inkRatio": 0.16643,
       "ground": "white",
@@ -132,7 +132,7 @@
     {
       "file": "asset-export.svg",
       "bytes": 2751,
-      "sha": "6fca0883d75d38dc",
+      "sha": "5b1bf448eec57516",
       "stddev": 0,
       "inkRatio": 0,
       "ground": "white",
@@ -152,19 +152,19 @@
     },
     {
       "file": "audiogram.look0.svg",
-      "bytes": 46394,
-      "sha": "3ec837c6f01e4175",
-      "stddev": 41.698,
-      "inkRatio": 0.12791,
+      "bytes": 41834,
+      "sha": "e2d65b34d9bb47c8",
+      "stddev": 38.495,
+      "inkRatio": 0.10747,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 41.698,
-          "inkRatio": 0.12791
+          "stddev": 38.495,
+          "inkRatio": 0.10747
         },
         "black": {
-          "stddev": 41.698,
-          "inkRatio": 0.12791
+          "stddev": 38.495,
+          "inkRatio": 0.10747
         }
       },
       "blank": false,
@@ -172,19 +172,19 @@
     },
     {
       "file": "audiogram.look1.svg",
-      "bytes": 67091,
-      "sha": "69c166f7cd8334cb",
-      "stddev": 40.814,
-      "inkRatio": 0.3615,
+      "bytes": 67763,
+      "sha": "3527cc44ac2ac7f4",
+      "stddev": 42.512,
+      "inkRatio": 0.36163,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 40.814,
-          "inkRatio": 0.3615
+          "stddev": 42.512,
+          "inkRatio": 0.36163
         },
         "black": {
-          "stddev": 40.814,
-          "inkRatio": 0.3615
+          "stddev": 42.512,
+          "inkRatio": 0.36163
         }
       },
       "blank": false,
@@ -192,19 +192,19 @@
     },
     {
       "file": "audiogram.look2.svg",
-      "bytes": 45037,
-      "sha": "29cb514c14553cec",
-      "stddev": 40.303,
-      "inkRatio": 0.35268,
+      "bytes": 43747,
+      "sha": "28cef135cb01cfa7",
+      "stddev": 31.38,
+      "inkRatio": 0.34987,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 40.303,
-          "inkRatio": 0.35268
+          "stddev": 31.38,
+          "inkRatio": 0.34987
         },
         "black": {
-          "stddev": 40.303,
-          "inkRatio": 0.35268
+          "stddev": 31.38,
+          "inkRatio": 0.34987
         }
       },
       "blank": false,
@@ -212,19 +212,19 @@
     },
     {
       "file": "audiogram.look3.svg",
-      "bytes": 87441,
-      "sha": "9f656635c61e3c41",
-      "stddev": 28.891,
-      "inkRatio": 0.08029,
+      "bytes": 89169,
+      "sha": "531db55e84eb0688",
+      "stddev": 29.163,
+      "inkRatio": 0.08211,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 28.891,
-          "inkRatio": 0.08029
+          "stddev": 29.163,
+          "inkRatio": 0.08211
         },
         "black": {
-          "stddev": 28.891,
-          "inkRatio": 0.08029
+          "stddev": 29.163,
+          "inkRatio": 0.08211
         }
       },
       "blank": false,
@@ -232,19 +232,19 @@
     },
     {
       "file": "audiogram.look4.svg",
-      "bytes": 22432,
-      "sha": "f853c890e408a561",
-      "stddev": 57.165,
-      "inkRatio": 0.20923,
+      "bytes": 21044,
+      "sha": "9e9187d32b62397f",
+      "stddev": 52.578,
+      "inkRatio": 0.1712,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 57.165,
-          "inkRatio": 0.20923
+          "stddev": 52.578,
+          "inkRatio": 0.1712
         },
         "black": {
-          "stddev": 57.165,
-          "inkRatio": 0.20923
+          "stddev": 52.578,
+          "inkRatio": 0.1712
         }
       },
       "blank": false,
@@ -252,19 +252,19 @@
     },
     {
       "file": "audiogram.look5.svg",
-      "bytes": 99147,
-      "sha": "5c49568309aadaea",
-      "stddev": 43.521,
-      "inkRatio": 0.32071,
+      "bytes": 98615,
+      "sha": "87fdd9836f473478",
+      "stddev": 43.029,
+      "inkRatio": 0.31331,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 43.521,
-          "inkRatio": 0.32071
+          "stddev": 43.029,
+          "inkRatio": 0.31331
         },
         "black": {
-          "stddev": 43.521,
-          "inkRatio": 0.32071
+          "stddev": 43.029,
+          "inkRatio": 0.31331
         }
       },
       "blank": false,
@@ -272,19 +272,19 @@
     },
     {
       "file": "audiogram.look6.svg",
-      "bytes": 50188,
-      "sha": "aa700c47540f3d0e",
-      "stddev": 48.124,
-      "inkRatio": 0.17973,
+      "bytes": 54104,
+      "sha": "b4e67b2043b7da37",
+      "stddev": 52.299,
+      "inkRatio": 0.21774,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 48.124,
-          "inkRatio": 0.17973
+          "stddev": 52.299,
+          "inkRatio": 0.21774
         },
         "black": {
-          "stddev": 48.124,
-          "inkRatio": 0.17973
+          "stddev": 52.299,
+          "inkRatio": 0.21774
         }
       },
       "blank": false,
@@ -292,19 +292,19 @@
     },
     {
       "file": "audiogram.svg",
-      "bytes": 43671,
-      "sha": "9d57ea8505513a8d",
-      "stddev": 38.934,
-      "inkRatio": 0.10951,
+      "bytes": 49323,
+      "sha": "001cc6249c9499d0",
+      "stddev": 43.809,
+      "inkRatio": 0.14134,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 38.934,
-          "inkRatio": 0.10951
+          "stddev": 43.809,
+          "inkRatio": 0.14134
         },
         "black": {
-          "stddev": 38.934,
-          "inkRatio": 0.10951
+          "stddev": 43.809,
+          "inkRatio": 0.14134
         }
       },
       "blank": false,
@@ -312,19 +312,19 @@
     },
     {
       "file": "backdrop.look0.svg",
-      "bytes": 12729,
-      "sha": "7602ac6b7e5e6762",
-      "stddev": 67.023,
-      "inkRatio": 0.62538,
+      "bytes": 12366,
+      "sha": "fe22082c57bb600a",
+      "stddev": 94.81,
+      "inkRatio": 0.72458,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 67.023,
-          "inkRatio": 0.62538
+          "stddev": 94.81,
+          "inkRatio": 0.72458
         },
         "black": {
-          "stddev": 67.023,
-          "inkRatio": 0.62538
+          "stddev": 94.81,
+          "inkRatio": 0.72458
         }
       },
       "blank": false,
@@ -332,19 +332,19 @@
     },
     {
       "file": "backdrop.look1.webp",
-      "bytes": 29614,
-      "sha": "3fd1e66046a833aa",
-      "stddev": 32.965,
-      "inkRatio": 0.96634,
+      "bytes": 21058,
+      "sha": "ec58598d6390f441",
+      "stddev": 33.069,
+      "inkRatio": 0.89567,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 32.965,
-          "inkRatio": 0.96634
+          "stddev": 33.069,
+          "inkRatio": 0.89567
         },
         "black": {
-          "stddev": 32.965,
-          "inkRatio": 0.96634
+          "stddev": 33.069,
+          "inkRatio": 0.89567
         }
       },
       "blank": false,
@@ -352,19 +352,19 @@
     },
     {
       "file": "backdrop.look2.webp",
-      "bytes": 15710,
-      "sha": "3256b699b8b9d72d",
-      "stddev": 43.86,
-      "inkRatio": 0.81459,
+      "bytes": 12962,
+      "sha": "187f1d3273043b8c",
+      "stddev": 36.531,
+      "inkRatio": 0.83263,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 43.86,
-          "inkRatio": 0.81459
+          "stddev": 36.531,
+          "inkRatio": 0.83263
         },
         "black": {
-          "stddev": 43.86,
-          "inkRatio": 0.81459
+          "stddev": 36.531,
+          "inkRatio": 0.83263
         }
       },
       "blank": false,
@@ -392,19 +392,19 @@
     },
     {
       "file": "backdrop.look4.webp",
-      "bytes": 38982,
-      "sha": "106ab0aeadda5d76",
-      "stddev": 68.738,
-      "inkRatio": 0.91187,
+      "bytes": 29204,
+      "sha": "2264d995019f6d51",
+      "stddev": 38.969,
+      "inkRatio": 0.89724,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 68.738,
-          "inkRatio": 0.91187
+          "stddev": 38.969,
+          "inkRatio": 0.89724
         },
         "black": {
-          "stddev": 68.738,
-          "inkRatio": 0.91187
+          "stddev": 38.969,
+          "inkRatio": 0.89724
         }
       },
       "blank": false,
@@ -412,19 +412,19 @@
     },
     {
       "file": "backdrop.look5.svg",
-      "bytes": 56807,
-      "sha": "59a4077b5430290a",
-      "stddev": 70.66,
-      "inkRatio": 0.5698,
+      "bytes": 58663,
+      "sha": "aeddbe6210580176",
+      "stddev": 89.889,
+      "inkRatio": 0.81988,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 70.66,
-          "inkRatio": 0.5698
+          "stddev": 89.889,
+          "inkRatio": 0.81988
         },
         "black": {
-          "stddev": 70.66,
-          "inkRatio": 0.5698
+          "stddev": 89.889,
+          "inkRatio": 0.81988
         }
       },
       "blank": false,
@@ -432,19 +432,19 @@
     },
     {
       "file": "backdrop.look6.svg",
-      "bytes": 103683,
-      "sha": "c2c23fbdf09062bc",
-      "stddev": 53.72,
-      "inkRatio": 0.52252,
+      "bytes": 93869,
+      "sha": "af9396d30f6ffd1a",
+      "stddev": 93.18,
+      "inkRatio": 0.67996,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 53.72,
-          "inkRatio": 0.52252
+          "stddev": 93.18,
+          "inkRatio": 0.67996
         },
         "black": {
-          "stddev": 53.72,
-          "inkRatio": 0.52252
+          "stddev": 93.18,
+          "inkRatio": 0.67996
         }
       },
       "blank": false,
@@ -452,19 +452,19 @@
     },
     {
       "file": "backdrop.look7.svg",
-      "bytes": 15953,
-      "sha": "f255729c12ac1c54",
-      "stddev": 61.398,
-      "inkRatio": 0.80154,
+      "bytes": 14126,
+      "sha": "ded90f2774616a49",
+      "stddev": 77.086,
+      "inkRatio": 0.91705,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 61.398,
-          "inkRatio": 0.80154
+          "stddev": 77.086,
+          "inkRatio": 0.91705
         },
         "black": {
-          "stddev": 61.398,
-          "inkRatio": 0.80154
+          "stddev": 77.086,
+          "inkRatio": 0.91705
         }
       },
       "blank": false,
@@ -472,19 +472,19 @@
     },
     {
       "file": "backdrop.svg",
-      "bytes": 12604,
-      "sha": "c7cd5eaf2ee22d34",
-      "stddev": 46.072,
-      "inkRatio": 0.67155,
+      "bytes": 12098,
+      "sha": "3c4ad243eec225fb",
+      "stddev": 94.81,
+      "inkRatio": 0.72458,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 46.072,
-          "inkRatio": 0.67155
+          "stddev": 94.81,
+          "inkRatio": 0.72458
         },
         "black": {
-          "stddev": 46.072,
-          "inkRatio": 0.67155
+          "stddev": 94.81,
+          "inkRatio": 0.72458
         }
       },
       "blank": false,
@@ -492,8 +492,8 @@
     },
     {
       "file": "battlecards.svg",
-      "bytes": 10748,
-      "sha": "844bfcd496c41033",
+      "bytes": 10744,
+      "sha": "e1961fb231633858",
       "stddev": 35.632,
       "inkRatio": 0.04008,
       "ground": "white",
@@ -532,8 +532,8 @@
     },
     {
       "file": "brand-lockup.look0.svg",
-      "bytes": 8413,
-      "sha": "26d22bc7d4c9fd55",
+      "bytes": 8414,
+      "sha": "d9050254817dc15b",
       "stddev": 96.549,
       "inkRatio": 0.35677,
       "ground": "white",
@@ -552,8 +552,8 @@
     },
     {
       "file": "brand-lockup.look1.svg",
-      "bytes": 8872,
-      "sha": "a7e525d2926784e3",
+      "bytes": 8868,
+      "sha": "b1811dba39a94fee",
       "stddev": 90.937,
       "inkRatio": 0.19322,
       "ground": "white",
@@ -572,8 +572,8 @@
     },
     {
       "file": "brand-lockup.look2.svg",
-      "bytes": 8481,
-      "sha": "1ea05b122fddfc18",
+      "bytes": 8482,
+      "sha": "e49ffb0f13772313",
       "stddev": 97.081,
       "inkRatio": 0.35855,
       "ground": "black",
@@ -592,8 +592,8 @@
     },
     {
       "file": "brand-lockup.look3.svg",
-      "bytes": 8028,
-      "sha": "6cea92528495e765",
+      "bytes": 8032,
+      "sha": "eb97bb2e5315ec75",
       "stddev": 108.07,
       "inkRatio": 0.27842,
       "ground": "black",
@@ -612,8 +612,8 @@
     },
     {
       "file": "brand-lockup.look4.svg",
-      "bytes": 11006,
-      "sha": "5a4fbe1ed8d9b653",
+      "bytes": 11011,
+      "sha": "ecf1d53b7c2bd976",
       "stddev": 75.447,
       "inkRatio": 0.22746,
       "ground": "black",
@@ -632,8 +632,8 @@
     },
     {
       "file": "brand-lockup.svg",
-      "bytes": 6184,
-      "sha": "2130c53bc0f098b2",
+      "bytes": 6190,
+      "sha": "e48826ad432dddc8",
       "stddev": 106.284,
       "inkRatio": 0.42516,
       "ground": "white",
@@ -652,19 +652,19 @@
     },
     {
       "file": "calendar-ics.svg",
-      "bytes": 21338,
-      "sha": "7e530a107398ddae",
-      "stddev": 52.199,
-      "inkRatio": 0.25587,
+      "bytes": 19286,
+      "sha": "bc9fc9cb6ccdde62",
+      "stddev": 52.155,
+      "inkRatio": 0.25461,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 52.214,
-          "inkRatio": 0.24297
+          "stddev": 52.17,
+          "inkRatio": 0.24171
         },
         "black": {
-          "stddev": 52.199,
-          "inkRatio": 0.25587
+          "stddev": 52.155,
+          "inkRatio": 0.25461
         }
       },
       "blank": false,
@@ -673,7 +673,7 @@
     {
       "file": "captions.look0.svg",
       "bytes": 12573,
-      "sha": "6ec66b156e8a9078",
+      "sha": "f2681aeefbeec3e4",
       "stddev": 85.52,
       "inkRatio": 0.16664,
       "ground": "white",
@@ -693,7 +693,7 @@
     {
       "file": "captions.look1.svg",
       "bytes": 69664,
-      "sha": "ef571ebb96634c2d",
+      "sha": "9f4f63b5935396dd",
       "stddev": 13.89,
       "inkRatio": 0.01356,
       "ground": "white",
@@ -714,7 +714,7 @@
     {
       "file": "captions.look2.svg",
       "bytes": 10544,
-      "sha": "43e8ef93b99bcf3f",
+      "sha": "7d0ff9efc9a55cfb",
       "stddev": 56.449,
       "inkRatio": 0.07186,
       "ground": "white",
@@ -733,8 +733,8 @@
     },
     {
       "file": "captions.svg",
-      "bytes": 12569,
-      "sha": "90a561728c17f2ca",
+      "bytes": 12573,
+      "sha": "8cf0b908115a8ba5",
       "stddev": 85.52,
       "inkRatio": 0.16664,
       "ground": "white",
@@ -753,19 +753,19 @@
     },
     {
       "file": "certificate.look0.svg",
-      "bytes": 42194,
-      "sha": "002a3231589ce08d",
-      "stddev": 39.741,
-      "inkRatio": 0.12988,
+      "bytes": 42191,
+      "sha": "2a4820fd0d36e29a",
+      "stddev": 47.487,
+      "inkRatio": 0.11976,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 39.741,
-          "inkRatio": 0.12988
+          "stddev": 47.487,
+          "inkRatio": 0.11976
         },
         "black": {
-          "stddev": 39.741,
-          "inkRatio": 0.12988
+          "stddev": 47.487,
+          "inkRatio": 0.11976
         }
       },
       "blank": false,
@@ -773,19 +773,19 @@
     },
     {
       "file": "certificate.look1.svg",
-      "bytes": 40093,
-      "sha": "a1d06e4e83c0baa3",
-      "stddev": 43.173,
-      "inkRatio": 0.12675,
+      "bytes": 40086,
+      "sha": "5d779e929b9393d5",
+      "stddev": 47.92,
+      "inkRatio": 0.12032,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 43.173,
-          "inkRatio": 0.12675
+          "stddev": 47.92,
+          "inkRatio": 0.12032
         },
         "black": {
-          "stddev": 43.173,
-          "inkRatio": 0.12675
+          "stddev": 47.92,
+          "inkRatio": 0.12032
         }
       },
       "blank": false,
@@ -793,19 +793,19 @@
     },
     {
       "file": "certificate.look2.svg",
-      "bytes": 37577,
-      "sha": "feda9fb565639241",
-      "stddev": 37.943,
-      "inkRatio": 0.13001,
+      "bytes": 37574,
+      "sha": "3256cb1aaf7f7847",
+      "stddev": 47.584,
+      "inkRatio": 0.11814,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 37.943,
-          "inkRatio": 0.13001
+          "stddev": 47.584,
+          "inkRatio": 0.11814
         },
         "black": {
-          "stddev": 37.943,
-          "inkRatio": 0.13001
+          "stddev": 47.584,
+          "inkRatio": 0.11814
         }
       },
       "blank": false,
@@ -813,19 +813,19 @@
     },
     {
       "file": "certificate.look3.svg",
-      "bytes": 41316,
-      "sha": "e4663b315855f0ea",
-      "stddev": 39.034,
-      "inkRatio": 0.12975,
+      "bytes": 41317,
+      "sha": "c56c5b30a96d84e2",
+      "stddev": 47.937,
+      "inkRatio": 0.12168,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 39.034,
-          "inkRatio": 0.12975
+          "stddev": 47.937,
+          "inkRatio": 0.12168
         },
         "black": {
-          "stddev": 39.034,
-          "inkRatio": 0.12975
+          "stddev": 47.937,
+          "inkRatio": 0.12168
         }
       },
       "blank": false,
@@ -834,7 +834,7 @@
     {
       "file": "certificate.svg",
       "bytes": 42191,
-      "sha": "ffe4b1e00aed68a4",
+      "sha": "bae504c9cc34d093",
       "stddev": 47.487,
       "inkRatio": 0.11976,
       "ground": "white",
@@ -853,8 +853,8 @@
     },
     {
       "file": "chart.look0.svg",
-      "bytes": 30107,
-      "sha": "bcdc500937c3c1ce",
+      "bytes": 30115,
+      "sha": "093d1c7a979e3135",
       "stddev": 15.331,
       "inkRatio": 0.03547,
       "ground": "white",
@@ -873,8 +873,8 @@
     },
     {
       "file": "chart.look1.svg",
-      "bytes": 15521,
-      "sha": "62f400cc4d228171",
+      "bytes": 15529,
+      "sha": "5770b6252972476c",
       "stddev": 52.266,
       "inkRatio": 0.23008,
       "ground": "white",
@@ -893,8 +893,8 @@
     },
     {
       "file": "chart.look2.svg",
-      "bytes": 21315,
-      "sha": "d80a8bbd6d115bf3",
+      "bytes": 21323,
+      "sha": "a77b44c65e95ee3e",
       "stddev": 73.397,
       "inkRatio": 0.39717,
       "ground": "white",
@@ -913,8 +913,8 @@
     },
     {
       "file": "chart.look3.svg",
-      "bytes": 17861,
-      "sha": "50d21857f062a000",
+      "bytes": 17869,
+      "sha": "afc7ec619716dfc3",
       "stddev": 22.397,
       "inkRatio": 0.14741,
       "ground": "white",
@@ -933,8 +933,8 @@
     },
     {
       "file": "chart.look4.svg",
-      "bytes": 19885,
-      "sha": "05d712677b716d04",
+      "bytes": 19893,
+      "sha": "0034ee18eeb0ec0e",
       "stddev": 90.726,
       "inkRatio": 0.3459,
       "ground": "black",
@@ -953,8 +953,8 @@
     },
     {
       "file": "chart.look5.svg",
-      "bytes": 4629,
-      "sha": "299cc74bd54d2d57",
+      "bytes": 4637,
+      "sha": "d3d71946dfc5d17e",
       "stddev": 34.993,
       "inkRatio": 0.07417,
       "ground": "black",
@@ -973,8 +973,8 @@
     },
     {
       "file": "chart.look6.svg",
-      "bytes": 18234,
-      "sha": "b28423b50430ad77",
+      "bytes": 18242,
+      "sha": "189814ab1aea857c",
       "stddev": 99.641,
       "inkRatio": 0.36619,
       "ground": "white",
@@ -993,8 +993,8 @@
     },
     {
       "file": "chart.look7.svg",
-      "bytes": 48381,
-      "sha": "4a5d24278b79a8ec",
+      "bytes": 48389,
+      "sha": "5c7b41ef20141fed",
       "stddev": 91.452,
       "inkRatio": 0.19541,
       "ground": "white",
@@ -1013,8 +1013,8 @@
     },
     {
       "file": "chart.svg",
-      "bytes": 21553,
-      "sha": "90950a4530f24b88",
+      "bytes": 21561,
+      "sha": "84870eff1480df05",
       "stddev": 90.691,
       "inkRatio": 0.28047,
       "ground": "white",
@@ -1033,8 +1033,8 @@
     },
     {
       "file": "claim.svg",
-      "bytes": 68282,
-      "sha": "b26e3492cb18c23e",
+      "bytes": 68246,
+      "sha": "799921dd33426810",
       "stddev": 29.534,
       "inkRatio": 0.069,
       "ground": "black",
@@ -1053,8 +1053,8 @@
     },
     {
       "file": "color-block.svg",
-      "bytes": 8721,
-      "sha": "360060d4352b620e",
+      "bytes": 8717,
+      "sha": "f67c1bbefff808ed",
       "stddev": 76.641,
       "inkRatio": 0.5,
       "ground": "white",
@@ -1073,19 +1073,19 @@
     },
     {
       "file": "color-palette.look0.svg",
-      "bytes": 17177,
-      "sha": "54816b03ac64336a",
-      "stddev": 88.389,
-      "inkRatio": 0.70369,
+      "bytes": 18854,
+      "sha": "fe50966f13ccd064",
+      "stddev": 88.444,
+      "inkRatio": 0.70371,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 88.389,
-          "inkRatio": 0.70369
+          "stddev": 88.444,
+          "inkRatio": 0.70371
         },
         "black": {
-          "stddev": 88.389,
-          "inkRatio": 0.70369
+          "stddev": 88.444,
+          "inkRatio": 0.70371
         }
       },
       "blank": false,
@@ -1093,19 +1093,19 @@
     },
     {
       "file": "color-palette.look1.svg",
-      "bytes": 15968,
-      "sha": "4bb5e85e242f5e27",
-      "stddev": 84.795,
-      "inkRatio": 0.62881,
+      "bytes": 17523,
+      "sha": "e037ad9636cabde4",
+      "stddev": 84.856,
+      "inkRatio": 0.62883,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 84.795,
-          "inkRatio": 0.62881
+          "stddev": 84.856,
+          "inkRatio": 0.62883
         },
         "black": {
-          "stddev": 84.795,
-          "inkRatio": 0.62881
+          "stddev": 84.856,
+          "inkRatio": 0.62883
         }
       },
       "blank": false,
@@ -1113,19 +1113,19 @@
     },
     {
       "file": "color-palette.look2.svg",
-      "bytes": 17179,
-      "sha": "ab3becbfb371798a",
-      "stddev": 86.817,
-      "inkRatio": 0.70969,
+      "bytes": 18856,
+      "sha": "11c4ae8be28449e9",
+      "stddev": 86.881,
+      "inkRatio": 0.70962,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 86.817,
-          "inkRatio": 0.70969
+          "stddev": 86.881,
+          "inkRatio": 0.70962
         },
         "black": {
-          "stddev": 86.817,
-          "inkRatio": 0.70969
+          "stddev": 86.881,
+          "inkRatio": 0.70962
         }
       },
       "blank": false,
@@ -1133,19 +1133,19 @@
     },
     {
       "file": "color-palette.look3.svg",
-      "bytes": 14178,
-      "sha": "04ea52938adbc0f9",
-      "stddev": 86.623,
-      "inkRatio": 0.7073,
+      "bytes": 17264,
+      "sha": "8ddacec198433c87",
+      "stddev": 88.46,
+      "inkRatio": 0.71169,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 86.623,
-          "inkRatio": 0.7073
+          "stddev": 88.46,
+          "inkRatio": 0.71169
         },
         "black": {
-          "stddev": 86.623,
-          "inkRatio": 0.7073
+          "stddev": 88.46,
+          "inkRatio": 0.71169
         }
       },
       "blank": false,
@@ -1153,19 +1153,19 @@
     },
     {
       "file": "color-palette.look4.svg",
-      "bytes": 28257,
-      "sha": "3f34c9435ec9162d",
-      "stddev": 80.695,
-      "inkRatio": 0.66042,
+      "bytes": 12571,
+      "sha": "d341e1924369d6a6",
+      "stddev": 93.957,
+      "inkRatio": 0.63794,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 80.695,
-          "inkRatio": 0.66042
+          "stddev": 93.957,
+          "inkRatio": 0.63794
         },
         "black": {
-          "stddev": 80.695,
-          "inkRatio": 0.66042
+          "stddev": 93.957,
+          "inkRatio": 0.63794
         }
       },
       "blank": false,
@@ -1173,19 +1173,19 @@
     },
     {
       "file": "color-palette.look5.svg",
-      "bytes": 15775,
-      "sha": "ea8134bc00918a44",
-      "stddev": 88.423,
-      "inkRatio": 0.71157,
+      "bytes": 13820,
+      "sha": "8a25ed4200796886",
+      "stddev": 84.462,
+      "inkRatio": 0.63818,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 88.423,
-          "inkRatio": 0.71157
+          "stddev": 84.462,
+          "inkRatio": 0.63818
         },
         "black": {
-          "stddev": 88.423,
-          "inkRatio": 0.71157
+          "stddev": 84.462,
+          "inkRatio": 0.63818
         }
       },
       "blank": false,
@@ -1193,19 +1193,19 @@
     },
     {
       "file": "color-palette.look6.svg",
-      "bytes": 11580,
-      "sha": "6fc9879aa9f8b3da",
-      "stddev": 93.942,
-      "inkRatio": 0.63799,
+      "bytes": 53827,
+      "sha": "1d22859936b84380",
+      "stddev": 89.171,
+      "inkRatio": 0.59807,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 93.942,
-          "inkRatio": 0.63799
+          "stddev": 89.171,
+          "inkRatio": 0.59807
         },
         "black": {
-          "stddev": 93.942,
-          "inkRatio": 0.63799
+          "stddev": 89.171,
+          "inkRatio": 0.59807
         }
       },
       "blank": false,
@@ -1213,19 +1213,19 @@
     },
     {
       "file": "color-palette.look7.svg",
-      "bytes": 12688,
-      "sha": "ebab49d58f0f5883",
-      "stddev": 84.436,
-      "inkRatio": 0.63823,
+      "bytes": 18904,
+      "sha": "f8310287fb6406ea",
+      "stddev": 82.175,
+      "inkRatio": 0.71736,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 84.436,
-          "inkRatio": 0.63823
+          "stddev": 82.175,
+          "inkRatio": 0.71736
         },
         "black": {
-          "stddev": 84.436,
-          "inkRatio": 0.63823
+          "stddev": 82.175,
+          "inkRatio": 0.71736
         }
       },
       "blank": false,
@@ -1233,18 +1233,18 @@
     },
     {
       "file": "color-palette.svg",
-      "bytes": 17182,
-      "sha": "a00f1272c454f2f9",
-      "stddev": 86.107,
+      "bytes": 18859,
+      "sha": "d37ac9598aa0a36b",
+      "stddev": 86.168,
       "inkRatio": 0.71072,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 86.107,
+          "stddev": 86.168,
           "inkRatio": 0.71072
         },
         "black": {
-          "stddev": 86.107,
+          "stddev": 86.168,
           "inkRatio": 0.71072
         }
       },
@@ -1253,19 +1253,19 @@
     },
     {
       "file": "compress-pdf.svg",
-      "bytes": 47939,
-      "sha": "6f6755fd646a4b99",
-      "stddev": 18.356,
-      "inkRatio": 0.02441,
-      "ground": "white",
+      "bytes": 48078,
+      "sha": "93fd923070804020",
+      "stddev": 20.845,
+      "inkRatio": 0.03471,
+      "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 18.356,
-          "inkRatio": 0.02441
+          "stddev": 19.074,
+          "inkRatio": 0.0269
         },
         "black": {
-          "stddev": 18.356,
-          "inkRatio": 0.02441
+          "stddev": 20.845,
+          "inkRatio": 0.03471
         }
       },
       "blank": false,
@@ -1273,19 +1273,19 @@
     },
     {
       "file": "contrast-check.look0.svg",
-      "bytes": 20945,
-      "sha": "f517f49f69bc9aca",
-      "stddev": 26.108,
-      "inkRatio": 0.08469,
+      "bytes": 20762,
+      "sha": "b68481d8b95ff323",
+      "stddev": 26.106,
+      "inkRatio": 0.08325,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 26.108,
-          "inkRatio": 0.08469
+          "stddev": 26.106,
+          "inkRatio": 0.08325
         },
         "black": {
-          "stddev": 26.108,
-          "inkRatio": 0.08469
+          "stddev": 26.106,
+          "inkRatio": 0.08325
         }
       },
       "blank": false,
@@ -1293,19 +1293,19 @@
     },
     {
       "file": "contrast-check.look1.svg",
-      "bytes": 20873,
-      "sha": "4271d237858d0cad",
-      "stddev": 35.106,
-      "inkRatio": 0.09976,
+      "bytes": 20707,
+      "sha": "27c6dfdf2629f0be",
+      "stddev": 35.056,
+      "inkRatio": 0.09802,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 35.106,
-          "inkRatio": 0.09976
+          "stddev": 35.056,
+          "inkRatio": 0.09802
         },
         "black": {
-          "stddev": 35.106,
-          "inkRatio": 0.09976
+          "stddev": 35.056,
+          "inkRatio": 0.09802
         }
       },
       "blank": false,
@@ -1313,18 +1313,18 @@
     },
     {
       "file": "contrast-check.look2.svg",
-      "bytes": 20895,
-      "sha": "b9b9934b48bd3305",
-      "stddev": 30.941,
+      "bytes": 20724,
+      "sha": "399457a5937d2fe5",
+      "stddev": 30.882,
       "inkRatio": 0.5084,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 30.941,
+          "stddev": 30.882,
           "inkRatio": 0.5084
         },
         "black": {
-          "stddev": 30.941,
+          "stddev": 30.882,
           "inkRatio": 0.5084
         }
       },
@@ -1353,19 +1353,19 @@
     },
     {
       "file": "contrast-check.svg",
-      "bytes": 20831,
-      "sha": "26bf2e94442757e3",
-      "stddev": 36.241,
-      "inkRatio": 0.08733,
+      "bytes": 20665,
+      "sha": "fa45ecb6a43642e8",
+      "stddev": 36.194,
+      "inkRatio": 0.08604,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 36.241,
-          "inkRatio": 0.08733
+          "stddev": 36.194,
+          "inkRatio": 0.08604
         },
         "black": {
-          "stddev": 36.241,
-          "inkRatio": 0.08733
+          "stddev": 36.194,
+          "inkRatio": 0.08604
         }
       },
       "blank": false,
@@ -1373,19 +1373,19 @@
     },
     {
       "file": "convert-image.svg",
-      "bytes": 50772,
-      "sha": "7a782c9398542005",
-      "stddev": 19.689,
-      "inkRatio": 0.02748,
-      "ground": "white",
+      "bytes": 55053,
+      "sha": "348ce4b2c4fa23f8",
+      "stddev": 19.726,
+      "inkRatio": 0.03823,
+      "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 19.689,
-          "inkRatio": 0.02748
+          "stddev": 17.848,
+          "inkRatio": 0.03042
         },
         "black": {
-          "stddev": 19.689,
-          "inkRatio": 0.02748
+          "stddev": 19.726,
+          "inkRatio": 0.03823
         }
       },
       "blank": false,
@@ -1393,29 +1393,29 @@
     },
     {
       "file": "countdown-timer.svg",
-      "bytes": 8670,
-      "sha": "de0f8dbfd8726346",
-      "stddev": 9.557,
-      "inkRatio": 0.00825,
+      "bytes": 8724,
+      "sha": "f8a1dc491ff735b8",
+      "stddev": 12.844,
+      "inkRatio": 0.01672,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 9.557,
-          "inkRatio": 0.00825
+          "stddev": 12.844,
+          "inkRatio": 0.01672
         },
         "black": {
-          "stddev": 9.557,
-          "inkRatio": 0.00825
+          "stddev": 9.977,
+          "inkRatio": 0.01672
         }
       },
       "blank": false,
       "sparse": true,
-      "reason": "near-empty: only 0.83% of pixels differ from the background"
+      "reason": "near-empty: only 1.67% of pixels differ from the background"
     },
     {
       "file": "darkroom.look0.svg",
-      "bytes": 48792,
-      "sha": "fd0a50b39bf49422",
+      "bytes": 48796,
+      "sha": "db7ee3ccae28b05f",
       "stddev": 107.559,
       "inkRatio": 0.86948,
       "ground": "white",
@@ -1434,8 +1434,8 @@
     },
     {
       "file": "darkroom.look1.webp",
-      "bytes": 40810,
-      "sha": "78cf54a612fd2757",
+      "bytes": 40812,
+      "sha": "3d3c1703f59e4d87",
       "stddev": 89.268,
       "inkRatio": 0.89503,
       "ground": "white",
@@ -1455,7 +1455,7 @@
     {
       "file": "darkroom.look2.svg",
       "bytes": 39268,
-      "sha": "a4c098310a3fb38f",
+      "sha": "4688fbaffcd13733",
       "stddev": 78.385,
       "inkRatio": 0.83109,
       "ground": "white",
@@ -1475,7 +1475,7 @@
     {
       "file": "darkroom.look3.webp",
       "bytes": 24110,
-      "sha": "a28e39f642dce878",
+      "sha": "26cb779aec4a720d",
       "stddev": 89.784,
       "inkRatio": 0.8259,
       "ground": "white",
@@ -1494,8 +1494,8 @@
     },
     {
       "file": "darkroom.look4.svg",
-      "bytes": 45365,
-      "sha": "f321ea74e2c9a67c",
+      "bytes": 45369,
+      "sha": "74a88ed59b1c1f31",
       "stddev": 95.963,
       "inkRatio": 0.85666,
       "ground": "white",
@@ -1514,8 +1514,8 @@
     },
     {
       "file": "darkroom.svg",
-      "bytes": 45645,
-      "sha": "0b377d0385db90aa",
+      "bytes": 45649,
+      "sha": "1b6d9b3812539c99",
       "stddev": 97.955,
       "inkRatio": 0.86121,
       "ground": "white",
@@ -1535,7 +1535,7 @@
     {
       "file": "deck-builder.svg",
       "bytes": 39301,
-      "sha": "fc3b1e4db5b8bc5f",
+      "sha": "8a281e4d4adaac17",
       "stddev": 23.574,
       "inkRatio": 0.03982,
       "ground": "white",
@@ -1555,7 +1555,7 @@
     {
       "file": "deck-studio.look0.svg",
       "bytes": 14473,
-      "sha": "f787dbb9338c9884",
+      "sha": "584b90708b09b7cc",
       "stddev": 16.883,
       "inkRatio": 0.73275,
       "ground": "white",
@@ -1575,7 +1575,7 @@
     {
       "file": "deck-studio.look1.svg",
       "bytes": 18461,
-      "sha": "9f39c479f660d2e9",
+      "sha": "57603dede5c1a2aa",
       "stddev": 20.067,
       "inkRatio": 0.73815,
       "ground": "white",
@@ -1595,7 +1595,7 @@
     {
       "file": "deck-studio.look2.svg",
       "bytes": 14780,
-      "sha": "bac402181f7135d3",
+      "sha": "6291cb71e910d21f",
       "stddev": 25.766,
       "inkRatio": 0.05377,
       "ground": "white",
@@ -1615,7 +1615,7 @@
     {
       "file": "deck-studio.svg",
       "bytes": 15005,
-      "sha": "04751de3adc1c089",
+      "sha": "7c64466ec60a04af",
       "stddev": 17.994,
       "inkRatio": 0.72526,
       "ground": "white",
@@ -1635,7 +1635,7 @@
     {
       "file": "design.look0.svg",
       "bytes": 13485,
-      "sha": "4f748feedc2eb75f",
+      "sha": "4ac118c869a939ae",
       "stddev": 25.305,
       "inkRatio": 0.0287,
       "ground": "white",
@@ -1654,8 +1654,8 @@
     },
     {
       "file": "design.look1.svg",
-      "bytes": 16167,
-      "sha": "2b31c609c02aa260",
+      "bytes": 16163,
+      "sha": "bca441b6cff13189",
       "stddev": 34.042,
       "inkRatio": 0.04639,
       "ground": "white",
@@ -1674,8 +1674,8 @@
     },
     {
       "file": "design.svg",
-      "bytes": 16163,
-      "sha": "1d709a0e39373aa5",
+      "bytes": 16167,
+      "sha": "a96835082bb589cc",
       "stddev": 34.042,
       "inkRatio": 0.04639,
       "ground": "white",
@@ -1694,8 +1694,8 @@
     },
     {
       "file": "diagram-builder.svg",
-      "bytes": 60392,
-      "sha": "9caa3ef34e9933c7",
+      "bytes": 60396,
+      "sha": "8471f74f956c162c",
       "stddev": 28.25,
       "inkRatio": 0.09548,
       "ground": "black",
@@ -1714,19 +1714,19 @@
     },
     {
       "file": "digi-ad.svg",
-      "bytes": 12325,
-      "sha": "1bed89b11ac503fe",
-      "stddev": 52.125,
-      "inkRatio": 0.06592,
+      "bytes": 12367,
+      "sha": "43c273df1d255a68",
+      "stddev": 51.064,
+      "inkRatio": 0.06345,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 52.125,
-          "inkRatio": 0.06592
+          "stddev": 51.064,
+          "inkRatio": 0.06345
         },
         "black": {
-          "stddev": 52.125,
-          "inkRatio": 0.06592
+          "stddev": 51.064,
+          "inkRatio": 0.06345
         }
       },
       "blank": false,
@@ -1735,7 +1735,7 @@
     {
       "file": "doc-studio.svg",
       "bytes": 68343,
-      "sha": "575a9f99d0df839d",
+      "sha": "492f470a7bdcd1cf",
       "stddev": 14.841,
       "inkRatio": 0.0347,
       "ground": "white",
@@ -1754,19 +1754,19 @@
     },
     {
       "file": "dynamic-layout.svg",
-      "bytes": 25729,
-      "sha": "ad39e258f54dbad2",
-      "stddev": 99.481,
-      "inkRatio": 0.40077,
+      "bytes": 25406,
+      "sha": "68ea90a0a23638f8",
+      "stddev": 99.504,
+      "inkRatio": 0.39846,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 99.481,
-          "inkRatio": 0.40077
+          "stddev": 99.504,
+          "inkRatio": 0.39846
         },
         "black": {
-          "stddev": 99.481,
-          "inkRatio": 0.40077
+          "stddev": 99.504,
+          "inkRatio": 0.39846
         }
       },
       "blank": false,
@@ -1774,8 +1774,8 @@
     },
     {
       "file": "email-signature.svg",
-      "bytes": 10332,
-      "sha": "52be96fd9e3b4cf0",
+      "bytes": 10336,
+      "sha": "48e75c686f9f99c1",
       "stddev": 34.025,
       "inkRatio": 0.08844,
       "ground": "black",
@@ -1795,7 +1795,7 @@
     {
       "file": "event-name-badge.svg",
       "bytes": 17165,
-      "sha": "f963982ac28bd4da",
+      "sha": "6920d67f5a54754d",
       "stddev": 50.382,
       "inkRatio": 0.24338,
       "ground": "white",
@@ -1814,8 +1814,8 @@
     },
     {
       "file": "filter.look0.webp",
-      "bytes": 145834,
-      "sha": "5abc8b723e6f8550",
+      "bytes": 145832,
+      "sha": "d532a6d25b404305",
       "stddev": 95.172,
       "inkRatio": 0.49307,
       "ground": "white",
@@ -1834,8 +1834,8 @@
     },
     {
       "file": "filter.look1.svg",
-      "bytes": 78145,
-      "sha": "d12b2e32bfce5fdf",
+      "bytes": 78149,
+      "sha": "f72bad3b7e974de0",
       "stddev": 84.964,
       "inkRatio": 0.84851,
       "ground": "white",
@@ -1855,7 +1855,7 @@
     {
       "file": "filter.look2.webp",
       "bytes": 124106,
-      "sha": "dde59d3f0904e685",
+      "sha": "e1f5c80f42816cdf",
       "stddev": 98.535,
       "inkRatio": 0.63052,
       "ground": "white",
@@ -1875,7 +1875,7 @@
     {
       "file": "filter.look3.svg",
       "bytes": 31784,
-      "sha": "bd4e64e29f8b207f",
+      "sha": "78455d80936ac0df",
       "stddev": 105.497,
       "inkRatio": 0.84239,
       "ground": "black",
@@ -1895,7 +1895,7 @@
     {
       "file": "filter.look4.webp",
       "bytes": 70906,
-      "sha": "349b7741e2b3d7d9",
+      "sha": "5788db401e266215",
       "stddev": 106.286,
       "inkRatio": 0.82149,
       "ground": "white",
@@ -1915,7 +1915,7 @@
     {
       "file": "filter.look5.webp",
       "bytes": 18538,
-      "sha": "c333738d8f800bf9",
+      "sha": "d46bd14c34ea2cd7",
       "stddev": 56.579,
       "inkRatio": 0.68071,
       "ground": "white",
@@ -1935,7 +1935,7 @@
     {
       "file": "filter.look6.webp",
       "bytes": 169208,
-      "sha": "eb4f1dc63a961eb7",
+      "sha": "27c71995218ce184",
       "stddev": 46.042,
       "inkRatio": 0.52824,
       "ground": "white",
@@ -1955,7 +1955,7 @@
     {
       "file": "filter.look7.svg",
       "bytes": 70222,
-      "sha": "fcef2d5f6cdb1c39",
+      "sha": "c9dca04a10c46396",
       "stddev": 101.092,
       "inkRatio": 0.90721,
       "ground": "white",
@@ -1975,7 +1975,7 @@
     {
       "file": "filter.webp",
       "bytes": 294668,
-      "sha": "458dc98af9adc70f",
+      "sha": "2c9d2dc309107d72",
       "stddev": 98.771,
       "inkRatio": 0.46011,
       "ground": "white",
@@ -1995,7 +1995,7 @@
     {
       "file": "finish-preview.look0.svg",
       "bytes": 96708,
-      "sha": "3d12fbd72f977735",
+      "sha": "742b997cebb56bef",
       "stddev": 100.075,
       "inkRatio": 0.70425,
       "ground": "white",
@@ -2015,7 +2015,7 @@
     {
       "file": "finish-preview.look1.svg",
       "bytes": 106452,
-      "sha": "779296c7eabd2046",
+      "sha": "0023e5c39af2205e",
       "stddev": 87.207,
       "inkRatio": 0.86763,
       "ground": "white",
@@ -2035,7 +2035,7 @@
     {
       "file": "finish-preview.look2.svg",
       "bytes": 134306,
-      "sha": "c806464415c544ab",
+      "sha": "5d891006d70943d0",
       "stddev": 99.451,
       "inkRatio": 0.71426,
       "ground": "white",
@@ -2055,7 +2055,7 @@
     {
       "file": "finish-preview.look3.svg",
       "bytes": 52478,
-      "sha": "62dfa67260fe8af9",
+      "sha": "1600dbb993bef92c",
       "stddev": 119.39,
       "inkRatio": 0.36047,
       "ground": "white",
@@ -2075,7 +2075,7 @@
     {
       "file": "finish-preview.svg",
       "bytes": 95724,
-      "sha": "c2621074d960e1e0",
+      "sha": "05be1ca986787a66",
       "stddev": 100.428,
       "inkRatio": 0.70425,
       "ground": "white",
@@ -2094,19 +2094,19 @@
     },
     {
       "file": "flythrough.svg",
-      "bytes": 13437,
-      "sha": "8dd0bdadf5f5154c",
-      "stddev": 44.426,
-      "inkRatio": 0.5784,
+      "bytes": 15509,
+      "sha": "0f4109b4772256be",
+      "stddev": 48.129,
+      "inkRatio": 0.67136,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 44.426,
-          "inkRatio": 0.5784
+          "stddev": 48.129,
+          "inkRatio": 0.67136
         },
         "black": {
-          "stddev": 44.426,
-          "inkRatio": 0.5784
+          "stddev": 48.129,
+          "inkRatio": 0.67136
         }
       },
       "blank": false,
@@ -2114,19 +2114,19 @@
     },
     {
       "file": "font-convert.svg",
-      "bytes": 58449,
-      "sha": "372222af5f01c2fc",
-      "stddev": 10.104,
-      "inkRatio": 0.03857,
+      "bytes": 58637,
+      "sha": "dc0c39fa9ec344e1",
+      "stddev": 9.23,
+      "inkRatio": 0.03622,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 16.999,
-          "inkRatio": 0.03293
+          "stddev": 17.441,
+          "inkRatio": 0.0324
         },
         "black": {
-          "stddev": 10.104,
-          "inkRatio": 0.03857
+          "stddev": 9.23,
+          "inkRatio": 0.03622
         }
       },
       "blank": false,
@@ -2134,19 +2134,19 @@
     },
     {
       "file": "frame.look0.svg",
-      "bytes": 10961,
-      "sha": "6ea4fd7f8d049535",
-      "stddev": 100.61,
-      "inkRatio": 0.61433,
+      "bytes": 23674,
+      "sha": "fab29a089a8ed2ff",
+      "stddev": 67.276,
+      "inkRatio": 0.87844,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 100.61,
-          "inkRatio": 0.61433
+          "stddev": 67.276,
+          "inkRatio": 0.87844
         },
         "black": {
-          "stddev": 100.61,
-          "inkRatio": 0.61433
+          "stddev": 67.276,
+          "inkRatio": 0.87844
         }
       },
       "blank": false,
@@ -2154,19 +2154,19 @@
     },
     {
       "file": "frame.look1.svg",
-      "bytes": 7326,
-      "sha": "d26c56767534d750",
-      "stddev": 37.778,
-      "inkRatio": 0.826,
+      "bytes": 9303,
+      "sha": "e03f467d637e75b9",
+      "stddev": 34.35,
+      "inkRatio": 0.82588,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 37.778,
-          "inkRatio": 0.826
+          "stddev": 34.35,
+          "inkRatio": 0.82588
         },
         "black": {
-          "stddev": 37.778,
-          "inkRatio": 0.826
+          "stddev": 34.35,
+          "inkRatio": 0.82588
         }
       },
       "blank": false,
@@ -2194,19 +2194,19 @@
     },
     {
       "file": "frame.look3.svg",
-      "bytes": 4354,
-      "sha": "28e67d9f821c42ce",
-      "stddev": 18.591,
-      "inkRatio": 0.45437,
+      "bytes": 6618,
+      "sha": "1a5ff0dcd89f0c23",
+      "stddev": 76.669,
+      "inkRatio": 0.71475,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 18.591,
-          "inkRatio": 0.45437
+          "stddev": 76.669,
+          "inkRatio": 0.71475
         },
         "black": {
-          "stddev": 104.196,
-          "inkRatio": 0.45422
+          "stddev": 115.48,
+          "inkRatio": 0.69316
         }
       },
       "blank": false,
@@ -2214,19 +2214,19 @@
     },
     {
       "file": "frame.svg",
-      "bytes": 7819,
-      "sha": "90dbd281fdb35c8a",
-      "stddev": 100.641,
-      "inkRatio": 0.61445,
+      "bytes": 7890,
+      "sha": "6f037e32678bd2f1",
+      "stddev": 72.517,
+      "inkRatio": 0.61318,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 100.641,
-          "inkRatio": 0.61445
+          "stddev": 72.517,
+          "inkRatio": 0.61318
         },
         "black": {
-          "stddev": 100.641,
-          "inkRatio": 0.61445
+          "stddev": 72.517,
+          "inkRatio": 0.61318
         }
       },
       "blank": false,
@@ -2234,8 +2234,8 @@
     },
     {
       "file": "gradient.look0.svg",
-      "bytes": 4991,
-      "sha": "bfae9aa1bd982e22",
+      "bytes": 4979,
+      "sha": "58b94892818156fa",
       "stddev": 34.823,
       "inkRatio": 0.75374,
       "ground": "black",
@@ -2254,8 +2254,8 @@
     },
     {
       "file": "gradient.look1.svg",
-      "bytes": 5503,
-      "sha": "5c6337d703d2c2e4",
+      "bytes": 5487,
+      "sha": "35c6f67ef1b8a36c",
       "stddev": 36.727,
       "inkRatio": 0.84836,
       "ground": "black",
@@ -2274,19 +2274,19 @@
     },
     {
       "file": "gradient.look2.svg",
-      "bytes": 14550,
-      "sha": "650c8b30d4899744",
-      "stddev": 74.705,
-      "inkRatio": 0.79324,
+      "bytes": 14666,
+      "sha": "8c43ec98e276a3e9",
+      "stddev": 71.286,
+      "inkRatio": 0.79186,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 74.705,
-          "inkRatio": 0.79324
+          "stddev": 71.286,
+          "inkRatio": 0.79186
         },
         "black": {
-          "stddev": 74.705,
-          "inkRatio": 0.79324
+          "stddev": 71.286,
+          "inkRatio": 0.79186
         }
       },
       "blank": false,
@@ -2294,8 +2294,8 @@
     },
     {
       "file": "gradient.look3.svg",
-      "bytes": 7208,
-      "sha": "9171b2da114d39c8",
+      "bytes": 7196,
+      "sha": "4da532a1163cb166",
       "stddev": 49.23,
       "inkRatio": 0.89437,
       "ground": "black",
@@ -2314,8 +2314,8 @@
     },
     {
       "file": "gradient.look4.svg",
-      "bytes": 10037,
-      "sha": "14d83bee076377bb",
+      "bytes": 10025,
+      "sha": "b5c1cd7a88e05e38",
       "stddev": 37.856,
       "inkRatio": 0.96099,
       "ground": "white",
@@ -2334,19 +2334,19 @@
     },
     {
       "file": "gradient.look5.svg",
-      "bytes": 10071,
-      "sha": "95b45f1b0f202ae4",
-      "stddev": 67.984,
-      "inkRatio": 0.90883,
+      "bytes": 10067,
+      "sha": "cf458449e66e74a8",
+      "stddev": 62.024,
+      "inkRatio": 0.94046,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 67.984,
-          "inkRatio": 0.90883
+          "stddev": 62.024,
+          "inkRatio": 0.94046
         },
         "black": {
-          "stddev": 67.984,
-          "inkRatio": 0.90883
+          "stddev": 62.024,
+          "inkRatio": 0.94046
         }
       },
       "blank": false,
@@ -2354,8 +2354,8 @@
     },
     {
       "file": "gradient.look6.svg",
-      "bytes": 4403,
-      "sha": "7c35e233bc743c5f",
+      "bytes": 4387,
+      "sha": "0df5282894298383",
       "stddev": 39.512,
       "inkRatio": 0.67961,
       "ground": "black",
@@ -2374,8 +2374,8 @@
     },
     {
       "file": "gradient.look7.svg",
-      "bytes": 7075,
-      "sha": "c279970ab2e645b4",
+      "bytes": 7063,
+      "sha": "53642371cef6571f",
       "stddev": 40.651,
       "inkRatio": 0.81595,
       "ground": "black",
@@ -2394,8 +2394,8 @@
     },
     {
       "file": "gradient.svg",
-      "bytes": 6016,
-      "sha": "49a031da1b52efa2",
+      "bytes": 6004,
+      "sha": "8a8adbc863b97be3",
       "stddev": 62.943,
       "inkRatio": 0.97203,
       "ground": "white",
@@ -2414,19 +2414,19 @@
     },
     {
       "file": "growth.look0.svg",
-      "bytes": 35483,
-      "sha": "5ef68840413d925f",
-      "stddev": 22.323,
-      "inkRatio": 0.07492,
+      "bytes": 81024,
+      "sha": "73a983d5a971c19f",
+      "stddev": 35.607,
+      "inkRatio": 0.25656,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 22.323,
-          "inkRatio": 0.07492
+          "stddev": 35.607,
+          "inkRatio": 0.25656
         },
         "black": {
-          "stddev": 22.323,
-          "inkRatio": 0.07492
+          "stddev": 35.607,
+          "inkRatio": 0.25656
         }
       },
       "blank": false,
@@ -2434,19 +2434,19 @@
     },
     {
       "file": "growth.look1.svg",
-      "bytes": 88865,
-      "sha": "95ea1915be4a108e",
-      "stddev": 29.439,
-      "inkRatio": 0.17007,
+      "bytes": 80250,
+      "sha": "e72ac294859da554",
+      "stddev": 36.966,
+      "inkRatio": 0.24979,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 29.439,
-          "inkRatio": 0.17007
+          "stddev": 36.966,
+          "inkRatio": 0.24979
         },
         "black": {
-          "stddev": 29.439,
-          "inkRatio": 0.17007
+          "stddev": 36.966,
+          "inkRatio": 0.24979
         }
       },
       "blank": false,
@@ -2454,19 +2454,19 @@
     },
     {
       "file": "growth.look2.svg",
-      "bytes": 54212,
-      "sha": "a41fb9567e26cecf",
-      "stddev": 41.831,
-      "inkRatio": 0.15677,
+      "bytes": 67208,
+      "sha": "e10e517093c8816d",
+      "stddev": 18.727,
+      "inkRatio": 0.13509,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 41.831,
-          "inkRatio": 0.15677
+          "stddev": 18.727,
+          "inkRatio": 0.13509
         },
         "black": {
-          "stddev": 41.831,
-          "inkRatio": 0.15677
+          "stddev": 18.727,
+          "inkRatio": 0.13509
         }
       },
       "blank": false,
@@ -2474,19 +2474,19 @@
     },
     {
       "file": "growth.look3.svg",
-      "bytes": 78069,
-      "sha": "eb3cbffad17e8b01",
-      "stddev": 23.352,
-      "inkRatio": 0.13828,
+      "bytes": 73224,
+      "sha": "27bae231c7ddf9df",
+      "stddev": 32.175,
+      "inkRatio": 0.1805,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 23.352,
-          "inkRatio": 0.13828
+          "stddev": 32.175,
+          "inkRatio": 0.1805
         },
         "black": {
-          "stddev": 23.352,
-          "inkRatio": 0.13828
+          "stddev": 32.175,
+          "inkRatio": 0.1805
         }
       },
       "blank": false,
@@ -2494,19 +2494,19 @@
     },
     {
       "file": "growth.svg",
-      "bytes": 35483,
-      "sha": "ccfb5e1933ed4d55",
-      "stddev": 22.323,
-      "inkRatio": 0.07492,
+      "bytes": 73228,
+      "sha": "156589b6f42bd4e6",
+      "stddev": 31.767,
+      "inkRatio": 0.23074,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 22.323,
-          "inkRatio": 0.07492
+          "stddev": 31.767,
+          "inkRatio": 0.23074
         },
         "black": {
-          "stddev": 22.323,
-          "inkRatio": 0.07492
+          "stddev": 31.767,
+          "inkRatio": 0.23074
         }
       },
       "blank": false,
@@ -2514,8 +2514,8 @@
     },
     {
       "file": "icon.svg",
-      "bytes": 3649,
-      "sha": "3051d883c2845fae",
+      "bytes": 3641,
+      "sha": "0d0d49e00b49e340",
       "stddev": 94.43,
       "inkRatio": 0.20328,
       "ground": "white",
@@ -2554,19 +2554,19 @@
     },
     {
       "file": "jump.look1.svg",
-      "bytes": 33330,
-      "sha": "c9fdcb159933e71e",
-      "stddev": 17.078,
-      "inkRatio": 0.03679,
+      "bytes": 37704,
+      "sha": "48105f23c8c73da7",
+      "stddev": 64.54,
+      "inkRatio": 0.1461,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 16.126,
-          "inkRatio": 0.02467
+          "stddev": 64.406,
+          "inkRatio": 0.1403
         },
         "black": {
-          "stddev": 17.078,
-          "inkRatio": 0.03679
+          "stddev": 64.54,
+          "inkRatio": 0.1461
         }
       },
       "blank": false,
@@ -2574,19 +2574,19 @@
     },
     {
       "file": "jump.look2.svg",
-      "bytes": 21177,
-      "sha": "c48488aba90486ea",
-      "stddev": 14.526,
-      "inkRatio": 0.02843,
+      "bytes": 27006,
+      "sha": "7b712d4b28561dbc",
+      "stddev": 33.288,
+      "inkRatio": 0.14783,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 13.364,
-          "inkRatio": 0.01631
+          "stddev": 33.107,
+          "inkRatio": 0.1372
         },
         "black": {
-          "stddev": 14.526,
-          "inkRatio": 0.02843
+          "stddev": 33.288,
+          "inkRatio": 0.14783
         }
       },
       "blank": false,
@@ -2594,19 +2594,39 @@
     },
     {
       "file": "jump.look3.svg",
-      "bytes": 21503,
-      "sha": "db45410a4571d04b",
-      "stddev": 14.298,
-      "inkRatio": 0.02824,
+      "bytes": 33715,
+      "sha": "0418d6c30f05d085",
+      "stddev": 25.22,
+      "inkRatio": 0.051,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 13.176,
-          "inkRatio": 0.01612
+          "stddev": 24.978,
+          "inkRatio": 0.04319
         },
         "black": {
-          "stddev": 14.298,
-          "inkRatio": 0.02824
+          "stddev": 25.22,
+          "inkRatio": 0.051
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "jump.look4.svg",
+      "bytes": 22256,
+      "sha": "36cb29c670b31afb",
+      "stddev": 25.497,
+      "inkRatio": 0.04627,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 23.753,
+          "inkRatio": 0.03846
+        },
+        "black": {
+          "stddev": 25.497,
+          "inkRatio": 0.04627
         }
       },
       "blank": false,
@@ -2614,19 +2634,19 @@
     },
     {
       "file": "jump.svg",
-      "bytes": 23918,
-      "sha": "e16336dd2bbfac25",
-      "stddev": 78.922,
-      "inkRatio": 0.15717,
-      "ground": "black",
+      "bytes": 8174,
+      "sha": "1e2d08a810621630",
+      "stddev": 84.398,
+      "inkRatio": 0.15063,
+      "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 78.958,
-          "inkRatio": 0.14505
+          "stddev": 84.398,
+          "inkRatio": 0.15063
         },
         "black": {
-          "stddev": 78.922,
-          "inkRatio": 0.15717
+          "stddev": 83.989,
+          "inkRatio": 0.15063
         }
       },
       "blank": false,
@@ -2635,7 +2655,7 @@
     {
       "file": "link-card.look0.svg",
       "bytes": 37969,
-      "sha": "60b64b083bd88d1b",
+      "sha": "dabb1b07e1629df2",
       "stddev": 108.474,
       "inkRatio": 0.45872,
       "ground": "black",
@@ -2654,8 +2674,8 @@
     },
     {
       "file": "link-card.look1.svg",
-      "bytes": 31240,
-      "sha": "25bc39d997444ea6",
+      "bytes": 31244,
+      "sha": "8f956f8bd4b72727",
       "stddev": 96.764,
       "inkRatio": 0.49217,
       "ground": "white",
@@ -2675,7 +2695,7 @@
     {
       "file": "link-card.look2.svg",
       "bytes": 29025,
-      "sha": "75991949abca9bc2",
+      "sha": "10ce53f9037b54f1",
       "stddev": 98.922,
       "inkRatio": 0.49182,
       "ground": "white",
@@ -2695,7 +2715,7 @@
     {
       "file": "link-card.look3.svg",
       "bytes": 37978,
-      "sha": "8a5ae1c0a7963bd5",
+      "sha": "49d1cfc2d2950cd2",
       "stddev": 90.021,
       "inkRatio": 0.46723,
       "ground": "black",
@@ -2714,8 +2734,8 @@
     },
     {
       "file": "link-card.svg",
-      "bytes": 37973,
-      "sha": "739379f72f4b51de",
+      "bytes": 37969,
+      "sha": "e042bd358cb65f1a",
       "stddev": 117.609,
       "inkRatio": 0.45904,
       "ground": "black",
@@ -2735,7 +2755,7 @@
     {
       "file": "logo-lockup-partner.svg",
       "bytes": 6085,
-      "sha": "dd9a60660ef3cc1b",
+      "sha": "831c85a562a051a1",
       "stddev": 53.196,
       "inkRatio": 0.10709,
       "ground": "black",
@@ -2754,29 +2774,29 @@
     },
     {
       "file": "logo-wall.svg",
-      "bytes": 3810,
-      "sha": "b35f258686644c25",
-      "stddev": 15.896,
-      "inkRatio": 0.01902,
+      "bytes": 3424,
+      "sha": "84dc94355eae739a",
+      "stddev": 6.203,
+      "inkRatio": 0.01305,
       "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 4.837,
-          "inkRatio": 0.01175
+          "stddev": 3.094,
+          "inkRatio": 0.0073
         },
         "black": {
-          "stddev": 15.896,
-          "inkRatio": 0.01902
+          "stddev": 6.203,
+          "inkRatio": 0.01305
         }
       },
       "blank": false,
       "sparse": true,
-      "reason": "near-empty: only 1.90% of pixels differ from the background"
+      "reason": "near-empty: only 1.31% of pixels differ from the background"
     },
     {
       "file": "lottie-digi-ad.svg",
       "bytes": 8416,
-      "sha": "558bd7e1f82693c0",
+      "sha": "ce766bb43c1aed0b",
       "stddev": 29.912,
       "inkRatio": 0.0267,
       "ground": "white",
@@ -2795,19 +2815,19 @@
     },
     {
       "file": "meeting-planner.svg",
-      "bytes": 84391,
-      "sha": "4413f197746a08ba",
-      "stddev": 35.741,
-      "inkRatio": 0.28577,
+      "bytes": 84937,
+      "sha": "667974fe343ed6f9",
+      "stddev": 35.766,
+      "inkRatio": 0.28684,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 35.741,
-          "inkRatio": 0.28577
+          "stddev": 35.766,
+          "inkRatio": 0.28684
         },
         "black": {
-          "stddev": 35.741,
-          "inkRatio": 0.28577
+          "stddev": 35.766,
+          "inkRatio": 0.28684
         }
       },
       "blank": false,
@@ -2816,7 +2836,7 @@
     {
       "file": "multi-page-pdf.svg",
       "bytes": 29425,
-      "sha": "902cea55e2d73edc",
+      "sha": "dda390aa4acaa70d",
       "stddev": 33.827,
       "inkRatio": 0.04612,
       "ground": "white",
@@ -2835,8 +2855,8 @@
     },
     {
       "file": "org-chart.svg",
-      "bytes": 34958,
-      "sha": "d6d9a1f23221fb95",
+      "bytes": 34954,
+      "sha": "44b3c1c6fde51768",
       "stddev": 70.427,
       "inkRatio": 0.13696,
       "ground": "black",
@@ -2856,7 +2876,7 @@
     {
       "file": "pose-geeko.look0.svg",
       "bytes": 24679,
-      "sha": "30c1cab6a9c13fa7",
+      "sha": "c200f8ceb2c5da35",
       "stddev": 72.375,
       "inkRatio": 0.27095,
       "ground": "black",
@@ -2876,7 +2896,7 @@
     {
       "file": "pose-geeko.look1.svg",
       "bytes": 17617,
-      "sha": "245c7569a6df1859",
+      "sha": "ee14639bc56f0e1f",
       "stddev": 48.809,
       "inkRatio": 0.20161,
       "ground": "white",
@@ -2896,7 +2916,7 @@
     {
       "file": "pose-geeko.look2.svg",
       "bytes": 12593,
-      "sha": "09f50c48c35682a3",
+      "sha": "17cc0e0f727711db",
       "stddev": 73.396,
       "inkRatio": 0.2585,
       "ground": "white",
@@ -2916,7 +2936,7 @@
     {
       "file": "pose-geeko.look3.svg",
       "bytes": 23053,
-      "sha": "612ce6f0316d9d73",
+      "sha": "6e62a89de441a036",
       "stddev": 51.372,
       "inkRatio": 0.08954,
       "ground": "white",
@@ -2936,7 +2956,7 @@
     {
       "file": "pose-geeko.look4.svg",
       "bytes": 17269,
-      "sha": "05502dea32f6a146",
+      "sha": "6e2b1c10e91d537e",
       "stddev": 81.819,
       "inkRatio": 0.24924,
       "ground": "white",
@@ -2976,7 +2996,7 @@
     {
       "file": "pricing-table.look0.svg",
       "bytes": 89883,
-      "sha": "3f9f106ec85d521b",
+      "sha": "6fdc8593d26d7e50",
       "stddev": 24.938,
       "inkRatio": 0.41331,
       "ground": "white",
@@ -2996,7 +3016,7 @@
     {
       "file": "pricing-table.look1.svg",
       "bytes": 52382,
-      "sha": "50b3a5ab9e7bd79e",
+      "sha": "2fa003fa3e568aeb",
       "stddev": 23.638,
       "inkRatio": 0.31941,
       "ground": "white",
@@ -3016,7 +3036,7 @@
     {
       "file": "pricing-table.look2.svg",
       "bytes": 73867,
-      "sha": "81719d944aaae16b",
+      "sha": "60f99b7bfa6f436a",
       "stddev": 17.452,
       "inkRatio": 0.05203,
       "ground": "white",
@@ -3036,7 +3056,7 @@
     {
       "file": "pricing-table.look3.svg",
       "bytes": 54833,
-      "sha": "b9edc52658aea770",
+      "sha": "b4675589338fa34a",
       "stddev": 20.789,
       "inkRatio": 0.32664,
       "ground": "white",
@@ -3056,7 +3076,7 @@
     {
       "file": "pricing-table.svg",
       "bytes": 89853,
-      "sha": "3d6c34776605ee3f",
+      "sha": "f913b33caf72aa79",
       "stddev": 27.929,
       "inkRatio": 0.17607,
       "ground": "white",
@@ -3096,39 +3116,60 @@
     },
     {
       "file": "print-sheet.look1.svg",
-      "bytes": 8221,
-      "sha": "45b2e60f83a88953",
-      "stddev": 5.961,
-      "inkRatio": 0.03304,
+      "bytes": 3905,
+      "sha": "76c7c52f6e75d9f3",
+      "stddev": 4.661,
+      "inkRatio": 0.00781,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 5.961,
-          "inkRatio": 0.03304
+          "stddev": 4.661,
+          "inkRatio": 0.00781
         },
         "black": {
-          "stddev": 5.961,
-          "inkRatio": 0.03304
+          "stddev": 4.661,
+          "inkRatio": 0.00781
+        }
+      },
+      "blank": false,
+      "sparse": true,
+      "reason": "near-empty: only 0.78% of pixels differ from the background"
+    },
+    {
+      "file": "print-sheet.look2.svg",
+      "bytes": 6202,
+      "sha": "bd83ffc18f63caaf",
+      "stddev": 5.875,
+      "inkRatio": 0.03198,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 5.875,
+          "inkRatio": 0.03198
+        },
+        "black": {
+          "stddev": 5.874,
+          "inkRatio": 0.03198
         }
       },
       "blank": false,
       "sparse": false
     },
     {
-      "file": "print-sheet.look2.svg",
-      "bytes": 6227,
-      "sha": "6459e9d7c44b4605",
-      "stddev": 4.795,
-      "inkRatio": 0.00846,
+      "file": "print-sheet.look3.svg",
+      "bytes": 4999,
+      "sha": "d6c909004961d122",
+      "stddev": 4.765,
+      "inkRatio": 0.00852,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 4.795,
-          "inkRatio": 0.00846
+          "stddev": 4.765,
+          "inkRatio": 0.00852
         },
         "black": {
-          "stddev": 4.795,
-          "inkRatio": 0.00846
+          "stddev": 4.765,
+          "inkRatio": 0.00852
         }
       },
       "blank": false,
@@ -3137,29 +3178,29 @@
     },
     {
       "file": "print-sheet.svg",
-      "bytes": 4567,
-      "sha": "e1e0c795150c94c6",
-      "stddev": 4.684,
-      "inkRatio": 0.00768,
+      "bytes": 3905,
+      "sha": "02f7630db3f74e8d",
+      "stddev": 4.661,
+      "inkRatio": 0.00781,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 4.684,
-          "inkRatio": 0.00768
+          "stddev": 4.661,
+          "inkRatio": 0.00781
         },
         "black": {
-          "stddev": 4.684,
-          "inkRatio": 0.00768
+          "stddev": 4.661,
+          "inkRatio": 0.00781
         }
       },
       "blank": false,
       "sparse": true,
-      "reason": "near-empty: only 0.77% of pixels differ from the background"
+      "reason": "near-empty: only 0.78% of pixels differ from the background"
     },
     {
       "file": "prompt-card.look0.svg",
-      "bytes": 45505,
-      "sha": "fcffdc34193076ae",
+      "bytes": 45497,
+      "sha": "5ba51924a4e0afe9",
       "stddev": 29.94,
       "inkRatio": 0.07014,
       "ground": "white",
@@ -3178,8 +3219,8 @@
     },
     {
       "file": "prompt-card.look1.svg",
-      "bytes": 28049,
-      "sha": "7ee1000a7b064d1c",
+      "bytes": 28041,
+      "sha": "baf6fb97b3c2a62f",
       "stddev": 32.03,
       "inkRatio": 0.06101,
       "ground": "white",
@@ -3198,8 +3239,8 @@
     },
     {
       "file": "prompt-card.look2.svg",
-      "bytes": 30576,
-      "sha": "11d1e029208050dd",
+      "bytes": 30564,
+      "sha": "69482dbfc89474cc",
       "stddev": 24.218,
       "inkRatio": 0.04319,
       "ground": "white",
@@ -3218,8 +3259,8 @@
     },
     {
       "file": "prompt-card.webp",
-      "bytes": 94254,
-      "sha": "b5e085f3b16642ea",
+      "bytes": 94246,
+      "sha": "8b7a7167a9f65b5a",
       "stddev": 36.364,
       "inkRatio": 0.15895,
       "ground": "white",
@@ -3239,7 +3280,7 @@
     {
       "file": "qr-code.look0.svg",
       "bytes": 11547,
-      "sha": "cb6e54d30614f9aa",
+      "sha": "6748d3296e5d785b",
       "stddev": 101.4,
       "inkRatio": 0.28767,
       "ground": "white",
@@ -3259,7 +3300,7 @@
     {
       "file": "qr-code.look1.svg",
       "bytes": 11544,
-      "sha": "6ff08cc22205fb7c",
+      "sha": "a32938a63105dbcc",
       "stddev": 110.001,
       "inkRatio": 0.28767,
       "ground": "white",
@@ -3279,7 +3320,7 @@
     {
       "file": "qr-code.look2.svg",
       "bytes": 18506,
-      "sha": "732bf9cc066ba0ae",
+      "sha": "82ec3e4f46dc8f4e",
       "stddev": 104.47,
       "inkRatio": 0.33708,
       "ground": "white",
@@ -3299,7 +3340,7 @@
     {
       "file": "qr-code.look3.svg",
       "bytes": 53870,
-      "sha": "81d4746157df7db0",
+      "sha": "ed097c52fbe4318b",
       "stddev": 91.372,
       "inkRatio": 0.39392,
       "ground": "white",
@@ -3319,7 +3360,7 @@
     {
       "file": "qr-code.look4.svg",
       "bytes": 14941,
-      "sha": "b14c0d4f49beb725",
+      "sha": "2e3372cb54b7227d",
       "stddev": 96.879,
       "inkRatio": 0.26318,
       "ground": "white",
@@ -3339,7 +3380,7 @@
     {
       "file": "qr-code.look5.svg",
       "bytes": 17567,
-      "sha": "7c7cb2013607540e",
+      "sha": "7df7a1fc8941c9f5",
       "stddev": 107.4,
       "inkRatio": 0.3824,
       "ground": "white",
@@ -3359,7 +3400,7 @@
     {
       "file": "qr-code.look6.svg",
       "bytes": 3566,
-      "sha": "83d75a28a1a59bac",
+      "sha": "30eba4d012785d49",
       "stddev": 65.829,
       "inkRatio": 0.12132,
       "ground": "white",
@@ -3379,7 +3420,7 @@
     {
       "file": "qr-code.look7.svg",
       "bytes": 8826,
-      "sha": "6b0b98413f7b041a",
+      "sha": "97d5d2233027701e",
       "stddev": 84.576,
       "inkRatio": 0.20557,
       "ground": "black",
@@ -3399,7 +3440,7 @@
     {
       "file": "qr-code.svg",
       "bytes": 11544,
-      "sha": "03b3095c0d1532b1",
+      "sha": "f0796daeae8bf083",
       "stddev": 110.001,
       "inkRatio": 0.28767,
       "ground": "white",
@@ -3418,19 +3459,19 @@
     },
     {
       "file": "quotes.svg",
-      "bytes": 12431,
-      "sha": "1659e560d65d0c33",
-      "stddev": 46.911,
-      "inkRatio": 0.08597,
+      "bytes": 12415,
+      "sha": "96c638fcb060a6df",
+      "stddev": 46.908,
+      "inkRatio": 0.0854,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 46.911,
-          "inkRatio": 0.08597
+          "stddev": 46.908,
+          "inkRatio": 0.0854
         },
         "black": {
-          "stddev": 46.911,
-          "inkRatio": 0.08597
+          "stddev": 46.908,
+          "inkRatio": 0.0854
         }
       },
       "blank": false,
@@ -3439,7 +3480,7 @@
     {
       "file": "record.svg",
       "bytes": 3697,
-      "sha": "d3fe11dc3fbc09cc",
+      "sha": "bc396e0e82cf3dee",
       "stddev": 25.313,
       "inkRatio": 0.0233,
       "ground": "white",
@@ -3459,7 +3500,7 @@
     {
       "file": "redact.svg",
       "bytes": 67751,
-      "sha": "7ba715098b951dad",
+      "sha": "86c6d6bb97081d2b",
       "stddev": 19.642,
       "inkRatio": 0.04856,
       "ground": "black",
@@ -3478,15 +3519,15 @@
     },
     {
       "file": "sandbox.svg",
-      "bytes": 3433,
-      "sha": "c14cb064848e4b1c",
-      "stddev": 10.241,
-      "inkRatio": 0.00955,
+      "bytes": 3393,
+      "sha": "d6e6e4d74fda8aec",
+      "stddev": 10.378,
+      "inkRatio": 0.00967,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 10.241,
-          "inkRatio": 0.00955
+          "stddev": 10.378,
+          "inkRatio": 0.00967
         },
         "black": {
           "stddev": 0,
@@ -3495,23 +3536,23 @@
       },
       "blank": false,
       "sparse": true,
-      "reason": "near-empty: only 0.95% of pixels differ from the background"
+      "reason": "near-empty: only 0.97% of pixels differ from the background"
     },
     {
       "file": "scan-code.svg",
-      "bytes": 24164,
-      "sha": "74193109a1c5cc3f",
-      "stddev": 73.71,
-      "inkRatio": 0.13629,
+      "bytes": 26942,
+      "sha": "fe2d3f20d2417365",
+      "stddev": 72.698,
+      "inkRatio": 0.15373,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 73.71,
-          "inkRatio": 0.13629
+          "stddev": 72.698,
+          "inkRatio": 0.15373
         },
         "black": {
-          "stddev": 37.503,
-          "inkRatio": 0.13601
+          "stddev": 29.518,
+          "inkRatio": 0.15336
         }
       },
       "blank": false,
@@ -3520,7 +3561,7 @@
     {
       "file": "screencap.svg",
       "bytes": 3963,
-      "sha": "5191b62bc89d53fc",
+      "sha": "132647a684dc7fb4",
       "stddev": 20.191,
       "inkRatio": 0.45768,
       "ground": "white",
@@ -3540,7 +3581,7 @@
     {
       "file": "signature.look0.svg",
       "bytes": 3970,
-      "sha": "1f54a887a7f3aaf2",
+      "sha": "2cad37c7a3af9b54",
       "stddev": 44.055,
       "inkRatio": 0.07031,
       "ground": "white",
@@ -3560,7 +3601,7 @@
     {
       "file": "signature.look1.svg",
       "bytes": 3402,
-      "sha": "5299da493f64a6a9",
+      "sha": "70a1178a36ccd584",
       "stddev": 45.08,
       "inkRatio": 0.06668,
       "ground": "white",
@@ -3580,7 +3621,7 @@
     {
       "file": "signature.look2.svg",
       "bytes": 3862,
-      "sha": "25ad93a647370dbe",
+      "sha": "f6480d33d6dd60ae",
       "stddev": 38.137,
       "inkRatio": 0.04494,
       "ground": "white",
@@ -3599,8 +3640,8 @@
     },
     {
       "file": "signature.svg",
-      "bytes": 3178,
-      "sha": "f855194b69340ab3",
+      "bytes": 3174,
+      "sha": "c2ba92224bc9e470",
       "stddev": 40.175,
       "inkRatio": 0.04894,
       "ground": "white",
@@ -3619,19 +3660,19 @@
     },
     {
       "file": "snippet.svg",
-      "bytes": 24396,
-      "sha": "810c8ed3ad51cb79",
-      "stddev": 14.616,
-      "inkRatio": 0.54809,
+      "bytes": 24388,
+      "sha": "0654d88f3177aa6b",
+      "stddev": 19.28,
+      "inkRatio": 0.65504,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 14.616,
-          "inkRatio": 0.54809
+          "stddev": 19.28,
+          "inkRatio": 0.65504
         },
         "black": {
-          "stddev": 14.011,
-          "inkRatio": 0.54352
+          "stddev": 18.763,
+          "inkRatio": 0.65369
         }
       },
       "blank": false,
@@ -3639,29 +3680,28 @@
     },
     {
       "file": "spatial-photo.svg",
-      "bytes": 5466,
-      "sha": "49f1306a9888e2b4",
-      "stddev": 15.027,
-      "inkRatio": 0.00879,
-      "ground": "black",
+      "bytes": 3346,
+      "sha": "7172c9ac93691529",
+      "stddev": 14.396,
+      "inkRatio": 0.07281,
+      "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 4.311,
-          "inkRatio": 0.00675
+          "stddev": 14.396,
+          "inkRatio": 0.07281
         },
         "black": {
-          "stddev": 15.027,
-          "inkRatio": 0.00879
+          "stddev": 11.308,
+          "inkRatio": 0.07151
         }
       },
       "blank": false,
-      "sparse": true,
-      "reason": "near-empty: only 0.88% of pixels differ from the background"
+      "sparse": false
     },
     {
       "file": "stationery.look0.svg",
       "bytes": 20891,
-      "sha": "fdd1a36317577f3e",
+      "sha": "9e569ff61a174395",
       "stddev": 61.737,
       "inkRatio": 0.11552,
       "ground": "black",
@@ -3681,7 +3721,7 @@
     {
       "file": "stationery.look1.svg",
       "bytes": 9067,
-      "sha": "3c783d64bb913b55",
+      "sha": "f0fabf38ac03aa72",
       "stddev": 6.161,
       "inkRatio": 0.02287,
       "ground": "white",
@@ -3701,7 +3741,7 @@
     {
       "file": "stationery.look2.svg",
       "bytes": 44122,
-      "sha": "ef9655d874c5761a",
+      "sha": "b98597eae025eea9",
       "stddev": 15.234,
       "inkRatio": 0.0306,
       "ground": "black",
@@ -3721,7 +3761,7 @@
     {
       "file": "stationery.look3.svg",
       "bytes": 24107,
-      "sha": "c5840e527aa6e2fd",
+      "sha": "4840a5000f6f93b4",
       "stddev": 40.506,
       "inkRatio": 0.07741,
       "ground": "black",
@@ -3741,7 +3781,7 @@
     {
       "file": "stationery.svg",
       "bytes": 20864,
-      "sha": "4f3c187c68780c8a",
+      "sha": "79734b6ff8df583c",
       "stddev": 64.674,
       "inkRatio": 0.11568,
       "ground": "black",
@@ -3760,19 +3800,19 @@
     },
     {
       "file": "strip-data.svg",
-      "bytes": 61902,
-      "sha": "11cc0dbe1f8091bc",
-      "stddev": 13.19,
-      "inkRatio": 0.02799,
-      "ground": "white",
+      "bytes": 62060,
+      "sha": "e26b594b578affc1",
+      "stddev": 16.093,
+      "inkRatio": 0.0382,
+      "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 13.19,
-          "inkRatio": 0.02799
+          "stddev": 13.703,
+          "inkRatio": 0.03039
         },
         "black": {
-          "stddev": 13.19,
-          "inkRatio": 0.02799
+          "stddev": 16.093,
+          "inkRatio": 0.0382
         }
       },
       "blank": false,
@@ -3780,19 +3820,19 @@
     },
     {
       "file": "synth.look0.svg",
-      "bytes": 22001,
-      "sha": "c9bb48004c50a3f3",
-      "stddev": 64.973,
-      "inkRatio": 0.81877,
+      "bytes": 19523,
+      "sha": "404d08bf64470c6f",
+      "stddev": 67.566,
+      "inkRatio": 0.76538,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 64.973,
-          "inkRatio": 0.81877
+          "stddev": 67.566,
+          "inkRatio": 0.76538
         },
         "black": {
-          "stddev": 64.973,
-          "inkRatio": 0.81877
+          "stddev": 67.566,
+          "inkRatio": 0.76538
         }
       },
       "blank": false,
@@ -3800,19 +3840,19 @@
     },
     {
       "file": "synth.look1.svg",
-      "bytes": 12249,
-      "sha": "3b4f0841ff098b5b",
-      "stddev": 28.787,
-      "inkRatio": 0.20345,
+      "bytes": 12103,
+      "sha": "fb04d0f5304d2900",
+      "stddev": 26.599,
+      "inkRatio": 0.22811,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 28.787,
-          "inkRatio": 0.20345
+          "stddev": 26.599,
+          "inkRatio": 0.22811
         },
         "black": {
-          "stddev": 28.787,
-          "inkRatio": 0.20345
+          "stddev": 26.599,
+          "inkRatio": 0.22811
         }
       },
       "blank": false,
@@ -3820,19 +3860,19 @@
     },
     {
       "file": "synth.look2.svg",
-      "bytes": 17545,
-      "sha": "f28c17e076c0195c",
-      "stddev": 60.779,
-      "inkRatio": 0.55078,
+      "bytes": 19331,
+      "sha": "eff2e0d1aa66d3fd",
+      "stddev": 71.457,
+      "inkRatio": 0.67345,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 60.779,
-          "inkRatio": 0.55078
+          "stddev": 71.457,
+          "inkRatio": 0.67345
         },
         "black": {
-          "stddev": 60.779,
-          "inkRatio": 0.55078
+          "stddev": 71.457,
+          "inkRatio": 0.67345
         }
       },
       "blank": false,
@@ -3840,19 +3880,19 @@
     },
     {
       "file": "synth.look3.svg",
-      "bytes": 16097,
-      "sha": "e96f702589ae3fae",
-      "stddev": 50.27,
-      "inkRatio": 0.85723,
+      "bytes": 16707,
+      "sha": "2eeefab81a91e58d",
+      "stddev": 50.205,
+      "inkRatio": 0.90432,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 50.27,
-          "inkRatio": 0.85723
+          "stddev": 50.205,
+          "inkRatio": 0.90432
         },
         "black": {
-          "stddev": 50.27,
-          "inkRatio": 0.85723
+          "stddev": 50.205,
+          "inkRatio": 0.90432
         }
       },
       "blank": false,
@@ -3860,19 +3900,19 @@
     },
     {
       "file": "synth.svg",
-      "bytes": 23589,
-      "sha": "f169ad9c501ecb1e",
-      "stddev": 75.974,
-      "inkRatio": 0.91026,
+      "bytes": 24607,
+      "sha": "d3b67918d1271c2a",
+      "stddev": 72.563,
+      "inkRatio": 0.93978,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 75.974,
-          "inkRatio": 0.91026
+          "stddev": 72.563,
+          "inkRatio": 0.93978
         },
         "black": {
-          "stddev": 75.974,
-          "inkRatio": 0.91026
+          "stddev": 72.563,
+          "inkRatio": 0.93978
         }
       },
       "blank": false,
@@ -3880,19 +3920,19 @@
     },
     {
       "file": "text-helper.svg",
-      "bytes": 32177,
-      "sha": "82d68a22b05449e1",
-      "stddev": 14.443,
-      "inkRatio": 0.02629,
-      "ground": "white",
+      "bytes": 32418,
+      "sha": "d6e88ff5938642a3",
+      "stddev": 16.981,
+      "inkRatio": 0.03516,
+      "ground": "black",
       "grounds": {
         "white": {
-          "stddev": 14.443,
-          "inkRatio": 0.02629
+          "stddev": 14.93,
+          "inkRatio": 0.02734
         },
         "black": {
-          "stddev": 14.443,
-          "inkRatio": 0.02629
+          "stddev": 16.981,
+          "inkRatio": 0.03516
         }
       },
       "blank": false,
@@ -3901,7 +3941,7 @@
     {
       "file": "tool-logo.svg",
       "bytes": 12674,
-      "sha": "83903b0e71eee32d",
+      "sha": "c7f5731e7459283f",
       "stddev": 61.86,
       "inkRatio": 0.23985,
       "ground": "white",
@@ -3920,19 +3960,19 @@
     },
     {
       "file": "top-tail-recorder.svg",
-      "bytes": 13573,
-      "sha": "1bfd14acc3b03f45",
-      "stddev": 23.953,
-      "inkRatio": 0.03358,
+      "bytes": 13433,
+      "sha": "3ba99d623a056446",
+      "stddev": 21.833,
+      "inkRatio": 0.04134,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 23.953,
-          "inkRatio": 0.03358
+          "stddev": 21.833,
+          "inkRatio": 0.04134
         },
         "black": {
-          "stddev": 23.953,
-          "inkRatio": 0.03358
+          "stddev": 21.833,
+          "inkRatio": 0.04134
         }
       },
       "blank": false,
@@ -3940,19 +3980,19 @@
     },
     {
       "file": "voice-recorder.svg",
-      "bytes": 5262,
-      "sha": "e93c49bbe954da79",
-      "stddev": 20.476,
-      "inkRatio": 0.08438,
+      "bytes": 5126,
+      "sha": "4e250371ff0d1deb",
+      "stddev": 16.415,
+      "inkRatio": 0.10544,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 20.476,
-          "inkRatio": 0.08438
+          "stddev": 16.415,
+          "inkRatio": 0.10544
         },
         "black": {
-          "stddev": 20.476,
-          "inkRatio": 0.08438
+          "stddev": 16.415,
+          "inkRatio": 0.10544
         }
       },
       "blank": false,
@@ -3961,7 +4001,7 @@
     {
       "file": "wayfinding-signage.svg",
       "bytes": 5460,
-      "sha": "514033e8df94ba1c",
+      "sha": "29f3ef4891261aed",
       "stddev": 51.331,
       "inkRatio": 0.09056,
       "ground": "black",
@@ -3980,8 +4020,8 @@
     },
     {
       "file": "wordmark.look0.svg",
-      "bytes": 4021,
-      "sha": "9fe6eb84c25320b7",
+      "bytes": 4025,
+      "sha": "cb2bcb4fce7e4120",
       "stddev": 97.935,
       "inkRatio": 0.24228,
       "ground": "white",
@@ -4001,7 +4041,7 @@
     {
       "file": "wordmark.look1.svg",
       "bytes": 3720,
-      "sha": "b774356fedb3ad08",
+      "sha": "42e9a8913de0b1bb",
       "stddev": 39.597,
       "inkRatio": 0.06944,
       "ground": "white",
@@ -4020,8 +4060,8 @@
     },
     {
       "file": "wordmark.look2.svg",
-      "bytes": 5025,
-      "sha": "23bfae6952528959",
+      "bytes": 5021,
+      "sha": "5ba247902af68ba5",
       "stddev": 106.503,
       "inkRatio": 0.32188,
       "ground": "white",
@@ -4041,7 +4081,7 @@
     {
       "file": "wordmark.look3.svg",
       "bytes": 4856,
-      "sha": "1a5e6f918545269c",
+      "sha": "aa19bf5ba62c0344",
       "stddev": 58.664,
       "inkRatio": 0.08653,
       "ground": "black",
@@ -4060,8 +4100,8 @@
     },
     {
       "file": "wordmark.svg",
-      "bytes": 4589,
-      "sha": "505c39430cec320a",
+      "bytes": 4593,
+      "sha": "282b85cc9d0b8fc8",
       "stddev": 84.539,
       "inkRatio": 0.17881,
       "ground": "white",

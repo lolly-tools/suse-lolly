@@ -1,5 +1,5 @@
 {
-  "name": "Crachás",
+  "name": "Badges",
   "description": "Crachás de conferência com função codificada por cor e QR opcional.",
   "featured.blurb": "Crachás de conferência, codificados por cor conforme a função",
   "a11yLabel": "Crachá de nome do evento para {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

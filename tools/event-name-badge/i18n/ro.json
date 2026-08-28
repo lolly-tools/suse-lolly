@@ -1,5 +1,5 @@
 {
-  "name": "Ecusoane",
+  "name": "Badges",
   "description": "Ecusoane de conferință cu rol codificat prin culoare și cod QR opțional.",
   "a11yLabel": "Ecuson de eveniment pentru {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",
   "featured.blurb": "Ecusoane de conferință, codificate prin culoare în funcție de rol",

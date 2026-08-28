@@ -1,5 +1,5 @@
 {
-  "name": "Namensschilder",
+  "name": "Badges",
   "description": "Konferenz-Namensschilder mit farblich codierter Rolle und optionalem QR-Code.",
   "a11yLabel": "Namensschild für {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",
   "featured.blurb": "Konferenz-Namensschilder, farblich codiert nach Rolle",

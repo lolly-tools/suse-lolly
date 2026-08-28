@@ -1,5 +1,5 @@
 {
-  "name": "Citat",
+  "name": "Quotes",
   "description": "Varumärkesanpassade citatkort för sociala inlägg och presentationer.",
   "inputs.theme.label": "Tema",
   "inputs.theme.options.light": "Ljust",

@@ -1,5 +1,5 @@
 {
-  "name": "Sitater",
+  "name": "Quotes",
   "description": "Merkevaretilpassede sitatkort for sosiale innlegg og lysbilder.",
   "inputs.theme.label": "Tema",
   "inputs.theme.options.light": "Lys",

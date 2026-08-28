@@ -10,7 +10,6 @@
     "highlight": 1,
     "highlightLabel": "Our pick",
     "layout": "cards",
-    "color": "{color.semantic.text}",
     "background": "{color.semantic.surface}",
     "accent": "{color.semantic.primary}",
     "data": {
