@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-08-28T12:29:25.202Z",
+  "generatedAt": "2026-08-29T01:22:12.296Z",
   "tools": [
     {
       "id": "color-block",
@@ -5189,7 +5189,7 @@
       "id": "3d",
       "name": "3D",
       "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "status": "official",
       "category": "designer",
       "tags": [

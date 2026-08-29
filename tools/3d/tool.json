@@ -1,9 +1,10 @@
 {
   "id": "3d",
   "name": "3D",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "engineVersion": "^1.0.0",
   "status": "official",
+  "singleInstance": true,
   "category": "designer",
   "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
   "a11yLabel": "3D render of {{default model \"a model\"}} in {{default scene \"studio\"}} lighting",
@@ -31,7 +32,9 @@
       "options": [
         { "value": "geeko", "label": "Geeko" },
         { "value": "geeko-branch", "label": "Geeko on a branch" },
-        { "value": "geeko-sitting", "label": "Geeko sitting" }
+        { "value": "geeko-sitting", "label": "Geeko sitting" },
+        { "value": "duck", "label": "Duck" },
+        { "value": "cat", "label": "Cat" }
       ]
     },
     {

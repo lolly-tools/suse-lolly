@@ -5,6 +5,7 @@
   "version": "1.2.1",
   "engineVersion": "^1.0.0",
   "status": "official",
+  "singleInstance": true,
   "category": "event",
   "tags": ["map", "team", "timezone", "world", "time", "meeting", "schedule", "planner", "clock", "widget", "d3"],
   "render": {

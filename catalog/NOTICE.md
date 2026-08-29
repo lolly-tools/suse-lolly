@@ -11,17 +11,12 @@ This private repository is the home the open-sourcing plan reserved for them
 (see the `lolly` monorepo's `README.md` "Open-sourcing plan" and
 `SOVEREIGNTY.md`).
 
-**Exception - `catalog/assets/suse/music/`:** stock music licensed from
-PremiumBeat (Shutterstock) for inclusion in the SUSE catalog and for use as
-audio beds in rendered Lolly exports (webm/mp4). The composers retain
-ownership - each entry's `description` credits the artist, and the files keep
-their original ID3/ISRC metadata. Entries are marked `LicenseRef-PremiumBeat`
-in `catalog/assets/index.json`. The licence covers use through the catalog and
-app - not re-publishing the tracks as standalone audio elsewhere. These tracks
-live only in this **private** repository and must never be pushed to a public
-one. (They were previously in the public `lolly-suse-catalog` repo, time-boxed
-to removal by 2026-08-29 - moving here retires that deadline; the public repo
-still needs to be archived/scrubbed.)
+**`catalog/assets/suse/music/` (removed 2026-08-29):** the PremiumBeat
+(Shutterstock) stock-music tracks that used to live here have been deleted from
+this repository and dropped from `catalog/assets/index.json`. No
+PremiumBeat-licensed audio ships in any Lolly pack or catalog. (These tracks were
+once in the public `lolly-suse-catalog` repo; that repo still needs to be
+archived/scrubbed of them.)
 
 ## 2. `catalog/fonts/` - SIL OFL 1.1
 
