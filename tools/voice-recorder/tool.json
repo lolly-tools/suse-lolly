@@ -16,7 +16,7 @@
   "render": {
     "width": 1080,
     "height": 1080,
-    "formats": ["png", "svg", "mp3", "wav", "m4a", "opus"],
+    "formats": ["png", "svg", "penpot", "mp3", "wav", "m4a", "opus"],
     "capture": "audio",
     "actions": ["download", "save"],
     "printMarks": false,

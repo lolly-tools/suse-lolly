@@ -11,7 +11,7 @@
   "render": {
     "width": 1200,
     "height": 900,
-    "formats": ["pdf", "svg", "pdf-cmyk", "emf", "png", "webp", "avif", "jpeg", "tiff", "cmyk-tiff"],
+    "formats": ["pdf", "svg", "penpot", "pdf-cmyk", "emf", "png", "webp", "avif", "jpeg", "tiff", "cmyk-tiff"],
     "actions": ["copy", "download", "save"],
     "paged": true,
     "filmstrip": "bottom",

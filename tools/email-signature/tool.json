@@ -10,7 +10,7 @@
   "render": {
     "width": 600,
     "height": 300,
-    "formats": ["html", "txt", "png", "svg", "vcf", "json", "jpg", "webp"],
+    "formats": ["html", "txt", "png", "svg", "penpot", "vcf", "json", "jpg", "webp"],
     "actions": ["copy", "download", "save"],
     "filenameFrom": ["firstname", "lastname"]
   },

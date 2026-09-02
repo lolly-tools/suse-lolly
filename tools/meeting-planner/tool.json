@@ -11,7 +11,7 @@
   "render": {
     "width": 800,
     "height": 600,
-    "formats": ["png", "jpeg", "svg", "ics", "json", "pdf", "webp", "csv"],
+    "formats": ["png", "jpeg", "svg", "penpot", "ics", "json", "pdf", "webp", "csv"],
     "actions": ["copy", "download", "save"],
     "transparentBg": false
   },

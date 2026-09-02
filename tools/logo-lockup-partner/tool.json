@@ -11,7 +11,7 @@
   "render": {
     "width": 1200,
     "height": 360,
-    "formats": ["svg", "png", "pdf", "dxf", "jpg", "webp", "avif", "tiff", "emf", "eps", "pdf-cmyk"],
+    "formats": ["svg", "penpot", "png", "pdf", "dxf", "jpg", "webp", "avif", "tiff", "emf", "eps", "pdf-cmyk"],
     "actions": ["copy", "download", "save"],
     "layout": "sidebar",
     "transparentBg": false,

@@ -15,7 +15,7 @@
   "render": {
     "width": 1350,
     "height": 1350,
-    "formats": ["png", "jpg", "webp", "pdf", "pdf-cmyk", "cmyk-tiff", "svg", "pptx", "html", "avif", "tiff", "emf"],
+    "formats": ["png", "jpg", "webp", "pdf", "pdf-cmyk", "cmyk-tiff", "svg", "penpot", "pptx", "html", "avif", "tiff", "emf"],
     "actions": ["copy", "download", "save"],
     "transparentBg": false
   },

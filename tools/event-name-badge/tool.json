@@ -15,7 +15,7 @@
   "render": {
     "width": 1200,
     "height": 1800,
-    "formats": ["pdf", "pdf-cmyk", "svg", "png", "jpg", "webp", "avif", "tiff", "cmyk-tiff"],
+    "formats": ["pdf", "pdf-cmyk", "svg", "penpot", "png", "jpg", "webp", "avif", "tiff", "cmyk-tiff"],
     "actions": ["copy", "download", "save"],
     "filenameFrom": ["firstname", "lastname"],
     "convertPaths": false,

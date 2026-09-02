@@ -21,7 +21,7 @@
   "render": {
     "width": 1200,
     "height": 1200,
-    "formats": ["svg", "png", "emf", "eps", "eps-cmyk", "dxf", "pdf", "pdf-cmyk", "jpg", "webp", "avif", "tiff"],
+    "formats": ["svg", "penpot", "png", "emf", "eps", "eps-cmyk", "dxf", "pdf", "pdf-cmyk", "jpg", "webp", "avif", "tiff"],
     "actions": ["copy", "download", "save"]
   },
   "inputs": [

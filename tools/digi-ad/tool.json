@@ -22,7 +22,7 @@
   "render": {
     "width": 1080,
     "height": 1080,
-    "formats": ["mp4", "gif", "apng", "webp-anim", "webm", "png", "svg", "svg-anim", "html", "jpg", "webp"],
+    "formats": ["mp4", "gif", "apng", "webp-anim", "webm", "png", "svg", "penpot", "svg-anim", "html", "jpg", "webp"],
     "actions": [
       "download",
       "copy",

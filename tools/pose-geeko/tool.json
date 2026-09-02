@@ -12,7 +12,7 @@
   "render": {
     "width": 800,
     "height": 800,
-    "formats": ["svg", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg", "tiff", "emf", "eps", "pdf-cmyk"],
+    "formats": ["svg", "penpot", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg", "tiff", "emf", "eps", "pdf-cmyk"],
     "actions": ["download", "copy", "save"]
   },
   "featured": {
