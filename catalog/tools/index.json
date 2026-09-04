@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-09-04T09:10:24.944Z",
+  "generatedAt": "2026-09-04T09:33:29.622Z",
   "tools": [
     {
       "id": "color-block",
@@ -13473,7 +13473,7 @@
       "id": "work-avatar",
       "name": "Work Avatar",
       "description": "A round profile photo with a treatment and a ring of text - the campaign badge for LinkedIn and every other place your face goes, in your brand's colours and face.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "status": "community",
       "category": "everyone",
       "tags": [
