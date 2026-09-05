@@ -30,6 +30,66 @@
       "sparse": false
     },
     {
+      "file": "agenda.look0.webp",
+      "bytes": 26132,
+      "sha": "448fef7c1a31ba70",
+      "stddev": 24.502,
+      "inkRatio": 0.12619,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 24.502,
+          "inkRatio": 0.12619
+        },
+        "black": {
+          "stddev": 24.502,
+          "inkRatio": 0.12619
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "agenda.look1.svg",
+      "bytes": 86479,
+      "sha": "f20d9faf380688de",
+      "stddev": 30.563,
+      "inkRatio": 0.46651,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 30.563,
+          "inkRatio": 0.46651
+        },
+        "black": {
+          "stddev": 30.563,
+          "inkRatio": 0.46651
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "agenda.svg",
+      "bytes": 113810,
+      "sha": "036dc180d86978e6",
+      "stddev": 24.28,
+      "inkRatio": 0.17818,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 24.28,
+          "inkRatio": 0.17818
+        },
+        "black": {
+          "stddev": 24.28,
+          "inkRatio": 0.17818
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
       "file": "annotate.look0.svg",
       "bytes": 8263,
       "sha": "9a0343347751231a",
@@ -1105,6 +1165,26 @@
         "black": {
           "stddev": 29.534,
           "inkRatio": 0.069
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "clean.svg",
+      "bytes": 37134,
+      "sha": "b59dfbedf8bdb1c9",
+      "stddev": 35.791,
+      "inkRatio": 0.08733,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 34.746,
+          "inkRatio": 0.07952
+        },
+        "black": {
+          "stddev": 35.791,
+          "inkRatio": 0.08733
         }
       },
       "blank": false,
@@ -2933,6 +3013,26 @@
       "sparse": false
     },
     {
+      "file": "pages.svg",
+      "bytes": 34033,
+      "sha": "ccbd4f6a30b7e2ee",
+      "stddev": 37.055,
+      "inkRatio": 0.09999,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 36.091,
+          "inkRatio": 0.09337
+        },
+        "black": {
+          "stddev": 37.055,
+          "inkRatio": 0.09999
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
       "file": "pose-geeko.look0.svg",
       "bytes": 24679,
       "sha": "210857ecdf9e43a8",
@@ -3637,6 +3737,26 @@
       "sparse": false
     },
     {
+      "file": "sign.svg",
+      "bytes": 32836,
+      "sha": "54185845ac8b8347",
+      "stddev": 40.066,
+      "inkRatio": 0.11183,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 39.154,
+          "inkRatio": 0.10695
+        },
+        "black": {
+          "stddev": 40.066,
+          "inkRatio": 0.11183
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
       "file": "signature.look0.svg",
       "bytes": 3970,
       "sha": "5d07f03cef648a7d",
@@ -4031,6 +4151,26 @@
         "black": {
           "stddev": 21.815,
           "inkRatio": 0.04194
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "trim.svg",
+      "bytes": 31684,
+      "sha": "03f5c1bd7117e5c7",
+      "stddev": 37.538,
+      "inkRatio": 0.09863,
+      "ground": "black",
+      "grounds": {
+        "white": {
+          "stddev": 36.557,
+          "inkRatio": 0.09203
+        },
+        "black": {
+          "stddev": 37.538,
+          "inkRatio": 0.09863
         }
       },
       "blank": false,
