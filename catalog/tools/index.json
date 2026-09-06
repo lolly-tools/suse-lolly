@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-09-05T20:15:42.178Z",
+  "generatedAt": "2026-09-06T10:47:22.242Z",
   "tools": [
     {
       "id": "color-block",
@@ -2520,6 +2520,9 @@
       "capabilities": [
         "wasm"
       ],
+      "requires": [
+        "text"
+      ],
       "tags": [
         "lockup",
         "logo",
@@ -2752,6 +2755,9 @@
       "version": "1.1.1",
       "status": "official",
       "category": "designer",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "lottie-digi-ad",
       "tags": [
         "ad",
         "advertising",
@@ -4263,6 +4269,9 @@
       "capabilities": [
         "microphone"
       ],
+      "requires": [
+        "recorder"
+      ],
       "tags": [
         "audio",
         "voice",
@@ -4438,6 +4447,9 @@
         "camera",
         "microphone"
       ],
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "record",
       "tags": [
         "video",
         "record",
@@ -8300,6 +8312,9 @@
       "version": "1.2.0",
       "status": "community",
       "category": "utility",
+      "requires": [
+        "tokens"
+      ],
       "tags": [
         "contrast",
         "accessibility",
@@ -9419,6 +9434,9 @@
       "version": "2.0.1",
       "status": "community",
       "category": "everyone",
+      "requires": [
+        "compose"
+      ],
       "tags": [
         "print",
         "imposition",
@@ -10476,6 +10494,9 @@
       "version": "1.0.1",
       "status": "community",
       "category": "everyone",
+      "requires": [
+        "compose"
+      ],
       "tags": [
         "open graph",
         "og image",
@@ -10871,6 +10892,9 @@
       "version": "1.1.1",
       "status": "community",
       "category": "designer",
+      "requires": [
+        "text"
+      ],
       "tags": [
         "generative",
         "art",
@@ -11206,6 +11230,10 @@
       "version": "0.2.1",
       "status": "experimental",
       "category": "designer",
+      "requires": [
+        "text",
+        "audio"
+      ],
       "tags": [
         "motion",
         "generative",
@@ -11553,6 +11581,9 @@
       "version": "1.25.0",
       "status": "official",
       "category": "designer",
+      "requires": [
+        "color"
+      ],
       "tags": [
         "chart",
         "d3",
@@ -12250,6 +12281,9 @@
       "version": "2.0.0",
       "status": "official",
       "category": "utility",
+      "requires": [
+        "c2pa"
+      ],
       "tags": [
         "provenance",
         "copyright",
@@ -12674,6 +12708,9 @@
       "version": "1.2.1",
       "status": "official",
       "category": "everyone",
+      "requires": [
+        "tokens"
+      ],
       "tags": [
         "gradient",
         "mesh",
@@ -13830,6 +13867,10 @@
       "version": "1.2.0",
       "status": "community",
       "category": "everyone",
+      "requires": [
+        "text",
+        "color"
+      ],
       "tags": [
         "avatar",
         "linkedin",
@@ -14009,6 +14050,9 @@
       "version": "1.1.0",
       "status": "community",
       "category": "event",
+      "requires": [
+        "tokens"
+      ],
       "tags": [
         "agenda",
         "programme",
