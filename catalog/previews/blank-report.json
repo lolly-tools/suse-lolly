@@ -4315,6 +4315,106 @@
       },
       "blank": false,
       "sparse": false
+    },
+    {
+      "file": "work-avatar.look0.svg",
+      "bytes": 28340,
+      "sha": "043fbb38b124fe7e",
+      "stddev": 72.549,
+      "inkRatio": 0.36015,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 72.549,
+          "inkRatio": 0.36015
+        },
+        "black": {
+          "stddev": 72.549,
+          "inkRatio": 0.36015
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "work-avatar.look1.svg",
+      "bytes": 23020,
+      "sha": "bd28af1a5b995cbe",
+      "stddev": 60.813,
+      "inkRatio": 0.29367,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 60.813,
+          "inkRatio": 0.29367
+        },
+        "black": {
+          "stddev": 60.813,
+          "inkRatio": 0.29367
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "work-avatar.look2.svg",
+      "bytes": 27387,
+      "sha": "5b6205f41ca31fd6",
+      "stddev": 100.635,
+      "inkRatio": 0.4416,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 100.635,
+          "inkRatio": 0.4416
+        },
+        "black": {
+          "stddev": 100.635,
+          "inkRatio": 0.4416
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "work-avatar.look3.svg",
+      "bytes": 25535,
+      "sha": "03ebcc757a6d6b5e",
+      "stddev": 101.032,
+      "inkRatio": 0.44308,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 101.032,
+          "inkRatio": 0.44308
+        },
+        "black": {
+          "stddev": 101.032,
+          "inkRatio": 0.44308
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "work-avatar.svg",
+      "bytes": 28340,
+      "sha": "3bac4fe339a8b4e5",
+      "stddev": 72.549,
+      "inkRatio": 0.36015,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 72.549,
+          "inkRatio": 0.36015
+        },
+        "black": {
+          "stddev": 72.549,
+          "inkRatio": 0.36015
+        }
+      },
+      "blank": false,
+      "sparse": false
     }
   ]
 }
