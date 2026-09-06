@@ -5,6 +5,9 @@
   "a11yLabel": "Animated ad with {{sceneCount}} scenes",
   "version": "1.1.1",
   "engineVersion": "^1.0.0",
+  "deprecated": true,
+  "replacedBy": "lottie-digi-ad",
+  "listed": false,
   "status": "official",
   "category": "designer",
   "tags": [
