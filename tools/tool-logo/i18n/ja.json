@@ -1,6 +1,6 @@
 {
   "name": "ロゴ",
-  "description": "SUSEロゴを配置 - 適切なバリアントを自動選択し、ベクターで書き出します。",
+  "description": "ロゴを配置",
   "inputs.background.label": "背景",
   "inputs.background.help": "ロゴが配置される背景色です。背景に応じて適切なロゴ(暗い背景には反転版、明るい背景には通常版)が自動的に選択されます。書き出し時に「背景なし」をオンにすると背景を削除できます。",
   "inputs.orientation.label": "向き",

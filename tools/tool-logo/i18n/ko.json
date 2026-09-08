@@ -1,6 +1,6 @@
 {
   "name": "로고",
-  "description": "SUSE 로고를 배치하세요 - 알맞은 버전을 자동으로 고르고 벡터로 내보냅니다.",
+  "description": "로고를 배치하세요",
   "inputs.background.label": "배경",
   "inputs.background.help": "로고가 놓이는 배경 색상이에요. 배경에 어울리는 로고(어두운 배경에는 반전 버전, 밝은 배경에는 일반 버전)가 자동으로 선택돼요. 내보내기에서 \"배경 없음\"을 켜면 배경을 제거할 수 있어요.",
   "inputs.orientation.label": "방향",

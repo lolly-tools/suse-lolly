@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Plasează logo-ul SUSE - alege automat varianta potrivită și exportă vector.",
+  "description": "Plasează logo-ul tău",
   "inputs.background.label": "Fundal",
   "inputs.background.help": "Culoarea pe care stă logo-ul. Varianta potrivită de logo (inversată pentru fundal închis, normală pentru fundal deschis) este aleasă automat pentru tine. Activează „Fără fundal” la export ca să-l elimini.",
   "inputs.orientation.label": "Orientare",

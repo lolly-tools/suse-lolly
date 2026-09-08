@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Platziert das SUSE-Logo - es wählt automatisch die richtige Variante und exportiert vektoriell.",
+  "description": "Platziere dein Logo",
   "inputs.background.label": "Hintergrund",
   "inputs.background.help": "Die Farbe, auf der das Logo platziert wird. Das passende Logo (invertiert für Dunkel, normal für Hell) wird automatisch für Sie ausgewählt. Aktivieren Sie im Export „Kein Hintergrund“, um ihn zu entfernen.",
   "inputs.orientation.label": "Ausrichtung",

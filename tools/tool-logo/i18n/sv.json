@@ -1,6 +1,6 @@
 {
   "name": "Logotyp",
-  "description": "Placera SUSE-logotypen - den väljer automatiskt rätt variant och exporterar vektor.",
+  "description": "Placera din logotyp",
   "inputs.background.label": "Bakgrund",
   "inputs.background.help": "Färgen som logotypen placeras mot. Rätt logotyp (omvänd för mörkt, normal för ljust) väljs automatiskt åt dig. Slå på \"Ingen bakgrund\" i exporten för att ta bort den.",
   "inputs.orientation.label": "Orientering",

@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Umieść logo SUSE - narzędzie samo dobiera właściwy wariant i eksportuje wektorowo.",
+  "description": "Umieść swoje logo",
   "inputs.background.label": "Tło",
   "inputs.background.help": "Kolor, na którym umieszczone jest logo. Odpowiedni wariant logo (odwrócony dla ciemnego, normalny dla jasnego) zostanie wybrany automatycznie. Włącz „No BG” w eksporcie, aby go usunąć.",
   "inputs.orientation.label": "Orientacja",

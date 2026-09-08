@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Tempatkan logo SUSE - otomatis memilih varian yang tepat dan ekspor vektor.",
+  "description": "Tempatkan logo Anda",
   "inputs.background.label": "Latar belakang",
   "inputs.background.help": "Warna tempat logo diletakkan. Logo yang sesuai (terbalik untuk gelap, normal untuk terang) dipilih otomatis untuk Anda. Aktifkan \"No BG\" saat ekspor untuk menghapusnya.",
   "inputs.orientation.label": "Orientasi",

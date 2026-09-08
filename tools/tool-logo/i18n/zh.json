@@ -1,6 +1,6 @@
 {
   "name": "徽标",
-  "description": "放置 SUSE 徽标 - 自动选择正确的变体并导出矢量图。",
+  "description": "放置您的徽标",
   "inputs.background.label": "背景",
   "inputs.background.help": "徽标所在的背景颜色。系统会自动为你选择匹配的版本(深色背景用反白版,浅色背景用常规版)。在导出选项中开启“无背景”可移除背景色。",
   "inputs.orientation.label": "方向",

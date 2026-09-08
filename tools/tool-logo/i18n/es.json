@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Coloca el logotipo de SUSE - elige automáticamente la variante correcta y exporta en vectorial.",
+  "description": "Coloca tu logotipo",
   "inputs.background.label": "Fondo",
   "inputs.background.help": "El color sobre el que se sitúa el logo. Se elige automáticamente el logo adecuado (invertido para fondos oscuros, normal para fondos claros). Activa \"Sin fondo\" en la exportación para eliminarlo.",
   "inputs.orientation.label": "Orientación",
