@@ -13,6 +13,7 @@
     "org-chart",
     "digi-ad"
   ],
+  "defaultHiddenTemplates": [],
   "assets": [
     {
       "id": "suse/tokens/brand",
