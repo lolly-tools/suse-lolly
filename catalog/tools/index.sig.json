@@ -1,8 +1,8 @@
 {
   "alg": "ECDSA-P256-SHA256",
   "keyId": "5zVngG6s-652_L8Zdok5PTfQ6vxdPAYfcpBWxMtzs5c",
-  "signedAt": "2026-09-10T14:43:19.968Z",
-  "indexHash": "3bdae9724d1bbc0730bdc3253cec878ec34f97c5b028819dbeb16845d2310d46",
+  "signedAt": "2026-09-11T10:05:50.898Z",
+  "indexHash": "a70aa8fa19dd1c62d58114672e63368f08f8f85017ba1170cf9de05751e22bdf",
   "files": {
     "3d/tool.json": "bf23da1d38c6acfa6b99ecb51a41acedbbda0f3f637849026c79c609b6f0d5f3",
     "3d/template.html": "04b2d796c8f5f31480ae84bb089a30dfac5034eb4d1195e15881d4d3ab32acc6",
@@ -766,10 +766,10 @@
     "deck-studio/i18n/vi.json": "963e4f0b124bb05437bdb3909623d03f0af4e4a662c6cfa382b7e129826913de",
     "deck-studio/i18n/zh-hant.json": "5df66edd3f5789acd56e90b4fedfd104e766d766ab32ef4e724e6f4e890d9c95",
     "deck-studio/i18n/zh.json": "99d01b521f2735a967736d127fe0e5620aacfa83a1a4e6fe56d85231accd17bd",
-    "design/tool.json": "bdb0282924fb6be49d15fd8ebde25e86c0d54f18788ac84ded31cff560966ddf",
+    "design/tool.json": "1f95dfa27bcb46f1566830dcfbf1e725777a57107d8245c97849ab61b6c7e5b8",
     "design/template.html": "2f28fafca018d9a4dc12e3cebf30a2b07d3ed8b325dcaf25b82c85a7b3a81a75",
     "design/styles.css": "8c19d7b402ecd3b2f7d6c2bd78c635042641fae9e052cbadc35c2881b3de3eeb",
-    "design/hooks.js": "c930cdd003d434b7c0c13eec1b5e34dbcfcbbcee0fbd1accb6dd22934730396b",
+    "design/hooks.js": "71375ae9e8f4388eaf9ef511878717e4a06847483e82c808fd969bbefee54d22",
     "design/i18n/ar.json": "ee17c640334977ccc0aef95f956eac2e2e91f8154a089020f43225d69100e654",
     "design/i18n/bg.json": "8df45a067a728b3f5a9785f02cc5956298b6910efba6ef78e209a2dbc9e75d1c",
     "design/i18n/bn.json": "66f0ed3e7287f5e02ebb64b906bcd2beba5fa95adc819f4f32fde19c88fd45e5",
@@ -797,6 +797,7 @@
     "design/i18n/zh-hant.json": "42460a4f81fe006fd42c0708758cac3b1576f791ca256b98b793bce7ddb1af8f",
     "design/i18n/zh.json": "c8721eaa081cabbee6632dc3e829a4963f5f737d376ed61745e1cee9fbb062bb",
     "design/templates/carousel.json": "4ab441bb40819739e0036229a3014c19ae3a27f7e4839449b912405b384a44a8",
+    "design/templates/event-kit.json": "d23e023e94496d58fb5fa702d15e614e527af19a55cd426680e9b17f5c780dd8",
     "design/templates/feature-tour.json": "90cc3d756a56c634d6c927985c9460906cccaca6c62b00d54ebf96d48580d21a",
     "design/templates/launch-cascade.json": "456741f8fd4740c5b1d4af4f1f0f27033d29ee2312ecf5defc357a92a8c439ea",
     "design/templates/launch-editorial.json": "bc1f7d967fa295aece31346bb051d880b64d33cad337e0ee3edb316c8f639d70",
@@ -2348,5 +2349,5 @@
     "work-avatar/i18n/zh-hant.json": "d5dcc861d40eb1a1b3e095563f1cd38c9e8ba41370a5c03e684d9141b192a315",
     "work-avatar/i18n/zh.json": "d5dcc861d40eb1a1b3e095563f1cd38c9e8ba41370a5c03e684d9141b192a315"
   },
-  "signature": "iPg9KpIq4T8_heDWdp3VFNofMkM_0LBtwn9WQ9bb_0bichiCkPmP7cvmwxDLYHG_hwI-1-v7gz0o8oJChaUlIA"
+  "signature": "ETY7iXQrB0v6fGHdJPFLXItBh1hLw5aQpU9NV9vd6HSIgbsLupKZzBY-FIge_y2jblOyLWX5d5BdvmwNFEuw8Q"
 }
