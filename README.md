@@ -5,10 +5,11 @@ SUSE-specific tool definitions plus the SUSE brand catalog (assets, fonts,
 design tokens, generated previews/OG cards). Private - see the NOTICE files.
 
 Consumed by the `lolly` monorepo as a git submodule at `brands/suse/`. The
-active profile (see the monorepo's `profiles.json`) merges `tools/` from here
-with the community tools from
-[`lolly-tools`](https://github.com/lolly-tools/lolly-tools), and mounts
-`catalog/` as the repo-root `catalog/` view.
+active profile (see the monorepo's `profiles.json`) resolves tool ids across
+`community/` in the main repository and `tools/` here (later roots win on an
+id collision) and reads `catalog/` here as the catalog root, through
+`packages/node-shell/src/content-roots.ts`. There is no repo-root view any more;
+`pnpm run profile` prints what is resolved.
 
 ```
 tools/     # 32 SUSE tool definitions (brand-lockup, pose-geeko, digi-ad, …)
