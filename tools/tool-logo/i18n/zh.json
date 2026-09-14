@@ -1,6 +1,6 @@
 {
   "name": "徽标",
-  "description": "放置您的徽标",
+  "description": "把 SUSE 徽标放在纯色或透明背景上。",
   "inputs.background.label": "背景",
   "inputs.background.help": "徽标所在的背景颜色。系统会自动为你选择匹配的版本(深色背景用反白版,浅色背景用常规版)。在导出选项中开启“无背景”可移除背景色。",
   "inputs.orientation.label": "方向",

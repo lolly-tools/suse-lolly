@@ -1,5 +1,5 @@
 {
-  "name": "Partner Lockup",
+  "name": "پارٹنر لاک اپ",
   "description": "SUSE لوگو کسی پارٹنر کے ساتھ، درمیان میں ایک ڈیوائیڈر کے ساتھ - لائٹ یا ڈارک۔",
   "a11yLabel": "SUSE پارٹنر لاک اپ، {{partners.length}} پارٹنر لوگوز کے ساتھ",
   "inputs.theme.label": "تھیم",

@@ -1,5 +1,5 @@
 {
-  "name": "Partner Lockup",
+  "name": "パートナーロックアップ",
   "description": "SUSEロゴとパートナーのロゴを並べ、間に区切り線を配置 - ライトまたはダーク。",
   "a11yLabel": "パートナーロゴ{{partners.length}}点を含むSUSEパートナーロゴの組み合わせ",
   "inputs.theme.label": "テーマ",

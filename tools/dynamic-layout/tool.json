@@ -9,6 +9,7 @@
   "category": "everyone",
   "tags": ["layout", "responsive", "hero", "social", "poster", "cta", "headshot", "text"],
   "render": {
+    "sectionIcons": {"Logo": "seal", "Background": "image", "Heading type": "font", "Subheading type": "font", "Body type": "font", "Call to action type": "megaphone"},
     "width": 1920,
     "height": 1080,
     "formats": ["png", "jpg", "webp", "pdf", "pdf-cmyk", "cmyk-tiff", "svg", "penpot", "pptx", "html", "avif", "tiff", "emf"],
@@ -41,7 +42,7 @@
       "type": "select",
       "default": "mono",
       "options": [
-        { "value": "mono",  "label": "Mono (white / black)" },
+        { "value": "mono",  "label": "Mono (white or black)" },
         { "value": "brand", "label": "Brand green" }
       ],
       "help": "Mono stays legible on any theme; brand green uses the green mark."
@@ -75,7 +76,7 @@
       "label": "Position",
       "section": "Background",
       "framingFor": "bgImage",
-      "help": "Drag the image on the canvas to move it, scroll to zoom, and hold Alt while dragging to straighten converging verticals. Or drag a label / type a value here.",
+      "help": "Drag the image on the canvas to move it, scroll to zoom, or set the numbers here. Hold Alt while dragging to straighten leaning verticals.",
       "type": "vector",
       "fields": [
         { "id": "zoom",   "label": "Zoom",       "symbol": "+", "min": 100,  "max": 400, "step": 1,   "default": 100 },
@@ -130,14 +131,14 @@
       "label": "Text colour",
       "type": "color",
       "default": "",
-      "help": "Optional. Overrides the colour of the text and button outline (everything that follows currentColor). Leave unset to use the theme's foreground."
+      "help": "Overrides the colour of the text and the button outline. Leave it empty to follow the theme."
     },
     {
       "id": "heading",
       "label": "Heading",
       "type": "text",
       "default": "> heading",
-      "help": "The big, impactful line. Leave empty to omit it."
+      "help": "The big, impactful line. Start it with > for a leading arrow, or leave it empty to omit it."
     },
     {
       "id": "headingFontSize",
@@ -196,7 +197,7 @@
       "id": "body",
       "label": "Body text",
       "type": "longtext",
-      "default": "Body Text\n\n> supports bullets\n> like these\n\n**bold** and *italic*",
+      "default": "Body text\n\n> supports bullets\n> like these\n\n**bold** and *italic*",
       "rows": 4,
       "help": "Supports markdown: **bold**, *italic*, ~~strikethrough~~, and bullet lists (lines starting with - )."
     },
@@ -227,14 +228,14 @@
       "id": "cta",
       "label": "Call to action",
       "type": "text",
-      "default": "> cta",
+      "default": "> Learn more",
       "maxLength": 20,
       "help": "A short button label - up to 20 characters."
     },
     {
       "id": "ctaTypography",
       "label": "Font",
-      "section": "Call-to-action type",
+      "section": "Call to action type",
       "type": "select",
       "default": "sans",
       "options": [
@@ -246,7 +247,7 @@
     {
       "id": "ctaFontSize",
       "label": "Size",
-      "section": "Call-to-action type",
+      "section": "Call to action type",
       "type": "number",
       "display": "slider",
       "min": 0.5,
@@ -258,7 +259,7 @@
     {
       "id": "ctaFontWeight",
       "label": "Weight",
-      "section": "Call-to-action type",
+      "section": "Call to action type",
       "type": "number",
       "display": "slider",
       "min": 100,
@@ -277,7 +278,7 @@
     },
     {
       "id": "headshotFraming",
-      "label": "Headshot framing",
+      "label": "Zoom & position",
       "framingFor": "headshot",
       "help": "Move and zoom the portrait inside its circle - drag it on the canvas, or set the numbers here.",
       "type": "vector",

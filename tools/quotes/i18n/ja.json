@@ -1,5 +1,5 @@
 {
-  "name": "Quotes",
+  "name": "名言",
   "description": "SNS投稿やスライド用の、ブランドに合わせた名言カードです。",
   "inputs.theme.label": "テーマ",
   "inputs.theme.options.light": "ライト",

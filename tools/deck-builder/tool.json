@@ -81,7 +81,7 @@
       "type": "select",
       "default": "none",
       "section": "Animation",
-      "help": "Animation is OFF by default (None) - the deck sits still. Pick a transition to make slides animate in; only GIF, MP4 and WebM carry the motion (PowerPoint and PDF are always still).",
+      "help": "Pick a transition to make the slides animate in. Only GIF, MP4 and WebM carry the motion; PowerPoint and PDF are always still.",
       "options": [
         {
           "value": "none",
@@ -149,6 +149,7 @@
     },
     {
       "id": "focusSlide",
+      "section": "Animation",
       "label": "Pause on slide",
       "type": "number",
       "display": "slider",
@@ -164,7 +165,7 @@
       "type": "select",
       "default": "auto",
       "section": "Brand",
-      "help": "The deck's colour scheme, derived from your brand tokens. Each slide can override it.",
+      "help": "The deck's colour scheme, derived from the brand tokens. Each slide can override it.",
       "options": [
         {
           "value": "auto",
@@ -202,7 +203,7 @@
       "type": "boolean",
       "default": true,
       "section": "Brand",
-      "help": "Place your brand logo in the bottom-left of every slide, picking the light or dark variant to suit each background."
+      "help": "Place the brand logo in the bottom-left of every slide, picking the light or dark variant to suit each background."
     },
     {
       "id": "footerText",
@@ -218,15 +219,15 @@
       "label": "Shrink text to fit",
       "type": "boolean",
       "default": true,
-      "section": "Text",
-      "help": "On by default: when a slide's text outgrows the room it has, scale the whole text block down until it fits instead of letting it spill or crowd out the images. Never grows text past its authored size. Any slide can override it."
+      "section": "Text and type",
+      "help": "When a slide's text outgrows the room it has, scale the whole text block down until it fits. Never grows text past its authored size, and any slide can override it."
     },
     {
       "id": "typeControls",
       "label": "Custom typography",
       "type": "boolean",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "help": "Turn on per-element type controls. Pick an element chip to set its size, weight and brand font - applied across every slide (layout and freeform), on top of the automatic shrink-to-fit."
     },
     {
@@ -235,7 +236,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -247,7 +248,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -259,7 +260,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -271,7 +272,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -283,7 +284,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -295,7 +296,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -307,7 +308,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -319,7 +320,7 @@
       "type": "boolean",
       "display": "pill",
       "default": false,
-      "section": "Style",
+      "section": "Text and type",
       "showIf": {
         "typeControls": true
       },
@@ -327,10 +328,10 @@
     },
     {
       "id": "h1Size",
-      "label": "Title / H1 size",
+      "label": "Heading 1 size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -343,9 +344,9 @@
     },
     {
       "id": "h1Weight",
-      "label": "Title / H1 weight",
+      "label": "Heading 1 weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -363,7 +364,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -387,7 +388,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -397,16 +398,16 @@
     },
     {
       "id": "h1Font",
-      "label": "Title / H1 font",
+      "label": "Heading 1 font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "h1On": true
       },
-      "help": "Brand font for the slide title and any # heading. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for the slide title and any # heading. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -419,7 +420,7 @@
       "label": "Heading 2 size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -434,7 +435,7 @@
       "id": "h2Weight",
       "label": "Heading 2 weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -452,7 +453,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -476,7 +477,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -488,14 +489,14 @@
       "id": "h2Font",
       "label": "Heading 2 font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "h2On": true
       },
-      "help": "Brand font for ## subheadings. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for ## subheadings. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -508,7 +509,7 @@
       "label": "Heading 3 size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -523,7 +524,7 @@
       "id": "h3Weight",
       "label": "Heading 3 weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -541,7 +542,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -565,7 +566,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -577,14 +578,14 @@
       "id": "h3Font",
       "label": "Heading 3 font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "h3On": true
       },
-      "help": "Brand font for ### subheadings. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for ### subheadings. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -597,7 +598,7 @@
       "label": "Bulleted list size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -612,7 +613,7 @@
       "id": "ulWeight",
       "label": "Bulleted list weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -630,7 +631,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -654,7 +655,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -666,14 +667,14 @@
       "id": "ulFont",
       "label": "Bulleted list font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "ulOn": true
       },
-      "help": "Brand font for - bullet lists. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for - bullet lists. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -686,7 +687,7 @@
       "label": "Numbered list size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -701,7 +702,7 @@
       "id": "olWeight",
       "label": "Numbered list weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -719,7 +720,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -743,7 +744,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -755,14 +756,14 @@
       "id": "olFont",
       "label": "Numbered list font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "olOn": true
       },
-      "help": "Brand font for 1. numbered lists. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for 1. numbered lists. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -775,7 +776,7 @@
       "label": "Blockquote size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -790,7 +791,7 @@
       "id": "quoteWeight",
       "label": "Blockquote weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -808,7 +809,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -832,7 +833,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -844,14 +845,14 @@
       "id": "quoteFont",
       "label": "Blockquote font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "quoteOn": true
       },
-      "help": "Brand font for > quoted blocks. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for > quoted blocks. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -864,7 +865,7 @@
       "label": "Code size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -879,7 +880,7 @@
       "id": "codeWeight",
       "label": "Code weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -897,7 +898,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -921,7 +922,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -933,14 +934,14 @@
       "id": "codeFont",
       "label": "Code font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "codeOn": true
       },
-      "help": "Brand font for fenced ``` code blocks and inline `code`. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for fenced ``` code blocks and inline `code`. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -953,7 +954,7 @@
       "label": "Table size",
       "type": "number",
       "display": "slider",
-      "section": "Style",
+      "section": "Text and type",
       "min": 25,
       "max": 300,
       "step": 5,
@@ -968,7 +969,7 @@
       "id": "tableWeight",
       "label": "Table weight",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true,
@@ -986,7 +987,7 @@
         },
         {
           "value": "200",
-          "label": "Extra Light"
+          "label": "Extra light"
         },
         {
           "value": "300",
@@ -1010,7 +1011,7 @@
         },
         {
           "value": "800",
-          "label": "Extra Bold"
+          "label": "Extra bold"
         },
         {
           "value": "900",
@@ -1022,14 +1023,14 @@
       "id": "tableFont",
       "label": "Table font",
       "type": "select",
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "brandFonts": true,
       "showIf": {
         "typeControls": true,
         "tableOn": true
       },
-      "help": "Brand font for | pipe | tables |. Brand default keeps the deck's font. The list fills with the fonts in your brand's type kit.",
+      "help": "Brand font for | pipe | tables |. Brand default keeps the deck's font. The list fills with the fonts in the brand's type kit.",
       "options": [
         {
           "value": "",
@@ -1042,13 +1043,13 @@
       "label": "Custom CSS",
       "type": "longtext",
       "rows": 6,
-      "section": "Style",
+      "section": "Text and type",
       "default": "",
       "showIf": {
         "typeControls": true
       },
       "placeholder": "h1 { letter-spacing: -0.02em; }\ntable td { border-color: #999; }\nblockquote { color: #30ba78; }",
-      "help": "Your own CSS, applied to the whole deck (both slide modes). Selectors are scoped to this deck and take precedence over the built-in styles, so a plain `h1 { … }` rule works. Target the markdown elements directly: h1, h2, h3, ul, ol, li, blockquote, pre, code, table, th, td, a, strong, em."
+      "help": "Applied to the whole deck, in both slide modes. Selectors are scoped to this deck and beat the built-in styles, so a plain `h1 { … }` rule works. Target the markdown elements directly: h1, h2, h3, ul, ol, li, blockquote, pre, code, table, th, td, a, strong, em."
     },
     {
       "id": "deck",
@@ -1247,7 +1248,7 @@
         },
         {
           "id": "media1",
-          "label": "Slot 1 - tool or image",
+          "label": "Slot 1",
           "type": "asset",
           "assetType": "any",
           "allowUpload": true,

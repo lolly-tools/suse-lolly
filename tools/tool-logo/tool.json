@@ -1,7 +1,7 @@
 {
   "id": "tool-logo",
   "name": "Logo",
-  "description": "place your logo",
+  "description": "Place the SUSE logo on a colour or transparent background.",
   "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
@@ -28,6 +28,7 @@
     },
     {
       "id": "orientation",
+      "display": "segmented",
       "label": "Orientation",
       "type": "select",
       "default": "vertical",
@@ -39,7 +40,8 @@
     },
     {
       "id": "ink",
-      "label": "Style",
+      "display": "segmented",
+      "label": "Logo colour",
       "type": "select",
       "default": "brand",
       "options": [

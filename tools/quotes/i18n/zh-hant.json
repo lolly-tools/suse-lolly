@@ -1,5 +1,5 @@
 {
-  "name": "Quotes",
+  "name": "語錄",
   "description": "適用於社群貼文和投影片的品牌語錄卡。",
   "inputs.theme.label": "主題",
   "inputs.theme.options.light": "淺色",

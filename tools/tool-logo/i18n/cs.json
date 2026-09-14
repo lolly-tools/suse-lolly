@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Umísti své logo",
+  "description": "Umísti logo SUSE na barevné nebo průhledné pozadí.",
   "inputs.background.label": "Pozadí",
   "inputs.background.help": "Barva, na které logo stojí. Odpovídající varianta loga (obrácená pro tmavé pozadí, normální pro světlé) se vybere automaticky. Chceš-li ho odstranit, zapni v exportu možnost „Bez pozadí“.",
   "inputs.orientation.label": "Orientace",

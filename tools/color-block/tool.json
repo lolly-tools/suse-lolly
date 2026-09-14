@@ -70,7 +70,7 @@
         },
         {
           "id": "scale",
-          "label": "Text scale",
+          "label": "Scale",
           "type": "number",
           "display": "slider",
           "min": 0.3, "max": 2.5, "step": 0.05, "default": 1,
@@ -91,10 +91,10 @@
           "default": "none",
           "showFor": ["cta"],
           "options": [
-            { "value": "none",  "label": "None - plain text" },
-            { "value": "arrow", "label": "Arrow →" },
+            { "value": "none",  "label": "Plain text" },
+            { "value": "arrow", "label": "Arrow" },
             { "value": "pill",  "label": "Pill" },
-            { "value": "caret", "label": "Caret _" }
+            { "value": "caret", "label": "Terminal prompt" }
           ]
         },
         {

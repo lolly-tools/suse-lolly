@@ -1,5 +1,5 @@
 {
-  "name": "Badges",
+  "name": "Баджове",
   "description": "Конферентни именни баджове с цветово кодирана роля и незадължителен QR.",
   "featured.blurb": "Конферентни именни баджове, цветово кодирани по роля",
   "a11yLabel": "Бадж за събитие на {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

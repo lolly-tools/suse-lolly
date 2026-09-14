@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Placez votre logo",
+  "description": "Place le logo SUSE sur un fond en couleur ou transparent.",
   "inputs.background.label": "Arrière-plan",
   "inputs.background.help": "La couleur sur laquelle repose le logo. Le logo correspondant (inversé pour un fond sombre, normal pour un fond clair) est choisi automatiquement pour toi. Active « Sans fond » dans l'export pour le supprimer.",
   "inputs.orientation.label": "Orientation",

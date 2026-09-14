@@ -235,7 +235,7 @@
       "options": [
         {
           "value": "loop",
-          "label": "Loop forever"
+          "label": "Forever"
         },
         {
           "value": "play3",
@@ -249,6 +249,7 @@
     },
     {
       "id": "focusScene",
+      "section": "Animation",
       "label": "Pause on scene",
       "type": "number",
       "display": "slider",
@@ -256,7 +257,7 @@
       "max": 12,
       "step": 1,
       "default": 0,
-      "help": "0 = play. Set to a scene number to freeze the preview there so you can edit it - exports still play (the still poster uses this scene, or the last one)."
+      "help": "0 plays the whole sequence in the preview. Set a scene number to hold it there while you edit - exports still play, and the still poster uses this scene, or the last one."
     },
     {
       "id": "scenes",
@@ -463,7 +464,7 @@
           "options": [
             {
               "value": "center",
-              "label": "Center"
+              "label": "Centre"
             },
             {
               "value": "top",
@@ -487,6 +488,7 @@
           "id": "hold",
           "label": "Hold (seconds)",
           "type": "number",
+          "display": "slider",
           "min": 0.3,
           "max": 6,
           "step": 0.1,

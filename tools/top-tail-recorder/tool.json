@@ -87,11 +87,11 @@
     },
     {
       "id": "clip",
-      "label": "Your clip",
+      "label": "Clip",
       "type": "asset",
       "assetType": "video",
       "allowUpload": true,
-      "help": "Tap ● Record on the canvas to film a clip - or upload a video. The bookends wrap around it, filling the frame in any orientation."
+      "help": "Press ● Record on the canvas to film a clip, or upload a video. The bookends wrap around it, filling the frame in any orientation."
     },
     {
       "id": "clipFit",
@@ -108,7 +108,7 @@
           "label": "Fit whole video"
         }
       ],
-      "help": "How your clip sits in the frame. Fill crops it to cover the frame; Fit shows the whole video with bars - handy when you upload a landscape or square clip into a portrait frame."
+      "help": "How the clip sits in the frame. Fill crops it to cover the frame; Fit shows the whole video with bars, for a landscape or square clip in a portrait frame."
     },
     {
       "id": "brandColor",
@@ -120,7 +120,8 @@
       "id": "accent",
       "label": "Accent",
       "type": "color",
-      "default": "{color.semantic.secondary}"
+      "default": "{color.semantic.secondary}",
+      "help": "Highlight colour for the lower third stripe, the frame lines on the bookend cards and the outro button."
     },
     {
       "id": "logo",
@@ -136,7 +137,8 @@
     },
     {
       "id": "introTitle",
-      "label": "Intro title",
+      "section": "Intro card",
+      "label": "Title",
       "type": "text",
       "default": "",
       "maxLength": 40,
@@ -144,7 +146,8 @@
     },
     {
       "id": "introSubtitle",
-      "label": "Intro subtitle",
+      "section": "Intro card",
+      "label": "Subtitle",
       "type": "text",
       "default": "",
       "maxLength": 60,
@@ -152,6 +155,7 @@
     },
     {
       "id": "lowerName",
+      "section": "Lower third",
       "label": "Name",
       "type": "text",
       "default": "",
@@ -161,6 +165,7 @@
     },
     {
       "id": "lowerRole",
+      "section": "Lower third",
       "label": "Role / handle",
       "type": "text",
       "default": "",
@@ -169,7 +174,8 @@
     },
     {
       "id": "outroTitle",
-      "label": "Outro title",
+      "section": "Outro card",
+      "label": "Title",
       "type": "text",
       "default": "Thanks for watching",
       "maxLength": 40,
@@ -177,7 +183,8 @@
     },
     {
       "id": "outroCta",
-      "label": "Outro call-to-action",
+      "section": "Outro card",
+      "label": "Call to action",
       "type": "text",
       "default": "suse.com",
       "maxLength": 48,
@@ -185,6 +192,7 @@
     },
     {
       "id": "transcript",
+      "section": "Subtitles",
       "label": "Transcript",
       "type": "longtext",
       "default": "",
@@ -193,10 +201,11 @@
       "dataSource": {
         "accept": ".srt,.vtt,text/plain,text/vtt"
       },
-      "help": "Subtitles as SRT. Filled by Transcribe, or drop in your own file. Exported as an .srt or .vtt file to upload alongside the video, not burned into the picture. Times shift to match the intro card in front of your clip."
+      "help": "Subtitles as SRT, filled by Transcribe or dropped in as a file. Exported as a separate .srt or .vtt to upload alongside the video, not burned into the picture; times shift to allow for the intro card."
     },
     {
       "id": "autoCaption",
+      "section": "Subtitles",
       "label": "Auto-caption",
       "type": "boolean",
       "default": false,

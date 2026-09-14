@@ -48,7 +48,7 @@
       "label": "Lead colour",
       "type": "select",
       "default": "colour",
-      "help": "Full colour keeps the SUSE chameleon green; monochrome uses the one-colour SUSE mark (black on light, white on dark). For your own lead logo, monochrome desaturates it.",
+      "help": "Full colour keeps the SUSE chameleon green; monochrome uses the one-colour SUSE mark (black on light, white on dark). For another lead logo, monochrome desaturates it.",
       "options": [
         { "value": "colour", "label": "Full colour" },
         { "value": "mono", "label": "Monochrome" }
@@ -63,7 +63,7 @@
       "options": [
         { "value": "xxlarge", "label": "Huge" },
         { "value": "xlarge", "label": "Extra large" },
-        { "value": "hero", "label": "Hero" },
+        { "value": "hero", "label": "Very large" },
         { "value": "large", "label": "Large" },
         { "value": "normal", "label": "Normal" },
         { "value": "small", "label": "Small" },
@@ -73,7 +73,8 @@
     },
     {
       "id": "layout",
-      "label": "Layout",
+      "section": "Layout",
+      "label": "Arrangement",
       "type": "select",
       "default": "row",
       "help": "Even row keeps every logo on one line. Lead + partners emphasises the lead and lets the partners wrap into a tidy group beside it.",
@@ -84,6 +85,7 @@
     },
     {
       "id": "connector",
+      "section": "Layout",
       "label": "Connector",
       "type": "select",
       "default": "bar",
@@ -97,6 +99,8 @@
     },
     {
       "id": "symbol",
+      "display": "segmented",
+      "section": "Layout",
       "label": "Symbol",
       "type": "select",
       "default": "times",
@@ -109,6 +113,7 @@
     },
     {
       "id": "connectorText",
+      "section": "Layout",
       "label": "Connector text",
       "type": "text",
       "default": "in partnership with",
@@ -117,6 +122,7 @@
     },
     {
       "id": "connectorWeight",
+      "section": "Layout",
       "label": "Connector text weight",
       "type": "number",
       "display": "slider",
@@ -125,10 +131,11 @@
       "step": 100,
       "default": 500,
       "showIf": { "connector": "text" },
-      "help": "Font weight of the connector text (100 Thin → 900 Black)."
+      "help": "Font weight of the connector text (100 Thin to 900 Black)."
     },
     {
       "id": "partnerDivider",
+      "section": "Layout",
       "label": "Between partners",
       "type": "select",
       "default": "none",
@@ -140,6 +147,7 @@
     },
     {
       "id": "size",
+      "section": "Layout",
       "label": "Logo size",
       "type": "number",
       "display": "slider",
@@ -151,6 +159,7 @@
     },
     {
       "id": "gap",
+      "section": "Layout",
       "label": "Spacing",
       "type": "number",
       "display": "slider",
@@ -162,6 +171,7 @@
     },
     {
       "id": "balance",
+      "section": "Layout",
       "label": "Balance sizes",
       "type": "boolean",
       "default": true,
@@ -180,7 +190,7 @@
           "options": [
             { "value": "xxlarge", "label": "Huge" },
             { "value": "xlarge", "label": "Extra large" },
-            { "value": "hero", "label": "Hero" },
+            { "value": "hero", "label": "Very large" },
             { "value": "large", "label": "Large" },
             { "value": "normal", "label": "Normal" },
             { "value": "small", "label": "Small" },
@@ -188,15 +198,15 @@
             { "value": "xxsmall", "label": "Tiny" }
           ] },
         { "id": "filter", "label": "Treatment", "type": "select", "default": "none",
-          "help": "Even out a mismatched partner logo: grayscale or desaturate drop its colour, brighten lifts a dull mark, darken tames a washed-out one, invert rescues a dark logo on a dark theme, and ink knocks it back to a solid one-colour silhouette in the theme's ink. Bitmap logos keep the treatment in every format; an SVG-file logo keeps it in PNG only.",
+          "help": "Even out a mismatched partner logo: greyscale or desaturate drop its colour, brighten lifts a dull mark, darken tames a washed-out one, invert rescues a dark logo on a dark theme, and ink knocks it back to a solid one-colour silhouette in the theme's ink. Bitmap logos keep the treatment in every format; an SVG-file logo keeps it in PNG only.",
           "options": [
             { "value": "none", "label": "None" },
-            { "value": "grayscale", "label": "Grayscale" },
+            { "value": "grayscale", "label": "Greyscale" },
             { "value": "desaturate", "label": "Desaturate" },
             { "value": "brighten", "label": "Brighten" },
             { "value": "darken", "label": "Darken" },
             { "value": "invert", "label": "Invert" },
-            { "value": "ink", "label": "Convert to ink" }
+            { "value": "ink", "label": "Ink" }
           ] },
         { "id": "opacity", "label": "Opacity", "type": "number", "display": "slider", "min": 0.1, "max": 1, "step": 0.05, "default": 1 }
       ],

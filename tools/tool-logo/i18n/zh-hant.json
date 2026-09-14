@@ -1,6 +1,6 @@
 {
   "name": "標誌",
-  "description": "放置您的標誌",
+  "description": "把 SUSE 標誌放在純色或透明背景上。",
   "inputs.background.label": "背景",
   "inputs.background.help": "標誌所在的背景顏色。系統會自動選擇對應的標誌版本(深色背景用反白版,淺色背景用一般版)。匯出時開啟「無背景」可移除背景。",
   "inputs.orientation.label": "版面配置",

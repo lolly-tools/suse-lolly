@@ -1,5 +1,5 @@
 {
-  "name": "Partner Lockup",
+  "name": "পার্টনার লকআপ",
   "description": "SUSE লোগো একটি পার্টনারের পাশে, মাঝে একটি ডিভাইডার সহ - হালকা বা গাঢ়।",
   "a11yLabel": "{{partners.length}}টি পার্টনার লোগোসহ SUSE পার্টনার লকআপ",
   "inputs.theme.label": "থিম",

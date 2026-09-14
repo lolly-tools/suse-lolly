@@ -21,7 +21,7 @@
   "inputs": [
     {
       "id": "firstname",
-      "label": "First Name",
+      "label": "First name",
       "type": "text",
       "required": true,
       "default": "",
@@ -29,7 +29,7 @@
     },
     {
       "id": "lastname",
-      "label": "Last Name",
+      "label": "Last name",
       "type": "text",
       "default": "",
       "bindToProfile": "lastname"
@@ -43,7 +43,7 @@
     },
     {
       "id": "jobTitle",
-      "label": "Job Title, Department",
+      "label": "Job title, department",
       "type": "text",
       "default": "",
       "placeholder": "Senior Engineer, Product"
@@ -53,7 +53,7 @@
       "label": "Certifications",
       "type": "text",
       "default": "",
-      "placeholder": ""
+      "placeholder": "SCA, CKA"
     },
     {
       "id": "headshot",
@@ -62,7 +62,7 @@
       "assetType": "raster",
       "allowUpload": true,
       "filter": { "namespace": "suse/headshots" },
-      "help": "Optional headshot. Displayed as a circle."
+      "help": "Shown as a circle beside the name. Optional."
     },
     {
       "id": "headshotFraming",
@@ -87,7 +87,7 @@
     },
     {
       "id": "phone",
-      "label": "Desk Phone",
+      "label": "Desk phone",
       "type": "text",
       "section": "Contact details",
       "default": "",
@@ -109,7 +109,7 @@
     },
     {
       "id": "im",
-      "label": "IM Handle",
+      "label": "IM handle",
       "type": "text",
       "section": "Contact details",
       "default": "",
@@ -124,7 +124,7 @@
     },
     {
       "id": "address2",
-      "label": "Address Line 2",
+      "label": "Address line 2",
       "type": "text",
       "section": "Contact details",
       "default": ""
@@ -133,10 +133,10 @@
       "id": "links",
       "label": "Links",
       "type": "blocks",
-      "section": "Links",
+      "section": "Contact details",
       "labelledFields": true,
       "default": [],
-      "help": "Named links shown on one line under your contact details - a booking page, your team portal, LinkedIn. Rows with no title or no address are skipped.",
+      "help": "Named links shown on one line under the contact details - a booking page, a team portal, LinkedIn. Rows with no title or no address are skipped.",
       "fields": [
         {
           "id": "title",
@@ -160,7 +160,7 @@
         { "value": "standard", "label": "Standard" },
         { "value": "grey",     "label": "Grey" }
       ],
-      "help": "Select Grey if you think most of your audience prefers dark mode"
+      "help": "Grey sits better in a dark-mode mail client."
     },
     {
       "id": "nameWeight",
@@ -172,7 +172,7 @@
       "max": 900,
       "step": 100,
       "default": 500,
-      "help": "Font weight of your name (100 Thin → 900 Black)."
+      "help": "Font weight of the name (100 Thin to 900 Black)."
     },
     {
       "id": "titleWeight",
@@ -184,21 +184,22 @@
       "max": 900,
       "step": 100,
       "default": 400,
-      "help": "Font weight of the job title line (100 Thin → 900 Black)."
+      "help": "Font weight of the job title line (100 Thin to 900 Black)."
     },
     {
       "id": "emailPromo",
-      "label": "Email Promo",
+      "label": "Email promo",
       "type": "asset",
       "section": "Promo and legal",
       "assetType": "raster",
       "allowUpload": true,
-      "help": "Optional promo banner below the signature. Scaled to fit within 400×200px, aspect preserved."
+      "help": "Optional promo banner below the signature. Scaled to fit inside 400 × 200 px without distortion."
     },
     {
       "id": "append",
-      "label": "Append",
+      "label": "Standard footer",
       "type": "select",
+      "help": "Adds a standard paragraph under the signature: German entity details, a confidentiality notice or a working-hours note.",
       "section": "Promo and legal",
       "default": "none",
       "options": [

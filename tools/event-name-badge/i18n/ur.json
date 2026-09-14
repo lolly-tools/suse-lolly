@@ -1,5 +1,5 @@
 {
-  "name": "Badges",
+  "name": "بیجز",
   "description": "کانفرنس نام بیجز جو کردار کے مطابق رنگ کوڈڈ ہیں، اختیاری QR کے ساتھ۔",
   "featured.blurb": "کانفرنس نام بیجز، کردار کے مطابق رنگ کوڈڈ",
   "a11yLabel": "{{default firstname \"attendee\"}} {{default lastname \"\"}} کے لیے ایونٹ نام بیج، {{default status \"attendee\"}}",

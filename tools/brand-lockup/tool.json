@@ -57,6 +57,7 @@
     },
     {
       "id": "orientation",
+      "display": "segmented",
       "label": "Layout",
       "type": "select",
       "default": "stacked",
@@ -78,7 +79,7 @@
     },
     {
       "id": "treatment",
-      "label": "Colour",
+      "label": "Logo colour",
       "type": "select",
       "default": "colour",
       "help": "Full colour keeps the chameleon green; monochrome renders everything one colour (black on light, white on dark).",
@@ -89,6 +90,7 @@
     },
     {
       "id": "wrapMode",
+      "display": "segmented",
       "label": "Name wrapping",
       "type": "select",
       "default": "balanced",
@@ -107,10 +109,10 @@
       "help": "Fit hugs the lockup tightly. The fixed sizes centre it inside that canvas - the preview shows the box change.",
       "options": [
         { "value": "fit", "label": "Fit to lockup" },
-        { "value": "square", "label": "Square - 1080×1080", "width": 1080, "height": 1080, "unit": "px" },
-        { "value": "wide", "label": "Landscape - 1920×1080", "width": 1920, "height": 1080, "unit": "px" },
-        { "value": "portrait", "label": "Portrait - 1080×1350", "width": 1080, "height": 1350, "unit": "px" },
-        { "value": "story", "label": "Story - 1080×1920", "width": 1080, "height": 1920, "unit": "px" }
+        { "value": "square", "label": "Square · 1080 × 1080", "width": 1080, "height": 1080, "unit": "px" },
+        { "value": "wide", "label": "Landscape · 1920 × 1080", "width": 1920, "height": 1080, "unit": "px" },
+        { "value": "portrait", "label": "Portrait · 1080 × 1350", "width": 1080, "height": 1350, "unit": "px" },
+        { "value": "story", "label": "Story · 1080 × 1920", "width": 1080, "height": 1920, "unit": "px" }
       ]
     },
     {

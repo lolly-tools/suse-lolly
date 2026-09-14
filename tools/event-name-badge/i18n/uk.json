@@ -1,5 +1,5 @@
 {
-  "name": "Badges",
+  "name": "Бейджі",
   "description": "Бейджі учасників конференції з кольоровим кодуванням ролі та опціональним QR-кодом.",
   "a11yLabel": "Бейдж заходу для {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",
   "featured.blurb": "Бейджі учасників конференції з кольоровим кодуванням за роллю",

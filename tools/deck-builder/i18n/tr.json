@@ -1,5 +1,5 @@
 {
-  "name": "Deck",
+  "name": "Deste",
   "description": "Canlı bir tuval üzeri düzenleyiciyle bir slayt destesi oluşturun - her slaytta metni, renkleri ve görselleri doğrudan düzenleyin.",
   "a11yLabel": "{{slideCount}} slaytlık slayt destesi",
   "inputs.size.label": "Sunum boyutu",

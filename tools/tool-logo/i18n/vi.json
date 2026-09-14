@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Đặt logo của bạn",
+  "description": "Đặt logo SUSE lên nền màu hoặc nền trong suốt.",
   "inputs.background.label": "Nền",
   "inputs.background.help": "Màu nền mà logo được đặt lên. Phiên bản logo phù hợp (đảo ngược cho nền tối, bình thường cho nền sáng) sẽ được tự động chọn. Bật \"No BG\" trong phần xuất để bỏ nền.",
   "inputs.orientation.label": "Hướng",

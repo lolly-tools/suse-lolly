@@ -32,13 +32,13 @@
     },
     {
       "id": "quoteStyle",
-      "label": "Quote Style",
+      "label": "Quote style",
       "type": "select",
       "default": "big",
       "options": [
-        { "value": "big",      "label": "Big Quote Mark" },
-        { "value": "wrapping", "label": "Wrapping Quotes" },
-        { "value": "none",     "label": "No Quotes" }
+        { "value": "big",      "label": "Big quote mark" },
+        { "value": "wrapping", "label": "Wrapping quotes" },
+        { "value": "none",     "label": "No quotes" }
       ]
     },
     {
@@ -48,13 +48,14 @@
       "default": "minimal",
       "options": [
         { "value": "minimal",      "label": "Minimal" },
-        { "value": "speaker-top",  "label": "Speaker on Top" },
-        { "value": "side-by-side", "label": "Side by Side" }
+        { "value": "speaker-top",  "label": "Speaker on top" },
+        { "value": "side-by-side", "label": "Side by side" }
       ]
     },
     {
       "id": "frameInset",
-      "label": "Frame Inset",
+      "display": "slider",
+      "label": "Frame inset",
       "type": "number",
       "default": 80,
       "min": 0,
@@ -74,7 +75,7 @@
       "label": "Ambient motion",
       "type": "boolean",
       "default": false,
-      "help": "A very slow drifting glow behind the quote, on screen. Off keeps the exported card a clean still."
+      "help": "A slow drifting glow behind the quote while you work. Off keeps the exported card a clean still."
     },
     {
       "id": "quote",
@@ -94,21 +95,21 @@
       "max": 900,
       "step": 100,
       "default": 300,
-      "help": "Font weight of the quote text (100 Thin → 900 Black). Bold **markdown** stays bold."
+      "help": "Font weight of the quote text (100 Thin to 900 Black). Bold **markdown** stays bold."
     },
     {
       "id": "name",
       "label": "Name",
       "type": "text",
       "default": "",
-      "help": ""
+      "help": "Who said the quote. With no name, the company is hidden too."
     },
     {
       "id": "company",
       "label": "Company",
       "type": "text",
       "default": "",
-      "help": "title, organization, company name to display under the quotee."
+      "help": "Job title or company, shown under the name."
     },
     {
       "id": "headshot",
@@ -121,8 +122,8 @@
     },
     {
       "id": "bgImage",
-      "label": "Background Image",
-      "section": "Background Options",
+      "label": "Background image",
+      "section": "Background",
       "type": "asset",
       "assetType": "raster",
       "allowUpload": true,
@@ -131,7 +132,7 @@
     {
       "id": "bgOpacity",
       "label": "Opacity",
-      "section": "Background Options",
+      "section": "Background",
       "type": "number",
       "display": "slider",
       "min": 0,
@@ -141,8 +142,8 @@
     },
     {
       "id": "imageFraming",
-      "label": "Zoom & Position",
-      "section": "Background Options",
+      "label": "Zoom & position",
+      "section": "Background",
       "framingFor": "bgImage",
       "help": "Drag the image on the canvas to move it, scroll to zoom, and hold Alt while dragging to straighten converging verticals. Or drag a label / type a value here.",
       "type": "vector",
@@ -158,7 +159,7 @@
     {
       "id": "imageFit",
       "label": "Fit",
-      "section": "Background Options",
+      "section": "Background",
       "type": "select",
       "attachTo": "bgImage",
       "display": "icon-toggle",

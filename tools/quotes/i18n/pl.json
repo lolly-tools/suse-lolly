@@ -1,5 +1,5 @@
 {
-  "name": "Quotes",
+  "name": "Cytaty",
   "description": "Karty z cytatami zgodne z marką do postów w social media i slajdów.",
   "inputs.theme.label": "Motyw",
   "inputs.theme.options.light": "Jasny",

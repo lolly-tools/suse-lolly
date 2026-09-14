@@ -1,5 +1,5 @@
 {
-  "name": "Badges",
+  "name": "Navneskilt",
   "description": "Konferansenavneskilt med fargekodet rolle og valgfri QR-kode.",
   "featured.blurb": "Konferansenavneskilt, fargekodet etter rolle",
   "a11yLabel": "Navneskilt for {{default firstname \"attendee\"}} {{default lastname \"\"}}, {{default status \"attendee\"}}",

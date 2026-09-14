@@ -1,6 +1,6 @@
 {
   "name": "Logo",
-  "description": "Ilagay ang iyong logo",
+  "description": "Ilagay ang SUSE logo sa isang de-kulay o transparent na background.",
   "inputs.background.label": "Background",
   "inputs.background.help": "Ang kulay kung saan nakapatong ang logo. Awtomatikong pipiliin ang tugmang logo (reversed para sa dark, normal para sa light). I-on ang \"No BG\" sa export para tanggalin ito.",
   "inputs.orientation.label": "Orientation",

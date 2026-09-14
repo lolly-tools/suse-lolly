@@ -1,5 +1,5 @@
 {
-  "name": "Partner Lockup",
+  "name": "Lockup Mitra",
   "description": "Logo SUSE bersanding dengan logo mitra, dengan pembatas di antaranya - terang atau gelap.",
   "a11yLabel": "Lockup mitra SUSE dengan {{partners.length}} logo mitra",
   "inputs.theme.label": "Tema",

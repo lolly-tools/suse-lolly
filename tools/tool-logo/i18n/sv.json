@@ -1,6 +1,6 @@
 {
   "name": "Logotyp",
-  "description": "Placera din logotyp",
+  "description": "Placera SUSE-logotypen på en färgad eller transparent bakgrund.",
   "inputs.background.label": "Bakgrund",
   "inputs.background.help": "Färgen som logotypen placeras mot. Rätt logotyp (omvänd för mörkt, normal för ljust) väljs automatiskt åt dig. Slå på \"Ingen bakgrund\" i exporten för att ta bort den.",
   "inputs.orientation.label": "Orientering",

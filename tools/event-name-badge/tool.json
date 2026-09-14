@@ -43,81 +43,6 @@
   ],
   "inputs": [
     {
-      "id": "size",
-      "label": "Badge size",
-      "type": "select",
-      "default": "4x6in",
-      "help": "Sets the badge proportions and the export print size (shown on the badge as you design). Fine-tune the exact dimensions in the export bar if needed.",
-      "options": [
-        { "value": "a7", "label": "A7 portrait · 74 × 105 mm (small)", "width": 74, "height": 105, "unit": "mm" },
-        { "value": "3x4in", "label": "3 × 4 in portrait · 76 × 102 mm", "width": 76.2, "height": 101.6, "unit": "mm" },
-        { "value": "a6", "label": "A6 portrait · 105 × 148 mm", "width": 105, "height": 148, "unit": "mm" },
-        { "value": "4x6in", "label": "4 × 6 in portrait · 102 × 152 mm (large)", "width": 101.6, "height": 152.4, "unit": "mm" },
-        { "value": "4x3in", "label": "4 × 3 in landscape · 102 × 76 mm", "width": 101.6, "height": 76.2, "unit": "mm" },
-        { "value": "a6land", "label": "A6 landscape · 148 × 105 mm", "width": 148, "height": 105, "unit": "mm" },
-        { "value": "6x4in", "label": "6 × 4 in landscape · 152 × 102 mm (large)", "width": 152.4, "height": 101.6, "unit": "mm" }
-      ]
-    },
-    {
-      "id": "status",
-      "label": "Attendee status",
-      "type": "select",
-      "default": "attendee",
-      "help": "Colour-codes the badge and sets the role band.",
-      "options": [
-        { "value": "attendee", "label": "Attendee" },
-        { "value": "speaker", "label": "Speaker" },
-        { "value": "presenter", "label": "Presenter" },
-        { "value": "sponsor", "label": "Sponsor" },
-        { "value": "exhibitor", "label": "Exhibitor" },
-        { "value": "organizer", "label": "Organizer" },
-        { "value": "staff", "label": "Staff / Employee" },
-        { "value": "press", "label": "Press / Media" },
-        { "value": "vip", "label": "VIP" },
-        { "value": "volunteer", "label": "Volunteer" }
-      ]
-    },
-    {
-      "id": "roleColor",
-      "label": "Role colour override",
-      "type": "color",
-      "default": "",
-      "help": "Optional - replaces the status colour. Leave empty to use the colour for the chosen status."
-    },
-    {
-      "id": "background",
-      "label": "Card background",
-      "type": "color",
-      "default": "{color.semantic.primary}"
-    },
-    {
-      "id": "eventLogo",
-      "label": "Event logo",
-      "type": "asset",
-      "assetType": "any",
-      "allowUpload": true,
-      "help": "Your event's logo. Leave empty to use the SUSE logo (auto light/dark for the card colour)."
-    },
-    {
-      "id": "eventName",
-      "label": "Event name",
-      "type": "text",
-      "default": "",
-      "maxLength": 60,
-      "help": "Shown under the logo. Clear it to show the logo alone."
-    },
-    {
-      "id": "eventWeight",
-      "label": "Event weight",
-      "type": "number",
-      "display": "slider",
-      "min": 100,
-      "max": 800,
-      "step": 100,
-      "default": 600,
-      "help": "Font weight of the event name (100 Thin → 800 ExtraBold)."
-    },
-    {
       "id": "firstname",
       "label": "First name",
       "type": "text",
@@ -139,7 +64,7 @@
       "type": "text",
       "default": "",
       "maxLength": 24,
-      "help": "Optional - shown next to the name."
+      "help": "Shown next to the name."
     },
     {
       "id": "nameWeight",
@@ -150,11 +75,11 @@
       "max": 800,
       "step": 100,
       "default": 600,
-      "help": "Font weight of the attendee name (100 Thin → 800 ExtraBold)."
+      "help": "Font weight of the attendee name (100 thin to 800 extra bold)."
     },
     {
       "id": "jobTitle",
-      "label": "Title",
+      "label": "Job title",
       "type": "text",
       "default": "",
       "maxLength": 60
@@ -170,7 +95,7 @@
       "id": "tracks",
       "label": "Tracks",
       "type": "blocks",
-      "help": "Optional session tracks, shown as chips. Give a chip its own colour, or leave it to use the role colour outline.",
+      "help": "Session tracks, shown as chips. Give a chip its own colour, or leave it empty for an outline in the role colour.",
       "fields": [
         { "id": "label", "label": "Track", "type": "text", "placeholder": "e.g. Platform Engineering" },
         { "id": "color", "label": "Chip colour", "type": "color", "default": "" }
@@ -178,13 +103,97 @@
       "default": []
     },
     {
+      "id": "size",
+      "section": "Badge",
+      "label": "Badge size",
+      "type": "select",
+      "default": "4x6in",
+      "help": "Sets the badge proportions and the print size. Change the exact dimensions in the export bar.",
+      "options": [
+        { "value": "a7", "label": "A7 · 74 × 105 mm", "width": 74, "height": 105, "unit": "mm" },
+        { "value": "3x4in", "label": "3 × 4 in · 76 × 102 mm", "width": 76.2, "height": 101.6, "unit": "mm" },
+        { "value": "a6", "label": "A6 · 105 × 148 mm", "width": 105, "height": 148, "unit": "mm" },
+        { "value": "4x6in", "label": "4 × 6 in · 102 × 152 mm", "width": 101.6, "height": 152.4, "unit": "mm" },
+        { "value": "4x3in", "label": "4 × 3 in landscape · 102 × 76 mm", "width": 101.6, "height": 76.2, "unit": "mm" },
+        { "value": "a6land", "label": "A6 landscape · 148 × 105 mm", "width": 148, "height": 105, "unit": "mm" },
+        { "value": "6x4in", "label": "6 × 4 in landscape · 152 × 102 mm", "width": 152.4, "height": 101.6, "unit": "mm" }
+      ]
+    },
+    {
+      "id": "status",
+      "section": "Badge",
+      "label": "Attendee status",
+      "type": "select",
+      "default": "attendee",
+      "help": "Colour-codes the badge and sets the role band.",
+      "options": [
+        { "value": "attendee", "label": "Attendee" },
+        { "value": "speaker", "label": "Speaker" },
+        { "value": "presenter", "label": "Presenter" },
+        { "value": "sponsor", "label": "Sponsor" },
+        { "value": "exhibitor", "label": "Exhibitor" },
+        { "value": "organizer", "label": "Organizer" },
+        { "value": "staff", "label": "Staff" },
+        { "value": "press", "label": "Press" },
+        { "value": "vip", "label": "VIP" },
+        { "value": "volunteer", "label": "Volunteer" }
+      ]
+    },
+    {
+      "id": "roleColor",
+      "section": "Badge",
+      "label": "Role colour",
+      "type": "color",
+      "default": "",
+      "help": "Replaces the colour that comes with the status. Leave it empty to keep that colour."
+    },
+    {
+      "id": "background",
+      "section": "Badge",
+      "label": "Card colour",
+      "type": "color",
+      "default": "{color.semantic.primary}"
+    },
+    {
+      "id": "eventLogo",
+      "section": "Event",
+      "label": "Event logo",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "help": "The event logo. Leave empty to use the SUSE logo (auto light/dark for the card colour)."
+    },
+    {
+      "id": "eventName",
+      "section": "Event",
+      "label": "Event name",
+      "type": "text",
+      "default": "",
+      "maxLength": 60,
+      "help": "Shown under the logo. Clear it to show the logo alone."
+    },
+    {
+      "id": "eventWeight",
+      "section": "Event",
+      "label": "Event weight",
+      "type": "number",
+      "display": "slider",
+      "min": 100,
+      "max": 800,
+      "step": 100,
+      "default": 600,
+      "help": "Font weight of the event name (100 thin to 800 extra bold)."
+    },
+    {
       "id": "showQr",
+      "section": "QR code",
       "label": "Show QR code",
       "type": "boolean",
       "default": true
     },
     {
       "id": "url",
+      "section": "QR code",
       "label": "QR links to",
       "type": "url",
       "default": "https://www.suse.com",

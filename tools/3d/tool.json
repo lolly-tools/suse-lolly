@@ -10,6 +10,7 @@
   "a11yLabel": "3D render of {{default model \"a model\"}} in {{default scene \"studio\"}} lighting",
   "tags": ["3d", "gltf", "glb", "render", "turntable", "product"],
   "render": {
+    "sectionIcons": {"Model": "box", "Scene": "image", "Rendering": "monitor", "Camera": "camera", "Transform": "move", "Animation": "animate", "Model motion": "keyframe", "Material": "paintbrush"},
     "width": 1280,
     "height": 1280,
     "formats": ["png", "jpg", "webp", "webm", "mp4", "gif", "avif", "tiff", "apng", "webp-anim"],
@@ -45,7 +46,7 @@
       "type": "file",
       "accept": [".glb", ".gltf", "model/gltf-binary", "model/gltf+json"],
       "maxSize": 33554432,
-      "help": "Your own .glb (recommended) - replaces the sample. Never uploaded; read on-device."
+      "help": "A .glb (recommended) - replaces the sample. Never uploaded; read on-device."
     },
 
     {
@@ -169,7 +170,7 @@
     { "id": "playClip", "label": "Play model animation", "section": "Model motion", "type": "boolean", "default": true, "help": "Plays the model's own baked clip when it has one." },
     { "id": "clipIndex", "label": "Clip", "section": "Model motion", "type": "number", "default": 0, "min": 0, "max": 12, "step": 1, "showIf": { "playClip": true } },
 
-    { "id": "applyTint", "label": "Recolor", "section": "Material", "type": "boolean", "default": false },
+    { "id": "applyTint", "label": "Recolour", "section": "Material", "type": "boolean", "default": false },
     { "id": "tint", "label": "Tint", "section": "Material", "type": "color", "default": "{color.semantic.secondary}", "showIf": { "applyTint": true } }
   ]
 }

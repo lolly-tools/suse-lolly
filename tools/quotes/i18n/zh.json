@@ -1,5 +1,5 @@
 {
-  "name": "Quotes",
+  "name": "语录",
   "description": "用于社交媒体和幻灯片的品牌语录卡。",
   "inputs.theme.label": "主题",
   "inputs.theme.options.light": "浅色",

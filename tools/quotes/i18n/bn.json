@@ -1,5 +1,5 @@
 {
-  "name": "Quotes",
+  "name": "উক্তি",
   "description": "সোশ্যাল পোস্ট ও স্লাইডের জন্য অন-ব্র্যান্ড কোট কার্ড।",
   "inputs.theme.label": "থিম",
   "inputs.theme.options.light": "লাইট",
