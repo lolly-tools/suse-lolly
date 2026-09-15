@@ -1,0 +1,26 @@
+{
+  "id": "brand-starter",
+  "name": "Partner lockup",
+  "category": "Brand",
+  "description": "SUSE paired with a clearly labelled placeholder partner mark.",
+  "galleryCover": true,
+  "values": {
+    "lead": {
+      "id": "suse/logo/hor-pos-green"
+    },
+    "partners": [
+      {
+        "logo": {
+          "source": "remote",
+          "id": "https://lolly.tools/tool/wordmark.svg?text=Partner&weight=600",
+          "_unresolved": true
+        }
+      }
+    ],
+    "theme": "light",
+    "layout": "row",
+    "connector": "bar",
+    "size": 120,
+    "gap": 64
+  }
+}

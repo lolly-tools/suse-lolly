@@ -1,0 +1,14 @@
+{
+  "id": "brand-starter",
+  "name": "Team signature",
+  "category": "Brand",
+  "description": "A complete sample signature with SUSE identity.",
+  "galleryCover": true,
+  "values": {
+    "firstname": "Alex",
+    "lastname": "Morgan",
+    "jobTitle": "Software Engineer",
+    "email": "alex@example.com",
+    "logo": "standard"
+  }
+}

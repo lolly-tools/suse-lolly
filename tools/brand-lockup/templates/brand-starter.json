@@ -1,0 +1,15 @@
+{
+  "id": "brand-starter",
+  "name": "Master brand",
+  "category": "Brand",
+  "description": "The official SUSE master mark on transparency.",
+  "values": {
+    "name": "",
+    "orientation": "stacked",
+    "polarity": "positive",
+    "treatment": "colour",
+    "background": "transparent"
+  },
+  "galleryCover": true,
+  "galleryTheme": "light"
+}

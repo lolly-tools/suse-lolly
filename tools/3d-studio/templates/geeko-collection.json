@@ -1,0 +1,33 @@
+{
+  "id": "geeko-collection",
+  "name": "Geeko model collection",
+  "category": "SUSE",
+  "description": "Review all three Geeko models under one studio, with per-model framing.",
+  "values": {
+    "source": "collection",
+    "collectionName": "Geeko studio",
+    "subjects": [
+      {
+        "name": "Geeko",
+        "kind": "model",
+        "asset": "suse/model/geeko",
+        "modelFormat": "glb"
+      },
+      {
+        "name": "Geeko on a branch",
+        "kind": "model",
+        "asset": "suse/model/geeko-branch",
+        "modelFormat": "glb"
+      },
+      {
+        "name": "Geeko sitting",
+        "kind": "model",
+        "asset": "suse/model/geeko-sitting",
+        "modelFormat": "glb"
+      }
+    ],
+    "materialMode": "source",
+    "studio": "dramatic",
+    "outputMode": "object-shadow"
+  }
+}

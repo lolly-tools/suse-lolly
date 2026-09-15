@@ -1,0 +1,14 @@
+{
+  "id": "brand-starter-dark",
+  "name": "Primary logo \u00b7 dark",
+  "category": "Brand",
+  "description": "The SUSE logo with clear space and a transparent background.",
+  "galleryCover": true,
+  "values": {
+    "background": "{color.semantic.primary}",
+    "transparentBg": true,
+    "orientation": "horizontal",
+    "ink": "brand"
+  },
+  "galleryTheme": "dark"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "brand-starter",
+  "name": "Primary logo",
+  "category": "Brand",
+  "description": "The SUSE logo with clear space and a transparent background.",
+  "galleryCover": true,
+  "values": {
+    "background": "{color.semantic.surface}",
+    "transparentBg": true,
+    "orientation": "horizontal",
+    "ink": "brand"
+  },
+  "galleryTheme": "light"
+}

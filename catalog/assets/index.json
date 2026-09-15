@@ -11249,6 +11249,78 @@
         }
       ],
       "added": "2026-08-14"
+    },
+    {
+      "id": "suse/model/geeko",
+      "name": "Geeko",
+      "description": "Geeko model for studio lighting and product scenes.",
+      "type": "model",
+      "version": "1.0.0",
+      "tier": "on-demand",
+      "tags": [
+        "suse",
+        "geeko",
+        "3d",
+        "model",
+        "studio"
+      ],
+      "formats": [
+        {
+          "format": "glb",
+          "url": "/catalog/assets/suse/models/geeko.glb",
+          "checksum": "sha256-QNpDzM54u16O7EMHFSvrtomDL4ed9RR4E3QFGlCZleA=",
+          "size": 1109120
+        }
+      ],
+      "brandLock": true
+    },
+    {
+      "id": "suse/model/geeko-branch",
+      "name": "Geeko on a branch",
+      "description": "Geeko on a branch model for studio lighting and product scenes.",
+      "type": "model",
+      "version": "1.0.0",
+      "tier": "on-demand",
+      "tags": [
+        "suse",
+        "geeko",
+        "3d",
+        "model",
+        "studio"
+      ],
+      "formats": [
+        {
+          "format": "glb",
+          "url": "/catalog/assets/suse/models/geeko-branch.glb",
+          "checksum": "sha256-4WL4WoaE51701P0GSWXS66qza8DB6Uqf/SJERrxplvc=",
+          "size": 1187660
+        }
+      ],
+      "brandLock": true
+    },
+    {
+      "id": "suse/model/geeko-sitting",
+      "name": "Geeko sitting",
+      "description": "Geeko sitting model for studio lighting and product scenes.",
+      "type": "model",
+      "version": "1.0.0",
+      "tier": "on-demand",
+      "tags": [
+        "suse",
+        "geeko",
+        "3d",
+        "model",
+        "studio"
+      ],
+      "formats": [
+        {
+          "format": "glb",
+          "url": "/catalog/assets/suse/models/geeko-sitting.glb",
+          "checksum": "sha256-NZX749tyruwcN/yNmSiVwowy5sptNfJfdauN20sopDo=",
+          "size": 1143552
+        }
+      ],
+      "brandLock": true
     }
   ]
 }
