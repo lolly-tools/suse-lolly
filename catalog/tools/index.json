@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-09-17T14:53:26.799Z",
+  "generatedAt": "2026-09-17T20:39:33.363Z",
   "tools": [
     {
       "id": "color-block",
@@ -15669,7 +15669,7 @@
       "id": "3d-studio",
       "name": "3D Studio",
       "description": "Turn SVG artwork and 3D models into coordinated images, alone or arranged together in one scene. Shape materials, lighting, focus and transparent shadows with guided or expert controls.",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "status": "official",
       "category": "designer",
       "tags": [
