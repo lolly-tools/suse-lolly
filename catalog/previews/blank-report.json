@@ -11,19 +11,19 @@
   "rows": [
     {
       "file": "3d-studio.svg",
-      "bytes": 14488,
-      "sha": "9187099be4663508",
-      "stddev": 26.345,
-      "inkRatio": 0.60463,
+      "bytes": 70863,
+      "sha": "b28d4bd3fc893360",
+      "stddev": 43.8,
+      "inkRatio": 0.08167,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 26.345,
-          "inkRatio": 0.60463
+          "stddev": 43.8,
+          "inkRatio": 0.08167
         },
         "black": {
-          "stddev": 26.345,
-          "inkRatio": 0.60463
+          "stddev": 45.244,
+          "inkRatio": 0.06776
         }
       },
       "blank": false,

@@ -86,7 +86,11 @@ function placed(d, fill, dx, dy) {
 }
 
 /** Shape one run via host.text. Returns { d, advanceWidth, bbox }. */
-function shape(host, text, fontUrl, fontSize) {
+async function shape(host, text, fontUrl, fontSize, fill) {
+  if (host.emoji && host.emoji.renderText && /[\u200d\u20e3\u2190-\u2bff\u3030\u303d\u3297\u3299\ud800-\udfff\ufe0f]/.test(text)) {
+    const art = await host.emoji.renderText({text,fontFamily:'SUSE',fontSize,fontWeight:fontUrl === FONT_LOC ? 300 : 400,fill});
+    return {d:'',art,advanceWidth:art.advanceWidth,bbox:{x1:0,y1:-art.baseline,x2:art.width,y2:art.height-art.baseline}};
+  }
   return host.text.toPath({ text, fontUrl, fontSize });
 }
 
@@ -116,10 +120,12 @@ function wrapWords(words, advs, spaceAdv, prefix, maxW) {
 /** Render a line's words as one run in `fontUrl` (default descriptor), ink-left at x, baseline Yb. */
 async function descLine(host, words, fontSize, fill, x, Yb, fontUrl = FONT_DESC) {
   if (!words.length) return null;
-  const run = await shape(host, words.join(' '), fontUrl, fontSize);
+  const run = await shape(host, words.join(' '), fontUrl, fontSize, fill);
   if (!run.bbox) return null;
   return {
-    part: placed(run.d, fill, x - run.bbox.x1, Yb),
+    part: run.art
+      ? `<g data-emoji-tool-source="${String(words.join(' ')).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}" color="${fill}" transform="translate(${fmt(x)} ${fmt(Yb-run.art.baseline)})">${run.art.svg}</g>`
+      : placed(run.d, fill, x - run.bbox.x1, Yb),
     inkRight: x + (run.bbox.x2 - run.bbox.x1),
     bottom: Yb + run.bbox.y2,
   };
