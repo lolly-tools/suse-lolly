@@ -50,20 +50,20 @@
       "sparse": false
     },
     {
-      "file": "agenda.look0.webp",
-      "bytes": 26132,
-      "sha": "448fef7c1a31ba70",
-      "stddev": 24.502,
-      "inkRatio": 0.12619,
+      "file": "agenda.look0.svg",
+      "bytes": 111971,
+      "sha": "a3406d4bb4940d81",
+      "stddev": 45.774,
+      "inkRatio": 0.25315,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 24.502,
-          "inkRatio": 0.12619
+          "stddev": 45.774,
+          "inkRatio": 0.25315
         },
         "black": {
-          "stddev": 24.502,
-          "inkRatio": 0.12619
+          "stddev": 45.774,
+          "inkRatio": 0.25315
         }
       },
       "blank": false,
@@ -71,19 +71,19 @@
     },
     {
       "file": "agenda.look1.svg",
-      "bytes": 86479,
-      "sha": "f20d9faf380688de",
-      "stddev": 30.563,
-      "inkRatio": 0.46651,
+      "bytes": 72934,
+      "sha": "368302ae3769480c",
+      "stddev": 26.337,
+      "inkRatio": 0.46265,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 30.563,
-          "inkRatio": 0.46651
+          "stddev": 26.337,
+          "inkRatio": 0.46265
         },
         "black": {
-          "stddev": 30.563,
-          "inkRatio": 0.46651
+          "stddev": 26.337,
+          "inkRatio": 0.46265
         }
       },
       "blank": false,
@@ -91,19 +91,19 @@
     },
     {
       "file": "agenda.svg",
-      "bytes": 113810,
-      "sha": "036dc180d86978e6",
-      "stddev": 24.28,
-      "inkRatio": 0.17818,
+      "bytes": 106253,
+      "sha": "e2a6feb07b717a3a",
+      "stddev": 30.022,
+      "inkRatio": 0.48169,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 24.28,
-          "inkRatio": 0.17818
+          "stddev": 30.022,
+          "inkRatio": 0.48169
         },
         "black": {
-          "stddev": 24.28,
-          "inkRatio": 0.17818
+          "stddev": 30.022,
+          "inkRatio": 0.48169
         }
       },
       "blank": false,
