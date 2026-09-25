@@ -11321,6 +11321,28 @@
         }
       ],
       "brandLock": true
+    },
+    {
+      "id": "suse/slides/masters",
+      "name": "SUSE slide master",
+      "description": "The SUSE slide master: twelve hand-tuned archetypes and the layout library structures expanded in the same margins, with named placeholder roles, the logo, page number, footer and segmented brand bar as master furniture, and colours as token paths. The geometry is the SUSE brand template's, the same numbers deck-studio's layout gallery and deck-builder's exported .pptx layouts already draw with.",
+      "type": "data",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "slides",
+        "slide-master",
+        "deck",
+        "design-system"
+      ],
+      "formats": [
+        {
+          "format": "json",
+          "url": "/catalog/assets/suse/slides/masters.json",
+          "checksum": "sha256-z2o4yyshv3TsVVxtNxVJI3XnXGNQiozOwxZKffSRn5g=",
+          "size": 121317
+        }
+      ]
     }
   ]
 }

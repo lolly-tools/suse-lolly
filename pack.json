@@ -32,7 +32,7 @@
     "suse/backgrounds/",
     "suse/illustrations/",
     "suse/demo/",
-    "suse/model/"
+    "suse/model/", "suse/slides/"
   ],
   "excludeAssetFamilies": [
     "suse/photos/",
