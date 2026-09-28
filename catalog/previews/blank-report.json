@@ -3957,6 +3957,66 @@
       "sparse": false
     },
     {
+      "file": "snippet.look0.svg",
+      "bytes": 9390,
+      "sha": "fd85f0fb7e152d69",
+      "stddev": 17.224,
+      "inkRatio": 0.78107,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 17.224,
+          "inkRatio": 0.78107
+        },
+        "black": {
+          "stddev": 16.846,
+          "inkRatio": 0.77931
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "snippet.look1.svg",
+      "bytes": 8352,
+      "sha": "6674d3a2962be7a1",
+      "stddev": 17.291,
+      "inkRatio": 0.77938,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 17.291,
+          "inkRatio": 0.77938
+        },
+        "black": {
+          "stddev": 16.91,
+          "inkRatio": 0.77762
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "snippet.look2.svg",
+      "bytes": 6487,
+      "sha": "7ca6bcccee856d95",
+      "stddev": 17.242,
+      "inkRatio": 0.77938,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 17.242,
+          "inkRatio": 0.77938
+        },
+        "black": {
+          "stddev": 16.858,
+          "inkRatio": 0.77762
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
       "file": "snippet.svg",
       "bytes": 24388,
       "sha": "c0ada3a628f8c492",
