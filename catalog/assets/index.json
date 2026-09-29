@@ -11255,7 +11255,7 @@
       "name": "Geeko",
       "description": "Geeko model for studio lighting and product scenes.",
       "type": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tier": "on-demand",
       "tags": [
         "suse",
@@ -11268,8 +11268,8 @@
         {
           "format": "glb",
           "url": "/catalog/assets/suse/models/geeko.glb",
-          "checksum": "sha256-QNpDzM54u16O7EMHFSvrtomDL4ed9RR4E3QFGlCZleA=",
-          "size": 1109120
+          "checksum": "sha256-GRavM4eOEC2Yi1vDjw3B+2iKbEYqHmMM3/7MYlgh+sw=",
+          "size": 2814876
         }
       ],
       "brandLock": true

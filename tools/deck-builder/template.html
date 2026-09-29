@@ -1,4 +1,4 @@
-<div class="slides {{rootClass}}" style="--dur: {{durSec}}s;{{barVars}}{{{styleVars}}}">
+<div class="slides {{rootClass}}" data-active-slide="{{activeSlide}}" style="--dur: {{durSec}}s;{{barVars}}{{{styleVars}}}">
   {{#each pages}}
   <section class="sl-slide sl-slide--{{idx}} sl-l-{{layout}}"
            data-pdf-page
@@ -39,6 +39,16 @@
     </div>
     {{else}}
 
+    {{#if composition}}
+    <div class="sl-composition sl-composition--{{composition.kind}}" data-recipe="{{composition.recipe}}" style="{{composition.style}}">
+      {{#if composition.title}}<div class="sl-flow-title" data-fit="box" data-fit-floor="0.8" style="{{composition.titleStyle}}"><div class="sl-box-fit"><h1>{{{composition.title}}}</h1></div></div>{{/if}}
+      {{#if composition.intro}}<div class="sl-flow-intro" data-fit="box" data-fit-floor="0.8" style="{{composition.introStyle}}"><div class="sl-box-fit">{{{composition.intro}}}</div></div>{{/if}}
+      {{#each composition.cells}}
+      <div class="sl-flow-cell" style="{{style}}"><div class="sl-flow-text" data-fit="box" data-fit-floor="0.8"><div class="sl-box-fit">{{#if ordinal}}<div class="sl-flow-ordinal">{{ordinal}}</div>{{/if}}{{{html}}}</div></div></div>
+      {{/each}}
+    </div>
+    <script type="application/json" data-slide-composition>{{{composition.json}}}</script>
+    {{else}}
     {{#if hasHead}}
     <header class="sl-head">
       {{!-- Markdown rendered to safe HTML in the hook (esc + fixed tags); the first
@@ -62,6 +72,7 @@
       </div>
       {{/each}}
     </div>
+    {{/if}}
     {{/if}}
     {{/if}}
 
@@ -203,8 +214,9 @@
     }
     function fitOne(el) {
       el.style.removeProperty('--fit');
+      el.removeAttribute('data-overflow');
       if (fits(el)) return;                 // fits as authored - shrink-only, so leave it alone
-      var lo = MIN_FIT, hi = 1;             // hi is known not to fit; lo is the floor we'd settle for
+      var lo = Number(el.getAttribute('data-fit-floor')) || MIN_FIT, hi = 1;
       var g = guess(el);
       if (g > lo && g < hi) {
         el.style.setProperty('--fit', String(f3(g)));
@@ -216,15 +228,49 @@
         if (fits(el)) lo = m; else hi = m;
       }
       el.style.setProperty('--fit', String(f3(lo)));
+      if (!fits(el)) el.setAttribute('data-overflow', 'true');
     }
-    function runAll() {
+    function fitSlide(slide) {
+      var json = slide.querySelector('[data-slide-composition]');
+      var data = json ? JSON.parse(json.textContent) : null;
+      var composition = slide.querySelector('.sl-composition');
+      function fit() {
+        if (slide.hasAttribute('data-fit')) fitOne(slide);
+        var els = slide.querySelectorAll('[data-fit]');
+        for (var i = 0; i < els.length; i++) fitOne(els[i]);
+        return !slide.querySelector('[data-overflow="true"]');
+      }
+      function apply(plan) {
+        composition.className = 'sl-composition sl-composition--' + plan.kind;
+        composition.setAttribute('data-recipe', plan.id);
+        composition.style.setProperty('--flow-body', (plan.fontSize * 100) + 'cqh');
+        var cells = composition.querySelectorAll('.sl-flow-cell');
+        for (var k = 0; k < cells.length; k++) {
+          var box = plan.cells[k], style = cells[k].style;
+          style.left = (box.x * 100) + '%'; style.top = (box.y * 100) + '%';
+          style.width = (box.w * 100) + '%'; style.height = (box.h * 100) + '%';
+        }
+        data.plan = plan; json.textContent = JSON.stringify(data).replace(/</g, '\\u003c');
+      }
+      if (fit() || !data || data.manual) return;
+      var original = data.plan;
+      for (var k = 0; k < data.choices.length; k++) {
+        if (data.choices[k].id === original.id) continue;
+        apply(data.choices[k]);
+        if (fit()) return;
+      }
+      apply(original); fit();
+    }
+    function runAll(all) {
       // No layout at all (the CLI's pure-jsdom svg/html path) → every measurement would read
       // 0 and every box would "fit". Leave the authored sizes standing instead.
       if (!root.isConnected || !root.clientWidth) return;
-      var els = root.querySelectorAll('[data-fit]');
-      for (var i = 0; i < els.length; i++) fitOne(els[i]);
+      var active = Number(root.getAttribute('data-active-slide'));
+      var slides = all === true || active < 0 ? root.querySelectorAll('.sl-slide') : root.querySelectorAll('.sl-slide--' + active);
+      for (var i = 0; i < slides.length; i++) fitSlide(slides[i]);
+      root.dispatchEvent(new CustomEvent('lolly:deck-fit-done', { bubbles: true }));
     }
-
+    root.addEventListener('lolly:deck-fit', function(e) { runAll(e.detail && e.detail.all); });
     runAll();
     try {
       if (document.fonts && document.fonts.status !== 'loaded') {

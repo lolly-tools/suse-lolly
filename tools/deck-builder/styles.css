@@ -565,3 +565,31 @@
    OUTSIDE every [data-pdf-page], so neither paged walker ever reaches it (and its
    sub-0.5px box would be dropped even if one did). */
 .sl-clock { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
+
+/* Content compositions use the slide master's type scale and shared cell geometry. */
+.sl-composition { position: absolute; inset: 0; font-size: calc(var(--flow-body) * var(--fit, 1)); line-height: 1.3; }
+.sl-flow-title, .sl-flow-intro, .sl-flow-cell { position: absolute; }
+.sl-flow-title h1 { font-size: calc(var(--flow-title) * var(--fit, 1) * var(--ds-h1-scale, 1)); line-height: 1.08; font-weight: var(--ds-h1-weight, 700); font-family: var(--ds-h1-family, inherit); letter-spacing: -.02em; }
+.sl-flow-cell { padding: 1.8cqh 1.4cqw; border-top: .25cqh solid var(--accent); }
+.sl-flow-text { height: 100%; font-size: calc(var(--flow-body) * var(--fit, 1)); overflow-wrap: anywhere; overflow: hidden; }
+.sl-flow-intro { font-size: calc(var(--flow-body) * var(--fit, 1)); }
+.sl-flow-text h2, .sl-flow-text h3 { font-size: calc(1.15em * var(--ds-h2-scale, 1)); line-height: 1.14; font-weight: var(--ds-h2-weight, 700); font-family: var(--ds-h2-family, inherit); margin-bottom: .5em; }
+.sl-flow-text p + p, .sl-flow-text ul, .sl-flow-text ol { margin-top: .4em; }
+.sl-flow-text ul, .sl-flow-text ol { padding-left: 0; list-style: none; }
+.sl-flow-text li { position: relative; padding-left: 1.1em; }
+.sl-flow-text li ul, .sl-flow-text li ol { margin-top: .2em; }
+.sl-flow-marker { position: absolute; left: 0; top: 0; width: 1em; color: var(--accent); }
+.sl-flow-text ul { font-size: calc(1em * var(--ds-ul-scale, 1)); font-weight: var(--ds-ul-weight, 400); font-family: var(--ds-ul-family, inherit); }
+.sl-flow-text ol { font-size: calc(1em * var(--ds-ol-scale, 1)); font-weight: var(--ds-ol-weight, 400); font-family: var(--ds-ol-family, inherit); }
+.sl-flow-text li + li { margin-top: .2em; }
+.sl-flow-text pre { white-space: pre-wrap; font-size: .85em; }
+.sl-flow-text table { border-collapse: collapse; width: 100%; font-size: .85em; }
+.sl-flow-text td, .sl-flow-text th { padding: .25em; border-bottom: 1px solid currentColor; }
+.sl-composition--cards .sl-flow-cell { background: color-mix(in srgb, var(--ink) 5%, var(--bg)); }
+.sl-composition--columns .sl-flow-cell { padding-left: 0; padding-right: 0; border: 0; }
+.sl-composition--steps .sl-flow-cell { padding-left: 0; padding-right: 0; }
+.sl-flow-ordinal { display: none; color: var(--accent); font-size: 1.8em; font-weight: 700; margin-bottom: .25em; line-height: 1; }
+.sl-composition--steps .sl-flow-ordinal { display: block; }
+.sl-composition--text .sl-flow-cell, .sl-composition--quote .sl-flow-cell { padding: 0; border: 0; }
+.sl-composition--quote .sl-flow-text { font-size: calc(var(--flow-body) * 1.4 * var(--fit, 1)); }
+.sl-flow-text blockquote { border-left: .4cqw solid var(--accent); padding-left: 1em; }

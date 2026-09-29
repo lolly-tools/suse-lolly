@@ -51,7 +51,60 @@ var MAX_FRAMES = 595;  // the bridge truncates past 600 frames with only a warni
 var OPACITY_SEC = 0.13;
 
 // Layout value → the slot sub-fields it renders, in order.
+// === lolly:shared slide-composition - generated from community/_shared/slide-composition.js; edit there and run pnpm run sync:shared ===
+"use strict";var LollySlideComposition=(()=>{var C=Object.defineProperty;var _=Object.getOwnPropertyDescriptor;var A=Object.getOwnPropertyNames;var D=Object.prototype.hasOwnProperty;var I=(n,e)=>{for(var r in e)C(n,r,{get:e[r],enumerable:!0})},L=(n,e,r,l)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of A(e))!D.call(n,i)&&i!==r&&C(n,i,{get:()=>e[i],enumerable:!(l=_(e,i))||l.enumerable});return n};var N=n=>L(C({},"__esModule",{value:!0}),n);var Y={};I(Y,{composeSlideMarkdown:()=>X,parseSlideMarkdown:()=>q,slideCompositions:()=>O,slideGridCells:()=>B});function B(n,e,r){n=Math.max(1,Math.min(12,Math.round(n)||1)),e=Math.max(1,Math.min(n,4,Math.round(e)||1));let l=Math.ceil(n/e),i=Math.min(.025,r.w/e*.08),c=.025,o=(r.w-i*(e-1))/e,h=(r.h-c*(l-1))/l;return Array.from({length:n},(x,d)=>{let m=Math.floor(d/e),g=Math.min(e,n-m*e);return{x:r.x+(d%e+(e-g)/2)*(o+i),y:r.y+m*(h+c),w:o,h}})}function Q(n){let e="",r=0;return String(n).replace(/\r\n?/g,`
+`).split(`
+`).map(l=>{let i=/^\s{0,3}(`{3,}|~{3,})/.exec(l)?.[1],c=!e&&!i;return i&&!e?(e=i[0],r=i.length):i&&i[0]===e&&i.length>=r&&(e=""),{raw:l,structural:c}})}function W(n,e){let r=n[0].replace(/^\s*(?:[-+*]|\d+[.)])\s+/,""),l=/^\*\*([^*]+)\*\*\s*[:–-]?\s*(.*)$/.exec(r),i=/^\s*(?:[-+*]|\d+[.)])\s+/.exec(n[0])[0].length,c=n.slice(1).map(o=>o.startsWith(" ".repeat(i))?o.slice(i):o).join(`
+`);return{heading:l?.[1]??"",body:[l?l[2]:r,c].filter(Boolean).join(`
+`).trim(),...e?{ordinal:e}:{}}}function q(n){let e=Q(n),r="",l=e.findIndex(t=>t.raw.trim());if(l>=0&&e[l].structural){let t=/^#{1,3}\s+(.*)$/.exec(e[l].raw);t&&(r=t[1],e.splice(l,1))}let i=e.flatMap((t,a)=>t.structural&&/^#{2,3}\s+/.test(t.raw)?[{i:a,level:/^#+/.exec(t.raw)[0].length}]:[]),c=Math.min(...i.map(t=>t.level)),o=i.filter(t=>t.level===c).map(t=>t.i);if(o.length>=2){let t=o.map((a,p)=>({heading:e[a].raw.replace(/^#{2,3}\s+/,""),body:e.slice(a+1,o[p+1]??e.length).map(s=>s.raw).join(`
+`).trim()}));return{title:r,intro:e.slice(0,o[0]).map(a=>a.raw).join(`
+`).trim(),groups:t,ordered:!1}}let h=e.flatMap((t,a)=>{let p=t.structural&&/^([ \t]*)(?:[-+*]|\d+[.)])\s+/.exec(t.raw);return p?[{i:a,indent:p[1].replace(/\t/g,"  ").length}]:[]}),x=Math.min(...h.map(t=>t.indent)),d=h.filter(t=>t.indent===x).map(t=>t.i),m=e.some(t=>!t.structural&&t.raw.trim()||/^\s*\|/.test(t.raw));if(d.length>=2&&!m&&!o.length){let t=d.every(a=>/^\d+[.)]/.test(e[a].raw.trimStart()));return{title:r,intro:e.slice(0,d[0]).map(a=>a.raw).join(`
+`).trim(),ordered:t,groups:d.map((a,p)=>W(e.slice(a,d[p+1]??e.length).map(s=>s.raw),t?/^\d+/.exec(e[a].raw.trimStart())[0]:void 0))}}let g=e.map(t=>t.raw).join(`
+`).trim();return{title:r,intro:"",groups:g?[{heading:"",body:g}]:[],ordered:!1}}function k(n){return n.replace(/[*#`_]/g,"").length}function O(n,e={}){let r=e.master,l=e.aspect&&e.aspect>0?e.aspect:16/9,i=r?.archetypes.find(s=>s.id==="content"),c=i?.placeholders.find(s=>s.role==="title")?.box??{x:.055,y:.055,w:.89,h:.13},o={...i?.placeholders.find(s=>s.role==="body")?.box??{x:.055,y:.23,w:.89,h:.61}},h=r?.size.height||720,x=(r?.typeScale.body||26)/h,d=(r?.typeScale.title||42)/h,m=n.intro?Math.min(.17,.055+k(n.intro)/(l*1300)):0,g={x:o.x,y:o.y,w:o.w,h:m};o.y+=m,o.h-=m;let t=n.groups.length;if(t<2||t>12){let s=t===1&&/^>/.test(n.groups[0].body);return[{id:s?"flow-quote":"flow-text",name:s?"Quote":"Title and text",kind:s?"quote":"text",columns:1,cells:[o],fontSize:x,titleSize:d,titleBox:c,introBox:g,warning:t>12?"Split this content across slides for readable text.":""}]}let a=t===2||t===4?2:t<=9?3:4,p=[];for(let s of[1,2,3,4])if(!(s>t||Math.ceil(t/s)>4))for(let u of n.ordered?["steps","columns"]:["cards","columns"]){let w=B(t,s,o),S=t<=3&&n.groups.every(f=>!f.heading&&f.body.length<120)?Math.min(d*.8,x*1.3):x*(t>=9?.85:1),M=0,b=0;for(let f=0;f<t;f++){let y=n.groups[f],z=w[f],T=(z.w-(u==="cards"?.03:.012))*l,j=Math.max(8,T/(S*.5)),G=(y.body.split(`
+`).reduce((H,V)=>H+Math.max(1,Math.ceil(k(V)/j)),0)+(y.heading?Math.ceil(k(y.heading)/j)*1.35+.6:0)+(u==="steps"?1.6:0))*S*1.3;b=Math.max(b,G),M+=Math.max(0,G/(z.h-.04)-1)}let $=Math.ceil(t/s),v=Math.min(o.h,Math.max(.26,b+.055)*$+.025*($-1));w=B(t,s,{...o,y:o.y+(o.h-v)*.4,h:v}),p.push({plan:{id:`flow-${u}-${t}-${s}`,name:`${s} ${s===1?"column":"columns"}${Math.ceil(t/s)>1?` \xD7 ${Math.ceil(t/s)} rows`:""} \xB7 ${u}`,kind:u,columns:s,cells:w,fontSize:S,titleSize:d,titleBox:c,introBox:g,warning:M>.5?"Dense content: check the fit or split this slide.":""},score:M*20+Math.abs(s-a)+(u==="columns"?.15:0)})}return p.sort((s,u)=>s.score-u.score).map(s=>s.plan)}function X(n,e={}){let r=q(n),l=r.groups.length>12;l&&(r={...r,intro:"",groups:[{heading:"",body:String(n).replace(/^#{1,3}\s+[^\n]*\n?/,"")}]});let i=O(r,e);if(l)for(let o of i)o.warning="Split this content across slides for readable text.";let c=/^flow-(cards|columns|steps)-\d+-(\d)$/.exec(e.recipe??"");return{content:r,choices:i,plan:i.find(o=>o.id===e.recipe)??i.find(o=>c&&o.kind===c[1]&&o.columns===Number(c[2]))??i[0]}}return N(Y);})();
+// === /lolly:shared slide-composition ===
+
+var _slideMaster = null;
+async function readCompositionMaster() {
+  try {
+    if (!host.assets.query || !host.assets.bytes) return null;
+    var refs = await host.assets.query({ type: 'data', tags: ['slides', 'slide-master'] });
+    if (!refs || !refs.length) return null;
+    var file = JSON.parse(new TextDecoder().decode(await host.assets.bytes(refs[0])));
+    var master = file.version === 1 && file.masters && file.masters[0];
+    return master && master.size && master.size.height > 0 && master.typeScale && Array.isArray(master.archetypes) ? master : null;
+  } catch (e) { return null; }
+}
+function compositionBox(box) {
+  return 'left:' + (box.x * 100) + '%;top:' + (box.y * 100) + '%;width:' + (box.w * 100) + '%;height:' + (box.h * 100) + '%;';
+}
+// Explicit markers travel through the same native text export as the list's words.
+function compositionMarkdown(source) {
+  var lists = [];
+  return mdBox(source).replace(/<\/?(?:ul|ol)>|<li>/g, function(tag) {
+    if (tag === '<ul>' || tag === '<ol>') { lists.push({ ordered: tag === '<ol>', count: 0 }); return tag; }
+    if (tag === '</ul>' || tag === '</ol>') { lists.pop(); return tag; }
+    var list = lists[lists.length - 1];
+    if (!list) return tag;
+    list.count++;
+    return tag + '<span class="sl-flow-marker" aria-hidden="true">' + (list.ordered ? list.count + '.' : '•') + '</span>';
+  });
+}
+function compositionPage(content, recipe, size) {
+  var result = LollySlideComposition.composeSlideMarkdown(str(content), { recipe: str(recipe), master: _slideMaster || undefined, aspect: size === 'square' ? 1 : size === 'classic' ? 4 / 3 : 16 / 9 });
+  var plan = result.plan;
+  var cells = result.content.groups.map(function(group, i) {
+    return { style: compositionBox(plan.cells[i] || plan.cells[0]), ordinal: group.ordinal || '',
+      html: (group.heading ? '<h2>' + inlineMd(group.heading) + '</h2>' : '') + compositionMarkdown(group.body) };
+  });
+  return { kind: plan.kind, recipe: plan.id, cells: cells, title: inlineMd(result.content.title), intro: compositionMarkdown(result.content.intro),
+    titleStyle: compositionBox(plan.titleBox), introStyle: compositionBox(plan.introBox),
+    style: '--flow-body:' + (plan.fontSize * 100) + 'cqh;--flow-title:' + (plan.titleSize * 100) + 'cqh;',
+    json: safeJson(Object.assign({ manual: !!recipe }, result)) };
+}
+
 var SLOTS_FOR = {
+  auto: [],
   title:  [],
   bignum: [],
   mainpoint: [],
@@ -1063,6 +1116,9 @@ function compute(model, theme, logos) {
       page.hasHead = false; page.hasBody = false;
       page.slots = []; page.slotCount = 0;
       page.fit = false; page.valign = '';
+    } else if (layout === 'auto') {
+      page.composition = compositionPage(row.content, row.arrangement, str(inputs.size));
+      page.fit = false;
     } else {
       var parts = mdToParts(row.content);
       var slots = [];
@@ -1098,6 +1154,7 @@ function compute(model, theme, logos) {
   // extras. The blocks input is `deck` precisely so `pages` stays free.
   return {
     pages: pages,
+    activeSlide: focusIdx,
     animCss: buildAnimCss(n, startS, inS, R, TT, motion, _loop, focusIdx),
     // Animation off (default) OR a slide focused → the resting preview is STILL (sl-frozen).
     // Only an explicit transition + no focus lets the preview auto-play. Video export forces
@@ -1122,6 +1179,7 @@ function compute(model, theme, logos) {
 // onInit is async: resolve the brand tokens + logo assets once, cache them, and
 // reuse across the (synchronous) onInput re-renders as the user edits.
 async function onInit(ctx) {
+  _slideMaster = await readCompositionMaster();
   _theme = await readBrandTheme();
   _logos = await resolveLogos();
   return compute(ctx.model, _theme, _logos);
@@ -1169,6 +1227,9 @@ function armFrameClock(root) {
 function beforeExport(ctx) {
   var root = ctx.node && ctx.node.querySelector && ctx.node.querySelector('.slides');
   if (!root) return;
+  var EventCtor = root.ownerDocument && root.ownerDocument.defaultView && root.ownerDocument.defaultView.CustomEvent;
+  if (EventCtor) root.dispatchEvent(new EventCtor('lolly:deck-fit', { detail: { all: true } }));
+  if (root.querySelector('.sl-l-auto [data-overflow="true"]')) throw new Error('Some slide text does not fit. Shorten the text, choose another layout or split the slide before exporting.');
   _savedClass = root.className;
   var fmt = ctx.format;
 
