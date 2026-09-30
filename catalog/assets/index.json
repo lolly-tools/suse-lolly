@@ -11343,6 +11343,1163 @@
           "size": 121317
         }
       ]
+    },
+    {
+      "id": "suse/icons/battery",
+      "name": "Battery",
+      "description": "Charge, reserve and runtime.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "battery"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-battery.svg",
+          "checksum": "sha256-su8Rjp5HCGjyOfMV/9bdJfMvbBNZuXZ0Y4+HBbi00XA=",
+          "size": 405,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/chair",
+      "name": "Chair",
+      "description": "Seating, workplace and availability.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "chair"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-chair.svg",
+          "checksum": "sha256-rv463b1j+oo85lPGgfqLSmaOrUYGBPmQyiJylg7tb68=",
+          "size": 587,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/loudspeaker",
+      "name": "Loudspeaker",
+      "description": "Announcement, amplification and outreach.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "loudspeaker"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-loudspeaker.svg",
+          "checksum": "sha256-l2i9oL53JEUL6YCkeU+ga12VbDNemnbuzbOfleU97ZI=",
+          "size": 750,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/anchor",
+      "name": "Anchor",
+      "description": "Stability, grounding and a fixed point.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "anchor"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-anchor.svg",
+          "checksum": "sha256-NwR038LngujoHZ2Su7rrNBL+7+Y6YA04LktT3QNOb0c=",
+          "size": 907,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/fire-extinguisher",
+      "name": "Fire extinguisher",
+      "description": "Incident response, mitigation and safety.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "fire",
+        "extinguisher"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-fire-extinguisher.svg",
+          "checksum": "sha256-Wun4pA7tYFOnpVc9dfPLVyxG9LjbLIZ98NPk2QfNg+Q=",
+          "size": 633,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/magnet",
+      "name": "Magnet",
+      "description": "Attraction, retention and discovery.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "magnet"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-magnet.svg",
+          "checksum": "sha256-G/gK5j131uj6vxboTTurVWpvuZfabEn/svxMLSTtUeI=",
+          "size": 533,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/camera",
+      "name": "Camera",
+      "description": "Capture, photography and documentation.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "camera"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-camera.svg",
+          "checksum": "sha256-pZ0S/Ixa+aHEglgsfawZrHW4maZ2G6DGeH1cgfddS44=",
+          "size": 565,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/umbrella",
+      "name": "Umbrella",
+      "description": "Protection, coverage and contingency.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "umbrella"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-umbrella.svg",
+          "checksum": "sha256-e67ksEHdZsKjyupiIqb76QCJEyk3hThbYpbMjpM2y/s=",
+          "size": 1121,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/location-pin",
+      "name": "Location pin",
+      "description": "Place, destination and presence.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "location",
+        "pin"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-location-pin.svg",
+          "checksum": "sha256-SKswVXNqqybwvgUSUvyAf6dh7udfTzUtiHnX3OWBuro=",
+          "size": 973,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/folded-map",
+      "name": "Folded map",
+      "description": "Navigation, territory and route planning.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "folded",
+        "map"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-folded-map.svg",
+          "checksum": "sha256-TvRg9q0+sbtbjZbmyU7A42R0+heUhDTuOeVyetcEAoU=",
+          "size": 481,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/flag",
+      "name": "Flag",
+      "description": "Milestone, marker and priority.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "flag"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-flag.svg",
+          "checksum": "sha256-DnayQiMjJuqegaVUpmzkgCxGmQoeMN8gTWVYRGg7r8s=",
+          "size": 367,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/trophy",
+      "name": "Trophy",
+      "description": "Achievement, award and recognition.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "trophy"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-trophy.svg",
+          "checksum": "sha256-b2qHmT/jEsokVWg+Ky/IDIsWBqlIlLx8tFfS9Sf9uRs=",
+          "size": 574,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/scissors",
+      "name": "Scissors",
+      "description": "Cut, trim and edit.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "scissors"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-scissors.svg",
+          "checksum": "sha256-93giphxWk42i1hY4iKVvE7J6h7LI+aW5Nnq78L/AFTo=",
+          "size": 908,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/electrical-plug",
+      "name": "Electrical plug",
+      "description": "Power, connection and supply.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "electrical",
+        "plug"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-electrical-plug.svg",
+          "checksum": "sha256-8xxCO+sI1PU5cKQQo+C+vBdTMrzFtkn3CRzWFKLbNhs=",
+          "size": 476,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/keyboard",
+      "name": "Keyboard",
+      "description": "Typing, input and shortcuts.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "keyboard"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-keyboard.svg",
+          "checksum": "sha256-Seg+lPM5jJjA59W63mLSyVHWxGbeJGh+VKugY+CISzY=",
+          "size": 504,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/computer-mouse",
+      "name": "Computer mouse",
+      "description": "Pointing, selection and desktop control.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "computer",
+        "mouse"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-computer-mouse.svg",
+          "checksum": "sha256-4jDJC2RJlAbC60CjkpsqrT0pYaF4eNhn6iYcZWaCcpg=",
+          "size": 511,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/printer",
+      "name": "Printer",
+      "description": "Print, output and hard copy.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "printer"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-printer.svg",
+          "checksum": "sha256-6AW6UYBao8uURdfo8fgOeQIFwbBznJ/7JvemOPf6J1E=",
+          "size": 517,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/envelope",
+      "name": "Envelope",
+      "description": "Mail, message and invitation.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "envelope"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-envelope.svg",
+          "checksum": "sha256-XFKQBuNi1OPdMHc05FlNbbpeTe4NU+klqwslkG99uhk=",
+          "size": 387,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/credit-card",
+      "name": "Credit card",
+      "description": "Payment, billing and subscription.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "credit",
+        "card"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-credit-card.svg",
+          "checksum": "sha256-HXRorafhg2w3x40LkWdoik7VOdhKXld+yL277MdwG70=",
+          "size": 547,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/bed",
+      "name": "Bed",
+      "description": "Rest, accommodation and recovery.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "bed"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-bed.svg",
+          "checksum": "sha256-JydqFgn9RnYNFTJpdMrHIop9x24E6NPrfPVrcig382I=",
+          "size": 416,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/dinner-plate",
+      "name": "Dinner plate",
+      "description": "Dining, catering and hospitality.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "dinner",
+        "plate"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-dinner-plate.svg",
+          "checksum": "sha256-/MCrqNfv7BLI/y6wgt7N9XjcqApreoampPrINQmzCVI=",
+          "size": 989,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/wine-glass",
+      "name": "Wine glass",
+      "description": "Reception, celebration and dining.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "wine",
+        "glass"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-wine-glass.svg",
+          "checksum": "sha256-5knjDEjmxB75lHir0C0GEz1xxYLv3t/gGNq1ltao+sE=",
+          "size": 787,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/game-controller",
+      "name": "Game controller",
+      "description": "Interactive input.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "game",
+        "controller"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-game-controller.svg",
+          "checksum": "sha256-zJ6UDLf4dHPvX8A2yG8/isSuIMLOdrsa4Wi3kgZsBZQ=",
+          "size": 1331,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/document-search",
+      "name": "Document search",
+      "description": "Find content.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "document",
+        "search"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-document-search.svg",
+          "checksum": "sha256-ByxWMZtG7GFdlQy+AB84gjyLcWEq6h8US4VC6MGES1I=",
+          "size": 991,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/folder",
+      "name": "Folder",
+      "description": "File organization.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "folder"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-folder.svg",
+          "checksum": "sha256-e3W8doiOJDMSbI8kO68iiBs6DZ5hrSGjXhD1Ti/w3UM=",
+          "size": 382,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/document",
+      "name": "Document",
+      "description": "General document or attachment.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "document"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-document.svg",
+          "checksum": "sha256-kce11QOa9Mp0WsozR4GajCwws3NPyNgV4Yt6XSqKyB4=",
+          "size": 496,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/code-review",
+      "name": "Code review",
+      "description": "Inspect proposed code.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "code",
+        "review"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-code-review.svg",
+          "checksum": "sha256-E98DDMUOexW7L5NB4qzBg9q1nZ/FxqbyjdxBuaoFfkk=",
+          "size": 1008,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/password-field",
+      "name": "Password field",
+      "description": "Secret entry.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "password",
+        "field"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-password-field.svg",
+          "checksum": "sha256-wKnWaQg0zwusI0Sr5yZ9mxN78C2pbDbw7tqr3+rRXJI=",
+          "size": 1284,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/encrypted-message",
+      "name": "Encrypted message",
+      "description": "Private communication.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "encrypted",
+        "message"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-encrypted-message.svg",
+          "checksum": "sha256-UPAY+X440KCNA06vSialKA3ui7NqAdBlC7dT5a8LjgU=",
+          "size": 768,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/package-dependency",
+      "name": "Package dependency",
+      "description": "Required components.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "package",
+        "dependency"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-package-dependency.svg",
+          "checksum": "sha256-GMvlXRIbJo0cmvGKcSdJvZdcqB3K1guDQ3jYasdk1qM=",
+          "size": 533,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/dependency-conflict",
+      "name": "Dependency conflict",
+      "description": "Incompatible requirements.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "dependency",
+        "conflict"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-dependency-conflict.svg",
+          "checksum": "sha256-h0Yz+1OMBQNOSwgjScHD69uY2/tMVtRNj3J+E8IhO9E=",
+          "size": 698,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/inbox",
+      "name": "Inbox",
+      "description": "Incoming correspondence.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "inbox"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-inbox.svg",
+          "checksum": "sha256-mzcu52TUPIGcek/cKEZUSep8ZKmqDbCUb/SdQKdHWww=",
+          "size": 623,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/outbox",
+      "name": "Outbox",
+      "description": "Outgoing correspondence.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "outbox"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-outbox.svg",
+          "checksum": "sha256-Ks4FRib5gEu9L3DTAmA3tQhLBACmTfKFubDUj7Z8g/E=",
+          "size": 642,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/donut-chart",
+      "name": "Donut chart",
+      "description": "Part-to-whole comparison.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "donut",
+        "chart"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-donut-chart.svg",
+          "checksum": "sha256-W0zVINifBd24ZNsu7unyPdWVNA9fxADo+C384eK3QAk=",
+          "size": 1529,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/scatter-plot",
+      "name": "Scatter plot",
+      "description": "Distribution and correlation.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "scatter",
+        "plot"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-scatter-plot.svg",
+          "checksum": "sha256-fEPZsEk7sUhwkGopTD20OF99U483jJDBPFSbuCjOMBQ=",
+          "size": 1410,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/touch-gesture",
+      "name": "Touch gesture",
+      "description": "Tap a target.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "touch",
+        "gesture"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-touch-gesture.svg",
+          "checksum": "sha256-koN0uVhn20WIY0wKFKI5qayur2rGQuk5w8Pu+Jxtc9s=",
+          "size": 1692,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/paint-roller",
+      "name": "Paint roller",
+      "description": "Apply a surface treatment.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "paint",
+        "roller"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-paint-roller.svg",
+          "checksum": "sha256-jnOCct/BdSyScKtiPF8iy9zddI1++wZ0y7KbRrHeAH0=",
+          "size": 434,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/bookmark-ribbon",
+      "name": "Bookmark ribbon",
+      "description": "Saved reading position.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "bookmark",
+        "ribbon"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-bookmark-ribbon.svg",
+          "checksum": "sha256-qjJpdU7Z21VZXM/eRlx6nEejZne3avqrGwilS7DvTa8=",
+          "size": 442,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/sailboat",
+      "name": "Sailboat",
+      "description": "Wind-powered travel.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "sailboat"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-sailboat.svg",
+          "checksum": "sha256-2PQRiYudGAjXcGSH6rZ8XAHNFYhi8sI1zyclkEAn0U0=",
+          "size": 624,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/external-link",
+      "name": "External link",
+      "description": "Open another destination.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "external",
+        "link"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-external-link.svg",
+          "checksum": "sha256-O8cRSoMlWO1vPaFPi+O072ltg6NbHxjFvgo+dp3dsVQ=",
+          "size": 461,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/resize-handles",
+      "name": "Resize handles",
+      "description": "Change dimensions.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "resize",
+        "handles"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-resize-handles.svg",
+          "checksum": "sha256-A86W3ZzxMjKwqH0vjF6Bb5zqY1C+6MtyxIoVNL9ubrU=",
+          "size": 463,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
+    },
+    {
+      "id": "suse/icons/crop-frame",
+      "name": "Crop frame",
+      "description": "Trim an image.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "icon",
+        "themable",
+        "two-color",
+        "iconography",
+        "crop",
+        "frame"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/suse/icons/icon-crop-frame.svg",
+          "checksum": "sha256-9hW53TmneKBK0r5BcKlCL4BFTxHLI2N/n7+5XRtFxwo=",
+          "size": 349,
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "aiGenerated": "full"
     }
   ]
 }
