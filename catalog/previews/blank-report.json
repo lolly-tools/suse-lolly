@@ -51,8 +51,8 @@
     },
     {
       "file": "agenda.look0.svg",
-      "bytes": 111971,
-      "sha": "a3406d4bb4940d81",
+      "bytes": 112317,
+      "sha": "84ea1806411b757b",
       "stddev": 45.774,
       "inkRatio": 0.25315,
       "ground": "white",
@@ -71,19 +71,19 @@
     },
     {
       "file": "agenda.look1.svg",
-      "bytes": 72934,
-      "sha": "368302ae3769480c",
-      "stddev": 26.337,
-      "inkRatio": 0.46265,
+      "bytes": 49988,
+      "sha": "ead5fcd8be5b0e39",
+      "stddev": 65.564,
+      "inkRatio": 0.32612,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 26.337,
-          "inkRatio": 0.46265
+          "stddev": 65.564,
+          "inkRatio": 0.32612
         },
         "black": {
-          "stddev": 26.337,
-          "inkRatio": 0.46265
+          "stddev": 65.564,
+          "inkRatio": 0.32612
         }
       },
       "blank": false,
@@ -91,19 +91,19 @@
     },
     {
       "file": "agenda.svg",
-      "bytes": 106253,
-      "sha": "e2a6feb07b717a3a",
-      "stddev": 30.022,
-      "inkRatio": 0.48169,
+      "bytes": 83118,
+      "sha": "f0b964384dd619dd",
+      "stddev": 65.962,
+      "inkRatio": 0.35069,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 30.022,
-          "inkRatio": 0.48169
+          "stddev": 65.962,
+          "inkRatio": 0.35069
         },
         "black": {
-          "stddev": 30.022,
-          "inkRatio": 0.48169
+          "stddev": 65.962,
+          "inkRatio": 0.35069
         }
       },
       "blank": false,
