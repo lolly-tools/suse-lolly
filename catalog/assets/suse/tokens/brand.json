@@ -23,6 +23,326 @@
       }
     }
   ],
+  "$extensions": {
+    "com.suse.lolly": {
+      "brandSystem": {
+        "schemaVersion": 1,
+        "id": "suse",
+        "label": "SUSE",
+        "roles": [
+          {
+            "id": "typeface",
+            "label": "Typeface",
+            "resources": [
+              {
+                "type": "token",
+                "path": "font.brand"
+              }
+            ]
+          },
+          {
+            "id": "core-colours",
+            "label": "Core colours",
+            "description": "The workhorse backgrounds that carry approved pairings.",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.brand.pine"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.jungle"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.white"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.fog"
+              }
+            ]
+          },
+          {
+            "id": "hairlines",
+            "label": "Neutral hairlines",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.ramp.fog.7"
+              },
+              {
+                "type": "token",
+                "path": "color.ramp.fog.2"
+              }
+            ]
+          }
+        ],
+        "bindings": [],
+        "rules": [
+          {
+            "id": "headline-weight",
+            "label": "Headlines are set in Medium (500)",
+            "kind": "text-weight",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "headline",
+              "weights": [
+                "500"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "A headline is a title-role text, or a text without a role at 5% of its artboard height or more."
+          },
+          {
+            "id": "text-weight",
+            "label": "Text runs Regular to Medium (400 to 500)",
+            "kind": "text-weight",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "body",
+              "weights": [
+                "400",
+                "500"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "The outer weights of the variable range are for expressive display work, not everyday layouts."
+          },
+          {
+            "id": "headline-case",
+            "label": "Headlines are never all caps",
+            "kind": "text-case",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "headline",
+              "forbid": "upper"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Sentence case or title case, never capitals throughout."
+          },
+          {
+            "id": "text-align",
+            "label": "Text is left-aligned",
+            "kind": "text-align",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "align": "left",
+              "exemptRoles": [
+                "quote",
+                "attribution",
+                "number",
+                "label"
+              ],
+              "exemptFurniture": [
+                "page-number*"
+              ],
+              "exemptArchetypes": [
+                "stats-*",
+                "big-number*",
+                "quote*"
+              ],
+              "exemptNumeric": true
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Stats, big numbers, quotes, page numbers and text made only of numerals are exempt, as the slide master centres them."
+          },
+          {
+            "id": "color-pairing",
+            "label": "Text colours follow the approved combinations",
+            "kind": "color-pairing",
+            "roleIds": [
+              "core-colours"
+            ],
+            "parameters": {
+              "source": "token-extension",
+              "key": "combinations",
+              "use": "text"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Colour combinations"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Read from each background token's combinations. Jungle makes a poor text colour on White or Fog. Shades outside the named colours are not covered."
+          },
+          {
+            "id": "stroke-on-rounded",
+            "label": "No accent-coloured border on a rounded shape",
+            "kind": "stroke-on-rounded",
+            "roleIds": [
+              "hairlines"
+            ],
+            "parameters": {
+              "shapes": [
+                "rounded",
+                "pill",
+                "ellipse",
+                "circle"
+              ],
+              "neutral": [
+                "{color.ramp.fog.7}",
+                "{color.ramp.fog.2}"
+              ],
+              "stripMax": 12
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Component rules 1"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Neither an outline nor a one-sided stripe. Carry the accent with a tinted fill; a neutral hairline is allowed for definition."
+          },
+          {
+            "id": "dash-reserved",
+            "label": "A dashed border means a drop target",
+            "kind": "dash-reserved",
+            "roleIds": [],
+            "parameters": {
+              "styles": [
+                "dashed"
+              ],
+              "meaning": "drop-target"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Component rules 2"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Never dashed for empty, invalid, optional or unreachable states."
+          },
+          {
+            "id": "logo-surface",
+            "label": "A positive mark on light, a negative mark on dark and photography",
+            "kind": "logo-surface",
+            "roleIds": [],
+            "parameters": {
+              "light": [
+                "suse/logo/hor-pos-green",
+                "suse/logo/vert-pos-green",
+                "suse/logo/hor-pos-black",
+                "suse/logo/vert-pos-black"
+              ],
+              "dark": [
+                "suse/logo/hor-neg-white",
+                "suse/logo/vert-neg-white",
+                "suse/logo/hor-neg-green",
+                "suse/logo/vert-neg-green"
+              ],
+              "photo": [
+                "suse/logo/hor-neg-white",
+                "suse/logo/vert-neg-white",
+                "suse/logo/hor-neg-green",
+                "suse/logo/vert-neg-green"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Logo"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "The guidance prefers neg-white on dark surfaces and photography; the slide master places neg-green on both, so both negative marks are accepted there. A positive mark on a dark surface or a picture, or a negative mark on a light one, is reported."
+          }
+        ]
+      }
+    }
+  },
   "base": {
     "color": {
       "$type": "color",
@@ -461,6 +781,76 @@
           "$value": "{color.ramp.fog.7}",
           "$description": "Hairlines and borders"
         }
+      },
+      "role": {
+        "muted-ink": {
+          "$value": "{color.ramp.fog.4}",
+          "$description": "Captions, labels, axis years and descriptions: quieter than the text colour."
+        },
+        "secondary-ink": {
+          "$value": "{color.ramp.fog.3}",
+          "$description": "Secondary text on a card."
+        },
+        "strong-card-ink": {
+          "$value": "{color.ramp.fog.3}",
+          "$description": "Secondary text on a strong card."
+        },
+        "accent-ink": {
+          "$value": "{color.ramp.jungle.3}",
+          "$description": "Accent text: subtitles, emphasised runs and markers."
+        },
+        "accent": {
+          "$value": "{color.ramp.jungle.3}",
+          "$description": "Accent marks: dots, ticks and check marks."
+        },
+        "alert-ink": {
+          "$value": "{color.ramp.persimmon.3}",
+          "$description": "Text that warns: a risk, a lock-in, the thing to avoid."
+        },
+        "hairline": {
+          "$value": "{color.ramp.fog.7}",
+          "$description": "Rules, axes and dividers on the slide ground."
+        },
+        "card-hairline": {
+          "$value": "{color.ramp.fog.7}",
+          "$description": "A rule drawn on a card."
+        },
+        "track": {
+          "$value": "{color.ramp.jungle.7}",
+          "$description": "Bars and tracks of a timeline or chart."
+        },
+        "card": {
+          "$value": "{color.ramp.fog.8}",
+          "$description": "A neutral card or table cell."
+        },
+        "quiet-card": {
+          "$value": "{color.ramp.fog.8}",
+          "$description": "A neutral panel that takes the brand ground in the dark theme."
+        },
+        "mint-card": {
+          "$value": "{color.ramp.jungle.8}",
+          "$description": "A lightly tinted card."
+        },
+        "strong-card": {
+          "$value": "{color.ramp.jungle.7}",
+          "$description": "An emphasised card: the column or cell the slide argues for."
+        },
+        "alert-card": {
+          "$value": "{color.ramp.persimmon.8}",
+          "$description": "A card that warns."
+        },
+        "quiet-alert-card": {
+          "$value": "{color.ramp.persimmon.8}",
+          "$description": "A card that warns, quieter in the dark theme."
+        },
+        "alert-tint": {
+          "$value": "{color.ramp.persimmon.7}",
+          "$description": "A fill that warns: the bar or block to avoid."
+        },
+        "alt-surface": {
+          "$value": "{color.ramp.pine.8}",
+          "$description": "An alternative slide ground."
+        }
       }
     }
   },
@@ -497,6 +887,76 @@
         "edge": {
           "$value": "{color.ramp.fog.2}",
           "$description": "Hairlines and borders"
+        }
+      },
+      "role": {
+        "muted-ink": {
+          "$value": "{color.ramp.pine.7}",
+          "$description": "Captions, labels, axis years and descriptions: quieter than the text colour."
+        },
+        "secondary-ink": {
+          "$value": "{color.ramp.pine.7}",
+          "$description": "Secondary text on a card."
+        },
+        "strong-card-ink": {
+          "$value": "{color.brand.pine}",
+          "$description": "Secondary text on a strong card."
+        },
+        "accent-ink": {
+          "$value": "{color.ramp.jungle.4}",
+          "$description": "Accent text: subtitles, emphasised runs and markers."
+        },
+        "accent": {
+          "$value": "{color.ramp.pine.6}",
+          "$description": "Accent marks: dots, ticks and check marks."
+        },
+        "alert-ink": {
+          "$value": "{color.ramp.persimmon.5}",
+          "$description": "Text that warns: a risk, a lock-in, the thing to avoid."
+        },
+        "hairline": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "Rules, axes and dividers on the slide ground."
+        },
+        "card-hairline": {
+          "$value": "{color.brand.pine}",
+          "$description": "A rule drawn on a card."
+        },
+        "track": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "Bars and tracks of a timeline or chart."
+        },
+        "card": {
+          "$value": "{color.ramp.fog.1}",
+          "$description": "A neutral card or table cell."
+        },
+        "quiet-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A neutral panel that takes the brand ground in the dark theme."
+        },
+        "mint-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A lightly tinted card."
+        },
+        "strong-card": {
+          "$value": "{color.ramp.jungle.4}",
+          "$description": "An emphasised card: the column or cell the slide argues for."
+        },
+        "alert-card": {
+          "$value": "{color.ramp.fog.1}",
+          "$description": "A card that warns."
+        },
+        "quiet-alert-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A card that warns, quieter in the dark theme."
+        },
+        "alert-tint": {
+          "$value": "{color.ramp.persimmon.2}",
+          "$description": "A fill that warns: the bar or block to avoid."
+        },
+        "alt-surface": {
+          "$value": "{color.brand.pine}",
+          "$description": "An alternative slide ground."
         }
       }
     }

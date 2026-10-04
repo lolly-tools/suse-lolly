@@ -37,8 +37,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/tokens/brand.json",
-          "checksum": "sha256-hh/gtAIRMvjOzQjLFBpqC2HDAlF1GnyjHYslKbkckys=",
-          "size": 14975
+          "checksum": "sha256-a7hIAc7K0AUhXeGSt8lSj3RWJ/COM8EsWGKQlxN8gYY=",
+          "size": 29702
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -3287,8 +3287,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/palette/icon-themes.json",
-          "checksum": "sha256-UzdtucUYsiEN4TU4y4EQ5Fx9S0VgOzegDsOatLJDgiw=",
-          "size": 985
+          "checksum": "sha256-IHYMqPkaTbJB8VFdkql9S9TJEpWUSk8HCO3wVOySqQw=",
+          "size": 1273
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -3299,7 +3299,7 @@
       "name": "Photo Colour Treatments",
       "description": "Colour treatments for photo assets: greyscale + soft duotone washes.",
       "type": "palette",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tier": "on-demand",
       "tags": [
         "palette",
@@ -3309,8 +3309,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/palette/photo-treatments.json",
-          "checksum": "sha256-l8fClyVTVQHeiE3b7BBOKrbr6mX074SbJh31k/ZYoQs=",
-          "size": 1096
+          "checksum": "sha256-5rGnpYaxVr/uUw+1M7kcZ8tFElC2tERofVkHp7/diwM=",
+          "size": 1784
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -11344,7 +11344,7 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/slides/masters.json",
-          "checksum": "sha256-z2o4yyshv3TsVVxtNxVJI3XnXGNQiozOwxZKffSRn5g=",
+          "checksum": "sha256-hGdWAKa/JdkAdvXOa6bn+fSl5H3U9kdVS94ur7pWqzU=",
           "size": 121317
         }
       ]
