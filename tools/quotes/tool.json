@@ -2,7 +2,7 @@
   "id": "quotes",
   "name": "Quotes",
   "description": "On-brand quote cards for social posts and slides.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -117,7 +117,6 @@
       "type": "asset",
       "assetType": "raster",
       "allowUpload": true,
-      "filter": { "namespace": "suse/headshots" },
       "help": "Optional portrait photo. Upload your own or choose from the library."
     },
     {
