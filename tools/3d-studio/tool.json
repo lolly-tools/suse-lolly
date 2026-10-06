@@ -1,7 +1,7 @@
 {
   "id": "3d-studio",
   "name": "3D Studio",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "engineVersion": ">=1.205.0",
   "extends": "community",
   "status": "official",
@@ -22,7 +22,8 @@
     "materials",
     "product",
     "arrangement",
-    "scene"
+    "scene",
+    "3mf"
   ],
   "render": {
     "width": 1280,
@@ -192,6 +193,10 @@
         {
           "value": "stl",
           "label": "STL"
+        },
+        {
+          "value": "3mf",
+          "label": "3MF"
         }
       ],
       "showIf": {
@@ -510,6 +515,10 @@
             {
               "value": "stl",
               "label": "STL"
+            },
+            {
+              "value": "3mf",
+              "label": "3MF"
             }
           ],
           "showIf": {
@@ -732,7 +741,7 @@
       },
       "dropToAdd": {
         "field": "asset",
-        "accept": "image/svg+xml,model/*,application/octet-stream"
+        "accept": "image/svg+xml,model/*,application/octet-stream,.glb,.stl,.3mf"
       }
     },
     {
@@ -880,6 +889,10 @@
             {
               "value": "stl",
               "label": "STL"
+            },
+            {
+              "value": "3mf",
+              "label": "3MF"
             }
           ],
           "showIf": {
@@ -1015,7 +1028,7 @@
       },
       "dropToAdd": {
         "field": "asset",
-        "accept": "image/svg+xml,model/*,application/octet-stream"
+        "accept": "image/svg+xml,model/*,application/octet-stream,.glb,.stl,.3mf"
       }
     },
     {
