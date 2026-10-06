@@ -3,7 +3,7 @@
   "name": "Dynamic Layout",
   "description": "A do-anything layout that recomposes around whatever you add, at any size.",
   "a11yLabel": "{{default heading cta}} - Dynamic Layout preview",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
@@ -273,7 +273,6 @@
       "type": "asset",
       "assetType": "raster",
       "allowUpload": true,
-      "filter": { "namespace": "suse/headshots" },
       "help": "Optional portrait. When set, it anchors its own colour block beside the text."
     },
     {

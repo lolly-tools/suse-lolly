@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-06T13:24:22.517Z",
+  "generatedAt": "2026-10-06T22:09:34.725Z",
   "tools": [
     {
       "id": "color-block",
@@ -189,7 +189,7 @@
       "id": "dynamic-layout",
       "name": "Dynamic Layout",
       "description": "A do-anything layout that recomposes around whatever you add, at any size.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -343,7 +343,7 @@
       "id": "quotes",
       "name": "Quotes",
       "description": "On-brand quote cards for social posts and slides.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -1266,7 +1266,7 @@
       "id": "email-signature",
       "name": "Email Signature",
       "description": "An on-brand SUSE email signature, ready to paste into any client.",
-      "version": "1.9.1",
+      "version": "1.9.2",
       "status": "official",
       "category": "everyone",
       "tags": [

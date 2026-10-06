@@ -5,11 +5,16 @@ MPL-2.0 license does **not** apply uniformly here.
 
 ## 1. `catalog/assets/` - proprietary
 
-SUSE brand assets and trademarks (logos, headshots, brand palettes/tokens).
+SUSE brand assets and trademarks (logos, icons, brand palettes/tokens).
 **Proprietary to SUSE - all rights reserved.** NOT licensed under MPL-2.0.
 This private repository is the home the open-sourcing plan reserved for them
 (see the `lolly` monorepo's `README.md` "Open-sourcing plan" and
 `SOVEREIGNTY.md`).
+
+Photos, campaign images, executive portraits, backgrounds and illustrations
+were removed from the bundled catalog on 2026-10-06. The configured Brandfolder
+connector supplies those assets under their own source records and terms.
+Logos and dynamic icons remain in this pack.
 
 **`catalog/assets/suse/music/` (removed 2026-08-29):** the PremiumBeat
 (Shutterstock) stock-music tracks that used to live here have been deleted from

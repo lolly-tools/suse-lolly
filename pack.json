@@ -1,8 +1,8 @@
 {
-  "$comment": "Instance-pack recipe (plans/131 WP-D) - what leaves the building when scripts/build-instance-pack.ts cuts the distributable suse-brand .lolly file. The BRAND owns this list. Families are asset-id prefixes, not path globs, so a future asset in an excluded family stays excluded. Every asset id in catalog/assets/index.json must match exactly one of the two lists - the build fails on an unclassified family rather than guessing. Tool-local assets named in reuseCommunityToolAssets stay out of the pack only while their SUSE and community copies are byte-identical; the configured instance supplies them. The excluded media (photos, campaign, headshots, PremiumBeat music) stays on Brandfolder / the future id.suse.com instance; the build script additionally hard-refuses audio in any included family (the PremiumBeat rule is load-bearing, see the licence NOTICE).",
+  "$comment": "Instance-pack recipe: asset families are permanent id prefixes, classified once as included or excluded. Brandfolder supplies photos, campaign images, executive portraits, backgrounds and illustrations; those families are excluded from the bundled catalog. Logos, dynamic icons, tokens, palettes and other design-system essentials stay bundled. The builder refuses audio in included families and checks the pack size budget. Community-shared tool assets are omitted only after byte equality is verified.",
   "name": "SUSE Brand",
   "publisher": "SUSE",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "instance": "https://lolly.tools",
   "tokensAsset": "suse/tokens/brand",
   "fonts": {
@@ -29,16 +29,17 @@
     "suse/logo/",
     "suse/icons/",
     "suse/lottie/",
-    "suse/backgrounds/",
-    "suse/illustrations/",
     "suse/demo/",
-    "suse/model/", "suse/slides/"
+    "suse/model/",
+    "suse/slides/"
   ],
   "excludeAssetFamilies": [
     "suse/photos/",
     "suse/campaign/",
     "suse/headshots/",
-    "lolly/"
+    "lolly/",
+    "suse/backgrounds/",
+    "suse/illustrations/"
   ],
   "reuseCommunityToolAssets": [
     "3d/assets/cat.glb",
