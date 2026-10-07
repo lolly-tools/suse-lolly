@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-06T22:09:34.725Z",
+  "generatedAt": "2026-10-07T12:40:56.909Z",
   "tools": [
     {
       "id": "color-block",
@@ -4241,8 +4241,8 @@
     {
       "id": "pose-geeko",
       "name": "Pose Geeko",
-      "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
-      "version": "0.1.1",
+      "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs - as a print-ready still, or bring it to life as a looping scene where it looks around, blinks and sways on its branch.",
+      "version": "0.2.0",
       "status": "official",
       "category": "designer",
       "new": true,
@@ -4267,7 +4267,10 @@
         "tiff",
         "emf",
         "eps",
-        "pdf-cmyk"
+        "pdf-cmyk",
+        "gif",
+        "mp4",
+        "webm"
       ],
       "width": 800,
       "height": 800,
@@ -4276,7 +4279,7 @@
       "preview": "/tools/pose-geeko/card.svg",
       "featured": {
         "order": 2,
-        "blurb": "Pose the SUSE Geeko - print-ready stills",
+        "blurb": "Pose the SUSE Geeko - print-ready stills or a living loop",
         "variants": [
           {
             "label": "Curious climb · transparent",
@@ -4358,6 +4361,23 @@
                 "scale": 1,
                 "x": 0,
                 "y": 0
+              }
+            }
+          },
+          {
+            "label": "Alive loop · on pine",
+            "values": {
+              "pose": "curious",
+              "motion": "alive",
+              "loop": 8,
+              "energy": 60,
+              "eyeX": 10,
+              "eyeY": -5,
+              "bg": "pine",
+              "geeko": {
+                "scale": 1.04,
+                "x": -3,
+                "y": 4
               }
             }
           }
@@ -7915,7 +7935,7 @@
       "id": "design",
       "name": "Design",
       "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your design system.",
-      "version": "1.42.0",
+      "version": "1.43.0",
       "status": "community",
       "category": "designer",
       "tags": [
