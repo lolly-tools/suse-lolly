@@ -4197,6 +4197,186 @@
       "sparse": false
     },
     {
+      "file": "susecon-background.look0.svg",
+      "bytes": 18370,
+      "sha": "441fd43dda6c36bb",
+      "stddev": 53.305,
+      "inkRatio": 0.87549,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 53.305,
+          "inkRatio": 0.87549
+        },
+        "black": {
+          "stddev": 53.305,
+          "inkRatio": 0.87549
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look1.svg",
+      "bytes": 18442,
+      "sha": "fe3742508ebfab05",
+      "stddev": 58.753,
+      "inkRatio": 0.89855,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 58.753,
+          "inkRatio": 0.89855
+        },
+        "black": {
+          "stddev": 58.753,
+          "inkRatio": 0.89855
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look2.svg",
+      "bytes": 36994,
+      "sha": "eda216ad39a4bad4",
+      "stddev": 43.96,
+      "inkRatio": 0.8699,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 43.96,
+          "inkRatio": 0.8699
+        },
+        "black": {
+          "stddev": 43.96,
+          "inkRatio": 0.8699
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look3.svg",
+      "bytes": 28322,
+      "sha": "dc32b7d792020860",
+      "stddev": 39.598,
+      "inkRatio": 0.87907,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 39.598,
+          "inkRatio": 0.87907
+        },
+        "black": {
+          "stddev": 39.598,
+          "inkRatio": 0.87907
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look4.svg",
+      "bytes": 16161,
+      "sha": "eb392e7c7888be65",
+      "stddev": 55.54,
+      "inkRatio": 0.84147,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 55.54,
+          "inkRatio": 0.84147
+        },
+        "black": {
+          "stddev": 55.54,
+          "inkRatio": 0.84147
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look5.svg",
+      "bytes": 18786,
+      "sha": "442db5c4d64b697a",
+      "stddev": 53.825,
+      "inkRatio": 0.85664,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 53.825,
+          "inkRatio": 0.85664
+        },
+        "black": {
+          "stddev": 53.825,
+          "inkRatio": 0.85664
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look6.svg",
+      "bytes": 18670,
+      "sha": "8f554b6e9002a71a",
+      "stddev": 58.373,
+      "inkRatio": 0.89686,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 58.373,
+          "inkRatio": 0.89686
+        },
+        "black": {
+          "stddev": 58.373,
+          "inkRatio": 0.89686
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.look7.svg",
+      "bytes": 18278,
+      "sha": "6255f85601c65683",
+      "stddev": 52.977,
+      "inkRatio": 0.87446,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 52.977,
+          "inkRatio": 0.87446
+        },
+        "black": {
+          "stddev": 52.977,
+          "inkRatio": 0.87446
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "susecon-background.svg",
+      "bytes": 19082,
+      "sha": "4045721fe64ef0b1",
+      "stddev": 56.76,
+      "inkRatio": 0.92277,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 56.76,
+          "inkRatio": 0.92277
+        },
+        "black": {
+          "stddev": 56.76,
+          "inkRatio": 0.92277
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
       "file": "synth.look0.svg",
       "bytes": 21937,
       "sha": "83c4b38941113aa2",

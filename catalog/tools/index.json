@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-07T12:40:56.909Z",
+  "generatedAt": "2026-10-07T23:48:30.700Z",
   "tools": [
     {
       "id": "color-block",
@@ -16381,6 +16381,140 @@
           "description": "Turn SVG artwork and 3D models into coordinated images, alone or arranged together in one scene. Shape materials, lighting, focus and transparent shadows with guided or expert controls."
         }
       }
+    },
+    {
+      "id": "susecon-background",
+      "name": "SUSECON Background",
+      "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or seamless loops.",
+      "version": "1.0.0",
+      "status": "official",
+      "category": "everyone",
+      "tags": [
+        "susecon",
+        "event",
+        "background",
+        "backdrop",
+        "wallpaper",
+        "animated",
+        "loop",
+        "brand"
+      ],
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "avif",
+        "webm",
+        "mp4",
+        "gif",
+        "tiff",
+        "webp-anim"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"7\" /><path d=\"M4.6 9.2C6 5.3 10.4 3.4 14.6 4.4\" /><path d=\"M5.2 15.6c1.9 3.5 6.3 5 10.2 3.4\" /><path d=\"M19.4 8.6c.9 2 .9 4.3 0 6.3\" /></svg>",
+      "preview": "/catalog/previews/susecon-background.svg",
+      "examples": [
+        {
+          "label": "Jungle glass",
+          "values": {
+            "look": "glass",
+            "colourway": "jungle"
+          }
+        },
+        {
+          "label": "Amethyst glass",
+          "values": {
+            "look": "glass",
+            "colourway": "amethyst"
+          }
+        },
+        {
+          "label": "Fibres meet glass",
+          "values": {
+            "look": "split",
+            "colourway": "jungle"
+          }
+        },
+        {
+          "label": "Cloud dome",
+          "values": {
+            "look": "cloud",
+            "colourway": "jungle"
+          }
+        },
+        {
+          "label": "Horizon",
+          "values": {
+            "look": "horizon",
+            "colourway": "jungle"
+          }
+        },
+        {
+          "label": "Orbiting light",
+          "values": {
+            "look": "glass",
+            "colourway": "persimmon",
+            "lightMotion": "orbit",
+            "lightSpeed": 1
+          }
+        },
+        {
+          "label": "Live set",
+          "values": {
+            "look": "glass",
+            "colourway": "amethyst",
+            "energy": 85,
+            "speed": 4
+          }
+        },
+        {
+          "label": "Four scenes",
+          "values": {
+            "look": "glass",
+            "colourway": "jungle",
+            "scenes": [
+              {
+                "look": "glass",
+                "colourway": "same",
+                "framing": "full",
+                "hold": 3,
+                "transition": 2.5,
+                "style": "morph",
+                "energy": 10
+              },
+              {
+                "look": "glass",
+                "colourway": "same",
+                "framing": "full",
+                "hold": 3,
+                "transition": 2,
+                "style": "morph",
+                "energy": 90
+              },
+              {
+                "look": "horizon",
+                "colourway": "same",
+                "framing": "full",
+                "hold": 3,
+                "transition": 1.5,
+                "style": "wipe",
+                "energy": 40
+              },
+              {
+                "look": "cloud",
+                "colourway": "waterhole",
+                "framing": "full",
+                "hold": 3,
+                "transition": 2.5,
+                "style": "morph",
+                "energy": 20
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
