@@ -3175,7 +3175,7 @@
     {
       "file": "pose-geeko.look1.svg",
       "bytes": 17617,
-      "sha": "510f2c3ce9f7b3bc",
+      "sha": "c9815bae6dce36f4",
       "stddev": 48.809,
       "inkRatio": 0.20161,
       "ground": "white",
@@ -3194,8 +3194,8 @@
     },
     {
       "file": "pose-geeko.look2.svg",
-      "bytes": 12593,
-      "sha": "bece3f4dc6c1b6fa",
+      "bytes": 12642,
+      "sha": "0e6ac079f134bb4f",
       "stddev": 73.396,
       "inkRatio": 0.2585,
       "ground": "white",
@@ -3215,7 +3215,7 @@
     {
       "file": "pose-geeko.look3.svg",
       "bytes": 23053,
-      "sha": "427fd93e963df356",
+      "sha": "3581593926461f68",
       "stddev": 51.372,
       "inkRatio": 0.08954,
       "ground": "white",
@@ -3235,7 +3235,7 @@
     {
       "file": "pose-geeko.look4.svg",
       "bytes": 17269,
-      "sha": "d7a214a903ca22a8",
+      "sha": "e0ee9d8287caf330",
       "stddev": 81.819,
       "inkRatio": 0.24924,
       "ground": "white",
@@ -3247,6 +3247,26 @@
         "black": {
           "stddev": 72.556,
           "inkRatio": 0.21109
+        }
+      },
+      "blank": false,
+      "sparse": false
+    },
+    {
+      "file": "pose-geeko.look5.svg",
+      "bytes": 41448,
+      "sha": "170ab302964b1239",
+      "stddev": 33.72,
+      "inkRatio": 0.25963,
+      "ground": "white",
+      "grounds": {
+        "white": {
+          "stddev": 33.72,
+          "inkRatio": 0.25963
+        },
+        "black": {
+          "stddev": 33.72,
+          "inkRatio": 0.25963
         }
       },
       "blank": false,
@@ -4340,16 +4360,16 @@
       "file": "timezone.look2.svg",
       "bytes": 22781,
       "sha": "9d6d2bb4ebf907ca",
-      "stddev": 24.54,
+      "stddev": 24.539,
       "inkRatio": 0.67635,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 24.54,
+          "stddev": 24.539,
           "inkRatio": 0.67635
         },
         "black": {
-          "stddev": 24.54,
+          "stddev": 24.539,
           "inkRatio": 0.67635
         }
       },
@@ -4400,17 +4420,17 @@
       "file": "tool-logo.svg",
       "bytes": 12674,
       "sha": "56b4b4bb1d6753b6",
-      "stddev": 61.86,
-      "inkRatio": 0.23985,
+      "stddev": 61.862,
+      "inkRatio": 0.23984,
       "ground": "white",
       "grounds": {
         "white": {
-          "stddev": 61.86,
-          "inkRatio": 0.23985
+          "stddev": 61.862,
+          "inkRatio": 0.23984
         },
         "black": {
-          "stddev": 61.86,
-          "inkRatio": 0.23985
+          "stddev": 61.862,
+          "inkRatio": 0.23984
         }
       },
       "blank": false,

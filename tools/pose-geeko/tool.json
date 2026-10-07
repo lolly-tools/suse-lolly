@@ -1,8 +1,8 @@
 {
   "id": "pose-geeko",
   "name": "Pose Geeko",
-  "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs. No animation, just a still you can dial in and export print-ready.",
-  "version": "0.1.1",
+  "description": "Pose the SUSE Geeko with sliders - eyes, blink and limbs - as a print-ready still, or bring it to life as a looping scene where it looks around, blinks and sways on its branch.",
+  "version": "0.2.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
@@ -12,12 +12,13 @@
   "render": {
     "width": 800,
     "height": 800,
-    "formats": ["svg", "penpot", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg", "tiff", "emf", "eps", "pdf-cmyk"],
+    "formats": ["svg", "penpot", "png", "webp", "avif", "pdf", "dxf", "cmyk-tiff", "jpg", "tiff", "emf", "eps", "pdf-cmyk", "gif", "mp4", "webm"],
+    "video": { "wait": 0, "duration": 8 },
     "actions": ["download", "copy", "save"]
   },
   "featured": {
     "order": 2,
-    "blurb": "Pose the SUSE Geeko - print-ready stills",
+    "blurb": "Pose the SUSE Geeko - print-ready stills or a living loop",
     "variants": [
       {
         "label": "Curious climb · transparent",
@@ -80,6 +81,19 @@
           "blink": 0,
           "bg": "transparent",
           "geeko": { "scale": 1, "x": 0, "y": 0 }
+        }
+      },
+      {
+        "label": "Alive loop · on pine",
+        "values": {
+          "pose": "curious",
+          "motion": "alive",
+          "loop": 8,
+          "energy": 60,
+          "eyeX": 10,
+          "eyeY": -5,
+          "bg": "pine",
+          "geeko": { "scale": 1.04, "x": -3, "y": 4 }
         }
       }
     ]
@@ -226,12 +240,51 @@
       "default": false
     },
     {
+      "id": "motion",
+      "label": "Motion",
+      "type": "select",
+      "section": "Motion",
+      "default": "still",
+      "help": "Alive plays a loop on top of your pose: the Geeko looks around, blinks and breathes, and its branch and leaves sway. Still and print exports keep the pose exactly; an SVG export, a video and a Design box carry the loop.",
+      "options": [
+        { "value": "still", "label": "Still" },
+        { "value": "alive", "label": "Alive (looping)" }
+      ]
+    },
+    {
+      "id": "loop",
+      "label": "Loop length",
+      "type": "number",
+      "display": "slider",
+      "section": "Motion",
+      "help": "Seconds for one full cycle. The loop ends exactly where it began, so a video of this length, or any multiple of that length, repeats without a jump.",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 8,
+      "showIf": { "motion": "alive" }
+    },
+    {
+      "id": "energy",
+      "label": "Liveliness",
+      "type": "number",
+      "display": "slider",
+      "section": "Motion",
+      "help": "How much everything moves, from a calm glance to a lively look-around on a windy branch.",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60,
+      "showIf": { "motion": "alive" }
+    },
+    {
       "id": "idle",
       "label": "Idle motion",
-      "help": "A gentle breathing loop on screen. Turn off for a dead-still pose. Never affects the exported still (SVG/PNG/WebP/AVIF/PDF/TIFF/JPG snapshot one frame).",
+      "help": "A gentle on-screen breath for the still pose. Turn off for a dead-still preview. Never part of an export.",
       "type": "boolean",
-      "section": "Geeko options",
-      "default": true
+      "section": "Motion",
+      "default": true,
+      "showIf": { "motion": "still" }
     },
     {
       "id": "bg",
