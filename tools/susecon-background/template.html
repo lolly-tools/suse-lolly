@@ -1,0 +1,58 @@
+<div class="sb-wrap">
+  {{{svgContent}}}
+</div>
+<script>
+  (function () {
+    'use strict';
+    /* SUSECON background canvas script. lib/orb.js (loaded once per page from
+       this tool's own lib/ dir) owns the WebGL2 pass, the live loop and the
+       deterministic export clock; this script finds the host, reads the
+       config the hooks wrote and mounts. Without WebGL2 the wash stays. */
+    var cs = document.currentScript;
+    var wrap = cs && cs.previousElementSibling && cs.previousElementSibling.classList
+      && cs.previousElementSibling.classList.contains('sb-wrap')
+      ? cs.previousElementSibling
+      : null;
+    if (!wrap) {
+      var wraps = document.querySelectorAll('.sb-wrap');
+      wrap = wraps[wraps.length - 1];
+    }
+    if (!wrap) return;
+    var host = wrap.querySelector('.sb-host');
+    if (!host || host.dataset.sbWired) return;
+    host.dataset.sbWired = '1';
+    var cfg;
+    try { cfg = JSON.parse(host.getAttribute('data-sb') || '{}'); } catch (e) { return; }
+    if (!cfg || !cfg.base) return;
+    var canvasRoot = wrap.closest('[data-lolly-canvas]');
+    var store = canvasRoot || wrap;
+
+    var calm = false;
+    try {
+      calm = (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches)
+        || document.documentElement.getAttribute('data-a11y-motion') === 'reduce';
+    } catch (e) { /* jsdom */ }
+
+    function init() {
+      var lib = window.SuseconOrb;
+      if (!lib || !document.contains(host)) return;
+      var prev = store.__sbMount;
+      if (prev) { try { prev.dispose(); } catch (e) { /* replaced DOM */ } store.__sbMount = null; }
+      try {
+        store.__sbMount = lib.mount(host, cfg, { calm: calm });
+      } catch (e) {
+        if (window.console) console.warn('[susecon-background] WebGL2 mount failed', e);
+      }
+    }
+
+    if (window.SuseconOrb) { init(); return; }
+    var tag = document.getElementById('sb-lib');
+    if (!tag) {
+      tag = document.createElement('script');
+      tag.id = 'sb-lib';
+      tag.src = '/tools/susecon-background/lib/orb.js';
+      document.head.appendChild(tag);
+    }
+    tag.addEventListener('load', function () { init(); });
+  })();
+</script>
