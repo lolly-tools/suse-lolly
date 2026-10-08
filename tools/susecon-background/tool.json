@@ -1,9 +1,9 @@
 {
   "id": "susecon-background",
   "name": "SUSECON Background",
-  "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or seamless loops.",
+  "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or loops without a visible join.",
   "a11yLabel": "Animated SUSECON {{look}} background",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engineVersion": "^1.0.0",
   "status": "official",
   "singleInstance": true,
@@ -202,7 +202,7 @@
           "label": "Low close-up"
         }
       ],
-      "help": "Where the camera sits. The close-ups crop into the orb's edge, where the hairlines and hot spots are."
+      "help": "Camera position. The close-ups crop into the orb's edge, where the hairlines and hot spots are."
     },
     {
       "id": "placement",
@@ -333,7 +333,7 @@
           "seeds"
         ]
       },
-      "help": "The orb's light. Hot cores and hairlines are derived from it."
+      "help": "The orb's light. Hot cores and hairlines use that light colour."
     },
     {
       "id": "seedAccent",
@@ -455,7 +455,7 @@
       "min": 1,
       "max": 8,
       "step": 1,
-      "help": "How fast everything moves. Whole steps keep every export a seamless loop."
+      "help": "How fast everything moves. Whole steps keep every exported loop joined."
     },
     {
       "id": "lightMotion",
@@ -497,7 +497,7 @@
       "min": 1,
       "max": 6,
       "step": 1,
-      "help": "Whole turns or swings per loop, so the light always lands back where it started."
+      "help": "Whole turns or swings per loop, so the light returns to its starting position."
     },
     {
       "id": "lightSwing",
@@ -547,7 +547,7 @@
       "max": 180,
       "step": 1,
       "unit": "bpm",
-      "help": "Tempo of the simulated beat that drives the energy kicks. It is rounded to a whole number of beats per loop so the loop stays seamless."
+      "help": "Tempo of the simulated beat that drives the energy kicks. It is rounded to a whole number of beats per loop so the loop has no visible join."
     },
     {
       "id": "loop",
@@ -559,7 +559,7 @@
       "max": 120,
       "step": 1,
       "unit": "s",
-      "help": "Seconds for one seamless loop when there are no scenes. With scenes, the loop is the sum of their hold and transition times. Exports default to one loop."
+      "help": "Seconds for one complete loop when there are no scenes. With scenes, the loop is the sum of their hold and transition times. Exports default to one loop."
     },
     {
       "id": "phase",
@@ -578,7 +578,7 @@
       "label": "Scenes",
       "section": "Motion",
       "type": "blocks",
-      "help": "Add two or more scenes to move between looks. Each scene holds, then transitions to the next; the last one returns to the first, so the loop is seamless. Raise a scene's energy to have the orb come alive there.",
+      "help": "Add two or more scenes to move between looks. Each scene holds, then transitions to the next; the last one returns to the first, so the loop has no visible join. Raise a scene's energy to have the orb come alive there.",
       "fields": [
         {
           "id": "look",

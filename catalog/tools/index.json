@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-08T09:28:25.011Z",
+  "generatedAt": "2026-10-08T20:06:01.291Z",
   "tools": [
     {
       "id": "color-block",
@@ -7935,7 +7935,7 @@
       "id": "design",
       "name": "Design",
       "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your design system.",
-      "version": "1.44.0",
+      "version": "1.45.0",
       "status": "community",
       "category": "designer",
       "tags": [
@@ -14122,7 +14122,7 @@
       "id": "sandbox",
       "name": "Sandbox",
       "description": "Paste HTML, CSS, JS - or a JSX/TypeScript component - and watch it run in a private, offline sandbox. Perfect for previewing code from an AI assistant.",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "status": "official",
       "category": "utility",
       "tags": [
@@ -16492,8 +16492,8 @@
     {
       "id": "susecon-background",
       "name": "SUSECON Background",
-      "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or seamless loops.",
-      "version": "1.0.0",
+      "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or loops without a visible join.",
+      "version": "1.0.1",
       "status": "official",
       "category": "everyone",
       "tags": [
