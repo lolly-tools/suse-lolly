@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-11T13:36:31.611Z",
+  "generatedAt": "2026-10-11T13:39:34.178Z",
   "tools": [
     {
       "id": "color-block",
@@ -1914,8 +1914,8 @@
     {
       "id": "strip-data",
       "name": "Strip Hidden Data",
-      "description": "Reveal and remove hidden metadata from images and PDFs - on your device.",
-      "version": "1.0.1",
+      "description": "Inspect Office hidden content, or remove image and PDF metadata, on your device.",
+      "version": "1.1.0",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -1934,6 +1934,10 @@
         "vector",
         "pdf",
         "document",
+        "office",
+        "docx",
+        "pptx",
+        "xlsx",
         "inkscape",
         "illustrator"
       ],
