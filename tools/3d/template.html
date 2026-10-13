@@ -64,6 +64,8 @@
     if (have) return Promise.resolve(have);
     window.__lolly3dLoading = window.__lolly3dLoading || new Promise(function (res, rej) {
       var s = document.createElement('script');
+      s.integrity = 'sha384-21WPwDNoS+QGguN++JM3kv3MkvM99xqdPUUts1SnnerlX3ozPqYyrV0ocFHQFt/X';
+      s.crossOrigin = 'anonymous';
       s.src = LIB;
       s.onload = function () { res(loaded()); };
       s.onerror = function () { s.remove(); window.__lolly3dLoading = null; rej(new Error('three load failed')); };

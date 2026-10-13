@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-13T16:09:20.896Z",
+  "generatedAt": "2026-10-13T17:00:22.928Z",
   "tools": [
     {
       "id": "color-block",
@@ -5528,7 +5528,7 @@
       "id": "3d",
       "name": "3D",
       "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
-      "version": "1.3.1",
+      "version": "1.3.2",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -16497,7 +16497,7 @@
       "id": "susecon-background",
       "name": "SUSECON Background",
       "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or loops without a visible join.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "status": "official",
       "category": "everyone",
       "tags": [

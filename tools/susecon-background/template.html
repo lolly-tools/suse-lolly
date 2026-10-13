@@ -47,12 +47,21 @@
 
     if (window.SuseconOrb) { init(); return; }
     var tag = document.getElementById('sb-lib');
+    var append = !tag;
     if (!tag) {
       tag = document.createElement('script');
       tag.id = 'sb-lib';
+      tag.integrity = 'sha384-NxkB7DEciCUGoT1oQTHLc4nMisnY1bRrXvSPTT0NR/YO1fcMRQ2PLFFwSRykdevg';
+      tag.crossOrigin = 'anonymous';
       tag.src = '/tools/susecon-background/lib/orb.js';
-      document.head.appendChild(tag);
     }
+    tag.addEventListener('error', function () {
+      tag.remove();
+      if (!document.contains(host)) return;
+      store.setAttribute('data-export-error', 'Background library failed to load.');
+      document.dispatchEvent(new CustomEvent('tool:failed', { detail: { message: 'Background library failed to load.' } }));
+    });
     tag.addEventListener('load', function () { init(); });
+    if (append) document.head.appendChild(tag);
   })();
 </script>
