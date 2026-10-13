@@ -3,8 +3,8 @@
   "name": "Top & Tail Video",
   "description": "Record a clip in any orientation, then auto-wrap it with branded intro and outro bookends, a lower-third, and a music bed.",
   "a11yLabel": "Top and tail video - {{default introTitle \"intro\"}} to {{default outroTitle \"outro\"}}",
-  "version": "1.2.2",
-  "engineVersion": ">=1.150.0 <2.0.0",
+  "version": "1.2.3",
+  "engineVersion": ">=1.261.0 <2.0.0",
   "deprecated": true,
   "replacedBy": "record",
   "listed": false,
@@ -192,6 +192,7 @@
     },
     {
       "id": "transcript",
+      "sharePrivacy": "personal",
       "section": "Subtitles",
       "label": "Transcript",
       "type": "longtext",
