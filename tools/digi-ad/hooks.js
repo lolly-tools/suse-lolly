@@ -93,6 +93,9 @@ async function inlineAsset(url) {
   try {
     var resp = await fetch(url);
     var blob = await resp.blob();
+    var mime = blob.type.split(';')[0].trim().toLowerCase();
+    if (!/^image\/(?:png|jpeg|gif|webp|svg\+xml|avif|bmp|x-icon)$/.test(mime)) return '';
+    blob = new Blob([blob], { type: mime });
     var data = await new Promise(function (res, rej) {
       var fr = new FileReader();
       fr.onload = function () { res(fr.result); };
@@ -245,7 +248,7 @@ async function compute(model) {
 
     var styleParts = ['--bg:' + bg, '--fg:' + fg, 'background-color:' + (transparentBg ? 'transparent' : bg), 'color:' + fg];
     if (imgUrl) {
-      styleParts.push('background-image:url(' + imgUrl + ')');
+      styleParts.push('background-image:url("' + imgUrl + '")');
       styleParts.push('background-position:' + (FOCUS_POS[sc.imageFocus] || 'center'));
     }
     // Text over a photo needs a contrast scrim, toned to the chosen ink polarity.
