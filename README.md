@@ -26,6 +26,18 @@ catalog/   # assets/suse/** (incl. tokens/brand.json), fonts/, previews/, og/, t
 - `catalog/assets/suse/music/` (the PremiumBeat stock-music tracks) was removed
   on 2026-08-29 - no PremiumBeat-licensed audio ships anywhere (see `catalog/NOTICE.md`).
 
+The asset index supplies no brand-specific trusted-site defaults. Configure
+reviewed hosts through the organisation's site policy, or let each person approve
+a site when asked. These entries control consent prompts; they do not expand the
+application's Content-Security-Policy or authorise connector network requests.
+
+Older profiles may already contain the former brand defaults as personal entries.
+The stored list has no provenance that distinguishes those entries from deliberate
+personal choices. Review and remove unwanted entries in the profile, or configure
+an organisation `allowlist-only` policy to ignore personal entries. For a governed
+deployment, use individually approved hosts and disable inherited brand defaults;
+configure connector origins separately in the application build and web headers.
+
 Split out of the public
 [`lolly-suse-tools`](https://github.com/lolly-tools/lolly-suse-tools) +
 [`lolly-suse-catalog`](https://github.com/lolly-tools/lolly-suse-catalog)
