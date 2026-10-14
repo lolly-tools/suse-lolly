@@ -81,6 +81,12 @@ function variantFor(polarity, treatment) {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function fmt(n) { return Math.round(n * 100) / 100; }
+function backgroundColour(value) {
+  if (typeof value !== 'string') return 'transparent';
+  const colour = value.trim();
+  const paint = /^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$|^(?:rgb|rgba|hsl|hsla)\([0-9.,%\s/+-]+\)$|^(?:transparent|black|white|currentcolor)$/i;
+  return paint.test(colour) ? colour : 'transparent';
+}
 function placed(d, fill, dx, dy) {
   return `<path fill="${fill}" d="${d}" transform="translate(${fmt(dx)},${fmt(dy)})"/>`;
 }
@@ -355,7 +361,7 @@ function readModel(model) {
     layout:     layoutFor(v.orientation || 'horizontal', category),
     variant:    variantFor(polarity, treatment),
     wrapMode:   v.wrapMode || 'compact',
-    background: v.background || 'transparent',
+    background: backgroundColour(v.background),
     size:       v.size || 'fit',
     category,
   };

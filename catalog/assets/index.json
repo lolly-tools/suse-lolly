@@ -14,11 +14,7 @@
     "digi-ad"
   ],
   "defaultHiddenTemplates": [],
-  "defaultTrustedSites": [
-    "*.suse.com",
-    "*.suse.de",
-    "*.suse.cz"
-  ],
+  "defaultTrustedSites": [],
   "assets": [
     {
       "id": "suse/tokens/brand",
