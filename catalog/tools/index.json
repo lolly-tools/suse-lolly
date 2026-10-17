@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-17T18:47:12.842Z",
+  "generatedAt": "2026-10-17T19:16:59.136Z",
   "tools": [
     {
       "id": "color-block",
@@ -7939,7 +7939,7 @@
       "id": "design",
       "name": "Design",
       "description": "An open canvas for free arrangement - text, images, shapes and live renders from your other Lolly tools, all held to your design system.",
-      "version": "1.50.1",
+      "version": "1.51.0",
       "status": "community",
       "category": "designer",
       "tags": [
