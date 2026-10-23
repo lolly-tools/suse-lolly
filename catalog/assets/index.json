@@ -5914,8 +5914,8 @@
         {
           "format": "md",
           "url": "/catalog/assets/suse/skills/brand/SKILL.md",
-          "checksum": "sha256-PLACEHOLDER",
-          "size": 0
+          "checksum": "sha256-lOUNYrtKZ+b8HT8Tm4UnWCdaXff4X6oiF9j1pusfp2Q=",
+          "size": 10992
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -5930,7 +5930,8 @@
           "owner": "SUSE Brand team",
           "revisionNote": "Two spelling fixes approved by the brand owner: \"bacground\" is now \"background\" and \"Watehole\" is now \"Waterhole\". The text is otherwise the brand team's version 1 as supplied."
         }
-      }
+      },
+      "added": "2026-10-23"
     },
     {
       "id": "suse/skill/production-notes",
@@ -5948,8 +5949,8 @@
         {
           "format": "md",
           "url": "/catalog/assets/suse/skills/production-notes/SKILL.md",
-          "checksum": "sha256-PLACEHOLDER",
-          "size": 0
+          "checksum": "sha256-d7K8wEV3cbBof+shI1yFCHLTSCk4T4Y2VYNE8Bg12I4=",
+          "size": 20574
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -5964,7 +5965,8 @@
           "maintainer": "lolly",
           "revisionNote": "Moved into the SUSE catalog as a brand skill. The three Lolly app conventions (Escape closes overlays, never fight browser defaults, Lolly code reads tokens) moved to Lolly's own guidance."
         }
-      }
+      },
+      "added": "2026-08-24"
     },
     {
       "id": "suse/skill/iconography",
@@ -5983,8 +5985,8 @@
         {
           "format": "md",
           "url": "/catalog/assets/suse/skills/iconography/SKILL.md",
-          "checksum": "sha256-PLACEHOLDER",
-          "size": 0
+          "checksum": "sha256-HIeFXD9v7WXWqnyPnpQJCCr7+8Y61iPJGQCBFDT/SQA=",
+          "size": 15329
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -6003,7 +6005,8 @@
             ]
           }
         }
-      }
+      },
+      "added": "2026-09-30"
     }
   ]
 }
