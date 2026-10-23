@@ -4,7 +4,7 @@ Version 1.1, 29 September 2026. A working specification inferred from the stored
 
 ## Authority and scope
 
-Use the actual vectors in [catalog/assets/suse/icons](catalog/assets/suse/icons/) as the primary geometry reference. Use [icon-themes.json](catalog/assets/suse/palette/icon-themes.json) for the two color roles and [suse-brand-skill.md](suse-brand-skill.md) for wider brand guidance. The supplied guideline screenshots are supporting explanations. Their orange annotation circles are not artwork and must never be reproduced as decoration.
+Use the actual vectors in the `suse/icons/` asset family as the primary geometry reference. Use the [icon themes](suse/palette/icon-themes) for the two color roles, and the SUSE brand standards (`suse-brand`) and production notes (`suse-production-notes`) for wider brand guidance. The supplied guideline screenshots are supporting explanations. Their orange annotation circles are not artwork and must never be reproduced as decoration.
 
 The baseline inspected before the approved additions contained 122 SVGs: 112 square icon compositions and 10 wide `infinity-stream-*` patterns. The patterns are outside this specification's pictorial scope. Of the square compositions, 91 use `viewBox="0 0 40 40"`; the others use different coordinate scales. Compare those at equivalent rendered size before measuring line weight. Across all 122 files, 22 contain exactly two paths, the median is four paths and the range is two to nineteen. Two paths is an economical delivery target, not the historical definition of the style.
 

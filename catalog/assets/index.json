@@ -5896,6 +5896,114 @@
       ],
       "license": "LicenseRef-SUSE-Proprietary",
       "aiGenerated": "full"
+    },
+    {
+      "id": "suse/skill/brand",
+      "name": "SUSE brand standards",
+      "description": "The SUSE brand team's official brand standards for generative AI work: company position, boilerplate and tagline, logo use, colour, typography and capitalisation.",
+      "type": "skill",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "skill",
+        "brand",
+        "guidelines",
+        "official"
+      ],
+      "formats": [
+        {
+          "format": "md",
+          "url": "/catalog/assets/suse/skills/brand/SKILL.md",
+          "checksum": "sha256-PLACEHOLDER",
+          "size": 0
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "meta": {
+        "skill": {
+          "name": "suse-brand",
+          "description": "The SUSE brand team's official brand standards: company position, boilerplate and tagline, logo use, the colour palette and approved combinations, typography, capitalisation and layout. Read this first for any SUSE work, whatever the medium.",
+          "discipline": "brand",
+          "audience": "public",
+          "status": "approved",
+          "skillRevision": "1.0.1",
+          "owner": "SUSE Brand team",
+          "revisionNote": "Two spelling fixes approved by the brand owner: \"bacground\" is now \"background\" and \"Watehole\" is now \"Waterhole\". The text is otherwise the brand team's version 1 as supplied."
+        }
+      }
+    },
+    {
+      "id": "suse/skill/production-notes",
+      "name": "SUSE production notes",
+      "description": "Lolly-maintained production notes for SUSE artwork: PMS builds, tonal ramps, gradients, logo markup, voice and the house component rules.",
+      "type": "skill",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "skill",
+        "brand",
+        "guidelines"
+      ],
+      "formats": [
+        {
+          "format": "md",
+          "url": "/catalog/assets/suse/skills/production-notes/SKILL.md",
+          "checksum": "sha256-PLACEHOLDER",
+          "size": 0
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "meta": {
+        "skill": {
+          "name": "suse-production-notes",
+          "description": "SUSE production notes maintained by Lolly - PMS builds, tonal ramps, gradients, logo markup, voice and the house component rules for SUSE artwork. Read the SUSE brand standards (suse-brand) first; they are the official source and win wherever the two differ.",
+          "discipline": "brand",
+          "audience": "public",
+          "status": "draft",
+          "skillRevision": "2026.10.23",
+          "maintainer": "lolly",
+          "revisionNote": "Moved into the SUSE catalog as a brand skill. The three Lolly app conventions (Escape closes overlays, never fight browser defaults, Lolly code reads tokens) moved to Lolly's own guidance."
+        }
+      }
+    },
+    {
+      "id": "suse/skill/iconography",
+      "name": "SUSE iconography",
+      "description": "A working specification for drawing additions to the SUSE icon family: artboard, line weight, the two colour roles, padding and review refinements.",
+      "type": "skill",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "skill",
+        "iconography",
+        "guidelines",
+        "icons"
+      ],
+      "formats": [
+        {
+          "format": "md",
+          "url": "/catalog/assets/suse/skills/iconography/SKILL.md",
+          "checksum": "sha256-PLACEHOLDER",
+          "size": 0
+        }
+      ],
+      "license": "LicenseRef-SUSE-Proprietary",
+      "meta": {
+        "skill": {
+          "name": "suse-iconography",
+          "description": "How to draw a new SUSE icon or a new version of one so it belongs in the SUSE icon family: the 40 by 40 artboard, line weight, the two colour roles (.c1 and .c2), padding, recognition first, and what review looks for. Use whenever you draw, edit or review a SUSE icon.",
+          "discipline": "iconography",
+          "audience": "public",
+          "status": "draft",
+          "skillRevision": "1.1",
+          "maintainer": "lolly",
+          "appliesTo": {
+            "families": [
+              "suse/icons/"
+            ]
+          }
+        }
+      }
     }
   ]
 }
