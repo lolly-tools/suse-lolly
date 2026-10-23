@@ -2,7 +2,7 @@
   "$comment": "Instance-pack recipe: asset families are permanent id prefixes, classified once as included or excluded. Brandfolder supplies photos, campaign images, executive portraits, backgrounds and illustrations; those families are excluded from the bundled catalog. Logos, dynamic icons, tokens, palettes and other design-system essentials stay bundled. The builder refuses audio in included families and checks the pack size budget. Community-shared tool assets are omitted only after byte equality is verified.",
   "name": "SUSE Brand",
   "publisher": "SUSE",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "instance": "https://lolly.tools",
   "tokensAsset": "suse/tokens/brand",
   "fonts": {
@@ -31,7 +31,8 @@
     "suse/lottie/",
     "suse/demo/",
     "suse/model/",
-    "suse/slides/"
+    "suse/slides/",
+    "suse/skill/"
   ],
   "excludeAssetFamilies": [
     "suse/photos/",

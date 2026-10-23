@@ -1,13 +1,15 @@
 ---
-name: suse-brand
-description: SUSE brand profile for generating on-brand content - palette, typography, logo markup and the house component rules. Give this file to any tool or model that produces SUSE-branded UI, graphics or copy.
+name: suse-production-notes
+description: SUSE production notes maintained by Lolly - PMS builds, tonal ramps, gradients, logo markup, voice and the house component rules for SUSE artwork. Read the SUSE brand standards (suse-brand) first; they are the official source and win wherever the two differ.
 ---
 
-# SUSE brand skill
+# SUSE production notes
+
+Lolly maintains these notes. The SUSE brand team's [brand standards](suse/skill/brand) are the official source and win wherever the two differ.
 
 SUSE's look is green, confident and open. Bright Jungle green carried on deep Pine, generous white space, one typeface family everywhere, and flat, crisp vector shapes. Warm and human, never corporate-stiff.
 
-Canonical sources in this repo: tokens at `catalog/assets/suse/tokens/brand.json` (DTCG), credentialed logo SVGs at `catalog/assets/suse/logo/`, fonts at `catalog/fonts/`.
+Canonical sources in the SUSE design system: the tokens asset `suse/tokens/brand` (DTCG), the credentialed logos in the `suse/logo/` family and the SUSE font files.
 
 ## Palette
 
@@ -123,6 +125,3 @@ House rules that apply to any SUSE-branded UI or layout, learned the hard way. T
 2. **A dashed border means "you can drop something here" and nothing else.** Never use dashed for empty, invalid, optional or unreachable states. For an unreachable range, use the colour at ~13% opacity; for invalid input, use colour and messaging, not a border style.
 3. **Cards differentiate by fill and elevation, not by outline.** Neutral uniform border or none at all; state and hierarchy come from background tint, shadow, an icon or a badge.
 4. **Vector first.** Previews, illustrations and diagrams are SVG (or animated HTML) whenever physically possible. Raster is an export format, not a design surface. Every standalone SVG carries explicit `width`/`height` attributes alongside its `viewBox`.
-5. **Escape closes any overlay**, and a nested popover closes itself first before the parent.
-6. **Never fight browser or user defaults.** No right-click hijacks, no scroll interception, no decorative animation bound to every interaction. If an effect is only fun twice, it does not belong on a high-traffic surface.
-7. **In Lolly code, colours and fonts come from tokens** (`var(--brand-*)`, `var(--font-brand)`, `var(--font-mono)`), not literal hexes or family names, so a re-branded profile inherits everything.
