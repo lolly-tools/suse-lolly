@@ -46,3 +46,11 @@ repo.
 
 Licensing is mixed and mostly proprietary - see `tools/NOTICE.md` and
 `catalog/NOTICE.md`.
+
+## lolly.ing preview image
+
+`.github/workflows/lolly-ing-preview.yml` builds the private lolly.ing instance image (Work server, SUSE shell and
+pack) from three exact commits, signed with lolly.ing's own catalog key in the `lolly-ing-signing` environment. The
+image stays an artifact of the private run and is never pushed to a registry. See
+[docs/lolly-ing-preview.md](docs/lolly-ing-preview.md) for the jobs, the artifacts and the environment, secret and
+variables it needs.
