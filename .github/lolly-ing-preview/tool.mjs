@@ -202,6 +202,9 @@ export async function gate(env, fetchImpl = fetch, sleep) {
   need(env.GITHUB_REPOSITORY === REPOS.suse, `this workflow runs only in ${REPOS.suse}`);
   need(env.GITHUB_EVENT_NAME === 'workflow_dispatch', 'dispatch the workflow by hand (workflow_dispatch)');
   need(env.GITHUB_REF === 'refs/heads/main', 'dispatch the workflow from main; other refs cannot reach the signing environment');
+  // The preview deploy command binds a run by its head SHA, which for a dispatch on main
+  // is main's head at that moment; it must be the suse-lolly commit the run builds.
+  need(inputs.ssha === env.GITHUB_SHA, `SSHA ${inputs.ssha} is not this run's commit ${env.GITHUB_SHA}; dispatch with SSHA set to the head of main`);
   const get = githubApi({ token: env.GITHUB_TOKEN, baseUrl: env.GITHUB_API_URL || undefined, fetchImpl, sleep });
   const record = { version: 1, sources: { lolly: inputs.lsha, work: inputs.wsha, suse: inputs.ssha }, minSeq: inputs.minSeq };
   record.ancestry = {

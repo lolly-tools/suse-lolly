@@ -68,7 +68,7 @@ describe('inputs and pin', () => {
 });
 
 describe('gate', () => {
-  const env = { LSHA: L, WSHA: W, SSHA: S, GITHUB_REPOSITORY: 'lolly-tools/suse-lolly', GITHUB_EVENT_NAME: 'workflow_dispatch', GITHUB_REF: 'refs/heads/main', GITHUB_TOKEN: 't' };
+  const env = { LSHA: L, WSHA: W, SSHA: S, GITHUB_SHA: S, GITHUB_REPOSITORY: 'lolly-tools/suse-lolly', GITHUB_EVENT_NAME: 'workflow_dispatch', GITHUB_REF: 'refs/heads/main', GITHUB_TOKEN: 't' };
   const run = (repo, sha, extra = {}) => ({ id: 100, run_attempt: 1, head_sha: sha, path: '.github/workflows/ci.yml', event: 'push', head_branch: 'main',
     status: 'completed', conclusion: 'success', repository: { full_name: repo }, head_repository: { full_name: repo }, ...extra });
   const routes = (overrides = {}) => ({
@@ -127,6 +127,8 @@ describe('gate', () => {
     await assert.rejects(tool.gate({ ...env, GITHUB_REF: 'refs/heads/feature' }, fakeFetch(routes(), seen), noSleep), /from main/);
     await assert.rejects(tool.gate({ ...env, GITHUB_EVENT_NAME: 'push' }, fakeFetch(routes(), seen), noSleep), /workflow_dispatch/);
     await assert.rejects(tool.gate({ ...env, GITHUB_REPOSITORY: 'someone/suse-lolly' }, fakeFetch(routes(), seen), noSleep), /runs only in/);
+    // The deploy command binds the run's head SHA to SSHA, so a dispatch must build main's head.
+    await assert.rejects(tool.gate({ ...env, GITHUB_SHA: 'e'.repeat(40) }, fakeFetch(routes(), seen), noSleep), /is not this run's commit/);
     assert.equal(seen.length, 0);
   });
   test('retries server errors and network failures, then refuses', async () => {
@@ -353,8 +355,8 @@ describe('workflow shape', () => {
   const body = WORKFLOW.slice(WORKFLOW.indexOf('\njobs:\n'));
   for (const block of body.split(/\n(?=  [a-z][a-z-]*:\n)/).slice(1)) jobs[/^  ([a-z-]+):/.exec(block)[1]] = block;
 
-  test('has the six jobs in order and keeps the token read-only', () => {
-    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image']);
+  test('has the seven jobs in order and keeps the token read-only', () => {
+    assert.deepEqual(Object.keys(jobs), ['gate', 'maintenance', 'server', 'sign-source', 'build', 'sign', 'image']);
     assert.match(WORKFLOW, /\npermissions:\n  contents: read\n\n/);
     assert.doesNotMatch(WORKFLOW, /\n[ ]+permissions:/, 'no job widens the token');
     assert.doesNotMatch(WORKFLOW, /packages:\s*write|docker (?:push|login)|--push\b/);
@@ -377,6 +379,12 @@ describe('workflow shape', () => {
       }
     }
     assert.equal([...WORKFLOW.matchAll(/secrets\./g)].length, 3);
+  });
+  test('the maintenance approval job holds nothing, checks out nothing and runs only when asked', () => {
+    assert.match(jobs.maintenance, /\n    if: inputs\.MAINTENANCE\n/);
+    assert.match(jobs.maintenance, /\n    environment: lolly-ing-maintenance\n/);
+    assert.doesNotMatch(jobs.maintenance, /secrets\.|uses: |checkout|\$\{\{ inputs\./);
+    assert.match(WORKFLOW, /\n      MAINTENANCE:\n[^\n]+\n        required: false\n        type: boolean\n        default: false\n/);
   });
   test('dispatch inputs reach scripts only through the environment', () => {
     for (const block of WORKFLOW.split(/\n\s+run: /).slice(1)) {

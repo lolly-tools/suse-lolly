@@ -10,6 +10,8 @@
 #
 # Jobs, in order (docs/lolly-ing-preview.md explains each one):
 #   gate         no secrets: inputs, ancestry, green CI push runs, engine pin, pin
+#   maintenance  lolly-ing-maintenance, only when MAINTENANCE is set: Andy's approval of a
+#                maintenance migration; holds nothing and runs nothing but a log line
 #   server       no secrets: the Work server stage from deploy/compose/Dockerfile
 #   sign-source  lolly-ing-signing: signs the SUSE source catalog (first approval)
 #   build        no secrets: validates the catalog and compiles the shell
@@ -41,6 +43,11 @@ on:
         required: false
         type: string
         default: ''
+      MAINTENANCE:
+        description: The build carries a migration Work's classifier calls maintenance; Andy also approves lolly-ing-maintenance
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -113,6 +120,17 @@ jobs:
           retention-days: 1
           overwrite: true
           if-no-files-found: error
+
+  maintenance:
+    name: maintenance migration approval (lolly-ing-maintenance)
+    needs: gate
+    if: inputs.MAINTENANCE
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: lolly-ing-maintenance
+    steps:
+      - name: Record the approval
+        run: echo "Andy approved a maintenance migration for this build; the preview deploy command reads the approval from this run."
 
   server:
     name: build (Work server stage)
