@@ -10,18 +10,18 @@
 #
 # Jobs, in order (docs/lolly-ing-preview.md explains each one):
 #   gate         no secrets: inputs, ancestry, green CI push runs, engine pin, pin
-#   maintenance  lolly-ing-maintenance, only when MAINTENANCE is set: Andy's approval of a
-#                maintenance migration; holds nothing and runs nothing but a log line
+#   approve-source / approve-final  no key: verify the public approval for this private request
 #   server       no secrets: the Work server stage from deploy/compose/Dockerfile
-#   sign-source  lolly-ing-signing: signs the SUSE source catalog (first approval)
+#   sign-source  private key: signs the source only after the first public approval
 #   build        no secrets: validates the catalog and compiles the shell
-#   sign         lolly-ing-signing: signs the shell catalog and receipt (second approval)
+#   sign         private key: signs the shell only after the final public approval
 #   image        no key: pack, instance image, boot check, OCI archive and manifest
 #
 # The signing jobs install nothing and run only Lolly's own scripts at LSHA
 # and this repository's checks, as lolly's release-frontend.yml does. Jobs that
 # install or build third-party code never hold the key.
 name: lolly.ing preview image
+run-name: lolly.ing preview ${{ inputs.WSHA }}
 
 on:
   workflow_dispatch:
@@ -62,6 +62,9 @@ defaults:
 
 env:
   TOOL: ${{ github.workspace }}/tooling/.github/lolly-ing-preview/tool.mjs
+  APPROVAL_TOOL: ${{ github.workspace }}/approval-tool/deploy/preview/approval/approval.mjs
+  APPROVAL_HELPER_BLOB: af3f6cd27e1f4a7d6260f8700b71c52e1bf85473
+  APPROVAL_WORKFLOW_BLOB: a6681ace89a1992c898a43d9f8ad52cafec12ca3
 
 jobs:
   gate:
@@ -80,6 +83,7 @@ jobs:
       WSHA: ${{ inputs.WSHA }}
       SSHA: ${{ inputs.SSHA }}
       MIN_SEQ: ${{ inputs.MIN_SEQ }}
+      TRIGGERING_ACTOR: ${{ github.triggering_actor }}
     steps:
       - name: Check out this workflow's checks
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -121,17 +125,6 @@ jobs:
           overwrite: true
           if-no-files-found: error
 
-  maintenance:
-    name: maintenance migration approval (lolly-ing-maintenance)
-    needs: gate
-    if: inputs.MAINTENANCE
-    runs-on: ubuntu-24.04
-    timeout-minutes: 5
-    environment: lolly-ing-maintenance
-    steps:
-      - name: Record the approval
-        run: echo "Andy approved a maintenance migration for this build; the preview deploy command reads the approval from this run."
-
   server:
     name: build (Work server stage)
     needs: gate
@@ -139,6 +132,7 @@ jobs:
     timeout-minutes: 30
     outputs:
       archive_sha256: ${{ steps.export.outputs.archive_sha256 }}
+      migrations_sha256: ${{ steps.export.outputs.migrations_sha256 }}
       image_id: ${{ steps.build.outputs.image_id }}
     env:
       LSHA: ${{ needs.gate.outputs.lsha }}
@@ -190,6 +184,7 @@ jobs:
           docker cp "$cid:/app/migrations" "$RUNNER_TEMP/server-migrations"
           docker rm "$cid" > /dev/null
           node "$TOOL" migrations --dir "$RUNNER_TEMP/server-migrations" --out "$out/migrations.json" > /dev/null
+          echo "migrations_sha256=$(sha256sum "$out/migrations.json" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
           docker save --output "$out/work-server.tar" "$WORK_SERVER_IMAGE"
           echo "archive_sha256=$(sha256sum "$out/work-server.tar" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
@@ -200,10 +195,95 @@ jobs:
           compression-level: 1
           overwrite: true
           if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-migrations
+          path: ${{ runner.temp }}/server/migrations.json
+          retention-days: 1
+          if-no-files-found: error
+
+  approve-source:
+    name: approve (source signing, public gate, no key)
+    needs: [gate, server]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    outputs:
+      approval_sha256: ${{ steps.bundle.outputs.approval_sha256 }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
+      PIN_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+      MAINTENANCE: ${{ inputs.MAINTENANCE }}
+    steps:
+      - name: Check out this workflow's checks and build files
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github
+      - name: Check out the approval verifier at WSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly-work
+          ref: ${{ needs.gate.outputs.wsha }}
+          path: approval-tool
+          persist-credentials: false
+          sparse-checkout: deploy/preview/approval
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '26'
+          package-manager-cache: false
+      - name: Verify the approval helper bytes before executing them
+        run: |
+          test "$GITHUB_RUN_ATTEMPT" = 1
+          test "$(git -C approval-tool hash-object --no-filters -- deploy/preview/approval/approval.mjs)" = "$APPROVAL_HELPER_BLOB"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-gate
+          path: ${{ runner.temp }}/gate
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-migrations
+          path: ${{ runner.temp }}/migrations
+      - name: Prepare the private source-signing request
+        env:
+          EXPECTED_MIGRATIONS: ${{ needs.server.outputs.migrations_sha256 }}
+        run: |
+          echo "$EXPECTED_MIGRATIONS  $RUNNER_TEMP/migrations/migrations.json" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/approval-request" "$RUNNER_TEMP/approval-evidence"
+          node "$TOOL" approval-spec --stage source --gate "$RUNNER_TEMP/gate/gate.json" \
+            --migrations "$RUNNER_TEMP/migrations/migrations.json" --tooling tooling \
+            --out "$RUNNER_TEMP/approval-spec.json"
+          node "$APPROVAL_TOOL" request --spec "$RUNNER_TEMP/approval-spec.json" --out "$RUNNER_TEMP/approval-request/request.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-approval-source-request-attempt-1
+          path: ${{ runner.temp }}/approval-request/request.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Wait for and verify the public source-signing approval
+        run: |
+          node "$APPROVAL_TOOL" wait --request "$RUNNER_TEMP/approval-request/request.json" \
+            --workflow-blob "$APPROVAL_WORKFLOW_BLOB" --timeout-seconds 1800 \
+            --out "$RUNNER_TEMP/approval-evidence/evidence.json"
+      - name: Bind the verified approval to the private request
+        id: bundle
+        run: |
+          node "$TOOL" approval-bundle --request "$RUNNER_TEMP/approval-request/request.json" \
+            --evidence "$RUNNER_TEMP/approval-evidence/evidence.json" --out "$RUNNER_TEMP/approval-evidence/approval.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-approval-source-attempt-1
+          path: ${{ runner.temp }}/approval-evidence/approval.json
+          retention-days: 1
+          if-no-files-found: error
 
   sign-source:
     name: sign (SUSE source catalog, lolly.ing key)
-    needs: gate
+    needs: [gate, approve-source]
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment: lolly-ing-signing
@@ -213,6 +293,9 @@ jobs:
       LSHA: ${{ needs.gate.outputs.lsha }}
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
+      PIN_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+      MAINTENANCE: ${{ inputs.MAINTENANCE }}
+      MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
       LOLLY_PROFILE: suse
       LOLLY_STRICT_PROFILE: '1'
       VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
@@ -255,6 +338,16 @@ jobs:
           node scripts/webgpu-release-gate.ts --scope web
           mkdir -p node_modules/@lolly-tools
           ln -s ../../packages/node-shell node_modules/@lolly-tools/node-shell
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-approval-source-attempt-1
+          path: ${{ runner.temp }}/approved
+      - name: Check the source approval binding before the key is used
+        env:
+          EXPECTED_APPROVAL: ${{ needs.approve-source.outputs.approval_sha256 }}
+        run: |
+          echo "$EXPECTED_APPROVAL  $RUNNER_TEMP/approved/approval.json" | sha256sum --check --strict
+          node "$TOOL" approval-check --stage source --approval "$RUNNER_TEMP/approved/approval.json"
       - name: Sign the SUSE source catalog with the lolly.ing key
         working-directory: lolly
         env:
@@ -378,9 +471,89 @@ jobs:
           overwrite: true
           if-no-files-found: error
 
+  approve-final:
+    name: approve (final signing, public gate, no key)
+    needs: [gate, server, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    outputs:
+      approval_sha256: ${{ steps.bundle.outputs.approval_sha256 }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
+      PIN_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+      MAINTENANCE: ${{ inputs.MAINTENANCE }}
+      FRONTEND_INPUT_SHA256: ${{ needs.build.outputs.input_sha256 }}
+    steps:
+      - name: Check out this workflow's checks and build files
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github
+      - name: Check out the approval verifier at WSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly-work
+          ref: ${{ needs.gate.outputs.wsha }}
+          path: approval-tool
+          persist-credentials: false
+          sparse-checkout: deploy/preview/approval
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '26'
+          package-manager-cache: false
+      - name: Verify the approval helper bytes before executing them
+        run: |
+          test "$GITHUB_RUN_ATTEMPT" = 1
+          test "$(git -C approval-tool hash-object --no-filters -- deploy/preview/approval/approval.mjs)" = "$APPROVAL_HELPER_BLOB"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-gate
+          path: ${{ runner.temp }}/gate
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-migrations
+          path: ${{ runner.temp }}/migrations
+      - name: Prepare the private final-signing request
+        env:
+          EXPECTED_MIGRATIONS: ${{ needs.server.outputs.migrations_sha256 }}
+        run: |
+          echo "$EXPECTED_MIGRATIONS  $RUNNER_TEMP/migrations/migrations.json" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/approval-request" "$RUNNER_TEMP/approval-evidence"
+          node "$TOOL" approval-spec --stage final --gate "$RUNNER_TEMP/gate/gate.json" \
+            --migrations "$RUNNER_TEMP/migrations/migrations.json" --tooling tooling --artifact-sha256 "$FRONTEND_INPUT_SHA256" \
+            --out "$RUNNER_TEMP/approval-spec.json"
+          node "$APPROVAL_TOOL" request --spec "$RUNNER_TEMP/approval-spec.json" --out "$RUNNER_TEMP/approval-request/request.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-approval-final-request-attempt-1
+          path: ${{ runner.temp }}/approval-request/request.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Wait for and verify the public final-signing approval
+        run: |
+          node "$APPROVAL_TOOL" wait --request "$RUNNER_TEMP/approval-request/request.json" \
+            --workflow-blob "$APPROVAL_WORKFLOW_BLOB" --timeout-seconds 1800 \
+            --out "$RUNNER_TEMP/approval-evidence/evidence.json"
+      - name: Bind the verified approval to the private request
+        id: bundle
+        run: |
+          node "$TOOL" approval-bundle --request "$RUNNER_TEMP/approval-request/request.json" \
+            --evidence "$RUNNER_TEMP/approval-evidence/evidence.json" --out "$RUNNER_TEMP/approval-evidence/approval.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-approval-final-attempt-1
+          path: ${{ runner.temp }}/approval-evidence/approval.json
+          retention-days: 1
+          if-no-files-found: error
+
   sign:
     name: sign (shell catalog and receipt, lolly.ing key)
-    needs: [gate, build]
+    needs: [gate, build, approve-final]
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     environment: lolly-ing-signing
@@ -394,6 +567,8 @@ jobs:
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
       MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
+      PIN_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+      MAINTENANCE: ${{ inputs.MAINTENANCE }}
       LOLLY_PROFILE: suse
       VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
     steps:
@@ -449,6 +624,17 @@ jobs:
             echo "::error title=No sequence floor at LSHA::MIN_SEQ was given, but scripts/sign-catalog.ts at $LSHA has no --min-seq. Land it in lolly first, or dispatch without MIN_SEQ."
             exit 1
           fi
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-approval-final-attempt-1
+          path: ${{ runner.temp }}/approved
+      - name: Check the final approval binding before the key is used
+        env:
+          EXPECTED_APPROVAL: ${{ needs.approve-final.outputs.approval_sha256 }}
+          FRONTEND_INPUT_SHA256: ${{ needs.build.outputs.input_sha256 }}
+        run: |
+          echo "$EXPECTED_APPROVAL  $RUNNER_TEMP/approved/approval.json" | sha256sum --check --strict
+          node "$TOOL" approval-check --stage final --approval "$RUNNER_TEMP/approved/approval.json" --artifact-sha256 "$FRONTEND_INPUT_SHA256"
       - name: Sign the shell catalog with the lolly.ing key
         working-directory: lolly
         env:
@@ -500,7 +686,7 @@ jobs:
 
   image:
     name: image (pack, assemble, boot, export)
-    needs: [gate, server, sign]
+    needs: [gate, server, sign, build, approve-source, approve-final]
     runs-on: ubuntu-24.04
     timeout-minutes: 75
     services:
@@ -541,7 +727,7 @@ jobs:
           ref: ${{ github.sha }}
           path: tooling
           persist-credentials: false
-          sparse-checkout: .github/lolly-ing-preview
+          sparse-checkout: .github
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version-file: lolly/.nvmrc
@@ -695,6 +881,14 @@ jobs:
             echo '::error title=Release key in boot log::The boot log names the platform release key.'
             exit 1
           fi
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-approval-source-attempt-1
+          path: ${{ runner.temp }}/approval-source
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-approval-final-attempt-1
+          path: ${{ runner.temp }}/approval-final
       - name: Export the OCI archive and write the manifest
         run: |
           out="$RUNNER_TEMP/out"
@@ -712,7 +906,10 @@ jobs:
             --custody "$RUNNER_TEMP/facts/custody.json" --shell "$RUNNER_TEMP/facts/shell.json" --pack "$RUNNER_TEMP/facts/pack.json" \
             --oci "$RUNNER_TEMP/facts/oci.json" --boot "$RUNNER_TEMP/facts/boot.json" --migrations "$RUNNER_TEMP/facts/migrations.json" \
             --stored-formats "$RUNNER_TEMP/signed/stored-formats.json" --build-settings "$RUNNER_TEMP/signed/build-settings.json" \
-            --engine-pin "$RUNNER_TEMP/facts/engine-pin.json" --out "$out/lolly-ing-instance.manifest.json" > /dev/null
+            --engine-pin "$RUNNER_TEMP/facts/engine-pin.json" \
+            --source-approval "$RUNNER_TEMP/approval-source/approval.json" --final-approval "$RUNNER_TEMP/approval-final/approval.json" \
+            --frontend-input-sha256 "${{ needs.build.outputs.input_sha256 }}" --tooling tooling \
+            --out "$out/lolly-ing-instance.manifest.json" > /dev/null
           {
             echo "### lolly.ing instance image"
             echo

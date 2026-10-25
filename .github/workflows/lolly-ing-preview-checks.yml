@@ -5,14 +5,8 @@ name: lolly.ing preview checks
 
 on:
   pull_request:
-    paths:
-      - .github/lolly-ing-preview/**
-      - .github/workflows/lolly-ing-preview*.yml
   push:
     branches: [main]
-    paths:
-      - .github/lolly-ing-preview/**
-      - .github/workflows/lolly-ing-preview*.yml
 
 permissions:
   contents: read

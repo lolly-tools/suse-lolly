@@ -50,6 +50,13 @@ describe('inputs and pin', () => {
     assert.throws(() => tool.parsePin(JSON.stringify(RELEASE_JWK)), /release key/);
     assert.throws(() => tool.parsePin(JSON.stringify({ ...RELEASE_JWK, kid: 'other' })), /release key/);
   });
+  test('refuses the lolly.tools preview key', () => {
+    const pin = { kty: 'EC', crv: 'P-256', x: 'IeLSk-4i--bwu4VU0lZerw6m-RtnUN5kb1aUVBSfHnU',
+      y: 'w6mzJvJ7TogpxQMuysRzB7533aKXg45YFX-0AzKx4Jo' };
+    assert.equal(tool.thumbprint(pin), tool.TOOLS_PREVIEW_THUMBPRINT);
+    assert.throws(() => tool.parsePin(JSON.stringify(pin)), /lolly.tools preview key/);
+    assert.throws(() => tool.parsePin(JSON.stringify({ ...pin, kid: 'other' })), /lolly.tools preview key/);
+  });
   test('accepts a fresh public key and returns the canonical pin', () => {
     const pin = freshPin();
     const parsed = tool.parsePin(JSON.stringify({ ...pin, alg: 'ES256', use: 'sig' }));
@@ -68,7 +75,7 @@ describe('inputs and pin', () => {
 });
 
 describe('gate', () => {
-  const env = { LSHA: L, WSHA: W, SSHA: S, GITHUB_SHA: S, GITHUB_REPOSITORY: 'lolly-tools/suse-lolly', GITHUB_EVENT_NAME: 'workflow_dispatch', GITHUB_REF: 'refs/heads/main', GITHUB_TOKEN: 't' };
+  const env = { LSHA: L, WSHA: W, SSHA: S, GITHUB_SHA: S, GITHUB_REPOSITORY: 'lolly-tools/suse-lolly', GITHUB_EVENT_NAME: 'workflow_dispatch', GITHUB_REF: 'refs/heads/main', GITHUB_TOKEN: 't', GITHUB_RUN_ATTEMPT: '1', GITHUB_ACTOR: 'ndftz', TRIGGERING_ACTOR: 'ndftz' };
   const run = (repo, sha, extra = {}) => ({ id: 100, run_attempt: 1, head_sha: sha, path: '.github/workflows/ci.yml', event: 'push', head_branch: 'main',
     status: 'completed', conclusion: 'success', repository: { full_name: repo }, head_repository: { full_name: repo }, ...extra });
   const routes = (overrides = {}) => ({
@@ -129,6 +136,8 @@ describe('gate', () => {
     await assert.rejects(tool.gate({ ...env, GITHUB_REPOSITORY: 'someone/suse-lolly' }, fakeFetch(routes(), seen), noSleep), /runs only in/);
     // The deploy command binds the run's head SHA to SSHA, so a dispatch must build main's head.
     await assert.rejects(tool.gate({ ...env, GITHUB_SHA: 'e'.repeat(40) }, fakeFetch(routes(), seen), noSleep), /is not this run's commit/);
+    await assert.rejects(tool.gate({ ...env, GITHUB_RUN_ATTEMPT: '2' }, fakeFetch(routes(), seen), noSleep), /fresh private run/);
+    await assert.rejects(tool.gate({ ...env, GITHUB_ACTOR: 'other' }, fakeFetch(routes(), seen), noSleep), /dispatched by ndftz/);
     assert.equal(seen.length, 0);
   });
   test('retries server errors and network failures, then refuses', async () => {
@@ -350,13 +359,79 @@ describe('OCI facts', () => {
   });
 });
 
+describe('private approval requests', () => {
+  const now = 1_800_000_000;
+  const migrationsList = [{ name: '0002_b.sql', sha256: '2'.repeat(64) }, { name: '0001_a.sql', sha256: '1'.repeat(64) }];
+  const buildBlobs = Object.fromEntries(tool.BUILD_PATHS.map((path) => [path, 'd'.repeat(40)]));
+  const env = {
+    LSHA: L, WSHA: W, SSHA: S, GITHUB_REPOSITORY: 'lolly-tools/suse-lolly', GITHUB_EVENT_NAME: 'workflow_dispatch',
+    GITHUB_REF: 'refs/heads/main', GITHUB_RUN_ID: '12345', GITHUB_RUN_ATTEMPT: '1', GITHUB_SHA: S,
+    PIN_THUMBPRINT: 'k'.repeat(43), MAINTENANCE: 'true', MIN_SEQ: '3010',
+  };
+  const gateRecord = { version: 1, sources: { lolly: L, work: W, suse: S }, minSeq: 3010 };
+  const request = (stage) => ({ ...tool.approvalSpec({ env, stage, gateRecord, migrationsList, buildBlobs,
+    artifactSha256: stage === 'final' ? 'f'.repeat(64) : null }),
+  nonce: (stage === 'source' ? 'a' : 'b').repeat(64), issuedAt: now - 60, expiresAt: now + 300 });
+  const bundle = (stage) => ({ request: request(stage), run: { id: stage === 'source' ? '6789' : '6790', attempt: 1 } });
+  test('the private request binds all sources, run, settings and migration bytes', () => {
+    const result = request('source');
+    assert.deepEqual(result.privateRun, { repository: 'lolly-tools/suse-lolly', id: '12345', attempt: 1, workflowSha: S });
+    assert.equal(result.migrationManifest, tool.sha256('lolly-work migration manifest v1\n'
+      + `0001_a.sql\t${'1'.repeat(64)}\n0002_b.sql\t${'2'.repeat(64)}\n`));
+    assert.equal(result.maintenance, true);
+    assert.equal(result.minSeq, '3010');
+    assert.equal(result.artifactSha256, null);
+    assert.throws(() => tool.migrationManifest([...migrationsList, migrationsList[0]]), /repeated files/);
+    assert.throws(() => tool.approvalSpec({ env: { ...env, GITHUB_RUN_ATTEMPT: '2' }, stage: 'source', gateRecord, migrationsList, buildBlobs }), /first attempt/);
+    assert.throws(() => tool.approvalSpec({ env, stage: 'final', gateRecord, migrationsList, buildBlobs }), /unsigned frontend hash/);
+  });
+  test('evidence is accepted only for the exact request digest and pinned reviewer', () => {
+    const r = request('source');
+    const evidence = { version: 1, requestSha256: tool.approvalRequestDigest(r), stage: 'source', run: { id: '6789', attempt: 1 }, approver: 'ndftz' };
+    assert.deepEqual(tool.approvalBundle(r, evidence), bundle('source'));
+    assert.throws(() => tool.approvalBundle({ ...r, maintenance: false }, evidence), /another request/);
+    assert.throws(() => tool.approvalBundle(r, { ...evidence, approver: 'other' }), /pinned reviewer/);
+    assert.throws(() => tool.approvalBundle(r, { ...evidence, run: { id: '6789', attempt: 2 } }), /rerun/);
+  });
+  test('before key use, the binding rejects another build, stage, artifact or expired request', () => {
+    assert.equal(tool.checkApprovalBundle(bundle('source'), { env, stage: 'source', now }).run.id, '6789');
+    for (const patch of [{ stage: 'final' }, { sources: { ...request('source').sources, work: 'e'.repeat(40) } },
+      { privateRun: { ...request('source').privateRun, id: '999' } }, { pinThumbprint: 'x'.repeat(43) },
+      { minSeq: '' }, { maintenance: false }, { expiresAt: now - 1 }, { extra: true }]) {
+      const changed = bundle('source'); changed.request = { ...changed.request, ...patch };
+      assert.throws(() => tool.checkApprovalBundle(changed, { env, stage: 'source', now }), tool.Refusal);
+    }
+    assert.throws(() => tool.checkApprovalBundle(bundle('final'), { env, stage: 'final', artifactSha256: 'e'.repeat(64), now }), /another unsigned/);
+  });
+  test('the private manifest persists both approvals and independently binds the unsigned frontend hash', () => {
+    const pin = env.PIN_THUMBPRINT;
+    const values = {
+      run: { repository: 'lolly-tools/suse-lolly', workflowSha: S, runId: 12345, runAttempt: 1 }, gateRecord,
+      server: { imageId: 'sha256:' + '1'.repeat(64) }, sign: {}, shell: { keyId: pin, indexSha256: 'e'.repeat(64), catalogSeq: 3011 },
+      pack: {}, oci: { archiveSha256: 'd'.repeat(64), imageDigest: 'sha256:' + 'd'.repeat(64) },
+      boot: { readyz: { status: 200 }, index: { sha256: 'e'.repeat(64) } }, migrationsList, storedFormatsRecord: {},
+      buildSettings: { pinThumbprint: pin }, enginePin: { generatedFrom: L },
+      approvals: { source: bundle('source'), final: bundle('final') }, frontendInputSha256: 'f'.repeat(64), buildBlobs, now,
+    };
+    const result = tool.finalManifest(values);
+    assert.deepEqual(result.approvals, values.approvals);
+    assert.equal(result.frontendInputSha256, 'f'.repeat(64));
+    assert.throws(() => tool.finalManifest({ ...values, frontendInputSha256: '0'.repeat(64) }), /another unsigned/);
+    assert.throws(() => tool.finalManifest({ ...values, approvals: { source: values.approvals.source } }), /both public/);
+    assert.throws(() => tool.finalManifest({ ...values, migrationsList: [{ ...migrationsList[0], sha256: 'a'.repeat(64) }] }), /another migration/);
+    assert.throws(() => tool.finalManifest({ ...values, buildBlobs: { ...buildBlobs, [tool.BUILD_PATHS[0]]: 'e'.repeat(40) } }), /other private build code/);
+    const sameNonce = JSON.parse(JSON.stringify(values.approvals)); sameNonce.final.request.nonce = sameNonce.source.request.nonce;
+    assert.throws(() => tool.finalManifest({ ...values, approvals: sameNonce }), /fresh nonce/);
+  });
+});
+
 describe('workflow shape', () => {
   const jobs = {};
   const body = WORKFLOW.slice(WORKFLOW.indexOf('\njobs:\n'));
   for (const block of body.split(/\n(?=  [a-z][a-z-]*:\n)/).slice(1)) jobs[/^  ([a-z-]+):/.exec(block)[1]] = block;
 
-  test('has the seven jobs in order and keeps the token read-only', () => {
-    assert.deepEqual(Object.keys(jobs), ['gate', 'maintenance', 'server', 'sign-source', 'build', 'sign', 'image']);
+  test('approval jobs guard both signing jobs and keep the token read-only', () => {
+    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'approve-source', 'sign-source', 'build', 'approve-final', 'sign', 'image']);
     assert.match(WORKFLOW, /\npermissions:\n  contents: read\n\n/);
     assert.doesNotMatch(WORKFLOW, /\n[ ]+permissions:/, 'no job widens the token');
     assert.doesNotMatch(WORKFLOW, /packages:\s*write|docker (?:push|login)|--push\b/);
@@ -380,11 +455,33 @@ describe('workflow shape', () => {
     }
     assert.equal([...WORKFLOW.matchAll(/secrets\./g)].length, 3);
   });
-  test('the maintenance approval job holds nothing, checks out nothing and runs only when asked', () => {
-    assert.match(jobs.maintenance, /\n    if: inputs\.MAINTENANCE\n/);
-    assert.match(jobs.maintenance, /\n    environment: lolly-ing-maintenance\n/);
-    assert.doesNotMatch(jobs.maintenance, /secrets\.|uses: |checkout|\$\{\{ inputs\./);
-    assert.match(WORKFLOW, /\n      MAINTENANCE:\n[^\n]+\n        required: false\n        type: boolean\n        default: false\n/);
+  test('private approval waiting jobs have no key and signing depends on their success', () => {
+    assert.equal(jobs.maintenance, undefined);
+    assert.match(jobs['sign-source'], /needs: \[gate, approve-source\]/);
+    assert.match(jobs.sign, /needs: \[gate, build, approve-final\]/);
+    for (const stage of ['source', 'final']) {
+      const block = jobs[`approve-${stage}`];
+      assert.doesNotMatch(block, /secrets\.|environment:|pnpm|npm |npx |pip |apt-get/);
+      assert.match(block, /hash-object --no-filters -- deploy\/preview\/approval\/approval\.mjs/);
+      assert.ok(block.indexOf('hash-object --no-filters') < block.indexOf('node "$APPROVAL_TOOL"'));
+      assert.match(block, new RegExp(`name: lolly-ing-approval-${stage}-request-attempt-1`));
+      assert.match(block, /path: \$\{\{ runner\.temp \}\}\/approval-request\/request\.json/);
+      assert.match(block, /node "\$APPROVAL_TOOL" wait --request/);
+      assert.match(block, /--workflow-blob "\$APPROVAL_WORKFLOW_BLOB" --timeout-seconds 1800/);
+    }
+    assert.match(jobs['approve-final'], /--artifact-sha256 "\$FRONTEND_INPUT_SHA256"/);
+    assert.match(jobs['sign-source'], /approval-check --stage source/);
+    assert.match(jobs.sign, /approval-check --stage final/);
+    assert.match(jobs.image, /--source-approval .*--final-approval /);
+    assert.match(jobs.image, /--frontend-input-sha256/);
+    assert.doesNotMatch(WORKFLOW, /gh workflow run|workflow_dispatches|\/dispatches|repository-dispatch/);
+  });
+  test('the qualification workflow runs on every PR and main push', () => {
+    const checks = readFileSync(join(HERE, '../workflows/lolly-ing-preview-checks.yml'), 'utf8');
+    assert.match(checks, /pull_request:/);
+    assert.match(checks, /branches: \[main\]/);
+    assert.doesNotMatch(checks, /paths:|paths-ignore:/);
+    assert.match(checks, /name: lolly.ing preview tooling tests/);
   });
   test('dispatch inputs reach scripts only through the environment', () => {
     for (const block of WORKFLOW.split(/\n\s+run: /).slice(1)) {
@@ -402,9 +499,11 @@ describe('workflow shape', () => {
     assert.doesNotMatch(WORKFLOW, /LOLLY_RELEASE_PUBLIC_KEY_JWK|VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ vars\./);
   });
   test('the final artifacts are kept 30 days and the intermediate ones 1 day', () => {
-    const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);
+    const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z0-9-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);
     assert.deepEqual(Object.fromEntries(retention), {
-      'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
+      'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-migrations': 1,
+      'lolly-ing-approval-source-request-attempt-1': 1, 'lolly-ing-approval-final-request-attempt-1': 1,
+      'lolly-ing-approval-source-attempt-1': 1, 'lolly-ing-approval-final-attempt-1': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
       'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 30, 'lolly-ing-instance-archive': 30,
     });
   });

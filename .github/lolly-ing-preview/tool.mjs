@@ -37,6 +37,7 @@ import { pathToFileURL } from 'node:url';
 // The platform release catalog key. Its public half is public (it is in every
 // self-host template); lolly.ing must never pin it (PROPOSAL 4.7, R22 S1).
 export const RELEASE_THUMBPRINT = '5zVngG6s-652_L8Zdok5PTfQ6vxdPAYfcpBWxMtzs5c';
+export const TOOLS_PREVIEW_THUMBPRINT = 'X3pjltp8_C-Swm8jOpPnv29qzQ2ZtLwqORMSHgMn-lk';
 export const RELEASE_PUBLIC = {
   x: 'fHdyfof2ppicYg3eoDbeNxdnxjbt9KhBLsjVGso6eqo',
   y: 'SWK6wsAVjRAad2w8MxmIkTGdgNMFHhhSNdeEqfH5cVg',
@@ -112,7 +113,7 @@ export function thumbprint(jwk) {
 }
 
 const PUBLIC_JWK_MEMBERS = new Set(['kty', 'crv', 'x', 'y', 'kid', 'alg', 'use', 'key_ops', 'ext']);
-/** The lolly.ing pin: a public P-256 JWK that is not the release key. */
+/** The lolly.ing pin: a public P-256 JWK distinct from the release and lolly.tools keys. */
 export function parsePin(text) {
   need(typeof text === 'string' && text.trim(), 'LOLLY_ING_PUBLIC_KEY_JWK is not set (repository variable)');
   let jwk;
@@ -128,6 +129,8 @@ export function parsePin(text) {
   const id = thumbprint(pin);
   need(id !== RELEASE_THUMBPRINT && pin.x !== RELEASE_PUBLIC.x && pin.y !== RELEASE_PUBLIC.y,
     'LOLLY_ING_PUBLIC_KEY_JWK is the platform release key. lolly.ing must use its own key (PROPOSAL 4.7).');
+  need(id !== TOOLS_PREVIEW_THUMBPRINT,
+    'LOLLY_ING_PUBLIC_KEY_JWK is the lolly.tools preview key. lolly.ing must use a separate key.');
   return { pin, thumbprint: id, json: JSON.stringify(pin) };
 }
 
@@ -202,6 +205,8 @@ export async function gate(env, fetchImpl = fetch, sleep) {
   need(env.GITHUB_REPOSITORY === REPOS.suse, `this workflow runs only in ${REPOS.suse}`);
   need(env.GITHUB_EVENT_NAME === 'workflow_dispatch', 'dispatch the workflow by hand (workflow_dispatch)');
   need(env.GITHUB_REF === 'refs/heads/main', 'dispatch the workflow from main; other refs cannot reach the signing environment');
+  need(env.GITHUB_RUN_ATTEMPT === '1', 'reruns cannot reuse approvals; dispatch a fresh private run');
+  need(env.GITHUB_ACTOR === 'ndftz' && env.TRIGGERING_ACTOR === 'ndftz', 'the private run must be dispatched by ndftz');
   // The preview deploy command binds a run by its head SHA, which for a dispatch on main
   // is main's head at that moment; it must be the suse-lolly commit the run builds.
   need(inputs.ssha === env.GITHUB_SHA, `SSHA ${inputs.ssha} is not this run's commit ${env.GITHUB_SHA}; dispatch with SSHA set to the head of main`);
@@ -623,9 +628,102 @@ export function runFacts(env) {
   };
 }
 
+// ----------------------------------------------------------- public approvals
+
+export const BUILD_PATHS = [
+  '.github/workflows/lolly-ing-preview.yml',
+  '.github/lolly-ing-preview/tool.mjs',
+  '.github/lolly-ing-preview/instance.Dockerfile',
+];
+
+export function localBuildBlobs(dir) {
+  return Object.fromEntries(BUILD_PATHS.map((path) => [path, git(dir, 'hash-object', '--no-filters', '--', path)]));
+}
+
+export function migrationManifest(list) {
+  need(Array.isArray(list) && list.length > 0, 'the migrations list is missing');
+  const sorted = [...list].sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
+  const names = new Set();
+  for (const item of sorted) {
+    need(item && /^[0-9]{4}_[A-Za-z0-9_-]+\.sql$/.test(item.name ?? '') && SHA256.test(item.sha256 ?? '')
+      && !names.has(item.name), 'the migration manifest has malformed or repeated files');
+    names.add(item.name);
+  }
+  return sha256('lolly-work migration manifest v1\n' + sorted.map((item) => `${item.name}\t${item.sha256}\n`).join(''));
+}
+
+function canonical(value) {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.keys(value).sort().map((key) => [key, canonical(value[key])]));
+  return value;
+}
+
+export function approvalRequestDigest(request) {
+  return sha256('lolly.ing approval request v1\n' + JSON.stringify(canonical(request)));
+}
+
+export function approvalSpec({ env, stage, gateRecord, migrationsList, buildBlobs, artifactSha256 = null }) {
+  const inputs = checkInputs(env);
+  need(['source', 'final'].includes(stage), 'unknown approval stage');
+  need(env.GITHUB_REPOSITORY === REPOS.suse && env.GITHUB_EVENT_NAME === 'workflow_dispatch'
+    && env.GITHUB_REF === 'refs/heads/main' && env.GITHUB_RUN_ATTEMPT === '1'
+    && /^[1-9][0-9]{0,19}$/.test(env.GITHUB_RUN_ID ?? '') && env.GITHUB_SHA === inputs.ssha,
+  'approval requests require the first attempt of this private main dispatch');
+  need(gateRecord?.version === 1 && gateRecord.sources?.lolly === inputs.lsha && gateRecord.sources?.work === inputs.wsha
+    && gateRecord.sources?.suse === inputs.ssha && (gateRecord.minSeq ?? null) === inputs.minSeq,
+  'the gate record does not match this approval request');
+  need(B64URL32.test(env.PIN_THUMBPRINT ?? '') && env.PIN_THUMBPRINT !== RELEASE_THUMBPRINT, 'the approval pin is missing or names the release key');
+  need(Object.keys(buildBlobs ?? {}).sort().join('\n') === [...BUILD_PATHS].sort().join('\n')
+    && Object.values(buildBlobs).every((value) => SHA40.test(value)), 'the private build-code hashes are missing');
+  need(stage === 'source' ? artifactSha256 === null : SHA256.test(artifactSha256 ?? ''), 'the final approval needs the unsigned frontend hash');
+  need(['true', 'false'].includes(env.MAINTENANCE), 'MAINTENANCE must be true or false');
+  return {
+    version: 1, stage,
+    privateRun: { repository: REPOS.suse, id: env.GITHUB_RUN_ID, attempt: 1, workflowSha: env.GITHUB_SHA },
+    sources: { lolly: inputs.lsha, work: inputs.wsha, suse: inputs.ssha },
+    pinThumbprint: env.PIN_THUMBPRINT, buildBlobs,
+    migrationManifest: migrationManifest(migrationsList), maintenance: env.MAINTENANCE === 'true',
+    minSeq: inputs.minSeq === null ? '' : String(inputs.minSeq), artifactSha256,
+  };
+}
+
+export function approvalBundle(request, evidence) {
+  need(evidence?.version === 1 && evidence.requestSha256 === approvalRequestDigest(request) && evidence.stage === request.stage,
+    'the public approval evidence names another request');
+  need(evidence.run?.attempt === 1 && /^[1-9][0-9]{0,19}$/.test(evidence.run.id ?? ''), 'the public approval run is malformed or rerun');
+  need(evidence.approver === 'ndftz', 'the public approval has no pinned reviewer');
+  return { request, run: { id: evidence.run.id, attempt: 1 } };
+}
+
+export function checkApprovalBundle(bundle, { env, stage, artifactSha256 = null, now = Math.floor(Date.now() / 1000) }) {
+  const request = bundle?.request, inputs = checkInputs(env);
+  need(bundle && Object.keys(bundle).sort().join(',') === 'request,run'
+    && bundle.run?.attempt === 1 && /^[1-9][0-9]{0,19}$/.test(bundle.run.id ?? ''), 'the approval bundle is malformed or rerun');
+  const fields = ['version', 'stage', 'privateRun', 'sources', 'pinThumbprint', 'buildBlobs', 'migrationManifest',
+    'maintenance', 'minSeq', 'artifactSha256', 'nonce', 'issuedAt', 'expiresAt'];
+  need(request && Object.keys(request).sort().join(',') === fields.sort().join(',')
+    && Object.keys(request.privateRun ?? {}).sort().join(',') === 'attempt,id,repository,workflowSha'
+    && Object.keys(request.sources ?? {}).sort().join(',') === 'lolly,suse,work'
+    && Object.keys(request.buildBlobs ?? {}).sort().join('\n') === [...BUILD_PATHS].sort().join('\n')
+    && Object.values(request.buildBlobs).every((value) => SHA40.test(value))
+    && SHA256.test(request.migrationManifest ?? '') && SHA256.test(request.nonce ?? '')
+    && ['true', 'false'].includes(env.MAINTENANCE), 'the approval request fields are malformed');
+  need(request?.version === 1 && request.stage === stage && request.privateRun?.repository === REPOS.suse
+    && request.privateRun.id === env.GITHUB_RUN_ID && request.privateRun.attempt === 1 && env.GITHUB_RUN_ATTEMPT === '1'
+    && request.privateRun.workflowSha === env.GITHUB_SHA && request.sources?.lolly === inputs.lsha
+    && request.sources?.work === inputs.wsha && request.sources?.suse === inputs.ssha && env.GITHUB_SHA === inputs.ssha,
+  'the approval request belongs to another stage, source or private run');
+  need(request.pinThumbprint === env.PIN_THUMBPRINT && request.minSeq === (inputs.minSeq === null ? '' : String(inputs.minSeq))
+    && request.maintenance === (env.MAINTENANCE === 'true'), 'the approval request names other signing settings');
+  need(request.artifactSha256 === artifactSha256, 'the approval request names another unsigned frontend artifact');
+  need(Number.isSafeInteger(request.issuedAt) && Number.isSafeInteger(request.expiresAt) && request.issuedAt <= now
+    && request.expiresAt > now && request.expiresAt - request.issuedAt <= 4 * 60 * 60, 'the approval request is expired or has an invalid lifetime');
+  return bundle;
+}
+
 // ------------------------------------------------------------- final manifest
 
-export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci, boot, migrationsList, storedFormatsRecord, buildSettings, enginePin }) {
+export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci, boot, migrationsList, storedFormatsRecord, buildSettings, enginePin, approvals, frontendInputSha256, buildBlobs, now }) {
   need(gateRecord?.version === 1, 'the gate record is missing');
   need(SHA256.test(oci?.archiveSha256 ?? '') && DIGEST.test(oci?.imageDigest ?? ''), 'the OCI facts are missing');
   need(shell?.keyId && shell.keyId !== RELEASE_THUMBPRINT, 'the shell facts are missing or name the release key');
@@ -633,12 +731,31 @@ export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci,
   need(enginePin?.generatedFrom === gateRecord.sources.lolly, 'the image engine pin is not LSHA');
   need(Array.isArray(migrationsList) && migrationsList.length, 'the migrations list is missing');
   need(boot?.readyz?.status === 200 && boot?.index?.sha256 === shell.indexSha256, 'the boot check did not pass');
+  need(SHA256.test(frontendInputSha256 ?? ''), 'the unsigned frontend hash is missing');
+  const approvalEnv = {
+    LSHA: gateRecord.sources.lolly, WSHA: gateRecord.sources.work, SSHA: gateRecord.sources.suse,
+    MIN_SEQ: gateRecord.minSeq === null || gateRecord.minSeq === undefined ? '' : String(gateRecord.minSeq),
+    GITHUB_RUN_ID: String(run.runId), GITHUB_RUN_ATTEMPT: String(run.runAttempt), GITHUB_SHA: run.workflowSha,
+    PIN_THUMBPRINT: shell.keyId, MAINTENANCE: String(approvals?.source?.request?.maintenance),
+  };
+  need(approvals && Object.keys(approvals).sort().join(',') === 'final,source', 'both public signing approvals are required');
+  checkApprovalBundle(approvals.source, { env: approvalEnv, stage: 'source', now });
+  checkApprovalBundle(approvals.final, { env: approvalEnv, stage: 'final', artifactSha256: frontendInputSha256, now });
+  need(approvals.source.request.nonce !== approvals.final.request.nonce, 'each approval stage needs a fresh nonce');
+  const manifest = migrationManifest(migrationsList);
+  for (const approval of Object.values(approvals)) {
+    need(approval.request.migrationManifest === manifest, 'the approval covers another migration manifest');
+    need(JSON.stringify(canonical(approval.request.buildBlobs)) === JSON.stringify(canonical(buildBlobs)),
+      'the approval covers other private build code');
+  }
   return {
     kind: 'lolly-ing-instance-image',
     version: 1,
     site: SITE.name,
     run,
     sources: gateRecord.sources,
+    frontendInputSha256,
+    approvals,
     ci: gateRecord.ci,
     ancestry: gateRecord.ancestry,
     lollySuseGitlink: gateRecord.lollySuseGitlink ?? null,
@@ -700,6 +817,24 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
       result = await gate(env);
       writeJson(one(a, 'out'), result);
       setOutput('lolly_ci_run', result.ci.lolly.id); setOutput('work_ci_run', result.ci.work.id);
+      break;
+    }
+    case 'approval-spec': {
+      result = approvalSpec({ env, stage: one(a, 'stage'), gateRecord: readJson(one(a, 'gate')),
+        migrationsList: readJson(one(a, 'migrations')), buildBlobs: localBuildBlobs(resolve(one(a, 'tooling'))),
+        artifactSha256: one(a, 'artifact-sha256', false) ?? null });
+      writeJson(one(a, 'out'), result);
+      break;
+    }
+    case 'approval-bundle': {
+      result = approvalBundle(readJson(one(a, 'request')), readJson(one(a, 'evidence')));
+      writeJson(one(a, 'out'), result);
+      setOutput('approval_sha256', sha256File(one(a, 'out')));
+      break;
+    }
+    case 'approval-check': {
+      result = checkApprovalBundle(readJson(one(a, 'approval')), { env, stage: one(a, 'stage'),
+        artifactSha256: one(a, 'artifact-sha256', false) ?? null });
       break;
     }
     case 'checkouts': result = checkCheckouts({ lolly: a.lolly?.[0], suse: a.suse?.[0], work: a.work?.[0] }, checkInputs(env)); break;
@@ -767,6 +902,8 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
         sign: file('custody'), shell: file('shell'), pack: file('pack'), oci: file('oci'), boot: file('boot'),
         migrationsList: file('migrations'), storedFormatsRecord: file('stored-formats'), buildSettings: file('build-settings'),
         enginePin: file('engine-pin'),
+        approvals: { source: file('source-approval'), final: file('final-approval') },
+        frontendInputSha256: one(a, 'frontend-input-sha256'), buildBlobs: localBuildBlobs(resolve(one(a, 'tooling'))),
       });
       writeJson(one(a, 'out'), result);
       break;
