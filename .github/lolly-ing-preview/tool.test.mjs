@@ -131,6 +131,45 @@ describe('gate', () => {
     await assert.rejects(tool.gate({ ...env, GITHUB_SHA: 'e'.repeat(40) }, fakeFetch(routes(), seen), noSleep), /is not this run's commit/);
     assert.equal(seen.length, 0);
   });
+  // Andy 2026-10-27: the Lolly commit qualifies as a lolly.tools source does, by its own full run or a fast lane.
+  const B = 'e'.repeat(40);
+  const lane = (extra = {}) => ({ version: 1, policy: 'deploy-lane-v1', repository: 'lolly-tools/lolly', source: L, base: B, distance: 2,
+    lane: 'docs', changes: 3, changedPathsSha256: '0'.repeat(64), fastJob: { run: 300, attempt: 1, job: 3001, name: 'docs lane' },
+    sourceFullCi: [], ...extra });
+  const laneRoutes = (overrides = {}) => routes({
+    [`/repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?head_sha=${L}&event=push&branch=main&per_page=50`]: { workflow_runs: [run('lolly-tools/lolly', L, { status: 'in_progress', conclusion: null, id: 101 })] },
+    [`/repos/lolly-tools/lolly/compare/main...${B}?per_page=1`]: { status: 'behind', behind_by: 5, merge_base_commit: { sha: B } },
+    [`/repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?head_sha=${B}&event=push&branch=main&per_page=50`]: { workflow_runs: [run('lolly-tools/lolly', B, { id: 90 })] },
+    ...overrides,
+  });
+
+  test('a Lolly commit on a fast lane qualifies through its base run; Work still needs its own', async () => {
+    const record = await tool.gate(env, fakeFetch(laneRoutes()), noSleep, { lollyLane: lane() });
+    assert.deepEqual([record.ci.lolly.id, record.ci.lolly.lane, record.ci.lolly.base, record.ci.lolly.fastRun], [90, 'docs', B, 300]);
+    assert.equal(record.ci.work.id, 200);
+    // Without the lane record the same source is refused: its own run is still going.
+    await assert.rejects(tool.gate(env, fakeFetch(laneRoutes()), noSleep), /no successful/);
+  });
+  test('refuses a lane record for another source, a full lane, a far or unqualified base', async () => {
+    const cases = [
+      [lane({ source: 'f'.repeat(40) }), /another repository or commit/],
+      [lane({ repository: 'someone/lolly' }), /another repository or commit/],
+      [lane({ lane: 'full' }), /only the docs and web lanes/],
+      [lane({ base: L }), /no base commit/],
+      [lane({ distance: 51 }), /within 50/],
+      [lane({ fastJob: null }), /no passed lane job/],
+      [lane({ version: 2 }), /malformed/],
+    ];
+    for (const [record, message] of cases) await assert.rejects(tool.gate(env, fakeFetch(laneRoutes()), noSleep, { lollyLane: record }), message);
+    const redBase = laneRoutes({ [`/repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?head_sha=${B}&event=push&branch=main&per_page=50`]: { workflow_runs: [run('lolly-tools/lolly', B, { conclusion: 'failure' })] } });
+    await assert.rejects(tool.gate(env, fakeFetch(redBase), noSleep, { lollyLane: lane() }), /no successful/);
+    const offMain = laneRoutes({ [`/repos/lolly-tools/lolly/compare/main...${B}?per_page=1`]: { status: 'diverged', merge_base_commit: { sha: 'a'.repeat(40) } } });
+    await assert.rejects(tool.gate(env, fakeFetch(offMain), noSleep, { lollyLane: lane() }), /not on lolly-tools\/lolly main/);
+  });
+  test('Work never takes a lane: its own run must be green even when Lolly is on one', async () => {
+    const red = laneRoutes({ [`/repos/lolly-tools/lolly-work/actions/workflows/ci.yml/runs?head_sha=${W}&event=push&branch=main&per_page=50`]: { workflow_runs: [run('lolly-tools/lolly-work', W, { status: 'in_progress', conclusion: null })] } });
+    await assert.rejects(tool.gate(env, fakeFetch(red), noSleep, { lollyLane: lane() }), /lolly-tools\/lolly-work has no successful/);
+  });
   test('retries server errors and network failures, then refuses', async () => {
     let calls = 0;
     const flaky = async (url, init) => { calls++; if (calls < 3) throw new Error('reset'); return fakeFetch(routes())(url, init); };
@@ -355,8 +394,8 @@ describe('workflow shape', () => {
   const body = WORKFLOW.slice(WORKFLOW.indexOf('\njobs:\n'));
   for (const block of body.split(/\n(?=  [a-z][a-z-]*:\n)/).slice(1)) jobs[/^  ([a-z-]+):/.exec(block)[1]] = block;
 
-  test('has the seven jobs in order and keeps the token read-only', () => {
-    assert.deepEqual(Object.keys(jobs), ['gate', 'maintenance', 'server', 'sign-source', 'build', 'sign', 'image']);
+  test('has the six jobs in order and keeps the token read-only', () => {
+    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image']);
     assert.match(WORKFLOW, /\npermissions:\n  contents: read\n\n/);
     assert.doesNotMatch(WORKFLOW, /\n[ ]+permissions:/, 'no job widens the token');
     assert.doesNotMatch(WORKFLOW, /packages:\s*write|docker (?:push|login)|--push\b/);
@@ -380,11 +419,26 @@ describe('workflow shape', () => {
     }
     assert.equal([...WORKFLOW.matchAll(/secrets\./g)].length, 3);
   });
-  test('the maintenance approval job holds nothing, checks out nothing and runs only when asked', () => {
-    assert.match(jobs.maintenance, /\n    if: inputs\.MAINTENANCE\n/);
-    assert.match(jobs.maintenance, /\n    environment: lolly-ing-maintenance\n/);
-    assert.doesNotMatch(jobs.maintenance, /secrets\.|uses: |checkout|\$\{\{ inputs\./);
-    assert.match(WORKFLOW, /\n      MAINTENANCE:\n[^\n]+\n        required: false\n        type: boolean\n        default: false\n/);
+  test('preview-grade: no approval job, no maintenance input, one signing environment', () => {
+    // Andy 2026-10-27: lolly-ing-signing has no reviewer, so nothing in a run waits for a person.
+    assert.doesNotMatch(WORKFLOW, /MAINTENANCE|lolly-ing-maintenance/);
+    assert.deepEqual([...new Set([...WORKFLOW.matchAll(/environment: (\S+)/g)].map((m) => m[1]))], ['lolly-ing-signing']);
+    assert.match(WORKFLOW, /\nrun-name: lolly\.ing preview \$\{\{ inputs\.WSHA \}\}\n/);  // the deploy command resumes a running build by it
+  });
+  test('the gate qualifies Lolly on a fast lane only without its own run, with the base commit\'s own rules', () => {
+    const steps = jobs.gate.split('\n      - ').slice(1);
+    const find = (re) => steps.filter((step) => re.test(step));
+    const [checkout] = find(/Check out Lolly's history/);
+    assert.match(checkout, /if: steps\.lolly-ci\.outputs\.lane == 'true'/);
+    assert.match(checkout, /fetch-depth: 0\n\s+filter: blob:none\n\s+persist-credentials: false/);
+    const [qualify] = find(/Qualify the Lolly commit on a fast lane/);
+    assert.match(qualify, /if: steps\.lolly-ci\.outputs\.lane == 'true'/);
+    assert.match(qualify, /git show "\$base:scripts\/deploy-lane\.ts" > "\$RUNNER_TEMP\/deploy-lane\.ts"/);
+    assert.match(qualify, /GITHUB_REPOSITORY=lolly-tools\/lolly node "\$RUNNER_TEMP\/deploy-lane\.ts" qualify "\$base" "\$LSHA"/);
+    assert.match(qualify, /--max-count=51/);
+    assert.doesNotMatch(jobs.gate, /secrets\.|environment:/);
+    const [gateStep] = find(/name: Check ancestry, qualification and the engine pin/);
+    assert.match(gateStep, /--lolly-lane "\$RUNNER_TEMP\/gate\/lolly-lane\.json"/);
   });
   test('dispatch inputs reach scripts only through the environment', () => {
     for (const block of WORKFLOW.split(/\n\s+run: /).slice(1)) {
@@ -401,11 +455,11 @@ describe('workflow shape', () => {
     assert.match(jobs.image, new RegExp(tool.RELEASE_THUMBPRINT));
     assert.doesNotMatch(WORKFLOW, /LOLLY_RELEASE_PUBLIC_KEY_JWK|VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ vars\./);
   });
-  test('the final artifacts are kept 30 days and the intermediate ones 1 day', () => {
+  test('the final artifacts are kept 7 days and the intermediate ones 1 day', () => {
     const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);
     assert.deepEqual(Object.fromEntries(retention), {
       'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
-      'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 30, 'lolly-ing-instance-archive': 30,
+      'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 7, 'lolly-ing-instance-archive': 7,
     });
   });
 });

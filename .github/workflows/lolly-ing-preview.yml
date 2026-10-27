@@ -8,30 +8,39 @@
 # no job contacts lolly.ing or the cluster; the preview deploy command fetches
 # the archive by run ID and streams it to the node.
 #
+# Preview-grade route (Andy, 2026-10-27): lolly.ing ships from main as soon as the
+# commits qualify, like lolly.tools. The signing environment lolly-ing-signing has no
+# reviewer and deploys from main only, so nothing in a run waits for a person. What
+# gates a build is the qualification rule in the gate job: Work's own green full CI
+# run, and for Lolly its own green full CI run or a fast lane above one.
+#
 # Jobs, in order (docs/lolly-ing-preview.md explains each one):
-#   gate         no secrets: inputs, ancestry, green CI push runs, engine pin, pin
-#   maintenance  lolly-ing-maintenance, only when MAINTENANCE is set: Andy's approval of a
-#                maintenance migration; holds nothing and runs nothing but a log line
+#   gate         no secrets: inputs, ancestry, qualification, engine pin, pin
 #   server       no secrets: the Work server stage from deploy/compose/Dockerfile
-#   sign-source  lolly-ing-signing: signs the SUSE source catalog (first approval)
+#   sign-source  lolly-ing-signing: signs the SUSE source catalog
 #   build        no secrets: validates the catalog and compiles the shell
-#   sign         lolly-ing-signing: signs the shell catalog and receipt (second approval)
+#   sign         lolly-ing-signing: signs the shell catalog and receipt
 #   image        no key: pack, instance image, boot check, OCI archive and manifest
 #
-# The signing jobs install nothing and run only Lolly's own scripts at LSHA
-# and this repository's checks, as lolly's release-frontend.yml does. Jobs that
-# install or build third-party code never hold the key.
+# Two jobs hold the key because Lolly's compile refuses a source catalog that is not
+# signed with the pin it bakes in, and the compile must not hold the key: it installs
+# and runs third-party packages, and a process it left behind could read a later
+# step's environment on the same runner. The signing jobs install nothing and run only
+# Lolly's own scripts at LSHA and this repository's checks, as lolly's
+# release-frontend.yml does (security review 2026-10-25 M1).
 name: lolly.ing preview image
+# The preview deploy command finds a running build of the same Work commit by this title and resumes it.
+run-name: lolly.ing preview ${{ inputs.WSHA }}
 
 on:
   workflow_dispatch:
     inputs:
       LSHA:
-        description: Lolly commit (40 hex) on lolly-tools/lolly main, with a successful CI push run
+        description: Lolly commit (40 hex) on lolly-tools/lolly main, with a successful CI push run or a fast lane above one
         required: true
         type: string
       WSHA:
-        description: Work commit (40 hex) on lolly-tools/lolly-work main, with a successful CI push run; its engine pin must name LSHA
+        description: Work commit (40 hex) on lolly-tools/lolly-work main, with its own successful CI push run; its engine pin must name LSHA
         required: true
         type: string
       SSHA:
@@ -43,11 +52,6 @@ on:
         required: false
         type: string
         default: ''
-      MAINTENANCE:
-        description: The build carries a migration Work's classifier calls maintenance; Andy also approves lolly-ing-maintenance
-        required: false
-        type: boolean
-        default: false
 
 permissions:
   contents: read
@@ -65,9 +69,9 @@ env:
 
 jobs:
   gate:
-    name: gate (sources, CI, engine pin, lolly.ing pin)
+    name: gate (sources, qualification, engine pin, lolly.ing pin)
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     outputs:
       lsha: ${{ steps.inputs.outputs.lsha }}
       wsha: ${{ steps.inputs.outputs.wsha }}
@@ -100,18 +104,68 @@ jobs:
         env:
           PIN_JWK: ${{ vars.LOLLY_ING_PUBLIC_KEY_JWK }}
         run: node "$TOOL" pin
-      - name: Check ancestry, CI push runs and the engine pin (read-only GitHub API)
+      - name: Does the Lolly commit have its own full CI run?
+        id: lolly-ci
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LSHA: ${{ steps.inputs.outputs.lsha }}
+        run: |
+          set -euo pipefail
+          own=$(gh api "repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?head_sha=$LSHA&event=push&branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id // empty')
+          if [[ -n "$own" ]]; then echo "lane=false" >> "$GITHUB_OUTPUT"; else echo "lane=true" >> "$GITHUB_OUTPUT"; fi
+      # Only without a full run of its own: the Lolly commit may still qualify on a fast lane, as a
+      # lolly.tools source does. Lolly's own scripts/deploy-lane.ts decides, copied from the base commit
+      # (the newest first-parent ancestor with a successful full run), exactly as preview-web.yml runs it.
+      - name: Check out Lolly's history at LSHA (lane only)
+        if: steps.lolly-ci.outputs.lane == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ steps.inputs.outputs.lsha }}
+          path: lolly
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+          submodules: false
+      - name: Qualify the Lolly commit on a fast lane (lane only)
+        if: steps.lolly-ci.outputs.lane == 'true'
+        working-directory: lolly
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LSHA: ${{ steps.inputs.outputs.lsha }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/gate"
+          test "$(git rev-parse HEAD)" = "$LSHA"
+          gh api "repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?branch=main&event=push&status=success&per_page=100" \
+            --jq '.workflow_runs[] | select(.path == ".github/workflows/ci.yml" and .event == "push" and .head_branch == "main" and .conclusion == "success" and .repository.full_name == "lolly-tools/lolly" and .head_repository.full_name == "lolly-tools/lolly") | "\(.head_sha) \(.id)"' \
+            > "$RUNNER_TEMP/lolly-ci-successes.txt"
+          base=''
+          for commit in $(git rev-list --first-parent --max-count=51 "$LSHA"); do
+            if awk -v commit="$commit" '$1 == commit { found = 1 } END { exit !found }' "$RUNNER_TEMP/lolly-ci-successes.txt"; then base=$commit; break; fi
+          done
+          if [[ -z "$base" ]]; then
+            echo "::error title=Lolly commit not qualified::$LSHA has no successful full CI run of its own and no green first-parent ancestor within 50 commits"
+            exit 1
+          fi
+          # Its own full run finished since the first look: no lane is needed, and the gate reads that run.
+          if [[ "$base" == "$LSHA" ]]; then exit 0; fi
+          git show "$base:scripts/deploy-lane.ts" > "$RUNNER_TEMP/deploy-lane.ts"
+          GITHUB_REPOSITORY=lolly-tools/lolly node "$RUNNER_TEMP/deploy-lane.ts" qualify "$base" "$LSHA" "$RUNNER_TEMP/gate/lolly-lane.json"
+      - name: Check ancestry, qualification and the engine pin (read-only GitHub API)
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           mkdir -p "$RUNNER_TEMP/gate"
-          node "$TOOL" gate --out "$RUNNER_TEMP/gate/gate.json"
+          lane=()
+          if [[ -f "$RUNNER_TEMP/gate/lolly-lane.json" ]]; then lane=(--lolly-lane "$RUNNER_TEMP/gate/lolly-lane.json"); fi
+          node "$TOOL" gate --out "$RUNNER_TEMP/gate/gate.json" "${lane[@]}"
           {
             echo "### lolly.ing preview image: gate passed"
             echo
             echo "| | commit | CI push run |"
             echo "|---|---|---|"
-            jq -r '"| Lolly | `\(.sources.lolly)` | \(.ci.lolly.id) |", "| Work | `\(.sources.work)` | \(.ci.work.id) |", "| suse-lolly | `\(.sources.suse)` | |"' "$RUNNER_TEMP/gate/gate.json"
+            jq -r '"| Lolly | `\(.sources.lolly)` | \(.ci.lolly.id)\(if .ci.lolly.lane then " (\(.ci.lolly.lane) lane above `\(.ci.lolly.base[0:12])`)" else "" end) |", "| Work | `\(.sources.work)` | \(.ci.work.id) |", "| suse-lolly | `\(.sources.suse)` | |"' "$RUNNER_TEMP/gate/gate.json"
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
@@ -120,17 +174,6 @@ jobs:
           retention-days: 1
           overwrite: true
           if-no-files-found: error
-
-  maintenance:
-    name: maintenance migration approval (lolly-ing-maintenance)
-    needs: gate
-    if: inputs.MAINTENANCE
-    runs-on: ubuntu-24.04
-    timeout-minutes: 5
-    environment: lolly-ing-maintenance
-    steps:
-      - name: Record the approval
-        run: echo "Andy approved a maintenance migration for this build; the preview deploy command reads the approval from this run."
 
   server:
     name: build (Work server stage)
@@ -718,18 +761,20 @@ jobs:
             echo
             jq -r '"- Image digest: `\(.image.digest)`", "- Archive sha256: `\(.image.archive.sha256)` (\(.image.archive.bytes) bytes)", "- Lolly `\(.sources.lolly)`, Work `\(.sources.work)`, suse-lolly `\(.sources.suse)`", "- lolly.ing pin `\(.shell.keyId)`, catalog sequence \(.catalog.seq)", "- Migrations: \(.migrations | length), newest `\(.migrations[-1].name)`"' "$out/lolly-ing-instance.manifest.json"
           } >> "$GITHUB_STEP_SUMMARY"
+      # Kept 7 days: the deploy streams the archive to the node right after the build, and a
+      # rollback uses the image already pinned there. About 2 GB per run.
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: lolly-ing-instance-manifest
           path: ${{ runner.temp }}/out/lolly-ing-instance.manifest.json
-          retention-days: 30
+          retention-days: 7
           overwrite: true
           if-no-files-found: error
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: lolly-ing-instance-archive
           path: ${{ runner.temp }}/out/*.oci.tar
-          retention-days: 30
+          retention-days: 7
           compression-level: 1
           overwrite: true
           if-no-files-found: error
