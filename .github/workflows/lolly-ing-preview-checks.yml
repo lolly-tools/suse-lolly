@@ -1,13 +1,12 @@
 # SPDX-License-Identifier: MPL-2.0
 # Tests for the lolly.ing preview image tooling (docs/lolly-ing-preview.md).
 # No secrets, no environment, read-only token; Node built-ins only.
+# Every pull request runs it (a few seconds), so `main` protection can require it: a
+# required check behind a path filter would never report on a content-only pull request.
 name: lolly.ing preview checks
 
 on:
   pull_request:
-    paths:
-      - .github/lolly-ing-preview/**
-      - .github/workflows/lolly-ing-preview*.yml
   push:
     branches: [main]
     paths:

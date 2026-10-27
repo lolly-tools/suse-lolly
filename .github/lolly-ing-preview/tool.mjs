@@ -9,7 +9,7 @@
  *
  *   inputs          check LSHA, WSHA, SSHA and MIN_SEQ (environment)
  *   pin             check the lolly.ing public pin (PIN_JWK) and refuse the release pin
- *   gate            read-only GitHub API checks: ancestry, green CI push runs, engine pin
+ *   gate            read-only GitHub API checks: ancestry, green CI push runs (or a Lolly fast lane), engine pin
  *   checkouts       compare local checkouts with the inputs and the Work engine pin
  *   envelope-check  the source catalog envelope names the lolly.ing key
  *   stored-formats  the shell's stored-format versions, from the Lolly source
@@ -184,6 +184,30 @@ export async function greenPushRun(get, repo, sha) {
   return { id: run.id, attempt: run.run_attempt, url: run.html_url ?? null, updatedAt: run.updated_at ?? null };
 }
 
+/**
+ * A Lolly source on a fast lane (Andy, 2026-10-27: the Lolly commit qualifies as a lolly.tools source does). The
+ * record is what Lolly's own scripts/deploy-lane.ts, copied from the base commit, wrote in the gate job: it already
+ * classified the change and found the passed lane job. Here the record must name this source and repository, a docs
+ * or web lane, a base within 50 first-parent commits on main, and that base needs its own successful full CI run.
+ * Work never takes a lane.
+ */
+export const LANES = ['docs', 'web'];
+export async function laneRun(get, record, lsha) {
+  need(record && typeof record === 'object' && record.version === 1 && typeof record.policy === 'string',
+    'the Lolly lane record is malformed');
+  need(record.repository === REPOS.lolly && record.source === lsha, 'the Lolly lane record is for another repository or commit');
+  need(SHA40.test(record.base ?? '') && record.base !== lsha, 'the Lolly lane record names no base commit');
+  need(LANES.includes(record.lane), `the Lolly lane is ${record.lane}; only the docs and web lanes skip a full CI run`);
+  need(Number.isSafeInteger(record.distance) && record.distance >= 1 && record.distance <= 50,
+    'the lane base is not within 50 first-parent commits of LSHA');
+  const job = record.fastJob;
+  need(job && Number.isSafeInteger(job.run) && Number.isSafeInteger(job.job), 'the Lolly lane record names no passed lane job');
+  await onMain(get, REPOS.lolly, record.base);
+  const base = await greenPushRun(get, REPOS.lolly, record.base);
+  return { ...base, lane: record.lane, base: record.base, distance: record.distance, fastRun: job.run, fastJob: job.job,
+    policy: record.policy };
+}
+
 export async function submoduleCommit(get, repo, path, ref) {
   const entry = await get(`/repos/${repo}/contents/${path}?ref=${ref}`);
   need(entry?.type === 'submodule' && SHA40.test(entry?.sha ?? ''), `${repo}:${path} at ${ref} is not a submodule gitlink`);
@@ -197,7 +221,7 @@ export async function repoJson(get, repo, path, ref) {
   return JSON.parse(Buffer.from(entry.content, 'base64').toString('utf8'));
 }
 
-export async function gate(env, fetchImpl = fetch, sleep) {
+export async function gate(env, fetchImpl = fetch, sleep, { lollyLane = null } = {}) {
   const inputs = checkInputs(env);
   need(env.GITHUB_REPOSITORY === REPOS.suse, `this workflow runs only in ${REPOS.suse}`);
   need(env.GITHUB_EVENT_NAME === 'workflow_dispatch', 'dispatch the workflow by hand (workflow_dispatch)');
@@ -212,7 +236,11 @@ export async function gate(env, fetchImpl = fetch, sleep) {
     work: await onMain(get, REPOS.work, inputs.wsha),
     suse: await onMain(get, REPOS.suse, inputs.ssha),
   };
-  record.ci = { lolly: await greenPushRun(get, REPOS.lolly, inputs.lsha), work: await greenPushRun(get, REPOS.work, inputs.wsha) };
+  // Work needs its own successful full CI run. Lolly needs its own, or a fast lane above a base that has one.
+  record.ci = {
+    lolly: lollyLane ? await laneRun(get, lollyLane, inputs.lsha) : await greenPushRun(get, REPOS.lolly, inputs.lsha),
+    work: await greenPushRun(get, REPOS.work, inputs.wsha),
+  };
   const gitlink = await submoduleCommit(get, REPOS.work, 'vendor/lolly', inputs.wsha);
   need(gitlink === inputs.lsha, `lolly-work@${inputs.wsha} vendors Lolly ${gitlink}, not LSHA ${inputs.lsha}`);
   const enginePin = await repoJson(get, REPOS.work, 'engine-pin.json', inputs.wsha);
@@ -697,7 +725,8 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
       break;
     }
     case 'gate': {
-      result = await gate(env);
+      const lane = one(a, 'lolly-lane', false);
+      result = await gate(env, fetch, undefined, { lollyLane: lane ? readJson(lane, 1024 * 1024) : null });
       writeJson(one(a, 'out'), result);
       setOutput('lolly_ci_run', result.ci.lolly.id); setOutput('work_ci_run', result.ci.work.id);
       break;
