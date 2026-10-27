@@ -496,6 +496,11 @@ jobs:
         working-directory: lolly
         env:
           LOLLY_CATALOG_SIGNING_KEY: ${{ secrets.LOLLY_ING_CATALOG_SIGNING_KEY }}
+          # sign-catalog.ts computes its default --index from the active profile while it
+          # parses arguments, and this job deliberately has no SUSE pack on disk (it holds
+          # the key). --tools and --index are explicit below, so the profile is never read;
+          # lolly-start is in the public tree, so resolving it cannot fail.
+          LOLLY_PROFILE: lolly-start
         run: |
           root="$RUNNER_TEMP/release-frontend"
           floor=()
