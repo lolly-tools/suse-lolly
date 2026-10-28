@@ -13,7 +13,9 @@ are not writable by the server's user. The engine pin is the Work image's own `/
 
 The image never leaves this private repository's Actions run. Nothing is pushed to a registry, because the shell and
 pack carry licensed SUSE content. The run keeps an OCI archive and a manifest as artifacts for 7 days. The preview
-deploy command downloads them by run ID and streams the archive to the node.
+deploy command reads the manifest by run ID. The node fetches the archive itself, from the signed download address
+GitHub gives the command for that artifact, which expires a minute after it is issued (lolly-work #247). No credential
+reaches the node. If the fetch fails, the command downloads the archive and streams it to the node instead.
 
 lolly.ing is a **preview-grade** route (Andy, 2026-10-27), the same model as lolly.tools: a commit ships from `main` as
 soon as it qualifies, with no approval per build. The signing environment `lolly-ing-signing` has no reviewer and
@@ -123,8 +125,9 @@ The consumer is lolly-work's `deploy/preview` (`launch.py lolly.ing deploy|ship 
    naming `sources.lolly`, every key id (`shell.keyId`, `shell.publicPinThumbprint`, `catalog.keyId`,
    `buildSettings.pinThumbprint`) equal to the lolly.ing pin it holds and never the release key, the boot results, the
    migrations and the stored formats;
-3. downloads `lolly-ing-instance-<run id>-<attempt>.oci.tar` from that run's `lolly-ing-instance-archive` artifact,
-   streams it to the node and checks its sha256 against `image.archive` before `ctr images import --no-unpack --digests
+3. has the node fetch `lolly-ing-instance-<run id>-<attempt>.oci.tar` from that run's `lolly-ing-instance-archive`
+   artifact (or, if that fails, downloads it and streams it to the node) and checks its sha256 against `image.archive`
+   while it is written and again before `ctr images import --no-unpack --digests
    --base-name docker.io/library/lolly-ing-instance`; then it checks `image.digest`, `manifestDigest`, `configDigest`
    and `diffIds`, and removes the run tag (`image.refName`) the import kept;
 4. after the switch, verifies the shell's `release-frontend.sig.json` served by lolly.ing against the lolly.ing pin

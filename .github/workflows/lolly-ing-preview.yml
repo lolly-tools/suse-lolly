@@ -5,8 +5,11 @@
 # shell compiled from Lolly at LSHA with suse-lolly at SSHA, and the instance
 # pack, signed with lolly.ing's own catalog key. The image and its manifest stay
 # artifacts of this private run (30 days). Nothing is pushed to any registry and
-# no job contacts lolly.ing or the cluster; the preview deploy command fetches
-# the archive by run ID and streams it to the node.
+# no job contacts lolly.ing or the cluster. The preview deploy command binds the
+# run by ID and hands the node the archive artifact's signed download address,
+# which expires a minute after GitHub issues it; the node fetches the archive and
+# checks it against the manifest (lolly-work #247). If that fails, the command
+# downloads the archive and streams it to the node instead.
 #
 # Preview-grade route (Andy, 2026-10-27): lolly.ing ships from main as soon as the
 # commits qualify, like lolly.tools. The signing environment lolly-ing-signing has no
@@ -766,8 +769,8 @@ jobs:
             echo
             jq -r '"- Image digest: `\(.image.digest)`", "- Archive sha256: `\(.image.archive.sha256)` (\(.image.archive.bytes) bytes)", "- Lolly `\(.sources.lolly)`, Work `\(.sources.work)`, suse-lolly `\(.sources.suse)`", "- lolly.ing pin `\(.shell.keyId)`, catalog sequence \(.catalog.seq)", "- Migrations: \(.migrations | length), newest `\(.migrations[-1].name)`"' "$out/lolly-ing-instance.manifest.json"
           } >> "$GITHUB_STEP_SUMMARY"
-      # Kept 7 days: the deploy streams the archive to the node right after the build, and a
-      # rollback uses the image already pinned there. About 2 GB per run.
+      # Kept 7 days: the node fetches the archive right after the build, and a rollback uses
+      # the image already pinned there. About 2 GB per run.
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: lolly-ing-instance-manifest
