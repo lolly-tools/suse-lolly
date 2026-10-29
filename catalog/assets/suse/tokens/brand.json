@@ -826,7 +826,7 @@
         },
         "secondary": {
           "$value": "{color.colourway.light.secondary}",
-          "$description": "Supporting accent"
+          "$description": "Supporting accent: Jungle 3, which holds 3:1 on White (4.6:1) and on Pine (3.0:1) and stays distinct from a Jungle lead"
         },
         "surface": {
           "$value": "{color.brand.white}",
@@ -1037,7 +1037,7 @@
             "$description": "Pine on Jungle 5.6:1"
           },
           "secondary": {
-            "$value": "{color.brand.pine}"
+            "$value": "{color.ramp.jungle.3}"
           }
         },
         "$type": "color",
@@ -1071,7 +1071,7 @@
             "$description": "Pine on Persimmon 5.4:1"
           },
           "secondary": {
-            "$value": "{color.brand.pine}"
+            "$value": "{color.ramp.jungle.3}"
           }
         },
         "dark": {
@@ -1104,7 +1104,7 @@
             "$description": "White on Waterhole 5.6:1"
           },
           "secondary": {
-            "$value": "{color.brand.pine}"
+            "$value": "{color.ramp.jungle.3}"
           }
         },
         "dark": {
