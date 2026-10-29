@@ -1,10 +1,13 @@
 {
-  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained - they mirror the SUSE chrome colors already hardcoded in shells/web/src/styles/tokens.css exactly, so activating them changes nothing visually. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
+  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained. Since 2026-10-29 (plans/319 A9, Andy) their primary, on-primary and secondary link to `color.colourway.<look>.*`, held by three colourways: Jungle (canonical), Persimmon and Waterhole. White is the light ground, Pine the dark ground, and Jungle the primary in both looks, so the light primary is no longer Pine and no longer matches the static tokens.css fallback. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
   "$metadata": {
     "tokenSetOrder": [
       "base",
       "light",
-      "dark"
+      "dark",
+      "colourway/jungle",
+      "colourway/persimmon",
+      "colourway/waterhole"
     ]
   },
   "$themes": [
@@ -13,6 +16,13 @@
       "selectedTokenSets": {
         "base": "enabled",
         "light": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "mode"
+          }
+        }
       }
     },
     {
@@ -20,6 +30,59 @@
       "selectedTokenSets": {
         "base": "enabled",
         "dark": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "mode"
+          }
+        }
+      }
+    },
+    {
+      "id": "jungle",
+      "name": "Jungle",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/jungle": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway",
+            "canonical": true
+          }
+        }
+      }
+    },
+    {
+      "id": "persimmon",
+      "name": "Persimmon",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/persimmon": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway"
+          }
+        }
+      }
+    },
+    {
+      "id": "waterhole",
+      "name": "Waterhole",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/waterhole": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway"
+          }
+        }
       }
     }
   ],
@@ -752,18 +815,18 @@
       "$type": "color",
       "semantic": {
         "$type": "color",
-        "$description": "The seven semantic slots for the light look. Primary/on-primary alias the exact colors already hardcoded for SUSE’s light chrome theme.",
+        "$description": "The seven semantic slots for the light look: Pine text on a White ground, with the colourway lead as primary.",
         "primary": {
-          "$value": "{color.brand.pine}",
-          "$description": "The brand color - matches tokens.css light --primary (#0c322c) exactly"
+          "$value": "{color.colourway.light.primary}",
+          "$description": "The lead colour of the chosen colourway. Jungle in the canonical one, in both looks (Andy, 2026-10-29)"
         },
         "on-primary": {
-          "$value": "{color.brand.white}",
-          "$description": "Text/icons on primary - matches light --primary-foreground exactly"
+          "$value": "{color.colourway.light.on-primary}",
+          "$description": "Text and icons on the lead: an approved combination for each lead (Pine on Jungle 5.6:1)"
         },
         "secondary": {
-          "$value": "{color.brand.jungle}",
-          "$description": "Supporting accent"
+          "$value": "{color.colourway.light.secondary}",
+          "$description": "Supporting accent: Jungle 3, which holds 3:1 on White (4.6:1) and on Pine (3.0:1) and stays distinct from a Jungle lead"
         },
         "surface": {
           "$value": "{color.brand.white}",
@@ -859,22 +922,22 @@
       "$type": "color",
       "semantic": {
         "$type": "color",
-        "$description": "The seven semantic slots for the dark look. Primary/on-primary alias the exact colors already hardcoded for SUSE’s dark chrome theme.",
+        "$description": "The seven semantic slots for the dark look: White text on a Pine ground, with the colourway lead as primary.",
         "primary": {
-          "$value": "{color.brand.jungle}",
-          "$description": "The brand color lifted for dark surfaces - matches tokens.css dark --primary (#30ba78) exactly"
+          "$value": "{color.colourway.dark.primary}",
+          "$description": "The lead colour of the chosen colourway. Jungle in the canonical one, in both looks (Andy, 2026-10-29)"
         },
         "on-primary": {
-          "$value": "{color.brand.black}",
-          "$description": "Text/icons on primary"
+          "$value": "{color.colourway.dark.on-primary}",
+          "$description": "Text and icons on the lead: an approved combination for each lead (Pine on Jungle 5.6:1)"
         },
         "secondary": {
-          "$value": "{color.brand.mint}",
+          "$value": "{color.colourway.dark.secondary}",
           "$description": "Supporting accent lifted to match"
         },
         "surface": {
           "$value": "{color.brand.pine}",
-          "$description": "Canvas/page background - matches the dark brand theme’s background exactly"
+          "$description": "Canvas/page background: Pine"
         },
         "text": {
           "$value": "{color.brand.white}",
@@ -957,6 +1020,105 @@
         "alt-surface": {
           "$value": "{color.brand.pine}",
           "$description": "An alternative slide ground."
+        }
+      }
+    }
+  },
+  "colourway/jungle": {
+    "color": {
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.jungle}",
+            "$description": "Jungle on White 2.5:1, as Andy chose"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Jungle 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "$type": "color",
+        "dark": {
+          "primary": {
+            "$value": "{color.brand.jungle}",
+            "$description": "Jungle on Pine 5.6:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Jungle 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
+        }
+      }
+    }
+  },
+  "colourway/persimmon": {
+    "color": {
+      "$type": "color",
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.persimmon}",
+            "$description": "Persimmon on White 2.6:1, matching Jungle"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Persimmon 5.4:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "dark": {
+          "primary": {
+            "$value": "{color.brand.persimmon}",
+            "$description": "Persimmon on Pine 5.4:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Persimmon 5.4:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
+        }
+      }
+    }
+  },
+  "colourway/waterhole": {
+    "color": {
+      "$type": "color",
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.waterhole}",
+            "$description": "Waterhole on White 5.6:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.white}",
+            "$description": "White on Waterhole 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "dark": {
+          "primary": {
+            "$value": "{color.ramp.blue.6}",
+            "$description": "Blue 6 on Pine 6.2:1: Waterhole itself is 2.5:1 on Pine"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Blue 6 6.2:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
         }
       }
     }
