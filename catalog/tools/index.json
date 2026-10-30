@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-28T14:40:29.162Z",
+  "generatedAt": "2026-10-30T18:36:50.970Z",
   "tools": [
     {
       "id": "color-block",
@@ -16338,7 +16338,7 @@
           "id": "bouncing-icon",
           "name": "Bouncing icon",
           "category": "Promotion",
-          "description": "An icon crouches, jumps and comes down again under soft light, with the studio orbiting gently as it goes. Swap in your own SVG under Start."
+          "description": "An icon crouches, jumps and comes down again under soft light. Swap in your own SVG under Start."
         },
         {
           "id": "geeko-branch",
