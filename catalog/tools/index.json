@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-31T17:22:43.352Z",
+  "generatedAt": "2026-10-31T18:05:27.982Z",
   "tools": [
     {
       "id": "color-block",
@@ -3487,7 +3487,7 @@
       "id": "logo-wall",
       "name": "Logo Wall",
       "description": "Arrange a pile of logos into a clean, even sponsor grid - the “NASCAR” wall.",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -9997,7 +9997,7 @@
       "id": "certificate",
       "name": "Certificate",
       "description": "Completion and award certificates in the active design system and its colourway: four styles, print and social sizes, and motion for sharing - one name at a time, or a whole roster from a CSV in Bulk from rows.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "status": "community",
       "category": "everyone",
       "tags": [
