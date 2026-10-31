@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-10-31T18:05:27.982Z",
+  "generatedAt": "2026-10-31T23:57:35.060Z",
   "tools": [
     {
       "id": "color-block",
@@ -9997,7 +9997,7 @@
       "id": "certificate",
       "name": "Certificate",
       "description": "Completion and award certificates in the active design system and its colourway: four styles, print and social sizes, and motion for sharing - one name at a time, or a whole roster from a CSV in Bulk from rows.",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "status": "community",
       "category": "everyone",
       "tags": [
