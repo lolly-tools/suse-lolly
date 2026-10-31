@@ -1,0 +1,788 @@
+# SPDX-License-Identifier: MPL-2.0
+# lolly.ing preview instance image (preview fast-deploy proposal, section 4.2).
+#
+# Builds one private image that holds the Work server at WSHA, the SUSE web
+# shell compiled from Lolly at LSHA with suse-lolly at SSHA, and the instance
+# pack, signed with lolly.ing's own catalog key. The image and its manifest stay
+# artifacts of this private run (30 days). Nothing is pushed to any registry and
+# no job contacts lolly.ing or the cluster. The preview deploy command binds the
+# run by ID and hands the node the archive artifact's signed download address,
+# which expires a minute after GitHub issues it; the node fetches the archive and
+# checks it against the manifest (lolly-work #247). If that fails, the command
+# downloads the archive and streams it to the node instead.
+#
+# Preview-grade route (Andy, 2026-10-27): lolly.ing ships from main as soon as the
+# commits qualify, like lolly.tools. The signing environment lolly-ing-signing has no
+# reviewer and deploys from main only, so nothing in a run waits for a person. What
+# gates a build is the qualification rule in the gate job: Work's own green full CI
+# run, and for Lolly its own green full CI run or a fast lane above one.
+#
+# Jobs, in order (docs/lolly-ing-preview.md explains each one):
+#   gate         no secrets: inputs, ancestry, qualification, engine pin, pin
+#   server       no secrets: the Work server stage from deploy/compose/Dockerfile
+#   sign-source  lolly-ing-signing: signs the SUSE source catalog
+#   build        no secrets: validates the catalog and compiles the shell
+#   sign         lolly-ing-signing: signs the shell catalog and receipt
+#   image        no key: pack, instance image, boot check, OCI archive and manifest
+#
+# Two jobs hold the key because Lolly's compile refuses a source catalog that is not
+# signed with the pin it bakes in, and the compile must not hold the key: it installs
+# and runs third-party packages, and a process it left behind could read a later
+# step's environment on the same runner. The signing jobs install nothing and run only
+# Lolly's own scripts at LSHA and this repository's checks, as lolly's
+# release-frontend.yml does (security review 2026-10-25 M1).
+name: lolly.ing preview image
+# The preview deploy command finds a running build of the same Work commit by this title and resumes it.
+run-name: lolly.ing preview ${{ inputs.WSHA }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      LSHA:
+        description: Lolly commit (40 hex) on lolly-tools/lolly main, with a successful CI push run or a fast lane above one
+        required: true
+        type: string
+      WSHA:
+        description: Work commit (40 hex) on lolly-tools/lolly-work main, with its own successful CI push run; its engine pin must name LSHA
+        required: true
+        type: string
+      SSHA:
+        description: suse-lolly commit (40 hex) on main
+        required: true
+        type: string
+      MIN_SEQ:
+        description: Optional floor for the shell catalog sequence (needs sign-catalog.ts --min-seq at LSHA)
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lolly-ing-preview
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  TOOL: ${{ github.workspace }}/tooling/.github/lolly-ing-preview/tool.mjs
+
+jobs:
+  gate:
+    name: gate (sources, qualification, engine pin, lolly.ing pin)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      lsha: ${{ steps.inputs.outputs.lsha }}
+      wsha: ${{ steps.inputs.outputs.wsha }}
+      ssha: ${{ steps.inputs.outputs.ssha }}
+      min_seq: ${{ steps.inputs.outputs.min_seq }}
+      pin: ${{ steps.pin.outputs.pin }}
+      thumbprint: ${{ steps.pin.outputs.thumbprint }}
+    env:
+      LSHA: ${{ inputs.LSHA }}
+      WSHA: ${{ inputs.WSHA }}
+      SSHA: ${{ inputs.SSHA }}
+      MIN_SEQ: ${{ inputs.MIN_SEQ }}
+    steps:
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '26'
+          package-manager-cache: false
+      - name: Check the inputs
+        id: inputs
+        run: node "$TOOL" inputs
+      - name: Check the lolly.ing pin (never the release pin)
+        id: pin
+        env:
+          PIN_JWK: ${{ vars.LOLLY_ING_PUBLIC_KEY_JWK }}
+        run: node "$TOOL" pin
+      - name: Does the Lolly commit have its own full CI run?
+        id: lolly-ci
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LSHA: ${{ steps.inputs.outputs.lsha }}
+        run: |
+          set -euo pipefail
+          own=$(gh api "repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?head_sha=$LSHA&event=push&branch=main&status=success&per_page=1" --jq '.workflow_runs[0].id // empty')
+          if [[ -n "$own" ]]; then echo "lane=false" >> "$GITHUB_OUTPUT"; else echo "lane=true" >> "$GITHUB_OUTPUT"; fi
+      # Only without a full run of its own: the Lolly commit may still qualify on a fast lane, as a
+      # lolly.tools source does. Lolly's own scripts/deploy-lane.ts decides, copied from the base commit
+      # (the newest first-parent ancestor with a successful full run), exactly as preview-web.yml runs it.
+      - name: Check out Lolly's history at LSHA (lane only)
+        if: steps.lolly-ci.outputs.lane == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ steps.inputs.outputs.lsha }}
+          path: lolly
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+          submodules: false
+      - name: Qualify the Lolly commit on a fast lane (lane only)
+        if: steps.lolly-ci.outputs.lane == 'true'
+        working-directory: lolly
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LSHA: ${{ steps.inputs.outputs.lsha }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/gate"
+          test "$(git rev-parse HEAD)" = "$LSHA"
+          gh api "repos/lolly-tools/lolly/actions/workflows/ci.yml/runs?branch=main&event=push&status=success&per_page=100" \
+            --jq '.workflow_runs[] | select(.path == ".github/workflows/ci.yml" and .event == "push" and .head_branch == "main" and .conclusion == "success" and .repository.full_name == "lolly-tools/lolly" and .head_repository.full_name == "lolly-tools/lolly") | "\(.head_sha) \(.id)"' \
+            > "$RUNNER_TEMP/lolly-ci-successes.txt"
+          base=''
+          for commit in $(git rev-list --first-parent --max-count=51 "$LSHA"); do
+            if awk -v commit="$commit" '$1 == commit { found = 1 } END { exit !found }' "$RUNNER_TEMP/lolly-ci-successes.txt"; then base=$commit; break; fi
+          done
+          if [[ -z "$base" ]]; then
+            echo "::error title=Lolly commit not qualified::$LSHA has no successful full CI run of its own and no green first-parent ancestor within 50 commits"
+            exit 1
+          fi
+          # Its own full run finished since the first look: no lane is needed, and the gate reads that run.
+          if [[ "$base" == "$LSHA" ]]; then exit 0; fi
+          git show "$base:scripts/deploy-lane.ts" > "$RUNNER_TEMP/deploy-lane.ts"
+          GITHUB_REPOSITORY=lolly-tools/lolly node "$RUNNER_TEMP/deploy-lane.ts" qualify "$base" "$LSHA" "$RUNNER_TEMP/gate/lolly-lane.json"
+      - name: Check ancestry, qualification and the engine pin (read-only GitHub API)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/gate"
+          lane=()
+          if [[ -f "$RUNNER_TEMP/gate/lolly-lane.json" ]]; then lane=(--lolly-lane "$RUNNER_TEMP/gate/lolly-lane.json"); fi
+          node "$TOOL" gate --out "$RUNNER_TEMP/gate/gate.json" "${lane[@]}"
+          {
+            echo "### lolly.ing preview image: gate passed"
+            echo
+            echo "| | commit | CI push run |"
+            echo "|---|---|---|"
+            jq -r '"| Lolly | `\(.sources.lolly)` | \(.ci.lolly.id)\(if .ci.lolly.lane then " (\(.ci.lolly.lane) lane above `\(.ci.lolly.base[0:12])`)" else "" end) |", "| Work | `\(.sources.work)` | \(.ci.work.id) |", "| suse-lolly | `\(.sources.suse)` | |"' "$RUNNER_TEMP/gate/gate.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-gate
+          path: ${{ runner.temp }}/gate/gate.json
+          retention-days: 1
+          overwrite: true
+          if-no-files-found: error
+
+  server:
+    name: build (Work server stage)
+    needs: gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      archive_sha256: ${{ steps.export.outputs.archive_sha256 }}
+      image_id: ${{ steps.build.outputs.image_id }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      WORK_SERVER_IMAGE: lolly-ing-work-server:${{ needs.gate.outputs.wsha }}
+    steps:
+      - name: Check out Work at WSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly-work
+          ref: ${{ needs.gate.outputs.wsha }}
+          path: work
+          persist-credentials: false
+          submodules: false
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '26'
+          package-manager-cache: false
+      - name: Check that Work vendors and pins LSHA
+        run: node "$TOOL" checkouts --work work
+      - name: Build the Work server stage (no push)
+        id: build
+        run: |
+          docker buildx build --platform linux/amd64 --provenance=false --sbom=false \
+            --file work/deploy/compose/Dockerfile --tag "$WORK_SERVER_IMAGE" \
+            --label "org.opencontainers.image.revision=$WSHA" --load work
+          echo "image_id=$(docker image inspect --format '{{.Id}}' "$WORK_SERVER_IMAGE")" >> "$GITHUB_OUTPUT"
+      - name: Check the server image offline
+        run: |
+          docker run --rm --network none --read-only --tmpfs /tmp:rw,size=64m --cap-drop ALL \
+            --security-opt no-new-privileges --entrypoint node "$WORK_SERVER_IMAGE" scripts/verify-engine-pin.ts
+          docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges \
+            --entrypoint node "$WORK_SERVER_IMAGE" \
+            -e 'const p = require("/app/engine-pin.json"); if (p.generatedFrom !== process.argv[1]) { console.error("The image engine pin is not LSHA."); process.exit(1); }' "$LSHA"
+      - name: Record migrations and export the server image
+        id: export
+        run: |
+          out="$RUNNER_TEMP/server"
+          mkdir -p "$out"
+          cid=$(docker create "$WORK_SERVER_IMAGE")
+          docker cp "$cid:/app/migrations" "$RUNNER_TEMP/server-migrations"
+          docker rm "$cid" > /dev/null
+          node "$TOOL" migrations --dir "$RUNNER_TEMP/server-migrations" --out "$out/migrations.json" > /dev/null
+          docker save --output "$out/work-server.tar" "$WORK_SERVER_IMAGE"
+          echo "archive_sha256=$(sha256sum "$out/work-server.tar" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-work-server
+          path: ${{ runner.temp }}/server
+          retention-days: 1
+          compression-level: 1
+          overwrite: true
+          if-no-files-found: error
+
+  sign-source:
+    name: sign (SUSE source catalog, lolly.ing key)
+    needs: gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: lolly-ing-signing
+    outputs:
+      envelope_sha256: ${{ steps.envelope.outputs.envelope_sha256 }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      LOLLY_PROFILE: suse
+      LOLLY_STRICT_PROFILE: '1'
+      VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
+    steps:
+      - name: Check out Lolly at LSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ needs.gate.outputs.lsha }}
+          path: lolly
+          persist-credentials: false
+          submodules: false
+      - name: Check out suse-lolly at SSHA into brands/suse
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ needs.gate.outputs.ssha }}
+          path: lolly/brands/suse
+          persist-credentials: false
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: lolly/.nvmrc
+          package-manager-cache: false
+      - name: Check the sources and the lolly.ing pin
+        env:
+          PIN_JWK: ${{ vars.LOLLY_ING_PUBLIC_KEY_JWK }}
+          GATE_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+        run: |
+          node "$TOOL" checkouts --lolly lolly --suse lolly/brands/suse
+          node "$TOOL" pin --expect-thumbprint "$GATE_THUMBPRINT" --out "$RUNNER_TEMP/pin.json"
+      - name: Check release qualification and prepare the source resolver
+        working-directory: lolly
+        run: |
+          node scripts/webgpu-release-gate.ts --scope web
+          mkdir -p node_modules/@lolly-tools
+          ln -s ../../packages/node-shell node_modules/@lolly-tools/node-shell
+      - name: Sign the SUSE source catalog with the lolly.ing key
+        working-directory: lolly
+        env:
+          LOLLY_CATALOG_SIGNING_KEY: ${{ secrets.LOLLY_ING_CATALOG_SIGNING_KEY }}
+        run: |
+          # The committed envelope is signed with the release key. sign-catalog.ts
+          # would read it as the previous envelope and refuse the new key.
+          rm -f brands/suse/catalog/tools/index.sig.json
+          node scripts/sign-catalog.ts
+      - name: Check and keep the source envelope
+        id: envelope
+        run: |
+          mkdir -p "$RUNNER_TEMP/source-envelope"
+          cp lolly/brands/suse/catalog/tools/index.sig.json "$RUNNER_TEMP/source-envelope/index.sig.json"
+          node "$TOOL" envelope-check --envelope "$RUNNER_TEMP/source-envelope/index.sig.json" --pin "$RUNNER_TEMP/pin.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-source-envelope
+          path: ${{ runner.temp }}/source-envelope/index.sig.json
+          retention-days: 1
+          overwrite: true
+          if-no-files-found: error
+
+  build:
+    name: build (SUSE shell, no key)
+    needs: [gate, sign-source]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    outputs:
+      input_sha256: ${{ steps.package.outputs.input_sha256 }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      LOLLY_PROFILE: suse
+      LOLLY_STRICT_PROFILE: '1'
+    steps:
+      - name: Check out Lolly at LSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ needs.gate.outputs.lsha }}
+          path: lolly
+          persist-credentials: false
+          submodules: false
+      - name: Check out suse-lolly at SSHA into brands/suse
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ needs.gate.outputs.ssha }}
+          path: lolly/brands/suse
+          persist-credentials: false
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          package_json_file: lolly/package.json
+          run_install: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: lolly/.nvmrc
+          cache: pnpm
+          cache-dependency-path: lolly/pnpm-lock.yaml
+      - name: Check the sources
+        run: node "$TOOL" checkouts --lolly lolly --suse lolly/brands/suse
+      - name: Install Lolly's dependencies (frozen lockfile)
+        working-directory: lolly
+        run: pnpm install --frozen-lockfile
+      - name: Validate the SUSE catalog
+        working-directory: lolly
+        run: pnpm run validate:catalog
+      - name: Record stored formats and build settings
+        env:
+          PIN_JWK: ${{ needs.gate.outputs.pin }}
+          CONNECTOR_ORIGINS: ${{ vars.LOLLY_ING_CONNECTOR_ORIGINS }}
+          CA_TRUST: ${{ vars.LOLLY_ING_CA_ENROLLMENT_TRUST_JSON }}
+        run: |
+          out="$RUNNER_TEMP/frontend"
+          mkdir -p "$out"
+          node "$TOOL" pin --out "$RUNNER_TEMP/pin.json" > /dev/null
+          node "$TOOL" stored-formats --lolly lolly --out "$out/stored-formats.json"
+          node "$TOOL" build-settings --pin "$RUNNER_TEMP/pin.json" --out "$out/build-settings.json"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-source-envelope
+          path: ${{ runner.temp }}/source-envelope
+      - name: Use the lolly.ing source envelope
+        env:
+          EXPECTED: ${{ needs.sign-source.outputs.envelope_sha256 }}
+        run: |
+          echo "$EXPECTED  $RUNNER_TEMP/source-envelope/index.sig.json" | sha256sum --check --strict
+          cp "$RUNNER_TEMP/source-envelope/index.sig.json" lolly/brands/suse/catalog/tools/index.sig.json
+      - name: Compile the lolly.ing shell (release build phase, no key)
+        working-directory: lolly
+        env:
+          LOLLY_RELEASE_FRONTEND_PHASE: build
+          LOLLY_SITE_URL: https://lolly.ing
+          VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
+          VITE_REQUIRE_AI_POLICY: 'true'
+          VITE_LIVE_RELAY: https://lolly.ing/live
+          VITE_CONNECTOR_ORIGINS: ${{ vars.LOLLY_ING_CONNECTOR_ORIGINS }}
+          VITE_CA_ENROLLMENT_TRUST_JSON: ${{ vars.LOLLY_ING_CA_ENROLLMENT_TRUST_JSON }}
+          NODE_OPTIONS: --max-old-space-size=5120
+        run: node scripts/build-release-web.ts web
+      - name: Package the unsigned shell
+        id: package
+        run: |
+          out="$RUNNER_TEMP/frontend"
+          tar --create --file "$out/frontend-input.tar" --directory lolly/shells/web/dist .
+          echo "input_sha256=$(sha256sum "$out/frontend-input.tar" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-frontend-input
+          path: ${{ runner.temp }}/frontend
+          retention-days: 1
+          compression-level: 1
+          overwrite: true
+          if-no-files-found: error
+
+  sign:
+    name: sign (shell catalog and receipt, lolly.ing key)
+    needs: [gate, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: lolly-ing-signing
+    outputs:
+      signed_sha256: ${{ steps.package.outputs.signed_sha256 }}
+      custody_sha256: ${{ steps.custody.outputs.custody_sha256 }}
+      seq: ${{ steps.shell.outputs.seq }}
+      index_sha256: ${{ steps.shell.outputs.index_sha256 }}
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
+      LOLLY_PROFILE: suse
+      VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
+    steps:
+      - name: Check out Lolly at LSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ needs.gate.outputs.lsha }}
+          path: lolly
+          persist-credentials: false
+          submodules: false
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: lolly/.nvmrc
+          package-manager-cache: false
+      - name: Check the source and the lolly.ing pin
+        env:
+          PIN_JWK: ${{ vars.LOLLY_ING_PUBLIC_KEY_JWK }}
+          GATE_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+        run: |
+          node "$TOOL" checkouts --lolly lolly
+          node "$TOOL" pin --expect-thumbprint "$GATE_THUMBPRINT" --out "$RUNNER_TEMP/pin.json"
+      - name: Prepare the source resolver
+        working-directory: lolly
+        run: |
+          mkdir -p node_modules/@lolly-tools
+          ln -s ../../packages/node-shell node_modules/@lolly-tools/node-shell
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-frontend-input
+          path: ${{ runner.temp }}/frontend
+      - name: Unpack the unsigned shell
+        env:
+          EXPECTED: ${{ needs.build.outputs.input_sha256 }}
+        run: |
+          echo "$EXPECTED  $RUNNER_TEMP/frontend/frontend-input.tar" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/release-frontend"
+          tar --extract --file "$RUNNER_TEMP/frontend/frontend-input.tar" --directory "$RUNNER_TEMP/release-frontend" --no-same-owner
+          rm "$RUNNER_TEMP/frontend/frontend-input.tar"
+          chmod -R go-w "$RUNNER_TEMP/release-frontend"
+      - name: Check that sign-catalog.ts supports the sequence floor
+        if: needs.gate.outputs.min_seq != ''
+        working-directory: lolly
+        run: |
+          if ! grep -Fq -- '--min-seq' scripts/sign-catalog.ts; then
+            echo "::error title=No sequence floor at LSHA::MIN_SEQ was given, but scripts/sign-catalog.ts at $LSHA has no --min-seq. Land it in lolly first, or dispatch without MIN_SEQ."
+            exit 1
+          fi
+      - name: Sign the shell catalog with the lolly.ing key
+        working-directory: lolly
+        env:
+          LOLLY_CATALOG_SIGNING_KEY: ${{ secrets.LOLLY_ING_CATALOG_SIGNING_KEY }}
+          # sign-catalog.ts computes its default --index from the active profile while it
+          # parses arguments, and this job deliberately has no SUSE pack on disk (it holds
+          # the key). --tools and --index are explicit below, so the profile is never read;
+          # lolly-start is in the public tree, so resolving it cannot fail.
+          LOLLY_PROFILE: lolly-start
+        run: |
+          root="$RUNNER_TEMP/release-frontend"
+          floor=()
+          if [ -n "$MIN_SEQ" ]; then floor=(--min-seq "$MIN_SEQ"); fi
+          node scripts/sign-catalog.ts --tools "$root/tools" --index "$root/catalog/tools/index.json" \
+            --out "$root/catalog/tools/index.sig.json" --materialize "${floor[@]}"
+      - name: Verify the signed catalog
+        working-directory: lolly
+        run: node scripts/verify-release-catalog.ts --root "$RUNNER_TEMP/release-frontend"
+      - name: Prepare web delivery files
+        working-directory: lolly
+        run: node scripts/build-delivery.ts --root "$RUNNER_TEMP/release-frontend"
+      - name: Sign the frontend receipt
+        working-directory: lolly
+        env:
+          LOLLY_CATALOG_SIGNING_KEY: ${{ secrets.LOLLY_ING_CATALOG_SIGNING_KEY }}
+        # The receipt binds the Lolly commit. GITHUB_SHA is this repository's
+        # commit, so the Lolly source is given for this one command.
+        run: GITHUB_SHA="$LSHA" node scripts/release-frontend-receipt.ts web "$RUNNER_TEMP/release-frontend"
+      - name: Verify the frontend receipt
+        working-directory: lolly
+        run: LOLLY_RELEASE_SOURCE="$LSHA" node scripts/release-frontend-receipt.ts --verify web "$RUNNER_TEMP/release-frontend"
+      - name: Check the signed shell (lolly.ing pin only, governed boot marker)
+        id: shell
+        run: |
+          mkdir -p "$RUNNER_TEMP/signed"
+          node "$TOOL" shell-check --root "$RUNNER_TEMP/release-frontend" --pin "$RUNNER_TEMP/pin.json" --out "$RUNNER_TEMP/signed/shell.json"
+      - name: Record the pack custody
+        id: custody
+        run: node "$TOOL" custody --root "$RUNNER_TEMP/release-frontend" --lolly lolly --pin "$RUNNER_TEMP/pin.json" --out-dir "$RUNNER_TEMP/custody"
+      - name: Package the signed shell
+        id: package
+        run: |
+          tar --create --file "$RUNNER_TEMP/signed/frontend-signed.tar" --directory "$RUNNER_TEMP/release-frontend" .
+          echo "signed_sha256=$(sha256sum "$RUNNER_TEMP/signed/frontend-signed.tar" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          cp "$RUNNER_TEMP/frontend/stored-formats.json" "$RUNNER_TEMP/frontend/build-settings.json" "$RUNNER_TEMP/signed/"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-frontend-signed
+          path: ${{ runner.temp }}/signed
+          retention-days: 1
+          compression-level: 1
+          overwrite: true
+          if-no-files-found: error
+
+  image:
+    name: image (pack, assemble, boot, export)
+    needs: [gate, server, sign]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    services:
+      postgres:
+        image: docker.io/library/postgres:17@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: lollywork
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d lollywork"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      LSHA: ${{ needs.gate.outputs.lsha }}
+      WSHA: ${{ needs.gate.outputs.wsha }}
+      SSHA: ${{ needs.gate.outputs.ssha }}
+      MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
+      LOLLY_PROFILE: suse
+      VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
+      WORK_SERVER_IMAGE: lolly-ing-work-server:${{ needs.gate.outputs.wsha }}
+      INSTANCE_IMAGE: lolly-ing-instance:run-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out Lolly at LSHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: lolly-tools/lolly
+          ref: ${{ needs.gate.outputs.lsha }}
+          path: lolly
+          persist-credentials: false
+          submodules: false
+      - name: Check out this workflow's checks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          path: tooling
+          persist-credentials: false
+          sparse-checkout: .github/lolly-ing-preview
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: lolly/.nvmrc
+          package-manager-cache: false
+      - name: Free runner disk for the image
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL
+          df -h / "$RUNNER_TEMP"
+      - name: Check the source and the lolly.ing pin
+        env:
+          PIN_JWK: ${{ vars.LOLLY_ING_PUBLIC_KEY_JWK }}
+          GATE_THUMBPRINT: ${{ needs.gate.outputs.thumbprint }}
+        run: |
+          node "$TOOL" checkouts --lolly lolly
+          node "$TOOL" pin --expect-thumbprint "$GATE_THUMBPRINT" --out "$RUNNER_TEMP/pin.json"
+          mkdir -p lolly/node_modules/@lolly-tools
+          ln -s ../../packages/node-shell lolly/node_modules/@lolly-tools/node-shell
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-gate
+          path: ${{ runner.temp }}/facts
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-work-server
+          path: ${{ runner.temp }}/server
+      - name: Load the Work server image
+        env:
+          EXPECTED: ${{ needs.server.outputs.archive_sha256 }}
+          EXPECTED_ID: ${{ needs.server.outputs.image_id }}
+        run: |
+          echo "$EXPECTED  $RUNNER_TEMP/server/work-server.tar" | sha256sum --check --strict
+          docker load --input "$RUNNER_TEMP/server/work-server.tar"
+          rm "$RUNNER_TEMP/server/work-server.tar"
+          test "$(docker image inspect --format '{{.Id}}' "$WORK_SERVER_IMAGE")" = "$EXPECTED_ID"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: lolly-ing-frontend-signed
+          path: ${{ runner.temp }}/signed
+      - name: Unpack and verify the signed shell
+        env:
+          EXPECTED: ${{ needs.sign.outputs.signed_sha256 }}
+          EXPECTED_INDEX: ${{ needs.sign.outputs.index_sha256 }}
+          EXPECTED_SEQ: ${{ needs.sign.outputs.seq }}
+        run: |
+          shell="$RUNNER_TEMP/assemble/shell"
+          echo "$EXPECTED  $RUNNER_TEMP/signed/frontend-signed.tar" | sha256sum --check --strict
+          mkdir -p "$shell"
+          tar --extract --file "$RUNNER_TEMP/signed/frontend-signed.tar" --directory "$shell" --no-same-owner
+          rm "$RUNNER_TEMP/signed/frontend-signed.tar"
+          find "$shell" -type d -exec chmod 0755 {} +
+          find "$shell" -type f -exec chmod 0644 {} +
+          (cd lolly && LOLLY_RELEASE_SOURCE="$LSHA" node scripts/release-frontend-receipt.ts --verify web "$shell")
+          (cd lolly && node scripts/verify-release-catalog.ts --root "$shell")
+          mkdir -p "$RUNNER_TEMP/facts"
+          node "$TOOL" shell-check --root "$shell" --pin "$RUNNER_TEMP/pin.json" --out "$RUNNER_TEMP/facts/shell.json" > /dev/null
+          test "$(jq -r .indexSha256 "$RUNNER_TEMP/facts/shell.json")" = "$EXPECTED_INDEX"
+          test "$(jq -r .catalogSeq "$RUNNER_TEMP/facts/shell.json")" = "$EXPECTED_SEQ"
+      - name: Recompute the pack custody (must equal the signing job's)
+        env:
+          EXPECTED: ${{ needs.sign.outputs.custody_sha256 }}
+        run: |
+          node "$TOOL" custody --root "$RUNNER_TEMP/assemble/shell" --lolly lolly --pin "$RUNNER_TEMP/pin.json" \
+            --out-dir "$RUNNER_TEMP/custody" --expect-sha256 "$EXPECTED" --out "$RUNNER_TEMP/facts/custody.json"
+      - name: Take the Work server files out of the image
+        run: |
+          cid=$(docker create "$WORK_SERVER_IMAGE")
+          docker cp "$cid:/app" "$RUNNER_TEMP/work-app"
+          docker rm "$cid" > /dev/null
+          node "$TOOL" engine-pin --file "$RUNNER_TEMP/work-app/engine-pin.json" --out "$RUNNER_TEMP/facts/engine-pin.json"
+          node "$TOOL" migrations --dir "$RUNNER_TEMP/work-app/migrations" --out "$RUNNER_TEMP/facts/migrations.json" > /dev/null
+          cmp "$RUNNER_TEMP/facts/migrations.json" "$RUNNER_TEMP/server/migrations.json"
+      - name: Check governed boot with Work's own check
+        run: |
+          node --input-type=module -e '
+            const { checkShellDist } = await import(process.argv[1]);
+            const shell = checkShellDist(process.argv[2]);
+            if (!shell.present || !shell.hasOrgConfig) { console.error("Work would refuse this shell under gated access."); process.exit(1); }
+          ' "$RUNNER_TEMP/work-app/server/src/lib/shell-dist.ts" "$RUNNER_TEMP/assemble/shell"
+      - name: Build the pack with Work's release-mode producer
+        env:
+          CUSTODY_SHA256: ${{ needs.sign.outputs.custody_sha256 }}
+        run: |
+          node "$RUNNER_TEMP/work-app/scripts/build-instance-pack.ts" \
+            --lolly "$GITHUB_WORKSPACE/lolly" --profile suse --out "$RUNNER_TEMP/assemble/pack" \
+            --release-root "$RUNNER_TEMP/assemble/shell" \
+            --release-custody "$RUNNER_TEMP/custody/release-custody.json" \
+            --release-custody-sha256 "$CUSTODY_SHA256" --node "$(command -v node)"
+          find "$RUNNER_TEMP/assemble/pack" -type d -exec chmod 0755 {} +
+          find "$RUNNER_TEMP/assemble/pack" -type f -exec chmod 0644 {} +
+          node "$TOOL" pack-facts --root "$RUNNER_TEMP/assemble/pack" --out "$RUNNER_TEMP/facts/pack.json"
+          rm -rf "$RUNNER_TEMP/work-app"
+      - name: Assemble the instance image (no pull, no push)
+        run: |
+          docker buildx build --platform linux/amd64 --provenance=false --sbom=false \
+            --file tooling/.github/lolly-ing-preview/instance.Dockerfile \
+            --build-arg "WORK_SERVER_IMAGE=$WORK_SERVER_IMAGE" \
+            --build-arg "LOLLY_SOURCE=$LSHA" --build-arg "WORK_SOURCE=$WSHA" --build-arg "SUSE_SOURCE=$SSHA" \
+            --build-arg "RUN_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --tag "$INSTANCE_IMAGE" --load "$RUNNER_TEMP/assemble"
+          rm -rf "$RUNNER_TEMP/assemble"
+          df -h /
+      - name: Check the image (root-owned read-only content, engine pin, migrations)
+        run: |
+          checks="$GITHUB_WORKSPACE/tooling/.github/lolly-ing-preview"
+          docker run --rm --network none --read-only --user 1000:1000 --cap-drop ALL --security-opt no-new-privileges \
+            --volume "$checks:/checks:ro" --entrypoint node "$INSTANCE_IMAGE" /checks/tool.mjs tree-perms /app/shell /app/packs/lolly-ing
+          docker run --rm --network none --user 1000:1000 --cap-drop ALL --security-opt no-new-privileges \
+            --entrypoint sh "$INSTANCE_IMAGE" -c 'for d in /app/shell /app/packs/lolly-ing; do if touch "$d/.w" 2>/dev/null; then echo "$d is writable"; exit 1; fi; done'
+          docker run --rm --network none --read-only --tmpfs /tmp:rw,size=64m --cap-drop ALL \
+            --security-opt no-new-privileges --entrypoint node "$INSTANCE_IMAGE" scripts/verify-engine-pin.ts
+          cid=$(docker create "$INSTANCE_IMAGE")
+          docker cp "$cid:/app/engine-pin.json" "$RUNNER_TEMP/instance-engine-pin.json"
+          docker cp "$cid:/app/migrations" "$RUNNER_TEMP/instance-migrations"
+          docker rm "$cid" > /dev/null
+          node "$TOOL" engine-pin --file "$RUNNER_TEMP/instance-engine-pin.json" --out "$RUNNER_TEMP/instance-engine-pin.facts.json" > /dev/null
+          cmp "$RUNNER_TEMP/instance-engine-pin.facts.json" "$RUNNER_TEMP/facts/engine-pin.json"
+          node "$TOOL" migrations --dir "$RUNNER_TEMP/instance-migrations" --out "$RUNNER_TEMP/instance-migrations.json" > /dev/null
+          cmp "$RUNNER_TEMP/instance-migrations.json" "$RUNNER_TEMP/facts/migrations.json"
+      - name: Boot the image against a throwaway Postgres
+        env:
+          EXPECTED_SEQ: ${{ needs.sign.outputs.seq }}
+          EXPECTED_INDEX: ${{ needs.sign.outputs.index_sha256 }}
+        run: |
+          boot="$RUNNER_TEMP/boot"
+          mkdir -p "$boot"
+          chmod 0755 "$boot"
+          node "$TOOL" boot-config --pin "$RUNNER_TEMP/pin.json" --generation "$EXPECTED_SEQ" --out "$boot/instance.json" > /dev/null
+          # Throwaway values for this boot only, never stored or reused.
+          LW_SESSION_SECRET=$(openssl rand -hex 32); LW_LINK_SECRET=$(openssl rand -hex 32)
+          echo "::add-mask::$LW_SESSION_SECRET"; echo "::add-mask::$LW_LINK_SECRET"
+          export LW_SESSION_SECRET LW_LINK_SECRET
+          docker run --detach --name lolly-ing-boot --network host \
+            --read-only --tmpfs /tmp:rw,size=512m --user 1000:1000 --cap-drop ALL --security-opt no-new-privileges \
+            --memory 1g --cpus 1 --volume "$boot:/etc/lolly-boot:ro" \
+            --env LW_CONFIG=/etc/lolly-boot/instance.json --env PORT=8787 \
+            --env DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/lollywork \
+            --env LW_SESSION_SECRET --env LW_LINK_SECRET \
+            "$INSTANCE_IMAGE" > /dev/null
+          status=0
+          node "$TOOL" smoke --base http://127.0.0.1:8787 --index-sha256 "$EXPECTED_INDEX" --out "$RUNNER_TEMP/facts/boot.json" || status=$?
+          docker logs lolly-ing-boot > "$RUNNER_TEMP/boot.log" 2>&1 || true
+          docker stats --no-stream --format '{{.MemUsage}}' lolly-ing-boot || true
+          restarts=$(docker inspect --format '{{.RestartCount}} {{.State.Running}}' lolly-ing-boot || echo 'gone')
+          docker rm --force lolly-ing-boot > /dev/null || true
+          echo "Container restarts and state: $restarts"
+          sed -n '1,200p' "$RUNNER_TEMP/boot.log"
+          test "$status" -eq 0
+          test "$restarts" = '0 true'
+          if grep -q 'REFUSING TO START' "$RUNNER_TEMP/boot.log"; then exit 1; fi
+          if grep -q '5zVngG6s-652_L8Zdok5PTfQ6vxdPAYfcpBWxMtzs5c' "$RUNNER_TEMP/boot.log"; then
+            echo '::error title=Release key in boot log::The boot log names the platform release key.'
+            exit 1
+          fi
+      - name: Export the OCI archive and write the manifest
+        run: |
+          out="$RUNNER_TEMP/out"
+          mkdir -p "$out"
+          archive="$out/lolly-ing-instance-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.oci.tar"
+          docker save --output "$archive" "$INSTANCE_IMAGE"
+          node "$TOOL" oci-facts --archive "$archive" --out "$RUNNER_TEMP/facts/oci.json" > /dev/null
+          # The classic image store reports the config digest as the image ID; the
+          # containerd store reports the manifest or index digest.
+          jq -e --arg id "$(docker image inspect --format '{{.Id}}' "$INSTANCE_IMAGE")" \
+            '[.configDigest, .manifestDigest, .imageDigest] | index($id) != null' "$RUNNER_TEMP/facts/oci.json" > /dev/null
+          test "$(jq -c .diffIds "$RUNNER_TEMP/facts/oci.json")" = "$(docker image inspect --format '{{json .RootFS.Layers}}' "$INSTANCE_IMAGE")"
+          node "$TOOL" final-manifest \
+            --gate "$RUNNER_TEMP/facts/gate.json" --work-image-id "$(docker image inspect --format '{{.Id}}' "$WORK_SERVER_IMAGE")" \
+            --custody "$RUNNER_TEMP/facts/custody.json" --shell "$RUNNER_TEMP/facts/shell.json" --pack "$RUNNER_TEMP/facts/pack.json" \
+            --oci "$RUNNER_TEMP/facts/oci.json" --boot "$RUNNER_TEMP/facts/boot.json" --migrations "$RUNNER_TEMP/facts/migrations.json" \
+            --stored-formats "$RUNNER_TEMP/signed/stored-formats.json" --build-settings "$RUNNER_TEMP/signed/build-settings.json" \
+            --engine-pin "$RUNNER_TEMP/facts/engine-pin.json" --out "$out/lolly-ing-instance.manifest.json" > /dev/null
+          {
+            echo "### lolly.ing instance image"
+            echo
+            jq -r '"- Image digest: `\(.image.digest)`", "- Archive sha256: `\(.image.archive.sha256)` (\(.image.archive.bytes) bytes)", "- Lolly `\(.sources.lolly)`, Work `\(.sources.work)`, suse-lolly `\(.sources.suse)`", "- lolly.ing pin `\(.shell.keyId)`, catalog sequence \(.catalog.seq)", "- Migrations: \(.migrations | length), newest `\(.migrations[-1].name)`"' "$out/lolly-ing-instance.manifest.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+      # Kept 7 days: the node fetches the archive right after the build, and a rollback uses
+      # the image already pinned there. About 2 GB per run.
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-instance-manifest
+          path: ${{ runner.temp }}/out/lolly-ing-instance.manifest.json
+          retention-days: 7
+          overwrite: true
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lolly-ing-instance-archive
+          path: ${{ runner.temp }}/out/*.oci.tar
+          retention-days: 7
+          compression-level: 1
+          overwrite: true
+          if-no-files-found: error
