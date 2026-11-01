@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-01T18:12:32.342Z",
+  "generatedAt": "2026-11-01T10:45:28.089Z",
   "tools": [
     {
       "id": "color-block",
@@ -15569,7 +15569,7 @@
       "id": "clean",
       "name": "Clean",
       "description": "Clean a voice recording, trim edge silence and set its loudness on your device.",
-      "version": "1.1.0",
+      "version": "1.0.1",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -15579,14 +15579,8 @@
         "voice",
         "denoise",
         "noise",
-        "hum",
-        "de-ess",
-        "click",
-        "reverb",
-        "repair",
         "normalize",
         "loudness",
-        "lufs",
         "silence",
         "wav",
         "mp3",
