@@ -17,6 +17,8 @@
  * interpolation of that vector.
  *
  * Exposes window.SuseconOrb.mount(host, cfg) -> controller.
+ *
+ * Orb design: Zvezdana Marjanovic, SUSE. This renderer draws her design.
  */
 (function () {
   'use strict';

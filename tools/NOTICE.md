@@ -12,3 +12,10 @@ moved to the public MPL-2.0
 Each tool's `icon.svg` follows the Lucide icon house style. Lucide is licensed
 under the **ISC** license. See the `lolly` monorepo's
 `THIRD-PARTY-NOTICES.md` for the full attribution and license text.
+
+## Design credits
+
+- `susecon-background`: the SUSECON orb (the glass orb with its hairline
+  ribbon, and the fibre orb, cloud dome and horizon bowl drawn from it) is the
+  design of **Zvezdana Marjanovic**, SUSE. The tool's description carries the
+  same credit, so it shows in the gallery and the tool's details.
