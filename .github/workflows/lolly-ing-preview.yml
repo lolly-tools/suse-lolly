@@ -778,11 +778,15 @@ jobs:
           retention-days: 7
           overwrite: true
           if-no-files-found: error
+      # One day: the node fetches the archive minutes after the build, a rollback uses the
+      # image already on the node, and the deploy tool rebuilds when an archive has expired.
+      # At 1.6 GB a build, a week of archives filled the organisation's artifact storage on
+      # 2026-11-03 and stopped every upload.
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: lolly-ing-instance-archive
           path: ${{ runner.temp }}/out/*.oci.tar
-          retention-days: 7
+          retention-days: 1
           compression-level: 1
           overwrite: true
           if-no-files-found: error
