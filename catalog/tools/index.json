@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-02T12:51:10.596Z",
+  "generatedAt": "2026-11-02T15:08:31.816Z",
   "tools": [
     {
       "id": "color-block",
@@ -14413,7 +14413,7 @@
       "id": "snippet",
       "name": "Snippet",
       "description": "Present text in a desktop window, as a still image or a directed interaction with typing, selections, autocomplete and motion.",
-      "version": "1.6.2",
+      "version": "1.7.0",
       "status": "official",
       "category": "everyone",
       "requires": [
