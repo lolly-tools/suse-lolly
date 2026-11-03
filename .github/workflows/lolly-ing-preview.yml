@@ -775,7 +775,7 @@ jobs:
         with:
           name: lolly-ing-instance-manifest
           path: ${{ runner.temp }}/out/lolly-ing-instance.manifest.json
-          retention-days: 7
+          retention-days: 1
           overwrite: true
           if-no-files-found: error
       # One day: the node fetches the archive minutes after the build, a rollback uses the
