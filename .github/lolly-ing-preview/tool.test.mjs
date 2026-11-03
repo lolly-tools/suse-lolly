@@ -455,11 +455,11 @@ describe('workflow shape', () => {
     assert.match(jobs.image, new RegExp(tool.RELEASE_THUMBPRINT));
     assert.doesNotMatch(WORKFLOW, /LOLLY_RELEASE_PUBLIC_KEY_JWK|VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ vars\./);
   });
-  test('the instance manifest is kept 7 days and every other artifact, the 1.6 GB archive included, 1 day', () => {
+  test('every artifact, the instance manifest and the 1.6 GB archive included, is kept 1 day', () => {
     const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);
     assert.deepEqual(Object.fromEntries(retention), {
       'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
-      'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 7, 'lolly-ing-instance-archive': 1,
+      'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 1, 'lolly-ing-instance-archive': 1,
     });
   });
 });
