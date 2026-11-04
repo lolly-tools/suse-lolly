@@ -394,10 +394,13 @@ describe('workflow shape', () => {
   const body = WORKFLOW.slice(WORKFLOW.indexOf('\njobs:\n'));
   for (const block of body.split(/\n(?=  [a-z][a-z-]*:\n)/).slice(1)) jobs[/^  ([a-z-]+):/.exec(block)[1]] = block;
 
-  test('has the six jobs in order and keeps the token read-only', () => {
-    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image']);
+  test('has the seven jobs in order and keeps the token read-only, except cleanup\'s actions: write', () => {
+    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image', 'cleanup']);
     assert.match(WORKFLOW, /\npermissions:\n  contents: read\n\n/);
-    assert.doesNotMatch(WORKFLOW, /\n[ ]+permissions:/, 'no job widens the token');
+    for (const [name, block] of Object.entries(jobs)) {
+      if (name !== 'cleanup') assert.doesNotMatch(block, /\n[ ]+permissions:/, `${name} must not widen the token`);
+    }
+    assert.equal([...WORKFLOW.matchAll(/\n[ ]+permissions:/g)].length, 1);
     assert.doesNotMatch(WORKFLOW, /packages:\s*write|docker (?:push|login)|--push\b/);
   });
   test('pins every action to a commit and never persists credentials', () => {
@@ -460,6 +463,65 @@ describe('workflow shape', () => {
     assert.deepEqual(Object.fromEntries(retention), {
       'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
       'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 1, 'lolly-ing-instance-archive': 1,
+    });
+  });
+  describe('cleanup', () => {
+    const cleanup = jobs.cleanup;
+    const script = /\n        run: \|\n((?: {10}[^\n]*\n|\n)+)/.exec(cleanup)[1].replace(/^ {10}/gm, '');
+    const uploaded = [...WORKFLOW.matchAll(/uses: actions\/upload-artifact@[0-9a-f]{40}[^\n]*\n\s+with:\n\s+name: (lolly-ing-[a-z-]+)\n/g)].map((m) => m[1]);
+    const kept = ['lolly-ing-instance-manifest', 'lolly-ing-instance-archive'];  // what the deploy command binds
+    test('runs last and always, never fails the run, and holds actions: write and nothing else', () => {
+      const needs = /\n    needs: \[([^\]]+)\]\n/.exec(cleanup)[1].split(', ');
+      assert.deepEqual(needs, Object.keys(jobs).filter((name) => name !== 'cleanup'), 'needs every other job');
+      assert.match(cleanup, /\n    if: always\(\)\n/);
+      assert.match(cleanup, /\n    continue-on-error: true\n/);
+      assert.match(cleanup, /\n    permissions:\n      actions: write\n    steps:\n/);
+      // No checkout, no action, no repository code, no secret, no environment, no dispatch input.
+      assert.doesNotMatch(cleanup, /uses:|checkout|\$TOOL|node |secrets\.|environment:|inputs\.|needs\.gate\./);
+      assert.equal([...cleanup.matchAll(/\n      - name: /g)].length, 1);
+      assert.match(cleanup, /GH_TOKEN: \$\{\{ github\.token \}\}\n\s+REPOSITORY: \$\{\{ github\.repository \}\}\n\s+RUN_ID: \$\{\{ github\.run_id \}\}\n\s+IMAGE_RESULT: \$\{\{ needs\.image\.result \}\}\n/);
+      assert.doesNotMatch(script, /\$\{\{|set -e|exit 1/, 'expressions stay in env, and no error fails the step');
+      assert.match(script, /gh api "repos\/\$REPOSITORY\/actions\/runs\/\$RUN_ID\/artifacts\?per_page=100" \\\n\s+--jq '\.artifacts\[\] \| select\(\.expired == false\) \| "\\\(\.id\) \\\(\.name\)"'/);
+    });
+    test('names every artifact the workflow uploads: intermediates go, the manifest and archive go only after a failure', () => {
+      assert.equal(uploaded.length, 7);
+      const [success, failure] = [...script.matchAll(/delete='([^']+)'/g)].map((m) => new RegExp(m[1]));
+      assert.match(script, /if \[\[ "\$IMAGE_RESULT" == success \]\]; then\n\s+delete='/);
+      for (const name of uploaded) {
+        assert.equal(success.test(name), !kept.includes(name), `after a successful run, ${name}`);
+        assert.equal(failure.test(name), true, `after a failed run, ${name}`);
+      }
+      assert.equal(success.test('lolly-ing-instance-archive-x'), false);
+    });
+    const runScript = (imageResult, { listFails = false } = {}) => {
+      const bin = dir('bin'), log = join(temp, `gh-${++n}.log`), summary = join(temp, `summary-${n}.md`);
+      const listing = join(temp, `listing-${n}.txt`);
+      writeFileSync(listing, [...uploaded, 'other-workflow-artifact'].map((name, i) => `${11 + i} ${name}`).join('\n') + '\n');
+      // A fake gh: --jq output for the listing; DELETE of artifact 12 fails, to check that the step still passes.
+      writeFileSync(join(bin, 'gh'), [
+        '#!/bin/sh', 'echo "$*" >> "$FAKE_LOG"',
+        'case "$*" in',
+        '  *"--method DELETE"*/artifacts/12) exit 1 ;;', '  *"--method DELETE"*) exit 0 ;;',
+        `  *actions/runs/*/artifacts*) ${listFails ? 'exit 1' : 'cat "$FAKE_LISTING"'} ;;`,
+        'esac', ''].join('\n'), { mode: 0o755 });
+      execFileSync('bash', ['-c', script], { env: { PATH: `${bin}:${process.env.PATH}`, FAKE_LOG: log, FAKE_LISTING: listing,
+        GH_TOKEN: 't', REPOSITORY: 'lolly-tools/suse-lolly', RUN_ID: '4242', IMAGE_RESULT: imageResult, GITHUB_STEP_SUMMARY: summary }, stdio: 'pipe' });
+      const calls = readFileSync(log, 'utf8').trim().split('\n');
+      const ids = Object.fromEntries([...uploaded, 'other-workflow-artifact'].map((name, i) => [String(11 + i), name]));
+      return { calls, deleted: calls.filter((c) => c.startsWith('api --method DELETE')).map((c) => ids[/\/(\d+)$/.exec(c)[1]]) };
+    };
+    test('a successful run deletes its intermediates by this run\'s id and keeps the manifest and archive', () => {
+      const { calls, deleted } = runScript('success');
+      assert.match(calls[0], /^api repos\/lolly-tools\/suse-lolly\/actions\/runs\/4242\/artifacts\?per_page=100 --jq /);
+      assert.deepEqual(deleted.sort(), uploaded.filter((name) => !kept.includes(name)).sort());
+      for (const call of calls.slice(1)) assert.match(call, /^api --method DELETE repos\/lolly-tools\/suse-lolly\/actions\/artifacts\/\d+$/);
+    });
+    test('a failed, cancelled or skipped image job deletes every artifact of the run, and never another workflow\'s', () => {
+      for (const result of ['failure', 'cancelled', 'skipped']) assert.deepEqual(runScript(result).deleted.sort(), [...uploaded].sort());
+    });
+    test('a listing error deletes nothing and still passes', () => {
+      const { calls } = runScript('failure', { listFails: true });
+      assert.equal(calls.length, 1);
     });
   });
 });

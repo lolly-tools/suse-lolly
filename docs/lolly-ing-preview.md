@@ -12,7 +12,8 @@ are not writable by the server's user. The engine pin is the Work image's own `/
 `LSHA`. `instance.json` is not in the image; it stays a ConfigMap.
 
 The image never leaves this private repository's Actions run. Nothing is pushed to a registry, because the shell and
-pack carry licensed SUSE content. The run keeps an OCI archive and a manifest as artifacts for 7 days. The preview
+pack carry licensed SUSE content. The run keeps an OCI archive and a manifest as artifacts for one day at most (see
+Artifacts below: the deploy command deletes them once the build is live). The preview
 deploy command reads the manifest by run ID. The node fetches the archive itself, from the signed download address
 GitHub gives the command for that artifact, which expires a minute after it is issued (lolly-work #247). No credential
 reaches the node. If the fetch fails, the command downloads the archive and streams it to the node instead.
@@ -103,9 +104,19 @@ command sets in `instance.json` (proposal 4.3, step 7).
 
 | Artifact | Kept | Contents |
 |---|---|---|
-| `lolly-ing-instance-manifest` | 7 days | `lolly-ing-instance.manifest.json` |
-| `lolly-ing-instance-archive` | 7 days | `lolly-ing-instance-<run id>-<attempt>.oci.tar` (`docker save`, OCI layout) |
-| `lolly-ing-gate`, `lolly-ing-work-server`, `lolly-ing-source-envelope`, `lolly-ing-frontend-input`, `lolly-ing-frontend-signed` | 1 day | intermediate files passed between jobs |
+| `lolly-ing-instance-manifest` | until the build is live, 1 day at most | `lolly-ing-instance.manifest.json` |
+| `lolly-ing-instance-archive` | until the build is live, 1 day at most | `lolly-ing-instance-<run id>-<attempt>.oci.tar` (`docker save`, OCI layout) |
+| `lolly-ing-gate`, `lolly-ing-work-server`, `lolly-ing-source-envelope`, `lolly-ing-frontend-input`, `lolly-ing-frontend-signed` | until the run ends | intermediate files passed between jobs |
+
+This repository is private, so GitHub bills its artifact storage by the GB-hour, and Andy holds it to a hard $5 a
+month (2026-11-04). The last job, `cleanup`, runs whatever happened before it (`if: always()`) and deletes this run's
+intermediate artifacts by run ID; after a failed or cancelled run it deletes the manifest and archive too, because
+nothing ships that run. Its token is `actions: write` and nothing else, it checks out nothing and runs no code from
+this repository, and it never fails the run (`continue-on-error`), so a cleanup error cannot turn a good build into a
+refused one. Because the intermediates are gone, a re-run of failed jobs has nothing to reuse: dispatch a new build
+(the deploy command always does). The deploy command deletes the manifest and archive once the build is live: a
+rollback uses the previous image pinned on the node and never fetches an archive again. Its `gc` deletes those of
+older runs too.
 
 The manifest records: the run (repository, workflow ref, run ID and attempt, dispatcher); the three sources and the
 bound CI runs; the archive name, sha256 and size; the image digest named by `index.json`, the platform manifest and
@@ -158,7 +169,7 @@ None of this is done by the workflow or by agents. The exact commands are in the
      leave them unset to keep that.
 4. **Repository settings:** `main` protected (pull requests, the `lolly.ing preview tooling tests` check, no force
    pushes or deletion); default workflow token permission "Read repository contents"; Actions may not approve pull
-   requests; Actions artifact storage for about 2 GB per run kept 7 days.
+   requests; Actions artifact storage for one run's archive and manifest, from the end of its build until it is live.
 5. **At the cut-over (proposal 4.7 and 4.8):** a second Secret in `lolly-private` holds the same private key under
    `LW_CATALOG_SIGNING_KEY`. The live Secret is never edited: the cut-over patch points the server's reference at the
    new Secret, and a revert points it back. `instance.catalogPublicKey` stays unset. The deploy command refuses a Work
