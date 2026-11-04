@@ -13,7 +13,11 @@
     "org-chart",
     "digi-ad"
   ],
-  "defaultHiddenTemplates": [],
+  "defaultHiddenTemplates": [
+    "gradient:ocean",
+    "gradient:studio",
+    "gradient:sunrise"
+  ],
   "defaultTrustedSites": [],
   "assets": [
     {
@@ -3872,6 +3876,55 @@
         }
       ],
       "added": "2026-08-10"
+    },
+    {
+      "id": "lolly/demo/sample-photo",
+      "name": "Sample picture",
+      "description": "The sample subject photo tools open on: in this catalog, the Geeko on a branch, rendered by Pose Geeko on Pine. Bundled because SUSE photographs come from Brandfolder and are not in the pack, so Darkroom and Filter still have a subject on first use. A removable example - delete it any time.",
+      "type": "raster",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "geeko",
+        "demo",
+        "example",
+        "placeholder",
+        "sample"
+      ],
+      "formats": [
+        {
+          "format": "webp",
+          "url": "/catalog/assets/lolly/demo/sample-photo.webp",
+          "checksum": "sha256-uEZhGqzHyKXIf+8EsEEfQn1UwNRhdOpezhafNXKPItA=",
+          "size": 40904,
+          "depth": 8
+        }
+      ]
+    },
+    {
+      "id": "lolly/demo/sample-portrait",
+      "name": "Sample portrait",
+      "description": "The sample face avatar and profile tools open on: in this catalog, the Geeko sitting, rendered by Pose Geeko on Pine. A removable example - delete it any time.",
+      "type": "raster",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "geeko",
+        "portrait",
+        "demo",
+        "example",
+        "placeholder",
+        "sample"
+      ],
+      "formats": [
+        {
+          "format": "webp",
+          "url": "/catalog/assets/lolly/demo/sample-portrait.webp",
+          "checksum": "sha256-XiZkIs+DubkPtLYk4YcsSHsKiYdJaZRs/FL76/37aFo=",
+          "size": 27632,
+          "depth": 8
+        }
+      ]
     },
     {
       "id": "suse/demo/app-screenshot",

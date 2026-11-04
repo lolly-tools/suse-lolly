@@ -7,8 +7,11 @@
   "values": {
     "firstname": "Alex",
     "lastname": "Morgan",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Open Source Advocate",
     "email": "alex@example.com",
-    "logo": "standard"
+    "logo": "standard",
+    "phone": "+49 911 740 53 0",
+    "width": 440,
+    "height": 220
   }
 }

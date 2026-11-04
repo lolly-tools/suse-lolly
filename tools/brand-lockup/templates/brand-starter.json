@@ -8,7 +8,8 @@
     "orientation": "stacked",
     "polarity": "positive",
     "treatment": "colour",
-    "background": "transparent"
+    "background": "transparent",
+    "size": "square"
   },
   "galleryCover": true,
   "galleryTheme": "light"

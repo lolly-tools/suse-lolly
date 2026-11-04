@@ -1,6 +1,6 @@
 {
   "id": "brand-starter-dark",
-  "name": "Master brand \u00b7 dark",
+  "name": "Master brand · dark",
   "category": "Brand",
   "description": "The official SUSE master mark on transparency.",
   "values": {
@@ -8,7 +8,8 @@
     "orientation": "stacked",
     "polarity": "negative",
     "treatment": "colour",
-    "background": "transparent"
+    "background": "transparent",
+    "size": "square"
   },
   "galleryCover": true,
   "galleryTheme": "dark"
