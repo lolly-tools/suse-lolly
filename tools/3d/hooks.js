@@ -17,17 +17,43 @@ function num(v, fallback) {
   return Number.isFinite(n) ? n : fallback;
 }
 
-function compute(model) {
+// The Geeko samples are the catalog's own models, the same files 3D Studio uses,
+// so the pack keeps one copy of each. host.assets reads them, which checks each
+// file against the catalog's checksum. The duck and the cat stay tool-local, as in
+// the community tool. A resolved URL is kept for the life of the tool, so moving a
+// slider does not read the file again.
+var CATALOG_MODELS = {
+  'geeko': 'suse/model/geeko',
+  'geeko-branch': 'suse/model/geeko-branch',
+  'geeko-sitting': 'suse/model/geeko-sitting',
+};
+var MODEL_UNAVAILABLE = 'This sample model could not be loaded. Check the connection and try again, or upload a .glb.';
+var _catalogUrls = {};
+
+async function sampleUrl(id) {
+  var assetId = CATALOG_MODELS[id];
+  if (!assetId) return '/tools/3d/assets/' + id + '.glb';
+  if (_catalogUrls[id]) return _catalogUrls[id];
+  try {
+    var ref = await host.assets.get(assetId);
+    if (ref && ref.url) _catalogUrls[id] = ref.url;
+    return (ref && ref.url) || '';
+  } catch (e) {
+    return '';
+  }
+}
+
+async function compute(model) {
   var inp = {};
   for (var i = 0; i < model.length; i++) inp[model[i].id] = model[i].value;
 
-  // Model URL: an uploaded file (in-memory blob URL) wins over the bundled sample.
-  // A `file` value is a FileRef {__file, url, ...}; tool-local samples live at
-  // /tools/3d/assets/<id>.glb (served as a static tool file, no {{asset}} needed).
+  // Model URL: an uploaded file (in-memory blob URL) wins over the sample.
+  // A `file` value is a FileRef {__file, url, ...}. Geeko samples come from the
+  // catalog (above); the others are static tool files at /tools/3d/assets/<id>.glb.
   var up = inp.modelUpload;
   var modelUrl = (up && typeof up === 'object' && up.url)
     ? up.url
-    : '/tools/3d/assets/' + (inp.model || 'geeko') + '.glb';
+    : await sampleUrl(inp.model || 'geeko');
 
   var cam = (inp.camera && typeof inp.camera === 'object') ? inp.camera : {};
   var rot = (inp.modelRotate && typeof inp.modelRotate === 'object') ? inp.modelRotate : {};
@@ -36,6 +62,7 @@ function compute(model) {
 
   var cfg = {
     modelUrl: modelUrl,
+    modelError: modelUrl ? '' : MODEL_UNAVAILABLE,
     width: Math.round(num(inp.width, 1280)),
     height: Math.round(num(inp.height, 1280)),
     scene: inp.scene || 'natural',
@@ -93,5 +120,5 @@ function compute(model) {
   return { _state: safeJson(cfg) };
 }
 
-function onInit(ctx) { return compute(ctx.model); }
-function onInput(ctx) { return compute(ctx.model); }
+async function onInit(ctx) { return compute(ctx.model); }
+async function onInput(ctx) { return compute(ctx.model); }
