@@ -3927,6 +3927,75 @@
       ]
     },
     {
+      "id": "lolly/demo/sample-character",
+      "name": "Sample character",
+      "description": "A sample subject that templates can ask for under every design system: in this catalog, the Geeko dangling, rendered by Pose Geeko. A removable example - delete it any time.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "geeko",
+        "demo",
+        "example",
+        "placeholder",
+        "sample"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/lolly/demo/sample-character.svg",
+          "checksum": "sha256-Or8uUgkiSSOpnhKDfORIJmEny3ynUzSUfpBADWG6kwA=",
+          "size": 11313
+        }
+      ]
+    },
+    {
+      "id": "lolly/demo/sample-wide",
+      "name": "Sample wide subject",
+      "description": "A sample subject that templates can ask for under every design system: in this catalog, the Geeko resting, rendered by Pose Geeko. A removable example - delete it any time.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "geeko",
+        "demo",
+        "example",
+        "placeholder",
+        "sample"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/lolly/demo/sample-wide.svg",
+          "checksum": "sha256-6FzzPfNQUllLghzOAb1JGzdTwQNxBqT8kWWkJF19obI=",
+          "size": 20517
+        }
+      ]
+    },
+    {
+      "id": "lolly/demo/sample-landscape",
+      "name": "Sample landscape subject",
+      "description": "A sample subject that templates can ask for under every design system: in this catalog, the Geeko on a branch, rendered by Pose Geeko. A removable example - delete it any time.",
+      "type": "vector",
+      "version": "1.0.0",
+      "tier": "core",
+      "tags": [
+        "geeko",
+        "demo",
+        "example",
+        "placeholder",
+        "sample"
+      ],
+      "formats": [
+        {
+          "format": "svg",
+          "url": "/catalog/assets/lolly/demo/sample-landscape.svg",
+          "checksum": "sha256-l5+U829Fs7s4o3vD6Q0Hf46U+f125b/h2UDH7cb059s=",
+          "size": 21849
+        }
+      ]
+    },
+    {
       "id": "suse/demo/app-screenshot",
       "name": "App screenshot (demo)",
       "description": "A real Lolly screenshot - the brand studio's Colours tab, captured as vector by the app's own DOM-to-SVG walker. A demo subject for flythroughs, filters and layered animation. A removable example - delete it any time.",

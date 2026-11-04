@@ -1,0 +1,18 @@
+{
+  "id": "studio-object",
+  "name": "Geeko on transparency",
+  "category": "Stills",
+  "description": "Geeko with a soft shadow and no background, ready to place on anything.",
+  "values": {
+    "source": "model",
+    "modelAsset": "suse/model/geeko-sitting",
+    "materialMode": "source",
+    "studio": "soft",
+    "outputMode": "object-shadow",
+    "shadowOpacity": 0.4,
+    "motion": "still",
+    "cameraMotion": "still",
+    "lightMotion": "still"
+  },
+  "galleryCover": true
+}
