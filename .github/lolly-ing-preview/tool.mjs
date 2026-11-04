@@ -19,7 +19,8 @@
  *   custody         complete tree manifest, public pin and release custody for the pack
  *   shell-check     facts and pin checks for a signed lolly.ing shell
  *   pack-facts      facts about the release-mode pack Work's producer wrote
- *   tree-perms      every entry root-owned, not group or world writable, no links
+ *   link-identical  hard-link byte-identical files across the shell and the pack, last step before the image
+ *   tree-perms      every entry root-owned, not group or world writable, no symbolic links
  *   boot-config     throwaway instance.json for the boot check
  *   smoke           HTTP checks against the booted instance image
  *   oci-facts       archive sha256, image digest, config digest and DiffIDs
@@ -28,8 +29,8 @@
 import { createHash, createPublicKey } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import {
-  appendFileSync, closeSync, createReadStream, existsSync, lstatSync, mkdirSync, openSync,
-  readFileSync, readSync, readdirSync, statSync, writeFileSync,
+  appendFileSync, closeSync, createReadStream, existsSync, linkSync, lstatSync, mkdirSync, openSync,
+  readFileSync, readSync, readdirSync, renameSync, statSync, writeFileSync,
 } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -403,6 +404,10 @@ export function shellCheck({ root, pin, keyId, lsha, minSeq = null }) {
     files: files.length, totalBytes: files.reduce((sum, f) => sum + f.size, 0), indexSha256,
     receiptSha256: sha256(receiptBytes), envelopeSha256: sha256(envelopeBytes), catalogSeq: envelope.seq,
     keyId: envelope.keyId, scriptsCarryingPin: pinned,
+    // What the delivery pass at LSHA wrote: a Lolly too old for --codings and --no-validator-map
+    // ignores them and writes both codings and the nginx map, so the manifest records the result.
+    precompressed: { gzip: files.filter((f) => f.path.endsWith('.gz')).length, br: files.filter((f) => f.path.endsWith('.br')).length },
+    validatorMap: files.some((f) => f.path === '.delivery-etags.conf'),
   };
 }
 
@@ -421,7 +426,69 @@ export function packFacts(root, lsha) {
   };
 }
 
-/** Root-owned, read-only for everyone else, no links: run inside the instance image. */
+/**
+ * Hard-link byte-identical regular files across `roots`, for the instance image only.
+ *
+ * The image job runs this last, after every restore and check, on the build context of
+ * the image's one content layer (/app/shell and /app/packs/lolly-ing). The image builder
+ * keeps a hard link inside one layer, so a file the shell holds twice (a tool's own path
+ * and its content-addressed copy) and the pack copies again is stored once. No byte
+ * changes: every linked file has the same size, mode, owner and sha256 as the file it
+ * links to, and the job recomputes the custody afterwards. The first copy in `roots`
+ * order keeps its inode and metadata, so the shell keeps the epoch timestamps its
+ * delivery pass gave it. Empty files stay as they are, and a group starts a fresh inode
+ * after `limit` links (ext4 allows 65,000 per inode).
+ */
+export const LINK_LIMIT = 60_000;
+export function linkIdentical(roots, { limit = LINK_LIMIT } = {}) {
+  need(roots.length > 0, 'name at least one directory');
+  let dev = null;
+  const entries = [];
+  roots.forEach((root, order) => {
+    const st = lstatSync(root);
+    need(st.isDirectory(), `${root} is not a directory`);
+    dev ??= st.dev;
+    need(st.dev === dev, 'every directory must be on one file system, in one build context');
+    for (const { path, size } of treeFiles(root)) {
+      if (size === 0) continue;
+      const full = join(root, path), file = lstatSync(full);
+      entries.push({ full, order, path, size, ino: file.ino, meta: `${file.mode & 0o7777}:${file.uid}:${file.gid}` });
+    }
+  });
+  const bySize = new Map();
+  for (const entry of entries) {
+    if (!bySize.has(entry.size)) bySize.set(entry.size, []);
+    bySize.get(entry.size).push(entry);
+  }
+  const groups = new Map();
+  for (const list of bySize.values()) {
+    if (list.length < 2) continue;
+    for (const entry of list) {
+      const key = `${entry.size}:${entry.meta}:${sha256File(entry.full)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(entry);
+    }
+  }
+  let linked = 0, savedBytes = 0, sets = 0;
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    sets++;
+    group.sort((a, b) => a.order - b.order || (a.path < b.path ? -1 : a.path > b.path ? 1 : 0));
+    let keeper = group[0], links = 1;
+    for (const entry of group.slice(1)) {
+      if (entry.ino === keeper.ino) { links++; continue; }
+      if (links >= limit) { keeper = entry; links = 1; continue; }
+      const temporary = `${entry.full}.lolly-link`;
+      need(!existsSync(temporary), `${temporary} already exists`);
+      linkSync(keeper.full, temporary);
+      renameSync(temporary, entry.full);
+      links++; linked++; savedBytes += entry.size;
+    }
+  }
+  return { files: entries.length, sets, linked, savedBytes };
+}
+
+/** Root-owned, read-only for everyone else, no symbolic links: run inside the instance image. Hard links pass. */
 export function treePerms(roots) {
   let entries = 0;
   for (const root of roots) {
@@ -623,7 +690,8 @@ export function envelopeCheck(bytes, keyId) {
 
 // Fixed lolly.ing build settings. The workflow passes the same literals to the
 // compile step; tool.test.mjs checks that the two agree.
-export const BUILD_CONSTANTS = { siteUrl: 'https://lolly.ing', liveRelay: 'https://lolly.ing/live', requireAiPolicy: 'true' };
+// infoLocales: lolly.ing serves /info in English; the shell links other languages to lolly.tools/info/<lang>/.
+export const BUILD_CONSTANTS = { siteUrl: 'https://lolly.ing', liveRelay: 'https://lolly.ing/live', requireAiPolicy: 'true', infoLocales: 'en' };
 export function buildSettings(env, keyId) {
   const origins = env.CONNECTOR_ORIGINS ?? '';
   const trust = env.CA_TRUST ?? '';
@@ -758,6 +826,7 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
     }
     case 'pack-facts': result = packFacts(resolve(one(a, 'root')), checkInputs(env).lsha); if (a.out) writeJson(one(a, 'out'), result); break;
     case 'tree-perms': result = treePerms(a._.length ? a._ : refuse('name at least one directory')); break;
+    case 'link-identical': result = linkIdentical(a._.length ? a._.map((dir) => resolve(dir)) : refuse('name at least one directory')); break;
     case 'boot-config': {
       const { pin } = parsePin(readFileSync(one(a, 'pin'), 'utf8'));
       result = bootConfig({ pin, generation: Number(one(a, 'generation')) });

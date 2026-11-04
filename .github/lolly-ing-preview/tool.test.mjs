@@ -6,7 +6,7 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { generateKeyPairSync } from 'node:crypto';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import { chmodSync, linkSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, utimesSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
@@ -16,6 +16,7 @@ import * as tool from './tool.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const WORKFLOW = readFileSync(join(HERE, '../workflows/lolly-ing-preview.yml'), 'utf8');
+const DOCKERFILE = readFileSync(join(HERE, 'instance.Dockerfile'), 'utf8');
 const temp = mkdtempSync(join(tmpdir(), 'lolly-ing-preview-test-'));
 after(() => rmSync(temp, { recursive: true, force: true }));
 let n = 0;
@@ -226,6 +227,16 @@ describe('shell, custody and pack', () => {
     assert.equal(facts.catalogSeq, 3);
     assert.equal(facts.keyId, keyId);
     assert.equal(facts.scriptsCarryingPin, 1);
+    assert.deepEqual(facts.precompressed, { gzip: 0, br: 0 });
+    assert.equal(facts.validatorMap, false);
+  });
+  test('shell facts record the precompressed siblings and the nginx map the delivery pass wrote', () => {
+    const root = fakeShell(pin, keyId);
+    put(root, '_app/other.def.js.br', 'br'); put(root, 'index.html.br', 'br'); put(root, 'index.html.gz', 'gz');
+    put(root, '.delivery-etags.conf', 'map {}');
+    const facts = tool.shellCheck({ root, pin, keyId, lsha: L });
+    assert.deepEqual(facts.precompressed, { gzip: 1, br: 2 });
+    assert.equal(facts.validatorMap, true);
   });
   test('refuses the release public key anywhere in the shell', () => {
     const root = fakeShell(pin, keyId, { scriptExtra: `const old="${tool.RELEASE_PUBLIC.x}";` });
@@ -283,10 +294,53 @@ describe('shell, custody and pack', () => {
     put(sourceMode, '.lolly-pack-source.json', JSON.stringify({ version: 1, commit: L, profile: 'suse' }));
     assert.throws(() => tool.packFacts(sourceMode, L), /release mode/);
   });
+  test('link-identical stores each identical file once, keeping the first root\'s inode and metadata', () => {
+    const shell = dir('shell'), pack = dir('pack');
+    const big = 'tool bytes '.repeat(200);
+    put(shell, 'tools/qr/hooks.js', big); put(shell, 'tools/qr@0123456789abcdef/hooks.js', big);
+    put(pack, 'tools/qr/hooks.js', big); put(pack, 'catalog/x.json', '{"same":1}'); put(shell, 'catalog/x.json', '{"same":1}');
+    put(shell, 'only-shell.txt', 'shell'); put(pack, 'only-pack.txt', 'pack');
+    put(shell, 'empty.txt', ''); put(pack, 'empty.txt', '');
+    put(shell, 'other-size.txt', 'abc'); put(pack, 'other-size.txt', 'abcdefg');
+    put(shell, 'same-size.txt', 'abcd'); put(pack, 'same-size.txt', 'wxyz');
+    utimesSync(join(shell, 'tools/qr/hooks.js'), 0, 0);
+    const before = tool.treeManifest(shell), packBefore = tool.treeManifest(pack);
+    const result = tool.linkIdentical([shell, pack]);
+    assert.deepEqual({ sets: result.sets, linked: result.linked, savedBytes: result.savedBytes },
+      { sets: 2, linked: 3, savedBytes: big.length * 2 + '{"same":1}'.length });
+    const ino = (root, rel) => lstatSync(join(root, rel)).ino;
+    const keeper = ino(shell, 'tools/qr/hooks.js');
+    assert.equal(ino(shell, 'tools/qr@0123456789abcdef/hooks.js'), keeper);
+    assert.equal(ino(pack, 'tools/qr/hooks.js'), keeper);
+    assert.equal(lstatSync(join(pack, 'tools/qr/hooks.js')).mtimeMs, 0, 'the shell copy keeps its epoch timestamp');
+    assert.equal(ino(pack, 'catalog/x.json'), ino(shell, 'catalog/x.json'));
+    for (const rel of ['empty.txt', 'other-size.txt', 'same-size.txt']) assert.notEqual(ino(shell, rel), ino(pack, rel), rel);
+    // No byte changed, and a second pass has nothing left to link.
+    assert.deepEqual(tool.treeManifest(shell), before);
+    assert.deepEqual(tool.treeManifest(pack), packBefore);
+    assert.equal(tool.linkIdentical([shell, pack]).linked, 0);
+  });
+  test('link-identical leaves files with another mode alone, caps a group and refuses symbolic links', () => {
+    const root = dir('modes');
+    put(root, 'a.txt', 'same'); put(root, 'b.txt', 'same'); put(root, 'c.txt', 'same'); put(root, 'd.txt', 'same');
+    chmodSync(join(root, 'd.txt'), 0o600);
+    const result = tool.linkIdentical([root], { limit: 2 });
+    const ino = (rel) => lstatSync(join(root, rel)).ino;
+    assert.equal(ino('b.txt'), ino('a.txt'));
+    assert.notEqual(ino('c.txt'), ino('a.txt'), 'the third copy starts a new inode at a limit of two');
+    assert.notEqual(ino('d.txt'), ino('a.txt'), 'another mode is never linked');
+    assert.equal(result.linked, 1);
+    const linked = dir('modes');
+    put(linked, 'a.txt', 'x'); symlinkSync('a.txt', join(linked, 'l'));
+    assert.throws(() => tool.linkIdentical([linked]), /link or special/);
+  });
   test('tree-perms refuses files a non-root user owns, writable files and links', () => {
     const root = dir('perms');
     put(root, 'a.txt', 'a');
     if (process.getuid?.() !== 0) assert.throws(() => tool.treePerms([root]), /not owned by root/);
+    // A hard link is the image's dedupe, a regular file like any other: only ownership is refused here.
+    linkSync(join(root, 'a.txt'), join(root, 'b.txt'));
+    if (process.getuid?.() !== 0) assert.throws(() => tool.treePerms([join(root, 'b.txt')]), /not owned by root/);
     const linked = dir('perms');
     symlinkSync('/etc/hosts', join(linked, 'l'));
     assert.throws(() => tool.treePerms([join(linked, 'l')]), /symbolic link/);
@@ -451,9 +505,30 @@ describe('workflow shape', () => {
     assert.match(jobs.build, new RegExp(`LOLLY_SITE_URL: ${tool.BUILD_CONSTANTS.siteUrl}\\n`));
     assert.match(jobs.build, new RegExp(`VITE_LIVE_RELAY: ${tool.BUILD_CONSTANTS.liveRelay}\\n`));
     assert.match(jobs.build, new RegExp(`VITE_REQUIRE_AI_POLICY: '${tool.BUILD_CONSTANTS.requireAiPolicy}'\\n`));
+    assert.match(jobs.build, new RegExp(`LOLLY_INFO_LOCALES: ${tool.BUILD_CONSTANTS.infoLocales}\\n`));
+    assert.equal(tool.buildSettings({}, 'kid').infoLocales, 'en');
     assert.match(jobs.build, /VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ needs\.gate\.outputs\.pin \}\}/);
     assert.match(jobs.image, new RegExp(tool.RELEASE_THUMBPRINT));
     assert.doesNotMatch(WORKFLOW, /LOLLY_RELEASE_PUBLIC_KEY_JWK|VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ vars\./);
+  });
+  test('the delivery pass writes brotli siblings only and no nginx validator map', () => {
+    assert.match(jobs.sign, /run: node scripts\/build-delivery\.ts --root "\$RUNNER_TEMP\/release-frontend" --codings br --no-validator-map\n/);
+    const delivery = jobs.sign.indexOf('scripts/build-delivery.ts'), receipt = jobs.sign.indexOf('release-frontend-receipt.ts web');
+    assert.ok(delivery > 0 && delivery < receipt, 'before the receipt is signed, so the receipt describes the shell the image holds');
+  });
+  test('identical files are linked last, in one build context, and the bytes are rechecked', () => {
+    const at = (text) => jobs.image.indexOf(text);
+    const link = at('node "$TOOL" link-identical "$assemble/app/shell" "$assemble/app/packs/lolly-ing"');
+    assert.ok(link > 0);
+    assert.ok(at('node "$TOOL" pack-facts --root "$RUNNER_TEMP/assemble/pack" --out "$RUNNER_TEMP/facts/pack.json"') < link, 'after the pack is built and recorded');
+    assert.ok(link < at('name: Assemble the instance image'), 'before the image is built');
+    assert.match(jobs.image, /mv "\$assemble\/shell" "\$assemble\/app\/shell"\n\s+mv "\$assemble\/pack" "\$assemble\/app\/packs\/lolly-ing"/);
+    assert.match(jobs.image, /node "\$TOOL" custody --root "\$assemble\/app\/shell" [^\n]*\\\n\s+--out-dir "\$RUNNER_TEMP\/custody-linked" --expect-sha256 "\$EXPECTED"/);
+    assert.match(jobs.image, /cmp "\$RUNNER_TEMP\/pack-linked\.json" "\$RUNNER_TEMP\/facts\/pack\.json"/);
+    assert.match(jobs.image, /--tag "\$INSTANCE_IMAGE" --load "\$RUNNER_TEMP\/assemble"/);
+    // A hard link survives only inside one layer: one COPY of app/ to /app/.
+    assert.deepEqual([...DOCKERFILE.matchAll(/^COPY .*$/gm)].map((m) => m[0]), ['COPY --chown=0:0 app/ /app/']);
+    assert.match(jobs.image, /tree-perms \/app\/shell \/app\/packs\/lolly-ing/);
   });
   test('every artifact, the instance manifest and the 1.6 GB archive included, is kept 1 day', () => {
     const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);

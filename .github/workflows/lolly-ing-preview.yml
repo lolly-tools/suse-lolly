@@ -402,6 +402,8 @@ jobs:
         env:
           LOLLY_RELEASE_FRONTEND_PHASE: build
           LOLLY_SITE_URL: https://lolly.ing
+          # /info in English only; the shell links the other languages to lolly.tools/info/<lang>/.
+          LOLLY_INFO_LOCALES: en
           VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
           VITE_REQUIRE_AI_POLICY: 'true'
           VITE_LIVE_RELAY: https://lolly.ing/live
@@ -513,9 +515,12 @@ jobs:
       - name: Verify the signed catalog
         working-directory: lolly
         run: node scripts/verify-release-catalog.ts --root "$RUNNER_TEMP/release-frontend"
-      - name: Prepare web delivery files
+      # Work serves the shell and picks a .br sibling when the client accepts brotli, else the
+      # identity bytes or its own compression; it never reads the nginx validator map. A Lolly
+      # without these options ignores them, and shell-check records what was written.
+      - name: Prepare web delivery files (brotli siblings only, no nginx validator map)
         working-directory: lolly
-        run: node scripts/build-delivery.ts --root "$RUNNER_TEMP/release-frontend"
+        run: node scripts/build-delivery.ts --root "$RUNNER_TEMP/release-frontend" --codings br --no-validator-map
       - name: Sign the frontend receipt
         working-directory: lolly
         env:
@@ -684,6 +689,24 @@ jobs:
           find "$RUNNER_TEMP/assemble/pack" -type f -exec chmod 0644 {} +
           node "$TOOL" pack-facts --root "$RUNNER_TEMP/assemble/pack" --out "$RUNNER_TEMP/facts/pack.json"
           rm -rf "$RUNNER_TEMP/work-app"
+      # Last, after every restore and check: one build context, app/, holding the shell and the
+      # pack at their /app paths, so the image's single content layer stores each identical file
+      # once as a hard link (the shell's content-addressed copies, and the pack's copies of the
+      # shell's tools and catalog). Linking changes no byte, which the custody and facts recheck.
+      - name: Store identical files once (hard links in the image's content layer)
+        env:
+          EXPECTED: ${{ needs.sign.outputs.custody_sha256 }}
+        run: |
+          assemble="$RUNNER_TEMP/assemble"
+          mkdir -p "$assemble/app/packs"
+          chmod 0755 "$assemble/app" "$assemble/app/packs"
+          mv "$assemble/shell" "$assemble/app/shell"
+          mv "$assemble/pack" "$assemble/app/packs/lolly-ing"
+          node "$TOOL" link-identical "$assemble/app/shell" "$assemble/app/packs/lolly-ing"
+          node "$TOOL" custody --root "$assemble/app/shell" --lolly lolly --pin "$RUNNER_TEMP/pin.json" \
+            --out-dir "$RUNNER_TEMP/custody-linked" --expect-sha256 "$EXPECTED" > /dev/null
+          node "$TOOL" pack-facts --root "$assemble/app/packs/lolly-ing" --out "$RUNNER_TEMP/pack-linked.json" > /dev/null
+          cmp "$RUNNER_TEMP/pack-linked.json" "$RUNNER_TEMP/facts/pack.json"
       - name: Assemble the instance image (no pull, no push)
         run: |
           docker buildx build --platform linux/amd64 --provenance=false --sbom=false \

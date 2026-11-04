@@ -30,9 +30,9 @@ maintenance-migration approval.
 | `gate` | no secrets | Checks the inputs. Checks the lolly.ing pin, refusing the platform release pin. Uses read-only GitHub API calls to check that `LSHA`, `WSHA` and `SSHA` are on their `main`, that `WSHA` has its own successful `ci.yml` push run, and that `LSHA` has one too or qualifies on a fast lane (below). Checks that Work's `vendor/lolly` gitlink and `engine-pin.json` both name `LSHA`. Refuses a dispatch from any ref other than `main`. |
 | `server` | no secrets | Builds the Work server stage at `WSHA`, checks its engine pin offline, records the migrations (name and sha256) and saves the image. Runs beside the signing of the source catalog. |
 | `sign-source` | `lolly-ing-signing` | Signs the SUSE source catalog with the lolly.ing key. Installs nothing; runs only Lolly's scripts at `LSHA`. |
-| `build` | no secrets | Installs Lolly's dependencies, validates the SUSE catalog, records the shell's stored-format versions and compiles the shell in Lolly's release build phase with the lolly.ing pin. |
-| `sign` | `lolly-ing-signing` | Signs the shell catalog (`--materialize`, optional `--min-seq`), verifies it, writes the delivery files, signs and verifies the frontend receipt, checks the shell and records the pack custody. Installs nothing. |
-| `image` | no key | Verifies the signed shell again, recomputes the custody and requires the signing job's hash, builds the pack with Work's producer, assembles the image, checks ownership, modes, engine pin and migrations, boots it against a throwaway Postgres, exports the OCI archive and writes the manifest. |
+| `build` | no secrets | Installs Lolly's dependencies, validates the SUSE catalog, records the shell's stored-format versions and compiles the shell in Lolly's release build phase with the lolly.ing pin, with `/info` in English only (`LOLLY_INFO_LOCALES=en`, below). |
+| `sign` | `lolly-ing-signing` | Signs the shell catalog (`--materialize`, optional `--min-seq`), verifies it, writes the delivery files (brotli siblings only, no nginx validator map), signs and verifies the frontend receipt, checks the shell and records the pack custody. Installs nothing. |
+| `image` | no key | Verifies the signed shell again, recomputes the custody and requires the signing job's hash, builds the pack with Work's producer, hard-links the files the shell and the pack hold more than once and rechecks their bytes, assembles the image, checks ownership, modes, engine pin and migrations, boots it against a throwaway Postgres, exports the OCI archive and writes the manifest. |
 
 The split follows Lolly's `release-frontend.yml`: a job that installs or builds third-party code never holds the key,
 and a job that holds the key installs nothing. That is why two jobs hold the key, not one: Lolly's compile refuses a
@@ -40,6 +40,27 @@ source catalog that is not signed with the pin it bakes in, and the compile inst
 any of which could leave a process behind to read a later step's environment on the same runner. With no reviewer on
 the environment, the second job costs about two minutes and no approval. Every checkout uses
 `persist-credentials: false`. The workflow token is `contents: read` for every job.
+
+### Size
+
+lolly.ing ships less than a full Lolly build, in three ways that leave every served byte as it was:
+
+- **English `/info`.** The compile sets `LOLLY_INFO_LOCALES=en`, so Lolly's docs build writes the English site only,
+  and its sitemap lists only those pages. The docs' language switcher, the hreflang alternates and the shell's links to
+  a page in another language go to the same page on `https://lolly.tools/info/<lang>/`, which carries every language.
+  The in-app reader and the docs search show the English pages. This was about half of the frontend.
+- **Brotli siblings only, no validator map.** Work serves a file's `.br` sibling when the client accepts brotli; any
+  other client gets the identity bytes or Work's own compression, never a missing file. Work never reads
+  `.delivery-etags.conf`, which is for nginx hosts. The delivery pass runs before the receipt is signed, so the receipt
+  and the custody describe exactly what the image holds. A Lolly commit without these options ignores them, and the
+  manifest's shell facts record what was written (`precompressed`, `validatorMap`).
+- **Each identical file stored once.** The shell holds content-addressed copies of its tools, catalog previews, share
+  cards and shots, and Work's producer copies the shell's tools and catalog into the pack. As the image job's last
+  step, after every check, `tool.mjs link-identical` hard-links byte-identical files across the shell and the pack in
+  one build context, and the Dockerfile copies that context in one `COPY`, so the image's single content layer stores
+  each such file once. The shell keeps its own inodes and timestamps; the job recomputes the custody and the pack facts
+  afterwards and requires both unchanged. Work reads a hard link as the regular file it is, and `tree-perms` in the
+  image refuses symbolic links only. No tree that moves between jobs contains a link.
 
 ### Qualification
 
@@ -92,7 +113,8 @@ dispatch waits, and a third replaces the waiting one. Migrations of every class 
 takes a verified backup before applying any.
 
 A run takes about 40 to 55 minutes: the gate, then the server stage beside the source signing, the compile (the
-longest job), the final signing and the image job, which boots the image and uploads an archive of about 2 GB.
+longest job), the final signing and the image job, which boots the image and uploads an archive of about 0.5 GB (1.5 GB before
+the size changes below).
 
 `MIN_SEQ` raises the floor of the shell catalog's signed sequence. It needs `sign-catalog.ts --min-seq` at `LSHA`,
 which Lolly does not have yet; the `sign` job refuses `MIN_SEQ` until it does. Without it the shell catalog is signed

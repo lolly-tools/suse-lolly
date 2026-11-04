@@ -8,8 +8,9 @@
 # change them. The engine pin is the Work image's own /app/engine-pin.json.
 ARG WORK_SERVER_IMAGE
 FROM ${WORK_SERVER_IMAGE}
-COPY --chown=0:0 shell/ /app/shell/
-COPY --chown=0:0 pack/ /app/packs/lolly-ing/
+# One COPY, so one layer: the build context's app/ holds shell/ and packs/lolly-ing/,
+# and the workflow hard-links their identical files, which a single layer stores once.
+COPY --chown=0:0 app/ /app/
 ARG LOLLY_SOURCE
 ARG WORK_SOURCE
 ARG SUSE_SOURCE
