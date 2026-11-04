@@ -389,21 +389,174 @@ describe('OCI facts', () => {
   });
 });
 
+describe('transport between jobs', () => {
+  const env = { GITHUB_RUN_ID: '4242', GITHUB_RUN_ATTEMPT: '2' };
+  test('a hand-over key is unique to the run and attempt and carries an unguessable nonce', () => {
+    const key = tool.transportKey(env, 'frontend-input');
+    assert.match(key, /^lolly-ing-4242-2-frontend-input-[0-9a-f]{32}$/);
+    assert.notEqual(tool.transportKey(env, 'frontend-input'), key);
+    assert.throws(() => tool.transportKey(env, 'gate'), /unknown hand-over/);
+    assert.throws(() => tool.transportKey({}, 'work-server'), /GITHUB_RUN_ID/);
+    assert.throws(() => tool.transportKey(env, 'work-server', 'abc'), /nonce/);
+  });
+  test('a consumer accepts only this run\'s key for that hand-over, from any attempt', () => {
+    const nonce = 'a'.repeat(32);
+    assert.equal(tool.checkTransportKey(env, 'work-server', `lolly-ing-4242-1-work-server-${nonce}`), `lolly-ing-4242-1-work-server-${nonce}`);
+    for (const bad of ['', `lolly-ing-4243-1-work-server-${nonce}`, `lolly-ing-42421-1-work-server-${nonce}`, `lolly-ing-4242-1-frontend-signed-${nonce}`,
+      `lolly-ing-4242-1-work-server-${nonce}x`, `lolly-ing-4242-0-work-server-${nonce}`, `lolly-ing-4242-1-work-server-${'A'.repeat(32)}`]) {
+      assert.throws(() => tool.checkTransportKey(env, 'work-server', bad), /not one this run made/, bad);
+    }
+  });
+  test('the directory digest covers every file name and byte, and refuses links, directories and an empty directory', () => {
+    const a = dir('xfer');
+    put(a, 'work-server.tar', 'image'); put(a, 'migrations.json', '[]');
+    const { digest, files } = tool.dirDigest(a);
+    assert.deepEqual(files, ['migrations.json', 'work-server.tar']);
+    assert.equal(tool.checkDigest(a, digest, 'work-server').digest, digest);
+    writeFileSync(join(a, 'migrations.json'), '[1]');
+    assert.throws(() => tool.checkDigest(a, digest, 'work-server'), /differs from what its job made/);
+    const renamed = dir('xfer');
+    put(renamed, 'work-server.tar', 'image'); put(renamed, 'migration.json', '[]');
+    assert.notEqual(tool.dirDigest(renamed).digest, digest);
+    const linked = dir('xfer');
+    put(linked, 'a.tar', 'x'); symlinkSync('/etc/hosts', join(linked, 'b'));
+    assert.throws(() => tool.dirDigest(linked), /not a regular file/);
+    const nested = dir('xfer');
+    put(nested, 'sub/a.tar', 'x');
+    assert.throws(() => tool.dirDigest(nested), /not a regular file/);
+    assert.throws(() => tool.dirDigest(dir('xfer')), /is empty/);
+    assert.throws(() => tool.checkDigest(a, '', 'work-server'), /missing or malformed/);
+  });
+  test('the source envelope is a job output while it fits, and must match its sha256 on arrival', () => {
+    const small = Buffer.from(JSON.stringify({ keyId: 'k', seq: 1, files: { a: 'b' } }));
+    const out = tool.envelopeOut(small);
+    assert.equal(out.via, 'output');
+    assert.deepEqual(tool.envelopeIn(out.b64, out.sha256), small);
+    assert.throws(() => tool.envelopeIn(out.b64, tool.sha256(Buffer.from('other'))), /does not match its sha256/);
+    assert.throws(() => tool.envelopeIn(`${out.b64}\n`, out.sha256), /not base64/);
+    assert.throws(() => tool.envelopeIn('', out.sha256), /not base64/);
+    assert.throws(() => tool.envelopeIn(out.b64, ''), /missing or malformed/);
+    const large = Buffer.alloc(tool.ENVELOPE_OUTPUT_LIMIT, 1);
+    assert.deepEqual([tool.envelopeOut(large).via, tool.envelopeOut(large).b64], ['cache', '']);
+    assert.ok(tool.ENVELOPE_OUTPUT_LIMIT < 1024 * 1024, 'stays under the 1 MB job output limit');
+  });
+  test('the gate record travels as one line with its sha256', () => {
+    const record = { version: 1, sources: { lolly: L, work: W, suse: S }, ci: {} };
+    const { text, sha256 } = tool.gateOut(record);
+    assert.doesNotMatch(text, /\n/);
+    assert.deepEqual(tool.gateIn(text, sha256), record);
+    assert.throws(() => tool.gateIn(text.replace(L, W), sha256), /does not match its sha256/);
+    const bad = JSON.stringify({ version: 1, sources: { lolly: 'x', work: W, suse: S } });
+    assert.throws(() => tool.gateIn(bad, tool.sha256(Buffer.from(bad))), /malformed/);
+  });
+  test('a tree with a link is refused before anything writes into it', () => {
+    const root = dir('tree');
+    put(root, 'catalog/tools/index.json', '{}');
+    assert.equal(tool.plainTree(root).files, 1);
+    symlinkSync('/home/runner/work/_actions', join(root, 'catalog/tools/index.sig.json'));
+    assert.throws(() => tool.plainTree(root), /link or special/);
+  });
+  test('the packed archive must be this run\'s and under 2 GiB', () => {
+    const out = dir('out');
+    const zip = join(out, 'lolly-ing-instance-4242-2.oci.tar.zip');
+    writeFileSync(zip, 'PK');
+    const facts = tool.transportFacts({ env, zip, tarSha256: 'f'.repeat(64) });
+    assert.deepEqual(facts, { release: 'lolly-ing-preview-4242', asset: { name: 'lolly-ing-instance-4242-2.oci.tar.zip', bytes: 2, sha256: tool.sha256(Buffer.from('PK')) },
+      member: { name: 'lolly-ing-instance-4242-2.oci.tar', sha256: 'f'.repeat(64) } });
+    assert.equal(tool.MAX_RELEASE_ASSET, 2 ** 31);
+    const other = join(out, 'lolly-ing-instance-4241-2.oci.tar.zip');
+    writeFileSync(other, 'PK');
+    assert.throws(() => tool.transportFacts({ env, zip: other, tarSha256: 'f'.repeat(64) }), /must be named/);
+    const big = join(dir('out'), 'lolly-ing-instance-4242-2.oci.tar.zip');
+    writeFileSync(big, '');
+    execFileSync('truncate', ['-s', String(tool.MAX_RELEASE_ASSET), big]);  // sparse: exactly 2 GiB is refused
+    assert.throws(() => tool.transportFacts({ env, zip: big, tarSha256: 'f'.repeat(64) }), /under 2 GiB/);
+  });
+
+  const bot = { login: 'github-actions[bot]', id: 41898282, type: 'Bot' };
+  const files = [{ name: 'lolly-ing-instance.manifest.json', bytes: 10, sha256: '1'.repeat(64) },
+    { name: 'lolly-ing-instance-4242-2.oci.tar.zip', bytes: 20, sha256: '2'.repeat(64) }];
+  const release = (extra = {}, assetExtra = {}) => ({ id: 777, tag_name: 'lolly-ing-preview-4242', name: 'lolly-ing-preview-4242', draft: true,
+    prerelease: false, author: bot, assets: files.map((f) => ({ name: f.name, size: f.bytes, state: 'uploaded', digest: `sha256:${f.sha256}`, uploader: bot,
+      ...assetExtra })), ...extra });
+  test('before publishing, no release may already carry the run\'s tag or name', () => {
+    assert.equal(tool.releaseCheck([[], [{ tag_name: 'v1', name: 'v1' }]], { tag: 'lolly-ing-preview-4242' }), null);
+    assert.throws(() => tool.releaseCheck([[release({ author: { login: 'someone', id: 1, type: 'User' } })]], { tag: 'lolly-ing-preview-4242' }), /already exists/);
+    assert.throws(() => tool.releaseCheck([[{ tag_name: 'x', name: 'lolly-ing-preview-4242' }]], { tag: 'lolly-ing-preview-4242' }), /already exists/);
+  });
+  test('after publishing, exactly one bot draft holding exactly the uploaded files with GitHub\'s digests', () => {
+    const tag = 'lolly-ing-preview-4242';
+    assert.equal(tool.releaseCheck([[release()]], { tag, assets: files }), 777);
+    assert.equal(tool.releaseCheck([release()], { tag, assets: files }), 777, 'a flat listing too');
+    const cases = [
+      [[[release(), release({ id: 778 })]], /exactly one/],
+      [[[release({ draft: false })]], /not this run's draft/],
+      [[[release({ name: 'other' })]], /not this run's draft/],
+      [[[release({ author: { login: 'ndftz', id: 5, type: 'User' } })]], /not created by github-actions\[bot\]/],
+      [[[release({ author: { ...bot, id: 1 } })]], /not created by/],
+      [[[release({}, { digest: null })]], /digest none/],
+      [[[release({}, { digest: `sha256:${'3'.repeat(64)}` })]], /has digest/],
+      [[[release({}, { state: 'starter' })]], /not the uploaded file/],
+      [[[release({}, { uploader: { login: 'ndftz', id: 5, type: 'User' } })]], /not uploaded by/],
+      [[[release({ assets: [] })]], /holds 0 files/],
+    ];
+    for (const [listing, message] of cases) assert.throws(() => tool.releaseCheck(listing, { tag, assets: files }), message);
+    const extra = release();
+    extra.assets.push({ ...extra.assets[0], name: 'extra.txt' });
+    assert.throws(() => tool.releaseCheck([[extra]], { tag, assets: files }), /holds 3 files/);
+  });
+  test('the anchor key binds the run, the attempt, the release ID and the manifest sha256', () => {
+    assert.equal(tool.anchorKey(env, 777, 'a'.repeat(64)), `lolly-ing-release-4242-2-777-${'a'.repeat(64)}`);
+    assert.throws(() => tool.anchorKey(env, 0, 'a'.repeat(64)), /release ID/);
+    assert.throws(() => tool.anchorKey(env, 777, 'x'), /sha256/);
+  });
+  test('the manifest records the release transport for this run\'s archive', () => {
+    const pin = freshPin(), keyId = tool.thumbprint(pin);
+    const base = { run: { runId: 4242, runAttempt: 2 }, gateRecord: { version: 1, sources: { lolly: L, work: W, suse: S } }, server: { imageId: 'i' },
+      sign: {}, shell: { keyId, indexSha256: '5'.repeat(64) }, pack: {}, boot: { readyz: { status: 200 }, index: { sha256: '5'.repeat(64) } },
+      oci: { archiveName: 'lolly-ing-instance-4242-2.oci.tar', archiveSha256: '6'.repeat(64), imageDigest: `sha256:${'7'.repeat(64)}` },
+      migrationsList: [{ name: '0001.sql', sha256: '8'.repeat(64) }], storedFormatsRecord: {}, buildSettings: { pinThumbprint: keyId },
+      enginePin: { generatedFrom: L } };
+    const transport = { release: 'lolly-ing-preview-4242', asset: { name: 'lolly-ing-instance-4242-2.oci.tar.zip', bytes: 9, sha256: '9'.repeat(64) },
+      member: { name: 'lolly-ing-instance-4242-2.oci.tar', sha256: '6'.repeat(64) } };
+    const manifest = tool.finalManifest({ ...base, transport });
+    assert.deepEqual(manifest.transport, { release: transport.release, asset: transport.asset, member: transport.member.name });
+    for (const bad of [{ ...transport, release: 'lolly-ing-preview-4241' }, { ...transport, member: { ...transport.member, sha256: '0'.repeat(64) } },
+      { ...transport, asset: { ...transport.asset, bytes: tool.MAX_RELEASE_ASSET } }, { ...transport, asset: { ...transport.asset, name: 'other.zip' } }, undefined]) {
+      assert.throws(() => tool.finalManifest({ ...base, transport: bad }), /release transport record/);
+    }
+  });
+});
+
 describe('workflow shape', () => {
   const jobs = {};
   const body = WORKFLOW.slice(WORKFLOW.indexOf('\njobs:\n'));
   for (const block of body.split(/\n(?=  [a-z][a-z-]*:\n)/).slice(1)) jobs[/^  ([a-z-]+):/.exec(block)[1]] = block;
+  const steps = (job) => jobs[job].split('\n      - ').slice(1);
+  const CACHE_ACTION = /uses: actions\/cache\/(save|restore)@([0-9a-f]{40})/;
 
-  test('has the six jobs in order and keeps the token read-only', () => {
-    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image']);
-    assert.match(WORKFLOW, /\npermissions:\n  contents: read\n\n/);
-    assert.doesNotMatch(WORKFLOW, /\n[ ]+permissions:/, 'no job widens the token');
+  test('has the six jobs in order, then cleanup', () => {
+    assert.deepEqual(Object.keys(jobs), ['gate', 'server', 'sign-source', 'build', 'sign', 'image', 'cleanup']);
     assert.doesNotMatch(WORKFLOW, /packages:\s*write|docker (?:push|login)|--push\b/);
+  });
+  test('grants nothing by default, and each job exactly its own least privilege', () => {
+    assert.match(WORKFLOW, /\npermissions: \{\}\n/);
+    const expected = { gate: 'contents: read', server: 'contents: read', 'sign-source': 'contents: read', build: 'contents: read',
+      sign: 'contents: read', image: 'contents: write', cleanup: 'actions: write' };
+    for (const [name, block] of Object.entries(jobs)) {
+      const found = [...block.matchAll(/\n    permissions:\n((?:      [a-z-]+: [a-z]+\n)+)/g)];
+      assert.equal(found.length, 1, `${name} states its permissions once`);
+      assert.equal(found[0][1].trim(), expected[name], name);
+    }
+  });
+  test('no Actions artifacts: nothing is uploaded or downloaded as an artifact', () => {
+    assert.doesNotMatch(WORKFLOW, /upload-artifact|download-artifact|retention-days/);
   });
   test('pins every action to a commit and never persists credentials', () => {
     const uses = [...WORKFLOW.matchAll(/uses: (\S+)/g)].map((m) => m[1]);
     assert.ok(uses.length > 10);
-    for (const ref of uses) assert.match(ref, /^[\w.-]+\/[\w.-]+@[0-9a-f]{40}$/);
+    for (const ref of uses) assert.match(ref, /^[\w.-]+\/[\w.-]+(?:\/[\w.-]+)?@[0-9a-f]{40}$/);
+    assert.equal(new Set([...WORKFLOW.matchAll(new RegExp(CACHE_ACTION, 'g'))].map((m) => m[2])).size, 1, 'one actions/cache commit');
     const checkouts = WORKFLOW.split('uses: actions/checkout@').slice(1);
     for (const step of checkouts) assert.match(step.split('\n      - ')[0], /persist-credentials: false/);
   });
@@ -419,6 +572,101 @@ describe('workflow shape', () => {
     }
     assert.equal([...WORKFLOW.matchAll(/secrets\./g)].length, 3);
   });
+  test('every hand-over: the producer seals a fresh key and digest, the consumer restores exactly it and checks both', () => {
+    const handovers = [
+      ['work-server', 'server', 'image', 'xfer/work-server'],
+      ['frontend-input', 'build', 'sign', 'xfer/frontend-input'],
+      ['frontend-signed', 'sign', 'image', 'xfer/frontend-signed'],
+      ['source-envelope', 'sign-source', 'build', 'source-envelope'],
+    ];
+    const outputs = { 'work-server': ['work_server_key', 'work_server_digest'], 'frontend-input': ['frontend_input_key', 'frontend_input_digest'],
+      'frontend-signed': ['frontend_signed_key', 'frontend_signed_digest'], 'source-envelope': ['envelope_key', 'envelope_digest'] };
+    for (const [name, producer, consumer, path] of handovers) {
+      const [keyOut, digestOut] = outputs[name];
+      const put = steps(producer).findIndex((step) => step.includes(`transport-put --name ${name} `));
+      assert.ok(put >= 0, `${producer} seals ${name}`);
+      const id = /\n\s+id: ([a-z-]+)/.exec(steps(producer)[put])[1];
+      const save = steps(producer)[put + 1];
+      assert.match(save, new RegExp(`uses: actions/cache/save@[0-9a-f]{40}[^\\n]*\\n(?:\\s+if: [^\\n]+\\n)?\\s+with:\\n\\s+path: \\$\\{\\{ runner\\.temp \\}\\}/${path}\\n\\s+key: \\$\\{\\{ steps\\.${id}\\.outputs\\.key \\}\\}\\n`), `${producer} saves ${name} under its fresh key`);
+      assert.match(jobs[producer], new RegExp(`\\n      ${keyOut}: \\$\\{\\{ steps\\.${id}\\.outputs\\.key \\}\\}\\n      ${digestOut}: \\$\\{\\{ steps\\.${id}\\.outputs\\.digest \\}\\}\\n`));
+      const restore = steps(consumer).findIndex((step) => CACHE_ACTION.test(step) && step.includes(`key: \${{ needs.${producer}.outputs.${keyOut} }}`));
+      assert.ok(restore >= 0, `${consumer} restores ${name}`);
+      assert.match(steps(consumer)[restore], new RegExp(`path: \\$\\{\\{ runner\\.temp \\}\\}/${path}\\n`));
+      assert.match(steps(consumer)[restore], /fail-on-cache-miss: true/);
+      assert.doesNotMatch(steps(consumer)[restore], /restore-keys/);
+      const check = steps(consumer)[restore + 1];
+      assert.match(check, new RegExp(`KEY: \\$\\{\\{ needs\\.${producer}\\.outputs\\.${keyOut} \\}\\}`));
+      assert.match(check, new RegExp(`DIGEST: \\$\\{\\{ needs\\.${producer}\\.outputs\\.${digestOut} \\}\\}`));
+      assert.match(check, new RegExp(`node "\\$TOOL" transport-get --name ${name} --key "\\$KEY" --dir "\\$RUNNER_TEMP/${path}" --digest "\\$DIGEST"`));
+    }
+    assert.equal([...WORKFLOW.matchAll(/uses: actions\/cache\/restore@/g)].length, 4);
+    assert.equal([...WORKFLOW.matchAll(/uses: actions\/cache\/save@/g)].length, 5, 'four hand-overs and the anchor');
+  });
+  test('small records travel as job outputs, checked against their sha256', () => {
+    assert.match(jobs.gate, /gate_json: \$\{\{ steps\.gate\.outputs\.gate_json \}\}\n\s+gate_sha256: \$\{\{ steps\.gate\.outputs\.gate_sha256 \}\}/);
+    assert.match(jobs.image, /GATE_JSON: \$\{\{ needs\.gate\.outputs\.gate_json \}\}\n\s+GATE_SHA256: \$\{\{ needs\.gate\.outputs\.gate_sha256 \}\}\n\s+run: \|\n[^\n]*\n\s+node "\$TOOL" gate-in --sha256 "\$GATE_SHA256"/);
+    assert.match(jobs['sign-source'], /envelope_b64: \$\{\{ steps\.handoff\.outputs\.envelope_b64 \}\}/);
+    const [receive] = steps('build').filter((step) => step.includes('envelope-in'));
+    assert.match(receive, /if: needs\.sign-source\.outputs\.envelope_b64 != ''/);
+    assert.match(receive, /ENVELOPE_B64: \$\{\{ needs\.sign-source\.outputs\.envelope_b64 \}\}\n\s+EXPECTED: \$\{\{ needs\.sign-source\.outputs\.envelope_sha256 \}\}/);
+    const [use] = steps('build').filter((step) => step.startsWith('name: Use the lolly.ing source envelope'));
+    assert.match(use, /sha256sum --check --strict/);
+  });
+  test('the compile\'s third-party code runs only as the build user, walled off from the runner', () => {
+    assert.doesNotMatch(WORKFLOW, /pnpm\/action-setup|\n\s+cache: pnpm/);
+    for (const [name, block] of Object.entries(jobs)) if (name !== 'build') assert.doesNotMatch(block, /pnpm|\bnpm /, name);
+    for (const line of jobs.build.split('\n').filter((l) => /\bpnpm (?:install|run)|\bnpm install|build-release-web\.ts/.test(l))) {
+      assert.match(line, /^\s+as_builder (?:pnpm|npm|node) /, line);
+    }
+    const helpers = jobs.build.match(/as_builder\(\) \{\n[^}]+\}/g);
+    assert.equal(helpers.length, 2);
+    for (const helper of helpers) assert.match(helper, /sudo -u "\$BUILD_USER" -- env -i -C "\$BUILD_ROOT\/lolly" HOME="\/home\/\$BUILD_USER"/);
+    const [make] = steps('build').filter((step) => step.startsWith('name: Make the build user'));
+    assert.match(make, /chmod 0700 "\$HOME"/);
+    assert.match(make, /sudo -u "\$BUILD_USER" -- sudo -n true/);
+    assert.match(make, /sudo -u "\$BUILD_USER" -- ls "\$GITHUB_WORKSPACE"/);
+    assert.match(make, /sudo -u "\$BUILD_USER" -- ls "\$RUNNER_TEMP"/);
+    const order = steps('build').map((step) => step.split('\n')[0]);
+    const at = (re) => order.findIndex((line) => re.test(line));
+    assert.ok(at(/Record stored formats/) < at(/Make the build user/) && at(/Make the build user/) < at(/Install Lolly's dependencies/));
+    const [stop] = steps('build').filter((step) => step.startsWith('name: Stop the build user'));
+    assert.match(stop, /sudo pkill -KILL -u "\$BUILD_USER"/);
+    assert.match(stop, /if pgrep -u "\$BUILD_USER"/);
+  });
+  test('consumers refuse links in a restored tree before anything writes into it', () => {
+    const [unpack] = steps('sign').filter((step) => step.startsWith('name: Unpack the unsigned shell'));
+    assert.ok(unpack.indexOf('plain-tree') > unpack.indexOf('tar --extract') && unpack.indexOf('plain-tree') < unpack.indexOf('chmod'));
+    const signing = steps('sign').findIndex((step) => step.startsWith('name: Sign the shell catalog'));
+    assert.ok(steps('sign').indexOf(unpack) < signing);
+    const [assemble] = steps('image').filter((step) => step.startsWith('name: Unpack and verify the signed shell'));
+    assert.match(assemble, /node "\$TOOL" plain-tree "\$shell"/);
+  });
+  test('the image job publishes one draft release with a size guard, checks it, then saves the anchor', () => {
+    const [pack] = steps('image').filter((step) => step.startsWith('name: Export the OCI archive'));
+    assert.match(pack, /zipfile\.ZIP_DEFLATED, compresslevel=6, allowZip64=True/);
+    assert.match(pack, /node "\$TOOL" transport-facts --zip "\$archive\.zip" --tar-sha256 "\$tar_sha256"/);
+    assert.match(pack, /--transport "\$RUNNER_TEMP\/facts\/transport\.json"/);
+    const [publish] = steps('image').filter((step) => step.startsWith('name: Publish this run\'s draft release'));
+    assert.match(publish, /id: release\n\s+env:\n\s+GH_TOKEN: \$\{\{ github\.token \}\}\n/);
+    assert.match(publish, /tag="lolly-ing-preview-\$GITHUB_RUN_ID"/);
+    assert.ok(publish.indexOf('--mode absent') < publish.indexOf('gh release create') && publish.indexOf('gh release create') < publish.indexOf('--mode published'));
+    assert.match(publish, /gh release create "\$tag" "\$manifest" "\$archive" --repo "\$GITHUB_REPOSITORY" --draft --title "\$tag" --target "\$GITHUB_SHA"/);
+    assert.doesNotMatch(WORKFLOW, /--latest|--draft=false|gh release edit|releases\/[^ ]*--method (?:PATCH|DELETE)/);
+    assert.equal([...jobs.image.matchAll(/github\.token/g)].length, 1, 'only the publishing step holds the token');
+    const anchor = steps('image').at(-1);
+    assert.match(anchor, /uses: actions\/cache\/save@[0-9a-f]{40}[^\n]*\n\s+with:\n\s+path: \$\{\{ runner\.temp \}\}\/anchor\n\s+key: \$\{\{ steps\.release\.outputs\.anchor_key \}\}/);
+    assert.match(jobs.image, /anchor_key: \$\{\{ steps\.release\.outputs\.anchor_key \}\}/);
+  });
+  test('cleanup always runs, deletes only this run\'s hand-over caches, and fails a run whose anchor is missing', () => {
+    const block = jobs.cleanup;
+    assert.match(block, /needs: \[gate, server, sign-source, build, sign, image\]\n\s+if: always\(\)\n/);
+    assert.doesNotMatch(block, /uses:|\bnode "|\$TOOL/, 'no code but gh and bash');
+    assert.match(block, /actions\/caches\?ref=refs\/heads\/main&key=lolly-ing-\$run-&per_page=100/);
+    assert.match(block, /\^lolly-ing-\$run-\[1-9\]\[0-9\]\{0,3\}-\(work-server\|source-envelope\|frontend-input\|frontend-signed\)-\[0-9a-f\]\{32\}\$/);
+    assert.match(block, /if \[\[ "\$IMAGE_RESULT" != success \]\]; then exit 0; fi/);
+    assert.match(block, /\^lolly-ing-release-\$run-\$GITHUB_RUN_ATTEMPT-\[1-9\]\[0-9\]\{0,19\}-\[0-9a-f\]\{64\}\$/);
+    assert.match(block, /if \[\[ "\$anchors" == "\$ANCHOR_KEY" \]\]/);
+  });
   test('preview-grade: no approval job, no maintenance input, one signing environment', () => {
     // Andy 2026-10-27: lolly-ing-signing has no reviewer, so nothing in a run waits for a person.
     assert.doesNotMatch(WORKFLOW, /MAINTENANCE|lolly-ing-maintenance/);
@@ -426,8 +674,7 @@ describe('workflow shape', () => {
     assert.match(WORKFLOW, /\nrun-name: lolly\.ing preview \$\{\{ inputs\.WSHA \}\}\n/);  // the deploy command resumes a running build by it
   });
   test('the gate qualifies Lolly on a fast lane only without its own run, with the base commit\'s own rules', () => {
-    const steps = jobs.gate.split('\n      - ').slice(1);
-    const find = (re) => steps.filter((step) => re.test(step));
+    const find = (re) => steps('gate').filter((step) => re.test(step));
     const [checkout] = find(/Check out Lolly's history/);
     assert.match(checkout, /if: steps\.lolly-ci\.outputs\.lane == 'true'/);
     assert.match(checkout, /fetch-depth: 0\n\s+filter: blob:none\n\s+persist-credentials: false/);
@@ -440,10 +687,25 @@ describe('workflow shape', () => {
     const [gateStep] = find(/name: Check ancestry, qualification and the engine pin/);
     assert.match(gateStep, /--lolly-lane "\$RUNNER_TEMP\/gate\/lolly-lane\.json"/);
   });
-  test('dispatch inputs reach scripts only through the environment', () => {
-    for (const block of WORKFLOW.split(/\n\s+run: /).slice(1)) {
-      const script = block.split(/\n\s{6}- /)[0];
+  /** Each run: script, inline or block, up to the first line indented no deeper than its key. */
+  const runScripts = () => {
+    const lines = WORKFLOW.split('\n'), scripts = [];
+    lines.forEach((line, i) => {
+      const m = /^(\s+)(?:- )?run: (.*)$/.exec(line);
+      if (!m) return;
+      if (m[2] !== '|') { scripts.push(m[2]); return; }
+      const body = [];
+      for (let j = i + 1; j < lines.length && (lines[j] === '' || lines[j].search(/\S/) > m[1].length); j++) body.push(lines[j]);
+      scripts.push(body.join('\n'));
+    });
+    return scripts;
+  };
+  test('dispatch inputs and job outputs reach scripts only through the environment', () => {
+    const scripts = runScripts();
+    assert.ok(scripts.length > 40);
+    for (const script of scripts) {
       assert.doesNotMatch(script, /\$\{\{\s*(?:inputs|github\.event)\./, 'no expression expansion of inputs inside run');
+      assert.doesNotMatch(script, /\$\{\{\s*(?:needs|steps)\./, 'job and step outputs reach scripts through the environment too');
     }
     assert.doesNotMatch(WORKFLOW, /ref: \$\{\{ inputs\./, 'checkouts use the gate-checked SHAs');
   });
@@ -452,14 +714,8 @@ describe('workflow shape', () => {
     assert.match(jobs.build, new RegExp(`VITE_LIVE_RELAY: ${tool.BUILD_CONSTANTS.liveRelay}\\n`));
     assert.match(jobs.build, new RegExp(`VITE_REQUIRE_AI_POLICY: '${tool.BUILD_CONSTANTS.requireAiPolicy}'\\n`));
     assert.match(jobs.build, /VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ needs\.gate\.outputs\.pin \}\}/);
+    assert.match(jobs.build, /VITE_CATALOG_PUBLIC_KEY_JWK="\$VITE_CATALOG_PUBLIC_KEY_JWK"/, 'and passes them to the build user');
     assert.match(jobs.image, new RegExp(tool.RELEASE_THUMBPRINT));
     assert.doesNotMatch(WORKFLOW, /LOLLY_RELEASE_PUBLIC_KEY_JWK|VITE_CATALOG_PUBLIC_KEY_JWK: \$\{\{ vars\./);
-  });
-  test('every artifact, the instance manifest and the 1.6 GB archive included, is kept 1 day', () => {
-    const retention = [...WORKFLOW.matchAll(/name: (lolly-ing-[a-z-]+)\n\s+path: [^\n]+\n\s+retention-days: (\d+)/g)].map((m) => [m[1], Number(m[2])]);
-    assert.deepEqual(Object.fromEntries(retention), {
-      'lolly-ing-gate': 1, 'lolly-ing-work-server': 1, 'lolly-ing-source-envelope': 1, 'lolly-ing-frontend-input': 1,
-      'lolly-ing-frontend-signed': 1, 'lolly-ing-instance-manifest': 1, 'lolly-ing-instance-archive': 1,
-    });
   });
 });

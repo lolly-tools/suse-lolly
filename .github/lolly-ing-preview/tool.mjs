@@ -23,9 +23,20 @@
  *   boot-config     throwaway instance.json for the boot check
  *   smoke           HTTP checks against the booted instance image
  *   oci-facts       archive sha256, image digest, config digest and DiffIDs
- *   final-manifest  the manifest uploaded beside the archive
+ *   final-manifest  the manifest published beside the archive
+ *
+ * Transport between jobs (no Actions artifacts: suse-lolly is private, and its
+ * artifact storage is billed against a quota that refuses every upload when full):
+ *   gate-in          the gate record from the gate job's output, checked against its sha256
+ *   envelope-out     the source envelope as a job output, or a note that it goes by the cache
+ *   envelope-in      the source envelope from that output, checked against its sha256
+ *   transport-put    a fresh cache key for one hand-over directory, and the directory's digest
+ *   transport-get    check a restored hand-over directory: this run's key, the producer's digest
+ *   plain-tree       a tree holds only regular files and directories (no links, no devices)
+ *   transport-facts  the packed archive the release carries, with the 2 GiB size guard
+ *   release-check    this run's draft release: absent before it is made, then exactly what was uploaded
  */
-import { createHash, createPublicKey } from 'node:crypto';
+import { createHash, createPublicKey, randomBytes } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import {
   appendFileSync, closeSync, createReadStream, existsSync, lstatSync, mkdirSync, openSync,
@@ -651,9 +662,177 @@ export function runFacts(env) {
   };
 }
 
+// ------------------------------------------------------------------ transport
+//
+// The jobs hand files to each other through the Actions cache (not storage-billed,
+// 10 GB per repository) and the release through a draft release (assets are not
+// storage-billed; each file must be under 2 GiB). The cache is not signed: a restore
+// extracts with `tar -P`, so a cache entry is only as trustworthy as the host that
+// wrote it. Every host in a main run of this workflow therefore runs first-party code
+// only (the compile's third-party code runs as a separate user without sudo, see the
+// build job), only runs on main can write main's cache scope, each producer picks an
+// unguessable key and passes it, with the directory's digest, as a job output, and
+// each consumer refuses another key or digest.
+
+export const TRANSPORTS = ['work-server', 'source-envelope', 'frontend-input', 'frontend-signed'];
+// The account GitHub Actions' GITHUB_TOKEN creates releases and uploads assets as.
+export const RELEASE_AUTHOR = { login: 'github-actions[bot]', id: 41898282, type: 'Bot' };
+// GitHub: "Each file included in a release must be under 2 GiB."
+export const MAX_RELEASE_ASSET = 2 * 1024 ** 3;
+// Job outputs are at most 1 MB per job; the base64 envelope uses at most 768 KiB of it.
+export const ENVELOPE_OUTPUT_LIMIT = 768 * 1024;
+export const MANIFEST_ASSET = 'lolly-ing-instance.manifest.json';
+const RUN_ID = /^[1-9][0-9]{0,19}$/;
+const ATTEMPT = /^[1-9][0-9]{0,3}$/;
+
+function runIdentity(env) {
+  const runId = env.GITHUB_RUN_ID ?? '', attempt = env.GITHUB_RUN_ATTEMPT ?? '';
+  need(RUN_ID.test(runId) && ATTEMPT.test(attempt), 'GITHUB_RUN_ID and GITHUB_RUN_ATTEMPT must name this run');
+  return { runId, attempt };
+}
+export const releaseTag = (runId) => `lolly-ing-preview-${runId}`;
+
+/** lolly-ing-<run>-<attempt>-<name>-<128-bit nonce>: unique to the run and attempt, and unguessable. */
+export function transportKey(env, name, nonce = randomBytes(16).toString('hex')) {
+  need(TRANSPORTS.includes(name), `unknown hand-over ${name}`);
+  need(/^[0-9a-f]{32}$/.test(nonce), 'the cache key nonce must be 128 bits of hex');
+  const { runId, attempt } = runIdentity(env);
+  return `lolly-ing-${runId}-${attempt}-${name}-${nonce}`;
+}
+
+/** The key a consumer restores must be one of this run's (any attempt: a re-run reuses an earlier job's output). */
+export function checkTransportKey(env, name, key) {
+  need(TRANSPORTS.includes(name), `unknown hand-over ${name}`);
+  const { runId } = runIdentity(env);
+  need(typeof key === 'string' && new RegExp(`^lolly-ing-${runId}-[1-9][0-9]{0,3}-${name}-[0-9a-f]{32}$`).test(key),
+    `the ${name} cache key is not one this run made (${key || 'empty'})`);
+  return key;
+}
+
+/** sha256 over "<sha256>  <name>\n" for every entry directly in dir, sorted; each must be a regular file. */
+export function dirDigest(dir) {
+  const names = readdirSync(dir).sort();
+  need(names.length > 0, `${dir} is empty`);
+  const lines = names.map((name) => {
+    need(!/[\r\n]/.test(name), `${dir} holds a file name with a line break`);
+    need(lstatSync(join(dir, name)).isFile(), `${dir}/${name} is not a regular file`);
+    return `${sha256File(join(dir, name))}  ${name}\n`;
+  });
+  return { digest: sha256(Buffer.from(lines.join(''))), files: names };
+}
+
+export function checkDigest(dir, expected, what) {
+  need(SHA256.test(expected ?? ''), `the ${what} digest from its job is missing or malformed`);
+  const { digest, files } = dirDigest(dir);
+  need(digest === expected, `the restored ${what} differs from what its job made (digest ${digest}, expected ${expected})`);
+  return { digest, files };
+}
+
+/** Strict base64: the canonical encoding of the bytes it decodes to. */
+export function decodeBase64(text) {
+  need(typeof text === 'string' && text.length > 0 && text.length % 4 === 0 && /^[A-Za-z0-9+/]+={0,2}$/.test(text),
+    'the value is not base64');
+  const bytes = Buffer.from(text, 'base64');
+  need(bytes.toString('base64') === text, 'the value is not canonical base64');
+  return bytes;
+}
+
+export function envelopeOut(bytes) {
+  const b64 = bytes.toString('base64');
+  return b64.length <= ENVELOPE_OUTPUT_LIMIT ? { via: 'output', b64, sha256: sha256(bytes) } : { via: 'cache', b64: '', sha256: sha256(bytes) };
+}
+
+export function envelopeIn(b64, expected) {
+  need(SHA256.test(expected ?? ''), 'the source envelope sha256 from the signing job is missing or malformed');
+  const bytes = decodeBase64(b64);
+  need(sha256(bytes) === expected, 'the source envelope from the signing job does not match its sha256');
+  return bytes;
+}
+
+/** The gate job's record, passed as one line of compact JSON with its sha256. */
+export function gateIn(text, expected) {
+  need(typeof text === 'string' && text.length > 0 && text.length <= 64 * 1024, 'the gate record is missing or too large');
+  need(SHA256.test(expected ?? '') && sha256(Buffer.from(text, 'utf8')) === expected, 'the gate record does not match its sha256');
+  const record = JSON.parse(text);
+  need(record?.version === 1 && record.sources && SHA40.test(record.sources.lolly ?? '') && SHA40.test(record.sources.work ?? '')
+    && SHA40.test(record.sources.suse ?? ''), 'the gate record is malformed');
+  return record;
+}
+
+export function gateOut(record) {
+  const text = JSON.stringify(record);
+  need(text.length <= 64 * 1024, 'the gate record is too large for a job output');
+  return { text, sha256: sha256(Buffer.from(text, 'utf8')) };
+}
+
+/** Every entry is a regular file or a directory: refuse links before any script writes into the tree. */
+export function plainTree(root) {
+  const files = treeFiles(root);
+  return { files: files.length, totalBytes: files.reduce((sum, f) => sum + f.size, 0) };
+}
+
+/** The packed archive this run's release carries: name, size under 2 GiB, sha256, and the archive it holds. */
+export function transportFacts({ env, zip, tarSha256 }) {
+  const { runId, attempt } = runIdentity(env);
+  const member = `lolly-ing-instance-${runId}-${attempt}.oci.tar`;
+  need(basename(zip) === `${member}.zip`, `the packed archive must be named ${member}.zip`);
+  const st = lstatSync(zip);
+  need(st.isFile() && st.size > 0, 'the packed archive is missing');
+  need(st.size < MAX_RELEASE_ASSET, `the packed archive is ${st.size} bytes; a release asset must be under 2 GiB (${MAX_RELEASE_ASSET})`);
+  need(SHA256.test(tarSha256 ?? ''), 'the exported archive sha256 is missing');
+  return { release: releaseTag(runId), asset: { name: `${member}.zip`, bytes: st.size, sha256: sha256File(zip) },
+    member: { name: member, sha256: tarSha256 } };
+}
+
+function fileFacts(path) {
+  const st = lstatSync(path);
+  need(st.isFile(), `${path} is not a regular file`);
+  return { name: basename(path), bytes: st.size, sha256: sha256File(path) };
+}
+
+/**
+ * This run's draft release in a `gh api --paginate --slurp` listing. Before it is made, no release may have its tag
+ * or name. After, exactly one: a draft by github-actions[bot] whose tag and name are the run's, holding exactly the
+ * uploaded files (name, size, GitHub's sha256 digest, uploader). Returns its ID.
+ */
+export function releaseCheck(listing, { tag, assets = null }) {
+  need(Array.isArray(listing), 'the release listing is not a JSON array');
+  const all = listing.flat();
+  const mine = all.filter((r) => r && (r.tag_name === tag || r.name === tag));
+  if (assets === null) {
+    need(mine.length === 0, `a release named ${tag} already exists; this run publishes nothing over it`);
+    return null;
+  }
+  need(mine.length === 1, `expected exactly one release ${tag}, found ${mine.length}`);
+  const release = mine[0];
+  need(Number.isSafeInteger(release.id) && release.id > 0, 'the release ID is malformed');
+  need(release.tag_name === tag && release.name === tag && release.draft === true && release.prerelease === false,
+    `release ${tag} is not this run's draft (tag ${release.tag_name}, name ${release.name}, draft ${release.draft})`);
+  const by = (who) => who?.login === RELEASE_AUTHOR.login && who?.id === RELEASE_AUTHOR.id && who?.type === RELEASE_AUTHOR.type;
+  need(by(release.author), `release ${tag} was not created by ${RELEASE_AUTHOR.login}`);
+  const got = Array.isArray(release.assets) ? release.assets : [];
+  need(got.length === assets.length, `release ${tag} holds ${got.length} files, expected ${assets.length}`);
+  for (const want of assets) {
+    const found = got.filter((a) => a?.name === want.name);
+    need(found.length === 1, `release ${tag} does not hold ${want.name} once`);
+    const [asset] = found;
+    need(asset.state === 'uploaded' && asset.size === want.bytes, `${want.name} on the release is not the uploaded file`);
+    need(asset.digest === `sha256:${want.sha256}`, `${want.name} on the release has digest ${asset.digest ?? 'none (yet)'}, expected sha256:${want.sha256}`);
+    need(by(asset.uploader), `${want.name} was not uploaded by ${RELEASE_AUTHOR.login}`);
+  }
+  return release.id;
+}
+
+/** The main-scope cache key that binds this run to its release: the deploy command reads it by run ID. */
+export function anchorKey(env, releaseId, manifestSha256) {
+  const { runId, attempt } = runIdentity(env);
+  need(Number.isSafeInteger(releaseId) && releaseId > 0 && SHA256.test(manifestSha256 ?? ''), 'the anchor needs a release ID and the manifest sha256');
+  return `lolly-ing-release-${runId}-${attempt}-${releaseId}-${manifestSha256}`;
+}
+
 // ------------------------------------------------------------- final manifest
 
-export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci, boot, migrationsList, storedFormatsRecord, buildSettings, enginePin }) {
+export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci, boot, migrationsList, storedFormatsRecord, buildSettings, enginePin, transport }) {
   need(gateRecord?.version === 1, 'the gate record is missing');
   need(SHA256.test(oci?.archiveSha256 ?? '') && DIGEST.test(oci?.imageDigest ?? ''), 'the OCI facts are missing');
   need(shell?.keyId && shell.keyId !== RELEASE_THUMBPRINT, 'the shell facts are missing or name the release key');
@@ -661,6 +840,11 @@ export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci,
   need(enginePin?.generatedFrom === gateRecord.sources.lolly, 'the image engine pin is not LSHA');
   need(Array.isArray(migrationsList) && migrationsList.length, 'the migrations list is missing');
   need(boot?.readyz?.status === 200 && boot?.index?.sha256 === shell.indexSha256, 'the boot check did not pass');
+  need(Number.isSafeInteger(run?.runId) && transport?.release === releaseTag(run.runId)
+    && transport?.member?.name === oci.archiveName && transport?.member?.sha256 === oci.archiveSha256
+    && transport?.asset?.name === `${oci.archiveName}.zip` && SHA256.test(transport?.asset?.sha256 ?? '')
+    && Number.isSafeInteger(transport?.asset?.bytes) && transport.asset.bytes > 0 && transport.asset.bytes < MAX_RELEASE_ASSET,
+    'the release transport record does not describe this run\'s packed archive');
   return {
     kind: 'lolly-ing-instance-image',
     version: 1,
@@ -686,6 +870,9 @@ export function finalManifest({ run, gateRecord, server, sign, shell, pack, oci,
     storedFormats: storedFormatsRecord,
     buildSettings,
     boot,
+    // How the deploy command gets the archive: this run's draft release, its packed asset (GitHub's digest must
+    // equal asset.sha256) and the archive inside it (image.archive).
+    transport: { release: transport.release, asset: transport.asset, member: transport.member.name },
   };
 }
 
@@ -729,6 +916,8 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
       result = await gate(env, fetch, undefined, { lollyLane: lane ? readJson(lane, 1024 * 1024) : null });
       writeJson(one(a, 'out'), result);
       setOutput('lolly_ci_run', result.ci.lolly.id); setOutput('work_ci_run', result.ci.work.id);
+      const handoff = gateOut(result);
+      setOutput('gate_json', handoff.text); setOutput('gate_sha256', handoff.sha256);
       break;
     }
     case 'checkouts': result = checkCheckouts({ lolly: a.lolly?.[0], suse: a.suse?.[0], work: a.work?.[0] }, checkInputs(env)); break;
@@ -795,9 +984,64 @@ export async function main(argv = process.argv.slice(2), env = process.env) {
         run: runFacts(env), gateRecord: file('gate'), server: { imageId: one(a, 'work-image-id') },
         sign: file('custody'), shell: file('shell'), pack: file('pack'), oci: file('oci'), boot: file('boot'),
         migrationsList: file('migrations'), storedFormatsRecord: file('stored-formats'), buildSettings: file('build-settings'),
-        enginePin: file('engine-pin'),
+        enginePin: file('engine-pin'), transport: file('transport'),
       });
       writeJson(one(a, 'out'), result);
+      break;
+    }
+    case 'gate-in': {
+      const record = gateIn(env.GATE_JSON, one(a, 'sha256'));
+      writeJson(one(a, 'out'), record);
+      result = { sources: record.sources };
+      break;
+    }
+    case 'envelope-out': {
+      const handoff = envelopeOut(readFileSync(one(a, 'envelope')));
+      setOutput('via', handoff.via); setOutput('envelope_b64', handoff.b64); setOutput('envelope_sha256', handoff.sha256);
+      result = { via: handoff.via, sha256: handoff.sha256, base64Length: handoff.b64.length };
+      break;
+    }
+    case 'envelope-in': {
+      const bytes = envelopeIn(env.ENVELOPE_B64, one(a, 'sha256'));
+      const out = one(a, 'out');
+      mkdirSync(join(out, '..'), { recursive: true });
+      writeFileSync(out, bytes, { mode: 0o644 });
+      result = { bytes: bytes.length, sha256: sha256(bytes) };
+      break;
+    }
+    case 'transport-put': {
+      const name = one(a, 'name'), key = transportKey(env, name), { digest, files } = dirDigest(one(a, 'dir'));
+      setOutput('key', key); setOutput('digest', digest);
+      result = { name, key, digest, files };
+      break;
+    }
+    case 'transport-get': {
+      const name = one(a, 'name');
+      checkTransportKey(env, name, one(a, 'key'));
+      result = { name, ...checkDigest(one(a, 'dir'), one(a, 'digest'), name) };
+      break;
+    }
+    case 'plain-tree': result = plainTree(resolve(a._[0] ?? refuse('name the tree'))); break;
+    case 'transport-facts': {
+      result = transportFacts({ env, zip: one(a, 'zip'), tarSha256: one(a, 'tar-sha256') });
+      writeJson(one(a, 'out'), result);
+      break;
+    }
+    case 'release-check': {
+      const mode = one(a, 'mode'), tag = one(a, 'tag');
+      need(tag === releaseTag(runIdentity(env).runId), `the release tag must be ${releaseTag(runIdentity(env).runId)}`);
+      const listing = readJson(one(a, 'releases'));
+      if (mode === 'absent') { releaseCheck(listing, { tag }); result = { tag, absent: true }; break; }
+      need(mode === 'published', '--mode is absent or published');
+      const manifest = fileFacts(one(a, 'manifest')), archive = fileFacts(one(a, 'archive'));
+      const { runId, attempt } = runIdentity(env);
+      need(manifest.name === MANIFEST_ASSET && manifest.bytes <= 8 * 1024 * 1024, 'the manifest asset is misnamed or too large');
+      need(archive.name === `lolly-ing-instance-${runId}-${attempt}.oci.tar.zip` && archive.bytes < MAX_RELEASE_ASSET,
+        'the archive asset is misnamed or not under 2 GiB');
+      const id = releaseCheck(listing, { tag, assets: [manifest, archive] });
+      const anchor = anchorKey(env, id, manifest.sha256);
+      setOutput('release_id', id); setOutput('anchor_key', anchor);
+      result = { tag, releaseId: id, anchorKey: anchor };
       break;
     }
     default: refuse(`unknown command ${command ?? '(none)'}`);
