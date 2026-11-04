@@ -23,11 +23,24 @@ PremiumBeat-licensed audio ships in any Lolly pack or catalog. (These tracks wer
 once in the public `lolly-suse-catalog` repo; that repo still needs to be
 archived/scrubbed of them.)
 
+**`catalog/assets/lolly/loops/`, `modules/` and `songs/` (removed 2026-11-04):**
+the public-domain and CC0 focus music (lo-fi loops, tracker modules and ZzFXM
+songs) is no longer bundled with the SUSE pack, so the pack carries no audio at
+all. The same tracks remain in Lolly's own `lolly-start` and `lolly-demo`
+catalogs. On lolly.ing, music beds come from the Brandfolder connector or from
+a person's own uploads.
+
 ## 2. `catalog/fonts/` - SIL OFL 1.1
 
 The SUSE and SUSE Mono typefaces are licensed under the **SIL Open Font License,
 Version 1.1**. The full license text is in `catalog/fonts/OFL.txt`. Note that
 "SUSE" is a trademark of SUSE; the OFL covers the font software, not the mark.
+
+The pack ships the static TrueType faces (`ttf/`, used for text outlines and
+headless rendering), the variable faces (`variable/`) and the web fonts
+(`webfonts/`). The OpenType copies of the same static faces were removed on
+2026-11-04; desktop installers are on Brandfolder ("SUSE Font" and "SUSE
+monospace font").
 
 ## 3. `catalog/tools/index.json` - generated registry (MPL-2.0)
 

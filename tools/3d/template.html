@@ -16,7 +16,7 @@
   var stateEl = document.getElementById('lolly3d-state');
   if (!canvas || !stateEl) return;
   var cfg; try { cfg = JSON.parse(stateEl.textContent || '{}'); } catch (e) { return; }
-  if (!cfg || !cfg.modelUrl) return;
+  if (!cfg || (!cfg.modelUrl && !cfg.modelError)) return;
 
   /* Async readiness handshake: tell the export path to WAIT until the model is
      loaded and the first frame is drawn, else it snapshots a blank canvas. */
@@ -50,6 +50,10 @@
     var w = canvas && canvas.parentNode;
     if (w) { var d = document.createElement('div'); d.className = 'lolly3d-msg'; d.textContent = txt; w.appendChild(d); }
   }
+
+  /* A catalog sample the hooks could not read (offline before its first use, or
+     missing from this catalog) says so instead of drawing an empty scene. */
+  if (!cfg.modelUrl) { fail(cfg.modelError); return; }
 
   /* three.js is vendored per tool and the two legacy 3D tools need different
      renderers, so one shared global cannot serve both: whichever tool opened first

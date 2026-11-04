@@ -12,7 +12,7 @@ id collision) and reads `catalog/` here as the catalog root, through
 `pnpm run profile` prints what is resolved.
 
 ```
-tools/     # 32 SUSE tool definitions (brand-lockup, pose-geeko, digi-ad, …)
+tools/     # 15 SUSE tool definitions (brand-lockup, pose-geeko, digi-ad, …)
 catalog/   # assets/suse/** (incl. tokens/brand.json), fonts/, previews/, og/, tools/index.json
 ```
 
@@ -25,6 +25,12 @@ catalog/   # assets/suse/** (incl. tokens/brand.json), fonts/, previews/, og/, t
   come from the organisation's configured Brandfolder connector.
 - `catalog/assets/suse/music/` (the PremiumBeat stock-music tracks) was removed
   on 2026-08-29 - no PremiumBeat-licensed audio ships anywhere (see `catalog/NOTICE.md`).
+- The pack carries no audio. The public-domain focus music (`lolly/loops`,
+  `lolly/modules`, `lolly/songs`) was removed on 2026-11-04; Lolly's own catalogs
+  keep it, and lolly.ing gets music beds from Brandfolder or uploads.
+- Each file is kept once. The `3d` tool reads its Geeko samples from the catalog
+  (`suse/model/*`, the same files 3D Studio uses) instead of its own copies, and
+  the fonts ship as `ttf/`, `variable/` and `webfonts/` (no duplicate `otf/`).
 
 The asset index supplies no brand-specific trusted-site defaults. Configure
 reviewed hosts through the organisation's site policy, or let each person approve
