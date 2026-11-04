@@ -1,0 +1,239 @@
+{
+  "id": "email-signature",
+  "name": "Email Signature",
+  "description": "An on-brand SUSE email signature, ready to paste into any client.",
+  "version": "1.9.2",
+  "engineVersion": "^1.0.0",
+  "status": "official",
+  "category": "everyone",
+  "tags": ["email", "signature", "contact", "branding"],
+  "render": {
+    "width": 600,
+    "height": 300,
+    "formats": ["html", "txt", "png", "svg", "penpot", "vcf", "json", "jpg", "webp"],
+    "actions": ["copy", "download", "save"],
+    "filenameFrom": ["firstname", "lastname"]
+  },
+  "hooks": {
+    "onInit": true,
+    "onInput": true
+  },
+  "inputs": [
+    {
+      "id": "firstname",
+      "label": "First name",
+      "type": "text",
+      "required": true,
+      "default": "",
+      "bindToProfile": "firstname"
+    },
+    {
+      "id": "lastname",
+      "label": "Last name",
+      "type": "text",
+      "default": "",
+      "bindToProfile": "lastname"
+    },
+    {
+      "id": "pronouns",
+      "type": "text",
+      "label": "Pronouns",
+      "default": "",
+      "placeholder": "they/them"
+    },
+    {
+      "id": "jobTitle",
+      "label": "Job title, department",
+      "type": "text",
+      "default": "",
+      "placeholder": "Senior Engineer, Product"
+    },
+    {
+      "id": "certs",
+      "label": "Certifications",
+      "type": "text",
+      "default": "",
+      "placeholder": "SCA, CKA"
+    },
+    {
+      "id": "headshot",
+      "label": "Headshot",
+      "type": "asset",
+      "assetType": "raster",
+      "allowUpload": true,
+      "help": "Shown as a circle beside the name. Optional."
+    },
+    {
+      "id": "headshotFraming",
+      "label": "Headshot framing",
+      "framingFor": "headshot",
+      "help": "Move and zoom the portrait inside its circle - drag it on the canvas, or set the numbers here.",
+      "type": "vector",
+      "fields": [
+        { "id": "zoom",   "label": "Zoom",   "min": 100,  "max": 400, "step": 1,   "default": 100 },
+        { "id": "x",      "label": "X",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "y",      "label": "Y",      "min": 0,    "max": 100, "step": 1,   "default": 50  },
+        { "id": "rotate", "label": "Rotate", "min": -180, "max": 180, "step": 0.5, "default": 0   }
+      ]
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "text",
+      "section": "Contact details",
+      "default": "",
+      "bindToProfile": "email"
+    },
+    {
+      "id": "phone",
+      "label": "Desk phone",
+      "type": "text",
+      "section": "Contact details",
+      "default": "",
+      "bindToProfile": "phone"
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "type": "text",
+      "section": "Contact details",
+      "default": ""
+    },
+    {
+      "id": "fax",
+      "label": "Fax",
+      "type": "text",
+      "section": "Contact details",
+      "default": ""
+    },
+    {
+      "id": "im",
+      "label": "IM handle",
+      "type": "text",
+      "section": "Contact details",
+      "default": "",
+      "placeholder": "@handle on Slack"
+    },
+    {
+      "id": "address",
+      "label": "Address",
+      "type": "text",
+      "section": "Contact details",
+      "default": ""
+    },
+    {
+      "id": "address2",
+      "label": "Address line 2",
+      "type": "text",
+      "section": "Contact details",
+      "default": ""
+    },
+    {
+      "id": "links",
+      "label": "Links",
+      "type": "blocks",
+      "section": "Contact details",
+      "labelledFields": true,
+      "default": [],
+      "help": "Named links shown on one line under the contact details - a booking page, a team portal, LinkedIn. Rows with no title or no address are skipped.",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Title",
+          "placeholder": "Book time with me"
+        },
+        {
+          "id": "url",
+          "label": "Address",
+          "placeholder": "calendar.suse.com/you"
+        }
+      ]
+    },
+    {
+      "id": "logo",
+      "label": "Logo",
+      "type": "select",
+      "section": "Appearance",
+      "default": "standard",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "grey",     "label": "Grey" }
+      ],
+      "help": "Grey sits better in a dark-mode mail client."
+    },
+    {
+      "id": "nameWeight",
+      "label": "Name weight",
+      "type": "number",
+      "section": "Appearance",
+      "display": "slider",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 500,
+      "help": "Font weight of the name (100 Thin to 900 Black)."
+    },
+    {
+      "id": "titleWeight",
+      "label": "Title weight",
+      "type": "number",
+      "section": "Appearance",
+      "display": "slider",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 400,
+      "help": "Font weight of the job title line (100 Thin to 900 Black)."
+    },
+    {
+      "id": "emailPromo",
+      "label": "Email promo",
+      "type": "asset",
+      "section": "Promo and legal",
+      "assetType": "raster",
+      "allowUpload": true,
+      "help": "Optional promo banner below the signature. Scaled to fit inside 400 × 200 px without distortion."
+    },
+    {
+      "id": "append",
+      "label": "Standard footer",
+      "type": "select",
+      "help": "Adds a standard paragraph under the signature: German entity details, a confidentiality notice or a working-hours note.",
+      "section": "Promo and legal",
+      "default": "none",
+      "options": [
+        { "value": "none",    "label": "None" },
+        { "value": "germany", "label": "Germany" },
+        { "value": "business","label": "Business" },
+        { "value": "wellbeing", "label": "Wellbeing" }
+      ]
+    }
+  ],
+  "guide": {
+    "title": "Put it in Gmail",
+    "tracks": [
+      {
+        "id": "desktop",
+        "label": "On a computer",
+        "steps": [
+          "Open **Export**, set the format to **HTML**, and press **Copy**. The signature goes to your clipboard as formatted text, images and all.",
+          "In Gmail, open **Settings** (the cog, top right) and choose **See all settings**.",
+          "On the **General** tab, scroll to **Signature** and create one, or select the one you already have.",
+          "Click into the signature box and paste (**Ctrl+V**, or **Cmd+V** on a Mac).",
+          "Scroll to the bottom and press **Save Changes** - Gmail discards the signature if you leave without it."
+        ],
+        "note": "Outlook, Apple Mail and Thunderbird take the same paste: copy as HTML, then paste into their signature editor."
+      },
+      {
+        "id": "mobile",
+        "label": "On a phone",
+        "steps": [
+          "Tap **Export**, set the format to **HTML**, and tap **Copy**.",
+          "Open Gmail in your phone's **browser** (not the Gmail app) and switch it to the desktop site - **aA → Request Desktop Website** on iPhone, **⋮ → Desktop site** on Android.",
+          "Go to **Settings → See all settings → General → Signature**, paste into the box, and press **Save Changes**."
+        ],
+        "note": "The Gmail app's own signature setting is plain text only, so a signature with a logo has to be set this way once. It then applies to mail you send from the app too."
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "brand-starter",
+  "name": "Open possibilities",
+  "category": "Brand",
+  "description": "A bold SUSE composition with balanced colour blocks.",
+  "galleryCover": true,
+  "values": {
+    "width": 1200,
+    "height": 900,
+    "blocks": [
+      {
+        "kind": "logo",
+        "logoOrient": "horizontal",
+        "logoColor": "mono",
+        "bgColor": "#0c322c",
+        "logoSize": 0.68
+      },
+      {
+        "kind": "heading",
+        "text": "Open.\nFor you.",
+        "bgColor": "#30ba78",
+        "scale": 0.8,
+        "weight": 600
+      },
+      {
+        "kind": "subheading",
+        "text": "Built on possibility.",
+        "bgColor": "#90ebcd",
+        "scale": 0.9,
+        "weight": 500
+      }
+    ]
+  }
+}

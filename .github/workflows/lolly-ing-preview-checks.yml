@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MPL-2.0
+# Tests for the lolly.ing preview image tooling (docs/lolly-ing-preview.md).
+# No secrets, no environment, read-only token; Node built-ins only.
+# Every pull request runs it (a few seconds), so `main` protection can require it: a
+# required check behind a path filter would never report on a content-only pull request.
+name: lolly.ing preview checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - .github/lolly-ing-preview/**
+      - .github/workflows/lolly-ing-preview*.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: lolly.ing preview tooling tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: .github
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '26'
+          package-manager-cache: false
+      - name: Run the tests
+        run: node --test .github/lolly-ing-preview/tool.test.mjs

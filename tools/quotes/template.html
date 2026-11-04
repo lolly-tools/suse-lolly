@@ -1,0 +1,321 @@
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.qc-root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: SUSE, ui-sans-serif, sans-serif;
+  position: relative;
+  /* Baseline = the default (Dark) theme so the card always has a background and
+     accent on the first paint, before the theme class resolves; .qc-<theme>
+     classes below override these. */
+  background: #0c322c;
+  color: #ffffff;
+  --accent: #30ba78;
+  --muted: #90ebcd;
+  --border: rgba(48,186,120,.2);
+}
+
+/* ── Themes ── */
+.qc-light { background: #f7f7f5; color: #0c322c; --accent: #30ba78; --muted: #4b7a70; --border: rgba(12,50,44,.12); }
+.qc-dark  { background: #0c322c; color: #ffffff; --accent: #30ba78; --muted: #90ebcd; --border: rgba(48,186,120,.2); }
+.qc-main  { background: #30ba78; color: #0c322c; --accent: #0c322c; --muted: #01564a; --border: rgba(12,50,44,.2); }
+
+/* ── Ambient motion (opt-in; off by default) ───────────────────────────
+   A very slow drifting accent glow - a subtle "living" backdrop for the solid
+   card. Painted on a ::before that sits BEHIND the frame (content paints on top;
+   both are positioned with auto z-index, so DOM order wins) and is clipped by the
+   root's overflow:hidden. Off by default (data-ambient="off"); the SVG/PDF export
+   drops it, so a saved card stays a clean still unless "Ambient motion" is on. */
+.qc-root[data-ambient="on"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(42% 48% at 30% 28%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+  animation: qc-ambient 24s ease-in-out infinite;
+}
+@keyframes qc-ambient {
+  0%, 100% { transform: translate(-5%, -3%) scale(1.15); }
+  50%      { transform: translate(6%, 4%) scale(1.32); }
+}
+@media (prefers-reduced-motion: reduce) { .qc-root[data-ambient="on"]::before { animation: none; } }
+
+/* ── Transparent background (render.transparentBg toggle) ───────────────
+   Overrides the theme's solid background so alpha-capable exports (PNG/SVG/
+   WebP/AVIF) keep the card see-through; the theme class's color/--accent/
+   --muted/--border stay untouched. Two classes outweigh the single-class
+   .qc-light/.qc-dark/.qc-main selectors regardless of source order. Also
+   drops the ambient glow, which is a wash meant for a solid card and reads
+   wrong floating over transparency. */
+.qc-root.qc-transparent { background: transparent; }
+.qc-root.qc-transparent[data-ambient="on"]::before { content: none; }
+
+/* ── Frame ── */
+.qc-frame {
+  position: absolute;
+  inset: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Quote body ── */
+.qc-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Big opening mark ── */
+.qc-mark {
+  flex-shrink: 0;
+  font-size: 148px;
+  line-height: 0.82;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+  font-style: normal;
+  user-select: none;
+}
+
+/* ── Quote text ── */
+.qc-text {
+  line-height: 1.22;
+  font-weight: var(--quote-weight, 300);
+  letter-spacing: -0.015em;
+}
+
+.qc-text p            { margin: 0 0 0.35em; }
+.qc-text p:last-child { margin-bottom: 0; }
+.qc-text strong       { font-weight: 700; color: var(--accent); font-style: normal; }
+.qc-text del          { text-decoration: line-through; }
+
+/* ── Speaker block ── */
+.qc-speaker {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.qc-headshot {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  /* The framing helper writes object-fit / object-position / transform inline;
+     a zoomed or straightened portrait must be clipped by the circle, not spill
+     past it, so the round mask has to hold. */
+  overflow: hidden;
+}
+
+/* Background image wrapper: carries the opacity + the clip, so the <img> itself
+   holds nothing but the framing helper's geometry (plans/148). */
+.qc-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.qc-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.qc-attribution {
+display: flex;
+    flex-direction:column; 
+    gap: 32px;
+    min-width: 0;
+}
+
+.qc-name {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qc-company {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ═══════════════════════════════════════
+   QUOTE STYLES
+═══════════════════════════════════════ */
+
+/* wrapping: hide the big mark, render ❝ ❞ inline with the text */
+.qc-style-wrapping .qc-mark { display: none; }
+
+.qc-style-wrapping .qc-text::before {
+  content: '❝';
+  display: block;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.3em;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.2em;
+  user-select: none;
+}
+
+.qc-style-wrapping .qc-text::after {
+  content: '❞';
+  display: block;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.3em;
+  line-height: 0.85;
+
+  margin-top: 0.2em;
+  text-align: right;
+  user-select: none;
+}
+
+/* none: suppress all marks */
+.qc-style-none .qc-mark { display: none; }
+
+/* ═══════════════════════════════════════
+   LAYOUTS
+═══════════════════════════════════════ */
+
+/* Spacing between quote and speaker is always kept; the dividing line itself is
+   gated on .qc-has-sep (the "Separator" toggle). */
+
+/* minimal: speaker below quote */
+.qc-layout-minimal .qc-speaker {
+  padding-top: 44px;
+  margin-top: 44px;
+}
+.qc-has-sep.qc-layout-minimal .qc-speaker { border-top: 2px solid var(--border); }
+
+/* speaker-top: speaker above quote */
+.qc-layout-speaker-top .qc-speaker {
+  order: -1;
+  padding-bottom: 44px;
+  margin-bottom: 44px;
+}
+.qc-has-sep.qc-layout-speaker-top .qc-speaker { border-bottom: 2px solid var(--border); }
+
+/* side-by-side portrait/square: stacked, same as minimal */
+.qc-layout-side-by-side .qc-speaker {
+  padding-top: 44px;
+  margin-top: 44px;
+}
+.qc-has-sep.qc-layout-side-by-side .qc-speaker { border-top: 2px solid var(--border); }
+
+/* side-by-side landscape: speaker column left, quote column right */
+@media (orientation: landscape) {
+  .qc-layout-side-by-side .qc-frame {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .qc-layout-side-by-side .qc-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .qc-layout-side-by-side .qc-speaker {
+    order: -1;
+    width: 32%;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+    padding-right: 56px;
+    margin-right: 56px;
+  }
+
+  /* In landscape the divider is the vertical edge between the columns. Override
+     the portrait top-border (equal specificity, declared later) and use a right
+     border instead - still gated on the Separator toggle. */
+  .qc-has-sep.qc-layout-side-by-side .qc-speaker {
+    border-top: none;
+    border-right: 2px solid var(--border);
+  }
+
+  .qc-layout-side-by-side .qc-headshot {
+    width: 120px;
+    height: 120px;
+  }
+}
+</style>
+
+<div class="qc-root qc-{{theme}} qc-style-{{quoteStyle}} qc-layout-{{layout}}{{#if separator}} qc-has-sep{{/if}}{{#if transparentBg}} qc-transparent{{/if}}" data-ambient="{{#if ambientMotion}}on{{else}}off{{/if}}">
+  {{#if bgImage}}
+  <!-- The framing helper owns the whole placement recipe (object-fit /
+       object-position / transform / transform-origin) and stamps the marker the
+       shell's framing overlay binds to - see plans/148. Opacity rides on the
+       wrapper so the helper's style attribute stays the single source of the
+       geometry. -->
+  <div class="qc-bg" style="opacity:{{bgOpacity}}">
+    <img src="{{asset bgImage}}" alt="" {{framing "imageFraming"}}>
+  </div>
+  {{/if}}
+
+  <div class="qc-frame" id="qc-frame" style="inset:{{frameInset}}px">
+
+    <div class="qc-body" id="qc-body">
+      <div class="qc-mark" aria-hidden="true">&#x275D;</div>
+      <div class="qc-text" id="qc-text" style="--quote-weight:{{default weight 300}}">{{{markdown quote}}}</div>
+    </div>
+
+    <div class="qc-speaker">
+      {{#if headshot}}<img class="qc-headshot" src="{{asset headshot}}" alt="" {{framing "headshotFraming"}}>{{/if}}
+      {{#if name}}
+      <div class="qc-attribution">
+        <span class="qc-name">{{name}}</span>
+        {{#if company}}<span class="qc-company">{{company}}</span>{{/if}}
+      </div>
+      {{/if}}
+    </div>
+
+  </div>
+  <div class="qc-brand-mark" aria-hidden="true"></div>
+</div>
+
+<script>
+(function () {
+  var body = document.getElementById('qc-body');
+  var text = document.getElementById('qc-text');
+  if (!body || !text) return;
+
+  var maxH = body.clientHeight;
+  if (maxH <= 0) return;
+
+  function overflows(size) {
+    text.style.fontSize = size + 'px';
+    return body.scrollHeight > maxH;
+  }
+
+  var lo = 16, hi = 320;
+
+  if (!overflows(hi)) return;
+
+  while (hi - lo > 1) {
+    var mid = (lo + hi) >> 1;
+    if (overflows(mid)) hi = mid;
+    else lo = mid;
+  }
+  text.style.fontSize = lo + 'px';
+}());
+</script>

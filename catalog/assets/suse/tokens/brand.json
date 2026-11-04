@@ -1,0 +1,1126 @@
+{
+  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained. Since 2026-10-29 (plans/319 A9, Andy) their primary, on-primary and secondary link to `color.colourway.<look>.*`, held by three colourways: Jungle (canonical), Persimmon and Waterhole. White is the light ground, Pine the dark ground, and Jungle the primary in both looks, so the light primary is no longer Pine and no longer matches the static tokens.css fallback. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
+  "$metadata": {
+    "tokenSetOrder": [
+      "base",
+      "light",
+      "dark",
+      "colourway/jungle",
+      "colourway/persimmon",
+      "colourway/waterhole"
+    ]
+  },
+  "$themes": [
+    {
+      "name": "light",
+      "selectedTokenSets": {
+        "base": "enabled",
+        "light": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "mode"
+          }
+        }
+      }
+    },
+    {
+      "name": "dark",
+      "selectedTokenSets": {
+        "base": "enabled",
+        "dark": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "mode"
+          }
+        }
+      }
+    },
+    {
+      "id": "jungle",
+      "name": "Jungle",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/jungle": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway",
+            "canonical": true
+          }
+        }
+      }
+    },
+    {
+      "id": "persimmon",
+      "name": "Persimmon",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/persimmon": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway"
+          }
+        }
+      }
+    },
+    {
+      "id": "waterhole",
+      "name": "Waterhole",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/waterhole": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway"
+          }
+        }
+      }
+    }
+  ],
+  "$extensions": {
+    "com.suse.lolly": {
+      "brandSystem": {
+        "schemaVersion": 1,
+        "id": "suse",
+        "label": "SUSE",
+        "roles": [
+          {
+            "id": "typeface",
+            "label": "Typeface",
+            "resources": [
+              {
+                "type": "token",
+                "path": "font.brand"
+              }
+            ]
+          },
+          {
+            "id": "core-colours",
+            "label": "Core colours",
+            "description": "The workhorse backgrounds that carry approved pairings.",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.brand.pine"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.jungle"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.white"
+              },
+              {
+                "type": "token",
+                "path": "color.brand.fog"
+              }
+            ]
+          },
+          {
+            "id": "hairlines",
+            "label": "Neutral hairlines",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.ramp.fog.7"
+              },
+              {
+                "type": "token",
+                "path": "color.ramp.fog.2"
+              }
+            ]
+          }
+        ],
+        "bindings": [],
+        "rules": [
+          {
+            "id": "headline-weight",
+            "label": "Headlines are set in Medium (500)",
+            "kind": "text-weight",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "headline",
+              "weights": [
+                "500"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "A headline is a title-role text, or a text without a role at 5% of its artboard height or more."
+          },
+          {
+            "id": "text-weight",
+            "label": "Text runs Regular to Medium (400 to 500)",
+            "kind": "text-weight",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "body",
+              "weights": [
+                "400",
+                "500"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "The outer weights of the variable range are for expressive display work, not everyday layouts."
+          },
+          {
+            "id": "headline-case",
+            "label": "Headlines are never all caps",
+            "kind": "text-case",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "target": "headline",
+              "forbid": "upper"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Sentence case or title case, never capitals throughout."
+          },
+          {
+            "id": "text-align",
+            "label": "Text is left-aligned",
+            "kind": "text-align",
+            "roleIds": [
+              "typeface"
+            ],
+            "parameters": {
+              "align": "left",
+              "exemptRoles": [
+                "quote",
+                "attribution",
+                "number",
+                "label"
+              ],
+              "exemptFurniture": [
+                "page-number*"
+              ],
+              "exemptArchetypes": [
+                "stats-*",
+                "big-number*",
+                "quote*"
+              ],
+              "exemptNumeric": true
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Typography"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Stats, big numbers, quotes, page numbers and text made only of numerals are exempt, as the slide master centres them."
+          },
+          {
+            "id": "color-pairing",
+            "label": "Text colours follow the approved combinations",
+            "kind": "color-pairing",
+            "roleIds": [
+              "core-colours"
+            ],
+            "parameters": {
+              "source": "token-extension",
+              "key": "combinations",
+              "use": "text"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Colour combinations"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Read from each background token's combinations. Jungle makes a poor text colour on White or Fog. Shades outside the named colours are not covered."
+          },
+          {
+            "id": "stroke-on-rounded",
+            "label": "No accent-coloured border on a rounded shape",
+            "kind": "stroke-on-rounded",
+            "roleIds": [
+              "hairlines"
+            ],
+            "parameters": {
+              "shapes": [
+                "rounded",
+                "pill",
+                "ellipse",
+                "circle"
+              ],
+              "neutral": [
+                "{color.ramp.fog.7}",
+                "{color.ramp.fog.2}"
+              ],
+              "stripMax": 12
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "required",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Component rules 1"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Neither an outline nor a one-sided stripe. Carry the accent with a tinted fill; a neutral hairline is allowed for definition."
+          },
+          {
+            "id": "dash-reserved",
+            "label": "A dashed border means a drop target",
+            "kind": "dash-reserved",
+            "roleIds": [],
+            "parameters": {
+              "styles": [
+                "dashed"
+              ],
+              "meaning": "drop-target"
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Component rules 2"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "Never dashed for empty, invalid, optional or unreachable states."
+          },
+          {
+            "id": "logo-surface",
+            "label": "A positive mark on light, a negative mark on dark and photography",
+            "kind": "logo-surface",
+            "roleIds": [],
+            "parameters": {
+              "light": [
+                "suse/logo/hor-pos-green",
+                "suse/logo/vert-pos-green",
+                "suse/logo/hor-pos-black",
+                "suse/logo/vert-pos-black"
+              ],
+              "dark": [
+                "suse/logo/hor-neg-white",
+                "suse/logo/vert-neg-white",
+                "suse/logo/hor-neg-green",
+                "suse/logo/vert-neg-green"
+              ],
+              "photo": [
+                "suse/logo/hor-neg-white",
+                "suse/logo/vert-neg-white",
+                "suse/logo/hor-neg-green",
+                "suse/logo/vert-neg-green"
+              ]
+            },
+            "scope": {
+              "tools": [
+                "design"
+              ]
+            },
+            "requirement": "advisory",
+            "origin": {
+              "kind": "source",
+              "reference": "suse-brand-skill.md",
+              "locator": "Logo"
+            },
+            "review": {
+              "state": "draft"
+            },
+            "description": "The guidance prefers neg-white on dark surfaces and photography; the slide master places neg-green on both, so both negative marks are accepted there. A positive mark on a dark surface or a picture, or a negative mark on a light one, is reported."
+          }
+        ]
+      }
+    }
+  },
+  "base": {
+    "color": {
+      "$type": "color",
+      "brand": {
+        "transparent": {
+          "$value": "transparent",
+          "$description": "Transparent"
+        },
+        "pine": {
+          "$value": "#0c322c",
+          "$description": "Pine",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                65,
+                0,
+                35,
+                85
+              ],
+              "pantone": "627 C",
+              "combinations": {
+                "text": ["mint", "persimmon", "jungle", "fog", "white"],
+                "graphic": ["mint", "persimmon", "jungle", "fog", "white"]
+              }
+            }
+          }
+        },
+        "jungle": {
+          "$value": "#30ba78",
+          "$description": "Jungle",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                70,
+                0,
+                65,
+                0
+              ],
+              "pantone": "7479 C",
+              "combinations": {
+                "text": ["pine", "midnight"],
+                "graphic": ["pine", "midnight", "fog", "white"]
+              }
+            }
+          }
+        },
+        "mint": {
+          "$value": "#90ebcd",
+          "$description": "Mint",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                40,
+                0,
+                30,
+                0
+              ],
+              "pantone": "565 C"
+            }
+          }
+        },
+        "persimmon": {
+          "$value": "#fe7c3f",
+          "$description": "Persimmon",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                0,
+                60,
+                80,
+                0
+              ],
+              "pantone": "1575 C"
+            }
+          }
+        },
+        "midnight": {
+          "$value": "#192072",
+          "$description": "Midnight",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                100,
+                85,
+                0,
+                30
+              ],
+              "pantone": "2756 C"
+            }
+          }
+        },
+        "waterhole": {
+          "$value": "#2453ff",
+          "$description": "Waterhole",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                90,
+                50,
+                0,
+                0
+              ],
+              "pantone": "285 C"
+            }
+          }
+        },
+        "fog": {
+          "$value": "#efefef",
+          "$description": "Fog",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                0,
+                0,
+                0,
+                7
+              ],
+              "pantone": "Cool Gray 1",
+              "combinations": {
+                "text": ["pine", "waterhole", "midnight"],
+                "graphic": ["pine", "waterhole", "midnight", "jungle"]
+              }
+            }
+          }
+        },
+        "white": {
+          "$value": "#ffffff",
+          "$description": "White",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "combinations": {
+                "text": ["pine", "waterhole", "midnight"],
+                "graphic": ["pine", "waterhole", "midnight", "jungle"]
+              }
+            }
+          }
+        },
+        "black": {
+          "$value": "#000000",
+          "$description": "Black",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                0,
+                0,
+                0,
+                100
+              ]
+            }
+          }
+        },
+        "ultra-black": {
+          "$value": "#050505",
+          "$description": "Ultra Black",
+          "$extensions": {
+            "com.suse.lolly": {
+              "cmyk": [
+                80,
+                70,
+                60,
+                100
+              ]
+            }
+          }
+        }
+      },
+      "ramp": {
+        "jungle": {
+          "1": {
+            "$value": "#0c322c",
+            "$description": "Jungle 1"
+          },
+          "2": {
+            "$value": "#025937",
+            "$description": "Jungle 2"
+          },
+          "3": {
+            "$value": "#008657",
+            "$description": "Jungle 3"
+          },
+          "4": {
+            "$value": "#30ba78",
+            "$description": "Jungle 4"
+          },
+          "5": {
+            "$value": "#42d29f",
+            "$description": "Jungle 5"
+          },
+          "6": {
+            "$value": "#83e1be",
+            "$description": "Jungle 6"
+          },
+          "7": {
+            "$value": "#c0efde",
+            "$description": "Jungle 7"
+          },
+          "8": {
+            "$value": "#eafaf4",
+            "$description": "Jungle 8"
+          }
+        },
+        "pine": {
+          "1": {
+            "$value": "#0c322c",
+            "$description": "Pine 1"
+          },
+          "2": {
+            "$value": "#01564a",
+            "$description": "Pine 2"
+          },
+          "3": {
+            "$value": "#008878",
+            "$description": "Pine 3"
+          },
+          "4": {
+            "$value": "#00bda7",
+            "$description": "Pine 4"
+          },
+          "5": {
+            "$value": "#38d5b4",
+            "$description": "Pine 5"
+          },
+          "6": {
+            "$value": "#90ebcd",
+            "$description": "Pine 6"
+          },
+          "7": {
+            "$value": "#bff1ea",
+            "$description": "Pine 7"
+          },
+          "8": {
+            "$value": "#eafaf8",
+            "$description": "Pine 8"
+          }
+        },
+        "persimmon": {
+          "1": {
+            "$value": "#47190d",
+            "$description": "Persimmon 1"
+          },
+          "2": {
+            "$value": "#8e2810",
+            "$description": "Persimmon 2"
+          },
+          "3": {
+            "$value": "#bd3314",
+            "$description": "Persimmon 3"
+          },
+          "4": {
+            "$value": "#ff5a2b",
+            "$description": "Persimmon 4"
+          },
+          "5": {
+            "$value": "#fe7c3f",
+            "$description": "Persimmon 5"
+          },
+          "6": {
+            "$value": "#ffb184",
+            "$description": "Persimmon 6"
+          },
+          "7": {
+            "$value": "#ffd3bd",
+            "$description": "Persimmon 7"
+          },
+          "8": {
+            "$value": "#ffefe9",
+            "$description": "Persimmon 8"
+          }
+        },
+        "blue": {
+          "1": {
+            "$value": "#0a112b",
+            "$description": "Blue 1"
+          },
+          "2": {
+            "$value": "#192072",
+            "$description": "Blue 2"
+          },
+          "3": {
+            "$value": "#0b41b7",
+            "$description": "Blue 3"
+          },
+          "4": {
+            "$value": "#2453ff",
+            "$description": "Blue 4"
+          },
+          "5": {
+            "$value": "#3c8eef",
+            "$description": "Blue 5"
+          },
+          "6": {
+            "$value": "#81aefc",
+            "$description": "Blue 6"
+          },
+          "7": {
+            "$value": "#c8dafc",
+            "$description": "Blue 7"
+          },
+          "8": {
+            "$value": "#e6edfe",
+            "$description": "Blue 8"
+          }
+        },
+        "fog": {
+          "1": {
+            "$value": "#1d1d1d",
+            "$description": "Fog 1"
+          },
+          "2": {
+            "$value": "#3e3e3e",
+            "$description": "Fog 2"
+          },
+          "3": {
+            "$value": "#525252",
+            "$description": "Fog 3"
+          },
+          "4": {
+            "$value": "#6f6f6f",
+            "$description": "Fog 4"
+          },
+          "5": {
+            "$value": "#999999",
+            "$description": "Fog 5"
+          },
+          "6": {
+            "$value": "#bababa",
+            "$description": "Fog 6"
+          },
+          "7": {
+            "$value": "#dcdbdc",
+            "$description": "Fog 7"
+          },
+          "8": {
+            "$value": "#efefef",
+            "$description": "Fog 8"
+          }
+        }
+      },
+      "spectrum": {
+        "teal": {
+          "$value": "#00bda7",
+          "$description": "Teal - infographics palette, charts and data viz only"
+        },
+        "lime": {
+          "$value": "#a1ef8b",
+          "$description": "Lime - infographics palette, charts and data viz only"
+        },
+        "sky": {
+          "$value": "#7dc6e2",
+          "$description": "Sky - infographics palette, charts and data viz only"
+        },
+        "lilac": {
+          "$value": "#e8c1f7",
+          "$description": "Lilac - infographics palette, charts and data viz only"
+        },
+        "amethyst": {
+          "$value": "#5d4f99",
+          "$description": "Amethyst - infographics palette, charts and data viz only"
+        },
+        "peach": {
+          "$value": "#f9cabf",
+          "$description": "Peach - infographics palette, charts and data viz only"
+        },
+        "marigold": {
+          "$value": "#fcb244",
+          "$description": "Marigold - infographics palette, charts and data viz only"
+        },
+        "rust": {
+          "$value": "#bd3314",
+          "$description": "Rust - infographics palette, charts and data viz only"
+        }
+      }
+    },
+    "font": {
+      "$type": "fontFamily",
+      "brand": {
+        "$value": "SUSE",
+        "$description": "UI & body - the SUSE brand face (catalog-served variable font). The shell reads this as font.brand and applies it to the app chrome."
+      },
+      "mono": {
+        "$value": "SUSE Mono",
+        "$description": "Code, readouts & data - SUSE Mono (also the platform default mono)."
+      }
+    },
+    "asset": {
+      "$description": "Brand logo variants (orientation x treatment) mapped to the SUSE catalog logo assets, so the canonical logo system + brand-inheriting templates resolve the right mark. SUSE naming: neg = reverse (dark backgrounds), pos = for light; green = full-colour (primary), white/black = one-colour (mono).",
+      "logo": {
+        "horizontal-primary": { "$type": "asset", "$value": "suse/logo/hor-pos-green" },
+        "horizontal-primary-reverse": { "$type": "asset", "$value": "suse/logo/hor-neg-green" },
+        "horizontal-mono": { "$type": "asset", "$value": "suse/logo/hor-pos-black" },
+        "horizontal-mono-reverse": { "$type": "asset", "$value": "suse/logo/hor-neg-white" },
+        "vertical-primary": { "$type": "asset", "$value": "suse/logo/vert-pos-green" },
+        "vertical-primary-reverse": { "$type": "asset", "$value": "suse/logo/vert-neg-green" },
+        "vertical-mono": { "$type": "asset", "$value": "suse/logo/vert-pos-black" },
+        "vertical-mono-reverse": { "$type": "asset", "$value": "suse/logo/vert-neg-white" }
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "$type": "color",
+      "semantic": {
+        "$type": "color",
+        "$description": "The seven semantic slots for the light look: Pine text on a White ground, with the colourway lead as primary.",
+        "primary": {
+          "$value": "{color.colourway.light.primary}",
+          "$description": "The lead colour of the chosen colourway. Jungle in the canonical one, in both looks (Andy, 2026-10-29)"
+        },
+        "on-primary": {
+          "$value": "{color.colourway.light.on-primary}",
+          "$description": "Text and icons on the lead: an approved combination for each lead (Pine on Jungle 5.6:1)"
+        },
+        "secondary": {
+          "$value": "{color.colourway.light.secondary}",
+          "$description": "Supporting accent: Jungle 3, which holds 3:1 on White (4.6:1) and on Pine (3.0:1) and stays distinct from a Jungle lead"
+        },
+        "surface": {
+          "$value": "{color.brand.white}",
+          "$description": "Canvas/page background"
+        },
+        "text": {
+          "$value": "{color.brand.pine}",
+          "$description": "Main foreground"
+        },
+        "muted": {
+          "$value": "{color.ramp.fog.4}",
+          "$description": "Secondary foreground"
+        },
+        "edge": {
+          "$value": "{color.ramp.fog.7}",
+          "$description": "Hairlines and borders"
+        }
+      },
+      "role": {
+        "muted-ink": {
+          "$value": "{color.ramp.fog.4}",
+          "$description": "Captions, labels, axis years and descriptions: quieter than the text colour."
+        },
+        "secondary-ink": {
+          "$value": "{color.ramp.fog.3}",
+          "$description": "Secondary text on a card."
+        },
+        "strong-card-ink": {
+          "$value": "{color.ramp.fog.3}",
+          "$description": "Secondary text on a strong card."
+        },
+        "accent-ink": {
+          "$value": "{color.ramp.jungle.3}",
+          "$description": "Accent text: subtitles, emphasised runs and markers."
+        },
+        "accent": {
+          "$value": "{color.ramp.jungle.3}",
+          "$description": "Accent marks: dots, ticks and check marks."
+        },
+        "alert-ink": {
+          "$value": "{color.ramp.persimmon.3}",
+          "$description": "Text that warns: a risk, a lock-in, the thing to avoid."
+        },
+        "hairline": {
+          "$value": "{color.ramp.fog.7}",
+          "$description": "Rules, axes and dividers on the slide ground."
+        },
+        "card-hairline": {
+          "$value": "{color.ramp.fog.7}",
+          "$description": "A rule drawn on a card."
+        },
+        "track": {
+          "$value": "{color.ramp.jungle.7}",
+          "$description": "Bars and tracks of a timeline or chart."
+        },
+        "card": {
+          "$value": "{color.ramp.fog.8}",
+          "$description": "A neutral card or table cell."
+        },
+        "quiet-card": {
+          "$value": "{color.ramp.fog.8}",
+          "$description": "A neutral panel that takes the brand ground in the dark theme."
+        },
+        "mint-card": {
+          "$value": "{color.ramp.jungle.8}",
+          "$description": "A lightly tinted card."
+        },
+        "strong-card": {
+          "$value": "{color.ramp.jungle.7}",
+          "$description": "An emphasised card: the column or cell the slide argues for."
+        },
+        "alert-card": {
+          "$value": "{color.ramp.persimmon.8}",
+          "$description": "A card that warns."
+        },
+        "quiet-alert-card": {
+          "$value": "{color.ramp.persimmon.8}",
+          "$description": "A card that warns, quieter in the dark theme."
+        },
+        "alert-tint": {
+          "$value": "{color.ramp.persimmon.7}",
+          "$description": "A fill that warns: the bar or block to avoid."
+        },
+        "alt-surface": {
+          "$value": "{color.ramp.pine.8}",
+          "$description": "An alternative slide ground."
+        }
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "$type": "color",
+      "semantic": {
+        "$type": "color",
+        "$description": "The seven semantic slots for the dark look: White text on a Pine ground, with the colourway lead as primary.",
+        "primary": {
+          "$value": "{color.colourway.dark.primary}",
+          "$description": "The lead colour of the chosen colourway. Jungle in the canonical one, in both looks (Andy, 2026-10-29)"
+        },
+        "on-primary": {
+          "$value": "{color.colourway.dark.on-primary}",
+          "$description": "Text and icons on the lead: an approved combination for each lead (Pine on Jungle 5.6:1)"
+        },
+        "secondary": {
+          "$value": "{color.colourway.dark.secondary}",
+          "$description": "Supporting accent lifted to match"
+        },
+        "surface": {
+          "$value": "{color.brand.pine}",
+          "$description": "Canvas/page background: Pine"
+        },
+        "text": {
+          "$value": "{color.brand.white}",
+          "$description": "Main foreground"
+        },
+        "muted": {
+          "$value": "{color.ramp.fog.5}",
+          "$description": "Secondary foreground"
+        },
+        "edge": {
+          "$value": "{color.ramp.fog.2}",
+          "$description": "Hairlines and borders"
+        }
+      },
+      "role": {
+        "muted-ink": {
+          "$value": "{color.ramp.pine.7}",
+          "$description": "Captions, labels, axis years and descriptions: quieter than the text colour."
+        },
+        "secondary-ink": {
+          "$value": "{color.ramp.pine.7}",
+          "$description": "Secondary text on a card."
+        },
+        "strong-card-ink": {
+          "$value": "{color.brand.pine}",
+          "$description": "Secondary text on a strong card."
+        },
+        "accent-ink": {
+          "$value": "{color.ramp.jungle.4}",
+          "$description": "Accent text: subtitles, emphasised runs and markers."
+        },
+        "accent": {
+          "$value": "{color.ramp.pine.6}",
+          "$description": "Accent marks: dots, ticks and check marks."
+        },
+        "alert-ink": {
+          "$value": "{color.ramp.persimmon.5}",
+          "$description": "Text that warns: a risk, a lock-in, the thing to avoid."
+        },
+        "hairline": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "Rules, axes and dividers on the slide ground."
+        },
+        "card-hairline": {
+          "$value": "{color.brand.pine}",
+          "$description": "A rule drawn on a card."
+        },
+        "track": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "Bars and tracks of a timeline or chart."
+        },
+        "card": {
+          "$value": "{color.ramp.fog.1}",
+          "$description": "A neutral card or table cell."
+        },
+        "quiet-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A neutral panel that takes the brand ground in the dark theme."
+        },
+        "mint-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A lightly tinted card."
+        },
+        "strong-card": {
+          "$value": "{color.ramp.jungle.4}",
+          "$description": "An emphasised card: the column or cell the slide argues for."
+        },
+        "alert-card": {
+          "$value": "{color.ramp.fog.1}",
+          "$description": "A card that warns."
+        },
+        "quiet-alert-card": {
+          "$value": "{color.ramp.pine.2}",
+          "$description": "A card that warns, quieter in the dark theme."
+        },
+        "alert-tint": {
+          "$value": "{color.ramp.persimmon.2}",
+          "$description": "A fill that warns: the bar or block to avoid."
+        },
+        "alt-surface": {
+          "$value": "{color.brand.pine}",
+          "$description": "An alternative slide ground."
+        }
+      }
+    }
+  },
+  "colourway/jungle": {
+    "color": {
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.jungle}",
+            "$description": "Jungle on White 2.5:1, as Andy chose"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Jungle 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "$type": "color",
+        "dark": {
+          "primary": {
+            "$value": "{color.brand.jungle}",
+            "$description": "Jungle on Pine 5.6:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Jungle 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
+        }
+      }
+    }
+  },
+  "colourway/persimmon": {
+    "color": {
+      "$type": "color",
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.persimmon}",
+            "$description": "Persimmon on White 2.6:1, matching Jungle"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Persimmon 5.4:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "dark": {
+          "primary": {
+            "$value": "{color.brand.persimmon}",
+            "$description": "Persimmon on Pine 5.4:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Persimmon 5.4:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
+        }
+      }
+    }
+  },
+  "colourway/waterhole": {
+    "color": {
+      "$type": "color",
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.waterhole}",
+            "$description": "Waterhole on White 5.6:1"
+          },
+          "on-primary": {
+            "$value": "{color.brand.white}",
+            "$description": "White on Waterhole 5.6:1"
+          },
+          "secondary": {
+            "$value": "{color.ramp.jungle.3}"
+          }
+        },
+        "dark": {
+          "primary": {
+            "$value": "{color.ramp.blue.6}",
+            "$description": "Blue 6 on Pine 6.2:1: Waterhole itself is 2.5:1 on Pine"
+          },
+          "on-primary": {
+            "$value": "{color.brand.pine}",
+            "$description": "Pine on Blue 6 6.2:1"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          }
+        }
+      }
+    }
+  }
+}

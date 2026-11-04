@@ -1,0 +1,723 @@
+{
+  "id": "susecon-background",
+  "name": "SUSECON Background",
+  "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or loops without a visible join. Orb design by Zvezdana Marjanovic.",
+  "a11yLabel": "Animated SUSECON {{look}} background",
+  "version": "1.0.4",
+  "engineVersion": "^1.0.0",
+  "status": "official",
+  "singleInstance": true,
+  "category": "everyone",
+  "tags": [
+    "susecon",
+    "event",
+    "background",
+    "backdrop",
+    "wallpaper",
+    "animated",
+    "loop",
+    "brand"
+  ],
+  "examples": [
+    {
+      "label": "Jungle glass",
+      "values": {
+        "look": "glass",
+        "colourway": "jungle"
+      }
+    },
+    {
+      "label": "Amethyst glass",
+      "values": {
+        "look": "glass",
+        "colourway": "amethyst"
+      }
+    },
+    {
+      "label": "Fibres meet glass",
+      "values": {
+        "look": "split",
+        "colourway": "jungle"
+      }
+    },
+    {
+      "label": "Cloud dome",
+      "values": {
+        "look": "cloud",
+        "colourway": "jungle"
+      }
+    },
+    {
+      "label": "Horizon",
+      "values": {
+        "look": "horizon",
+        "colourway": "jungle"
+      }
+    },
+    {
+      "label": "Orbiting light",
+      "values": {
+        "look": "glass",
+        "colourway": "persimmon",
+        "lightMotion": "orbit",
+        "lightSpeed": 1
+      }
+    },
+    {
+      "label": "Live set",
+      "values": {
+        "look": "glass",
+        "colourway": "amethyst",
+        "energy": 85,
+        "speed": 4
+      }
+    },
+    {
+      "label": "Four scenes",
+      "values": {
+        "look": "glass",
+        "colourway": "jungle",
+        "scenes": [
+          {
+            "look": "glass",
+            "colourway": "same",
+            "framing": "full",
+            "hold": 3,
+            "transition": 2.5,
+            "style": "morph",
+            "energy": 10
+          },
+          {
+            "look": "glass",
+            "colourway": "same",
+            "framing": "full",
+            "hold": 3,
+            "transition": 2,
+            "style": "morph",
+            "energy": 90
+          },
+          {
+            "look": "horizon",
+            "colourway": "same",
+            "framing": "full",
+            "hold": 3,
+            "transition": 1.5,
+            "style": "wipe",
+            "energy": 40
+          },
+          {
+            "look": "cloud",
+            "colourway": "waterhole",
+            "framing": "full",
+            "hold": 3,
+            "transition": 2.5,
+            "style": "morph",
+            "energy": 20
+          }
+        ]
+      }
+    }
+  ],
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "formats": [
+      "png",
+      "jpg",
+      "webp",
+      "avif",
+      "webm",
+      "mp4",
+      "gif",
+      "tiff",
+      "webp-anim"
+    ],
+    "actions": [
+      "copy",
+      "download",
+      "save"
+    ],
+    "video": {
+      "wait": 0,
+      "duration": 12
+    }
+  },
+  "inputs": [
+    {
+      "id": "look",
+      "label": "Look",
+      "section": "Shape",
+      "type": "select",
+      "default": "glass",
+      "options": [
+        {
+          "value": "glass",
+          "label": "Glass orb",
+          "icon": "ring"
+        },
+        {
+          "value": "fibres",
+          "label": "Fibre orb",
+          "icon": "grain"
+        },
+        {
+          "value": "cloud",
+          "label": "Cloud dome",
+          "icon": "cloud"
+        },
+        {
+          "value": "horizon",
+          "label": "Horizon",
+          "icon": "contrast"
+        },
+        {
+          "value": "split",
+          "label": "Fibres meet glass",
+          "icon": "split"
+        }
+      ],
+      "help": "The SUSECON 2027 orb in each of its looks. Add scenes below to move from one look to another."
+    },
+    {
+      "id": "framing",
+      "label": "Framing",
+      "section": "Shape",
+      "type": "select",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "edge-left",
+          "label": "Close-up left"
+        },
+        {
+          "value": "edge-right",
+          "label": "Close-up right"
+        },
+        {
+          "value": "low",
+          "label": "Low close-up"
+        }
+      ],
+      "help": "Camera position. The close-ups crop into the orb's edge, where the hairlines and hot spots are."
+    },
+    {
+      "id": "placement",
+      "label": "Placement",
+      "section": "Shape",
+      "type": "vector",
+      "fields": [
+        {
+          "id": "x",
+          "label": "Move X",
+          "symbol": "X",
+          "min": -1.5,
+          "max": 1.5,
+          "step": 0.01,
+          "default": 0
+        },
+        {
+          "id": "y",
+          "label": "Move Y",
+          "symbol": "Y",
+          "min": -1.5,
+          "max": 1.5,
+          "step": 0.01,
+          "default": 0
+        },
+        {
+          "id": "zoom",
+          "label": "Zoom",
+          "symbol": "×",
+          "min": 0.3,
+          "max": 3,
+          "step": 0.01,
+          "default": 1
+        }
+      ],
+      "default": {
+        "x": 0,
+        "y": 0,
+        "zoom": 1
+      },
+      "help": "Move and scale the orb in the frame, in frame heights. Drag a letter to scrub. The light pools stay where they are, so you can clear space for a title."
+    },
+    {
+      "id": "colourway",
+      "label": "Colourway",
+      "section": "Colour",
+      "type": "select",
+      "default": "random",
+      "options": [
+        {
+          "value": "random",
+          "label": "Random from the palette"
+        },
+        {
+          "value": "jungle",
+          "label": "Jungle"
+        },
+        {
+          "value": "amethyst",
+          "label": "Amethyst"
+        },
+        {
+          "value": "waterhole",
+          "label": "Waterhole"
+        },
+        {
+          "value": "persimmon",
+          "label": "Persimmon"
+        },
+        {
+          "value": "mint",
+          "label": "Mint (light)"
+        },
+        {
+          "value": "seeds",
+          "label": "My colours"
+        }
+      ],
+      "help": "Random draws each colour role from the SUSE palette. When no palette colour is light or saturated enough for a role, such as the hot cores, it extends a palette colour in the same hue."
+    },
+    {
+      "id": "colourSeed",
+      "label": "Colour seed",
+      "section": "Colour",
+      "type": "vector",
+      "showIf": {
+        "colourway": [
+          "random"
+        ]
+      },
+      "fields": [
+        {
+          "id": "seed",
+          "label": "Seed",
+          "symbol": "#",
+          "min": 1,
+          "max": 9999,
+          "step": 1,
+          "default": 7
+        }
+      ],
+      "default": {
+        "seed": 7
+      },
+      "help": "Drag the # to scrub through colourways, or type a number. The same number always gives the same colours."
+    },
+    {
+      "id": "seedDark",
+      "label": "Dark",
+      "section": "Colour",
+      "type": "color",
+      "default": "{color.brand.pine}",
+      "showIf": {
+        "colourway": [
+          "seeds"
+        ]
+      },
+      "help": "The ground. A light colour here makes a light background."
+    },
+    {
+      "id": "seedGlow",
+      "label": "Glow",
+      "section": "Colour",
+      "type": "color",
+      "default": "{color.brand.jungle}",
+      "showIf": {
+        "colourway": [
+          "seeds"
+        ]
+      },
+      "help": "The orb's light. Hot cores and hairlines use that light colour."
+    },
+    {
+      "id": "seedAccent",
+      "label": "Accent",
+      "section": "Colour",
+      "type": "color",
+      "default": "{color.spectrum.marigold}",
+      "showIf": {
+        "colourway": [
+          "seeds"
+        ]
+      },
+      "help": "The side flare and the second light."
+    },
+    {
+      "id": "blend",
+      "label": "Colour blending",
+      "section": "Colour",
+      "type": "select",
+      "default": "vivid",
+      "options": [
+        {
+          "value": "vivid",
+          "label": "Vivid (keeps chroma)"
+        },
+        {
+          "value": "smooth",
+          "label": "Smooth (perceptually even)"
+        },
+        {
+          "value": "light",
+          "label": "Light (adds like light)"
+        },
+        {
+          "value": "srgb",
+          "label": "sRGB (classic)"
+        }
+      ],
+      "help": "How the background light, the rim tint and the line colours blend where colours meet. Vivid travels round the hue circle so the in-between colours keep their strength; Smooth is perceptually even; Light adds colours as light, so overlaps brighten; sRGB is the plain blend a CSS gradient makes, which goes muddy between distant hues."
+    },
+    {
+      "id": "hueRoute",
+      "label": "Hue direction",
+      "section": "Colour",
+      "type": "select",
+      "default": "short",
+      "options": [
+        {
+          "value": "short",
+          "label": "Short way"
+        },
+        {
+          "value": "long",
+          "label": "Long way round"
+        }
+      ],
+      "showIf": {
+        "blend": [
+          "vivid"
+        ]
+      },
+      "help": "Which way round the colour wheel Vivid travels between two colours. The long way passes through more hues."
+    },
+    {
+      "id": "glow",
+      "label": "Glow",
+      "section": "Lighting",
+      "type": "number",
+      "display": "slider",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "Strength of the rim light and the hot cores."
+    },
+    {
+      "id": "linework",
+      "label": "Linework",
+      "section": "Lighting",
+      "type": "number",
+      "display": "slider",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "How many hairlines, fibres or dot rows. 0 removes them."
+    },
+    {
+      "id": "flow",
+      "label": "Flow",
+      "section": "Lighting",
+      "type": "number",
+      "display": "slider",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "How far the hairlines ripple and drift apart."
+    },
+    {
+      "id": "motion",
+      "label": "Motion",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "How much the orb breathes, the lights drift and the lines travel. 0 holds still; scenes and energy still play."
+    },
+    {
+      "id": "speed",
+      "label": "Speed",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 3,
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "help": "How fast everything moves. Whole steps keep every exported loop joined."
+    },
+    {
+      "id": "lightMotion",
+      "label": "Light motion",
+      "section": "Motion",
+      "type": "select",
+      "default": "drift",
+      "options": [
+        {
+          "value": "still",
+          "label": "Still"
+        },
+        {
+          "value": "drift",
+          "label": "Drift"
+        },
+        {
+          "value": "sweep",
+          "label": "Sweep"
+        },
+        {
+          "value": "orbit",
+          "label": "Orbit"
+        },
+        {
+          "value": "swirl",
+          "label": "Swirl"
+        }
+      ],
+      "help": "How the background light moves. Drift lets the pools wander; Sweep swings the lighting back and forth; Orbit turns the whole gradient and the beam around the frame; Swirl turns neighbouring lights in opposite directions so the colours churn."
+    },
+    {
+      "id": "lightSpeed",
+      "label": "Light speed",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 1,
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "help": "Whole turns or swings per loop, so the light returns to its starting position."
+    },
+    {
+      "id": "lightSwing",
+      "label": "Swing",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 70,
+      "min": 10,
+      "max": 180,
+      "step": 5,
+      "unit": "°",
+      "showIf": {
+        "lightMotion": [
+          "sweep"
+        ]
+      },
+      "help": "How far the lighting swings either way."
+    },
+    {
+      "id": "highlightsFollow",
+      "label": "Highlights follow the light",
+      "section": "Motion",
+      "type": "boolean",
+      "default": true,
+      "help": "Turn the rim hot spots with the light, as reflections of it would. Off keeps them where the look puts them."
+    },
+    {
+      "id": "energy",
+      "label": "Energy",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "From calm drift at 0 to an orb that reacts as if to music: the rim breaks into travelling waves, the hairlines part and rejoin like a waveform, and the light kicks on every beat. Scenes can change it, so a clip can build from calm to active."
+    },
+    {
+      "id": "bpm",
+      "label": "Beat",
+      "section": "Motion",
+      "type": "number",
+      "default": 120,
+      "min": 60,
+      "max": 180,
+      "step": 1,
+      "unit": "bpm",
+      "help": "Tempo of the simulated beat that drives the energy kicks. It is rounded to a whole number of beats per loop so the loop has no visible join."
+    },
+    {
+      "id": "loop",
+      "label": "Loop length",
+      "section": "Motion",
+      "type": "number",
+      "default": 12,
+      "min": 2,
+      "max": 120,
+      "step": 1,
+      "unit": "s",
+      "help": "Seconds for one complete loop when there are no scenes. With scenes, the loop is the sum of their hold and transition times. Exports default to one loop."
+    },
+    {
+      "id": "phase",
+      "label": "Moment",
+      "section": "Motion",
+      "type": "number",
+      "display": "slider",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "help": "Where in the loop a still export is taken, and where playback starts."
+    },
+    {
+      "id": "scenes",
+      "label": "Scenes",
+      "section": "Motion",
+      "type": "blocks",
+      "help": "Add two or more scenes to move between looks. Each scene holds, then transitions to the next; the last one returns to the first, so the loop has no visible join. Raise a scene's energy to have the orb come alive there.",
+      "fields": [
+        {
+          "id": "look",
+          "label": "Look",
+          "type": "select",
+          "default": "glass",
+          "options": [
+            {
+              "value": "glass",
+              "label": "Glass orb"
+            },
+            {
+              "value": "fibres",
+              "label": "Fibre orb"
+            },
+            {
+              "value": "cloud",
+              "label": "Cloud dome"
+            },
+            {
+              "value": "horizon",
+              "label": "Horizon"
+            },
+            {
+              "value": "split",
+              "label": "Fibres meet glass"
+            }
+          ]
+        },
+        {
+          "id": "colourway",
+          "label": "Colourway",
+          "type": "select",
+          "default": "same",
+          "options": [
+            {
+              "value": "same",
+              "label": "Same as above"
+            },
+            {
+              "value": "random",
+              "label": "Random from the palette"
+            },
+            {
+              "value": "jungle",
+              "label": "Jungle"
+            },
+            {
+              "value": "amethyst",
+              "label": "Amethyst"
+            },
+            {
+              "value": "waterhole",
+              "label": "Waterhole"
+            },
+            {
+              "value": "persimmon",
+              "label": "Persimmon"
+            },
+            {
+              "value": "mint",
+              "label": "Mint (light)"
+            }
+          ]
+        },
+        {
+          "id": "framing",
+          "label": "Framing",
+          "type": "select",
+          "default": "full",
+          "options": [
+            {
+              "value": "full",
+              "label": "Full"
+            },
+            {
+              "value": "edge-left",
+              "label": "Close-up left"
+            },
+            {
+              "value": "edge-right",
+              "label": "Close-up right"
+            },
+            {
+              "value": "low",
+              "label": "Low close-up"
+            }
+          ]
+        },
+        {
+          "id": "hold",
+          "label": "Hold (s)",
+          "type": "number",
+          "min": 0,
+          "max": 60,
+          "step": 0.5,
+          "default": 3
+        },
+        {
+          "id": "transition",
+          "label": "Transition (s)",
+          "type": "number",
+          "min": 0,
+          "max": 20,
+          "step": 0.5,
+          "default": 2
+        },
+        {
+          "id": "style",
+          "label": "Transition",
+          "type": "select",
+          "default": "morph",
+          "options": [
+            {
+              "value": "morph",
+              "label": "Morph"
+            },
+            {
+              "value": "wipe",
+              "label": "Wipe"
+            }
+          ]
+        },
+        {
+          "id": "energy",
+          "label": "Energy",
+          "type": "number",
+          "display": "slider",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 20
+        }
+      ],
+      "default": []
+    }
+  ],
+  "hooks": {
+    "onInit": true,
+    "onInput": true
+  }
+}

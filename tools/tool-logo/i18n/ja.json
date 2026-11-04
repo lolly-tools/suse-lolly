@@ -1,0 +1,14 @@
+{
+  "name": "ロゴ",
+  "description": "SUSEロゴを、単色または透明の背景に配置します。",
+  "inputs.background.label": "背景",
+  "inputs.background.help": "ロゴが配置される背景色です。背景に応じて適切なロゴ(暗い背景には反転版、明るい背景には通常版)が自動的に選択されます。書き出し時に「背景なし」をオンにすると背景を削除できます。",
+  "inputs.orientation.label": "向き",
+  "inputs.orientation.help": "横向きはワイドなロックアップ、縦積みは正方形に近いスペース向けのレイアウトです。",
+  "inputs.orientation.options.horizontal": "横向き",
+  "inputs.orientation.options.vertical": "縦積み",
+  "inputs.ink.label": "スタイル",
+  "inputs.ink.help": "どんな背景にも使えるブランドグリーン、または高コントラストのモノクロ(暗い背景には白、明るい背景には黒)からお選びいただけます。",
+  "inputs.ink.options.brand": "ブランドグリーン",
+  "inputs.ink.options.mono": "モノクロ"
+}

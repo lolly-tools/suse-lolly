@@ -1,0 +1,14 @@
+{
+  "name": "徽标",
+  "description": "把 SUSE 徽标放在纯色或透明背景上。",
+  "inputs.background.label": "背景",
+  "inputs.background.help": "徽标所在的背景颜色。系统会自动为你选择匹配的版本(深色背景用反白版,浅色背景用常规版)。在导出选项中开启“无背景”可移除背景色。",
+  "inputs.orientation.label": "方向",
+  "inputs.orientation.help": "横排是较宽的组合版式;堆叠是适合窄小或方形空间的方形版式。",
+  "inputs.orientation.options.horizontal": "横排",
+  "inputs.orientation.options.vertical": "堆叠",
+  "inputs.ink.label": "样式",
+  "inputs.ink.help": "任何背景下都可用品牌绿色,或使用高对比度单色(深色背景用白色,浅色背景用黑色)。",
+  "inputs.ink.options.brand": "品牌绿",
+  "inputs.ink.options.mono": "单色"
+}

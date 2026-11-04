@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Place le logo SUSE sur un fond en couleur ou transparent.",
+  "inputs.background.label": "Arrière-plan",
+  "inputs.background.help": "La couleur sur laquelle repose le logo. Le logo correspondant (inversé pour un fond sombre, normal pour un fond clair) est choisi automatiquement pour toi. Active « Sans fond » dans l'export pour le supprimer.",
+  "inputs.orientation.label": "Orientation",
+  "inputs.orientation.help": "Horizontal correspond à la version large ; Empilé est la version carrée pour les espaces réduits ou carrés.",
+  "inputs.orientation.options.horizontal": "Horizontal",
+  "inputs.orientation.options.vertical": "Empilé",
+  "inputs.ink.label": "Style",
+  "inputs.ink.help": "Vert de marque sur n'importe quel fond, ou mono à fort contraste (blanc sur fond sombre, noir sur fond clair).",
+  "inputs.ink.options.brand": "Vert de marque",
+  "inputs.ink.options.mono": "Mono"
+}

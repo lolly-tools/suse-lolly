@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Așază logo-ul SUSE pe un fundal colorat sau transparent.",
+  "inputs.background.label": "Fundal",
+  "inputs.background.help": "Culoarea pe care stă logo-ul. Varianta potrivită de logo (inversată pentru fundal închis, normală pentru fundal deschis) este aleasă automat pentru tine. Activează „Fără fundal” la export ca să-l elimini.",
+  "inputs.orientation.label": "Orientare",
+  "inputs.orientation.options.horizontal": "Orizontal",
+  "inputs.orientation.options.vertical": "Vertical",
+  "inputs.orientation.help": "Orizontal este lockup-ul lat; Vertical este cel pătrat, pentru spații strâmte sau pătrate.",
+  "inputs.ink.label": "Stil",
+  "inputs.ink.options.brand": "Verde brand",
+  "inputs.ink.options.mono": "Monocrom",
+  "inputs.ink.help": "Verde brand pe orice fundal, sau monocrom cu contrast ridicat (alb pe fundal închis, negru pe fundal deschis)."
+}

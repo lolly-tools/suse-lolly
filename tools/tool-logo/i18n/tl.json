@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Ilagay ang SUSE logo sa isang de-kulay o transparent na background.",
+  "inputs.background.label": "Background",
+  "inputs.background.help": "Ang kulay kung saan nakapatong ang logo. Awtomatikong pipiliin ang tugmang logo (reversed para sa dark, normal para sa light). I-on ang \"No BG\" sa export para tanggalin ito.",
+  "inputs.orientation.label": "Orientation",
+  "inputs.orientation.help": "Ang Horizontal ang malapad na lockup; ang Stacked naman ay ang parisukat na bersyon para sa masikip o parisukat na espasyo.",
+  "inputs.orientation.options.horizontal": "Horizontal",
+  "inputs.orientation.options.vertical": "Stacked",
+  "inputs.ink.label": "Estilo",
+  "inputs.ink.help": "Brand green sa kahit anong background, o high-contrast mono (puti sa dark, itim sa light).",
+  "inputs.ink.options.brand": "Brand green",
+  "inputs.ink.options.mono": "Mono"
+}

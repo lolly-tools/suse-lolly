@@ -1,0 +1,16 @@
+{
+  "id": "brand-starter",
+  "name": "Build what comes next",
+  "category": "Brand",
+  "description": "A clear headline, a short message and one invitation.",
+  "galleryCover": true,
+  "values": {
+    "heading": "Open for\nwhat’s next.",
+    "headingFontWeight": 600,
+    "subheading": "Build on possibility.",
+    "body": "The freedom to choose.\nThe confidence to move forward.",
+    "cta": "Explore SUSE",
+    "logo": "top-right",
+    "theme": "white"
+  }
+}

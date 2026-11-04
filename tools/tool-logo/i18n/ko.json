@@ -1,0 +1,14 @@
+{
+  "name": "로고",
+  "description": "SUSE 로고를 단색 또는 투명 배경 위에 배치해요.",
+  "inputs.background.label": "배경",
+  "inputs.background.help": "로고가 놓이는 배경 색상이에요. 배경에 어울리는 로고(어두운 배경에는 반전 버전, 밝은 배경에는 일반 버전)가 자동으로 선택돼요. 내보내기에서 \"배경 없음\"을 켜면 배경을 제거할 수 있어요.",
+  "inputs.orientation.label": "방향",
+  "inputs.orientation.help": "가로형은 넓은 로고 조합이고, 세로 쌓기는 좁거나 정사각형 공간에 맞는 정사각형 버전이에요.",
+  "inputs.orientation.options.horizontal": "가로형",
+  "inputs.orientation.options.vertical": "세로 쌓기",
+  "inputs.ink.label": "스타일",
+  "inputs.ink.help": "어떤 배경에도 어울리는 브랜드 그린, 또는 고대비 모노(어두운 배경에는 흰색, 밝은 배경에는 검정)를 선택할 수 있어요.",
+  "inputs.ink.options.brand": "브랜드 그린",
+  "inputs.ink.options.mono": "모노"
+}

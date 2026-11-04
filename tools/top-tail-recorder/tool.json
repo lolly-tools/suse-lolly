@@ -1,0 +1,221 @@
+{
+  "id": "top-tail-recorder",
+  "name": "Top & Tail Video",
+  "description": "Record a clip in any orientation, then auto-wrap it with branded intro and outro bookends, a lower-third, and a music bed.",
+  "a11yLabel": "Top and tail video - {{default introTitle \"intro\"}} to {{default outroTitle \"outro\"}}",
+  "version": "1.2.3",
+  "engineVersion": ">=1.261.0 <2.0.0",
+  "deprecated": true,
+  "replacedBy": "record",
+  "listed": false,
+  "status": "experimental",
+  "category": "everyone",
+  "tags": [
+    "video",
+    "record",
+    "recording",
+    "camera",
+    "microphone",
+    "audio",
+    "sound",
+    "intro",
+    "outro",
+    "bookend",
+    "lower-third",
+    "reel",
+    "social",
+    "portrait",
+    "landscape",
+    "music",
+    "levels"
+  ],
+  "capabilities": [
+    "camera",
+    "microphone"
+  ],
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "formats": ["mp4", "webm", "gif", "apng", "png", "srt", "vtt", "webp-anim"],
+    "capture": "av",
+    "actions": [
+      "download",
+      "save"
+    ],
+    "printMarks": false,
+    "convertPaths": false,
+    "video": {
+      "wait": 0,
+      "duration": 8
+    },
+    "transcribe": {
+      "source": "clip",
+      "target": "transcript",
+      "format": "srt",
+      "auto": "autoCaption"
+    }
+  },
+  "inputs": [
+    {
+      "id": "orientation",
+      "label": "Orientation",
+      "type": "select",
+      "default": "portrait",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait · 1080 × 1920",
+          "width": 1080,
+          "height": 1920,
+          "unit": "px"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape · 1920 × 1080",
+          "width": 1920,
+          "height": 1080,
+          "unit": "px"
+        },
+        {
+          "value": "square",
+          "label": "Square · 1080 × 1080",
+          "width": 1080,
+          "height": 1080,
+          "unit": "px"
+        }
+      ]
+    },
+    {
+      "id": "clip",
+      "label": "Clip",
+      "type": "asset",
+      "assetType": "video",
+      "allowUpload": true,
+      "help": "Press ● Record on the canvas to film a clip, or upload a video. The bookends wrap around it, filling the frame in any orientation."
+    },
+    {
+      "id": "clipFit",
+      "label": "Video fit",
+      "type": "select",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Fill frame (crop)"
+        },
+        {
+          "value": "contain",
+          "label": "Fit whole video"
+        }
+      ],
+      "help": "How the clip sits in the frame. Fill crops it to cover the frame; Fit shows the whole video with bars, for a landscape or square clip in a portrait frame."
+    },
+    {
+      "id": "brandColor",
+      "label": "Bookend colour",
+      "type": "color",
+      "default": "{color.semantic.primary}"
+    },
+    {
+      "id": "accent",
+      "label": "Accent",
+      "type": "color",
+      "default": "{color.semantic.secondary}",
+      "help": "Highlight colour for the lower third stripe, the frame lines on the bookend cards and the outro button."
+    },
+    {
+      "id": "logo",
+      "label": "Logo",
+      "type": "asset",
+      "assetType": "image",
+      "allowUpload": true,
+      "default": {
+        "source": "library",
+        "id": "suse/logo/hor-neg-white"
+      },
+      "help": "Shown on the intro & outro cards."
+    },
+    {
+      "id": "introTitle",
+      "section": "Intro card",
+      "label": "Title",
+      "type": "text",
+      "default": "",
+      "maxLength": 40,
+      "group": "Intro card"
+    },
+    {
+      "id": "introSubtitle",
+      "section": "Intro card",
+      "label": "Subtitle",
+      "type": "text",
+      "default": "",
+      "maxLength": 60,
+      "group": "Intro card"
+    },
+    {
+      "id": "lowerName",
+      "section": "Lower third",
+      "label": "Name",
+      "type": "text",
+      "default": "",
+      "maxLength": 40,
+      "bindToProfile": "firstname",
+      "group": "Lower third"
+    },
+    {
+      "id": "lowerRole",
+      "section": "Lower third",
+      "label": "Role / handle",
+      "type": "text",
+      "default": "",
+      "maxLength": 60,
+      "group": "Lower third"
+    },
+    {
+      "id": "outroTitle",
+      "section": "Outro card",
+      "label": "Title",
+      "type": "text",
+      "default": "Thanks for watching",
+      "maxLength": 40,
+      "group": "Outro card"
+    },
+    {
+      "id": "outroCta",
+      "section": "Outro card",
+      "label": "Call to action",
+      "type": "text",
+      "default": "suse.com",
+      "maxLength": 48,
+      "group": "Outro card"
+    },
+    {
+      "id": "transcript",
+      "sharePrivacy": "personal",
+      "section": "Subtitles",
+      "label": "Transcript",
+      "type": "longtext",
+      "default": "",
+      "rows": 6,
+      "group": "Subtitles",
+      "dataSource": {
+        "accept": ".srt,.vtt,text/plain,text/vtt"
+      },
+      "help": "Subtitles as SRT, filled by Transcribe or dropped in as a file. Exported as a separate .srt or .vtt to upload alongside the video, not burned into the picture; times shift to allow for the intro card."
+    },
+    {
+      "id": "autoCaption",
+      "section": "Subtitles",
+      "label": "Auto-caption",
+      "type": "boolean",
+      "default": false,
+      "group": "Subtitles",
+      "help": "Transcribe a newly recorded take on the spot, with no click. Runs on your device; the first run downloads the speech model once."
+    }
+  ],
+  "hooks": {
+    "onInit": true,
+    "onInput": true
+  }
+}

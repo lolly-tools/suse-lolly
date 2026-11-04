@@ -1,0 +1,18 @@
+{
+  "id": "brand-starter",
+  "name": "Speaker badge",
+  "category": "Brand",
+  "description": "A readable event badge with a clear name and role.",
+  "galleryCover": true,
+  "values": {
+    "firstname": "Alex",
+    "lastname": "Morgan",
+    "jobTitle": "Open Source Advocate",
+    "company": "SUSE",
+    "eventName": "SUSECON",
+    "status": "speaker",
+    "roleColor": "{color.semantic.secondary}",
+    "showQr": false,
+    "background": "{color.semantic.primary}"
+  }
+}

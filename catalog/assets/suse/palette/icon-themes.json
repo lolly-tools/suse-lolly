@@ -1,0 +1,14 @@
+{
+  "name": "Icon Duo Themes",
+  "description": "Colour pairings for themable two-colour icons: c1 = accent, c2 = base. 'brand' matches the defaults baked into every icon. previewBg is the surface a light pairing needs behind it to stay visible in pickers/previews. surfaces lists where a pairing reads on a slide: light (White, Fog) or dark (Pine and photography).",
+  "themes": [
+    { "id": "brand",     "label": "Brand",     "c1": "#30ba78", "c2": "#0c322c", "surfaces": ["light"] },
+    { "id": "waterhole", "label": "Waterhole", "c1": "#2453ff", "c2": "#192072", "surfaces": ["light"] },
+    { "id": "mint",      "label": "Mint",      "c1": "#90ebcd", "c2": "#30ba78", "surfaces": ["dark"] },
+    { "id": "waterhole-mint", "label": "Waterhole Mint", "c1": "#90ebcd", "c2": "#2453ff", "surfaces": ["dark"] },
+    { "id": "jungle",    "label": "Jungle",    "c1": "#42d29f", "c2": "#008657", "surfaces": ["light", "dark"] },
+    { "id": "pine",      "label": "Pine",      "c1": "#008878", "c2": "#01564a", "surfaces": ["light"] },
+    { "id": "paper",     "label": "Paper",     "c1": "#ffffff", "c2": "#efefef", "previewBg": "#0c322c", "surfaces": ["dark"] },
+    { "id": "ember",     "label": "Ember",     "c1": "#fe7c3f", "c2": "#ff5a2b", "surfaces": ["dark"] }
+  ]
+}

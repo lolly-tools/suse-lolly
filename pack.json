@@ -1,0 +1,49 @@
+{
+  "$comment": "Instance-pack recipe: asset families are permanent id prefixes, classified once as included or excluded. Brandfolder supplies photos, campaign images, executive portraits, backgrounds and illustrations; those families are excluded from the bundled catalog. Logos, dynamic icons, tokens, palettes and other design-system essentials stay bundled. The builder refuses audio in included families and checks the pack size budget. Community-shared tool assets are omitted only after byte equality is verified.",
+  "name": "SUSE Brand",
+  "publisher": "SUSE",
+  "version": "1.1.0",
+  "instance": "https://lolly.tools",
+  "tokensAsset": "suse/tokens/brand",
+  "fonts": {
+    "dir": "catalog/fonts/webfonts",
+    "families": [
+      "SUSE",
+      "SUSE Mono"
+    ],
+    "license": "catalog/fonts/OFL.txt"
+  },
+  "logos": {
+    "horizontal-primary": "catalog/assets/suse/logo/SUSE_logo-hor-pos-green.svg",
+    "horizontal-primary-reverse": "catalog/assets/suse/logo/SUSE_logo-hor-neg-green.svg",
+    "horizontal-mono": "catalog/assets/suse/logo/SUSE_logo-hor-pos-black.svg",
+    "horizontal-mono-reverse": "catalog/assets/suse/logo/SUSE_logo-hor-neg-white.svg",
+    "vertical-primary": "catalog/assets/suse/logo/SUSE_logo-vert-pos-green.svg",
+    "vertical-primary-reverse": "catalog/assets/suse/logo/SUSE_logo-vert-neg-green.svg",
+    "vertical-mono": "catalog/assets/suse/logo/SUSE_logo-vert-pos-black.svg",
+    "vertical-mono-reverse": "catalog/assets/suse/logo/SUSE_logo-vert-neg-white.svg"
+  },
+  "includeAssetFamilies": [
+    "suse/tokens/",
+    "suse/palette/",
+    "suse/logo/",
+    "suse/icons/",
+    "suse/lottie/",
+    "suse/demo/",
+    "suse/model/",
+    "suse/slides/",
+    "suse/skill/"
+  ],
+  "excludeAssetFamilies": [
+    "suse/photos/",
+    "suse/campaign/",
+    "suse/headshots/",
+    "lolly/",
+    "suse/backgrounds/",
+    "suse/illustrations/"
+  ],
+  "reuseCommunityToolAssets": [
+    "3d/assets/cat.glb",
+    "3d/assets/duck.glb"
+  ]
+}

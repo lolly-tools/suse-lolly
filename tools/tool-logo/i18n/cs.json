@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Umísti logo SUSE na barevné nebo průhledné pozadí.",
+  "inputs.background.label": "Pozadí",
+  "inputs.background.help": "Barva, na které logo stojí. Odpovídající varianta loga (obrácená pro tmavé pozadí, normální pro světlé) se vybere automaticky. Chceš-li ho odstranit, zapni v exportu možnost „Bez pozadí“.",
+  "inputs.orientation.label": "Orientace",
+  "inputs.orientation.help": "Horizontální je široké uspořádání; Skládané je čtvercová varianta pro těsné nebo čtvercové prostory.",
+  "inputs.orientation.options.horizontal": "Horizontální",
+  "inputs.orientation.options.vertical": "Skládané",
+  "inputs.ink.label": "Styl",
+  "inputs.ink.help": "Značková zelená na jakémkoli pozadí, nebo kontrastní jednobarevná verze (bílá na tmavém, černá na světlém).",
+  "inputs.ink.options.brand": "Značková zelená",
+  "inputs.ink.options.mono": "Jednobarevné"
+}

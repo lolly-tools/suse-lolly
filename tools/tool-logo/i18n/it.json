@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Posiziona il logo SUSE su uno sfondo colorato o trasparente.",
+  "inputs.background.label": "Sfondo",
+  "inputs.background.help": "Il colore su cui poggia il logo. Viene scelta automaticamente la versione corrispondente (invertita per lo sfondo scuro, normale per quello chiaro). Attiva \"No BG\" nell'esportazione per rimuoverlo.",
+  "inputs.orientation.label": "Orientamento",
+  "inputs.orientation.help": "Orizzontale è il lockup largo; Impilato è quello quadrato per spazi stretti o quadrati.",
+  "inputs.orientation.options.horizontal": "Orizzontale",
+  "inputs.orientation.options.vertical": "Impilato",
+  "inputs.ink.label": "Stile",
+  "inputs.ink.help": "Verde brand su qualsiasi sfondo, oppure mono ad alto contrasto (bianco su sfondo scuro, nero su sfondo chiaro).",
+  "inputs.ink.options.brand": "Verde brand",
+  "inputs.ink.options.mono": "Mono"
+}

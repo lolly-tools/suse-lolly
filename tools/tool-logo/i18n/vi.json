@@ -1,0 +1,14 @@
+{
+  "name": "Logo",
+  "description": "Đặt logo SUSE lên nền màu hoặc nền trong suốt.",
+  "inputs.background.label": "Nền",
+  "inputs.background.help": "Màu nền mà logo được đặt lên. Phiên bản logo phù hợp (đảo ngược cho nền tối, bình thường cho nền sáng) sẽ được tự động chọn. Bật \"No BG\" trong phần xuất để bỏ nền.",
+  "inputs.orientation.label": "Hướng",
+  "inputs.orientation.help": "Ngang là bố cục logo dạng rộng; Xếp chồng là bố cục vuông dành cho không gian hẹp hoặc vuông.",
+  "inputs.orientation.options.horizontal": "Ngang",
+  "inputs.orientation.options.vertical": "Xếp chồng",
+  "inputs.ink.label": "Kiểu",
+  "inputs.ink.help": "Xanh lá thương hiệu trên mọi nền, hoặc kiểu đơn sắc tương phản cao (trắng trên nền tối, đen trên nền sáng).",
+  "inputs.ink.options.brand": "Xanh lá thương hiệu",
+  "inputs.ink.options.mono": "Đơn sắc"
+}

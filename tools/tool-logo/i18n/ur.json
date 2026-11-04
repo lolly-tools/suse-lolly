@@ -1,0 +1,14 @@
+{
+  "name": "لوگو",
+  "description": "SUSE لوگو کو کسی رنگ یا شفاف پس منظر پر رکھیں۔",
+  "inputs.background.label": "پس منظر",
+  "inputs.background.help": "وہ رنگ جس پر لوگو موجود ہے۔ مناسب لوگو (تاریک کے لیے ریورسڈ، ہلکے کے لیے عام) خودکار طور پر منتخب کیا جاتا ہے۔ اسے ہٹانے کے لیے ایکسپورٹ میں \"No BG\" آن کریں۔",
+  "inputs.orientation.label": "رخ",
+  "inputs.orientation.help": "افقی وسیع لاک اپ ہے؛ اسٹیکڈ تنگ یا مربع جگہوں کے لیے مربع شکل ہے۔",
+  "inputs.orientation.options.horizontal": "افقی",
+  "inputs.orientation.options.vertical": "اسٹیکڈ",
+  "inputs.ink.label": "اسٹائل",
+  "inputs.ink.help": "کسی بھی پس منظر پر برانڈ گرین، یا ہائی کنٹراسٹ مونو (تاریک پر سفید، ہلکے پر سیاہ)۔",
+  "inputs.ink.options.brand": "برانڈ گرین",
+  "inputs.ink.options.mono": "مونو"
+}

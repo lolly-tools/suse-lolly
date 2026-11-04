@@ -1,0 +1,15 @@
+{
+  "id": "geeko",
+  "name": "Geeko studio",
+  "category": "SUSE",
+  "description": "Light and photograph Geeko with the shared 3D Studio controls.",
+  "values": {
+    "source": "model",
+    "modelAsset": "suse/model/geeko",
+    "materialMode": "source",
+    "studio": "dramatic",
+    "outputMode": "scene",
+    "depthOfField": true,
+    "aperture": 0.06
+  }
+}
