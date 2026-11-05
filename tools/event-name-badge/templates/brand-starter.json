@@ -13,6 +13,8 @@
     "status": "speaker",
     "roleColor": "{color.semantic.secondary}",
     "showQr": false,
-    "background": "{color.semantic.primary}"
+    "background": "{color.semantic.text}",
+    "nameWeight": 500,
+    "eventWeight": 500
   }
 }

@@ -30,6 +30,7 @@
     "suse/icons/",
     "suse/lottie/",
     "suse/demo/",
+    "lolly/demo/sample-",
     "suse/model/",
     "suse/slides/",
     "suse/skill/"
@@ -38,7 +39,7 @@
     "suse/photos/",
     "suse/campaign/",
     "suse/headshots/",
-    "lolly/",
+    "lolly/demo/lolly-spin",
     "suse/backgrounds/",
     "suse/illustrations/"
   ],

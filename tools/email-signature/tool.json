@@ -2,7 +2,7 @@
   "id": "email-signature",
   "name": "Email Signature",
   "description": "An on-brand SUSE email signature, ready to paste into any client.",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "everyone",
