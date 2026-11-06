@@ -1,0 +1,40 @@
+{
+  "id": "brand-starter",
+  "name": "Picture opening",
+  "category": "Brand",
+  "description": "A wide deck that opens on a picture and a headline, then makes its points.",
+  "galleryCover": true,
+  "values": {
+    "size": "wide",
+    "theme": "auto",
+    "pageNumbers": true,
+    "brandLogo": true,
+    "deck": [
+      {
+        "layout": "split",
+        "theme": "auto",
+        "content": "# Open to what comes next",
+        "media1": {
+          "id": "lolly/demo/sample-photo"
+        },
+        "media2": {
+          "id": "lolly/demo/sample-portrait"
+        }
+      },
+      {
+        "layout": "mainpoint",
+        "theme": "primary",
+        "content": "# One idea on each slide"
+      },
+      {
+        "layout": "auto",
+        "theme": "auto",
+        "content": "# What we learned\n\n- Start with the question\n- Show the working\n- Close with one next step"
+      }
+    ]
+  },
+  "gallerySize": {
+    "width": 1920,
+    "height": 1080
+  }
+}
