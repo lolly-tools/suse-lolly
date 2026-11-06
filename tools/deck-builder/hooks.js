@@ -117,7 +117,7 @@ var SLOTS_FOR = {
   grid4:  ['media1', 'media2', 'media3', 'media4']
 };
 
-var PAGED = { pdf: 1, pptx: 1 };            // one slide per [data-pdf-page], all shown
+var PAGED = { pdf: 1, pptx: 1, png: 1 };    // one slide per [data-pdf-page], all shown. png is the gallery cover's first slide; no export offers it.
 var CLIP  = { mp4: 1, webm: 1, gif: 1 };    // the deck plays and is captured frame by frame
 
 // Entrance TRANSFORMS (opacity is decoupled - always a brief fade). Each value is
@@ -1225,7 +1225,8 @@ function armFrameClock(root) {
 }
 
 function beforeExport(ctx) {
-  var root = ctx.node && ctx.node.querySelector && ctx.node.querySelector('.slides');
+  // A gallery cover exports one slide, so the node is inside the deck rather than around it.
+  var root = ctx.node && ctx.node.querySelector && (ctx.node.querySelector('.slides') || (ctx.node.closest && ctx.node.closest('.slides')));
   if (!root) return;
   var EventCtor = root.ownerDocument && root.ownerDocument.defaultView && root.ownerDocument.defaultView.CustomEvent;
   if (EventCtor) root.dispatchEvent(new EventCtor('lolly:deck-fit', { detail: { all: true } }));
@@ -1276,7 +1277,7 @@ function afterExport(ctx) {
     try { delete _clock.__lollyFrameRender; } catch (e) { _clock.__lollyFrameRender = undefined; }
     _clock = null;
   }
-  var root = ctx.node && ctx.node.querySelector && ctx.node.querySelector('.slides');
+  var root = ctx.node && ctx.node.querySelector && (ctx.node.querySelector('.slides') || (ctx.node.closest && ctx.node.closest('.slides')));
   if (root) {
     if (_savedClass != null) root.className = _savedClass;
     // The frame clock left every animation paused on the last captured frame, and
