@@ -139,6 +139,66 @@
                 "path": "color.ramp.fog.2"
               }
             ]
+          },
+          {
+            "id": "primary",
+            "label": "Primary accent",
+            "description": "The hero green, Jungle, in the canonical colourway.",
+            "group": "colourway",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.semantic.primary"
+              }
+            ]
+          },
+          {
+            "id": "secondary",
+            "label": "Supporting accent",
+            "description": "Jungle 3 on light grounds and Mint on dark.",
+            "group": "colourway",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.semantic.secondary"
+              }
+            ]
+          },
+          {
+            "id": "surface",
+            "label": "Background",
+            "description": "White in the light look and Pine in the dark.",
+            "group": "colourway",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.semantic.surface"
+              }
+            ]
+          },
+          {
+            "id": "text",
+            "label": "Text",
+            "description": "Pine on light grounds and White on dark.",
+            "group": "colourway",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.semantic.text"
+              }
+            ]
+          },
+          {
+            "id": "warm-accent",
+            "label": "Warm accent",
+            "description": "Use sparingly, for emphasis and energy.",
+            "group": "colourway",
+            "resources": [
+              {
+                "type": "token",
+                "path": "color.semantic.warm-accent"
+              }
+            ]
           }
         ],
         "bindings": [],
@@ -829,11 +889,11 @@
           "$description": "Supporting accent: Jungle 3, which holds 3:1 on White (4.6:1) and on Pine (3.0:1) and stays distinct from a Jungle lead"
         },
         "surface": {
-          "$value": "{color.brand.white}",
+          "$value": "{color.colourway.light.surface}",
           "$description": "Canvas/page background"
         },
         "text": {
-          "$value": "{color.brand.pine}",
+          "$value": "{color.colourway.light.text}",
           "$description": "Main foreground"
         },
         "muted": {
@@ -843,6 +903,22 @@
         "edge": {
           "$value": "{color.ramp.fog.7}",
           "$description": "Hairlines and borders"
+        },
+        "on-secondary": {
+          "$value": "{color.colourway.light.on-secondary}",
+          "$type": "color"
+        },
+        "on-surface": {
+          "$value": "{color.colourway.light.on-surface}",
+          "$type": "color"
+        },
+        "warm-accent": {
+          "$value": "{color.colourway.light.warm-accent}",
+          "$type": "color"
+        },
+        "on-warm-accent": {
+          "$value": "{color.colourway.light.on-warm-accent}",
+          "$type": "color"
         }
       },
       "role": {
@@ -936,11 +1012,11 @@
           "$description": "Supporting accent lifted to match"
         },
         "surface": {
-          "$value": "{color.brand.pine}",
+          "$value": "{color.colourway.dark.surface}",
           "$description": "Canvas/page background: Pine"
         },
         "text": {
-          "$value": "{color.brand.white}",
+          "$value": "{color.colourway.dark.text}",
           "$description": "Main foreground"
         },
         "muted": {
@@ -950,6 +1026,22 @@
         "edge": {
           "$value": "{color.ramp.fog.2}",
           "$description": "Hairlines and borders"
+        },
+        "on-secondary": {
+          "$value": "{color.colourway.dark.on-secondary}",
+          "$type": "color"
+        },
+        "on-surface": {
+          "$value": "{color.colourway.dark.on-surface}",
+          "$type": "color"
+        },
+        "warm-accent": {
+          "$value": "{color.colourway.dark.warm-accent}",
+          "$type": "color"
+        },
+        "on-warm-accent": {
+          "$value": "{color.colourway.dark.on-warm-accent}",
+          "$type": "color"
         }
       },
       "role": {
@@ -1038,6 +1130,45 @@
           },
           "secondary": {
             "$value": "{color.ramp.jungle.3}"
+          },
+          "on-secondary": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.white}"
+          },
+          "on-surface": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.pine}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
         },
         "$type": "color",
@@ -1052,6 +1183,45 @@
           },
           "secondary": {
             "$value": "{color.brand.mint}"
+          },
+          "on-secondary": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.pine}"
+          },
+          "on-surface": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.white}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
         }
       }
@@ -1072,6 +1242,45 @@
           },
           "secondary": {
             "$value": "{color.ramp.jungle.3}"
+          },
+          "on-secondary": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.white}"
+          },
+          "on-surface": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.pine}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
         },
         "dark": {
@@ -1085,8 +1294,48 @@
           },
           "secondary": {
             "$value": "{color.brand.mint}"
+          },
+          "on-secondary": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.pine}"
+          },
+          "on-surface": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.white}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
-        }
+        },
+        "$type": "color"
       }
     }
   },
@@ -1105,6 +1354,45 @@
           },
           "secondary": {
             "$value": "{color.ramp.jungle.3}"
+          },
+          "on-secondary": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.white}"
+          },
+          "on-surface": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.pine}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
         },
         "dark": {
@@ -1118,8 +1406,48 @@
           },
           "secondary": {
             "$value": "{color.brand.mint}"
+          },
+          "on-secondary": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "surface": {
+            "$value": "{color.brand.pine}"
+          },
+          "on-surface": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.white}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.persimmon}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
           }
-        }
+        },
+        "$type": "color"
       }
     }
   }
