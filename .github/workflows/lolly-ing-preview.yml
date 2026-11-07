@@ -262,7 +262,7 @@ jobs:
       LSHA: ${{ needs.gate.outputs.lsha }}
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
-      LOLLY_PROFILE: suse-with-demo
+      LOLLY_PROFILE: suse
       LOLLY_STRICT_PROFILE: '1'
       VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
     steps:
@@ -338,7 +338,7 @@ jobs:
       LSHA: ${{ needs.gate.outputs.lsha }}
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
-      LOLLY_PROFILE: suse-with-demo
+      LOLLY_PROFILE: suse
       LOLLY_STRICT_PROFILE: '1'
     steps:
       - name: Check out Lolly at LSHA
@@ -445,7 +445,7 @@ jobs:
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
       MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
-      LOLLY_PROFILE: suse-with-demo
+      LOLLY_PROFILE: suse
       VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
     steps:
       - name: Check out Lolly at LSHA
@@ -581,7 +581,7 @@ jobs:
       WSHA: ${{ needs.gate.outputs.wsha }}
       SSHA: ${{ needs.gate.outputs.ssha }}
       MIN_SEQ: ${{ needs.gate.outputs.min_seq }}
-      LOLLY_PROFILE: suse-with-demo
+      LOLLY_PROFILE: suse
       VITE_CATALOG_PUBLIC_KEY_JWK: ${{ needs.gate.outputs.pin }}
       WORK_SERVER_IMAGE: lolly-ing-work-server:${{ needs.gate.outputs.wsha }}
       INSTANCE_IMAGE: lolly-ing-instance:run-${{ github.run_id }}-${{ github.run_attempt }}
@@ -684,7 +684,7 @@ jobs:
           CUSTODY_SHA256: ${{ needs.sign.outputs.custody_sha256 }}
         run: |
           node "$RUNNER_TEMP/work-app/scripts/build-instance-pack.ts" \
-            --lolly "$GITHUB_WORKSPACE/lolly" --profile suse-with-demo --out "$RUNNER_TEMP/assemble/pack" \
+            --lolly "$GITHUB_WORKSPACE/lolly" --profile suse --out "$RUNNER_TEMP/assemble/pack" \
             --release-root "$RUNNER_TEMP/assemble/shell" \
             --release-custody "$RUNNER_TEMP/custody/release-custody.json" \
             --release-custody-sha256 "$CUSTODY_SHA256" --node "$(command -v node)"
