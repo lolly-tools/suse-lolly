@@ -42,6 +42,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/tokens/brand",
+            "title": "SUSE Brand Design Tokens",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "brandLock": true,
       "added": "2026-07-08"
     },
@@ -65,6 +94,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/palette/brand-core",
+            "title": "SUSE Brand Core Palette",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -91,6 +149,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/hor-neg-green",
+            "title": "SUSE Logo - Horizontal Green (on dark)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -118,6 +205,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/hor-neg-white",
+            "title": "SUSE Logo - Horizontal White (on dark)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -144,6 +260,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/hor-pos-green",
+            "title": "SUSE Logo - Horizontal Green (on light)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -171,6 +316,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/hor-pos-black",
+            "title": "SUSE Logo - Horizontal Black (on light)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -197,6 +371,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/vert-neg-green",
+            "title": "SUSE Logo - Vertical Green (on dark)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -224,6 +427,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/vert-neg-white",
+            "title": "SUSE Logo - Vertical White (on dark)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -250,6 +482,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/vert-pos-green",
+            "title": "SUSE Logo - Vertical Green (on light)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -277,6 +538,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/logo/vert-pos-black",
+            "title": "SUSE Logo - Vertical Black (on light)",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -405,6 +695,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/ai",
+            "title": "AI",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -428,6 +747,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/app-reg",
+            "title": "App Reg",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -451,6 +799,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/app-virt",
+            "title": "App Virt",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -474,6 +851,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/automotive",
+            "title": "Automotive",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -497,6 +903,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/bike",
+            "title": "Bike",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -520,6 +955,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/boat",
+            "title": "Boat",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -543,6 +1007,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/book",
+            "title": "Book",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -566,6 +1059,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/box",
+            "title": "Box",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -589,6 +1111,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/boxes",
+            "title": "Boxes",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -612,6 +1163,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/brain",
+            "title": "Brain",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -635,6 +1215,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/bug",
+            "title": "Bug",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -658,6 +1267,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/butter",
+            "title": "Butter",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -681,6 +1319,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/calendar",
+            "title": "Calendar",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -704,6 +1371,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/can",
+            "title": "Can",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -727,6 +1423,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/canyon",
+            "title": "Canyon",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -750,6 +1475,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/certificate",
+            "title": "Certificate",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -773,6 +1527,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/chart",
+            "title": "Chart",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -796,6 +1579,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/checking",
+            "title": "Checking",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -819,6 +1631,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/chess",
+            "title": "Chess",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -842,6 +1683,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/chilli",
+            "title": "Chilli",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -865,6 +1735,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/choice",
+            "title": "Choice",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -888,6 +1787,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/cloud-computing",
+            "title": "Cloud Computing",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -911,6 +1839,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/collection",
+            "title": "Collection",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -934,6 +1891,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/combined",
+            "title": "Combined",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -957,6 +1943,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/communication-collaboration",
+            "title": "Communication Collaboration",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -980,6 +1995,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/community",
+            "title": "Community",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1003,6 +2047,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/config",
+            "title": "Config",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1026,6 +2099,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/containerlift",
+            "title": "Containerlift",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1049,6 +2151,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/containers",
+            "title": "Containers",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1072,6 +2203,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/controls",
+            "title": "Controls",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1095,6 +2255,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/cost-savings",
+            "title": "Cost Savings",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1118,6 +2307,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/customer-care",
+            "title": "Customer Care",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1141,6 +2359,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/data",
+            "title": "Data",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1164,6 +2411,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/data-center",
+            "title": "Data Center",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1187,6 +2463,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/database",
+            "title": "Database",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1210,6 +2515,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/dev-ops",
+            "title": "DevOps",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1233,6 +2567,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/developer-optimization",
+            "title": "Developer Optimization",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1256,6 +2619,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/development-engineering",
+            "title": "Development Engineering",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1279,6 +2671,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/edge",
+            "title": "Edge",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1302,6 +2723,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/education",
+            "title": "Education",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1325,6 +2775,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/energy",
+            "title": "Energy",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1348,6 +2827,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/error",
+            "title": "Error",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1371,6 +2879,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/exit",
+            "title": "Exit",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1394,6 +2931,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/financial",
+            "title": "Financial",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1417,6 +2983,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/flame",
+            "title": "Flame",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1440,6 +3035,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/globe",
+            "title": "Globe",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1462,6 +3086,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/grid",
+            "title": "Infinity Grid",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1485,6 +3138,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/growth",
+            "title": "Growth",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1508,6 +3190,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/healthcare",
+            "title": "Healthcare",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1531,6 +3242,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/home",
+            "title": "Home",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1554,6 +3294,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/icecream",
+            "title": "Ice Cream",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1577,6 +3346,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/idea-lightbulb",
+            "title": "Idea Lightbulb",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1599,6 +3397,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-1",
+            "title": "Infinity Stream 1",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1621,6 +3448,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-10",
+            "title": "Infinity Stream 10",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1643,6 +3499,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-2",
+            "title": "Infinity Stream 2",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1665,6 +3550,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-3",
+            "title": "Infinity Stream 3",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1687,6 +3601,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-4",
+            "title": "Infinity Stream 4",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1709,6 +3652,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-5",
+            "title": "Infinity Stream 5",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1731,6 +3703,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-6",
+            "title": "Infinity Stream 6",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1753,6 +3754,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-7",
+            "title": "Infinity Stream 7",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1775,6 +3805,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-8",
+            "title": "Infinity Stream 8",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1797,6 +3856,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/infinity-stream-9",
+            "title": "Infinity Stream 9",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1820,6 +3908,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/information",
+            "title": "Information",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1843,6 +3960,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/innovate",
+            "title": "Innovate",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1866,6 +4012,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/innovation",
+            "title": "Innovation",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1889,6 +4064,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/innovation-value",
+            "title": "Innovation Value",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1912,6 +4116,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/jar",
+            "title": "Jar",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1935,6 +4168,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/laptop",
+            "title": "Laptop",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1958,6 +4220,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/liberty",
+            "title": "Liberty",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -1981,6 +4272,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/lightbulb",
+            "title": "Lightbulb",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2004,6 +4324,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/linux",
+            "title": "Linux",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2027,6 +4376,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/magnifying-glass",
+            "title": "Magnifying Glass",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2050,6 +4428,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/manage-and-secure",
+            "title": "Manage And Secure",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2073,6 +4480,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/manufacturing",
+            "title": "Manufacturing",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2096,6 +4532,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/measuring",
+            "title": "Measuring",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2119,6 +4584,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/medal",
+            "title": "Medal",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2142,6 +4636,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/mini-spot-truck",
+            "title": "Mini Spot Truck",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2165,6 +4688,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/mission",
+            "title": "Mission",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2188,6 +4740,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/modernize",
+            "title": "Modernize",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2211,6 +4792,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/monitoring",
+            "title": "Monitoring",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2234,6 +4844,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/network",
+            "title": "Network",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2257,6 +4896,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/observability",
+            "title": "Observability",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2280,6 +4948,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/open-source",
+            "title": "Open Source",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2303,6 +5000,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/operations",
+            "title": "Operations",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2326,6 +5052,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/optimize",
+            "title": "Optimize",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2349,6 +5104,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/partner-handshake",
+            "title": "Partner Handshake",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2372,6 +5156,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/pencil",
+            "title": "Pencil",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2395,6 +5208,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/phone",
+            "title": "Phone",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2418,6 +5260,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/plane",
+            "title": "Plane",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2441,6 +5312,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/planet",
+            "title": "Planet",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2464,6 +5364,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/planet-2",
+            "title": "Planet 2",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2487,6 +5416,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/plant",
+            "title": "Plant",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2510,6 +5468,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/portfolio-offerings-and-programs",
+            "title": "Portfolio Offerings And Programs",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2533,6 +5520,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/premium-support",
+            "title": "Premium Support",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2556,6 +5572,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/regulation",
+            "title": "Regulation",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2579,6 +5624,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/retail",
+            "title": "Retail",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2602,6 +5676,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/run-sap-solutions",
+            "title": "Run SAP Solutions",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2625,6 +5728,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/running-data-flow",
+            "title": "Running Data Flow",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2648,6 +5780,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/safe",
+            "title": "Safe",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2671,6 +5832,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/sales-deals",
+            "title": "Sales Deals",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2694,6 +5884,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/security",
+            "title": "Security",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2717,6 +5936,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/server",
+            "title": "Server",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2740,6 +5988,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/share-love",
+            "title": "Share Love",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2763,6 +6040,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/shield",
+            "title": "Shield",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2786,6 +6092,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/stack-layers",
+            "title": "Stack Layers",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2809,6 +6144,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/succeed-with-hybrid-solutions",
+            "title": "Succeed With Hybrid Solutions",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2832,6 +6196,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/tech-leader",
+            "title": "Tech Leader",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2855,6 +6248,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/tech-software",
+            "title": "Tech Software",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2878,6 +6300,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/telecommunications",
+            "title": "Telecommunications",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2901,6 +6352,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/together",
+            "title": "Together",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2924,6 +6404,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/train",
+            "title": "Train",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2947,6 +6456,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/training-services",
+            "title": "Training Services",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2970,6 +6508,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/transfer",
+            "title": "Transfer",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -2993,6 +6560,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/trust",
+            "title": "Trust",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3016,6 +6612,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/trust-value",
+            "title": "Trust Value",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3039,6 +6664,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/try-buy",
+            "title": "Try Buy",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3062,6 +6716,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/us-federal-government",
+            "title": "US Federal Government",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3085,6 +6768,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/video",
+            "title": "Video",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3108,6 +6820,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/virt-stack",
+            "title": "Virt Stack",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3131,6 +6872,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/vision",
+            "title": "Vision",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3154,6 +6924,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/warning",
+            "title": "Warning",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3177,6 +6976,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/icons/web",
+            "title": "Web",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3199,6 +7027,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/palette/icon-themes",
+            "title": "Icon Duo Themes",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3221,6 +7078,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/palette/photo-treatments",
+            "title": "Photo Colour Treatments",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "added": "2026-07-08"
     },
     {
@@ -3900,7 +7786,36 @@
           "depth": 8
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "lolly/demo/sample-photo",
+            "title": "Sample picture",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lolly/demo/sample-portrait",
@@ -3926,7 +7841,36 @@
           "depth": 8
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "lolly/demo/sample-portrait",
+            "title": "Sample portrait",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lolly/demo/sample-character",
@@ -3950,7 +7894,36 @@
           "size": 11313
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "lolly/demo/sample-character",
+            "title": "Sample character",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lolly/demo/sample-wide",
@@ -3974,7 +7947,36 @@
           "size": 20517
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "lolly/demo/sample-wide",
+            "title": "Sample wide subject",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "lolly/demo/sample-landscape",
@@ -3998,7 +8000,36 @@
           "size": 21849
         }
       ],
-      "license": "LicenseRef-SUSE-Proprietary"
+      "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "lolly/demo/sample-landscape",
+            "title": "Sample landscape subject",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "suse/demo/app-screenshot",
@@ -5300,6 +9331,35 @@
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
+      "rights": {
+        "works": [
+          {
+            "id": "suse/skill/brand",
+            "title": "SUSE brand standards",
+            "creators": [
+              {
+                "name": "DRAFT-OWNER-NOT-APPROVED",
+                "role": "owner"
+              }
+            ],
+            "rights": [
+              {
+                "declaration": "LicenseRef-SUSE-Proprietary",
+                "assertedBy": "catalog",
+                "evidence": "catalog-entry",
+                "status": "unparsed"
+              }
+            ],
+            "grants": [
+              {
+                "kind": "own-work",
+                "scope": "DRAFT TERMS, NOT APPROVED. This placeholder stands until Andy Fitzsimon approves the owner name and the terms. Do not merge.",
+                "asserted": false
+              }
+            ]
+          }
+        ]
+      },
       "meta": {
         "skill": {
           "name": "suse-brand",
