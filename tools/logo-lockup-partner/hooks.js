@@ -4,6 +4,11 @@
  * Lays out a lead logo (the SUSE logo by default) beside one or more partner logos,
  * with a connector (vertical bar / symbol / text) between them. Light or dark theme.
  *
+ * The partner logos are the `partnerLogo` input (the main partner, filled by the
+ * `partnerMark` intent role) followed by the `partners` list. `partnerLogo` adds a
+ * partner ahead of the list and never replaces a list row, so with it empty the
+ * lockup draws exactly what it drew before the input existed.
+ *
  * The lead is the SUSE logo and follows the theme automatically: a SUSE library logo
  * is re-resolved to the on-light / on-dark, colour / mono variant for the chosen
  * theme + treatment (host.assets.get). Drop in your own lead to override; monochrome
@@ -286,6 +291,15 @@ async function compute(model) {
       opacity: 1, presence: inputs.leadPresence, mono: lead.mono, isLead: true, canvasId: 'lead', theme: theme,
     }));
   }
+  // The main partner (partnerLogo) leads the partner group, at the default presence,
+  // treatment and opacity; the list's rows follow with their own settings.
+  var mainPartner = inputs.partnerLogo;
+  if (mainPartner && mainPartner.url) {
+    items.push(makeItem(mainPartner, {
+      opacity: 1, presence: 'normal', filter: 'none',
+      isLead: false, canvasId: 'partnerLogo', theme: theme,
+    }));
+  }
   var partners = Array.isArray(inputs.partners) ? inputs.partners : [];
   partners.forEach(function (b, i) {
     var ref = b && b.logo;
@@ -420,6 +434,8 @@ async function compute(model) {
     connKind: connKind,
     connText: connText,
     connStyle: connStyle,
+    // For the a11yLabel: the partners list's rows plus the main partner when set.
+    partnerCount: partners.length + (mainPartner && mainPartner.url ? 1 : 0),
   };
 }
 

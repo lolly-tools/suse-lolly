@@ -1,7 +1,7 @@
 {
   "name": "Lockup Mitra",
   "description": "Logo SUSE bersanding dengan logo mitra, dengan pembatas di antaranya - terang atau gelap.",
-  "a11yLabel": "Lockup mitra SUSE dengan {{partners.length}} logo mitra",
+  "a11yLabel": "Lockup mitra SUSE dengan {{partnerCount}} logo mitra",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Terang menempatkan logo gelap pada latar belakang terang; gelap membaliknya. Logo SUSE otomatis beralih ke versi artwork on-light / on-dark yang sesuai.",
   "inputs.theme.options.light": "Terang",

@@ -1,7 +1,7 @@
 {
   "name": "Partnerlogooppsett",
   "description": "SUSE-logoen ved siden av en partners, med en skillelinje mellom - lys eller mørk.",
-  "a11yLabel": "SUSE-partnerlockup med {{partners.length}} partnerlogoer",
+  "a11yLabel": "SUSE-partnerlockup med {{partnerCount}} partnerlogoer",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Lys plasserer mørke logoer på en lys bakgrunn; mørk snur dette om. SUSE-logoen bytter automatisk til riktig variant for lys eller mørk bakgrunn.",
   "inputs.theme.options.light": "Lys",

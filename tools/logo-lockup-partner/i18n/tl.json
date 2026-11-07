@@ -1,7 +1,7 @@
 {
   "name": "Partner Lockup",
   "description": "Ang SUSE logo sa tabi ng logo ng partner, may divider sa pagitan - light o dark.",
-  "a11yLabel": "SUSE partner lockup na may {{partners.length}} partner logo",
+  "a11yLabel": "SUSE partner lockup na may {{partnerCount}} partner logo",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Inilalagay ng Maliwanag ang mga madilim na logo sa maliwanag na background; binabaligtad naman ito ng Madilim. Awtomatikong nagpapalit ang logo ng SUSE sa tumutugmang on-light / on-dark na artwork.",
   "inputs.theme.options.light": "Maliwanag",

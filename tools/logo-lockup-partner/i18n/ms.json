@@ -1,7 +1,7 @@
 {
   "name": "Partner Lockup",
   "description": "Logo SUSE bersebelahan logo rakan kongsi, dengan pemisah di antaranya - terang atau gelap.",
-  "a11yLabel": "Gabungan rakan kongsi SUSE dengan {{partners.length}} logo rakan kongsi",
+  "a11yLabel": "Gabungan rakan kongsi SUSE dengan {{partnerCount}} logo rakan kongsi",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Cerah meletakkan logo gelap pada latar belakang cerah; gelap pula membalikkannya. Logo SUSE akan bertukar secara automatik kepada seni grafik on-light / on-dark yang sepadan.",
   "inputs.theme.options.light": "Cerah",

@@ -1,7 +1,7 @@
 {
   "name": "Partner Lockup",
   "description": "SUSE-logotypen bredvid en partners, med en avdelare mellan - ljus eller mörk.",
-  "a11yLabel": "SUSE-partnerkombination med {{partners.length}} partnerlogotyper",
+  "a11yLabel": "SUSE-partnerkombination med {{partnerCount}} partnerlogotyper",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Ljust lägger mörka logotyper på en ljus bakgrund; mörkt vänder på det. SUSE-logotypen växlar automatiskt till matchande grafik för ljust/mörkt.",
   "inputs.theme.options.light": "Ljust",

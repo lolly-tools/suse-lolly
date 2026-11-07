@@ -2,12 +2,12 @@
   "id": "logo-lockup-partner",
   "name": "Partner Lockup",
   "description": "The SUSE logo beside a partner's, with a divider between - light or dark.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "engineVersion": "^1.0.0",
   "status": "official",
   "category": "designer",
   "tags": ["logo", "lockup", "partner", "co-brand", "brand", "suse", "partnership", "sponsor", "powered-by", "on-device"],
-  "a11yLabel": "SUSE partner lockup with {{partners.length}} partner logos",
+  "a11yLabel": "SUSE partner lockup with {{partnerCount}} partner logos",
   "render": {
     "width": 1200,
     "height": 360,
@@ -176,6 +176,14 @@
       "type": "boolean",
       "default": true,
       "help": "Auto-size each logo by its optical weight so the lead and partners read as equally prominent. Each logo's presence still applies on top. Turn off for equal-height logos."
+    },
+    {
+      "id": "partnerLogo",
+      "label": "Main partner logo",
+      "type": "asset",
+      "assetType": "any",
+      "allowUpload": true,
+      "help": "The partner this lockup is made with. Their logo sits first after the connector, ahead of any logos in the Partners list."
     },
     {
       "id": "partners",
