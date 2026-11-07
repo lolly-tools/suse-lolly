@@ -215,7 +215,7 @@ function fakeShell(pin, keyId, { seq = 3, scriptExtra = '', receipt = {} } = {})
   put(root, '_app/other.def.js', 'export const x = 1;');
   put(root, 'catalog/tools/index.json', '{"tools":[]}');
   put(root, 'catalog/tools/index.sig.json', JSON.stringify({ keyId, seq, toolDirs: {}, files: {} }));
-  put(root, 'release-frontend.sig.json', JSON.stringify({ kind: 'lolly-release-frontend', version: 1, source: L, target: 'web', profile: tool.PROFILE,
+  put(root, 'release-frontend.sig.json', JSON.stringify({ kind: 'lolly-release-frontend', version: 1, source: L, target: 'web', profile: 'suse',
     files: { 'index.html': tool.sha256(readFileSync(join(root, 'index.html'))) }, ...receipt }));
   return root;
 }
@@ -285,13 +285,13 @@ describe('shell, custody and pack', () => {
   test('pack facts need a finished release-mode record and no build envelope', () => {
     const pack = dir('pack');
     put(pack, 'catalog/tools/index.json', '{}');
-    put(pack, '.lolly-pack-source.json', JSON.stringify({ version: 2, commit: L, profile: tool.PROFILE, derivation: { kind: 'verified-signed-release' } }));
+    put(pack, '.lolly-pack-source.json', JSON.stringify({ version: 2, commit: L, profile: 'suse', derivation: { kind: 'verified-signed-release' } }));
     assert.equal(tool.packFacts(pack, L).files, 2);
     put(pack, 'catalog/tools/index.sig.json', '{}');
     assert.throws(() => tool.packFacts(pack, L), /build envelope/);
     const sourceMode = dir('pack');
     put(sourceMode, 'catalog/tools/index.json', '{}');
-    put(sourceMode, '.lolly-pack-source.json', JSON.stringify({ version: 1, commit: L, profile: tool.PROFILE }));
+    put(sourceMode, '.lolly-pack-source.json', JSON.stringify({ version: 1, commit: L, profile: 'suse' }));
     assert.throws(() => tool.packFacts(sourceMode, L), /release mode/);
   });
   test('link-identical stores each identical file once, keeping the first root\'s inode and metadata', () => {
