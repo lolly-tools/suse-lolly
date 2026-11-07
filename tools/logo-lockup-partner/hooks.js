@@ -24,7 +24,9 @@
  * (the SUSE mono lead avoids this by swapping to real one-colour artwork).
  *
  * Pixel work (content trim, weight) needs a browser canvas; a headless shell keeps the
- * original artwork and equal heights.
+ * original artwork and equal heights. A logo whose pixels cannot be read still counts at
+ * its stated proportions (asset record, or an inline SVG's size or viewBox) when the
+ * lockup is fitted to the artboard.
  */
 
 // ── caches (per source url) ──────────────────────────────────────────────────
@@ -202,6 +204,32 @@ function pruneCaches(activeUrls) {
   Object.keys(_cropCache).forEach(function (u) { if (!keep[u]) delete _cropCache[u]; });
 }
 
+// The proportions a logo states for itself, for when its pixels cannot be read. A
+// decode can refuse a logo: the raster bridge upsamples a vector and its pixel guard
+// turns down a large one (a composed wordmark, for one). Read from the asset record's
+// width and height, else from an inline SVG's root: absolute width and height first,
+// as an <img> sizes by those, then the viewBox. 0 when the logo states nothing.
+function declaredAspect(ref) {
+  var w = ref ? Number(ref.width) : 0, h = ref ? Number(ref.height) : 0;
+  if (w > 0 && h > 0) return w / h;
+  var url = ref && typeof ref.url === 'string' ? ref.url : '';
+  var head = /^data:image\/svg\+xml(;[^,]*)?,/i.exec(url);
+  if (!head) return 0;
+  var text;
+  try {
+    var body = url.slice(head[0].length);
+    text = /;base64/i.test(head[1] || '') ? atob(body) : decodeURIComponent(body);
+  } catch (e) { return 0; }
+  var root = /<svg\b[^>]*>/i.exec(text);
+  if (!root) return 0;
+  var aw = /\swidth\s*=\s*["']\s*([\d.]+)\s*(?:px)?\s*["']/i.exec(root[0]);
+  var ah = /\sheight\s*=\s*["']\s*([\d.]+)\s*(?:px)?\s*["']/i.exec(root[0]);
+  if (aw && ah && Number(aw[1]) > 0 && Number(ah[1]) > 0) return Number(aw[1]) / Number(ah[1]);
+  var vb = /\sviewBox\s*=\s*["']\s*[-\d.eE+]+[\s,]+[-\d.eE+]+[\s,]+([\d.eE+]+)[\s,]+([\d.eE+]+)/i.exec(root[0]);
+  if (vb && Number(vb[1]) > 0 && Number(vb[2]) > 0) return Number(vb[1]) / Number(vb[2]);
+  return 0;
+}
+
 // ── lead (SUSE) variant resolution ───────────────────────────────────────────
 // The SUSE library logos come in horizontal/vertical × on-light/on-dark × colour/mono
 // variants. Map the chosen orientation + theme + treatment to the right id. Orientation
@@ -264,6 +292,8 @@ function makeItem(ref, opts) {
     isLead: !!opts.isLead,
     canvasId: opts.canvasId,
     aspect: 1,    // content width / height - measured below, drives fit-to-width
+    measured: false,               // true once the pixels were read and aspect is real
+    declared: declaredAspect(ref), // the logo's own stated proportions (0 = unknown)
     box: null,    // content box + optical weight
     h: 0,
   };
@@ -320,6 +350,7 @@ async function compute(model) {
       if (!img) return;
       var box = measureContent(it.url, img);
       it.box = box;
+      it.measured = true;
       var nw = img.naturalWidth || img.width, nh = img.naturalHeight || img.height;
       // Aspect must match how the element actually lays out: a raster <img> renders the
       // TRIMMED crop (content aspect), an SVG <img> renders its FULL viewBox (intrinsic
@@ -380,6 +411,15 @@ async function compute(model) {
   var tallest = items.reduce(function (m, it) { return Math.max(m, it.h * fit); }, 0);
   if (tallest > AVAIL_H) fit *= AVAIL_H / tallest;          // also cap height
   fit = clamp(fit, 0.04, 1);
+  // The pass above counts a logo whose pixels could not be read as square, and a wordmark
+  // is far wider than square, so the row ran past the artboard. Recount the row with each
+  // such logo's stated proportions and, only when that row is wider than the artboard at
+  // this fit, shrink to fit. A row that fits keeps the sizes the pass above gave it.
+  var realLogosW = items.reduce(function (s, it) {
+    return s + it.h * (it.measured ? (it.aspect || 1) : (it.declared || it.aspect || 1));
+  }, 0);
+  var realRawW = realLogosW + connWEst + dividerCount * 2 + Math.max(0, elemCount - 1) * gap;
+  if (realRawW * fit > AVAIL_W + 0.5) fit = clamp(AVAIL_W / realRawW, 0.04, 1);
   items.forEach(function (it) { it.h = Math.round(clamp(it.h * fit, 8, AVAIL_H)); });
   var gapPx = Math.round(gap * fit);                        // gaps shrink with the lockup
 
