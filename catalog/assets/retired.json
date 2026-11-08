@@ -1,0 +1,166 @@
+{
+  "version": "1",
+  "description": "Asset ids removed from this catalog. An asset id is a permanent contract: an id listed here is never given to another asset. A saved document that names one still opens, with that picture left blank.",
+  "retired": [
+    {
+      "id": "suse/lottie/bar-sweep",
+      "type": "lottie",
+      "name": "Bar Sweep",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/check-success",
+      "type": "lottie",
+      "name": "Check Success",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/contour-breathe",
+      "type": "lottie",
+      "name": "Contour Breathe",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/cross-error",
+      "type": "lottie",
+      "name": "Cross Error",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/cube-draw",
+      "type": "lottie",
+      "name": "Cube Draw",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/draw-square",
+      "type": "lottie",
+      "name": "Draw Square",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/grid-wave",
+      "type": "lottie",
+      "name": "Grid Wave",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/heartbeat-line",
+      "type": "lottie",
+      "name": "Heartbeat Line",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/hex-draw",
+      "type": "lottie",
+      "name": "Hex Draw",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/line-sweep",
+      "type": "lottie",
+      "name": "Line Sweep",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/loader-dots",
+      "type": "lottie",
+      "name": "Loader Dots",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/orbit-dot",
+      "type": "lottie",
+      "name": "Orbit Dot",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/progress-ring",
+      "type": "lottie",
+      "name": "Progress Ring",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/pulse-dot",
+      "type": "lottie",
+      "name": "Pulse Dot",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/pulse-rings",
+      "type": "lottie",
+      "name": "Pulse Rings",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/radar-sweep",
+      "type": "lottie",
+      "name": "Radar Sweep",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/rotating-squares",
+      "type": "lottie",
+      "name": "Rotating Squares",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/sparkle",
+      "type": "lottie",
+      "name": "Sparkle",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/spinner-ring",
+      "type": "lottie",
+      "name": "Spinner Ring",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    },
+    {
+      "id": "suse/lottie/wave-equalizer",
+      "type": "lottie",
+      "name": "Wave Equalizer",
+      "added": "2026-07-08",
+      "retired": "2026-11-07",
+      "reason": "A tech demo made to support the Lottie format, removed by Andy Fitzsimon's decision."
+    }
+  ]
+}
