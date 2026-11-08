@@ -1,7 +1,7 @@
 {
   "name": "パートナーロックアップ",
   "description": "SUSEロゴとパートナーのロゴを並べ、間に区切り線を配置 - ライトまたはダーク。",
-  "a11yLabel": "パートナーロゴ{{partners.length}}点を含むSUSEパートナーロゴの組み合わせ",
+  "a11yLabel": "パートナーロゴ{{partnerCount}}点を含むSUSEパートナーロゴの組み合わせ",
   "inputs.theme.label": "テーマ",
   "inputs.theme.help": "ライトでは明るい背景に暗い色のロゴを配置し、ダークではその逆になります。SUSEのロゴは、テーマに合わせてオンライト/オンダーク用のアートワークに自動的に切り替わります。",
   "inputs.theme.options.light": "ライト",

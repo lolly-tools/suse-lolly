@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "purpose": "identify",
+      "needs": [
+        "firstname"
+      ],
+      "set": {
+        "url": ""
+      }
+    }
+  ]
+}

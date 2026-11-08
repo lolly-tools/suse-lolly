@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "purpose": "identify",
+      "needs": [
+        "partnerMark"
+      ],
+      "roles": {
+        "partnerMark": "partnerLogo"
+      },
+      "set": {
+        "lead": "suse/logo/hor-pos-green"
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-07T14:52:20.599Z",
+  "generatedAt": "2026-11-08T00:27:36.486Z",
   "tools": [
     {
       "id": "color-block",
@@ -3907,7 +3907,7 @@
       "id": "logo-lockup-partner",
       "name": "Partner Lockup",
       "description": "The SUSE logo beside a partner's, with a divider between - light or dark.",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "status": "official",
       "category": "designer",
       "tags": [

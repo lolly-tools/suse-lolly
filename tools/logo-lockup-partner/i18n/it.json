@@ -1,7 +1,7 @@
 {
   "name": "Lockup partner",
   "description": "Il logo SUSE accanto a quello di un partner, con un divisore tra i due - chiaro o scuro.",
-  "a11yLabel": "Logo combinato SUSE con {{partners.length}} loghi partner",
+  "a11yLabel": "Logo combinato SUSE con {{partnerCount}} loghi partner",
   "inputs.theme.label": "Tema",
   "inputs.theme.help": "Chiaro mette i loghi scuri su uno sfondo chiaro; scuro fa l'inverso. Il logo SUSE passa automaticamente alla grafica corrispondente per sfondo chiaro o scuro.",
   "inputs.theme.options.light": "Chiaro",
