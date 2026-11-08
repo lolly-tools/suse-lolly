@@ -44,7 +44,7 @@ export const RELEASE_PUBLIC = {
 };
 export const REPOS = { lolly: 'lolly-tools/lolly', work: 'lolly-tools/lolly-work', suse: 'lolly-tools/suse-lolly' };
 export const CI_WORKFLOW = '.github/workflows/ci.yml';
-export const PROFILE = 'suse';
+export const PROFILE = 'suse-with-demo';
 export const SITE = { name: 'lolly.ing', baseUrl: 'https://lolly.ing', pack: '/app/packs/lolly-ing', shellDir: '/app/shell' };
 // Work's bound on a shell release and on the release-mode pack producer.
 export const MAX_RELEASE_FILES = 130_000;
@@ -337,7 +337,7 @@ export function treeManifest(root) {
 /**
  * Inputs for Work's release-mode pack producer (docs/instance-pack-production.md):
  * the complete manifest, the public pin and the custody record that binds them
- * to LSHA, the suse profile and Lolly's committed verifier. Deterministic, so
+ * to LSHA, the content profile and Lolly's committed verifier. Deterministic, so
  * the image job can recompute it and compare the hash with the signing job's.
  */
 export function writeCustody({ root, lolly, lsha, pin, outDir }) {
@@ -417,7 +417,7 @@ export function packFacts(root, lsha) {
   const recordBytes = readFileSync(join(root, '.lolly-pack-source.json'));
   const record = JSON.parse(recordBytes.toString('utf8'));
   need(record.version === 2 && record.incomplete !== true && record.commit === lsha && record.profile === PROFILE
-    && record.derivation?.kind === 'verified-signed-release', 'the pack was not produced in release mode from LSHA and the suse profile');
+    && record.derivation?.kind === 'verified-signed-release', `the pack was not produced in release mode from LSHA and the ${PROFILE} profile`);
   need(!existsSync(join(root, 'catalog/tools/index.sig.json')), 'the pack carries a build envelope; Work signs per caller');
   need(existsSync(join(root, 'catalog/tools/index.json')), 'the pack has no tool index');
   return {
