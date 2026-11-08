@@ -1,5 +1,5 @@
 {
-  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained. Since 2026-10-29 (plans/319 A9, Andy) their primary, on-primary and secondary link to `color.colourway.<look>.*`, held by three colourways: Jungle (canonical), Persimmon and Waterhole. White is the light ground, Pine the dark ground, and Jungle the primary in both looks, so the light primary is no longer Pine and no longer matches the static tokens.css fallback. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
+  "$description": "SUSE brand colour tokens. color/font under `base` are generated from shells/web/src/palette.ts by scripts/build-brand-tokens.ts (DO NOT hand-edit those) - NOTE: that generator is currently STALE, it now reads the unrelated neutral-starter palette, so do not re-run it against this file until it is repointed at the real SUSE swatches. `light`/`dark` color.semantic.* were added by hand (2026-07-09) to satisfy the brand token contract (plans/brand-token-contract.md) and are hand-maintained. Since 2026-10-29 (plans/319 A9, Andy) their primary, on-primary and secondary link to `color.colourway.<look>.*`, held by four colourways: Jungle (canonical), Persimmon, Waterhole and EU policy. EU policy (Andy, 2026-11-08) is the colourway most used for public sector communications in Europe: Midnight leads with white on it, Mint supports, on White with Black text, and in the dark look Mint leads on a Midnight ground with Fog in support; green appears only in the logo. White is the light ground, Pine the dark ground, and Jungle the primary in both looks, so the light primary is no longer Pine and no longer matches the static tokens.css fallback. HAND-AUTHORED $extensions (2026-08-24): core colours carry `pantone` spot references, and the four background colours (pine/jungle/white/fog) carry `combinations` - the brand-approved foreground token names for text vs graphic use (graphics-only pairings appear in `graphic` but not `text`). These and the spectrum usage notes must survive any future regeneration.",
   "$metadata": {
     "tokenSetOrder": [
       "base",
@@ -7,7 +7,8 @@
       "dark",
       "colourway/jungle",
       "colourway/persimmon",
-      "colourway/waterhole"
+      "colourway/waterhole",
+      "colourway/eu-policy"
     ]
   },
   "$themes": [
@@ -76,6 +77,21 @@
       "group": "colourway",
       "selectedTokenSets": {
         "colourway/waterhole": "enabled"
+      },
+      "$extensions": {
+        "com.suse.lolly": {
+          "axis": {
+            "kind": "colourway"
+          }
+        }
+      }
+    },
+    {
+      "id": "eu-policy",
+      "name": "EU policy",
+      "group": "colourway",
+      "selectedTokenSets": {
+        "colourway/eu-policy": "enabled"
       },
       "$extensions": {
         "com.suse.lolly": {
@@ -1448,6 +1464,113 @@
           }
         },
         "$type": "color"
+      }
+    }
+  },
+  "colourway/eu-policy": {
+    "color": {
+      "$type": "color",
+      "colourway": {
+        "light": {
+          "primary": {
+            "$value": "{color.brand.midnight}"
+          },
+          "on-primary": {
+            "$value": "{color.brand.white}"
+          },
+          "secondary": {
+            "$value": "{color.brand.mint}"
+          },
+          "surface": {
+            "$value": "{color.brand.white}"
+          },
+          "on-secondary": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "on-surface": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.black}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.mint}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          }
+        },
+        "dark": {
+          "primary": {
+            "$value": "{color.brand.mint}"
+          },
+          "on-primary": {
+            "$value": "{color.brand.midnight}"
+          },
+          "secondary": {
+            "$value": "{color.brand.fog}"
+          },
+          "surface": {
+            "$value": "{color.brand.midnight}"
+          },
+          "on-secondary": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "on-surface": {
+            "$value": "oklch(100% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          },
+          "text": {
+            "$value": "{color.brand.white}"
+          },
+          "warm-accent": {
+            "$value": "{color.brand.mint}"
+          },
+          "on-warm-accent": {
+            "$value": "oklch(0% 0 0)",
+            "$extensions": {
+              "com.suse.lolly": {
+                "colourRole": {
+                  "derived": true
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
