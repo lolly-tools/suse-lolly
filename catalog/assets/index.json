@@ -37,8 +37,8 @@
         {
           "format": "json",
           "url": "/catalog/assets/suse/tokens/brand.json",
-          "checksum": "sha256-dD1foip8YJW6rZl7Uqa1KfNHdnsynDa+r96deI27AIE=",
-          "size": 43044
+          "checksum": "sha256-VPQr7Q8EEmwADY2cylHESBJZ48tcuWgHOK/+6Wkwv3k=",
+          "size": 46349
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",
@@ -6903,108 +6903,6 @@
       "added": "2026-07-08"
     },
     {
-      "id": "suse/palette/icon-themes",
-      "name": "Icon Duo Themes",
-      "description": "Colour pairings for themable two-colour icons (c1 accent / c2 base).",
-      "type": "palette",
-      "version": "1.0.0",
-      "tier": "on-demand",
-      "tags": [
-        "palette",
-        "icon-themes"
-      ],
-      "formats": [
-        {
-          "format": "json",
-          "url": "/catalog/assets/suse/palette/icon-themes.json",
-          "checksum": "sha256-IHYMqPkaTbJB8VFdkql9S9TJEpWUSk8HCO3wVOySqQw=",
-          "size": 1273
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary",
-      "rights": {
-        "works": [
-          {
-            "id": "suse/palette/icon-themes",
-            "title": "Icon Duo Themes",
-            "creators": [
-              {
-                "name": "SUSE",
-                "role": "owner"
-              }
-            ],
-            "rights": [
-              {
-                "declaration": "LicenseRef-SUSE-Proprietary",
-                "assertedBy": "catalog",
-                "evidence": "catalog-entry",
-                "status": "unparsed"
-              }
-            ],
-            "grants": [
-              {
-                "kind": "own-work",
-                "scope": "SUSE's logos, icons and other brand files belong to SUSE. They are not under an open licence. You may use these files as supplied, or in the colours the SUSE design system offers, to refer to SUSE, its products and your work with SUSE. For any other use, ask your SUSE contact.",
-                "asserted": true
-              }
-            ]
-          }
-        ]
-      },
-      "added": "2026-07-08"
-    },
-    {
-      "id": "suse/palette/photo-treatments",
-      "name": "Photo Colour Treatments",
-      "description": "Colour treatments for photo assets: greyscale + soft duotone washes.",
-      "type": "palette",
-      "version": "1.1.0",
-      "tier": "on-demand",
-      "tags": [
-        "palette",
-        "photo-treatments"
-      ],
-      "formats": [
-        {
-          "format": "json",
-          "url": "/catalog/assets/suse/palette/photo-treatments.json",
-          "checksum": "sha256-5rGnpYaxVr/uUw+1M7kcZ8tFElC2tERofVkHp7/diwM=",
-          "size": 1784
-        }
-      ],
-      "license": "LicenseRef-SUSE-Proprietary",
-      "rights": {
-        "works": [
-          {
-            "id": "suse/palette/photo-treatments",
-            "title": "Photo Colour Treatments",
-            "creators": [
-              {
-                "name": "SUSE",
-                "role": "owner"
-              }
-            ],
-            "rights": [
-              {
-                "declaration": "LicenseRef-SUSE-Proprietary",
-                "assertedBy": "catalog",
-                "evidence": "catalog-entry",
-                "status": "unparsed"
-              }
-            ],
-            "grants": [
-              {
-                "kind": "own-work",
-                "scope": "SUSE's logos, icons and other brand files belong to SUSE. They are not under an open licence. You may use these files as supplied, or in the colours the SUSE design system offers, to refer to SUSE, its products and your work with SUSE. For any other use, ask your SUSE contact.",
-                "asserted": true
-              }
-            ]
-          }
-        ]
-      },
-      "added": "2026-07-08"
-    },
-    {
       "id": "lolly/demo/lolly-spin",
       "name": "Lolly Spin (animated)",
       "description": "The Lolly swirl as a self-contained animated SVG - three nested spirals rotating at a calm 9/18/27s cadence (the mark's own motion, slowed for comfort) with a slow hue drift on a brand-tinted gradient, calmed under prefers-reduced-motion. The swirl and the background inherit the active brand's colours when placed live, and it makes a handy default subject for testing filters, grading and animation. A removable example - delete it any time.",
@@ -9914,8 +9812,8 @@
         {
           "format": "md",
           "url": "/catalog/assets/suse/skills/iconography/SKILL.md",
-          "checksum": "sha256-HIeFXD9v7WXWqnyPnpQJCCr7+8Y61iPJGQCBFDT/SQA=",
-          "size": 15329
+          "checksum": "sha256-l3JXEhck4D9DCjgJuS2bU131YAAYULgUAyFLDqjE1Nk=",
+          "size": 15485
         }
       ],
       "license": "LicenseRef-SUSE-Proprietary",

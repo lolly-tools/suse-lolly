@@ -4,7 +4,7 @@ Version 1.1, 29 September 2026. A working specification inferred from the stored
 
 ## Authority and scope
 
-Use the actual vectors in the `suse/icons/` asset family as the primary geometry reference. Use the [icon themes](suse/palette/icon-themes) for the two color roles, and the SUSE brand standards (`suse-brand`) and production notes (`suse-production-notes`) for wider brand guidance. The supplied guideline screenshots are supporting explanations. Their orange annotation circles are not artwork and must never be reproduced as decoration.
+Use the actual vectors in the `suse/icons/` asset family as the primary geometry reference. Use the colourways in the SUSE design system (`suse/tokens/brand`) for the two color roles, and the SUSE brand standards (`suse-brand`) and production notes (`suse-production-notes`) for wider brand guidance. The supplied guideline screenshots are supporting explanations. Their orange annotation circles are not artwork and must never be reproduced as decoration.
 
 The baseline inspected before the approved additions contained 122 SVGs: 112 square icon compositions and 10 wide `infinity-stream-*` patterns. The patterns are outside this specification's pictorial scope. Of the square compositions, 91 use `viewBox="0 0 40 40"`; the others use different coordinate scales. Compare those at equivalent rendered size before measuring line weight. Across all 122 files, 22 contain exactly two paths, the median is four paths and the range is two to nineteen. Two paths is an economical delivery target, not the historical definition of the style.
 
@@ -86,7 +86,7 @@ Use exactly two opaque foreground paints per new icon. The default catalog pairi
 
 Allocate colors to meaningful geometry, not alternating segments or arbitrary left/right halves. The accent can carry a large component, such as the cloud in `cloud-computing`; no fixed area ratio is supported by the set. Both roles must remain visibly present at 40 px.
 
-Keep the roles stable under recoloring. Use the complete pair from `icon-themes.json` rather than independently choosing two attractive swatches. The default review colors are Jungle and Pine; Waterhole uses `#2453ff` / `#192072`; Paper uses `#ffffff` / `#efefef` on Pine. Other stored themes are available when their intended background is suitable. A theme's existence does not guarantee visibility on every surface.
+Keep the roles stable under recoloring. Use a complete pair the design system's colourways give rather than independently choosing two attractive swatches: Lolly offers one pairing per colourway (Jungle `#30ba78` / `#0c322c`, Persimmon `#fe7c3f` / `#0c322c`, Waterhole `#81aefc` / `#2453ff`, EU policy `#90ebcd` / `#192072`), and each colourway has a second pairing for dark grounds and photography (Jungle's is Mint `#90ebcd` on Jungle). The default review colors are Jungle and Pine. A pairing's existence does not guarantee visibility on every surface.
 
 Transparency is empty space, not a third paint. White or Fog patches, opacity tricks, blend modes, gradient transitions and bitmap fragments violate this new-work contract. Do not count antialiased edge pixels as authored additional colors.
 
