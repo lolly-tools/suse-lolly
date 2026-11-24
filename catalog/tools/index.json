@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-22T12:38:32.033Z",
+  "generatedAt": "2026-11-24T02:28:18.075Z",
   "tools": [
     {
       "id": "color-block",
@@ -16212,7 +16212,7 @@
       "id": "susecon-background",
       "name": "SUSECON Background",
       "description": "Living SUSECON 2027 backgrounds: the glass orb with its hairline ribbon, the fibre orb, the cloud dome and the horizon bowl, lit in SUSE colours. Chain looks into scenes that morph or wipe from one to the next, and export stills or loops without a visible join. Orb design by Zvezdana Marjanovic.",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "status": "official",
       "category": "everyone",
       "tags": [
