@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-24T02:28:18.075Z",
+  "generatedAt": "2026-11-26T18:00:56.719Z",
   "tools": [
     {
       "id": "color-block",
@@ -632,7 +632,7 @@
       "id": "qr-code",
       "name": "QR Code",
       "description": "Scannable codes of every kind: QR, Micro QR, Data Matrix, Aztec and PDF417 - plus retail and logistics barcodes from EAN-13 to MaxiCode.",
-      "version": "2.8.0",
+      "version": "2.9.0",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -643,6 +643,8 @@
         "vcard",
         "wifi",
         "barcode",
+        "scan",
+        "reader",
         "gs1",
         "datamatrix",
         "shipping",
@@ -4508,13 +4510,16 @@
       "id": "voice-recorder",
       "name": "Voice Recorder",
       "description": "Record a voice note with a live level meter and gentle coaching, then save it as MP3.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "status": "experimental",
       "category": "utility",
       "capabilities": [
         "microphone"
       ],
+      "listed": false,
       "galleryArt": "icon",
+      "deprecated": true,
+      "replacedBy": "audiogram",
       "tags": [
         "audio",
         "voice",
@@ -4542,140 +4547,110 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 10a7 7 0 0 0 14 0\"/><line x1=\"12\" y1=\"19\" x2=\"12\" y2=\"22\"/><line x1=\"8\" y1=\"22\" x2=\"16\" y2=\"22\"/></svg>",
       "preview": "/catalog/previews/voice-recorder.svg",
-      "featured": {
-        "order": 7,
-        "blurb": "Record a clean voice note with live level coaching"
-      },
       "i18n": {
         "ar": {
           "name": "مسجل الصوت",
-          "description": "سجل ملاحظة صوتية مع مقياس مستوى مباشر وإرشادات لطيفة، ثم احفظها بصيغة MP3.",
-          "blurb": "سجل ملاحظة صوتية نقية مع إرشاد مباشر للمستوى"
+          "description": "سجل ملاحظة صوتية مع مقياس مستوى مباشر وإرشادات لطيفة، ثم احفظها بصيغة MP3."
         },
         "bg": {
           "name": "Диктофон",
-          "description": "Запиши гласова бележка с индикатор на нивото на живо и ненатрапчиви насоки, а после я запази като MP3.",
-          "blurb": "Запиши чиста гласова бележка с насоки за нивото на живо"
+          "description": "Запиши гласова бележка с индикатор на нивото на живо и ненатрапчиви насоки, а после я запази като MP3."
         },
         "bn": {
           "name": "ভয়েস রেকর্ডার",
-          "description": "লাইভ লেভেল মিটার ও হালকা কোচিং সহ একটি ভয়েস নোট রেকর্ড করুন, তারপর MP3 হিসেবে সংরক্ষণ করুন।",
-          "blurb": "লাইভ লেভেল কোচিং সহ একটি পরিষ্কার ভয়েস নোট রেকর্ড করুন"
+          "description": "লাইভ লেভেল মিটার ও হালকা কোচিং সহ একটি ভয়েস নোট রেকর্ড করুন, তারপর MP3 হিসেবে সংরক্ষণ করুন।"
         },
         "cs": {
           "name": "Hlasový záznamník",
-          "description": "Nahraj hlasovou poznámku s živým ukazatelem hlasitosti a jemným koučováním, pak ji ulož jako MP3.",
-          "blurb": "Nahraj čistou hlasovou poznámku s živým vedením hlasitosti"
+          "description": "Nahraj hlasovou poznámku s živým ukazatelem hlasitosti a jemným koučováním, pak ji ulož jako MP3."
         },
         "de": {
           "name": "Sprachrekorder",
-          "description": "Nehmen Sie eine Sprachnotiz mit Live-Pegelanzeige und sanfter Anleitung auf und speichern Sie sie als MP3.",
-          "blurb": "Nehmen Sie eine saubere Sprachnotiz mit Live-Pegel-Coaching auf"
+          "description": "Nehmen Sie eine Sprachnotiz mit Live-Pegelanzeige und sanfter Anleitung auf und speichern Sie sie als MP3."
         },
         "es": {
           "name": "Grabadora de voz",
-          "description": "Graba una nota de voz con un medidor de nivel en vivo y una guía sutil, y guárdala como MP3.",
-          "blurb": "Graba una nota de voz nítida con guía de nivel en vivo"
+          "description": "Graba una nota de voz con un medidor de nivel en vivo y una guía sutil, y guárdala como MP3."
         },
         "fr": {
           "name": "Enregistreur vocal",
-          "description": "Enregistre une note vocale avec un indicateur de niveau en direct et des conseils en douceur, puis enregistre-la en MP3.",
-          "blurb": "Enregistre une note vocale nette avec un accompagnement de niveau en direct"
+          "description": "Enregistre une note vocale avec un indicateur de niveau en direct et des conseils en douceur, puis enregistre-la en MP3."
         },
         "hi": {
           "name": "वॉइस रिकॉर्डर",
-          "description": "लाइव लेवल मीटर और हल्की-फुल्की कोचिंग के साथ वॉइस नोट रिकॉर्ड करें, फिर उसे MP3 के रूप में सेव करें।",
-          "blurb": "लाइव लेवल कोचिंग के साथ साफ़ वॉइस नोट रिकॉर्ड करें"
+          "description": "लाइव लेवल मीटर और हल्की-फुल्की कोचिंग के साथ वॉइस नोट रिकॉर्ड करें, फिर उसे MP3 के रूप में सेव करें।"
         },
         "id": {
           "name": "Perekam Suara",
-          "description": "Rekam catatan suara dengan meteran level langsung dan panduan lembut, lalu simpan sebagai MP3.",
-          "blurb": "Rekam catatan suara yang jernih dengan panduan level langsung"
+          "description": "Rekam catatan suara dengan meteran level langsung dan panduan lembut, lalu simpan sebagai MP3."
         },
         "it": {
           "name": "Registratore vocale",
-          "description": "Registra una nota vocale con un misuratore di livello dal vivo e una guida discreta, poi salvala come MP3.",
-          "blurb": "Registra una nota vocale pulita con guida di livello in tempo reale"
+          "description": "Registra una nota vocale con un misuratore di livello dal vivo e una guida discreta, poi salvala come MP3."
         },
         "ja": {
           "name": "ボイスレコーダー",
-          "description": "リアルタイムのレベルメーターとやさしいコーチングを使ってボイスメモを録音し、MP3として保存できます。",
-          "blurb": "リアルタイムのレベルコーチングでクリアなボイスメモを録音できます。"
+          "description": "リアルタイムのレベルメーターとやさしいコーチングを使ってボイスメモを録音し、MP3として保存できます。"
         },
         "ko": {
           "name": "음성 녹음기",
-          "description": "실시간 레벨 미터와 부드러운 코칭으로 음성 메모를 녹음하고 MP3로 저장하세요.",
-          "blurb": "실시간 레벨 코칭으로 깔끔한 음성 메모를 녹음해요"
+          "description": "실시간 레벨 미터와 부드러운 코칭으로 음성 메모를 녹음하고 MP3로 저장하세요."
         },
         "ms": {
           "name": "Perakam Suara",
-          "description": "Rakam nota suara dengan meter aras langsung dan bimbingan lembut, kemudian simpan sebagai MP3.",
-          "blurb": "Rakam nota suara yang jernih dengan bimbingan aras langsung"
+          "description": "Rakam nota suara dengan meter aras langsung dan bimbingan lembut, kemudian simpan sebagai MP3."
         },
         "nl": {
           "name": "Spraakrecorder",
-          "description": "Neem een spraakbericht op met een live niveaumeter en zachte begeleiding, en sla het op als MP3.",
-          "blurb": "Neem een heldere spraakopname op met live niveaubegeleiding"
+          "description": "Neem een spraakbericht op met een live niveaumeter en zachte begeleiding, en sla het op als MP3."
         },
         "no": {
           "name": "Stemmeopptaker",
-          "description": "Spill inn en talemelding med nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3.",
-          "blurb": "Spill inn en ren talemelding med nivåveiledning i sanntid"
+          "description": "Spill inn en talemelding med nivåmåler i sanntid og skånsom veiledning, og lagre den som MP3."
         },
         "pl": {
           "name": "Nagrywanie głosu",
-          "description": "Nagraj notatkę głosową z licznikiem poziomu na żywo i delikatnymi wskazówkami, a następnie zapisz jako MP3.",
-          "blurb": "Nagraj czystą notatkę głosową z pomocą wskaźnika poziomu na żywo"
+          "description": "Nagraj notatkę głosową z licznikiem poziomu na żywo i delikatnymi wskazówkami, a następnie zapisz jako MP3."
         },
         "pt": {
           "name": "Gravador de Voz",
-          "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3.",
-          "blurb": "Grave uma nota de voz limpa com orientação de nível ao vivo"
+          "description": "Grave uma nota de voz com um medidor de nível ao vivo e dicas gentis, depois salve como MP3."
         },
         "ro": {
           "name": "Înregistrator vocal",
-          "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salveaz-o ca MP3.",
-          "blurb": "Înregistrează o notă vocală clară, cu îndrumare live a nivelului"
+          "description": "Înregistrează o notă vocală cu un indicator de nivel live și îndrumări blânde, apoi salveaz-o ca MP3."
         },
         "sv": {
           "name": "Röstinspelare",
-          "description": "Spela in ett röstmeddelande med en nivåmätare i realtid och mjuk vägledning, spara sedan som MP3.",
-          "blurb": "Spela in ett rent röstmeddelande med nivåvägledning i realtid"
+          "description": "Spela in ett röstmeddelande med en nivåmätare i realtid och mjuk vägledning, spara sedan som MP3."
         },
         "tl": {
           "name": "Recorder ng Boses",
-          "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3.",
-          "blurb": "Mag-record ng malinis na voice note na may live na level coaching"
+          "description": "Mag-record ng voice note na may live na level meter at magiliw na coaching, tapos i-save bilang MP3."
         },
         "tr": {
           "name": "Ses Kaydedici",
-          "description": "Canlı seviye göstergesi ve yumuşak yönlendirmelerle bir ses notunu kayda al, ardından MP3 olarak kaydet.",
-          "blurb": "Canlı seviye rehberliğiyle temiz bir sesli not kaydet"
+          "description": "Canlı seviye göstergesi ve yumuşak yönlendirmelerle bir ses notunu kayda al, ardından MP3 olarak kaydet."
         },
         "uk": {
           "name": "Диктофон",
-          "description": "Запишіть голосову нотатку з індикатором рівня в реальному часі та м'якими підказками, потім збережіть як MP3.",
-          "blurb": "Записуйте чисту голосову нотатку з підказками рівня в реальному часі."
+          "description": "Запишіть голосову нотатку з індикатором рівня в реальному часі та м'якими підказками, потім збережіть як MP3."
         },
         "ur": {
           "name": "وائس ریکارڈر",
-          "description": "لائیو لیول میٹر اور نرم رہنمائی کے ساتھ ایک وائس نوٹ ریکارڈ کریں، پھر اسے MP3 کے طور پر محفوظ کریں۔",
-          "blurb": "لائیو لیول کوچنگ کے ساتھ صاف وائس نوٹ ریکارڈ کریں"
+          "description": "لائیو لیول میٹر اور نرم رہنمائی کے ساتھ ایک وائس نوٹ ریکارڈ کریں، پھر اسے MP3 کے طور پر محفوظ کریں۔"
         },
         "vi": {
           "name": "Ghi Âm Giọng Nói",
-          "description": "Ghi một đoạn ghi âm giọng nói với đồng hồ đo mức âm thanh trực tiếp và hướng dẫn nhẹ nhàng, sau đó lưu dưới dạng MP3.",
-          "blurb": "Ghi âm giọng nói rõ ràng với hướng dẫn mức âm thanh trực tiếp"
+          "description": "Ghi một đoạn ghi âm giọng nói với đồng hồ đo mức âm thanh trực tiếp và hướng dẫn nhẹ nhàng, sau đó lưu dưới dạng MP3."
         },
         "zh-hant": {
           "name": "語音錄音",
-          "description": "錄製語音備忘，搭配即時音量表與溫和的錄音提示，完成後另存為 MP3。",
-          "blurb": "搭配即時音量指引，錄製乾淨的語音備忘"
+          "description": "錄製語音備忘，搭配即時音量表與溫和的錄音提示，完成後另存為 MP3。"
         },
         "zh": {
           "name": "语音录制",
-          "description": "录制语音备忘录，带实时电平表和柔和的录音提示，并保存为 MP3。",
-          "blurb": "借助实时电平提示，录制清晰的语音备忘录"
+          "description": "录制语音备忘录，带实时电平表和柔和的录音提示，并保存为 MP3。"
         }
       }
     },
@@ -6649,7 +6624,7 @@
       "id": "audiogram",
       "name": "Audiogram",
       "description": "Turn a voice clip or song into a video in your design system's colours that moves with the sound.",
-      "version": "2.8.0",
+      "version": "2.9.0",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -12143,9 +12118,12 @@
       "id": "scan-code",
       "name": "Scan",
       "description": "Read QR codes and barcodes on-device. Copy is always the first action; opening, joining or adding is an explicit, informed tap.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "status": "experimental",
       "category": "utility",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "qr-code",
       "tags": [
         "qr",
         "scan",
@@ -12165,140 +12143,110 @@
       "exportable": false,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /><path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /><path d=\"M7 8h2v2H7z\" /><path d=\"M14 8h3\" /><path d=\"M17 8v3\" /><path d=\"M7 14v-1\" /><path d=\"M11 16h-1v-1\" /><path d=\"M14 14h3v3h-3z\" /></svg>",
       "preview": "/catalog/previews/scan-code.svg",
-      "featured": {
-        "order": 7,
-        "blurb": "Read any code, safely and offline"
-      },
       "i18n": {
         "ar": {
           "name": "المسح",
-          "description": "اقرأ رموز QR والباركود على جهازك. النسخ هو الإجراء الأول دائما؛ أما الفتح أو الانضمام أو الإضافة فلمسة صريحة ومدروسة.",
-          "blurb": "اقرأ أي رمز، بأمان وبلا اتصال"
+          "description": "اقرأ رموز QR والباركود على جهازك. النسخ هو الإجراء الأول دائما؛ أما الفتح أو الانضمام أو الإضافة فلمسة صريحة ومدروسة."
         },
         "bg": {
           "name": "Сканиране",
-          "description": "Чети QR кодове и баркодове на устройството. Копирането винаги е първото действие; отварянето, присъединяването или добавянето е изрично, осъзнато докосване.",
-          "blurb": "Чети всеки код, безопасно и офлайн"
+          "description": "Чети QR кодове и баркодове на устройството. Копирането винаги е първото действие; отварянето, присъединяването или добавянето е изрично, осъзнато докосване."
         },
         "bn": {
           "name": "স্ক্যান",
-          "description": "আপনার ডিভাইসেই QR কোড ও বারকোড পড়ুন। কপি সবসময় প্রথম কাজ; খোলা, যোগ দেওয়া বা যোগ করা একটি স্পষ্ট, জেনেবুঝে করা ট্যাপ।",
-          "blurb": "যেকোনো কোড পড়ুন, নিরাপদে এবং অফলাইনে"
+          "description": "আপনার ডিভাইসেই QR কোড ও বারকোড পড়ুন। কপি সবসময় প্রথম কাজ; খোলা, যোগ দেওয়া বা যোগ করা একটি স্পষ্ট, জেনেবুঝে করা ট্যাপ।"
         },
         "cs": {
           "name": "Sken",
-          "description": "Načítej QR kódy a čárové kódy přímo v zařízení. Kopírování je vždy první možnost; otevření, připojení nebo přidání je výslovné, informované ťuknutí.",
-          "blurb": "Přečti jakýkoli kód, bezpečně a offline"
+          "description": "Načítej QR kódy a čárové kódy přímo v zařízení. Kopírování je vždy první možnost; otevření, připojení nebo přidání je výslovné, informované ťuknutí."
         },
         "de": {
           "name": "Scannen",
-          "description": "Liest QR-Codes und Barcodes auf dem Gerät. Kopieren ist immer die erste Aktion; Öffnen, Beitreten oder Hinzufügen ist ein bewusster, informierter Klick.",
-          "blurb": "Lesen Sie jeden Code, sicher und offline"
+          "description": "Liest QR-Codes und Barcodes auf dem Gerät. Kopieren ist immer die erste Aktion; Öffnen, Beitreten oder Hinzufügen ist ein bewusster, informierter Klick."
         },
         "es": {
           "name": "Escanear",
-          "description": "Lee códigos QR y de barras en el dispositivo. Copiar es siempre la primera acción; abrir, unirse o añadir es un toque explícito e informado.",
-          "blurb": "Lee cualquier código, de forma segura y sin conexión"
+          "description": "Lee códigos QR y de barras en el dispositivo. Copiar es siempre la primera acción; abrir, unirse o añadir es un toque explícito e informado."
         },
         "fr": {
           "name": "Scan",
-          "description": "Lis les codes QR et codes-barres sur ton appareil. Copier est toujours la première action ; ouvrir, rejoindre ou ajouter reste un geste explicite et informé.",
-          "blurb": "Lis n'importe quel code, en toute sécurité et hors ligne"
+          "description": "Lis les codes QR et codes-barres sur ton appareil. Copier est toujours la première action ; ouvrir, rejoindre ou ajouter reste un geste explicite et informé."
         },
         "hi": {
           "name": "Scan",
-          "description": "अपने डिवाइस पर QR कोड और बारकोड पढ़ें। कॉपी हमेशा पहला विकल्प होता है; खोलना, जुड़ना या जोड़ना एक स्पष्ट, सूचित टैप ही रहता है।",
-          "blurb": "किसी भी कोड को सुरक्षित रूप से और ऑफ़लाइन पढ़ें"
+          "description": "अपने डिवाइस पर QR कोड और बारकोड पढ़ें। कॉपी हमेशा पहला विकल्प होता है; खोलना, जुड़ना या जोड़ना एक स्पष्ट, सूचित टैप ही रहता है।"
         },
         "id": {
           "name": "Pindai",
-          "description": "Baca kode QR dan barcode di perangkat. Salin selalu menjadi tindakan pertama; membuka, bergabung atau menambahkan adalah ketukan eksplisit yang sudah diberi informasi.",
-          "blurb": "Baca kode apa pun, dengan aman dan offline"
+          "description": "Baca kode QR dan barcode di perangkat. Salin selalu menjadi tindakan pertama; membuka, bergabung atau menambahkan adalah ketukan eksplisit yang sudah diberi informasi."
         },
         "it": {
           "name": "Scansiona",
-          "description": "Leggi codici QR e codici a barre sul dispositivo. Copia è sempre la prima azione; aprire, unirsi o aggiungere è un tocco esplicito e informato.",
-          "blurb": "Leggi qualsiasi codice, in sicurezza e offline"
+          "description": "Leggi codici QR e codici a barre sul dispositivo. Copia è sempre la prima azione; aprire, unirsi o aggiungere è un tocco esplicito e informato."
         },
         "ja": {
           "name": "スキャン",
-          "description": "QRコードやバーコードをデバイス上で読み取ります。コピーは常に最初の操作で、開く・参加する・追加するは、明示的で情報を踏まえたタップとして行います。",
-          "blurb": "どんなコードも安全にオフラインで読み取ります"
+          "description": "QRコードやバーコードをデバイス上で読み取ります。コピーは常に最初の操作で、開く・参加する・追加するは、明示的で情報を踏まえたタップとして行います。"
         },
         "ko": {
           "name": "스캔",
-          "description": "QR 코드와 바코드를 기기에서 바로 읽어요. 복사는 언제나 첫 번째 동작이고, 열기·참여하기·추가하기는 명확하게 인지한 뒤 누르는 별도의 탭으로 이루어져요.",
-          "blurb": "어떤 코드든, 안전하게 오프라인으로 읽어요"
+          "description": "QR 코드와 바코드를 기기에서 바로 읽어요. 복사는 언제나 첫 번째 동작이고, 열기·참여하기·추가하기는 명확하게 인지한 뒤 누르는 별도의 탭으로 이루어져요."
         },
         "ms": {
           "name": "Scan",
-          "description": "Baca kod QR dan kod bar pada peranti. Salin sentiasa menjadi tindakan pertama; membuka, menyertai atau menambah adalah ketukan yang jelas dan termaklum.",
-          "blurb": "Baca sebarang kod, dengan selamat dan luar talian"
+          "description": "Baca kod QR dan kod bar pada peranti. Salin sentiasa menjadi tindakan pertama; membuka, menyertai atau menambah adalah ketukan yang jelas dan termaklum."
         },
         "nl": {
           "name": "Scan",
-          "description": "Lees QR-codes en barcodes op je apparaat. Kopiëren is altijd de eerste actie; openen, verbinden of toevoegen is een expliciete, weloverwogen tik.",
-          "blurb": "Lees elke code, veilig en offline"
+          "description": "Lees QR-codes en barcodes op je apparaat. Kopiëren is altijd de eerste actie; openen, verbinden of toevoegen is een expliciete, weloverwogen tik."
         },
         "no": {
           "name": "Skanning",
-          "description": "Les QR-koder og strekkoder på enheten. Kopiering er alltid den første handlingen; å åpne, bli med eller legge til er et eksplisitt, informert trykk.",
-          "blurb": "Les enhver kode, trygt og frakoblet"
+          "description": "Les QR-koder og strekkoder på enheten. Kopiering er alltid den første handlingen; å åpne, bli med eller legge til er et eksplisitt, informert trykk."
         },
         "pl": {
           "name": "Skanowanie",
-          "description": "Odczytuj kody QR i kody kreskowe na urządzeniu. Kopiowanie jest zawsze pierwszą czynnością; otwarcie, dołączenie lub dodanie to jawne, świadome dotknięcie.",
-          "blurb": "Odczytaj dowolny kod, bezpiecznie i offline"
+          "description": "Odczytuj kody QR i kody kreskowe na urządzeniu. Kopiowanie jest zawsze pierwszą czynnością; otwarcie, dołączenie lub dodanie to jawne, świadome dotknięcie."
         },
         "pt": {
           "name": "Scan",
-          "description": "Leia códigos QR e códigos de barras no dispositivo. Copiar é sempre a primeira ação; abrir, entrar ou adicionar é um toque explícito e informado.",
-          "blurb": "Leia qualquer código, com segurança e offline"
+          "description": "Leia códigos QR e códigos de barras no dispositivo. Copiar é sempre a primeira ação; abrir, entrar ou adicionar é um toque explícito e informado."
         },
         "ro": {
           "name": "Scan",
-          "description": "Citește coduri QR și coduri de bare direct pe dispozitiv. Copierea este mereu primul pas; deschiderea, alăturarea sau adăugarea este o atingere explicită și informată.",
-          "blurb": "Citește orice cod, în siguranță și offline"
+          "description": "Citește coduri QR și coduri de bare direct pe dispozitiv. Copierea este mereu primul pas; deschiderea, alăturarea sau adăugarea este o atingere explicită și informată."
         },
         "sv": {
           "name": "Scan",
-          "description": "Läs QR-koder och streckkoder på enheten. Kopiera är alltid det första alternativet; att öppna, ansluta eller lägga till är alltid ett uttryckligt, informerat val.",
-          "blurb": "Läs vilken kod som helst, säkert och offline"
+          "description": "Läs QR-koder och streckkoder på enheten. Kopiera är alltid det första alternativet; att öppna, ansluta eller lägga till är alltid ett uttryckligt, informerat val."
         },
         "tl": {
           "name": "Scan",
-          "description": "Basahin ang mga QR code at barcode sa mismong device. Ang Copy ay palaging ang unang aksyon; ang pagbukas, pag-join o pagdaragdag ay palaging malinaw at may kaalamang tap.",
-          "blurb": "Basahin ang kahit anong code, ligtas at offline"
+          "description": "Basahin ang mga QR code at barcode sa mismong device. Ang Copy ay palaging ang unang aksyon; ang pagbukas, pag-join o pagdaragdag ay palaging malinaw at may kaalamang tap."
         },
         "tr": {
           "name": "Tarama",
-          "description": "QR kodlarını ve barkodları cihazında oku. Kopyalama her zaman ilk eylemdir; açmak, katılmak ya da eklemek açık ve bilgilendirilmiş bir dokunuştur.",
-          "blurb": "Herhangi bir kodu güvenle ve çevrimdışı oku"
+          "description": "QR kodlarını ve barkodları cihazında oku. Kopyalama her zaman ilk eylemdir; açmak, katılmak ya da eklemek açık ve bilgilendirilmiş bir dokunuştur."
         },
         "uk": {
           "name": "Сканування",
-          "description": "Читайте QR-коди та штрихкоди прямо на пристрої. Копіювання - завжди перша дія; відкриття, приєднання чи додавання - явний, усвідомлений дотик.",
-          "blurb": "Читайте будь-який код безпечно й офлайн"
+          "description": "Читайте QR-коди та штрихкоди прямо на пристрої. Копіювання - завжди перша дія; відкриття, приєднання чи додавання - явний, усвідомлений дотик."
         },
         "ur": {
           "name": "اسکین",
-          "description": "QR کوڈز اور بارکوڈز کو اپنے آلے پر پڑھیں۔ کاپی ہمیشہ پہلا عمل ہوتا ہے؛ کھولنا، جوائن کرنا یا شامل کرنا ایک واضح، باخبر ٹیپ ہے۔",
-          "blurb": "کوئی بھی کوڈ محفوظ طریقے سے اور آف لائن پڑھیں"
+          "description": "QR کوڈز اور بارکوڈز کو اپنے آلے پر پڑھیں۔ کاپی ہمیشہ پہلا عمل ہوتا ہے؛ کھولنا، جوائن کرنا یا شامل کرنا ایک واضح، باخبر ٹیپ ہے۔"
         },
         "vi": {
           "name": "Quét",
-          "description": "Đọc mã QR và mã vạch ngay trên thiết bị. Sao chép luôn là hành động đầu tiên; mở, tham gia hoặc thêm vào là một thao tác chạm rõ ràng, có hiểu biết.",
-          "blurb": "Đọc mọi mã, an toàn và không cần mạng"
+          "description": "Đọc mã QR và mã vạch ngay trên thiết bị. Sao chép luôn là hành động đầu tiên; mở, tham gia hoặc thêm vào là một thao tác chạm rõ ràng, có hiểu biết."
         },
         "zh-hant": {
           "name": "掃描",
-          "description": "在裝置上讀取 QR code 與條碼。複製永遠是第一個動作；開啟、加入或新增則需要你明確點一下才會執行。",
-          "blurb": "安全離線讀取任何碼"
+          "description": "在裝置上讀取 QR code 與條碼。複製永遠是第一個動作；開啟、加入或新增則需要你明確點一下才會執行。"
         },
         "zh": {
           "name": "扫描",
-          "description": "在设备上读取 QR 码和条码。复制永远是第一个操作；打开、加入或添加则需要你明确点一下才会执行。",
-          "blurb": "安全离线读取任何码"
+          "description": "在设备上读取 QR 码和条码。复制永远是第一个操作；打开、加入或添加则需要你明确点一下才会执行。"
         }
       }
     },
@@ -15988,8 +15936,8 @@
     {
       "id": "3d-studio",
       "name": "3D Studio",
-      "description": "Turn SVG artwork and 3D models into coordinated images, alone or arranged together in one scene. Shape materials, lighting, focus and transparent shadows with guided or expert controls.",
-      "version": "0.8.3",
+      "description": "Turn SVG artwork and 3D models into images, alone or together in one scene. Shape materials, lighting, focus and shadows.",
+      "version": "0.13.0",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -16702,6 +16650,101 @@
       "exportable": true,
       "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4.5\" width=\"18\" height=\"16.5\" rx=\"2\"/><line x1=\"3\" y1=\"9\" x2=\"21\" y2=\"9\"/><line x1=\"8\" y1=\"2.5\" x2=\"8\" y2=\"6\"/><line x1=\"16\" y1=\"2.5\" x2=\"16\" y2=\"6\"/><rect x=\"10.5\" y=\"12\" width=\"4\" height=\"5\" rx=\"0.8\" fill=\"currentColor\"/></svg>",
       "preview": "/catalog/previews/week.svg"
+    },
+    {
+      "id": "quote-card",
+      "name": "Quote",
+      "description": "A quotation in the active design system: a speaker card, a pull quote, a citation with its source, big type, a marker on the key phrase, with optional motion that carries into Design.",
+      "version": "1.1.0",
+      "status": "community",
+      "category": "everyone",
+      "tags": [
+        "quote",
+        "quotation",
+        "testimonial",
+        "pull quote",
+        "social",
+        "speaker",
+        "citation",
+        "motion"
+      ],
+      "formats": [
+        "png",
+        "jpg",
+        "webp",
+        "svg",
+        "penpot",
+        "pdf",
+        "avif",
+        "tiff",
+        "mp4",
+        "webm",
+        "gif",
+        "apng",
+        "webp-anim"
+      ],
+      "width": 1600,
+      "height": 1200,
+      "exportable": true,
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 7H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2c0 2-1 3-3 4\" /><path d=\"M20 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2c0 2-1 3-3 4\" /></svg>",
+      "preview": "/catalog/previews/quote-card.svg",
+      "templates": [
+        {
+          "id": "big-mark",
+          "name": "Big quotation mark",
+          "category": "Social",
+          "description": "The design system's own quotation mark, drawn large."
+        },
+        {
+          "id": "big-type",
+          "name": "Big type",
+          "category": "Social",
+          "description": "The words fill the frame."
+        },
+        {
+          "id": "citation",
+          "name": "Citation",
+          "category": "Publishing",
+          "description": "A passage with its full reference: author, work, publication and date."
+        },
+        {
+          "id": "marker",
+          "name": "Marker",
+          "category": "Social",
+          "description": "A marker across the phrase that matters most."
+        },
+        {
+          "id": "portrait",
+          "name": "Portrait",
+          "category": "Social",
+          "description": "The picture takes half the frame, edge to edge."
+        },
+        {
+          "id": "pull-quote",
+          "name": "Pull quote",
+          "category": "Publishing",
+          "description": "Set between two rules, to sit in a column of a page."
+        },
+        {
+          "id": "speaker",
+          "name": "Speaker quote",
+          "category": "Social",
+          "description": "A short line beside the person who said it.",
+          "galleryCover": true
+        },
+        {
+          "id": "word-by-word",
+          "name": "Word by word",
+          "category": "Motion",
+          "description": "The quote arrives one word at a time. Place the tool in Design and it plays on the timeline."
+        },
+        {
+          "id": "words-only",
+          "name": "Words only",
+          "category": "Social",
+          "description": "The quotation alone, centred on ink."
+        }
+      ]
     }
   ]
 }

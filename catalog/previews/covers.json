@@ -1,12 +1,15 @@
 {
  "v": 1,
+ "source": {
+  "fingerprint": "798b426b1d2f1fedcd47314e82724813"
+ },
  "contexts": {
   "c68d2750f4f1c949769788a535185323": "light",
   "51c02e0ebd32886555596384ab7c9a35": "dark"
  },
  "covers": {
   "design": {
-   "version": "1.52.2",
+   "version": "1.52.3",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/design.light.svg"
@@ -17,7 +20,7 @@
    }
   },
   "darkroom": {
-   "version": "2.5.3",
+   "version": "2.6.0",
    "light": {
     "templateId": "warm-portrait",
     "file": "/catalog/previews/covers/darkroom.light.webp"
@@ -28,7 +31,7 @@
    }
   },
   "filter": {
-   "version": "1.6.0",
+   "version": "1.7.0",
    "light": {
     "templateId": "colour-scanlines",
     "file": "/catalog/previews/covers/filter.light.webp"
@@ -39,7 +42,7 @@
    }
   },
   "chart": {
-   "version": "1.28.0",
+   "version": "1.31.0",
    "light": {
     "templateId": "brand-bars",
     "file": "/catalog/previews/covers/chart.light.svg"
@@ -61,7 +64,7 @@
    }
   },
   "qr-code": {
-   "version": "2.8.0",
+   "version": "2.9.0",
    "light": {
     "templateId": "website",
     "file": "/catalog/previews/covers/qr-code.light.svg"
@@ -71,8 +74,19 @@
     "file": "/catalog/previews/covers/qr-code.dark.svg"
    }
   },
+  "quote-card": {
+   "version": "1.1.0",
+   "light": {
+    "templateId": "speaker",
+    "file": "/catalog/previews/covers/quote-card.light.svg"
+   },
+   "dark": {
+    "templateId": "speaker",
+    "file": "/catalog/previews/covers/quote-card.dark.svg"
+   }
+  },
   "week": {
-   "version": "1.0.0",
+   "version": "1.1.0",
    "light": {
     "file": "/catalog/previews/covers/week.light.svg"
    },
@@ -81,7 +95,7 @@
    }
   },
   "scorecard": {
-   "version": "1.0.0",
+   "version": "1.1.0",
    "light": {
     "file": "/catalog/previews/covers/scorecard.light.svg"
    },
@@ -90,7 +104,7 @@
    }
   },
   "email": {
-   "version": "1.0.0",
+   "version": "1.1.0",
    "light": {
     "file": "/catalog/previews/covers/email.light.svg"
    },
@@ -99,7 +113,7 @@
    }
   },
   "brief": {
-   "version": "1.0.0",
+   "version": "1.1.0",
    "light": {
     "file": "/catalog/previews/covers/brief.light.svg"
    },
@@ -108,7 +122,7 @@
    }
   },
   "quote": {
-   "version": "1.0.1",
+   "version": "1.1.0",
    "light": {
     "templateId": "services",
     "file": "/catalog/previews/covers/quote.light.svg"
@@ -119,7 +133,7 @@
    }
   },
   "susecon-background": {
-   "version": "1.0.4",
+   "version": "1.0.5",
    "light": {
     "file": "/catalog/previews/covers/susecon-background.light.webp"
    },
@@ -128,7 +142,7 @@
    }
   },
   "3d-studio": {
-   "version": "0.8.3",
+   "version": "0.13.0",
    "light": {
     "templateId": "studio-object",
     "file": "/catalog/previews/covers/3d-studio.light.webp"
@@ -139,7 +153,7 @@
    }
   },
   "timezone": {
-   "version": "1.1.2",
+   "version": "1.2.0",
    "light": {
     "templateId": "around-the-world",
     "file": "/catalog/previews/covers/timezone.light.webp"
@@ -236,7 +250,7 @@
    }
   },
   "link-card": {
-   "version": "1.0.4",
+   "version": "1.1.0",
    "light": {
     "templateId": "og",
     "file": "/catalog/previews/covers/link-card.light.svg"
@@ -247,7 +261,7 @@
    }
   },
   "stationery": {
-   "version": "1.0.4",
+   "version": "1.1.0",
    "light": {
     "templateId": "card-card-back",
     "file": "/catalog/previews/covers/stationery.light.svg"
@@ -261,11 +275,11 @@
    "version": "2.1.0",
    "light": {
     "templateId": "brand-starter",
-    "file": "/catalog/previews/covers/print-sheet.light.svg"
+    "file": "/catalog/previews/covers/print-sheet.light.webp"
    },
    "dark": {
     "templateId": "brand-starter",
-    "file": "/catalog/previews/covers/print-sheet.dark.svg"
+    "file": "/catalog/previews/covers/print-sheet.dark.webp"
    }
   },
   "certificate": {
@@ -291,7 +305,7 @@
    }
   },
   "pricing-table": {
-   "version": "1.1.2",
+   "version": "1.2.0",
    "light": {
     "templateId": "saas",
     "file": "/catalog/previews/covers/pricing-table.light.svg"
@@ -302,7 +316,7 @@
    }
   },
   "flythrough": {
-   "version": "0.2.6",
+   "version": "0.2.7",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/flythrough.light.webp"
@@ -324,7 +338,7 @@
    }
   },
   "battlecards": {
-   "version": "1.3.3",
+   "version": "1.4.0",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/battlecards.light.svg"
@@ -335,7 +349,7 @@
    }
   },
   "audiogram": {
-   "version": "2.8.0",
+   "version": "2.9.0",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/audiogram.light.webp"
@@ -388,7 +402,7 @@
    }
   },
   "logo-lockup-partner": {
-   "version": "1.0.2",
+   "version": "1.1.1",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/logo-lockup-partner.light.svg"
@@ -410,7 +424,7 @@
    }
   },
   "logo-wall": {
-   "version": "1.8.1",
+   "version": "1.9.0",
    "light": {
     "templateId": "brand-starter",
     "file": "/catalog/previews/covers/logo-wall.light.svg"
@@ -421,7 +435,7 @@
    }
   },
   "calendar-ics": {
-   "version": "1.2.4",
+   "version": "1.3.0",
    "light": {
     "templateId": "month",
     "file": "/catalog/previews/covers/calendar-ics.light.svg"
@@ -443,7 +457,7 @@
    }
   },
   "wayfinding-signage": {
-   "version": "1.2.5",
+   "version": "1.3.0",
    "light": {
     "file": "/catalog/previews/covers/wayfinding-signage.light.svg"
    },
@@ -482,15 +496,6 @@
    "dark": {
     "templateId": "brand-starter-dark",
     "file": "/catalog/previews/covers/tool-logo.dark.svg"
-   }
-  },
-  "meeting-planner": {
-   "version": "1.2.4",
-   "light": {
-    "file": "/catalog/previews/covers/meeting-planner.light.svg"
-   },
-   "dark": {
-    "file": "/catalog/previews/covers/meeting-planner.dark.svg"
    }
   },
   "quotes": {
