@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-26T18:00:56.719Z",
+  "generatedAt": "2026-11-26T22:04:11.862Z",
   "tools": [
     {
       "id": "color-block",
@@ -5509,9 +5509,12 @@
       "id": "3d",
       "name": "3D",
       "description": "Load a 3D model into a lit scene, orbit and pose the camera, and render a still or a turntable animation.",
-      "version": "1.3.4",
+      "version": "1.3.5",
       "status": "official",
       "category": "designer",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "3d-studio",
       "tags": [
         "3d",
         "gltf",
