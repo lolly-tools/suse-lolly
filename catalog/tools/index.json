@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-11-26T22:04:11.862Z",
+  "generatedAt": "2026-11-27T12:41:06.802Z",
   "tools": [
     {
       "id": "color-block",
@@ -632,7 +632,7 @@
       "id": "qr-code",
       "name": "QR Code",
       "description": "Scannable codes of every kind: QR, Micro QR, Data Matrix, Aztec and PDF417 - plus retail and logistics barcodes from EAN-13 to MaxiCode.",
-      "version": "2.9.0",
+      "version": "2.12.1",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -648,7 +648,8 @@
         "gs1",
         "datamatrix",
         "shipping",
-        "packaging"
+        "packaging",
+        "motion"
       ],
       "added": "2026-07-08",
       "formats": [
@@ -665,7 +666,12 @@
         "eps",
         "eps-cmyk",
         "dxf",
-        "emf"
+        "emf",
+        "mp4",
+        "webm",
+        "gif",
+        "apng",
+        "webp-anim"
       ],
       "width": 600,
       "height": 600,
@@ -1793,7 +1799,7 @@
       "id": "strip-data",
       "name": "Strip Hidden Data",
       "description": "Remove metadata from images, audio and PDFs, and selected DOCX properties, and inspect other Office hidden content, on your device.",
-      "version": "1.5.0",
+      "version": "1.5.2",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -3058,10 +3064,13 @@
       "id": "compress-pdf",
       "name": "Compress",
       "description": "Shrink a PDF by recompressing its images - on your device.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "pages",
       "tags": [
         "pdf",
         "compress",
@@ -6627,7 +6636,7 @@
       "id": "audiogram",
       "name": "Audiogram",
       "description": "Turn a voice clip or song into a video in your design system's colours that moves with the sound.",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "status": "community",
       "category": "everyone",
       "tags": [
@@ -7001,7 +7010,7 @@
       "id": "redact",
       "name": "Redact",
       "description": "Black out sensitive content by rebuilding the file, then verify the output before it downloads, all on your device.",
-      "version": "1.8.0",
+      "version": "1.8.2",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -7519,7 +7528,7 @@
       "id": "filter",
       "name": "Filter",
       "description": "Photo effects: halftone, scanline, posterize, voronoi, dither or ASCII art (vector) or duotone, pixel-stretch, misprint or glitch (raster).",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -8747,7 +8756,7 @@
       "id": "darkroom",
       "name": "Darkroom",
       "description": "Grade photos and video with film looks, Adobe XMP presets, .cube LUTs and your design system colours. Opens Photoshop and GIMP layers.",
-      "version": "2.6.0",
+      "version": "2.7.0",
       "status": "community",
       "category": "designer",
       "tags": [
@@ -8803,6 +8812,8 @@
         "penpot",
         "webm",
         "mp4",
+        "gif",
+        "apng",
         "exr",
         "hdr",
         "tiff",
@@ -10929,7 +10940,7 @@
       "id": "annotate",
       "name": "Annotate",
       "description": "Mark up your own screenshot on your device - arrows, boxes, numbered steps, callouts, highlighter and a spotlight dim.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "status": "community",
       "category": "utility",
       "privacy": "on-device",
@@ -13215,8 +13226,8 @@
     {
       "id": "gradient",
       "name": "Gradient",
-      "description": "Five ways to build a gradient from the design system swatches: Blend, Subdivide, Mesh, Warp and Flow. Export stills or join-free video loops.",
-      "version": "1.3.1",
+      "description": "Six ways to build a gradient from the design system swatches: Blend, Subdivide, Mesh, Warp, Flow and Field, which has sixteen GPU effects. Export stills or video loops.",
+      "version": "1.4.2",
       "status": "official",
       "category": "everyone",
       "tags": [
@@ -13228,7 +13239,9 @@
         "brand",
         "coons",
         "warp",
-        "animated"
+        "animated",
+        "generative",
+        "backdrop"
       ],
       "added": "2026-07-11",
       "formats": [
@@ -13262,20 +13275,6 @@
             "spread": 95,
             "blur": 10,
             "grain": 30
-          }
-        },
-        {
-          "label": "Aurora night",
-          "values": {
-            "count": 4,
-            "color1": "#22d3ee",
-            "color2": "#a78bfa",
-            "color3": "#10b981",
-            "color4": "#0b1021",
-            "blend": "screen",
-            "spread": 110,
-            "blur": 8,
-            "grain": 60
           }
         },
         {
@@ -13338,19 +13337,6 @@
           }
         },
         {
-          "label": "Paper grain",
-          "values": {
-            "count": 2,
-            "color1": "#f5efe6",
-            "color2": "#e2e8f0",
-            "blend": "normal",
-            "spread": 140,
-            "blur": 20,
-            "grain": 100,
-            "grainBlend": "overlay"
-          }
-        },
-        {
           "label": "Live backdrop",
           "values": {
             "count": 4,
@@ -13366,6 +13352,36 @@
             "speed": 16,
             "distance": 80
           }
+        },
+        {
+          "label": "Lava lamp",
+          "values": {
+            "mode": "field",
+            "effect": "metaballs",
+            "count": 4,
+            "color1": "{color.semantic.secondary}",
+            "color2": "{color.semantic.primary}",
+            "color3": "{color.semantic.secondary}",
+            "color4": "{color.semantic.primary}",
+            "background": "{color.semantic.primary}",
+            "intensity": 55,
+            "density": 45
+          }
+        },
+        {
+          "label": "Liquid silk",
+          "values": {
+            "mode": "field",
+            "effect": "silk-flow",
+            "count": 3,
+            "color1": "{color.semantic.secondary}",
+            "color2": "{color.semantic.primary}",
+            "color3": "{color.semantic.secondary}",
+            "background": "{color.semantic.primary}",
+            "intensity": 60,
+            "density": 45,
+            "fieldSpeed": 70
+          }
         }
       ],
       "templates": [
@@ -13377,10 +13393,52 @@
           "galleryCover": true
         },
         {
+          "id": "cathedral-rays",
+          "name": "Cathedral rays",
+          "category": "Field",
+          "description": "Shafts of light falling from above."
+        },
+        {
+          "id": "lava-lamp",
+          "name": "Lava lamp",
+          "category": "Field",
+          "description": "Slow orbs that merge and part."
+        },
+        {
+          "id": "liquid-silk",
+          "name": "Liquid silk",
+          "category": "Field",
+          "description": "Slow folds of silk."
+        },
+        {
+          "id": "mercury-contours",
+          "name": "Mercury contours",
+          "category": "Field",
+          "description": "Embossed contour lines over a shifting surface."
+        },
+        {
+          "id": "neural-drift",
+          "name": "Neural drift",
+          "category": "Field",
+          "description": "Fine glowing threads that wander."
+        },
+        {
           "id": "ocean",
           "name": "Ocean",
           "category": "Background",
           "description": "Cool blues and sea green for calm, spacious backdrops."
+        },
+        {
+          "id": "prismatic-bloom",
+          "name": "Prismatic bloom",
+          "category": "Field",
+          "description": "Mirrored facets opening around a bright centre."
+        },
+        {
+          "id": "smoke-halo",
+          "name": "Smoke halo",
+          "category": "Field",
+          "description": "A soft ring of drifting smoke."
         },
         {
           "id": "studio",
@@ -13393,6 +13451,12 @@
           "name": "Sunrise",
           "category": "Background",
           "description": "Warm amber and coral light for hero banners and covers."
+        },
+        {
+          "id": "velvet-warp",
+          "name": "Velvet warp",
+          "category": "Field",
+          "description": "Folded colour with a slow swirl."
         }
       ],
       "i18n": {
@@ -14268,9 +14332,12 @@
       "id": "backdrop",
       "name": "Backdrop",
       "description": "Backdrops from your design system's colours: sixteen GPU effects. Export stills or motion loops for heroes, walls and meeting backgrounds.",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "status": "official",
       "category": "everyone",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "gradient",
       "tags": [
         "backdrop",
         "background",
@@ -14935,8 +15002,8 @@
     {
       "id": "pages",
       "name": "Pages",
-      "description": "Reorder, rotate, extract, delete, merge or split PDF pages, or turn images into a PDF, on your device.",
-      "version": "1.1.2",
+      "description": "Reorder, rotate, extract, delete, merge or split PDF pages, compress or sign a PDF, or turn images into a PDF, on your device.",
+      "version": "1.2.4",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
@@ -14952,7 +15019,24 @@
         "images",
         "photos",
         "jpg",
-        "png"
+        "png",
+        "compress",
+        "shrink",
+        "optimize",
+        "reduce",
+        "size",
+        "document",
+        "scan",
+        "image",
+        "downsample",
+        "privacy",
+        "sign",
+        "signature",
+        "initials",
+        "date",
+        "credential",
+        "lock",
+        "password"
       ],
       "added": "2026-09-05",
       "formats": [
@@ -15226,10 +15310,13 @@
       "id": "sign",
       "name": "Sign",
       "description": "Place your signature on a PDF, optionally add a Content Credential and lock the result.",
-      "version": "1.1.1",
+      "version": "1.1.3",
       "status": "official",
       "category": "utility",
       "privacy": "on-device",
+      "listed": false,
+      "deprecated": true,
+      "replacedBy": "pages",
       "tags": [
         "pdf",
         "sign",
@@ -15511,7 +15598,7 @@
       "id": "timezone",
       "name": "Timezone",
       "description": "Turn places and timezones into artwork. Rotate a vector atlas or a WebGL globe, then export artwork, a camera tour or structured schedules.",
-      "version": "1.2.0",
+      "version": "1.3.1",
       "status": "official",
       "category": "event",
       "tags": [
@@ -15536,6 +15623,8 @@
         "webm",
         "mp4",
         "gif",
+        "apng",
+        "webp-anim",
         "json",
         "csv",
         "md",
@@ -15551,7 +15640,7 @@
           "label": "Global webinar",
           "values": {
             "heading": "Ideas without borders.",
-            "eyebrow": "The global webinar",
+            "eyebrow": "",
             "annotation": "A conversation that travels with you.",
             "footer": "Save your place →",
             "timeMode": "now",
@@ -15614,7 +15703,7 @@
           "label": "Infrastructure atlas",
           "values": {
             "heading": "Always connected.",
-            "eyebrow": "Global infrastructure",
+            "eyebrow": "",
             "annotation": "Follow the sun. Know every region.",
             "footer": "",
             "timeMode": "now",
@@ -15940,7 +16029,7 @@
       "id": "3d-studio",
       "name": "3D Studio",
       "description": "Turn SVG artwork and 3D models into images, alone or together in one scene. Shape materials, lighting, focus and shadows.",
-      "version": "0.13.0",
+      "version": "0.14.0",
       "status": "official",
       "category": "designer",
       "tags": [
@@ -16019,6 +16108,12 @@
           "name": "Logo drop",
           "category": "Promotion",
           "description": "A badge drops in turning, bounces to a stop and holds still under dramatic light. Swap in your own SVG under Start, or choose Words in the brand font for a wordmark."
+        },
+        {
+          "id": "logo-sting",
+          "name": "Logo sting",
+          "category": "Promotion",
+          "description": "A badge spins in and lands while the camera settles a little on the design system's emphasised curve, then both hold still for the second half of the clip. Swap in your own SVG under Start, or choose Words in the brand font for a wordmark."
         },
         {
           "id": "shatter-reveal",
